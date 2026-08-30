@@ -12,7 +12,9 @@
 
 ## 0. 开工第一件事：读 `.preflight`
 
-环境的 setup script 在容器启动时已经探过网络，把结论写进了仓库根目录的 `.preflight`（gitignore 掉，不进版本库）。**动手前先 `cat .preflight`。**
+环境的 setup script 在容器启动时会探一次网络，把结论写进仓库根目录的 `.preflight`（gitignore 掉，不进版本库）。**动手前先 `cat .preflight`。**
+
+**如果 `.preflight` 不存在**（说明这个环境没配 setup script，日志里会看到 `No setup script configured`）：**自己跑一次 `bash setup.sh`**，它会当场生成 `.preflight`。然后照下面的判定继续，并在本次运行的最后**在 PushNotification 里捎一句「环境未配 setup script」**，提醒 BigCat 去补——不然每次运行都要多花几秒重探。
 
 - `egress: OK` → 照常做，本文件其余部分全部适用。
 - `egress: BLOCKED` → **立刻停**。这是环境的网络策略，不是某个站反爬。**别再去试换 UA、试别的域名、试归档页**——探针里已经包含了一个中立对照站，它也失败了，再试是浪费。**更不许退回凭记忆写。** 正确动作：不建任何文件、不改任何文件、不跑 publish，只发一条 PushNotification 说明环境的 Network access 需要从 `Trusted` 改成 `Custom` 或 `Full`（`Trusted` 的白名单只含包管理源和 GitHub），然后结束本次运行。

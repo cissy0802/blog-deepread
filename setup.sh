@@ -25,9 +25,17 @@ set -u
 PREFLIGHT=".preflight"
 
 # ---------- 1. egress preflight ----------------------------------------------
-# Three probes, chosen to separate "this one site blocks bots" from "nothing
-# gets out": a neutral control, a blog we actually need, and a big site that is
-# never down. Any single success means the open web is reachable.
+# Three probes, all of them blogs on this repo's own reading list.
+#
+# They are deliberately NOT neutral hosts like example.com or wikipedia.org.
+# When the environment runs at Custom network access, those are blocked by
+# design — they aren't on the allowlist — so treating them as a control turns
+# a correctly-configured environment into a false BLOCKED verdict. Measured
+# 2026-08-30: example.com 000, wikipedia 000, gwern.net 200, all in the same
+# working session.
+#
+# Three are used rather than one so a single site being down for maintenance
+# can't abort a whole run. Any one success means the network is usable.
 probe() {
   curl -sS -o /dev/null --max-time 6 \
     -A 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124.0 Safari/537.36' \
@@ -36,7 +44,7 @@ probe() {
 
 OK=0
 RESULTS=""
-for u in https://example.com/ https://gwern.net/ https://en.wikipedia.org/; do
+for u in https://gwern.net/ https://astralcodexten.com/ https://simonwillison.net/; do
   code=$(probe "$u")
   [ -z "$code" ] && code="000"
   RESULTS="${RESULTS}  ${u} -> ${code}"$'\n'
@@ -54,16 +62,17 @@ done
   else
     echo "egress: BLOCKED"
     echo ""
-    echo "Every probe failed, including a neutral control host. This is the"
-    echo "environment's network policy, NOT a site blocking bots — do not"
-    echo "waste turns testing user agents or alternate hosts, and do not fall"
-    echo "back to writing from memory."
+    echo "All three probes failed. They are three separate blogs from this"
+    echo "repo's own list, so this is the environment's network policy or a"
+    echo "wrong allowlist — not one site blocking bots. Do not waste turns"
+    echo "testing user agents or alternate hosts, and do not fall back to"
+    echo "writing from memory."
     echo ""
     echo "Correct action: publish nothing, touch no files, and send one"
-    echo "PushNotification saying the environment's Network access level needs"
-    echo "to be Custom (or Full) with the blog domains allowed — it is set to"
-    echo "Trusted, whose allowlist covers package registries and GitHub only."
-    echo "Then end the run."
+    echo "PushNotification saying the environment's Network access needs"
+    echo "checking — either it is still at Trusted (whose allowlist covers"
+    echo "package registries and GitHub only), or it is at Custom and the"
+    echo "blog domains are missing from Allowed domains. Then end the run."
   fi
   echo ""
   echo "probes:"
