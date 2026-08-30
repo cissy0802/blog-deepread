@@ -12,6 +12,11 @@ BigCat 人工维护的必读博客清单。来源：**四家旗舰模型独立�
 
 ---
 
+- **Kevin Simler** — Melting Asphalt · <https://meltingasphalt.com/> · Evolutionary Biology & Philosophy · 2票 [dormant·2021]
+  - 将进化生物学、软件工程和神经科学融会贯通，探讨社会系统和大脑如何作为一台信号处理机器运行。虽然停更，但每篇文章都堪称醍醐灌顶的经典。
+  - 主线：大脑中的大象 (The Elephant in the Brain)；思想的树状与网状结构；社交信号与潜意识动机
+  - slug: `melting-asphalt`
+
 - **王利杰（Leo Wang）** — MacroAlpha Blog · <https://blog.leowang.net/> · 佛学 / 神经科学 / 意识 / 投资 · 亲选
   - 早期投资人（PreAngel 创始合伙人），把佛学与道家的修行命题直接对接当代神经科学——不是比喻式的『这让我想起』，而是逐条追问『这个古法为什么有效、脑子里发生了什么』。同时写投资与市场心理，两条线共用一套认知框架。
   - 主线：用神经科学解释六度波罗蜜等佛教修行何以有效；对龙树中观的批判性阅读：解决了旧问题也留下新问题；把禅修从神秘化叙事里拆出来做机制解释
@@ -51,11 +56,6 @@ BigCat 人工维护的必读博客清单。来源：**四家旗舰模型独立�
   - 复杂系统和统计推断两边都在一线的人，专治「涌现」「幂律」「网络科学」这类词被滥用；他的书评栏目本身就是一份跨学科阅读地图。
   - 主线：对幂律/无标度网络主张的统计学证伪；计算力学与 epsilon-machine；生成式 AI 作为信息检索的重新框定（2026 讲座）
   - slug: `three-toed-sloth`
-
-- **Kevin Simler** — Melting Asphalt · <https://meltingasphalt.com/> · Evolutionary Biology & Philosophy · 2票 [dormant·2021]
-  - 将进化生物学、软件工程和神经科学融会贯通，探讨社会系统和大脑如何作为一台信号处理机器运行。虽然停更，但每篇文章都堪称醍醐灌顶的经典。
-  - 主线：大脑中的大象 (The Elephant in the Brain)；思想的树状与网状结构；社交信号与潜意识动机
-  - slug: `melting-asphalt`
 
 - **Julia Evans** — jvns.ca · <https://jvns.ca/> · Systems Programming · 2票
   - 她将极其硬核的操作系统、网络协议和分布式系统知识，转化为手绘漫画形式的 Zines，展示了将高认知负荷降维为直觉化理解的顶级写作能力。
