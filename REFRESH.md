@@ -19,6 +19,15 @@
 
 ## 执行步骤
 
+### 0. 先读 `.preflight`
+
+环境的 setup script 在容器启动时已探过网络，结论写在仓库根目录的 `.preflight`（gitignore 掉）。**开工前先 `cat .preflight`。**
+
+- `egress: OK` → 照常回访。
+- `egress: BLOCKED` → **立刻停**。这是环境网络策略，不是站点反爬，**别试换 UA、别试别的域名**（探针含中立对照站，它也失败了）。不改任何文件、不 commit，只发一条 PushNotification 说明环境的 Network access 需要改成 `Custom` 或 `Full`，然后结束。**本轮所有页面的 `data-last-reviewed` 保持不动**——没真去看过就不能声称"已核对到今天"，否则下个月会跳过这些页，等于永久漏掉这一轮的更新。
+
+`.preflight` 末尾的 `feedparser: OK` 表示可以用 feed 精确拿"某日之后的全部文章"，这是本 routine 最省事的路径；`unavailable` 时退回读归档页。
+
 ### 1. 盘点
 `ls *-blog*.html | grep -v '\.en\.html'` 得到所有已发布页。对每一页读出 `<section class="updates">` 上的 `data-slug` 和 `data-last-reviewed`。
 

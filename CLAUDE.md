@@ -10,14 +10,23 @@
 
 ---
 
-## 0. 选题 / 编号
+## 0. 开工第一件事：读 `.preflight`
+
+环境的 setup script 在容器启动时已经探过网络，把结论写进了仓库根目录的 `.preflight`（gitignore 掉，不进版本库）。**动手前先 `cat .preflight`。**
+
+- `egress: OK` → 照常做，本文件其余部分全部适用。
+- `egress: BLOCKED` → **立刻停**。这是环境的网络策略，不是某个站反爬。**别再去试换 UA、试别的域名、试归档页**——探针里已经包含了一个中立对照站，它也失败了，再试是浪费。**更不许退回凭记忆写。** 正确动作：不建任何文件、不改任何文件、不跑 publish，只发一条 PushNotification 说明环境的 Network access 需要从 `Trusted` 改成 `Custom` 或 `Full`（`Trusted` 的白名单只含包管理源和 GitHub），然后结束本次运行。
+
+`.preflight` 末尾还会写 `feedparser: OK` 或 `unavailable`。可用时优先用 feed 拿文章列表（一次请求拿到带日期的全量条目），不可用再退回读归档页。
+
+## 1. 选题 / 编号
 
 - **严格从 `TOPICS.md` 顶部往下取第一个未做的 slug**。清单已经按「跨模型交集 + 思想密度 + 领域轮换」排过序，且**领域已经交错编排**——照顺序写就自然不会连着三期都是技术博客，别自作主张跳序。
 - 文件名 `{slug}-blog{N}.html`，**N = 写作顺序的下一个编号**（现有最大 N + 1）。
 - **绝不自我生成清单**：`TOPICS.md` 由 BigCat 人工维护，routine **只读不改**（`publish.sh` 硬卡 TOPICS.md 改动）。清单全做完 → PushNotification 请 BigCat 续单、**本次不发布**、直接结束。
 - **Surprise 档不许跳过**：清单里标了 `[surprise]` 的条目是专门用来打破信息茧房的。轮到它就写它，**不要因为「跟她兴趣不够贴」而跳过——那正是它存在的理由**。
 
-## 1. 动手前：先真读
+## 2. 动手前：先真读
 
 **这是本站和姊妹站最大的不同——论文是静态的、你多半训练时见过；博客是活的，你的印象很可能过时或干脆是错的。**
 
@@ -30,7 +39,7 @@
 
 **读不到就别硬写**：主页 404 / 全站失效 / 内容与清单描述严重不符 → **不发布本期**，发 PushNotification 报告该 slug 的问题请 BigCat 核实，然后结束。**绝不能靠记忆编一篇出来。**
 
-## 2. 页面结构
+## 3. 页面结构
 
 写两个文件：中文 `{slug}-blog{N}.html`、英文 `{slug}-blog{N}.en.html`。
 
@@ -55,7 +64,7 @@
 
 **不写「谁该读」「读完读什么」「这对你的启发」这类填充节。**
 
-## 3. 更新记录（月更 routine 写，日更 routine 只留位置）
+## 4. 更新记录（月更 routine 写，日更 routine 只留位置）
 
 每页在「必读清单」之后、页尾之前，留一个空的更新区：
 
@@ -68,7 +77,7 @@
 
 日更 routine **只负责留下这个空壳**（带正确的 `data-slug` 和 `data-last-reviewed`），不写任何内容。月更 routine 会往 `<!-- updates -->` 前插条目。英文页同样留一个 `<h2>Updates</h2>` 的空壳。
 
-## 4. 写作要求
+## 5. 写作要求
 
 - **篇幅：中文全页 2500–4000 字**（精华版 + 深读版合计），宁精炼勿注水。仓库根目录有 `.maxchars`，超了 `publish.sh` 会弹回。
 - **面向零基础读者**：假设读者不认识这个人、不熟他所在的领域。「一句话」之后如果本篇会用到该领域的前置概念，加一个 `<h2>Glossary · 术语表</h2>` 小节（`.glossary` 虚线框裹 `<ul>`），每个前置词一句大白话。正文其余术语随名即释。
@@ -80,11 +89,11 @@
 - **中文页术语首次出现补英文**：`中文术语（English）`。人名、博客名照原样不译。
 - **重点加粗**，克制。
 
-## 5. 版式
+## 6. 版式
 
 复用 `cs-papers-deepread` paper1 的内联 `<style>` 结构（无衬线、渐变标题、mono 小标签、玻璃拟态卡片、modebar），但**配色改成本站专属的靛蓝／青瓷**：主色 `#6ea8fe` → `#5eead4` 渐变，冷暗底 `#0d1117`。**别用 cs-papers 的琥珀铜色**（那是姊妹站的）。
 
-## 6. 文件约定 / 发布
+## 7. 文件约定 / 发布
 
 - 文件放仓库根目录：`{slug}-blog{N}.html` + `{slug}-blog{N}.en.html`。
 - 发布前更新 `index.html`（按 slug 找到该博客的灰色占位行，**原地**改成链接、去掉 `todo` 类；**绝不在末尾 append**）+ `index.en.html` 同样处理。灰行 → 链接的完整形状：
@@ -104,7 +113,7 @@
 - **不要**手动加 `comments.js` / `search.js` / `index-button.js` / `i18n-tts.js` / `lightbox.js`（GitHub Action 自动注入），也别硬写 `← Hub`。
 - 用 `./publish.sh` 发布。git：`user.name=BigCat` / `user.email=chengchen0802@gmail.com`。
 
-## 7. 完成后
+## 8. 完成后
 
 调用 **PushNotification**（`status:"proactive"`，一行 < 200 字、无 markdown）：
 `博客精读已更新：Gwern · 用「长期主义写作」对抗互联网的健忘 · cissy0802.github.io/blog-deepread`
