@@ -87,8 +87,19 @@
 ## 6. 文件约定 / 发布
 
 - 文件放仓库根目录：`{slug}-blog{N}.html` + `{slug}-blog{N}.en.html`。
-- 发布前更新 `index.html`（按 slug 找到该博客的灰色占位行，**原地**改成 `<a class="entry" href="…">`、去掉 `todo` 类、加 href；**绝不在末尾 append**）+ `index.en.html` 同样处理。
-- **每次运行开头先「对齐」灰行**：扫 `TOPICS.md`，凡是 slug 没有对应页、且 index 里没有灰行的，按清单顺序补一条 `<div class="entry todo">`。两个 index 都要补。
+- 发布前更新 `index.html`（按 slug 找到该博客的灰色占位行，**原地**改成链接、去掉 `todo` 类；**绝不在末尾 append**）+ `index.en.html` 同样处理。灰行 → 链接的完整形状：
+
+  ```html
+  <!-- 之前 -->
+  <div class="entry todo"><span class="date">—</span><span class="title">作者 — 博客名</span><span class="meta">example.com</span></div>
+  <!-- 之后 -->
+  <a class="entry" href="{slug}-blog{N}.html" data-updated="2026-08-30"><span class="date">2026-08-30</span><span class="title">作者 — 一句钩子</span><span class="meta">example.com</span></a>
+  ```
+
+  **`data-updated` 和 `.date` 两处都要填今天的日期，且必须与页内 `<section class="updates" data-last-reviewed="…">` 完全一致**（三处同一个日期）。这个日期是「本页内容核对到哪一天为止」，不是发表日——月更回访会把它往前推。
+- **别在 index 里加 ★ 或任何 surprise 标记**：清单里的 `[surprise]` 只是给选题用的，读者侧不区分。
+- **每次运行开头先「对齐」灰行**：扫 `TOPICS.md`，凡是 slug 没有对应页、且 index 里没有灰行的，按清单顺序补一条 `<div class="entry todo">`（`.date` 填 `—`、不带 `data-updated`），插在 `<div class="group" data-todo>` 之后。两个 index 都要补。
+- **不用管排序**：index 页尾有一段内联脚本，会按 `data-updated` 把已发布条目倒序排到最前——你只管把日期填对，顺序它自己会排。
 - **index 条目的 `.title` 是钩子不是摘要**：`作者名 / 博客名 — 一个 clause 点出他最核心的那一个洞察`，中文 ≤ 约 50 字。
 - **不要**手动加 `comments.js` / `search.js` / `index-button.js` / `i18n-tts.js` / `lightbox.js`（GitHub Action 自动注入），也别硬写 `← Hub`。
 - 用 `./publish.sh` 发布。git：`user.name=BigCat` / `user.email=chengchen0802@gmail.com`。

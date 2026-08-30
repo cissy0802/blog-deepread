@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog Deep-Read — 博客精读</title>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog Deep-Read</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.7}
@@ -10,18 +10,16 @@ header p{margin-top:8px;font-size:1rem;color:#7d8794}
 header .subtitle{font-size:0.85rem;color:#6ea8fe;margin-top:6px;font-family:"SF Mono",Menlo,monospace}
 .list{margin-top:32px}
 .group{margin:30px 0 14px;font-size:0.9rem;font-weight:700;color:#5eead4;font-family:"SF Mono",Menlo,monospace;letter-spacing:.5px}
-.group .tag{color:#5c6672;font-weight:400}
 .entry{display:flex;align-items:baseline;gap:16px;padding:18px 20px;background:rgba(255,255,255,0.03);border-radius:8px;border:1px solid rgba(110,168,254,0.1);margin-bottom:14px;transition:all .15s;text-decoration:none;color:inherit;border-left:3px solid #6ea8fe}
 .entry:hover{transform:translateY(-2px);background:rgba(255,255,255,0.06);border-left-color:#5eead4}
-.entry .num{flex-shrink:0;font-size:0.85rem;color:#6ea8fe;font-weight:700;min-width:60px;font-family:"SF Mono",Menlo,monospace}
+.entry .date{flex-shrink:0;font-size:0.8rem;color:#6ea8fe;font-weight:700;min-width:84px;font-family:"SF Mono",Menlo,monospace}
 .entry .title{font-size:1.05rem;font-weight:600;color:#d5dce4}
-.entry .meta{font-size:0.85rem;color:#7d8794;margin-left:auto;text-align:right;font-family:"SF Mono",Menlo,monospace;flex-shrink:0;padding-left:12px}
+.entry .meta{font-size:0.82rem;color:#7d8794;margin-left:auto;text-align:right;font-family:"SF Mono",Menlo,monospace;flex-shrink:0;padding-left:12px}
 .entry.todo{background:rgba(255,255,255,0.015);border-color:rgba(110,168,254,0.05);border-left-color:#333b45;cursor:default;box-shadow:none}
 .entry.todo:hover{transform:none;background:rgba(255,255,255,0.015);border-left-color:#333b45}
-.entry.todo .num{color:#525a64}
+.entry.todo .date{color:#4a525c}
 .entry.todo .title{color:#6b7480;font-weight:600}
-.star{color:#f0b429;font-weight:700}
-@media(max-width:640px){.entry{flex-wrap:wrap;gap:8px}.entry .meta{margin-left:0;width:100%;text-align:left;padding-left:0}}
+@media(max-width:640px){.entry{flex-wrap:wrap;gap:6px}.entry .meta{margin-left:0;width:100%;text-align:left;padding-left:0}}
 </style>
 </head><body>
 <div class="container">
@@ -31,71 +29,85 @@ header .subtitle{font-size:0.85rem;color:#6ea8fe;margin-top:6px;font-family:"SF 
 <p class="subtitle">54 blogs · daily issue · monthly revisit</p>
 </header>
 <div class="list">
-<div class="group">Philosophy · Buddhism · Consciousness</div>
-<div class="entry todo"><span class="num"></span><span class="title">王利杰（Leo Wang） — MacroAlpha Blog</span><span class="meta">blog.leowang.net</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">David Chapman — Meaningness</span><span class="meta">meaningness.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Scott Alexander (Scott Siskind) — Astral Codex Ten</span><span class="meta">astralcodexten.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Erik Hoel — The Intrinsic Perspective</span><span class="meta">theintrinsicperspective.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> L. M. Sacasas — The Convivial Society</span><span class="meta">theconvivialsociety.substack.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Adam Mastroianni — Experimental History</span><span class="meta">experimental-history.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Bhante Sujato — Sujato&#x27;s Blog</span><span class="meta">sujato.wordpress.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Jayarava Attwood — Jayarava&#x27;s Raves</span><span class="meta">jayarava.blogspot.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Grace W. Lindsay — Neurdiness Blog</span><span class="meta">gracewlindsay.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Maria Popova — The Marginalian</span><span class="meta">themarginalian.org</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Paul Kingsnorth — The Abbey of Misrule</span><span class="meta">paulkingsnorth.substack.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Sarah Perry — The View from Hell</span><span class="meta">theviewfromhell.blogspot.com · dormant</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Ursula K. Le Guin — Ursula K. Le Guin — Blog</span><span class="meta">ursulakleguin.com · dormant</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> 阳志平 — 阳志平的网志 / 心智工具箱</span><span class="meta">yangzhiping.com</span></div>
+<div class="group">Published · newest first</div>
 <!-- entries -->
-<div class="group">Science · Math · Complexity</div>
-<div class="entry todo"><span class="num"></span><span class="title">Scott Aaronson — Shtetl-Optimized</span><span class="meta">scottaaronson.blog</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Kevin Simler — Melting Asphalt</span><span class="meta">meltingasphalt.com · dormant</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Derek Lowe — In the Pipeline</span><span class="meta">science.org</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Elisabeth Bik — Science Integrity Digest</span><span class="meta">scienceintegritydigest.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">John C. Baez — Azimuth</span><span class="meta">johncarlosbaez.wordpress.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">John Hawks — John Hawks weblog</span><span class="meta">johnhawks.net</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">José Luis Ricón — Nintil</span><span class="meta">nintil.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Sabine Hossenfelder — Backreaction</span><span class="meta">backreaction.blogspot.com</span></div>
-<div class="group">AI · Distributed Systems · Engineering</div>
-<div class="entry todo"><span class="num"></span><span class="title">Charity Majors — charity.wtf</span><span class="meta">charity.wtf</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Cosma Rohilla Shalizi — Three-Toed Sloth</span><span class="meta">bactra.org</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Julia Evans — jvns.ca</span><span class="meta">jvns.ca</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Gwern Branwen (pseudonym) — Gwern.net</span><span class="meta">gwern.net</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Lilian Weng — Lil&#x27;Log</span><span class="meta">lilianweng.github.io</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Martin Kleppmann — Martin Kleppmann’s Blog</span><span class="meta">martin.kleppmann.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Murat Demirbas — Metadata</span><span class="meta">muratbuffalo.blogspot.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Sarah Constantin — Rough Diamonds</span><span class="meta">sarahconstantin.substack.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> 王垠 — 当然，我在扯淡</span><span class="meta">yinwang.org</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Bert Hubert — Bert Hubert&#x27;s writings</span><span class="meta">berthub.eu</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Eric Schwitzgebel — The Splintered Mind</span><span class="meta">schwitzsplinters.blogspot.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Melanie Mitchell — AI: A Guide for Thinking Humans</span><span class="meta">aiguide.substack.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Rachel Kroll — Rachel by the bay</span><span class="meta">rachelbythebay.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Simon Willison — Simon Willison&#x27;s Weblog</span><span class="meta">simonwillison.net</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Vicki Boykis — Tech Blog</span><span class="meta">vickiboykis.com</span></div>
-<div class="group">Business · Organizations · Investing</div>
-<div class="entry todo"><span class="num"></span><span class="title">Aswath Damodaran — Musings on Markets</span><span class="meta">aswathdamodaran.blogspot.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Ben Thompson — Stratechery</span><span class="meta">stratechery.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Cedric Chin — Commoncog</span><span class="meta">commoncog.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Dan Wang — Dan Wang</span><span class="meta">danwang.co</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Gergely Orosz — The Pragmatic Engineer</span><span class="meta">blog.pragmaticengineer.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Patrick McKenzie（patio11） — Bits about Money</span><span class="meta">bitsaboutmoney.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> ちきりん（Chikirin，匿名写作） — Chikirinの日記</span><span class="meta">chikirin.hatenablog.com</span></div>
-<div class="group">History · Society · Culture · Parenting</div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Venkatesh Rao — Ribbonfarm</span><span class="meta">ribbonfarm.com · dormant</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Maggie Appleton — Maggie Appleton</span><span class="meta">maggieappleton.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Ada Palmer — Ex Urbe</span><span class="meta">exurbe.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Nadia Asparouhova（原名 Nadia Eghbal） — nadia.xyz</span><span class="meta">nadia.xyz</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Bret C. Devereaux — A Collection of Unmitigated Pedantry</span><span class="meta">acoup.blog</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Emily Oster — ParentData</span><span class="meta">parentdata.org</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> John Michael Greer — Ecosophia</span><span class="meta">ecosophia.net</span></div>
-<div class="entry todo"><span class="num"></span><span class="title">Henrik Karlsson — Escaping Flatland</span><span class="meta">henrikkarlsson.xyz</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Kris De Decker — LOW←TECH MAGAZINE</span><span class="meta">solar.lowtechmagazine.com</span></div>
-<div class="entry todo"><span class="num"></span><span class="title"><span class="star">★</span> Tanner Greer — The Scholar&#x27;s Stage</span><span class="meta">scholars-stage.org</span></div>
+<div class="group" data-todo>Upcoming · in reading order</div>
+<div class="entry todo"><span class="date">—</span><span class="title">王利杰（Leo Wang） — MacroAlpha Blog</span><span class="meta">blog.leowang.net</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">David Chapman — Meaningness</span><span class="meta">meaningness.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Scott Alexander (Scott Siskind) — Astral Codex Ten</span><span class="meta">astralcodexten.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Venkatesh Rao — Ribbonfarm</span><span class="meta">ribbonfarm.com · dormant</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Erik Hoel — The Intrinsic Perspective</span><span class="meta">theintrinsicperspective.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Scott Aaronson — Shtetl-Optimized</span><span class="meta">scottaaronson.blog</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Charity Majors — charity.wtf</span><span class="meta">charity.wtf</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Cosma Rohilla Shalizi — Three-Toed Sloth</span><span class="meta">bactra.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Kevin Simler — Melting Asphalt</span><span class="meta">meltingasphalt.com · dormant</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Julia Evans — jvns.ca</span><span class="meta">jvns.ca</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Gwern Branwen (pseudonym) — Gwern.net</span><span class="meta">gwern.net</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">L. M. Sacasas — The Convivial Society</span><span class="meta">theconvivialsociety.substack.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Maggie Appleton — Maggie Appleton</span><span class="meta">maggieappleton.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Lilian Weng — Lil&#x27;Log</span><span class="meta">lilianweng.github.io</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Martin Kleppmann — Martin Kleppmann’s Blog</span><span class="meta">martin.kleppmann.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Ada Palmer — Ex Urbe</span><span class="meta">exurbe.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Nadia Asparouhova（原名 Nadia Eghbal） — nadia.xyz</span><span class="meta">nadia.xyz</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Murat Demirbas — Metadata</span><span class="meta">muratbuffalo.blogspot.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Sarah Constantin — Rough Diamonds</span><span class="meta">sarahconstantin.substack.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Bret C. Devereaux — A Collection of Unmitigated Pedantry</span><span class="meta">acoup.blog</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">王垠 — 当然，我在扯淡</span><span class="meta">yinwang.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Adam Mastroianni — Experimental History</span><span class="meta">experimental-history.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Aswath Damodaran — Musings on Markets</span><span class="meta">aswathdamodaran.blogspot.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Bert Hubert — Bert Hubert&#x27;s writings</span><span class="meta">berthub.eu</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Bhante Sujato — Sujato&#x27;s Blog</span><span class="meta">sujato.wordpress.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Ben Thompson — Stratechery</span><span class="meta">stratechery.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Derek Lowe — In the Pipeline</span><span class="meta">science.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Elisabeth Bik — Science Integrity Digest</span><span class="meta">scienceintegritydigest.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Cedric Chin — Commoncog</span><span class="meta">commoncog.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Emily Oster — ParentData</span><span class="meta">parentdata.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Jayarava Attwood — Jayarava&#x27;s Raves</span><span class="meta">jayarava.blogspot.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Dan Wang — Dan Wang</span><span class="meta">danwang.co</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Eric Schwitzgebel — The Splintered Mind</span><span class="meta">schwitzsplinters.blogspot.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Gergely Orosz — The Pragmatic Engineer</span><span class="meta">blog.pragmaticengineer.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Grace W. Lindsay — Neurdiness Blog</span><span class="meta">gracewlindsay.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">John Michael Greer — Ecosophia</span><span class="meta">ecosophia.net</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Henrik Karlsson — Escaping Flatland</span><span class="meta">henrikkarlsson.xyz</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">John C. Baez — Azimuth</span><span class="meta">johncarlosbaez.wordpress.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">John Hawks — John Hawks weblog</span><span class="meta">johnhawks.net</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Kris De Decker — LOW←TECH MAGAZINE</span><span class="meta">solar.lowtechmagazine.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Maria Popova — The Marginalian</span><span class="meta">themarginalian.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">José Luis Ricón — Nintil</span><span class="meta">nintil.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Melanie Mitchell — AI: A Guide for Thinking Humans</span><span class="meta">aiguide.substack.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Paul Kingsnorth — The Abbey of Misrule</span><span class="meta">paulkingsnorth.substack.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Patrick McKenzie（patio11） — Bits about Money</span><span class="meta">bitsaboutmoney.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Rachel Kroll — Rachel by the bay</span><span class="meta">rachelbythebay.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Sabine Hossenfelder — Backreaction</span><span class="meta">backreaction.blogspot.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Sarah Perry — The View from Hell</span><span class="meta">theviewfromhell.blogspot.com · dormant</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Simon Willison — Simon Willison&#x27;s Weblog</span><span class="meta">simonwillison.net</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Tanner Greer — The Scholar&#x27;s Stage</span><span class="meta">scholars-stage.org</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Ursula K. Le Guin — Ursula K. Le Guin — Blog</span><span class="meta">ursulakleguin.com · dormant</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">Vicki Boykis — Tech Blog</span><span class="meta">vickiboykis.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">ちきりん（Chikirin，匿名写作） — Chikirinの日記</span><span class="meta">chikirin.hatenablog.com</span></div>
+<div class="entry todo"><span class="date">—</span><span class="title">阳志平 — 阳志平的网志 / 心智工具箱</span><span class="meta">yangzhiping.com</span></div>
 </div>
 </div>
+<script>
+/* Published rows carry data-updated — the date the page was last verified
+   against what its author has actually written. Sort them newest-first, so a
+   page the monthly pass refreshes surfaces back to the top; unwritten rows
+   have no date and keep the roadmap order below. Done here rather than in the
+   routines so neither of them has to re-sort this file. */
+(function () {
+  var list = document.querySelector('.list');
+  if (!list) return;
+  var done = [].slice.call(list.querySelectorAll('.entry[data-updated]'));
+  if (!done.length) return;
+  done.sort(function (a, b) {
+    return b.getAttribute('data-updated').localeCompare(a.getAttribute('data-updated'));
+  });
+  var anchor = list.querySelector('.group[data-todo]');
+  done.forEach(function (r) { list.insertBefore(r, anchor); });
+})();
+</script>
 <script src="https://hub.cissychen.com/comments.js" defer></script>
 <script src="https://hub.cissychen.com/search.js" defer></script>
 <script src="https://hub.cissychen.com/index-button.js" defer></script>
 <script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
-<script src="https://hub.cissychen.com/lightbox.js" defer></script>
 </body></html>
