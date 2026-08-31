@@ -17,11 +17,6 @@ BigCat 人工维护的必读博客清单。来源：**四家旗舰模型独立�
   - 主线：大脑中的大象 (The Elephant in the Brain)；思想的树状与网状结构；社交信号与潜意识动机
   - slug: `melting-asphalt`
 
-- **王利杰（Leo Wang）** — MacroAlpha Blog · <https://blog.leowang.net/> · 佛学 / 神经科学 / 意识 / 投资 · 亲选
-  - 早期投资人（PreAngel 创始合伙人），把佛学与道家的修行命题直接对接当代神经科学——不是比喻式的『这让我想起』，而是逐条追问『这个古法为什么有效、脑子里发生了什么』。同时写投资与市场心理，两条线共用一套认知框架。
-  - 主线：用神经科学解释六度波罗蜜等佛教修行何以有效；对龙树中观的批判性阅读：解决了旧问题也留下新问题；把禅修从神秘化叙事里拆出来做机制解释
-  - slug: `macroalpha-blog`
-
 - **David Chapman** — Meaningness · <https://meaningness.com/> · Philosophy & Buddhism · 4票
   - 从人工智能研究员转身为密宗佛教研究者，他用“无意义与有意义的动态平衡”来解构虚无主义，为身处复杂系统中的技术人提供了绝佳的认知脚手架。
   - 主线：流动的元理性 (Meta-rationality)；打破永恒主义与虚无主义；无明与模式的互织 (Nebulosity and Pattern)
