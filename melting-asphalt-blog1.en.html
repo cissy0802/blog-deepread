@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Simler · Melting Asphalt — Who Are Your Strangest Behaviors Working For?</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",Helvetica,sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.78;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.32;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc;font-style:italic}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+
+<div class="langbar"><a href="melting-asphalt-blog1.html">中文 →</a></div>
+
+<header>
+<div class="kicker">Blog Deep-Read · 01 · meltingasphalt.com</div>
+<h1>Kevin Simler · Melting Asphalt<br>Who are your strangest behaviors working for?</h1>
+<p class="sub">2012–2020 · 76 essays · 300,000+ words · dormant since March 2020</p>
+</header>
+
+<div class="modebar">
+<button id="btn-pop" class="on">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>Can you name a brand of bed sheets?</p>
+
+<p>Not "the ones from IKEA" — a brand. Most people can't, because you've almost never seen an ad for bed sheets. Which is odd: sheets aren't cheap, everyone buys them, and you sleep on them for a decade. Gas stations are the same story. Americans spend far more on gasoline than on soda, and both are near-perfect commodities — yet Sprite and 7-Up plaster every wall on earth while you can't recall a single Shell brand campaign.</p>
+
+<p>In 2014, an engineer who had recently quit Palantir and was writing a blog from home put those two small facts side by side and said: this means everything we believe about advertising is wrong. The standard story is <strong>emotional inception</strong> — ads pair a product with joy, sex, and safety often enough that your preferences quietly get rewritten, Pavlov-style. Kevin Simler's objection was that this makes us look worse than the dogs: the dogs actually got fed. Ads are just ink and pixels. As he put it, they "can't feed you, hurt you, or keep you warm at night."</p>
+
+<p>His alternative is <strong>cultural imprinting</strong>: an ad isn't trying to change you at all. It's changing <strong>the dictionary your neighbors use</strong>. Drinking a Corona "says" you're a chill person — and that sentence doesn't live in your head, it lives out in the public air. The ad prints it there and then walks away; your social instincts handle the rest. This explains all the things that <em>don't</em> happen: nobody sees your sheets, filling your tank is a private act, drinking a soda is a public one. A Super Bowl audience of a hundred million is worth far more than a hundred shows of a million each, because those hundred million people <strong>know that everyone else is watching too</strong>. And the prettiest piece of counter-evidence: if ads worked by inception, you'd be advertising to yourself by now — tape "Be more social" next to a supermodel on your wall, look at it daily, and effortlessly become a different person. Nobody does, because when the audience is one person there's no culture to imprint on.</p>
+
+<p>Then comes his hardest line. If you were never hypnotized, you have no immunity to claim: <strong>ads get us to buy things not in spite of our rationality, but because of it.</strong> Blocking them doesn't save you either — it just makes you the kid who showed up to the middle-school dance in his dad's suit.</p>
+
+<p>This is the signature Melting Asphalt move, and Simler spent eight years taking things apart with it: <strong>swing the camera off the person doing the thing and onto the people watching.</strong></p>
+
+<p>Why does anyone believe aliens built the pyramids? Don't reach for "crazy," "stupid," or "brainwashed," he says — the moment you apply the label you stop thinking, and besides, those brains were grown to the same blueprint as yours. His account: beliefs are like employees. Most are hired on merit (they have to tell you which plant is poisonous). Some are <strong>cronies</strong>, hired to work your social connections. The tells are concrete: abstract, unactionable, conspicuously displayed, overconfident, never bet on. And the biggest tell of all is <strong>strong emotion</strong> — feelings that, he writes, "have no business being within 1000ft of a meritocratic belief system." Then he indicts the reader directly: your belief about climate change is a crony, whichever side you're on. "I'm not accusing your belief of being false; I'm accusing it of being a crony." Because whatever you believe, there is no action available to you whose payoff depends on getting it right.</p>
+
+<p>Why do people admire other people? The standard answer is: to learn from them. Wrong, says Simler — I admire Meryl Streep and have zero interest in learning to act, and if admiration were about learning, teachers would top the status pyramid, whereas research professors clearly outrank teaching professors. His answer comes from a small desert bird, the Arabian babbler, which <strong>competes</strong> to feed its rivals, competes for guard duty, and competes to sleep on the two most exposed ends of the branch — and a low-ranked bird that dares feed a higher-ranked one gets beaten up for the offense. They aren't being nice; they're earning a credit score called prestige. Other birds pay that score because <strong>a bird who is useful to the group is worth keeping around</strong>. Prestige isn't "look how good I am," it's "here's what I'm worth as a teammate." So to understand the system, stop watching the people climbing and watch the people clapping.</p>
+
+<p>Why do people cry? Start with a fact: <strong>tears are the only bodily fluid that doesn't arouse disgust.</strong> The popular view is that crying "processes emotion." Simler: treating tears as a response to grief is like treating an erection as a response to lust — true enough, and it explains nothing about why the thing exists. The right question is what the behavior is trying to get other people to do. His answer turns on one physical property: <strong>tears leave a mark.</strong> A wet face, red eyes, a runny nose last for minutes after the fight is over — long enough to carry to a third party who wasn't there. In his economic register, crying trades away dominance to buy allies: <strong>"My tears are like an advertisement: 'Friendship on sale! 50% off! Today only!'"</strong></p>
+
+<p>Eight years, 76 essays, 300,000 words, ranging from advertising to tears to religion to schizophrenia to codebases. One spine holds it up: <strong>behaviors that make no sense at the individual level are usually not malfunctions but social technology; they don't complete inside your skull, they complete between people; and reading any one of them starts by swinging the camera onto the receiver.</strong></p>
+
+<p>He applied the principle to himself, too. To keep his essays from expiring, he did something few bloggers will do: <strong>he moved the publication date off the top of each post and buried it at the very bottom, in small light-gray type</strong>, and turned off comments. Melting Asphalt isn't a community, he wrote; there is no conversation here, and therefore no FOMO. A man who spent eight years arguing that your behavior is staged for the people around you built himself a website where nobody is being watched.</p>
+
+<p class="sub" style="margin-top:26px"><em>For how each idea got hammered out, whether his method transfers, and where he may actually be wrong — switch to "Full" above.</em></p>
+
+</div>
+
+<!-- ============ FULL ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<div class="glossary">
+<h3 style="margin-top:0">Glossary</h3>
+<ul>
+<li><b>Signal</b>: in biology and economics, any act that conveys information — a growl, an engagement ring, a tear. First principle of signal analysis: a signal only matters insofar as it changes the receiver's behavior.</li>
+<li><b>Honest signal</b>: a signal that's hard to fake. The test isn't "expensive" but <b>differentially expensive</b>: costly to produce, more costly to fake. A growl's depth is honest (a mouse can't produce it); fine words are not.</li>
+<li><b>Common knowledge</b>: not merely "everyone knows," but "everyone knows that everyone knows that everyone knows…" Super Bowl ads and sermons both run on it: what matters isn't that you heard, but that you know others heard.</li>
+<li><b>Free-rider problem</b>: an outcome benefits the group, but each individual's best move is to let someone else do the work. It kills collective action, and it's the starting gun for half of Simler's essays.</li>
+<li><b>Dominance / prestige</b>: the two forms of status. Dominance runs on fear, and its perks are <b>taken</b>; prestige runs on admiration, and its perks are <b>given</b>.</li>
+</ul>
+</div>
+
+<h2>One strange thing: bed sheets have no brands</h2>
+
+<p>Can you name a brand of bed sheets?</p>
+
+<p>Not "the ones from IKEA" — a brand. It's worth thirty seconds of thought, because it doesn't add up. Sheets aren't cheap, everyone buys them, and you lie on them for ten years. This ought to be a category where manufacturers claw at each other for space in your head. Yet you've barely seen a bed sheet ad — certainly not one trying to convince you that a particular brand will make your life a little brighter.</p>
+
+<p>Gas stations, same. Americans spend thousands a year on gasoline and hundreds on soda; both are near-perfect commodities. Coke, Pepsi, Sprite and 7-Up have painted themselves across every wall on the planet, and you can't call to mind a single Shell or Exxon brand campaign. If advertising can really plant affection in a mind from nothing, why are gas stations leaving that much money on the table?</p>
+
+<p>In September 2014, an engineer who had recently left Palantir and was writing a blog from his own house set those two small facts side by side and said: this isn't a coincidence. Everything we believe about advertising is wrong.</p>
+
+<p>His name is Kevin Simler and the blog is Melting Asphalt. He wrote it for eight years, on subjects running from advertising to tears to religion to schizophrenia to codebases to a small bird in Arabia. It looks like it has no organizing principle. It has exactly one.</p>
+
+<h2>Who he is</h2>
+
+<p>Simler graduated from Berkeley in 2004 with degrees in philosophy and computer science, started a PhD in computational linguistics at MIT, left in 2006, and joined Palantir — then a startup — where he spent seven years as an engineer, engineering manager, and product designer. He started Melting Asphalt in 2012 as, in his words, an <strong>exhaust pipe</strong> for his intellectual life. He left Palantir in 2013. In January 2018, <em>The Elephant in the Brain</em>, co-written with the economist Robin Hanson, was published by Oxford University Press.</p>
+
+<p>Eight years, 76 essays, 300,000-plus words — which is a startlingly low rate: eight essays in 2014, six in 2015. His stated reason isn't busyness. It's that <strong>he throws away more than he publishes</strong>: "For every draft that makes it all the way to the blog, there's at least one, sometimes two others that fall by the wayside, usually after I've put in 50 to 75 percent of the work."</p>
+
+<p><strong>Dormant since March 2020.</strong> The last post, <em>Outbreak</em>, is a playable early-COVID epidemic simulator; <em>Going Critical</em> (May 2019) is the same kind of thing. Strictly speaking, the last two things he made aren't essays at all — they're interactive models with sliders. He has never explained why he stopped. The blog is still up, and the front page still carries a section called "Needs some love," listing five older posts he considers underrated.</p>
+
+<h2>What he's been wrestling with</h2>
+
+<p>In "Honesty and the Human Body" (2013), Simler quotes a line from his own previous essay that is probably the doorway into all of his work:</p>
+
+<blockquote>To fully appreciate what goes on at a growing startup, it pays to remember than an engineer is also a primate.<cite>Anthropology of Mid-Sized Startups, 2012</cite></blockquote>
+
+<p>He wrote that after seven years as an engineering manager at Palantir, and you can almost see the scene: a man responsible for an organization discovers that the org chart doesn't explain what actually happens in the office. So he goes looking — not in management literature, but in primate ethology.</p>
+
+<p>From there he spent eight years on a single question: <strong>why do people do so many things that make no sense for the individual — things that are frankly absurd — and why does evolution not merely tolerate them but favor them?</strong></p>
+
+<p>The list runs long. People cry, a behavior that blurs your vision, blocks your nose, and makes you unable to speak clearly for several minutes. People believe things they know can't be checked, and believe them with unusual heat. People sit in a hall and listen to the hundredth rendition of "be kind" and enjoy it. People applaud, buy drinks for, and hoist onto their shoulders heroes they've never met.</p>
+
+<p>The mainstream explanations share a shape: <strong>they are all things happening inside your head</strong>. Crying processes emotion, ads rewrite your preferences, superstition is cognitive bias, admiration is apprenticeship, sermons are persuasion. Simler keeps finding the same defect: none of them balances the evolutionary books. Either they require the brain to do something of no benefit to itself (deliberately blurring your vision in order to "vent"), or they require people to be far stupider than they are (a few images rewriting what you want), or they explain the behavior but not why it appears <strong>only in humans</strong>.</p>
+
+<p>His alternative always has the same shape: <strong>the recipient of the behavior isn't you, it's the people around you. These aren't psychological faults, they're social technology; they don't complete inside one brain, they complete between brains.</strong></p>
+
+<p>Out of that grows his most original move: <strong>to read a social behavior, stop watching the person performing it and watch the person receiving it.</strong> For prestige, don't watch the climber, watch the clapper. For tears, don't watch the crier, watch whoever hands over the tissue. For ads, don't watch yourself, watch the person standing next to you. For sermons, don't ask "did I already know this," ask "who else is here, and did I already know that they knew it?"</p>
+
+<p>The three ideas below are three holes that principle dug in three completely unrelated patches of ground. Watching him dig is more interesting than the holes.</p>
+
+<h2>His ideas, told as how he found them</h2>
+
+<h3>1. Ads aren't hypnotizing you; they're rewriting the dictionary your neighbors use</h3>
+
+<p>What he set out to demolish is <strong>emotional inception</strong> (named after the film): ads don't argue, they hijack your feelings, pairing the product with love, joy, and sexual confidence until you feel warmly toward it and reach for it at the shelf. The Atlantic and Lifehacker both tell it that way, and tell it with confidence.</p>
+
+<p>Simler says he believed it for years too, until he actually stopped and thought about it — and got a shock, because the theory makes us look terrible:</p>
+
+<blockquote>Even Pavlov's dogs weren't so easily manipulated: they actually received food after the arbitrary stimulus. […] But most ads are toothless and impotent, mere ink on paper or pixels on a screen. They can't feed you, hurt you, or keep you warm at night.<cite>Ads Don't Work That Way, 2014</cite></blockquote>
+
+<p>Note the posture of that step. He didn't run an experiment or comb the literature. He <strong>weighed how unreasonable a theory requires the world to be</strong>: inception demands that human preferences be rewritable by a few free images. That's an extraordinary claim, and it should carry an extraordinary burden of proof — and it doesn't even meet Pavlov's minimum spec of actually handing over food.</p>
+
+<p>Then he goes looking for evidence, in an unusual way: <strong>instead of counting where ads appear, he counts where they don't.</strong> Bed sheets are the first hole; gas stations the second. The third is "why aren't brands two-faced?" If ads plant emotions one skull at a time, Corona should be selling beach vibes to stressed dads, party nights to college students, and champion energy to racing fans — layered feelings should beat a single one. Instead brands stake out one narrow slice of identity space and sit on it for decades. The fourth hole is the prettiest: if inception worked, <strong>you'd be advertising to yourself</strong> — print "Be more social" beside a supermodel or a private jet, hang it where you'll see it daily, and remodel yourself at no cost. Isn't that the silver bullet everyone wants? It doesn't exist.</p>
+
+<p>All four holes point one way:</p>
+
+<blockquote>Cultural imprinting is the mechanism whereby an ad, rather than trying to change our minds individually, instead changes the landscape of cultural meanings — which in turn changes how we are perceived by others when we use a product.<cite>Ads Don't Work That Way, 2014</cite></blockquote>
+
+<p>A Corona "says" you're chill; a Heineken says something else. That sentence lives out in the public air; the ad prints it there and walks away, and your social instincts do the rest. The mechanism doesn't need you hypnotized, only that you <strong>know other people saw the ad too</strong> — which is why it runs on billboards, subways, stadiums and the Super Bowl, and can't run in the little box beside your search results, because the internet is too fragmented for you to know whether your friends saw it. By the same logic, one Super Bowl audience of a hundred million beats a hundred shows of a million each.</p>
+
+<p>Then the line that actually stings. Since you were never bypassed, all that advice about "thinking critically" about advertising and "being wary of your emotional responses" is useless:</p>
+
+<blockquote>Ads get us to buy things not in spite of our rationality, but because of it.<cite>Ads Don't Work That Way, 2014</cite></blockquote>
+
+<p>And there's no exit. Block ads, skip ads, and what you've saved isn't nuisance — it's <strong>cultural intelligence</strong>. You start not knowing what things "say" any more, and become dated, unfashionable, socially hapless. Like the kid who wore his dad's suit to the middle-school dance.</p>
+
+<h3>2. Crazy beliefs aren't broken parts; they're cronies</h3>
+
+<p>"Crony Beliefs" (2016) is his most-shared essay, and it opens on a gap everyone recognizes: "From the inside, via introspection, each of us feels that our beliefs are pretty damn sensible. […] But when we consider the beliefs of other people? It's an epistemic shit show out there." Astrology, conspiracies, healing crystals, aliens and pyramids, a world made six thousand years ago complete with counterfeit fossils. How can anyone believe this?</p>
+
+<p>He immediately performs the move that is the single most worth stealing in his whole toolkit: <strong>a ban on the words "crazy," "stupid," "gullible," "brainwashed."</strong> Not out of politeness, out of intellectual discipline — the labels are sometimes right, "but once we apply them, we stop thinking." Besides, these people's brains were grown to your blueprint: "whatever processes beget their delusions are at work in our minds as well."</p>
+
+<p>Then the analogy. Acme Corp. is a property developer in a town called Nepotsville, where the unwritten rule is that firms hire the city council's relatives. Play along and your permits sail through; refuse and you get sued and smeared. So Acme faces two incentives at once: it needs to hire people who can actually do the work, and it needs to hire the mayor's utterly unqualified nephew Robert. Check on Robert six months later and you'd find him making spreadsheets, attending meetings, drawing a salary — indistinguishable from a real employee. What gives him away isn't him; <strong>it's how the company treats him</strong>. He's terrible and never fired, everyone handles him with kid gloves, the boss absorbs his mistakes and works late to cover them. "He's in the meritocracy, but not of the meritocracy."</p>
+
+<p>Beliefs work the same way. Most are kept on merit — they have to tell you where the lions are and which plants are poisonous. Some are <strong>cronies</strong>: hired not to model the world accurately but to collect social and political kickbacks on your behalf.</p>
+
+<p>The crucial thing is that the diagnosis looks at treatment, not content. How does a genuine merit belief react to criticism? <strong>It's delighted.</strong> "If I believe that my daughter's soccer game starts at 6pm, but my neighbor informs me that it's 5pm, I won't begrudge his correction — I'll be downright grateful." A meritocracy feels no anguish discarding a wrong belief; it's a pleasure. So he offers a crony's medical checklist: abstract and unactionable (no skin in the game); weighed with a thumb on the scale; conspicuously displayed; overconfident; never bet on. And the biggest one:</p>
+
+<blockquote>These emotions have no business being within 1000ft of a meritocratic belief system — but of course they make perfect sense as part of a crony belief system.<cite>Crony Beliefs, 2016</cite></blockquote>
+
+<p>Then he gets impolite and indicts the reader: "I charge you with harboring a crony belief about climate change. I don't care whether you subscribe to the scientific consensus or whether you think it's all a hoax." He anticipates the rebuttal — I've read the literature, I've reasoned carefully, I've even changed my mind — and shuts it in one line: <strong>"I'm not accusing your belief of being false; I'm accusing it of being a crony."</strong> The test isn't truth, it's where the reward comes from. And for almost everyone, no available action's payoff depends on whether that belief is right; every reward you can collect comes from how others judge you for holding it.</p>
+
+<p>Then comes the turn that flips the whole essay. If the disease is social incentives, "learn critical thinking" treats the symptom — like Acme's clueless executive who notices some employees never get fired, decides the problem is insufficient meritocracy, and launches performance reviews and oversight committees. Either the cronies get fired and the council comes down on the company, or the executives in the know have to work even harder to protect them. So rationality training is a <strong>multilateral</strong> solution, not a unilateral one: raise epistemic standards across a whole population and everyone gets cajoled into arguing better, lest they look careless or biased. Which lands the essay somewhere he himself finds unsettling:</p>
+
+<blockquote>Earlier I argued that other people are the cause of all our epistemic problems. Now I find myself arguing that they're also our best solution.<cite>Crony Beliefs, 2016</cite></blockquote>
+
+<h3>3. To understand admiration, don't watch the hero — watch the people clapping</h3>
+
+<p>"Social Status: Down the Rabbit Hole" (2015) begins by splitting "status" into two things. <strong>Dominance</strong> is the status you get from intimidating people — the schoolyard bully, who isn't impressive, only aggressive. <strong>Prestige</strong> is the status you get from doing impressive things — Hawking, Malala. Both can live in one person (his example is Steve Jobs: brilliant, charismatic, a notorious tyrant to his employees), but they're analytically distinct and nearly opposite at every point. Dominance makes people avoid, prestige makes them approach; dominance's perks are taken by the top, prestige's perks are given by the bottom; the dominant treat deference as their due, while the prestigious put on an elaborate show of humility when accepting it — performers bow, winners thank everyone in sight.</p>
+
+<p>The most impressive stretch is about eyes. He says this puzzled him for years:</p>
+
+<blockquote>In contexts governed by dominance, gazing at someone is considered a threat, an act of aggression. […] In contexts governed by prestige, on the other hand, gaze is considered a gift; to look at someone is to elevate him.<cite>Social Status: Down the Rabbit Hole, 2015</cite></blockquote>
+
+<p>The submissive can only steal glances — he has to monitor the dominant in order to stay out of his way, without getting caught doing it; the resource the dominant monopolizes is <strong>personal information</strong>. Prestige inverts it: the high-status person basks in the limelight, people shout "look at me," and admirers "pay" attention as freely as they pay for anything else. The contested resource is <strong>attention</strong>.</p>
+
+<figure>
+<svg viewBox="0 0 640 330" role="img" aria-label="Structural contrast between the dominance and prestige systems">
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#6ea8fe"/></marker>
+<marker id="ah2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5eead4"/></marker>
+</defs>
+<rect x="8" y="8" width="300" height="314" rx="12" fill="rgba(110,168,254,0.06)" stroke="rgba(110,168,254,0.3)"/>
+<rect x="332" y="8" width="300" height="314" rx="12" fill="rgba(94,234,212,0.06)" stroke="rgba(94,234,212,0.3)"/>
+<text x="158" y="38" text-anchor="middle" fill="#6ea8fe" font-size="17" font-weight="700" font-family="sans-serif">DOMINANCE</text>
+<text x="482" y="38" text-anchor="middle" fill="#5eead4" font-size="17" font-weight="700" font-family="sans-serif">PRESTIGE</text>
+<circle cx="158" cy="86" r="26" fill="rgba(110,168,254,0.25)" stroke="#6ea8fe"/>
+<text x="158" y="91" text-anchor="middle" fill="#d5dce4" font-size="12" font-family="sans-serif">high</text>
+<circle cx="158" cy="222" r="26" fill="rgba(110,168,254,0.1)" stroke="rgba(110,168,254,0.5)"/>
+<text x="158" y="227" text-anchor="middle" fill="#9aa6b2" font-size="12" font-family="sans-serif">low</text>
+<circle cx="482" cy="86" r="26" fill="rgba(94,234,212,0.25)" stroke="#5eead4"/>
+<text x="482" y="91" text-anchor="middle" fill="#d5dce4" font-size="12" font-family="sans-serif">high</text>
+<circle cx="482" cy="222" r="26" fill="rgba(94,234,212,0.1)" stroke="rgba(94,234,212,0.5)"/>
+<text x="482" y="227" text-anchor="middle" fill="#9aa6b2" font-size="12" font-family="sans-serif">low</text>
+<path d="M120,200 L120,120" stroke="#6ea8fe" stroke-width="2" marker-end="url(#ah)"/>
+<text x="112" y="164" text-anchor="end" fill="#9aa6b2" font-size="12" font-family="sans-serif">perks taken</text>
+<path d="M196,120 L196,200" stroke="#6ea8fe" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="204" y="164" fill="#9aa6b2" font-size="12" font-family="sans-serif">gaze = threat</text>
+<path d="M444,200 L444,120" stroke="#5eead4" stroke-width="2" marker-end="url(#ah2)"/>
+<text x="436" y="158" text-anchor="end" fill="#9aa6b2" font-size="12" font-family="sans-serif">perks given</text>
+<path d="M520,200 L520,120" stroke="#5eead4" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<text x="528" y="158" fill="#9aa6b2" font-size="12" font-family="sans-serif">gaze = gift</text>
+<text x="158" y="278" text-anchor="middle" fill="#c8d2dc" font-size="13" font-family="sans-serif">low status: avoid, steal glances</text>
+<text x="158" y="302" text-anchor="middle" fill="#7d8794" font-size="12" font-family="sans-serif">monopolized resource: information</text>
+<text x="482" y="278" text-anchor="middle" fill="#c8d2dc" font-size="13" font-family="sans-serif">low status: approach, look</text>
+<text x="482" y="302" text-anchor="middle" fill="#7d8794" font-size="12" font-family="sans-serif">contested resource: attention</text>
+</svg>
+<figcaption>The two status systems. Drawn from Social Status: Down the Rabbit Hole (2015).</figcaption>
+</figure>
+
+<p>Then the hinge of the whole essay: to understand dominance, look at high-status behavior; <strong>to understand prestige, look at low-status behavior</strong>. That's counterintuitive — anyone inside the system naturally cares about climbing — but it's exactly the wrong focus for anyone standing outside trying to see how the machine runs. As Will Rogers said, "We can't all be heroes because somebody has to sit on the curb and clap as they go by." Prestige-seeking is nothing without admiration. So there's really only one question: <strong>what's in it for the admirer?</strong></p>
+
+<p>The standard answer comes from Henrich and Gil-White's much-cited paper: admiration is for <strong>learning</strong> — you hover around the master and run his errands to buy proximity and imitation. Simler grants the fit, then lists what it can't cover: I admire Meryl Streep and have no wish to learn acting; we admire people less skilled than ourselves (the world chess champion still has to respect any grandmaster); we admire traits nobody can learn — IQ, beauty, strength. The finishing blow: if admiration were about learning, teachers would be the most prestigious people in society; instead research professors outrank teaching professors and we care far more about the Fields Medal than Teacher of the Year.</p>
+
+<p>So he goes to the desert. The <strong>Arabian babbler</strong> lives in the arid brush of Sinai and the Arabian Peninsula in groups of three to twenty, sharing a communal nest and defending a patch of trees that keeps the raptors off; a bird expelled from a group doesn't last long. Within the group there's a strict pecking order. Most of the time, though, they get along to an eerie degree — they don't just occasionally help each other, they <strong>compete</strong> to:</p>
+
+<blockquote>Unlike chickens, who compete to secure more food and better roosting sites for themselves, babblers compete to give food away and to take the worst roosting sites.<cite>Social Status: Down the Rabbit Hole, 2015</cite></blockquote>
+
+<p>The details persuade more than the conclusion. The alpha male will bring an insect and try to shove it down the beta's throat; the beta often refuses, even when hungry — and a lower-ranked bird that tries to feed a higher-ranked one is liable to get beaten up for the "offense." When the beta stands guard at the top of a tree, the alpha flies up and muscles him off the perch; when the beta wants a turn he can't use force, he just stands there insistently waiting to be allowed. They sleep lined up along a single branch, and the two exposed ends — the dangerous ones — are almost always held by the alpha and beta.</p>
+
+<p>This can't be "what's good for the group," because they actively <strong>interfere</strong> with each other's helping; if group success were the goal, interference would be pure loss. So where's the selfish motive? In prestige: a credit score recording how much good you've done for others. Other birds pay that score (interfering less with your mating, being slower to challenge you) because <strong>a bird who is useful to the group is worth keeping around</strong>. Transposed to humans, the answer is Pinker's definition, which Simler calls crisp as always: prestige status is "the public knowledge that you possess assets that would allow you to help others if you wished to." <strong>Prestige isn't "look how good I am," it's "here's what I'm worth as a teammate."</strong> That covers all three things Henrich's account couldn't. Hence his Golden Rule of politics: <strong>admire those who would make good allies.</strong> Plus a line that's very him: "We're sycophants, one and all — and (for those of you trying to keep score) that's a very good thing."</p>
+
+<p>A year later he turned the description into a machine. "Minimum Viable Superorganism" (2016) asks: what's the least a group of purely selfish individuals needs in order to act as a coherent whole? Not a government (who governs the governors? infinite regress). Not a strong man (anyone strong enough to rule alone is better off expropriating than cajoling). The only minimal architecture he knows is a <strong>Prestige Economy</strong>, running on one rule: grant people social status for advancing the group's goals. He immediately picks his own argument apart — hasn't that just relocated the free-rider problem? Why should I spend effort applauding the hero and buying him drinks? The answer is the previous essay's punchline, and it's why the machine turns over: <strong>for humans, celebrating a hero doesn't feel like a cost, it feels like a pleasure</strong> — and that eagerness is the tell-tale sign of self-interest. The drink buys you a relationship with someone who has proven his worth. The mice hold a council on belling the cat and stall because nobody will go; run a Prestige Economy and you simply keep raising the offered status until some ambitious young mouse decides it's worth it. "Like the mouse who bells the cat, he's doing it for the glory."</p>
+
+<h2>How he thinks</h2>
+
+<p><strong>First: use absent evidence as the crowbar.</strong> This is his most distinctive move. Most people argue by hunting for supporting examples; he hunts for the opposite — <strong>if the standard explanation were true, what should exist in the world that conspicuously doesn't?</strong> No bed sheet ads. Almost no gas-station brand ads. No two-faced brands. No personal advertising. Those four absences together topple emotional inception more effectively than any single presence could.</p>
+
+<p>"Tears" (2014) is the hardest use of that move. He doesn't ask what tears explain; he asks: <strong>we already have plenty of submission and distress signals</strong> — falling over, hunching, open palms, whimpers, grimaces — and evolution is stingy, so why would humans need to invent <em>another</em> one? The answer turns on one physical property: <strong>tears leave a mark.</strong> Every other signal is a flash of body language that's gone the moment you turn away, whereas a wet face, red puffy eyes, a runny nose and a heaving chest persist for many minutes after a conflict — long enough to carry to someone who wasn't there. So crying becomes a trade of dominance for allies: "My tears are like an advertisement: 'Friendship on sale! 50% off! Today only!'" And a funeral stops being a venue for processing emotion and becomes a machine for closing a wound in the community — "we heal not as individuals but as social creatures, soldered together with tears."</p>
+
+<p><strong>Second: lay out a row of unrelated oddities first, then see which theory covers them all at once.</strong> He calls them stylized facts. Humans are the only ground-dwelling species that sings; the only singing species that uses rhythm; we dance whenever we sing; we go to great lengths to retrieve the bodies of our dead from a battlefield. Each is hard to explain alone, so "explains all of them at once" becomes a form of evidential weight in itself — a theory like that "will have to be either profound or crazy — or both." And before he starts poking holes, he states the opposing theory at its strongest, quoting Dennett's stance: delay "the barrage of nitpicking objections and criticisms until we have seen what the edifice as a whole is."</p>
+
+<p><strong>Third: never let "crazy" end the inquiry.</strong> This gets pushed furthest in "Neurons Gone Wild," where he goes looking for a materialist account of exorcism rather than a joke at its expense:</p>
+
+<blockquote>To reject gods and spirits is easy: just bully them away in the name of science. […] Science isn't (just) about discrediting bad explanations. It's also about providing good ones.<cite>Neurons Gone Wild, 2013</cite></blockquote>
+
+<p>Which yields a lovely restatement: <strong>"Exorcism is a form of psychological therapy in which the disease is treated as an agent."</strong> The exorcist doesn't address the patient's self and doesn't reach for medicine; he negotiates with, reasons with, bribes and threatens the ailment itself. Seen that way, it's no surprise it works on a certain class of problems.</p>
+
+<p><strong>Fourth: put your confidence level on the page.</strong> He annotates his boldest claims in place: "For what it's worth, I don't have a ton of confidence in this assertion. I just think it's a reasonable hypothesis and worth putting forward, if for no other purpose than to draw out good counterarguments or counterexamples." "Neurons Gone Wild" opens even more bluntly: "I don't know how much of what I'm about to say is true. All I know is that it's damn interesting."</p>
+
+<p><strong>Fifth, and most characteristic: refuse to respond.</strong> He never writes about current events, so that nothing expires. To that end he changed the design of the site itself — and this detail is the best doorway into the man:</p>
+
+<blockquote>Instead of putting the publishing date at the top of each blog post, I put it at the very bottom (and in small, light gray text), to avoid calling attention to the post's age. I've also disabled comments […] Melting Asphalt isn't a community. You don't need to come here every day or every week to "be part of the conversation," because there is no conversation — and thus no FOMO.<cite>2015 Meta, 2016</cite></blockquote>
+
+<p>A man who spent eight years arguing that your behavior is staged for the people around you chose, for his own site, a structure in which <strong>nobody is being watched</strong>: no comments, no heat, no dates. That isn't a contradiction, it's an application of his conclusion — he knows what an audience does to writing, so he dismantled the mechanism on his own turf. His evidence is plain enough: the analytics show the archives get as much attention as new posts.</p>
+
+<h2>Where he might be wrong</h2>
+
+<p><strong>The biggest systematic tilt is that very useful hammer.</strong> His explanations always have one shape: social signaling, self-interest, status, groups. Eight years in, almost no essay lands anywhere else. A framework that can only produce one shape of answer makes it hard to tell whether it's explaining the world or trimming the world to fit. He noticed, and saved the sharpest line for himself: right after asserting that social incentives are the root of all our biggest thinking errors, he adds, "For what it's worth, I don't have a ton of confidence in this assertion."</p>
+
+<p><strong>The evidence really is thin.</strong> His method is almost entirely thought experiment, example, and evolutionary reasoning, with very little data. That isn't an outsider's complaint; it's his own verdict. In his 2014 year-in-review he quotes a reader on "Ads Don't Work That Way" — "Slightly hokey cokey with no data or stats to back it up but good read" — and then writes: <strong>"I think that's a fair summary."</strong> In the same post he concedes the essay overreached: "I probably overstated the case — some ads do seem to work by emotional manipulation." The essay now carries two footnotes added after publication, both patches from readers: the Corona–beach association isn't wholly arbitrary (it's a Mexican beer originally drunk by American tourists in beach towns), and bed sheets do sometimes get advertised. He left both in.</p>
+
+<p><strong>There are named critics.</strong> Tyler Cowen singled out his 2013 essay "Music in Human Evolution" in a Marginal Revolution link, calling it "False claims about music in human evolution"; Simler relayed that himself and conceded the post "is pretty speculative." The weightier one is Scott Alexander, who published a long piece titled "Contra Simler on Prestige" at Slate Star Codex on 21 October 2015, responding specifically to the social status essay; Simler listed it among that year's highlights and called it "a thorough response/review." <strong>At the time of writing, that site is unreachable under this environment's network policy and I have not read the piece. So I report the bibliographic fact only, and do not paraphrase its argument — go look it up yourself.</strong></p>
+
+<p><strong>There's also a risk in how his frameworks get misread.</strong> "Personhood: A Game for Two or More Players" (2014) treats personhood as a social contract: the more you behave like a person, the more you'll be treated as one. In 2015 he had to append an update because too many readers took it as a normative claim. He stresses the essay is entirely descriptive, "But that certainly doesn't mean it's OK to abuse them or subject them to arbitrary mistreatment. They're still human beings, after all, and worthy of being treated humanely — only it's empathy, not the logic of personhood, that argues for it." That's the standing hazard of debunking frameworks: a description of a mechanism reads easily as a permission slip. He put up the fence, but he put it up afterwards.</p>
+
+<p><strong>Finally, the silence itself.</strong> Since the book came out in 2018, Melting Asphalt has been updated twice, neither time with an essay — both were playable simulators — and nothing at all since March 2020. A writer whose founding principle was to never write anything that expires, and whose only form was the essay, spent his last effort on sliders and grids. It may mean he decided prose had run out for what he wanted to say: the things in "Going Critical" that only land once you've dragged a slider — that some ideas can spread in a city and mathematically cannot spread in the countryside — genuinely resist prose. It may also just be that finishing a book is exhausting. He never said, and we don't know.</p>
+
+<h2>Sources</h2>
+
+<ul class="reads">
+<li><span class="tag">2016</span><a href="https://meltingasphalt.com/crony-beliefs/" class="t">Crony Beliefs</a><span class="d">Splits beliefs into those kept on merit and those kept on connections, offers a checklist for spotting your own cronies, and indicts the reader to their face. His most widely shared piece.</span></li>
+<li><span class="tag">2015</span><a href="https://meltingasphalt.com/social-status-down-the-rabbit-hole/" class="t">Social Status: Down the Rabbit Hole</a><span class="d">Splits status into dominance and prestige, then uses the Arabian babbler to argue that the hinge of prestige is the admirer, not the climber.</span></li>
+<li><span class="tag">2014</span><a href="https://meltingasphalt.com/ads-dont-work-that-way/" class="t">Ads Don't Work That Way</a><span class="d">Dismantles emotional inception using bed sheets, gas stations, and "why doesn't anyone advertise to themselves," and proposes cultural imprinting. By his own account, his most controversial post.</span></li>
+<li><span class="tag">2014</span><a href="https://meltingasphalt.com/tears/" class="t">Tears</a><span class="d">Starts from "tears are the only body fluid that doesn't arouse disgust" and argues that weeping trades dominance for allies — and explains why only humans do it.</span></li>
+<li><span class="tag">2013</span><a href="https://meltingasphalt.com/neurons-gone-wild/" class="t">Neurons Gone Wild</a><span class="d">Runs from "neurons are semi-feral selfish agents" all the way to alter egos, possession and exorcism without once leaving materialism. His loosest, wildest piece.</span></li>
+<li><span class="tag">2019</span><a href="https://meltingasphalt.com/interactive/going-critical/" class="t">Going Critical</a><span class="d">A draggable simulator of diffusion across networks. His last complete work, and the only piece you have to play in order to read.</span></li>
+</ul>
+
+<p style="font-size:.9rem;color:#7d8794">The full archive is at <a href="https://meltingasphalt.com/archive/">meltingasphalt.com/archive</a>; the front page carries his own "Needs some love" list of five posts he considers underrated.</p>
+
+</div>
+
+<section class="updates" data-slug="melting-asphalt" data-last-reviewed="2026-08-31">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+
+<footer>Blog Deep-Read · One page ≈ one mind · Verified as of 2026-08-31</footer>
+
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>

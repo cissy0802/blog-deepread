@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Simler · Melting Asphalt — 你的怪行为在替谁办事</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+
+<div class="langbar"><a href="melting-asphalt-blog1.en.html">English →</a></div>
+
+<header>
+<div class="kicker">博客精读 · 01 · meltingasphalt.com</div>
+<h1>Kevin Simler · Melting Asphalt<br>你那些说不通的行为，是在替谁办事？</h1>
+<p class="sub">2012–2020 · 76 篇 · 30 万字以上 · 已停更（最后一篇 2020 年 3 月）</p>
+</header>
+
+<div class="modebar">
+<button id="btn-pop" class="on">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>你能说出一个床单的牌子吗？</p>
+
+<p>不是「宜家买的」，是牌子。绝大多数人想不出来——因为你几乎没见过床单广告。这很奇怪：床单不便宜，人人都买，一睡就是十年。加油站也一样：美国人一年花在汽油上的钱是花在汽水上的好几倍，两者都是几乎无差别的同质商品，可雪碧和七喜的广告糊满了每一面墙，你却想不起一条壳牌广告。</p>
+
+<p>2014 年，一个刚从 Palantir 辞职、在家写博客的工程师 Kevin Simler 把这两件小事并排放到一起，说：这说明我们关于广告的整套常识都错了。流行的说法是<strong>情感植入</strong>——广告把产品和快乐、性感、安全感反复配对，像训狗一样慢慢改写你的偏好。Simler 说这把人贬得比狗还不如：狗至少真吃到了食物，而广告只是纸上的墨、屏幕上的像素，「它们不能喂你、不能伤你，也不能在夜里给你保暖」。</p>
+
+<p>他的替代解释叫<strong>文化烙印</strong>：广告根本不想改变你，它改变的是<strong>你周围人的词典</strong>。喝科罗娜（Corona）「说」你是个松弛的人——这句话不长在你脑子里，长在外面的公共空气里；广告把它印上去就撒手不管，剩下的由你的社交本能自己办。这解释了那些「没发生的事」：床单没人看得见，加油是一个人干的，喝汽水是当着人干的。超级碗一亿观众比一百个节目各一百万观众值钱得多，因为那一亿人<strong>知道彼此都在看</strong>。还有最漂亮的一条反证：如果广告真能植入情感，你早该给自己做广告了——把「多社交一点」配张成功人士照贴墙上天天看，就能不费力地改造自己。没人这么干，因为对一个人做广告时，没有「文化」可以烙印。</p>
+
+<p>然后是他最狠的一下。既然你不是被催眠的，你就没有免疫可言：<strong>广告让你买东西，不是绕过你的理性，而是通过你的理性。</strong>屏蔽广告也不救你，那只会让你在朋友眼里变成穿着爸爸西装去参加初中舞会的孩子。</p>
+
+<p>这是 Melting Asphalt 的标准动作，Simler 用它拆了八年东西：<strong>把镜头从做这件事的人，转到旁边看的人身上。</strong></p>
+
+<p>为什么有人相信外星人造了金字塔？他说别急着叫「疯」「蠢」「被洗脑」——一贴标签你就停止思考了，何况这些人跟你是同一款脑子长出来的。他的解释是：信念像公司里的员工，多数靠业绩留下（它们得帮你判断哪株植物有毒），有些是<strong>关系户</strong>，靠替你打点关系留下。识别方法很具体：抽象、无法据以行动、你特别爱拿出来讲、过度自信、绝不肯下注。以及最大的标记——<strong>强烈的情绪</strong>，他说这些情绪「不该出现在一个讲业绩的信念系统方圆一千英尺之内」。然后他当面指控读者：你关于气候变化的看法就是个关系户，不管你站哪边；「我不是在指控你的信念为假，我是在指控它是个关系户」——因为无论你信什么，你都做不出任何一个回报取决于对错的行动。</p>
+
+<p>为什么人愿意崇拜别人？主流答案是「为了跟他学本事」。Simler 说不对：我敬佩梅丽尔·斯特里普，可一点也不想学演戏；如果崇拜真为学习，最有声望的该是老师——可搞研究的教授明显比教书的教授有声望。他的答案来自沙漠里一种叫阿拉伯鸫鹛的小鸟：它们<strong>抢着</strong>喂对方、抢着站岗放哨、抢着睡在树枝上最容易被鹰叼走的两端；低阶的鸟要是敢喂高阶的鸟，会挨一顿揍。它们不是在做好事，是在挣一种叫「声望」的信用分；而别的鸟愿意付账，因为一个乐于付出的家伙<strong>值得留在群里</strong>。声望不是「我多厉害」，是「我作为队友值多少」。所以要看懂这套系统，别盯着争地位的人，盯着鼓掌的人。</p>
+
+<p>为什么人会哭？先记住一个事实：<strong>眼泪是唯一不引起厌恶的体液</strong>。流行说法是哭在「处理情绪」。Simler 说，把眼泪当成悲伤的反应，就像把勃起当成情欲的反应——大概没说错，但完全没解释它为什么存在。正确的问题是「哭这个动作想让别人做什么」。他的答案落在眼泪的一个物理特性上：<strong>它留痕</strong>。湿脸、红眼、鼻涕在冲突结束后还能撑好几分钟，足够你带着它跑去找不在场的第三方。翻译成他的经济学语言：哭是拿支配换盟友，<strong>「我的眼泪像一则广告：友谊大甩卖！五折！仅限今天！」</strong></p>
+
+<p>八年，76 篇，三十多万字，题目从广告一路跑到眼泪、宗教、精神分裂、代码库。骨架只有一根：<strong>那些在个体层面说不通的行为多半不是故障，是社会技术；它们不在你脑子里完成，在人和人之间完成；而要看懂任何一件，第一步都是把镜头转到接收方去。</strong></p>
+
+<p>他把这条原则也用在了自己身上。为了让文章不过期，他做了一件很少有博主舍得做的事：<strong>把发表日期从顶部挪到最底下，用很小的浅灰色字印着</strong>，再关掉评论区。他说，Melting Asphalt 不是一个社群，这里没有对话，所以也没有错过的焦虑。一个花了八年论证「你的行为是给旁边的人看的」的人，为自己的网站选了一种没有人被看着的构造。</p>
+
+<p class="sub" style="margin-top:26px"><em>想看他每个想法是怎么一步步撞出来的、他的方法能不能拿去用、他哪里可能真的错了——切到上面的「完整版」。</em></p>
+
+</div>
+
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<div class="glossary">
+<h3 style="margin-top:0">Glossary · 术语表</h3>
+<ul>
+<li><b>信号（signal）</b>：生物学和经济学里指任何用来传递信息的动作——一声吼、一枚订婚戒指、一滴眼泪。研究信号的第一原则是：它只有在能改变接收方行为时才有意义。</li>
+<li><b>诚实信号（honest signal）</b>：难以伪造的信号。判据不是「贵」，而是<b>差别地贵</b>：真的做起来贵，假的做起来更贵。所以吼声的低沉是诚实的（老鼠吼不出来），说漂亮话不是。</li>
+<li><b>共同知识（common knowledge）</b>：不只是「大家都知道」，而是「大家都知道大家都知道大家都知道……」。超级碗广告和布道会都靠它工作：重要的不是你听见了，是你知道别人也听见了。</li>
+<li><b>搭便车问题（free-rider problem）</b>：一件事对集体有利，但对每个人来说最优策略都是让别人去干。它是一切集体行动的头号杀手，也是 Simler 一半文章的起点。</li>
+<li><b>支配与声望（dominance / prestige）</b>：地位的两种形态。支配靠让人怕，好处是<b>抢来的</b>；声望靠让人服，好处是别人<b>主动送上门的</b>。</li>
+</ul>
+</div>
+
+<h2>一件怪事：床单没有牌子</h2>
+
+<p>你能说出一个床单的牌子吗？</p>
+
+<p>不是「宜家买的」，是牌子。这件事值得想三十秒，因为它不合理。床单不便宜，人人都要买，买回去躺十年。按理说这该是一个厂商抢破头争夺你心智的品类。可你几乎没见过床单广告——起码没见过那种试图让你相信「用这个牌子的床单，你的人生会明亮一点」的广告。</p>
+
+<p>加油站也一样：美国人一年花在汽油上的钱数以千计，花在汽水上的数以百计，两者都是几乎无差别的同质商品；可乐和七喜的广告糊满了全世界每一面墙，你却基本想不起一条壳牌广告。如果广告真能凭空往人脑子里种好感，加油站凭什么放着这么大一笔钱不赚？</p>
+
+<p>2014 年 9 月，一个刚从 Palantir 辞职、正在自己家写博客的工程师把这两件小事并排放到一起，说：这不是巧合，这说明我们关于广告的整套常识都是错的。</p>
+
+<p>他叫 Kevin Simler，博客叫 Melting Asphalt。他在上面写了八年，题目从广告一路跑到眼泪、宗教、精神分裂、代码库、阿拉伯的一种小鸟。看起来毫无章法，其实只有一根骨架。</p>
+
+<h2>这人是谁</h2>
+
+<p>Kevin Simler，2004 年从伯克利毕业，拿了哲学和计算机科学两个学位。去麻省理工读计算语言学博士，2006 年退学，加入当时还是创业公司的 Palantir，干了七年工程师、工程经理和产品设计师。2012 年他开了 Melting Asphalt，用他自己的话说，是给智识生活装一根<strong>排气管</strong>。2013 年离开 Palantir。2018 年 1 月，他和经济学家 Robin Hanson 合写的《大脑中的大象》（<em>The Elephant in the Brain</em>）由牛津大学出版社出版。</p>
+
+<p>八年 76 篇，三十多万字，产量极低：2014 年 8 篇，2015 年 6 篇。他给的理由不是忙，是<strong>他扔掉的稿子比发出来的多</strong>——「每有一篇稿子走完全程上了博客，至少有一篇、有时是两篇半路夭折，通常是在我已经干完百分之五十到七十五的时候。」</p>
+
+<p><strong>停更时间：2020 年 3 月。</strong>最后一篇《Outbreak》是个新冠早期的疫情传播可玩模拟器，此前的《Going Critical》（2019 年 5 月）也是同一类东西——他最后写的两样东西严格来说都不是文章，是可以拖滑块的交互模型。他没解释过为什么停下。博客至今挂在那里，主页留着一个叫「需要一点爱」（Needs some love）的栏目，列着五篇他自己觉得被低估的旧文。</p>
+
+<h2>他跟什么较劲</h2>
+
+<p>Simler 在《诚实与人体》（2013）里引了自己前一篇文章的一句话，那句话大概是理解他全部工作的入口：</p>
+
+<blockquote>
+<span class="en">To fully appreciate what goes on at a growing startup, it pays to remember than an engineer is also a primate.</span>
+<span class="zh">要真正看懂一家成长期创业公司里在发生什么，最好记住：工程师也是一种灵长类。</span>
+<cite>Anthropology of Mid-Sized Startups, 2012</cite>
+</blockquote>
+
+<p>这是他在 Palantir 当了七年工程经理之后写下的，你几乎能看见那个场景：一个负责组织的人发现，组织架构图解释不了办公室里真正发生的事。于是他去翻的不是管理学，是灵长类行为学。</p>
+
+<p>从那儿开始，他花了八年跟同一个问题较劲：<strong>为什么人会做那么多在个体层面明显不划算、甚至荒唐的事，而演化不但容忍，还偏爱它们？</strong></p>
+
+<p>清单可以列很长。人会哭——一种让自己视线模糊、鼻子堵塞、几分钟内说不清话的行为。人会相信一些明知无从验证的事，而且相信得特别激动。人会坐在礼堂里听第一百遍「要善良」，还听得挺享受。人会给素不相识的英雄鼓掌、买酒、抬上肩膀。</p>
+
+<p>主流对这些行为的解释有个共同形状：<strong>它们都是发生在你脑子里的事</strong>。哭是在处理情绪，广告是在改写你的偏好，迷信是认知偏差，崇拜是为了学本事，布道是在说服你。Simler 反复发现同一个毛病：这些解释在演化上算不过账。要么它们要求大脑做一件对自己毫无好处的事（为了「宣泄」而故意让自己看不清路），要么它们要求人比实际愚蠢得多（几张图片就能改写偏好），要么它们解释了行为却解释不了它为什么<strong>只在人类身上</strong>出现。</p>
+
+<p>他的替代方案永远是同一形状：<strong>这些行为的收件人不是你，是你周围的人。它们不是心理故障，是社会技术；不在一个脑子里完成，在脑子和脑子之间完成。</strong></p>
+
+<p>由此长出他最原创的一招：<strong>要看懂一件社会行为，别盯着做这件事的人，盯着接收的人。</strong>要懂声望，别看争地位的，看鼓掌的；要懂眼泪，别看哭的，看递纸巾的；要懂广告，别看你自己，看你旁边那位；要懂布道，别问「这句话我知不知道」，要问「今天在场的还有谁，我知不知道他们也知道」。</p>
+
+<p>下面三个想法，是这条原则在三块完全不搭界的地面上凿出的三个坑。看他怎么凿，比看他凿出了什么更有意思。</p>
+
+<h2>他的想法，讲成「他怎么发现的」</h2>
+
+<h3>一、广告不是在催眠你，是在改写你身边人的词典</h3>
+
+<p>他要拆的东西叫<strong>情感植入</strong>（emotional inception，名字取自那部电影）：广告不跟你讲道理，它劫持情绪，把产品和爱、快乐、性自信反复配对；配得多了你就生出好感，最后在货架前伸手。《大西洋月刊》和 Lifehacker 都这么讲，讲得理直气壮。</p>
+
+<p>Simler 说他也这么信了很多年，直到真的停下来想了想，然后被吓了一跳——这个理论把人说得太不堪了：</p>
+
+<blockquote>
+<span class="en">Even Pavlov's dogs weren't so easily manipulated: they actually received food after the arbitrary stimulus. […] But most ads are toothless and impotent, mere ink on paper or pixels on a screen. They can't feed you, hurt you, or keep you warm at night.</span>
+<span class="zh">连巴甫洛夫的狗都没这么好操纵：那些狗在铃响之后是真的吃到了食物。……可绝大多数广告没牙也没劲，不过是纸上的墨、屏幕上的像素。它们不能喂你、不能伤你，也不能在夜里给你保暖。</span>
+<cite>Ads Don't Work That Way, 2014</cite>
+</blockquote>
+
+<p>请注意这一步的姿势。他没去找实验、没去查文献综述，他做的是<strong>掂量一个理论要求世界有多不合理</strong>：情感植入要求人的偏好可以被几张不花钱的图片改写，那是个非同小可的主张，理应承担非同小可的举证责任；而它连巴甫洛夫的最低配置——真的给点吃的——都没有。</p>
+
+<p>接下来他去找证据，方式很特别：<strong>他不数广告出现的地方，去数广告不出现的地方。</strong>床单是第一个坑，加油站是第二个。第三个是「品牌为什么不两面派」：如果广告是在一个个脑子里种情绪，科罗娜就该对疲惫的中年父亲演海滩、对大学生演派对、对赛车迷演冠军，多种几层总比一层强；可品牌几十年死守一小块形象空间不动。第四个坑最漂亮：如果广告能植入情感，<strong>你早该给自己做广告了</strong>——把「多社交一点」印在超模或私人飞机旁边挂墙上天天看，然后毫不费力地改造自己。这不正是所有人都想要的银弹吗？可它不存在。</p>
+
+<p>四个坑指向同一个答案：</p>
+
+<blockquote>
+<span class="en">Cultural imprinting is the mechanism whereby an ad, rather than trying to change our minds individually, instead changes the landscape of cultural meanings — which in turn changes how we are perceived by others when we use a product.</span>
+<span class="zh">文化烙印是这样一种机制：广告不试图一个一个地改变我们的想法，它改变的是文化含义的地貌——而这地貌决定了当我们使用某个产品时，别人会怎么看我们。</span>
+<cite>Ads Don't Work That Way, 2014</cite>
+</blockquote>
+
+<p>喝科罗娜「说」你松弛，喝海尼根说的是别的。这句话长在外面的公共空气里，广告把它印上去就撒手不管，剩下的事你的社交本能自己会办。这个机制不需要你被催眠，只需要你<strong>知道别人也看过那条广告</strong>——所以它跑在广告牌、地铁、体育场和超级碗上，跑不进谷歌搜索结果旁边的小方块，因为互联网太碎，你不知道你朋友看没看见。同理，超级碗的一亿观众比一百个节目各一百万观众值钱得多。</p>
+
+<p>最后是真正扎人的那一下。既然你没被绕过，那么「批判性地看待广告」「警惕自己的情绪反应」这类建议就全是废话：</p>
+
+<blockquote>
+<span class="en">Ads get us to buy things not in spite of our rationality, but because of it.</span>
+<span class="zh">广告让我们买东西，不是绕过了我们的理性，而是<strong>通过</strong>我们的理性。</span>
+<cite>Ads Don't Work That Way, 2014</cite>
+</blockquote>
+
+<p>而且没有出口。屏蔽广告、快进广告，你省下的不是骚扰，是<strong>文化情报</strong>：你会开始不知道现在什么东西「说」什么，变得过时、不合时宜、社交上笨手笨脚——像那个穿着爸爸的西装去参加初中舞会的孩子。</p>
+
+<h3>二、那些疯狂的信念不是坏掉的零件，是关系户</h3>
+
+<p>《关系户信念》（2016）传播最广，开头是每个人都熟悉的落差：「从内部看，靠内省，我们每个人都觉得自己的信念相当靠谱。……可一旦去看别人的信念呢？外面简直是一场认识论的车祸现场。」占星、阴谋论、水晶的疗愈力、外星人造金字塔、世界六千年前被造出来还配好了假化石。人怎么能信这种东西？</p>
+
+<p>他立刻做了一个动作，这个动作是他全部方法里最该被抄走的一条：<strong>禁止使用「疯了」「蠢」「好骗」「被洗脑」这些词。</strong>不是出于礼貌，是出于智识纪律——这些标签有时是对的，「但我们一旦贴上，就停止思考了」。何况这些人和你是同一款脑子长出来的，「不管是什么过程生出了他们的妄念，那个过程在我们脑子里也在运转」。</p>
+
+<p>然后是那个类比。有家叫 Acme 的地产公司开在一个叫「裙带镇」的地方，镇上的潜规则是公司得雇市议会成员的亲戚：配合的许可证顺利、合同不断，不配合的被起诉、被抹黑。于是 Acme 面对两套激励：它得像绩效制公司一样雇能干的人，又得雇市长那个完全不胜任的侄子 Robert。半年后你去看 Robert，会看见他做表格、开会、领工资，跟正常员工没两样。露馅的不是他，<strong>是公司对他的态度</strong>：他干得一塌糊涂却不会被辞退，所有人对他小心翼翼，老板容忍他的错误还加班替他补窟窿。「他在绩效制里，但不属于绩效制。」</p>
+
+<p>信念也一样。多数信念靠业绩留下——它们得告诉你狮子在哪、哪株植物有毒。但有些是<strong>关系户</strong>：被「雇用」不是为了准确描述世界，而是为了替你收取社会和政治上的回扣。</p>
+
+<p>关键在于，这个诊断不看内容，看待遇。真正的绩效信念面对批评会怎么样？<strong>它会高兴。</strong>「我要是以为女儿的球赛六点开始，邻居告诉我是五点，我不会怪他纠正我——我会感激他。」绩效系统扔掉错误信念时毫无痛苦，甚至是快乐的。于是他给出一份关系户的体检单：抽象、无法据以行动（没有「切身利害」）；掂量证据时总被你偏袒；你特别爱把它挂在身上到处讲；过度自信；不肯下注。以及最大的那个：</p>
+
+<blockquote>
+<span class="en">These emotions have no business being within 1000ft of a meritocratic belief system — but of course they make perfect sense as part of a crony belief system.</span>
+<span class="zh">这些情绪（为一个信念骄傲、改变主意时的痛苦、被质疑时的愤怒）不该出现在一个讲业绩的信念系统方圆一千英尺之内——但作为关系户系统的一部分，它们完全说得通。</span>
+<cite>Crony Beliefs, 2016</cite>
+</blockquote>
+
+<p>接着他很不客气地直接指控读者：「我在此指控你，亲爱的读者，你关于气候变化的信念是个关系户。我不在乎你信的是科学共识还是骗局论。」预料到的反驳——我读过文献、我认真推理过、我甚至改过主意——他一句话堵死：<strong>「我不是在指控你的信念为假，我是在指控它是个关系户。」</strong>判据不是真假，是回报从哪来。而关于气候的信念，对绝大多数人来说没有任何一个行动的收益取决于它的真假；你能收到的全部回报，来自别人怎么因为它评判你。</p>
+
+<p>最后是让整篇翻转的结论。如果病根在社会激励，那「学批判性思维」就是治标——像 Acme 那个搞不清状况的高管，看见几个人干得烂却不被辞退，于是加码考核、上培训班，结果要么关系户真被辞了、市议会来收拾公司，要么知情的高管得更费劲地保住他们。所以理性训练是<strong>多边</strong>方案而不是单边方案：得整群人一起提高认识论标准，大家才会因为怕被看成马虎或有偏见而好好讲理。于是文章结在一个他自己都觉得别扭的地方：</p>
+
+<blockquote>
+<span class="en">Earlier I argued that other people are the cause of all our epistemic problems. Now I find myself arguing that they're also our best solution.</span>
+<span class="zh">刚才我还在论证，别人是我们一切认识论问题的根源。现在我却发现自己在论证：别人也是我们最好的解药。</span>
+<cite>Crony Beliefs, 2016</cite>
+</blockquote>
+
+<h3>三、要看懂崇拜，别看英雄，看鼓掌的人</h3>
+
+<p>《社会地位：掉进兔子洞》（2015）第一个动作是把「地位」拆成两样东西。<strong>支配</strong>是靠威吓拿到的地位——校园恶霸，不厉害，只是凶。<strong>声望</strong>是靠做出让人服气的事拿到的——霍金、马拉拉。两者可以同时长在一个人身上（他举乔布斯：聪明、有魅力、对员工出了名的暴君），但逻辑上是两样东西，而且几乎处处相反：支配让人回避，声望让人趋近；支配的好处是高位者抢来的，声望的好处是低位者送上去的；支配者觉得顺从理所应当，有声望的人接受敬意时要费劲表演谦逊——演员鞠躬，得奖者拼命感谢别人。</p>
+
+<p>最见功力的是眼神那一段。他说这件事困扰了他很多年：</p>
+
+<blockquote>
+<span class="en">In contexts governed by dominance, gazing at someone is considered a threat, an act of aggression. […] In contexts governed by prestige, on the other hand, gaze is considered a gift; to look at someone is to elevate him.</span>
+<span class="zh">在由支配主导的场合，盯着一个人看是威胁，是侵犯行为。……而在由声望主导的场合，注视是一份礼物；看着一个人，就是抬举他。</span>
+<cite>Social Status: Down the Rabbit Hole, 2015</cite>
+</blockquote>
+
+<p>被支配者只能偷瞄——他必须监视对方以便闪开，又不能被抓到；支配者要垄断的资源是<strong>个人信息</strong>。声望场合正相反：高位者沐浴在聚光灯下，人们喊「看我」，崇拜者像付钱买任何东西一样心甘情愿地「付出」注意，要争夺的是<strong>注意力</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 640 330" role="img" aria-label="支配与声望的两套结构对照图">
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#6ea8fe"/></marker>
+<marker id="ah2" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto"><path d="M0,0 L7,3.2 L0,6.4 z" fill="#5eead4"/></marker>
+</defs>
+<rect x="8" y="8" width="300" height="314" rx="12" fill="rgba(110,168,254,0.06)" stroke="rgba(110,168,254,0.3)"/>
+<rect x="332" y="8" width="300" height="314" rx="12" fill="rgba(94,234,212,0.06)" stroke="rgba(94,234,212,0.3)"/>
+<text x="158" y="38" text-anchor="middle" fill="#6ea8fe" font-size="17" font-weight="700" font-family="sans-serif">支配 Dominance</text>
+<text x="482" y="38" text-anchor="middle" fill="#5eead4" font-size="17" font-weight="700" font-family="sans-serif">声望 Prestige</text>
+<circle cx="158" cy="86" r="26" fill="rgba(110,168,254,0.25)" stroke="#6ea8fe"/>
+<text x="158" y="92" text-anchor="middle" fill="#d5dce4" font-size="13" font-family="sans-serif">高位</text>
+<circle cx="158" cy="222" r="26" fill="rgba(110,168,254,0.1)" stroke="rgba(110,168,254,0.5)"/>
+<text x="158" y="228" text-anchor="middle" fill="#9aa6b2" font-size="13" font-family="sans-serif">低位</text>
+<circle cx="482" cy="86" r="26" fill="rgba(94,234,212,0.25)" stroke="#5eead4"/>
+<text x="482" y="92" text-anchor="middle" fill="#d5dce4" font-size="13" font-family="sans-serif">高位</text>
+<circle cx="482" cy="222" r="26" fill="rgba(94,234,212,0.1)" stroke="rgba(94,234,212,0.5)"/>
+<text x="482" y="228" text-anchor="middle" fill="#9aa6b2" font-size="13" font-family="sans-serif">低位</text>
+<path d="M120,200 L120,120" stroke="#6ea8fe" stroke-width="2" marker-end="url(#ah)"/>
+<text x="112" y="164" text-anchor="end" fill="#9aa6b2" font-size="12" font-family="sans-serif">好处被抢走</text>
+<path d="M196,120 L196,200" stroke="#6ea8fe" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="204" y="164" fill="#9aa6b2" font-size="12" font-family="sans-serif">凝视 = 威胁</text>
+<path d="M444,200 L444,120" stroke="#5eead4" stroke-width="2" marker-end="url(#ah2)"/>
+<text x="436" y="158" text-anchor="end" fill="#9aa6b2" font-size="12" font-family="sans-serif">好处主动送上</text>
+<path d="M520,200 L520,120" stroke="#5eead4" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ah2)"/>
+<text x="528" y="158" fill="#9aa6b2" font-size="12" font-family="sans-serif">凝视 = 礼物</text>
+<text x="158" y="278" text-anchor="middle" fill="#c8d2dc" font-size="13" font-family="sans-serif">低位者：回避、偷瞄</text>
+<text x="158" y="302" text-anchor="middle" fill="#7d8794" font-size="12" font-family="sans-serif">要垄断的资源：个人信息</text>
+<text x="482" y="278" text-anchor="middle" fill="#c8d2dc" font-size="13" font-family="sans-serif">低位者：趋近、注视</text>
+<text x="482" y="302" text-anchor="middle" fill="#7d8794" font-size="12" font-family="sans-serif">要争夺的资源：注意力</text>
+</svg>
+<figcaption>两套地位系统的结构差别。据 Social Status: Down the Rabbit Hole (2015) 绘制。</figcaption>
+</figure>
+
+<p>然后是全篇的枢纽：要理解支配，看高位者的行为；<strong>要理解声望，得看低位者的行为</strong>。这句话反直觉——身在系统里的人当然关心怎么爬上去；但站在外面看系统怎么转，那个焦点完全错了。正如威尔·罗杰斯说的：「我们不可能都当英雄，总得有人坐在路边鼓掌。」争声望这件事离开崇拜就什么也不是。所以真正的问题只有一个：<strong>崇拜者图什么？</strong></p>
+
+<p>标准答案来自 Henrich 和 Gil-White 那篇被引用无数次的论文：崇拜是为了<strong>学习</strong>——你围着高手转、替他跑腿，是为了换近距离观察和模仿的机会。Simler 承认这个解释挺合身，然后开始列它盖不住的东西：我敬佩梅丽尔·斯特里普，可一点也不想学演戏；我们甚至敬佩比自己弱的人（世界棋王也得敬重任何一位特级大师）；我们敬佩根本学不来的特质——智商、美貌、力气。最后一击：如果崇拜真是为了学习，教师该是社会上最有声望的人；可做研究的教授比教书的教授有声望，我们关心谁拿菲尔兹奖远超过谁拿年度最佳教师。</p>
+
+<p>于是他去了沙漠。<strong>阿拉伯鸫鹛</strong>（Arabian babbler）住在西奈和阿拉伯半岛的干旱灌木丛里，三到二十只一群，共用一个巢，共守一小片能躲开猛禽的树丛；被赶出群的鸟基本活不长。群内有严格的啄序。但大部分时候它们相处得好到诡异——它们不是偶尔互相帮忙，是<strong>抢着</strong>帮忙：</p>
+
+<blockquote>
+<span class="en">Unlike chickens, who compete to secure more food and better roosting sites for themselves, babblers compete to give food away and to take the worst roosting sites.</span>
+<span class="zh">鸡争的是给自己弄到更多食物和更好的栖木，鸫鹛争的却是把食物送出去、把最差的栖位留给自己。</span>
+<cite>Social Status: Down the Rabbit Hole, 2015</cite>
+</blockquote>
+
+<p>细节比结论更有说服力。阿尔法雄鸟会叼着虫子往贝塔嘴里硬塞，贝塔常常抗拒，哪怕它正饿着；而低阶的鸟若敢喂高阶的鸟，会因为这个「冒犯」挨一顿揍。贝塔在树顶站岗时，阿尔法会飞上去把它挤下来；反过来贝塔想接班，不能动手，只能在旁边执着地站着等对方允许。睡觉时它们排在一根树枝上，两个最容易被猛禽叼走的端头几乎总是阿尔法和贝塔占着。</p>
+
+<p>这不可能是「为群体好」，因为它们会主动<strong>妨碍</strong>对手做好事——真为群体好，妨碍就是纯粹的倒退。自私的动机在哪？在声望：一种记录「你为别人做过多少好事」的信用分。其他鸟愿意为这个分付账（少干扰它交配、不轻易挑战它），因为<strong>一只对群体有用的鸟值得留在群里</strong>。换到人身上，答案就是 Pinker 那句被他称为「一如既往地干脆」的定义：声望地位是「关于你拥有某些资产、且这些资产使你在愿意时能帮助他人的公共知识」。<strong>声望不是「我多厉害」，是「我作为队友值多少」。</strong>这一下就把 Henrich 盖不住的三件事全盖住了。于是他给出「政治的黄金律」：<strong>敬佩那些会成为好盟友的人。</strong>并加了一句很他的话：「我们个个都是马屁精——而且（给那些在记分的人）这是件大好事。」</p>
+
+<p>一年后他把这套东西从描述变成了机器。《最小可行超个体》（2016）问：一群纯粹自私的个体，最少需要什么才能变成一个能协同行动的整体？政府不行（谁来管政府？无限递归）；强人不行（强到能统治所有人时，抢劫比号召划算）。他知道的唯一最小架构叫<strong>声望经济</strong>，规则只有一条：因为别人推进了集体的目标而给他社会地位。他随即自己找茬：这不是把搭便车问题挪了个位置吗——凭什么我要出力去给英雄鼓掌、请他喝酒？答案正是上一篇的落点，也解释了这台机器为什么转得起来：<strong>对人类来说，给英雄鼓掌不像成本，像享受</strong>，而这种「乐意」正是自利的招牌——你请的那杯酒，换来的是跟一个已经证明过自己的人建立关系的机会。老鼠们开会讨论怎么给猫挂铃铛，卡在没人敢去；如果它们跑的是一套声望经济，只要把地位加价到某只年轻雄鼠觉得值，事情就成了。「就像那只给猫挂铃铛的老鼠，他是为了荣耀去的。」</p>
+
+<h2>他的思维方法</h2>
+
+<p><strong>第一，用缺席的证据当撬棍。</strong>这是他最独特的一招。大多数人论证时去找支持自己的例子，他找的是：<strong>如果主流解释成立，世界上本该有什么，而它偏偏没有？</strong>床单广告没有，加油站的品牌广告几乎没有，品牌的多重人格没有，给自己做的广告没有。这四样「没有」加起来，比任何一个「有」都更能扳倒情感植入说。</p>
+
+<p>《眼泪》（2014）是这一招用得最狠的一次。他没有问「眼泪能解释什么」，他问的是：<strong>投降信号和求助信号我们早就有一大堆了</strong>——躺倒、低头、摊开手掌、呜咽、皱眉——演化非常吝啬，那么人类为什么还需要<strong>再</strong>发明一个？答案落在眼泪的一个物理特性上：<strong>它留痕。</strong>别的信号都是一闪而过的身体语言，转身就没了；而湿脸、红肿的眼睛、鼻涕、抽噎的胸口在冲突结束后还能撑好几分钟，正好够你带着它跑去找一开始不在场的人。于是哭成了一次拿支配换盟友的交易：「我的眼泪像一则广告：友谊大甩卖！五折！仅限今天！」而葬礼也就不再是处理情绪的场合，而是缝合社群裂口的机器——「我们不是作为个体痊愈的，我们是作为社会性生物痊愈的，被眼泪焊在一起。」</p>
+
+<p><strong>第二，先摆一排互不相干的怪事，再看哪个理论能一次罩住它们。</strong>他管这叫「风格化事实」：人类是唯一在地面上唱歌的物种；唯一唱歌带节拍的；一唱歌就要跳；我们执着于把同类的尸体从战场上抢回来。单看每一件都难解释，所以「能一次解释全部」本身就成了一种证据强度——这样的理论「要么深刻要么疯狂，或者两者都是」。而在动手挑毛病之前，他会先把对手的理论讲到最好：他引 Dennett 的态度，「把连珠炮般的挑刺和批评推迟到我们看清这栋建筑的全貌之后」。</p>
+
+<p><strong>第三，禁止用「疯了」结束思考。</strong>这条在《癫狂的神经元》里被推到最远——他要为驱魔找一个唯物主义的解释，而不是嘲笑它：</p>
+
+<blockquote>
+<span class="en">To reject gods and spirits is easy: just bully them away in the name of science. […] Science isn't (just) about discrediting bad explanations. It's also about providing good ones.</span>
+<span class="zh">要否定神灵和鬼魂很容易：以科学之名把它们轰走就是了。……科学不（只）是关于拆穿坏解释的，它也关于给出好解释。</span>
+<cite>Neurons Gone Wild, 2013</cite>
+</blockquote>
+
+<p>顺着这条路他给出那个漂亮的重述：<strong>「驱魔是一种把疾病当作行动者来对待的心理治疗。」</strong>驱魔师不对着病人的「自我」讲话，也不找药，他直接跟病症本人谈判、讲理、贿赂、威胁。这样一看，它在某一类问题上有效就毫不奇怪了。</p>
+
+<p><strong>第四，把置信度写在纸面上。</strong>他会在最大胆的主张旁边直接标注：「说句实话，我对这个断言没有太多信心。我只是觉得它是个合理的假说，值得提出来，哪怕唯一的用处是引出好的反驳或反例。」《癫狂的神经元》开头更干脆：「我不知道接下来要说的有多少是真的。我只知道它有意思得要命。」</p>
+
+<p><strong>第五，也是最像他的一件事：拒绝响应。</strong>他不写时事，一篇也不写，为的是文章不会过期。为此他动了网站本身的设计——而这个细节是理解这个人的最好入口：</p>
+
+<blockquote>
+<span class="en">Instead of putting the publishing date at the top of each blog post, I put it at the very bottom (and in small, light gray text), to avoid calling attention to the post's age. I've also disabled comments […] Melting Asphalt isn't a community. You don't need to come here every day or every week to "be part of the conversation," because there is no conversation — and thus no FOMO.</span>
+<span class="zh">我没把发表日期放在每篇文章的顶部，而是放在最底下（还用了很小的浅灰色字），免得让人注意到它的年纪。我也关掉了评论……Melting Asphalt 不是一个社群。你不必每天或每周来这里「参与对话」，因为这里没有对话——所以也就没有错过的焦虑。</span>
+<cite>2015 Meta, 2016</cite>
+</blockquote>
+
+<p>一个花了八年论证「你的行为其实是给旁边的人看的」的人，为自己的网站选了一种<strong>没有人被看着</strong>的构造：没有评论、没有热度、没有日期。这不是矛盾，是他的结论的应用——他知道有人看着会把写作变成什么，所以把那套机制从自己的地盘上拆掉了。他给的证据很朴素：数据显示归档页拿到的注意力和新文章一样多。</p>
+
+<h2>他哪里可能是错的</h2>
+
+<p><strong>最大的系统性偏斜是那把太好用的锤子。</strong>他的解释形状永远一样：社会信号、自利、地位、群体。用了八年，几乎没有一篇文章的结论落在别处。一个只能给出一种形状的答案的框架，很难说清它是在解释世界，还是在把世界剪成自己的形状。他自己意识到了，并把最狠的那句留给了自己：在断言「社会激励是我们一切最大的思维错误的根源」之后，他立刻加了一句「说句实话，我对这个断言没有太多信心」。</p>
+
+<p><strong>证据的分量确实不够。</strong>他的方法几乎全是思想实验、举例和演化推理，很少有数据。这不是外人的挑剔，是他自己认下的。2014 年的年度总结里，他引用了一位读者对《广告不是那样工作的》的评价——「有点稀里糊涂，没有数据也没有统计撑着，不过读着不错」——然后写道：<strong>「我觉得这是个中肯的总结。」</strong>同一篇里他还主动认了那篇文章的越界：「我大概说过头了——有些广告看起来确实是靠情绪操纵起作用的。」如今那篇文章挂着两条事后补的脚注，都是读者打的补丁：科罗娜和海滩的联想其实不是全然任意的（它本来就是墨西哥啤酒，最早由美国游客在海滨小镇喝起来）；床单其实也是有广告的。他把两条都留在了文章里。</p>
+
+<p><strong>有名有姓的批评者也有。</strong>Tyler Cowen 在 Marginal Revolution 的链接里点名批评了他 2013 年那篇《人类演化中的音乐》，用词是「关于音乐在人类演化中的不实主张」；Simler 自己转述了这条，并承认「说句公道话，那篇文章确实相当思辨」。更有分量的一条来自 Scott Alexander：2015 年 10 月 21 日，Slate Star Codex 发了一篇题为《Contra Simler on Prestige》的长文，专门回应他那篇社会地位；Simler 把这件事列为当年的高光，称它是「一篇彻底的回应／评论」。<strong>本页写作时该站在本环境的网络策略下不可访问，我没有读到原文，因此不复述它的论证——只报告这个书目事实，供你自己去查。</strong></p>
+
+<p><strong>还有一类风险，是他的框架被误读的方式。</strong>《人格：一场两人或更多人的游戏》（2014）说「人格」是一份社会契约：你越表现得像个人，就越会被当作人对待。2015 年他不得不补一条更新，因为太多读者把它读成了规范主张——他强调这篇完全是描述性的，「但这绝不意味着可以虐待他们或任意对待他们。他们仍然是人，值得被人道地对待——只不过替这一点辩护的是同理心，不是人格的逻辑」。这类「揭穿式」框架的危险正在于此：机制描述很容易被当成许可证。围栏他补上了，但是事后补的。</p>
+
+<p><strong>最后，停更这件事本身。</strong>2018 年书出版之后，Melting Asphalt 只更新过两次，两次都不是文章而是可玩的模拟器；2020 年 3 月之后再无更新。一个以「不写会过期的东西」为原则、以散文为唯一形式的写作者，在写完那本书之后，把最后的力气花在了滑块和网格上。这可能意味着他觉得散文对他要说的事情已经到头了——《Going Critical》里那些只有拖着滑块才懂得了的东西（比如「有些想法在城市里能扩散，在乡下数学上就是不可能扩散」）确实是散文说不清的。也可能只是因为写完一本书太累。他没解释过，我们不知道。</p>
+
+<h2>出处</h2>
+
+<ul class="reads">
+<li><span class="tag">2016</span><a href="https://meltingasphalt.com/crony-beliefs/" class="t">Crony Beliefs</a><span class="d">把信念分成靠业绩留下的和靠关系留下的，给出一份识别自己脑中关系户的体检单，并当面指控读者。传播最广的一篇。</span></li>
+<li><span class="tag">2015</span><a href="https://meltingasphalt.com/social-status-down-the-rabbit-hole/" class="t">Social Status: Down the Rabbit Hole</a><span class="d">把地位拆成支配与声望两套相反的系统，再靠阿拉伯鸫鹛论证：声望的枢纽不是争地位的人，是崇拜者。</span></li>
+<li><span class="tag">2014</span><a href="https://meltingasphalt.com/ads-dont-work-that-way/" class="t">Ads Don't Work That Way</a><span class="d">用床单、加油站和「为什么没人给自己做广告」拆掉情感植入说，提出文化烙印。他自己说这是最有争议的一篇。</span></li>
+<li><span class="tag">2014</span><a href="https://meltingasphalt.com/tears/" class="t">Tears</a><span class="d">从「眼泪是唯一不引起厌恶的体液」出发，论证哭是一次拿支配换盟友的交易，并解释为什么只有人类会哭。</span></li>
+<li><span class="tag">2013</span><a href="https://meltingasphalt.com/neurons-gone-wild/" class="t">Neurons Gone Wild</a><span class="d">从「神经元是半野化的自私智能体」一路推到多重人格、附身和驱魔，全程不离唯物主义。他最放得开的一篇。</span></li>
+<li><span class="tag">2019</span><a href="https://meltingasphalt.com/interactive/going-critical/" class="t">Going Critical</a><span class="d">可拖动的网络扩散模拟器。他最后的完整作品，也是他唯一一篇必须动手玩才读得懂的文章。</span></li>
+</ul>
+
+<p style="font-size:.9rem;color:#7d8794">全站归档在 <a href="https://meltingasphalt.com/archive/">meltingasphalt.com/archive</a>；主页底部有他自己标注的「需要一点爱」栏目，列着五篇他觉得被低估的旧文。</p>
+
+</div>
+
+<section class="updates" data-slug="melting-asphalt" data-last-reviewed="2026-08-31">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-08-31</footer>
+
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
