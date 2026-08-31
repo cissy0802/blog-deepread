@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Chapman · Meaningness — Meaning is cloud-like</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+
+<div class="langbar"><a href="meaningness-blog2.html">中文 →</a></div>
+
+<header>
+<div class="kicker">Blog Deep-Read · 02 · meaningness.com</div>
+<h1>David Chapman · Meaningness<br>Meaning is cloud-like: real, but you can't hold it</h1>
+<p class="sub">2010–2022 · 215 sections in the table of contents; 131 written, 84 still empty stubs · ~225,000 words · not dormant: new writing moved to Substack in 2023, latest post August 2026</p>
+</header>
+
+<div class="modebar">
+<button id="btn-pop" class="on">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>A dozen-odd years ago, an MIT artificial intelligence PhD found a penny slot machine in a hotel next to the Reno airport.</p>
+
+<p>He doesn't gamble. He was running an experiment. He wanted to know what gamblers were feeling, and he assumed he couldn't feel it — gamblers' pleasure rests on false beliefs ("I'm lucky tonight"), and since he knew those were false, he should be immune. So he applied rational decision theory: find the lowest-stakes machine in the building, feed it the smallest bill it would take, one dollar.</p>
+
+<p>He won five cents. Then ten. Then lost several in a row. He raised his bet from one cent to five — and won again. And then, in his own words: <strong>"I realized that the universe loved me, and that everything was going to come out well after all."</strong> The permanent low-grade sense that something was vaguely wrong disappeared, and he recognized it had always been a misunderstanding. Everything is as it should be; everything is connected; everything makes sense.</p>
+
+<p>He knew this was nonsense. He is a lifelong atheist, and a sardonic mental commentary was running the whole time, reminding him that casino operators make sure slot machines are a losing bet. <strong>The commentary was useless.</strong> He walked back toward his room grinning. A woman got into the elevator and asked if he'd had a lucky night. "No!" he exclaimed, beaming. "At one point I was up by thirty-seven cents, but in the end I lost the whole dollar!" Her face closed; she wouldn't look at him for the rest of the ride. He wrote: <strong>"There's something wrong with anyone who's that excited about thirty-seven cents."</strong></p>
+
+<p>His name is David Chapman. Through the 1980s he was at the MIT AI Lab, a place with 2,000 applicants per graduate slot, unlimited Department of Defense funding, and a shared conviction that human-level machine intelligence was around the corner — later he called it a failed Manhattan Project: "We had brilliant, fascinating, innovative theories, all of which were utterly wrong." He took the PhD, left science, founded and sold a biotech informatics company, turned to Tibetan tantric Buddhism, and in July 2010 began writing a book on meaningness.com that he still hasn't finished.</p>
+
+<p>The thirty-seven cents is the book's whole argument compressed into a joke. <strong>That blissful sense that everything makes sense is not caused by evidence; it can be bought for thirty-seven cents; and it is exactly what the largest systems of meaning in human history are selling.</strong></p>
+
+<p>He gave it a name: <strong>eternalism</strong> — not a belief but a stance, a way of relating to the world in which everything has a definite, knowable meaning. Its opposite is <strong>nihilism</strong>: nothing means anything. He spent more than a decade arguing that these are two directions of the same mistake, and the mistake is <strong>refusing to admit that meaning is cloud-like</strong>.</p>
+
+<p>Cloud-like — his word is <em>nebulosity</em>. Not "fuzzy," not "we don't know yet." Rather: solid from a distance, mere fog when you walk in; impossible to say where one cloud ends and another begins; you watch one dissolve and cannot find the exact moment it ceased to exist; <strong>you may not even be able to say whether there is a cloud in a particular place</strong>. Meaning is like that. And meaning is simultaneously <strong>patterned</strong> — real, distinct, good enough. The two always come together.</p>
+
+<p>Here is his most counterintuitive move: given that fact, the right answer is <strong>not to split the difference</strong>. He wrote a section called "No middle way." Eternalism and nihilism aren't two ends of a spectrum; they're two directions of the same refusal — one tries to freeze the cloud into stone, the other says that if you can't hold it, it isn't there. Averaging them gets you something half frozen and half denied.</p>
+
+<p>From this follows his most useful conclusion. If eternalism is a <strong>stance</strong> and not a <strong>belief</strong>, then refuting its beliefs is useless:</p>
+
+<blockquote>
+<span class="en">Critics of eternalist systems usually attack their beliefs. False beliefs are mostly not what make eternalism compelling, though—it's the emotional dynamics.</span>
+<cite>"I get duped by eternalism in a casino," 2013</cite>
+</blockquote>
+
+<p>This explains a wall everyone has hit: you demolish someone's religion or politics or ism point by point, and they don't budge an inch. You were hitting the shell hanging on the outside. The load is carried by the warm current inside that says <em>at last it all makes sense</em>. You never touched it.</p>
+
+<p>He scales this psychology up to centuries and arrives at his second big idea: <strong>"because" can stop working</strong>. A systematic culture answers every "why" with a "because," and a chain of them arrives at some ultimate truth; for several centuries, religious, political, scientific and aesthetic systems supplied meaning with iron scaffolding that way. Then, in the early twentieth century, non-Euclidean geometry, relativity, and the foundational crisis in mathematics punched through the "ultimate." The public read the news of the 1919 Eddington experiment as: <strong>SCIENTISTS PROVE: NOTHING MAKES SENSE.</strong> Chapman writes: "Who cares about gravity? No one. That wasn't the point." The point was that ethics, politics and aesthetics had all been resting on Euclid and Newton. <strong>"We are back in a becauseless world."</strong></p>
+
+<p>Then he does something very few writers can bear to do. Having finished the history, he says plainly:</p>
+
+<blockquote>
+<span class="en">In fact, after finishing this history, I will demolish it. The whole thing is a lie. There are no modes; we are always "in the fluid mode" because meaningness has always been both patterned and nebulous.</span>
+<cite>"How meaning fell apart," 2016</cite>
+</blockquote>
+
+<p>This isn't modesty; it's the core of his method, and the reason is hard. If eternalism as a pure state is unreachable — because the cloud is always obvious — then the historical "systematic mode" defined by it cannot really have existed either. He built the scaffold only to let you see what people are pretending. Once you've seen it, the scaffold has to come down; leave it standing and it becomes the next eternalist system.</p>
+
+<p>His most famous page is a brick that fell off this abstract theory. "Geeks, MOPs, and sociopaths in subculture evolution" (2015) describes how a subculture gets eaten, and even gives a number: <strong>the optimal mop-to-geek ratio is maybe 6:1</strong>. But most people who cite it never read to the end — where he says subcultures are so easy to exploit precisely because <strong>they are eternalistic</strong>: the New Thing has been made into a source of life's meaning. His most-shared diagram is a footnote to the book nobody finishes.</p>
+
+<p>Finally, his constructive proposal, and the most useful question he has ever written: <strong>"Do you have a system of meaning, or does the system have you?"</strong> He does not urge you to deconvert — he has watched too many people get thrown into nihilism on the day their system collapsed. His advice is to <strong>unpick</strong> your system like a seam: leave the overall structure in place and examine, one stitch at a time, when each piece works and when it fails. The goal is not to assemble a new true system out of the correct bits (nebulosity doesn't support that kind of verdict); it's to move from <strong>being had by</strong> a system to <strong>having</strong> one, and then to having several. Tools don't do the work; you use tools to do the work.</p>
+
+<p class="sub" style="margin-top:26px"><em>For how each of these ideas was actually arrived at, why a can-opener experiment dismantles political zealotry, his self-declared 70% failure rate, and what those 84 permanently empty sections mean — switch to "Full" above.</em></p>
+
+</div>
+
+<!-- ============ FULL ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<div class="glossary">
+<h3 style="margin-top:0">Glossary</h3>
+<ul>
+<li><b>Nebulosity</b>: Chapman's coinage and central term. The insubstantial, amorphous, non-separable, transient, ambiguous nature of meaningness. Crucially, it is <b>a feature of reality, not a defect in our knowledge</b> — not "we haven't figured it out yet" but "there was never that sharp a line."</li>
+<li><b>Pattern</b>: nebulosity's twin. Meaning is also reliable, clear, distinct, enduring, definite. His entire argument rests on the two almost always holding at once.</li>
+<li><b>Stance</b>: a way of relating to meaning, not a proposition about it. Stances are bodily and emotional; you can switch three times in five minutes, usually without noticing. One of his sections is titled "Stances trump systems."</li>
+<li><b>Eternalism / nihilism</b>: the first holds that everything has a definite, knowable, fixed meaning — the error on the "fixation" side; the second holds that nothing means anything — the error on the "denial" side. Note that eternalism <b>is not the same as theism</b>: scientism, political ideologies and psychotherapeutic schools can all be eternalist.</li>
+<li><b>Complete stance</b>: acknowledging nebulosity and pattern at once, neither fixating nor denying. "Complete" is not "in the middle."</li>
+<li><b>Metasystematicity / meta-rationality</b>: the ability to use systems as tools rather than worship them as masters — knowing the range in which each is reliable, and being able to run two contradictory systems at once on a single concrete situation.</li>
+<li><b>Mode</b>: how a whole society handles meaning, with a sense of historical stage. He lists six: choiceless, systematic, countercultural, subcultural, atomized, fluid.</li>
+</ul>
+</div>
+
+<h2>A strange thing: cosmic love, bought for thirty-seven cents</h2>
+
+<p>A dozen-odd years ago, an MIT artificial intelligence PhD began passing through the Reno airport regularly. The hotels there all have enormous casinos on the ground floor, laid out so that you cannot reach your room without walking past innumerable flashing, blooping slot machines.</p>
+
+<p>He doesn't gamble. The puzzling thing about casino gambling is that it has <strong>negative expected value</strong> — and he notes an irony: the modern conceptual framework for "rational action" was invented in the first place to explain why gambling is a bad idea. He used to stand and watch the gamblers, trying to figure out what they were feeling, and assumed he could never verify his guesses: gamblers' pleasure rests on false beliefs, and he couldn't adopt those. So he applied rational decision theory, found a machine that would take a one-cent bet, and fed it the smallest amount it would accept — one dollar.</p>
+
+<p>He immediately won five cents. Ten on the next try. Then several losses in a row. He raised his bet from one to five cents — and won again. As he consistently won more than he lost, a warm glow gradually suffused him.</p>
+
+<blockquote>
+<span class="en">I realized that the universe loved me, and that everything was going to come out well after all. My ever-present nagging sense of vague wrongness disappeared, and I recognized that it had always been a misunderstanding. Everything is as it should be; everything is connected; everything makes sense; everything is benevolently watched over by the eternal ordering principle.</span>
+<cite>"I get duped by eternalism in a casino," 2013</cite>
+</blockquote>
+
+<p>This, he says, was <strong>eternalism straight-up, with no conceptual framework, purely at a bodily, felt level</strong>. God was not in the picture — he is a lifelong atheist, and thirty-seven cents was not enough to change his mind. A sardonic mental commentary ran the whole time, reminding him that casino operators ensure their machines are a losing bet. <strong>The commentary was useless.</strong> The cognitive dissonance between unquestioned confidence in the All-Good Cosmic Plan and intellectual confidence that this was a money-extraction device struck him as extremely funny — and the humor fed back into the bodily enjoyment.</p>
+
+<p>To finish the charade he increased his bet to 25 cents, then 50, and walked back toward his room grinning like the village idiot, unspeakably happy.</p>
+
+<p>A woman jumped into the elevator with him. "Lucky night?" she asked.</p>
+
+<p>"No!" he exclaimed, beaming. "At one point I was up by thirty-seven cents, but in the end I lost the whole dollar!"</p>
+
+<p>Her face closed; she turned away and wouldn't look at him for the rest of the ride. Chapman's closing line for the section is:</p>
+
+<blockquote>
+<span class="en">There's something wrong with anyone who's that excited about thirty-seven cents.</span>
+</blockquote>
+
+<p>The joke is the book. <strong>Winning thirty-seven cents was not going to change his life; discovering universal love would.</strong> That feeling of safety, understanding and certainty is addictive, and that is part of why all of us keep falling into the eternalist stance even when we know better. It feels <strong>right</strong> — absolutely right. And when we lose it, we'll do almost anything to get it back.</p>
+
+<h2>Who he is</h2>
+
+<p>David Chapman's undergraduate degree was in mathematics; he then took a PhD in artificial intelligence at MIT. He spent the whole of the 1980s at the MIT AI Lab, a place that self-consciously compared itself to the Manhattan Project: unlimited Department of Defense funding, 2,000 applicants for each graduate student position in 1982, human-level machine intelligence just around the corner.</p>
+
+<p>It wasn't. In his own words, later:</p>
+
+<blockquote>
+<span class="en">That was a failed Manhattan Project. We had brilliant, fascinating, innovative theories, all of which were utterly wrong. It seemed like a fabulous place to think, but the intellectual culture was subtly broken, and we were all fooling ourselves.</span>
+<cite>"Not a good decade for thinking," 2017</cite>
+</blockquote>
+
+<p>The <strong>we</strong> in "we were all fooling ourselves" includes him. Everything he has written since can be read as an unpacking of that sentence: how is it possible for a room full of extremely intelligent people, using an internally consistent system, to be collectively, cheerfully wrong for a decade? He left science, founded and sold a biotech informatics company, and found a home in Tibetan Nyingma tantric Dzogchen Buddhism.</p>
+
+<p>On 16 July 2010, the first pages of meaningness.com went up. He insists repeatedly that it is not a blog: <strong>it is a book, best read in order.</strong></p>
+
+<p><strong>On dormancy: he hasn't stopped, but the book essentially has.</strong> The last update to the main text of meaningness.com was 23 January 2022. Since 2023 the new work has all moved to Substack, which he updates frequently (as of this review, the most recent post is dated 30 August 2026). He says over there that it isn't a blog either — it's draft sections of several different books, held together by one line: <strong>"Things generally go better when you don't try to separate nebulosity and pattern."</strong></p>
+
+<h2>What he's been wrestling with</h2>
+
+<p>The root problem he is attacking is not "what is the meaning of life" — he explicitly rejects that framing. It is: <strong>meaning is cloud-like, and nearly every way humans handle meaning is a way of refusing to admit that, including the ways that consider themselves the most clear-eyed.</strong></p>
+
+<p>How did he hit it? The answer sits in a very short page, "The promise of certainty," which is the most-linked-to page on the site (38 inbound links). He is describing serial conversion junkies: people who jump from one system of meaning to the next, each time enjoying a honeymoon of absolute certainty, then watching it fade, with the intervals of doubt turning increasingly into withdrawal. And then he writes something personal:</p>
+
+<blockquote>
+<span class="en">This pattern was particularly common in the California Bay Area in the late 20th century. It afflicted many of my friends, and that was my initial motivation to write this book.</span>
+<cite>"The promise of certainty," 2016</cite>
+</blockquote>
+
+<p>That is a concrete origin: not a philosophical problem but a group of specific people. He watched his friends commit, collapse, and commit again — and each collapse came not because the system had been refuted but because <strong>reality once again refused to cooperate</strong>. So his question was never "which system is right." It was: <strong>what are these systems actually selling? Why do so many intelligent people keep buying? And if you stop buying, what's left?</strong></p>
+
+<p>That last question is the hard part of the book, and where he parts company with most debunking writing. <strong>Demolition is easy; not falling into nihilism afterward is hard.</strong> He wrote a whole chapter on nihilism whose first two lines are the two most characteristic sentences on the site:</p>
+
+<blockquote>
+<span class="en">If you think you are not nihilistic—I think you are mistaken.<br>If you think you are a nihilist—I think you are mistaken.</span>
+<cite>"You've got nihilism wrong," 2017</cite>
+</blockquote>
+
+<h2>His ideas, told as how he found them</h2>
+
+<h3>1. Clouds: not "we don't know," but "there was never a line"</h3>
+
+<p>His first move isn't a claim, it's a change of analogy. In December 2010, six months into the book, he published a short page called "Nebulosity" that puts the word on the table: <strong>"'Nebulosity' means 'cloud-like-ness.' Meaningness is cloud-like. It is real, but impossible to completely pin down."</strong></p>
+
+<p>Then he refuses to define it, offering only analogies — and apologizes for that in a footnote: "I will not give a precise definition of 'nebulosity' here. Instead, I present analogies. I apologize if its meaning seems frustratingly nebulous at this point." The move is itself the argument: <strong>a word coined to point at "precise definition isn't always possible" would be self-refuting if precisely defined.</strong></p>
+
+<blockquote>
+<span class="en">From a distance, clouds can look solid; close-up they are mere fog, which can even be so thin it becomes invisible when you enter it. … It can be impossible to say where one cloud ends and another begins; whether two bits of cloud are connected or not; or to count the number of clouds in a section of the sky. … If you watch a cloud for a few minutes, it may change shape and size, or evaporate into nothing. But it is impossible to find an exact moment at which it ceases to exist. It can be impossible to say even whether there is a cloud in a particular place, or not.</span>
+<cite>"Nebulosity," 2010</cite>
+</blockquote>
+
+<p>Then one line: <strong>meanings behave in these ways too.</strong> With a crucial qualification — this is <strong>a feature of reality, not of knowledge</strong>. People disagree about meanings, and sometimes one is right and the other wrong; but more often the difficulty is that the meaning is inherently ambiguous.</p>
+
+<p>Next he has to plug a hole. "Meaning is ambiguous" is a sentence anyone with a passing acquaintance with relativism will immediately translate into "meaning is subjective, everyone has their own." <strong>He flatly rejects that translation</strong>, and his rebuttal is as short as a jab — and it uses the casino:</p>
+
+<blockquote>
+<span class="en">If meaningness was merely subjective, it would not be possible to be wrong about it. However, my felt beliefs about meaning, in the grip of a run of good luck, were definitely outright wrong.</span>
+<cite>"I get duped by eternalism in a casino," 2013</cite>
+</blockquote>
+
+<p>This step is worth pausing on. <strong>He uses one of his own errors to prove that error exists in this domain at all; and if error is possible, the domain isn't purely subjective.</strong> No metaphysics is invoked, only a fact: the universe does not love him, he felt that it did, he was wrong. So meaning is neither objective (God doesn't hand it out) nor subjective (you can't make something meaningful by deciding it is). This is the seam he returns to again and again.</p>
+
+<p>Nebulosity's twin is <strong>pattern</strong>: the brain is systematically biased toward patterns, preferring to see ones that aren't there over missing ones that are — <strong>"It is impossible not to see faces where there are none."</strong> Eternalism is that same over-detection at the level of meaning.</p>
+
+<p>With both bricks in place he lays out the shape of the book. Faced with the fact that meaning is both cloud and pattern, you can <strong>fixate</strong> — pretend it's all pattern and no cloud; <strong>deny</strong> — pretend that since it's cloud it amounts to nothing; or go <strong>complete</strong> — admit both.</p>
+
+<p>Here he installs the device that keeps the book from becoming self-help, a section titled "No middle way." <strong>The complete stance is not a compromise.</strong> Eternalism and nihilism aren't ends of a spectrum, so you can't average them. They are two directions of the same refusal: one freezes the cloud into stone, the other says that if you can't hold it, it isn't there. Splitting the difference gives you something half frozen and half denied — and he devotes several sections to how the various false middles (existentialism, materialism, mission) each fail.</p>
+
+<p>The most powerful thing about this structure is that it <strong>breeds</strong>. The same fixation/denial/complete trichotomy can be applied to every dimension of meaningness: purpose, self, value, capability, ethics, authority, sacredness. That is why the book has 215 sections.</p>
+
+<figure>
+<svg viewBox="0 0 720 500" role="img" aria-label="Chapman's grid of stances: fixation, denial and completeness across every dimension of meaningness">
+<defs>
+<linearGradient id="hg" x1="0" y1="0" x2="1" y2="0">
+<stop offset="0%" stop-color="#6ea8fe"/><stop offset="100%" stop-color="#5eead4"/>
+</linearGradient>
+</defs>
+<text x="8" y="20" fill="#7d8794" font-size="12" font-family="SF Mono,Menlo,monospace">One move, applied to every dimension</text>
+<line x1="0" y1="34" x2="720" y2="34" stroke="url(#hg)" stroke-width="2"/>
+<text x="8" y="56" fill="#9aa6b2" font-size="13" font-weight="700">Dimension</text>
+<text x="186" y="56" fill="#6ea8fe" font-size="13" font-weight="700">Fixation · pattern only</text>
+<text x="382" y="56" fill="#6ea8fe" font-size="13" font-weight="700">Denial · cloud only</text>
+<text x="560" y="56" fill="#5eead4" font-size="13" font-weight="700">Complete · both</text>
+<line x1="0" y1="66" x2="720" y2="66" stroke="rgba(110,168,254,.25)" stroke-width="1"/>
+
+<g font-size="12.5">
+<text x="8" y="94" fill="#e2e8f0" font-weight="700">Meaning</text>
+<text x="186" y="94" fill="#c8d2dc">Eternalism</text><text x="382" y="94" fill="#c8d2dc">Nihilism</text><text x="560" y="94" fill="#c8d2dc">Complete stance</text>
+
+<text x="8" y="132" fill="#e2e8f0" font-weight="700">Purpose</text>
+<text x="186" y="132" fill="#c8d2dc">Mission</text><text x="382" y="132" fill="#c8d2dc">Materialism</text><text x="560" y="132" fill="#5f6b77">Enjoyable usefulness ⚒</text>
+
+<text x="8" y="170" fill="#e2e8f0" font-weight="700">Unity / diversity</text>
+<text x="186" y="170" fill="#5f6b77">Monism ⚒</text><text x="382" y="170" fill="#5f6b77">Dualism ⚒</text><text x="560" y="170" fill="#5f6b77">Participation ⚒</text>
+
+<text x="8" y="208" fill="#e2e8f0" font-weight="700">Selfness</text>
+<text x="186" y="208" fill="#5f6b77">True self ⚒</text><text x="382" y="208" fill="#5f6b77">Selflessness ⚒</text><text x="560" y="208" fill="#5f6b77">Intermittently continuing ⚒</text>
+
+<text x="8" y="246" fill="#e2e8f0" font-weight="700">Value</text>
+<text x="186" y="246" fill="#5f6b77">Specialness ⚒</text><text x="382" y="246" fill="#5f6b77">Ordinariness ⚒</text><text x="560" y="246" fill="#5f6b77">Nobility ⚒</text>
+
+<text x="8" y="284" fill="#e2e8f0" font-weight="700">Capability</text>
+<text x="186" y="284" fill="#5f6b77">Total responsibility ⚒</text><text x="382" y="284" fill="#5f6b77">Victim-think ⚒</text><text x="560" y="284" fill="#5f6b77">Light-heartedness ⚒</text>
+
+<text x="8" y="322" fill="#e2e8f0" font-weight="700">Ethics</text>
+<text x="186" y="322" fill="#5f6b77">Ethical eternalism ⚒</text><text x="382" y="322" fill="#5f6b77">Ethical nihilism ⚒</text><text x="560" y="322" fill="#5f6b77">Ethical responsiveness ⚒</text>
+
+<text x="8" y="360" fill="#e2e8f0" font-weight="700">Authority</text>
+<text x="186" y="360" fill="#5f6b77">Reasonable respectability ⚒</text><text x="382" y="360" fill="#5f6b77">Romantic rebellion ⚒</text><text x="560" y="360" fill="#5f6b77">Freedom ⚒</text>
+
+<text x="8" y="398" fill="#e2e8f0" font-weight="700">Sacredness</text>
+<text x="186" y="398" fill="#5f6b77">Religiosity ⚒</text><text x="382" y="398" fill="#5f6b77">Secularism ⚒</text><text x="560" y="398" fill="#5f6b77">Kadag ⚒</text>
+</g>
+<line x1="0" y1="424" x2="720" y2="424" stroke="rgba(110,168,254,.25)" stroke-width="1"/>
+<text x="8" y="450" fill="#7d8794" font-size="11.5" font-family="SF Mono,Menlo,monospace">⚒ = section is still an empty stub. Of nine dimensions, only the first row is fully written.</text>
+<text x="8" y="472" fill="#7d8794" font-size="11.5" font-family="SF Mono,Menlo,monospace">215 sections in all: 131 written, 84 stubs. Checked 2026-08-31.</text>
+</svg>
+<figcaption>Chapman's grid of stances — and the part of it he never wrote. Grey cells marked ⚒ are pages the site itself flags as unfinished.</figcaption>
+</figure>
+
+<p>There is a very unkind fact buried in that chart. We'll come back to it in section six.</p>
+
+<h3>2. The can opener: how he turned "the feeling of understanding" into something measurable</h3>
+
+<p>In March 2016 he wrote a run of short pages, itemizing what eternalism is selling. His list has only three items: <strong>certainty, understanding, control</strong>. The page on certainty runs to 700 words yet is the most-linked-to page on the site. Its core is one line:</p>
+
+<blockquote>
+<span class="en">Eternalism promises to deliver those answers, and to guarantee them. It cannot; and so it lies.</span>
+<cite>"The promise of certainty," 2016</cite>
+</blockquote>
+
+<p>But the page on understanding is the good one, because there he does something rare in philosophical writing: <strong>he converts a metaphysical claim into an experiment you can run on yourself right now.</strong></p>
+
+<p>He starts from an observation: converts describe the conversion experience in strikingly consistent terms — a bliss of the jigsaw suddenly assembling, new light pouring in from all directions across the skull, an answer to every question. He doesn't stop at "that's an illusion." He asks: <strong>can the feeling of understanding be measured apart from actual understanding?</strong></p>
+
+<p>It can. He found Rozenblit and Keil's 2002 experiment: ask people to rate how well they understand everyday objects and phenomena (can openers, toilets, tides), then <strong>ask them to explain how those work</strong>, then have them re-rate. The second ratings collapse. Most subjects are surprised to discover, after trying and failing to explain, that they understand much less than they thought.</p>
+
+<p>Chapman ran the test on himself, and the way he reports the result is the best thing on the page:</p>
+
+<blockquote>
+<span class="en">I also discovered, after playing with two ordinary manual crank-turning can openers, that they worked on completely different principles. I've used both types a million times, and never noticed this, because you use them exactly the same way. My rating of my original understanding went from 6 to 3. I'm estimating my new understanding at 6, but I'm worried I'm still overconfident!</span>
+<cite>"The illusion of understanding," 2016</cite>
+</blockquote>
+
+<p>Then comes the leap. With a can opener, he says, you don't need real understanding; you need to know what it's for and how to use it. So most of the time "understanding" is really <strong>comfort with</strong> — you know how to interact with the thing without cutting yourself, so you assume you understand it. The same machinery runs on <strong>ethics</strong>: we know what ethics is for and roughly how to use it, so we assume we understand it. Ask for an explanation and most people's ethical accounts don't cohere — and he adds the knife that even professional theologians and moral philosophers are often unable to give coherent ethical explanations.</p>
+
+<p>Finally it lands on politics, and lands as an actionable practice. He cites Fernbach et al. (2013): asking subjects to explain <strong>how</strong> a policy they support would actually work lowers their confidence, moderates their positions, and reduces their willingness to donate; asking them to explain <strong>why they support it</strong> makes them more extreme instead, because that only requires abstract values, appeals to authority and general principles, which are impossible to reality-test. So his practice is: when someone is ranting about a political proposal you disagree with, don't raise objections — keep asking "how would that part work?" and see whether you can draw them into an ever-more-detailed causal explanation. <strong>"Arguing about politics almost never changes anyone's mind; explaining, apparently, does."</strong></p>
+
+<p>This section carries a larger conclusion. If what holds eternalism up is <strong>the feeling of understanding</strong> rather than the propositions, then attacking the propositions is aiming at the wrong layer. This is where he diverges from most atheist and anti-pseudoscience writing, which assumes the opponent is hostage to false beliefs and will be freed once the beliefs are corrected. Chapman says no — <strong>the beliefs are the shell; the warm current carries the load.</strong> So instead of refutations he compiled a list of <strong>eternalist ploys</strong>: hope, pretending, kitsch, thought suppression, mystification, purification, fortress eternalism, each with an example, a harm, and an antidote. <strong>He uses them as a mirror, not a weapon</strong>: "In this section, I mainly describe the ploys as methods for fooling yourself."</p>
+
+<h3>3. "Because" can stop working: the same psychology, scaled to four centuries</h3>
+
+<p>In September 2016 his writing visibly turned — from individual psychology to historical sociology, opening a whole chapter called "Meaningness and Time." That year alone he wrote 36 sections, the most violent burst in sixteen years.</p>
+
+<p>The way he turned is characteristic: he didn't decide to write history, he was forced into it by a specific question. He wanted to understand <strong>why Buddhism appeals so much more to Western Baby Boomers than to younger people</strong>. Following that, he found there was as much of a generation gap between Generation X and Generation Y Buddhists, which sent him to read about generational differences, which made him realize that the catch-all "postmodernity" actually contains two quite different things. The historical framework grew out of that.</p>
+
+<p>His central concept is almost brutally simple: <strong>"because."</strong></p>
+
+<blockquote>
+<span class="en">A systematic culture answers "why" questions with "becauses." … Then, "because" stopped working. We are back in a becauseless world—like and unlike that of our pre-systematic ancestors.</span>
+<cite>"The glory of systems," 2016</cite>
+</blockquote>
+
+<p>He insists on praising the systematic mode first, which separates him from the usual critique of modernity: <strong>"Systems are not normal or natural. Almost no one has had them in the hundreds of thousands of years humans have been around."</strong> Human progress over the past few centuries can be attributed almost entirely to systems. He doesn't want to go back.</p>
+
+<p>Then comes the best page in the chapter, and the last page of the main text he finished (January 2022): "The collapse of rational certainty." He wants to describe how "because" fell, and he does it by <strong>first admitting he can't</strong>:</p>
+
+<blockquote>
+<span class="en">I want to take you back—in imagination—to the time when the upper echelons of society had utter confidence in their own rightness… Unfortunately, I cannot do that, because I am incapable of imagining such certainty. Probably you are too.</span>
+<cite>"The collapse of rational certainty," 2022</cite>
+</blockquote>
+
+<p>Then he turns to Euclid, from a sociological rather than mathematical angle: for two thousand years the <em>Elements</em> was the book every educated European had to read, the sacred source of the concept of proof — and simultaneously the template for every system of meaning. If you wanted to justify a political or moral claim, you tried to set it out as a Euclidean proof. Then the parallel postulate went wrong: in the early 1800s mathematicians tried to prove it by contradiction, assuming it false and waiting for something to break, and <strong>nothing broke</strong>. Geometry worked fine. Non-Euclidean geometry had been discovered by accident. Then came relativity and the 1919 Eddington experiment, and with them anti-relativity organizations, anti-relativity conventions and organized anti-relativity letter-writing campaigns — "It couldn't be true, because it mustn't be true, so it was false and wicked." And then the pivot of the whole section:</p>
+
+<blockquote>
+<span class="en">Who cares about gravity? No one. That wasn't the point.<br>The shock was to ethics, politics, aesthetics: systems of meaning.</span>
+<cite>"The collapse of rational certainty," 2022</cite>
+</blockquote>
+
+<p>The public, he says, understood the Eddington news as this headline: <strong>SCIENTISTS PROVE: NOTHING MAKES SENSE. Anything You Believe May Be Wrong. No Absolute Truths, Authorities Insist. Everything shall be merely relative henceforth.</strong> That would have made no sense before the First World War, but it made sense in 1919 — it precisely confirmed the pervasive wartime and postwar feeling that something essential had broken down.</p>
+
+<p>The chain of modes he lays out is: <strong>choiceless → systematic → countercultural → subcultural → atomized → fluid</strong>. Each solves the previous one's problem and creates its own. We are in the atomized mode: the global internet blew up the boundaries of subcultures and made everything equally available everywhere — which is fabulous — but with no binding context, nothing makes sense.</p>
+
+<blockquote>
+<span class="en">Meanings arrive as bite-sized morsels in a jumbled stream, like sushi flowing past on a conveyer belt, or brilliant shards of colored glass in a kaleidoscope.</span>
+<cite>"Atomization: the kaleidoscope of meaning," 2016</cite>
+</blockquote>
+
+<p>His diagnosis of the atomized mode is a layer harder than "our attention has been stolen": <strong>"The atomized mode generates paranoia, because without the systematic mode's 'therefores,' its structure of justification, there are no memetic defenses against bad ideas."</strong></p>
+
+<p>Hanging off this chain is his single most famous page: <strong>"Geeks, MOPs, and sociopaths in subculture evolution"</strong> (2015) — the most-commented page on the site (61 comments), cited off-site far more than anything else he's written, and known to many people who have never heard of the book. It describes how the subcultural mode dies. A few creators invent a New Thing; fanatics contribute time and money as support staff; both are <strong>geeks</strong>. Then <strong>mops</strong> arrive (MOP being the British abbreviation for "member of the public"), showing up for a good time and contributing as little as they reasonably can. Then <strong>sociopaths</strong> catch the scent. His analysis of that step is the coldest thing on the site: creators generate cultural capital (cool), fanatics generate social capital (a network), mops when properly squeezed generate liquid capital (money) — <strong>and none of those groups has any clue how to extract and manipulate any of it</strong>. The sociopaths do. He even supplies a number: <strong>the optimal mop-to-geek ratio is maybe 6:1</strong>; above about 10:1 it's a recipe for burnout among the supporting fanatics.</p>
+
+<p><strong>But most people who cite this page never read its last two sections.</strong> His conclusions are two, and neither is comfortable. The first is <strong>"Anyway, horribly, geeks need sociopaths"</strong> — otherwise the New Thing stays a geeky hobby forever. The second is where the page reconnects to the book:</p>
+
+<blockquote>
+<span class="en">Serious subcultures are usually eternalistic: the New Thing is a source of meaning that gives everything in life purpose. Eternalistic naïveté makes subcultures much easier to exploit.</span>
+<cite>"Geeks, MOPs, and sociopaths in subculture evolution," 2015</cite>
+</blockquote>
+
+<p>In other words: <strong>subcultures get eaten not because the geeks aren't sharp enough, but because they made a hobby into a source of life's meaning.</strong> The most widely shared Chapman model on the internet is a footnote to the book nobody finishes.</p>
+
+<p>Finally, having written this whole elegant history, he demolishes it.</p>
+
+<blockquote>
+<span class="en">In fact, after finishing this history, I will demolish it. The whole thing is a lie. There are no modes; we are always "in the fluid mode" because meaningness has always been both patterned and nebulous. No culture or society was ever actually systematic, for the same reason no one can actually be an eternalist: nebulosity is always obvious.</span>
+<cite>"How meaning fell apart," 2016</cite>
+</blockquote>
+
+<p>He had inoculated the reader in advance: the modes are <strong>"ideal types," heuristic conceptual categories that illuminate some trends while inevitably distorting others; "they are not meant as ontological; they have no existence in the real world."</strong> He even hung a disclaimer at the top of "The glory of systems": "My version may be a 'Just So Story,' or fanciful fable. I find it illuminates recent events, but you have every right to be skeptical."</p>
+
+<p><strong>This is not modesty; it is required by his own framework.</strong> If pure eternalism is unreachable, then the "systematic mode" defined by it cannot really have existed. He built the scaffold only to let you see what people are pretending. Once you've seen it, the scaffold has to come down — leave it standing and it turns into the next eternalist system.</p>
+
+<h3>4. Unpicking: his constructive proposal</h3>
+
+<p>In December 2021 he wrote "Vaster than ideology," which opens with what may be the most useful question in all his writing:</p>
+
+<blockquote>
+<span class="en">Do you have a system of meaning, or does the system have you?</span>
+<cite>"Vaster than ideology," 2021</cite>
+</blockquote>
+
+<p>His diagnostic word is <strong>possession</strong>. He points at a phrase so ordinary nobody notices it: we say we <em>belong to</em> a church or a political party. Slavery is illegal, though? He thinks spirit possession is the better analogy — an overwhelmingly powerful mind enters you, speaks through your mouth and acts with your body. And he adds the sharpest observation on the page: <strong>possession feels best when it is so complete that you are unaware of it.</strong> Righteously denouncing something, you do not notice any distinction between yourself and the hate-filled absurdities you are regurgitating from a video you watched a few hours earlier.</p>
+
+<p>Then he turns to leaving, and the emphasis is that <strong>leaving is usually horrible</strong>. He likens commitment to a system of meaning to a marriage: an enormous, sometimes difficult investment traded for feelings of certainty and stability, and leaving it is much like a painful break-up — betrayal, loss, regret, anger, shame, anxiety, depression. He points out that <strong>these are all symptoms of nihilism</strong>. That is why debunking so often pushes people off a cliff.</p>
+
+<p>So what to do? His answer is not "get out now." It's to <strong>unpick</strong>:</p>
+
+<blockquote>
+<span class="en">Rather than suddenly and totally rejecting an ideology when its failings become too glaring to ignore, it's better to unpick it like a seam. You unravel a seam with close examination, one stitch at a time. … Leaving the overall structure in place for a while lets you observe the operation of each piece.</span>
+<cite>"Vaster than ideology," 2021</cite>
+</blockquote>
+
+<p>He is emphatic about what the destination is <strong>not</strong>: it isn't "work out which claims are right and which are wrong, rescue the correct ones, and assemble them into a new True System." Because meaningness is inherently nebulous, it doesn't support absolute verdicts; a system's particular claims are never absolutely true or absolutely false.</p>
+
+<p>The destination is <strong>having</strong>. From being had by one system, to having one; then to having several, using different ones in different contexts, or several at once in a single situation. <strong>"Tools don't do the work; you use tools to do the work."</strong> Kant defended an absolute duty to tell the truth even when honesty would result in the murder of an innocent; some utilitarians hold that lying is morally required whenever it increases the sum of pleasure in the world, no matter by how little. The two are irreconcilable in general — but on one concrete dilemma, both may cast light. Using both rulers at once is moral metasystematicity.</p>
+
+<p>And the catchphrase of metasystematicity is: <strong>"yes, and also, on the other hand…"</strong> He immediately adds a line to stop you reading it as fence-sitting: <strong>this does not imply indecisiveness. It implies taking responsibility for your thinking, feeling and acting. You cannot outsource your decision-making to an ideology, nor the blame it may entail.</strong></p>
+
+<p>The page ends on a turn that pulls the book back to its Buddhist substrate: "from being had by a system to having one" is a useful beginner's formulation, he says, but a simplification — because <strong>you cannot fit even one system inside yourself</strong>. You are not a container; the distinction between you and everything else is itself nebulous. <strong>"You extend indefinitely across systems of meaning, from which you are not separate."</strong></p>
+
+<h2>How he thinks</h2>
+
+<p><strong>1. He is his own specimen, and specifically his own negative specimen.</strong> The casino piece is him being an idiot; the can-opener piece is him dropping from 6 to 3; "Not a good decade for thinking" is a rant he posted to a private forum after rather a lot of sake, reproduced raw with one added line: "Raw. Perhaps the style suits the subject…" "Vaster than ideology" is written in the second person throughout, and he explains in a footnote: <strong>"Nearly every failing I ascribe to 'you' is part of my personal experience."</strong> This is the opposite of the default posture of critical writing, which stands outside the error.</p>
+
+<p><strong>2. He attacks the emotional layer, not the propositional layer.</strong> This is the single most transferable thing in his method. Confronted with a position that doesn't add up, his first question isn't "what's wrong with this claim" but <strong>"what does holding this claim feel like, and what happens if it's lost?"</strong> The entire list of eternalist ploys came from that question: it is not a list of fallacies, it's a list of <strong>emotional maintenance techniques</strong>.</p>
+
+<p><strong>3. He converts metaphysics into experiments you can run.</strong> "Understanding is an illusion" is a philosophical claim and hard to win an argument about; "draw a bicycle from memory, then compare it to a real one" is not a claim, it's a test you will fail in three minutes. He looks for that conversion repeatedly: tests that can be run, things that can be counted, examples that can be checked on the spot. It's also why he cites specific papers (Rozenblit & Keil, Lawson, Fernbach) so heavily — he wants instruments that can split a feeling in two.</p>
+
+<p><strong>4. He publishes the scaffolding along with the finished work, and fits every framework with a self-destruct device.</strong> In the body text of "Eternalist ploys and their antidotes" he simply leaves this in:</p>
+
+<blockquote>
+<span class="en">[I am unsure about my current list of ploys. They seem to overlap and run into each other somewhat, and I also expect I may find more of them. I may need to "refactor" the categories. Feedback about this would be welcome!]</span>
+<cite>"Eternalist ploys and their antidotes," 2016</cite>
+</blockquote>
+
+<p>He didn't wait until he had it worked out. He treats "I haven't worked this out" as a publishable object. The 84 stub pages marked ⚒︎ across the site are the extreme version of the same move: <strong>he published the parts of the outline he hasn't written</strong>, so anyone can see at a glance how much of the book is missing. That separates him from nearly every writer whose product is "insight" — those people show you only the finished thing. The self-destruct announcement on the modes theory is the other face of it: any scaffold claiming to explain everything is itself an act of eternalism, so he has to wire his own with explosives, or he'd be demonstrating exactly what he's criticizing.</p>
+
+<p><strong>5. He has a failure rate he can say out loud, and he points it at himself.</strong> In 2024 he explained on Substack why so much of his work never gets finished:</p>
+
+<blockquote>
+<span class="en">When I was a graduate student, and then a PhD AI scientist, I aimed for a 70% failure rate in my research projects. … I believed that if I had a greater success rate, it would mean I wasn't being ambitious enough; not taking enough risk. A project I'm confident I can complete is probably one anyone could. So someone will, so there's no point in my duplicating their work.</span>
+<cite>Substack, November 2024</cite>
+</blockquote>
+
+<p>Then he gives himself no way out: <strong>"My ratio of unfinished to finished pieces is much greater than 7:3. Is that good, or bad?"</strong> And: "Should I aim to finish more, at a cost in quality and interestingness?" His partial answer is that he has been working on an essay about the psychology of vampires since 2010 and still hasn't finished it, <strong>but it probably won't be obsolete — vampires are long-lived and don't change much.</strong></p>
+
+<h2>Where he might be wrong</h2>
+
+<p><strong>1. The book will probably never be finished, and what's missing is exactly what matters most.</strong> This isn't a cheap shot; it's countable. The table of contents has 215 sections; 131 are written; <strong>84 are still stubs marked ⚒︎</strong>. What's damning is their distribution: look again at the grid above — of nine dimensions of meaningness, only the "meaning" row is fully written, "purpose" is about two-thirds done, and the remaining seven rows (unity and diversity, selfness, value, capability, ethics, authority, sacredness) are <strong>entirely empty</strong>. The top-level chapter pages for Ethics, Authority, Sacredness, Capability and Personal value are themselves zero-word placeholders.</p>
+
+<p>And the Ethics page is pointed at 17 times by other pages on the site, making it one of the most-linked-to pages there is. <strong>Seventeen times he tells the reader "I deal with this in the chapter on ethics," and the chapter is empty.</strong> The book's central promise — what the complete stance actually looks like on a concrete dimension — falls precisely in the unwritten half. What you can learn here is <strong>diagnosis</strong>: how to recognize eternalism, how to recognize nihilism, how to spot the ploys. For the prescription he offers an abstract name (the complete stance), an abstract method (unpicking), and seven empty chapters.</p>
+
+<p><strong>2. Some readers think the problem is self-inflicted.</strong> In May 2016, Ian West wrote a review on his own blog, Ianto's Blog. He rates Chapman highly — calling the work almost "a Baconian <em>Novum Organum</em> of Meaningness" — but raises a structural objection: Chapman denies all the possible answers (no God, no cosmic plan, nothing that could harbour an intention and arrange things accordingly) while still asking what the meaning of our life is. And asking that question, West argues, presupposes exactly what Chapman has already rejected.</p>
+
+<blockquote>
+<span class="en">But in the very act of asking that question he is, I believe, creating his problem… If you deny all possible answers, then you should not ask the question.</span>
+<cite>Ian West, "David Chapman and Meaningness," May 2016</cite>
+</blockquote>
+
+<p>West also lands a less polite one: <strong>"I suspect Chapman only declared himself anti-philosophical so that he did not have to read up all the myriad words that preceding philosophers have written on the subject."</strong> That deserves to be taken seriously. Chapman does describe himself as both anti-religious and anti-philosophical, and his central distinction — that meaning is neither objective nor subjective — has a large existing literature in Western philosophy that he largely does not engage. (He concedes that his historical chapter may have "nothing original to say"; he makes no comparable concession about the philosophy.)</p>
+
+<p><strong>3. The framework may be too big to be wrong.</strong> Eternalism, nihilism and the complete stance, plus the concept of "ploys," make a machine that can absorb almost any counterexample: you disagree with him? That might be eternalist thought suppression, or nihilistic intellectualization — he has written pages on both. A framework that can redescribe every objection as a symptom starts to behave like the systems it diagnoses. He knows the danger, and his defense is the self-destruct device: the whole thing is a lie, an ideal type, to be demolished on completion. <strong>But that defense cuts both ways.</strong> A framework that declares itself not-true-but-useful also makes "where is it wrong?" hard to ask — any specific rebuttal can be met with "I already said it wasn't meant ontologically." That is epistemically honest and practically close to unfalsifiable.</p>
+
+<p><strong>4. The diagnostic vocabulary has a home team.</strong> He lays this card on the table himself: eternalism / nihilism / completion maps directly onto the Vajrayana Buddhist triad of form, emptiness and non-duality, and <em>Dzogchen</em> is the Tibetan word for "completion." He states outright that Vajrayana's analysis of the twin failures of eternalism and nihilism, plus its claim to offer a way out that incorporates the insights of both, was the starting point for the whole book. The candor deserves respect, but the conclusion still warrants caution: an analysis that claims to diagnose all systems of meaning neutrally lands precisely where the author's own tradition was already standing. <strong>He may be right. But this is not an independent confirmation.</strong></p>
+
+<p><em>There is also a critique published on LessWrong, "What is David Chapman talking about when he talks about meaning?" This session's network policy blocks that site, so only the bibliographic fact is reported here: <strong>I did not read the original, and I do not restate its argument.</strong></em></p>
+
+<h2>Sources</h2>
+
+<ul class="reads">
+<li><span class="tag">2013</span><a href="https://meaningness.com/finding-god-in-a-casino" class="t">I get duped by eternalism in a casino</a><span class="d">The thirty-seven cents. The book's argument compressed into a joke, and his shortest proof that meaning isn't merely subjective.</span></li>
+<li><span class="tag">2010</span><a href="https://meaningness.com/nebulosity" class="t">Nebulosity</a><span class="d">Six hundred words; the origin of the central concept. All the cloud analogies are here, including the footnote apologizing for not giving a precise definition.</span></li>
+<li><span class="tag">2016</span><a href="https://meaningness.com/understanding" class="t">The illusion of understanding</a><span class="d">Can openers, bicycles and the Heinz dilemma, running through to "arguing about politics almost never changes anyone's mind; explaining, apparently, does."</span></li>
+<li><span class="tag">2015</span><a href="https://meaningness.com/geeks-mops-sociopaths" class="t">Geeks, MOPs, and sociopaths in subculture evolution</a><span class="d">The most widely shared page on the site, 61 comments. Contains the 6:1 mop-to-geek ratio and the two conclusions most people who share it never reach.</span></li>
+<li><span class="tag">2021</span><a href="https://meaningness.com/vaster-than-ideology" class="t">Vaster than ideology</a><span class="d">"Do you have a system of meaning, or does the system have you?" Possession, deconversion, unpicking, and the operating instructions for metasystematicity.</span></li>
+</ul>
+
+<p style="font-size:.9rem;color:#7d8794">The full table of contents is on the <a href="https://meaningness.com/">meaningness.com</a> front page (⚒︎ marks unfinished sections); the historical chapter starts at <a href="https://meaningness.com/meaningness-history">"How meaning fell apart"</a>; his own account of what each of his sites is for is at <a href="https://meaningness.com/about-my-sites">about-my-sites</a>; writing since 2023 lives at <a href="https://meaningness.substack.com/">meaningness.substack.com</a>, where some material is behind a paid subscription — this page draws only on the publicly readable portion.</p>
+
+</div>
+
+<section class="updates" data-slug="meaningness" data-last-reviewed="2026-08-31">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+
+<footer>Blog Deep-Read · one page ≈ one mind, read through · content verified as of 2026-08-31</footer>
+
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
