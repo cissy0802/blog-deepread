@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scott Alexander · Astral Codex Ten — 证据为什么会失效</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="astral-codex-ten-blog3.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 03 · astralcodexten.com</div>
+<h1>Scott Alexander · Astral Codex Ten<br/>证据为什么会失效：一个精神科医生的怀疑术</h1>
+<p class="sub">2013–2026 · 前身 Slate Star Codex 1,557 篇（2020 年他自己删掉过一次）· 现址 Astral Codex Ten 1,400 余篇 · 本页抓取其中 870 篇正文，合计约 340 万词 · 未停更：最近一篇 2026 年 9 月 1 日</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>有个保安，在一栋极其无聊的楼里上班。这楼基本没被偷过。他坐在岗亭里填字谜。偶尔有响动，他去看看是贼还是风。</p>
+<p>是风。永远是风。从来不是贼。托皮卡的枕头超市没人想抢。如果一栋楼平均十几二十年才被偷一次，他可能整个职业生涯都碰不上一个真贼。</p>
+<p>于是他慢慢养成一条极好用的启发法：<strong>听见响动就当没听见，接着填字谜——是风，兄弟。</strong></p>
+<p>这条法则的正确率是 99.9%。作为一条启发法，这成绩相当漂亮。唯一的问题是——</p>
+<blockquote>
+<span class="en">He could be losslessly replaced by a rock with the words "THERE ARE NO ROBBERS" on it.</span>
+<span class="zh">他可以被一块石头无损替换，石头上刻着「没有贼」。</span>
+<cite>《几乎总是对的启发法》，2022</cite>
+</blockquote>
+<p>写这段的人叫 Scott Alexander，本名 Scott Siskind，湾区一名执业精神科医生。他 2013 年开博客，2020 年因为怕《纽约时报》写出他的真名，把 1,557 篇文章全删了；2021 年在 Substack 上重开，然后在复活第一篇的最后一行，自己把真名写了出来。他一天到晚在写医学、统计、政治、AI，产量高到读者根本追不完——但那 1,400 余篇底下，翻来覆去只有一个问题：</p>
+<p><strong>你凭什么以为自己知道任何事？</strong></p>
+<p>这问题他有职业上的理由。精神科医生每天坐在一个人对面，这个人的推理机制<strong>可被证明</strong>是坏的。恐惧症患者完全清楚这条狗不会咬他。你把他和一条温顺的罗威纳关一屋，出来之后他更怕狗了。</p>
+<p>Scott 最被自己反复回头引用的那篇文章（我把 870 篇正文的站内链接数了一遍，它被 16 篇后文回引，是第二名的将近两倍），讲的就是这台机器怎么卡死的。他管它叫<strong>困住的先验（trapped prior）</strong>。大脑不是先看见再判断，而是把「原始感受」和「语境预期」搅在一起，产出你以为是原始感受的那个东西——白葡萄酒染成红色，很多人就尝出红酒味。恐惧症是这个机制的极端情况：先验强到把体验整个染色，于是<strong>每一次与狗的良好接触，都被处理成一次可怕经历，反过来把先验喂得更强</strong>。</p>
+<p>然后他把这一步推到政治上，得出一句真正扎人的话：</p>
+<blockquote>
+<span class="en">they start out wrong, and each new fact they learn, each unit of effort they put into becoming more scientifically educated, just makes them wronger.</span>
+<span class="zh">他们一开始就是错的，而他们每学到一个新事实、每多花一分力气让自己更懂科学，都只是让他们更错。</span>
+<cite>《困住的先验：理性的一个基本问题》，2021</cite>
+</blockquote>
+<p>这不是比喻。1979 年有个实验：让支持和反对死刑的人各读两篇研究，一正一反，方法论质量被设计成一样好。两边读完都更确信自己原本是对的。<strong>证据增加，分歧扩大</strong>——这在他看来是先验被困住的确诊指征。</p>
+<p>如果只有这一半，Scott 就是个悲观的认知偏误科普作者。他真正原创的是另一半：<strong>就算如此，你依然能知道事情——只是得知道该怎么听。</strong></p>
+<p>他举了个让两边都不舒服的例子。假设你是个厌恶 FOX News 的自由派，在机场看见 FOX 报道一起枪击案。你信不信？他说他信。因为——</p>
+<blockquote>
+<span class="en">The level on which FOX News is bad isn't the level where they invent mass shootings that never happened.</span>
+<span class="zh">FOX News 坏，坏不到「编造一起根本没发生的枪击案」这个层级上。</span>
+<cite>《有界的不信任》，2022</cite>
+</blockquote>
+<p>他管这个叫<strong>有界的不信任（bounded distrust）</strong>。有偏见的信源不是随机噪声，它在玩一个有规则的游戏：有些线它会越，有些线它不会越，而且大家其实都知道线在哪。<strong>学会那套规则，你就能从一个确实在误导你的信源里，稳定地榨出真信息。</strong></p>
+<p>这套技能有个残酷的推论。老练的人几乎从不觉得政府在对自己说谎——苏联政府说「今年收成不错」，老练的人注意到他说的是「不错」而不是「辉煌」，于是正确地理解成：大家要挨饿了。在老练的人看来，那些真的信了「收成不错」然后被饿到的人，事后变成阴谋论者，显得偏执。而在被骗过的人看来，老练的人显得轻信。</p>
+<p>Scott 的和解写得非常好：</p>
+<blockquote>
+<span class="en">The savvy people need to realize that the clueless people aren't always paranoid, just less experienced than they are at dealing with a hostile environment that lies to them all the time.</span>
+<span class="zh">老练的人得明白，那些不懂门道的人并不总是偏执，他们只是没那么有经验，而他们要对付的，是一个一直在对他们撒谎的敌意环境。</span>
+<cite>《有界的不信任》，2022</cite>
+</blockquote>
+<p>所以这个头脑最核心的一下是：<strong>不信任不是一个开关，是一门手艺。</strong>它可以做得好，也可以做得烂；做得烂的两种极端——什么都信、什么都不信——都会让你被那块石头替代。而他自己那条最诚实的话，藏在《困住的先验》的最后一行：他说，讽刺的是，<strong>他对「困住的先验」这个理论的先验，本身就是困住的</strong>——他读到的每样东西都让他更确信它是对的。他把这句留在文章末尾，然后说：我期待外部视角。</p>
+<p class="sub" style="margin-top:26px"><em>想看他为什么算出「捐肾的术前检查比手术本身危险 15 倍」、火山岛上的石头教怎么把所有专家换成一块石头、伊维菌素那 29 篇研究最后被他归结成「虫子」、以及一个叫 Alexandros Marinos 的人写了 21 篇文章证明他错了之后他认了哪几条——切到上面的「完整版」。</em></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<h3 style="margin-top:0">Glossary · 术语表</h3>
+<ul>
+<li><b>先验（prior）</b>：贝叶斯统计的词。指你在看到新证据<b>之前</b>，对某件事有多信。看到证据后按规则更新，得到新的信念。日常说的「成见」「预期」大致就是它。</li>
+<li><b>预测加工 / 预测编码（predictive processing）</b>：一套关于大脑的理论。核心是：大脑不是被动接收感官信号，而是不断预测下一秒会感觉到什么，再拿预测和实际信号的差值去修正。<b>你「看见」的东西，是预测和信号搅拌后的产物</b>，不是原始信号。</li>
+<li><b>习惯化（habituation）</b>：反复接触一个刺激之后不再害怕它。恐惧症在技术上的定义就是<b>习惯化失败</b>。</li>
+<li><b>元分析 / 荟萃分析（meta-analysis）</b>：把许多篇研究的结果按统计方法合并，得出一个总结论。质量取决于纳入了哪些研究——这正是本文反复出现的战场。</li>
+<li><b>发表偏倚（publication bias）</b>：结果「有意思」的研究更容易被发表，无聊的躺在抽屉里。于是已发表文献整体上偏向于「有效果」。</li>
+<li><b>漏斗图（funnel plot）</b>：横轴效应大小、纵轴研究规模。没有偏倚时应该是个对称的三角；如果小研究一边倒地报告强效果，图形歪斜，通常提示发表偏倚。</li>
+<li><b>伊维菌素（ivermectin）</b>：一种驱虫药。新冠期间被大量宣传为特效药，成了「该不该信专家」这场争论的战场。</li>
+<li><b>有效利他主义（effective altruism, EA）</b>：主张用证据和量化去比较不同行善方式的效率。Scott 是这个圈子里的人，圈子在 2022 年 FTX 崩盘后名声大跌。</li>
+</ul>
+</div>
+<h2>一件怪事：术前检查比手术危险 15 倍</h2>
+<p>Scott Alexander 想捐一颗肾给陌生人。</p>
+<p>他是被一篇 Vox 的文章劝动的，但他不打算就这么信一篇 Vox 文章。「拿一篇 Vox 文章来决定内脏的去留，听上去是天底下最烂的主意。这得再查查。」</p>
+<p>他查了。手术死亡风险 3.1/10,000；他没有高血压，所以是 1.3/10,000。数字对得上，跟 Vox 说的一致。</p>
+<p>然后他当时的女友——他形容她「既聪明又病态地焦虑，这个组合有时威力惊人：她为自己的神经质找理由的那股劲，给了她超天才级的、专挖医生和记者漏掉的医疗风险的能力」——花了几个小时，查出了一件谁都没提的事。</p>
+<p>术前筛查要做一次<strong>多期腹部 CT</strong>，看两颗肾和血管的位置。这次扫描的辐射剂量大约 30 毫希沃特。按通行的经验法则，1 希沃特对应约 5% 的致癌死亡风险增量——算下来，<strong>光是这次术前检查，致死风险约为 1/660。</strong></p>
+<p>手术 1/10,000。检查 1/660。<strong>为确认手术足够安全而做的那次检查，杀死他的概率是手术本身的十五倍。</strong></p>
+<blockquote>
+<span class="en">I discussed this concern with transplant doctors at UCSF and the National Kidney Foundation, who seemed very surprised to hear it, but couldn't really come up with any evidence against.</span>
+<span class="zh">我把这个顾虑跟加州大学旧金山分校（UCSF）和全国肾脏基金会的移植科医生们讲了，他们听上去非常意外，但也确实拿不出什么反驳的证据。</span>
+<cite>《我的左肾》，2023</cite>
+</blockquote>
+<p>他问，能不能改用不带辐射的核磁共振（MRI）扫描？他们同意了。</p>
+<p>这件事里有他这个头脑的全部零件：一个人人照做的默认流程；一个没人算过的数；一个业余者花几小时就能算出来的答案；一次真的去问、并且真的改掉了流程的行动。</p>
+<p>故事的结尾还更像他。五个月的抽血、验尿、心超、核磁之后，UCSF 打电话来<strong>拒绝了他</strong>——理由是他童年得过轻度强迫症，十五岁做完治疗，此后二十年没再发作，如今是一名拥有自己诊所的执业精神科医生。他问对方，那该做什么样的治疗？对方听上去很惊讶原来治疗还分种类。他问，多久做一次？对方听上去很惊讶原来治疗还有频率之分，说，就那个，你懂的，跟人聊天的那个。</p>
+<p>他最后换了一家医院，捐掉了那颗肾。</p>
+<h2>这人是谁</h2>
+<p>Scott Alexander 是笔名，本名 Scott Siskind，湾区精神科医生。2013 年开博客 Slate Star Codex（SSC）。他用笔名不是为了耍神秘：2010 年代初他用真名写博客，面试他梦寐以求的精神科岗位时，面试官谷歌了他的名字，然后逼问他「有个博客是不是意味着你不负责任、不专业」——博客上其实什么争议内容都没有。他没拿到那个岗位，也没拿到另外几个自以为稳的。<strong>他那一整年的住院医师匹配全军覆没，差一点就得放弃医学生涯。</strong>于是他删掉那个博客，把整个网络身份改成化名，第二年重新面试，成功了。</p>
+<p>2020 年 6 月，《纽约时报》要写一篇关于他的报道，并且按规定要写出真名。他删掉了 1,557 篇文章作为抗议。这件事闹得很大——他抗议被起底的那篇文章有 51.3 万人读过（他补了一句：冰岛全国是 36.6 万人）。半年后，2021 年 1 月 21 日，他在 Substack 上重开，取名 Astral Codex Ten，并在复活第一篇的<strong>最后一行自己写出了真名</strong>：「我叫 Scott Siskind，我非常非常爱你们所有人。」</p>
+<p>同时他辞掉了工作，开了一家叫 Lorien Psychiatry 的诊所，专收没有医保的病人。原因很他：他写了很多年美国医疗为什么比一代人以前贵四倍，然后引费曼的话——「凡我不能创造的，我就不理解」——决定自己开一家，看能不能用四分之一的价钱把事情办好。他说，如果成了，他会到处显摆；如果不成，他至少能跟经济学家 Alex Tabarrok 好好聊聊理论错在哪。</p>
+<p>他自己给这个博客的定义是：<strong>一个关于 ṛta 的博客</strong>——梵语词，同时含有真理、理性、秩序、自然法则、和谐的意思。至今仍在日更级地写（最近一篇是 2026 年 9 月 1 日）。约 19% 的内容是付费墙后的订阅者专属，但他在「关于」页写明：所有重要内容永远免费。<strong>本页所依据的全部文章都是公开可读的。</strong></p>
+<h2>他跟什么较劲</h2>
+<p>Scott 写什么都写。经济学、地缘政治、神经科学、房价、AI、《圣经》、彩票、宗教奇迹。你随手抽三篇，看不出主线。但他自己非常清楚这件事有多可疑：</p>
+<blockquote>
+<span class="en">I often find myself trying to justify my existence; how can I write about science when I'm not a professional scientist, or philosophy when I'm not a professional philosopher, or politics when I'm not a professional policy wonk?</span>
+<span class="zh">我常常发现自己在试图为自己的存在辩护：我又不是职业科学家，凭什么写科学？又不是职业哲学家，凭什么写哲学？又不是职业政策专家，凭什么写政治？</span>
+<cite>《认知界的小联盟》，2021</cite>
+</blockquote>
+<p>但那 1,400 余篇底下确实只有一个问题，而且他是从职业里撞上它的。</p>
+<p>精神科医生的日常是这样的：你坐在一个人对面，这个人的推理机制<strong>可以被证明</strong>是坏的。不是「他不够聪明」，不是「他没读够书」，而是那台机器本身有个可复现的故障。恐惧症患者完全同意狗一般不咬人；他能把统计数据背给你听。这毫无用处。</p>
+<p>更要命的是治疗史里那个尴尬的事实。早年治恐惧症的办法叫<strong>洪水法（flooding）</strong>：你怕狗？我们把你和一条巨大的罗威纳锁进一间屋子，等你出来就不怕了。</p>
+<p>这听着野蛮。但更重要的是：<strong>它不管用。</strong>你可以在屋里待一整天，那条罗威纳可以睡着，可以舔你的脸，做任何一件足以证明它不可怕的事——而你出来的时候会<strong>比进去时更怕狗</strong>。</p>
+<p>这就是那道裂缝。习惯化的前提是「这次经历是安全的、没事的」；而「这次经历安全不安全」这个判断本身，也是知觉，也要经过先验加工。<strong>如果先验足够强，它会把真实体验整个盖掉。</strong>于是一次与温顺罗威纳共处的经历，被处理成一次接近极致恐怖的体验，然后成为下一次的先验。</p>
+<p>Scott 的根问题就是从这里长出来的：<strong>如果普通人的政治推理，和恐惧症是同一台机器的同一种故障呢？</strong></p>
+<p>而这个问题还有第二半，是新冠期间被逼出来的。就算你想绕开自己那台坏机器、去信任外部权威——权威机构本身也在打一场有偏斜的游戏。它们很少直接说假话，但会挑着说、略掉语境、用「没有证据」这种词同时表达两种完全相反的意思。<strong>所以他真正较劲的是：一台会自我加固的推理机器，加上一个系统性误导你的信息环境，你还能不能知道任何事？</strong></p>
+<p>他的答案不是「不能」（那是虚无主义，也是那块石头），也不是「相信科学」（那是自我安慰）。他花了十几年在做的，是把这件事变成一门<strong>可以做得好、也可以做得烂的手艺</strong>。</p>
+<h2>他的想法，讲成「他怎么发现的」</h2>
+<h3>一、困住的先验：为什么证据越多，人越错</h3>
+<p>先说一件方法上的事。为了找出这个博客的承重墙，我把抓下来的 870 篇正文里所有的站内链接数了一遍，看哪几篇被后来的文章反复回头引用。第一名是 2021 年 3 月的《困住的先验：理性的一个基本问题》，被 16 篇后文引用；第二名 9 篇。<strong>它是这个头脑的地基，而且是他自己用脚投的票。</strong>（他在旧站被回引最多的那篇，是 2017 年评《冲浪于不确定性》的书评——正是预测加工理论的入口。可惜旧站在本次环境里打不开，详见文末说明。）</p>
+<p>他的起点是一个不像哲学的观察：大脑不是先看见、再判断。它把<strong>原始经验</strong>（感觉、记忆）和<strong>语境</strong>（先验、预期、别的感官）搅在一起，产出<strong>知觉</strong>。而你意识不到这个搅拌过程，你只能意识到最后那个成品——它感觉起来就跟原始经验一模一样。</p>
+<p>他给的例子一个比一个日常。棋盘错觉：上下两组棋子颜色其实一样，但背景一深一浅，你就是看见一白一黑，而且你没法说服自己不这么看。麦格克效应（McGurk Effect）：同一个音节，配上不同的嘴型画面，你<strong>听到</strong>的就是不同的音——不是「我听到的和我看到的不一致所以折中一下」，而是「我就是用耳朵听到了这个，视觉完全没参与」。最简单的是红酒错觉：把白葡萄酒染成红色，很多人会说它尝起来像红酒。安慰剂效应也一样：原始经验是神经照旧发着一样多的痛觉信号，语境是「医生说这药会让你好受些」，成品是——你真的没那么痛了。</p>
+<p>这套机制的认知版本，就是正常的贝叶斯推理。朋友说她上班路上看见一只郊狼，你信；她说她看见一只北极熊，你不信。<strong>同样的原始证据（朋友说了句话），不同的先验，不同的结论。这没毛病。</strong></p>
+<p>然后他让它滑一步。你是个热忱的民主党人。朋友给出一个听上去合理的、支持民主党立场的论证，你信了。朋友给出一个同样合理的、支持共和党立场的论证，你怀疑。这也还行——只是先验在起作用。<strong>而且照理说这应该能被修好：只要证据攒够了，你早晚得认。</strong></p>
+<p>「但事实上很多政治狂热者从来不接受现实。」</p>
+<p>问题出在哪，得回到那条罗威纳。</p>
+<figure>
+<svg viewbox="0 0 720 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="ar" markerheight="7" markerwidth="9" orient="auto" refx="8" refy="3.5"><path d="M0,0 L9,3.5 L0,7 z" fill="#6ea8fe"></path></marker>
+<marker id="ar2" markerheight="7" markerwidth="9" orient="auto" refx="8" refy="3.5"><path d="M0,0 L9,3.5 L0,7 z" fill="#5eead4"></path></marker>
+</defs>
+<text fill="#d5dce4" font-family="monospace" font-size="13" x="12" y="18">正常更新</text>
+<text fill="#d5dce4" font-family="monospace" font-size="13" x="392" y="18">先验被困住</text>
+<line stroke="rgba(110,168,254,.2)" stroke-width="1" x1="360" x2="360" y1="8" y2="292"></line>
+<rect fill="rgba(110,168,254,.10)" height="34" rx="6" stroke="#6ea8fe" width="118" x="14" y="42"></rect>
+<text fill="#b6c2cf" font-size="12" text-anchor="middle" x="73" y="64">原始经验</text>
+<rect fill="rgba(110,168,254,.10)" height="34" rx="6" stroke="#6ea8fe" width="118" x="14" y="118"></rect>
+<text fill="#b6c2cf" font-size="12" text-anchor="middle" x="73" y="140">先验 / 语境</text>
+<rect fill="rgba(255,255,255,.05)" height="66" rx="6" stroke="#7d8794" width="72" x="162" y="60"></rect>
+<text fill="#b6c2cf" font-size="11" text-anchor="middle" x="198" y="89">加权</text>
+<text fill="#b6c2cf" font-size="11" text-anchor="middle" x="198" y="105">搅拌</text>
+<rect fill="rgba(94,234,212,.10)" height="34" rx="6" stroke="#5eead4" width="86" x="264" y="76"></rect>
+<text fill="#b6c2cf" font-size="12" text-anchor="middle" x="307" y="98">知觉</text>
+<line marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="7" x1="132" x2="158" y1="59" y2="80"></line>
+<line marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="3" x1="132" x2="158" y1="135" y2="108"></line>
+<line marker-end="url(#ar2)" stroke="#5eead4" stroke-width="2" x1="234" x2="260" y1="93" y2="93"></line>
+<path d="M307,110 L307,175 L73,175 L73,156" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-dasharray="4,3" stroke-width="1.6"></path>
+<text fill="#7d8794" font-size="11" text-anchor="middle" x="190" y="192">经验占大头 → 先验被小幅修正</text>
+<text fill="#7d8794" font-size="11" text-anchor="middle" x="190" y="212">粗箭头 = 通道带宽</text>
+<rect fill="rgba(110,168,254,.10)" height="34" rx="6" stroke="rgba(110,168,254,.45)" width="118" x="386" y="42"></rect>
+<text fill="#7d8794" font-size="12" text-anchor="middle" x="445" y="64">原始经验</text>
+<rect fill="rgba(94,234,212,.14)" height="34" rx="6" stroke="#5eead4" width="118" x="386" y="118"></rect>
+<text fill="#d5dce4" font-size="12" text-anchor="middle" x="445" y="140">强先验：狗很可怕</text>
+<rect fill="rgba(255,255,255,.05)" height="66" rx="6" stroke="#7d8794" width="72" x="534" y="60"></rect>
+<text fill="#b6c2cf" font-size="11" text-anchor="middle" x="570" y="89">加权</text>
+<text fill="#b6c2cf" font-size="11" text-anchor="middle" x="570" y="105">搅拌</text>
+<rect fill="rgba(94,234,212,.14)" height="34" rx="6" stroke="#5eead4" width="86" x="622" y="76"></rect>
+<text fill="#d5dce4" font-size="12" text-anchor="middle" x="665" y="98">知觉：恐怖</text>
+<line marker-end="url(#ar)" stroke="rgba(110,168,254,.45)" stroke-width="1.2" x1="504" x2="530" y1="59" y2="80"></line>
+<line marker-end="url(#ar2)" stroke="#5eead4" stroke-width="8" x1="504" x2="530" y1="135" y2="108"></line>
+<line marker-end="url(#ar2)" stroke="#5eead4" stroke-width="2" x1="606" x2="618" y1="93" y2="93"></line>
+<path d="M665,110 L665,175 L445,175 L445,156" fill="none" marker-end="url(#ar2)" stroke="#5eead4" stroke-width="3"></path>
+<text fill="#5eead4" font-size="11" text-anchor="middle" x="556" y="192">先验压倒经验 → 知觉反过来把先验喂得更强</text>
+<text fill="#7d8794" font-size="11" text-anchor="middle" x="556" y="212">每一次良好接触，都让恐惧加深</text>
+<text fill="#7d8794" font-size="11.5" x="14" y="252">两边是同一台机器。区别只在于「原始经验」这条通道的带宽——情绪越强烈，大脑越会把它掐细，</text>
+<text fill="#7d8794" font-size="11.5" x="14" y="270">以免你被迫直面难以忍受的体验。通道一细，成品就几乎全由先验决定，回路就闭合了。</text>
+</svg>
+<figcaption>困住的先验：不是「不肯更新」，而是更新的方向被反转了</figcaption>
+</figure>
+<p>关键那一步很简单，简单到读的时候会「啊」一声。习惯化需要一次「安全的、没事的」经历。而「安全不安全」也是知觉，也要经过这台搅拌机。<strong>原始证据（罗威纳摇着尾巴安静坐着）看上去很不错；但语境是一个极强的先验：狗很可怕。先验够强，它就压倒真实体验。结论：那条罗威纳很恐怖。</strong>于是你在这个情境上做的任何更新，都是<strong>朝着「狗更可怕」的方向</strong>去的，而不是反方向。</p>
+<blockquote>
+<span class="en">Your prior fear of dogs determines your present experience, which in turn becomes the deranged prior for future encounters.</span>
+<span class="zh">你原有的怕狗，决定了你当下的体验；而这份体验，又成了下一次相遇时那个已经错乱的先验。</span>
+<cite>《困住的先验：理性的一个基本问题》，2021</cite>
+</blockquote>
+<p>他还补了一段极精准的现象学：不太自省的患者会说「那条狗差点扑上来咬我，我就知道狗都危险」——欢快扑过来求摸头被读成凶猛扑击，讨要玩耍的呜咽被读成杀意的低吼。比较自省的患者会说「我心里明白狗不会伤害我，我只是知道每次跟狗待在一起我都会恐慌发作、痛恨这一切、全程痛苦」。然后他进屋，恐慌发作，全程痛苦，于是「狗」和「痛苦」的联结被焊得更死了一点。</p>
+<p>情绪在哪一步进来？他引 van der Bergh 等人的说法：当体验难以忍受时，<strong>大脑会主动压窄「原始经验」这条通道的带宽</strong>，好让你不必直面那些创伤情绪。代价是——语境从此几乎独占了知觉的决定权。这解释了为什么创伤受害者对创伤的描述常常出奇地简短、没有细节、就事论事。也解释了为什么强烈情绪会让偏见变得更牢：<strong>困住的先验是个纯认知现象，但情绪为它制造了完美风暴。</strong></p>
+<p>然后是推广。他很小心地说，这不是「情绪化偏见」——一台不带任何情绪的威胁评估程序，只要用人类这种贝叶斯推理，也会犯同样的毛病。政治上的证据是硬的：<strong>科学素养更高的人，在有争议的科学议题上反而更党派化</strong>。如果他们只是「有偏见」，那么每学一个新事实都该把他们往正确方向推一点。观察到的不是这样。</p>
+<blockquote>
+<span class="en">they start out wrong, and each new fact they learn, each unit of effort they put into becoming more scientifically educated, just makes them wronger.</span>
+<span class="zh">他们一开始就是错的，而他们每学到一个新事实、每多花一分力气让自己更懂科学，都只是让他们更错。</span>
+<cite>《困住的先验：理性的一个基本问题》，2021</cite>
+</blockquote>
+<p>他还翻出 1979 年那个实验：让支持和反对死刑的人各读两篇研究，然后给方法论质量打分（−8 到 8）。研究者刻意把两篇设计得一样好，还在不同被试之间对调结论以抵消残留差异。保守派给支持死刑那篇打 +2、反对那篇打 −2；自由派方向相反、幅度略小。<strong>两组读完都报告说证据确认了自己的立场，而且比读之前更确信。他们了解的细节越多，信念越强。</strong>他给这个模式下了个诊断学的词：这是困住的先验的<strong>确诊指征</strong>（pathognomonic）。然后写了四个字：这些人没救了。</p>
+<p>这个模型最好用的地方，是它顺手解释了一件让人抓狂的日常：<strong>「狗哨」（dog whistle）式解读</strong>。当你对某一方的先验被困住之后，他们说的任何看似中性的话，你都能在「语境里」读出可怕的东西。共和党人讲「法律与秩序」，那是想多关黑人；民主党人讲「同性恋权利」，那是想毁掉家庭好让国家接管你的孩子。他自己两边都遇到过：有人坚信没有一个反堕胎的保守派真的在乎胎儿，他们只是想惩罚放荡的女人；也有人坚信没有一个支持封控的自由派真的在乎新冠死亡，他们只是喜欢政府能强迫人戴上顺从的标志。</p>
+<p>「一旦你到了觉得这些说法全都合情合理的地步，你就没救了。你可以拿到一条中性到不能再中性的证据——『有场致命的瘟疫，所以那些人认为你该戴口罩』——然后把它转换成『他们想搞独裁』。而如果有人说你，你只会告诉他：你得结合语境看。」</p>
+<p><strong>他自己承认这个模型有个洞。</strong>在讲情绪那一节，他写道：即使先验很强，只要加进任何一点「狗是友好的」证据，在多数合理的加权函数下，知觉都该比纯先验稍微不那么可怕一点；迭代足够多次，先验就该被推动。现实里不这样。「我不知道为什么现实里不这样……我意识到这是这个模型的一个弱点，需要进一步研究。」——记住这句，第六节还会回来。</p>
+<p>还有救吗？他给的方向都是从临床里借来的：渐进暴露而不是洪水；让人极其详尽地、多通道地重述创伤（画出来、演出来）——他猜这是在<strong>给「原始经验」那条通道加权重</strong>。政治版本可能是 Sloman 和 Fernbach 的实验：唯一能降低党派极端程度的任务，不是让人陈述立场，而是<strong>要求他们精确地、机械地说明自己支持的政策是通过什么步骤起作用的</strong>。剩下的候选项包括致幻剂（它降低先验的权重）和冥想，他都注明了风险与不确定。</p>
+<p>最后一件事，是这个模型在他手里的寿命。2025 年，他写了一篇关于中世纪群青颜料、AI 生成图像和「一切都变得廉价之后我们还能不能感到惊奇」的文章——看上去和贝叶斯脑毫无关系。写到切斯特顿声称第一千次日落和第一次一样美，他停下来说：如果切斯特顿不是在打比方，而是在<strong>准确描述他的经验</strong>呢？</p>
+<blockquote>
+<span class="en">This sort of thing would make complete neurological sense - it's just an increase in the precision of sensory evidence relative to top-down priors.</span>
+<span class="zh">这种事在神经学上完全说得通——它无非就是感官证据相对于自上而下的先验，精确度提高了。</span>
+<cite>《她外袍的颜色》，2025</cite>
+</blockquote>
+<p>同一台机器。四年后，用来解释圣人。</p>
+<h3>二、几乎总是对的启发法：为什么专家会退化成一块石头</h3>
+<p>第一个想法讲的是<strong>你自己脑子里</strong>那台机器怎么坏。第二个讲的是：那你把判断外包给专家不就行了？</p>
+<p>2022 年 2 月，他写了一篇没有任何数据、全部由六个小故事组成的文章。上面已经见过第一个：那个可以被刻着「没有贼」的石头无损替换的保安。</p>
+<p>然后是医生。她是全科医生，每天有人来说「我背疼」「我胃里怪怪的」。她视触叩听一通，做点检查，说「没事，吃两片阿司匹林，一周不好再来」。总会好的；没人再来。慢慢地她开始偷懒：视诊但不触诊，不做检查，直接说「没事，会自己好的」。<strong>她永远是对的。</strong>运气好的话，她整个职业生涯什么坏事都不会发生；更可能的是，其中两三个病人得了癌症或别的可怕东西，被她漏掉了。但那些人死了，剩下的人都记得她是多么和气的医生，多么体贴，总那么让人安心，从不像别人那样拿针扎你戳你。她可以被换成一块石头，上面写着「没事，吃两片阿司匹林等它自己好」。</p>
+<p>还有未来学家（对任何变革都说「不会的」，最后布赖尔评分全场第一，可以被换成「什么都不会变、什么都不有趣」的石头）；还有怀疑论者，她辟谣一切，起初还认真研究，做过一百次之后跳过了前两步，算法变成「谁说了听着怪的话就狠狠羞辱他」。她永远是对的——羟氯喹她第一个骂，伊维菌素她也第一个骂。「就是可惜她当年骂氟伏沙明的时候，也骂得一样狠。」</p>
+<p>这里他插了本篇最漂亮的一段：</p>
+<blockquote>
+<span class="en">This is a great rock. You should cherish this rock. […] But it is a Protestant god. It does not need priests. If someone sets themselves up as a priest of the rock, you should politely tell them that they are not adding any value, and you prefer your rocks un-intermediated.</span>
+<span class="zh">这是块好石头。你应该珍惜这块石头。……但它是个新教的神，它不需要神职人员。如果有人把自己立为这块石头的祭司，你应该礼貌地告诉他：你没有增加任何价值，我喜欢我的石头不经中介。</span>
+<cite>《几乎总是对的启发法》，2022</cite>
+</blockquote>
+<p>然后他把这个笑话变成一则真正阴森的寓言。一位女王统治一座火山岛。智者们研究后认定：火山每年有 1/1000 的概率喷发，与去年是否喷发无关。有些征兆是可读的——岩浆颜色的细微变化、硫磺气味不易察觉的转移——但在来不及之前不会有明显信号。</p>
+<p>女王成立了火山学会。她不知道的是，火山学家有两种：诚实的，真的尽力去读征兆；以及<strong>石头教</strong>，一个邪恶教派，靠秘密参拜一块刻着「火山不会喷发」的石头获得魔鬼般的知识。</p>
+<p>每隔一阵，某个诚实的火山学家觉得岩浆颜色有点怪，报告女王。女王慌了，问所有人。诚实的说：「这问题很难，今天岩浆是有点怪，但它总是这样那样地怪，这火山很少喷发，不过谁知道这次是不是例外。」石头教徒偷偷查了石头，说：「别担心，火山不会喷发。」然后火山没喷。<strong>女王惩罚了那个发假警报的、对两边都不确定的那批人只是被嫌弃、而自信地准确预测了一切平安的教徒得到了晋升。</strong></p>
+<p>五百年过去了。制度和思维方式一代代地把石头教徒选出来。等到岩浆真的变色时，女王的顾问已经 100% 是教徒；硫磺味变了，女王问「你们确定吗」，他们又查了一遍石头，说确定；大地开始震动，女王最后问了一次，他们拿出小放大镜，尽可能凑近地看那块石头，上面依然写着「火山不会喷发」。</p>
+<p>「然后火山喷发了，所有人都死了。完。」</p>
+<p>寓言收完，他才说出那句要害。这件事有两重坏处，而第二重才是真正致命的：</p>
+<blockquote>
+<span class="en">Maybe the heuristic produces a prior of 99.9% that the thing won't happen in general. But then you consult a bunch of experts, who all claim they have additional evidence that the thing won't happen, and you raise your probability to 99.999%. But actually the experts were just using the same heuristic you were, and you should have stayed at 99.9%. False consensus via information cascade!</span>
+<span class="zh">也许那条启发法给出的先验是：这事有 99.9% 不会发生。然后你去咨询一堆专家，他们都说自己另有证据表明这事不会发生，于是你把概率提到 99.999%。但实际上专家用的就是你用的那条启发法，你本该停在 99.9%。<strong>信息瀑布造出来的假共识！</strong></span>
+<cite>《几乎总是对的启发法》，2022</cite>
+</blockquote>
+<p>换句话说：<strong>专家的意见不是独立证据源，你却把它当独立证据源来乘。</strong>「这项新发明不会改变一切。这种新出现的疾病不会变成全球大流行。这个阴谋论很蠢。这个外行没有推翻专家。这种新药不会有效。这匹黑马不会赢得大选。这个潜在威胁不会毁灭世界。」——这些说法几乎总是对的。而正因为几乎总是对，它们诱使我们对每一条都比应有的更确信。</p>
+<p>他的结尾有点狡猾，也很诚实：下次谁嘲笑理性主义者浪费脑细胞去想「显而易见」的问题，你去看看他自己是怎么做决定的，99.9% 是靠这类启发法。「（但要盯着剩下那 0.1%；那些人才是你该学的。）」</p>
+<h3>三、有界的不信任：说谎是有规则的游戏</h3>
+<p>如果前两个想法是诊断，第三个是他给出的处方，也是他被引用最多、也最容易被误读的一个。</p>
+<p>他的切入是一个让自由派读者不舒服的设问。你是个不信任 FOX News 的自由派。在机场候机，头顶电视放着 FOX，说洋基球场刚发生枪击案，二十人中枪，还有球场的现场画面，人群奔逃尖叫。<strong>你信不信？</strong></p>
+<p>「我就是个不信任 FOX News 的自由派，而是的，我信。」</p>
+<p>为什么？因为 FOX 的坏，不在这个层级上。它不会用深度伪造或群众演员伪造一件事然后管它叫「现场画面」——那远远超出 FOX 干过的任何事。接着他加码：FOX 说警方逮捕了嫌疑人，一个叫 Abdullah Abdul 的沙特移民，还放了警方记者会画面。信不信？还是信。伪造一场记者会、甚至给记者会配音把另一个名字改成这个——比 FOX 干过的任何事都恶劣得多。</p>
+<p>他特意堵死了那条最容易的反驳：「FOX 有偏见」这件事在这里完全不相干。你可以论证 FOX 想煽动对伊斯兰恐怖主义的恐惧、或者想把白人枪手换成沙特恐怖分子——但那些听上去就是疯狂的阴谋论，连 FOX 最恨它的敌人都不这么指控它。</p>
+<blockquote>
+<span class="en">The point is, there are rules to the "being a biased media source" game. There are lines you can cross, and all that will happen is a bunch of people who complain about you all the time anyway will complain about you more. And there are other lines you don't cross, or else you'll be the center of a giant scandal and maybe get shut down. I don't want to claim those lines are objectively reasonable. But we all know where they are.</span>
+<span class="zh">「当一家有偏见的媒体」这个游戏是有规则的。有些线你可以越，越了也不过是那些本来就天天骂你的人骂得更凶一点。还有些线你不能越，越了你就会变成一场大丑闻的中心，甚至可能被关掉。我不想说那些线在客观上有什么道理。<strong>但我们都知道它们在哪儿。</strong></span>
+<cite>《有界的不信任》，2022</cite>
+</blockquote>
+<p>然后——这是这篇文章之所以是他而不是别人写的原因——他立刻把同一把刀对准自己这边，而且举了一个自由派最不愿意被提起的例子。</p>
+<p>他先给保守派配了一个对称的场景：《华盛顿邮报》有篇文章说林肯是马克思的朋友、欣赏他的社会主义理论，因此今天攻击社会主义是不美国的。他读了反驳，认为反驳更有说服力：那篇文章几乎每句话都字面为真，但组织方式是精心设计来误导的——「他很可能在读马克思」（用一种你会当成口语的方式对冲）、「几乎可以肯定，1850 年代林肯在定期读马克思」（证据是林肯读过一份马克思投过稿的报纸）；说马克思给林肯写过信，但没提美国总统每年收到成千上万封信、也没有证据表明林肯读过；说一位美国大使告诉马克思的共产主义团体说林肯很欣赏他们，但没提那是一封套用格式的公函。</p>
+<p>那么，保守派该怎么从同一家报纸手里，接受「2020 年大选没有舞弊」呢？他给的推理是可操作的：<strong>马克思那篇几乎没受什么审视</strong>——几个聪明人看出它是假的，写了三四篇小评论，然后就没人管了。<strong>而 2020 年大选受到了每一家主要机构的巨大审视。</strong>夸林肯那篇的历史学家全是明确的社会主义者，而且研究的都不是林肯那个时期；反过来，真正的统计学家和选举安全专家在自己的专业领域内相当明确地说选举是公正的。他还补了一刀：马克思那篇是当成可爱的人情趣味小故事写的，而<strong>人人都知道可爱的人情趣味小故事永远是假的</strong>。</p>
+<p>第三个例子最能看出他愿意走多远。瑞典有研究者在收集犯罪统计时，顺带发现移民在某些犯罪上比例偏高。瑞典学界对他们提起了科研不端指控：第一条罪名是没申请许可就使用族裔统计（虽然数据是公开可得的），第二条是<strong>无法论证他们的研究将如何「减少排斥、促进融合」</strong>。Scott 的判断毫不含糊：这些指控在自己的条款上大概都成立，但如果研究结论是移民很棒，就不会有人拿这种放大镜去查技术细节；这套许可制度的演化，部分就是为了在这种时候能碾死人。「所以我认为这种愤怒是正当的，这正是人们指控专家有偏见时所指的东西，而这些指控完全属实。」</p>
+<p><strong>然后他问了那个关键问题：可是，你听过哪个专家原话说出「瑞典移民确实不比本地人犯罪更多」吗？</strong></p>
+<p>没有。学界会打压不合意的事实，但专家们不会直接撒谎。他们不上电视说「科学已有定论，有强有力的证据表明瑞典移民不比本地人更暴力」；他们不谈论「反对移民犯罪的强大科学共识」；他们偶尔试图惩罚提起此事的人，但不会管这些人叫「科学否定者」。</p>
+<p>而这，恰恰是你还能相信专家的理由。请愿书这种东西之所以在气候变化上存在、在瑞典移民犯罪上不存在，<strong>不是因为专家没有偏见，而是因为他们的偏见还不足以让他们在一份明确造假的声明上签名</strong>。于是「所有可敬的气候学家都签了那份声明」这件事，就真的构成了对结论的证据——哪怕你自己不是气候学家。</p>
+<p>他非常清楚这是在玩火，而且写了出来：</p>
+<blockquote>
+<span class="en">My answer - which I don't think is an obvious or easy answer, it's a bold claim that could be wrong, is "I think I have a good sense of the dynamics here, how far people will bend the truth, and what it looks like when they do". I realize this is playing with fire. But listening to experts is a powerful enough hack for finding the truth that it's worth going pretty far to try to rescue it.</span>
+<span class="zh">我的回答——我不认为这是个显然或容易的回答，这是个可能出错的大胆主张——是：「我觉得我对这里的动力学有不错的感觉，知道人们会把真相扭到多远，以及他们扭的时候是什么样子。」<strong>我知道这是在玩火。但『听专家的』作为一个找到真相的外挂，强到值得走很远去把它抢救回来。</strong></span>
+<cite>《有界的不信任》，2022</cite>
+</blockquote>
+<p>这套读法他后来推到了一个更不讨喜的位置：《媒体极少撒谎》。他逐条检查了 Infowars 的头版，结论是几乎找不到完全编造的东西——那些疫苗不良反应数据是真的，只是被抽掉了语境；然后他用同一把尺子量《纽约时报》，也量出了同一种病。<strong>最恶劣的误导者也极少说出虚假的事实，他们说的是不带足够语境的真话——而没有人能就哪些语境是必要的达成一致。</strong></p>
+<p>最后他给出这个想法最人性的那一面，出处是伊维菌素那篇的结尾。他问自己：我又不是免疫学家，凭什么我就信疫苗？答案不是「我理性」。是——</p>
+<blockquote>
+<span class="en">I think of myself as a temporarily-embarrassed immunologist. I don't know all the interleukins. But I would like to believe that if I really wanted, either I or at least people I know and trust could learn immunology to a standard where we could double-check the work of the vaccine scientists.</span>
+<span class="zh">我把自己想成一个<strong>暂时落魄的免疫学家</strong>。我不认得所有的白介素。但我愿意相信，如果我真想，我自己、或至少我认识并信任的人，能把免疫学学到足以复核疫苗科学家工作的程度。</span>
+<cite>《伊维菌素：远超你想知道的一切》，2021</cite>
+</blockquote>
+<p>（这个说法他挪用自斯坦贝克那句：社会主义在美国扎不下根，因为连穷人都把自己看成「暂时落魄的百万富翁」。）</p>
+<p>反过来，想象一个人的社交过滤泡把科学家全滤掉了。对他来说专家不是同类，是<strong>敌意的外星人</strong>：说着「量子模因瘟疫」这种你既听不懂、又觉得不公平地听不懂的词；过去几次预测明明错了（记得那句「不要戴口罩」吗）；而且 95% 的生物学教授是民主党人。Scott 写了一整个虚构的外星入侵寓言来演示这个视角，然后说：「99% 的敌意外星人一致同意：疫苗适合你！」——这么一说，就没那么有说服力了。</p>
+<p><strong>他的结论不是「所以那些人蠢」，而是：如果我们想让人愿意打疫苗，就得让科学界对半个国家而言，不再像一块敌意外星人的飞地。</strong>「但我真不知道该怎么做到这一点。」</p>
+<h2>他的思维方法</h2>
+<p>把他读完，可迁移的其实不是结论，是几个可以照做的动作。</p>
+<p><strong>一、把「读了文献」拆成一道有步骤的工序。</strong>他的招牌文体叫「远超你想知道的一切」（Much More Than You Wanted To Know）。伊维菌素那篇是标本：他从一个亲伊维菌素网站的名单上取 29 篇研究，逐篇读，剔掉 13 篇他自己不信任的，再剔掉 5 篇流行病学家 Gideon Meyerowitz-Katz 不喜欢但他自己没意见的（<strong>为了得到一份「双方都同意还不错」的名单</strong>），剩 11 篇。最后总结里他明码标出了新工具箱：查造假（Carlisle-Stouffer-Fisher 法检查 Table 1 的 p 值分布是不是过于漂亮；GRIM 检查「10 个病人里 27% 康复」这种不可能的均值）；查编码错误——他坦白自己那篇的一个早期草稿因为有人在问卷里声称有 99999 个自闭症孩子而得出过错误结论。</p>
+<blockquote>
+<span class="en">I want a world where "I did a study, but I can't show you the data" should be taken as seriously as "I determined P = NP, but I can't show you the proof."</span>
+<span class="zh">我想要一个这样的世界：「我做了个研究，但我不能给你看数据」，应该被跟「我证明了 P = NP，但我不能给你看证明」一样认真地对待。</span>
+<cite>《伊维菌素：远超你想知道的一切》，2021</cite>
+</blockquote>
+<p><strong>二、把置信度写成数字，然后允许自己改。</strong>伊维菌素那篇的结尾是一串带百分比的条目：「在没有共存寄生虫的情况下，伊维菌素不会显著降低新冠死亡率：85–90% 置信度」「寄生虫在某些伊维菌素研究中是显著混杂因素：50% 置信度」。一年多后他公开把第一条升到 95%、把「虫子」那条降到 35%，并写明理由。他还加了一句极关键的注脚：「我不是这方面的专家，你不该在意我的具体概率；我写出来只是为了清楚地沟通，并试着让自己可被追责。」</p>
+<p><strong>三、把论证写成侦探小说，而且真的让读者先答。</strong>伊维菌素那篇写到中段，他把最难受的处境摆到你面前：Mahmud 那篇是好研究，它得到了 p = 0.003 支持伊维菌素。「你可以吃蓝色药丸，继续做一个体面的社会成员；也可以吃马用驱虫药那颗，看看会到哪儿去。」然后他不给答案，插了一行「过一会儿我告诉你我的答案。但你不会永远有我替你回答这类问题，所以观察一下你自己的思考过程，可能是有教益的」，接着是五行省略号。</p>
+<p>翻过去，小标题叫「综合」，第一句是：<strong>「希望你刚才学到了一些关于自己的有趣的事。不过我的答案是：虫子！」</strong></p>
+<p>那些效果最惊人的研究，全来自寄生虫遍地的地方——孟加拉、东印度、哥伦比亚。而新冠最常见的治疗之一是皮质类固醇，一种免疫抑制剂；被它压下去的免疫反应，恰好是控制粪类圆线虫（Strongyloides）的那一类。短暂关闭，虫子就会失控增殖，患者相当常见地会死。<strong>伊维菌素本来就是驱虫药。</strong>于是它在虫子多的地方真的降低了死亡率——只不过救的不是新冠，是虫。他自己说，这个解释之所以让他觉得对，是因为它是<strong>最欠揍的一种解法：所有人都错了。</strong>说它是神药的错了，因为「我他妈热爱科学」而一笔勾销所有研究的也错了。</p>
+<p><strong>四、纠正癖，而且第一个纠正自己。</strong>2025 年那篇《如果撒谎值得你花时间，纠正它就值得我花时间》，理由是机制性的：如果一方靠撒谎让自己的论点强 5%，久了会累积；另一方不想被落下就也得强 5%，于是新基线出现，为什么不是 10%？20%？他举完一个关于「种族主义斗殴」的例子后，紧接着写了这样一个括号：</p>
+<blockquote>
+<span class="en">(sorry - I've genuinely heard people say he was going to put minorities in camps, but I'm not sure they specified all minorities, and I don't think they ever said they would get murdered there. Would you have let me get away with that exaggeration?)</span>
+<span class="zh">（抱歉——我确实听过有人说他要把少数族裔关进营地，但我不确定他们说的是<strong>所有</strong>少数族裔，我也不认为他们说过会在那里被杀害。刚才那个夸张，你会放我过去吗？）</span>
+<cite>《如果撒谎值得你花时间，纠正它就值得我花时间》，2025</cite>
+</blockquote>
+<p><strong>五、把理论拿去开一家公司。</strong>他写了很多年美国医疗成本病，然后引费曼——「凡我不能创造的，我就不理解」——去开了 Lorien Psychiatry，专门服务没有医保的人，目标是用四分之一的价格提供好的精神科医疗。理论的验收方式是一家真的诊所。</p>
+<p><strong>六、公开的错误清单。</strong>他有一个常设的「Mistakes」页，本文核对时上面有 61 条编号错误，从 2013 年 10 月到 2025 年 8 月，倒序排列。规则写在最上面：</p>
+<blockquote>
+<span class="en">I don't promise never to make mistakes. But if I get something significantly wrong, I'll try to put it here as an acknowledgement and an aid for anyone trying to assess my credibility later.</span>
+<span class="zh">我不承诺永不犯错。但如果我在某件事上错得比较严重，我会尽量把它放到这里，作为一次承认，也作为日后任何想评估我可信度的人的辅助材料。</span>
+<cite>《错误》页，持续更新</cite>
+</blockquote>
+<p>它排除拼写错误、失败的预测和链接帖里的错，只收「我在一篇文章的主要部分上根本性地错了」。这不是姿态：下一节的主角就在这份清单上。</p>
+<h2>他哪里可能是错的</h2>
+<p><strong>最有分量的那次反驳有名有姓，而且他自己把它登了出来。</strong>Alexandros Marinos，一位创业者兼长期读者，写了 <strong>21 篇</strong>文章逐条反驳伊维菌素那篇。2023 年 2 月 Scott 发了一篇长文回应，逐节承认或反驳。</p>
+<p>他承认的部分很硬：Biber 那项以色列研究，他在原文里说主要终点结果「被藏起来了，可能因为是阴性的」，还讥讽作者做多变量回归是「主要结果无聊时你恼羞成怒会做的事」。<strong>实际上主要终点是阳性的，而且规规矩矩地印在摘要和结果部分该在的位置。</strong>他写：「在我错的那一项上，我错得离谱，我向研究作者和各位道歉。」他还承认自己那个非正式的「元分析」用错了统计检验（该用 DerSimonian-Laird），改用正确方法后<strong>数字对伊维菌素更有利</strong>；承认自己在 Cadegiani 那节把一件事张冠李戴了；承认「虫子」被他强调过头、发表偏倚被他强调不够，并把置信度从 50% 下调到 35%。</p>
+<blockquote>
+<span class="en">Nobody can be right all the time, but I try not to be simultaneously wrong and smug. I failed at that here and need to do better at Principle of Charity […] Realistically, this project was outside my expertise and competence level. […] I give myself a C+ for results but an A for effort.</span>
+<span class="zh">没人能永远正确，但我尽量不要<strong>同时又错又自鸣得意</strong>。这次我没做到，我得在善意原则上做得更好。……说实话，这个项目超出了我的专业和能力范围。……我给自己的结果打 C+，给努力打 A。</span>
+<cite>《回应 Alexandros 对我的伊维菌素反驳》，2023</cite>
+</blockquote>
+<p><strong>但这次交锋里还有一条他自己写下的、更难看的事实。</strong>他在文章第二段坦白：「老实说，我也不想读一个 21 部分的论证。我大概读了他一半的帖子，主要是在回应那份摘要。」——一个把「我把 29 篇研究一篇篇读完」当作招牌的人，在面对针对自己的最系统的反驳时，读了一半。这不是我的推断，是他的原话。<strong>他方法论的说服力建立在穷尽性上，而穷尽性在被批评时最先掉链子。</strong></p>
+<p><strong>第二个弱点是他自己在理论内部标出来的。</strong>「困住的先验」这个模型有一个他明说了的洞：按多数合理的加权函数，即使先验很强，掺进任何一点正面证据也该让知觉稍微好一点，迭代足够久就该松动。现实里不松动。他写：「我不知道为什么现实里不会这样，只有一个笼统的感觉：我们用的那个加权函数并不完美贝叶斯……我意识到这是这个模型的一个弱点，需要进一步研究。」这不是小事——<strong>整个模型的解释力，就压在这个没被填上的机制上。</strong></p>
+<p>而他自己给出的最狠的一句批评，就在同一篇的最后一行：</p>
+<blockquote>
+<span class="en">Ironically, my prior on this theory is trapped - everything I read makes me more and more convinced it is true and important. I look forward to getting outside perspectives.</span>
+<span class="zh">讽刺的是，我对这个理论的先验是困住的——我读到的每样东西都让我越来越确信它是真的、是重要的。我期待获得外部视角。</span>
+<cite>《困住的先验：理性的一个基本问题》，2021</cite>
+</blockquote>
+<p>这句话可以读成迷人的自嘲，也可以读成一个真问题：<strong>一个能解释「所有反例都是因为对方的先验被困住了」的理论，很难被证伪。</strong></p>
+<p><strong>第三个是「有界的不信任」的结构性问题，而且他自己按到了痛处却没能解决。</strong>整套方法依赖一项无法明写规则的技能——知道信源在什么地方会扭曲真相、扭到多远。他说「我觉得我对这里的动力学有不错的感觉」，然后紧接着承认「我知道这是在玩火」。问题在于：<strong>「我练出了判断力」和「我的先验被困住了，所以我总能解释为什么专家在这一次是可信的」，从内部看是一模一样的。</strong>他自己写的困住的先验，恰恰预测了他不会有能力从内部分辨这两者。而在他真正被 Marinos 抓住的那次里，出问题的正是这一层：他相信了他信任的人（Meyerowitz-Katz）转述的一项指控，而那个人其实没提出那项指控。</p>
+<p>把这三条放在一起，还有一个共同的形状值得点出：<strong>他的方法在「审视别人」时最锋利，在「被别人审视」时最钝。</strong>29 篇研究他能一篇篇拆；21 篇针对他的反驳他读了一半。这不是道德指控——他毕竟发了那篇回应，也把错误登进了那份 61 条的清单——但这是这套方法的系统性偏斜方向，读他的时候值得随身带着。</p>
+<p><strong>最后是本页读不到的部分，如实说明。</strong>关于他有更尖锐的、来自外部的批评存在：Noah Smith 在自己的博客上写过一篇《对 Scott Alexander 关于犹太人成就论的回应》；RationalWiki 上有一个专门批评他的条目。本次运行的网络环境只放行了少数域名，这两处以及他自己的旧站 slatestarcodex.com 全部无法访问。<strong>因此我只报告这些批评存在这一书目事实，没有读到原文，也不会替它们复述任何论证。</strong>同样地，他在旧站上最著名的那些文章——《对摩洛克的沉思》《我能容忍除了外群体以外的一切》——本页只在他自己后来的回引中确认了它们的地位，没有引用其中一个字。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.astralcodexten.com/p/trapped-priors-as-a-basic-problem">Trapped Priors As A Basic Problem Of Rationality</a></span>（2021）<span class="d">困住的先验。从恐惧症的洪水疗法为什么失败，推到「更懂科学的人更党派化」。全站被后文回引最多的一篇。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/heuristics-that-almost-always-work">Heuristics That Almost Always Work</a></span>（2022）<span class="d">保安、医生、未来学家、怀疑论者，和火山岛上的石头教。讲专家意见为什么不是独立证据。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/bounded-distrust">Bounded Distrust</a></span>（2022）<span class="d">有界的不信任。FOX 与枪击案、《华盛顿邮报》与林肯、瑞典移民犯罪学，以及苏联的收成。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/ivermectin-much-more-than-you-wanted">Ivermectin: Much More Than You Wanted To Know</a></span>（2021）<span class="d">29 篇研究、逐篇拆解，最后归结为「虫子」。也是「暂时落魄的免疫学家」和敌意外星人寓言的出处。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/response-to-alexandros-contra-me">Response To Alexandros Contra Me On Ivermectin</a></span>（2023）<span class="d">对 Alexandros Marinos 21 篇反驳的回应。他认下的错、没认的错，以及他只读了对方一半。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/still-alive">Still Alive</a></span>（2021）<span class="d">删掉 1,557 篇之后的复活第一篇。他为什么用化名、为什么删站、为什么最后自己写出了真名。</span></li>
+<li><span class="t"><a href="https://www.astralcodexten.com/p/my-left-kidney">My Left Kidney</a></span>（2023）<span class="d">捐肾全过程。术前 CT 比手术危险 15 倍的那笔账，和他被医院以童年强迫症为由拒绝的那通电话。</span></li>
+</ul>
+<p style="font-size:.88rem;color:#7d8794">语料说明：本页依据 Astral Codex Ten 公开正文，抓取并解析 870 篇（约 340 万词），站内回链中心度由这批文本计算得出；通读 12 篇，时间跨度 2021 年 1 月至 2025 年 6 月。<strong>他自己在「关于」页推荐的入门清单共 11 篇，全部位于旧站 slatestarcodex.com，该域名在本次运行的网络策略下不可访问，故本页不引用旧站任何原文。</strong></p>
+</div>
+<section class="updates" data-last-reviewed="2026-09-01" data-slug="astral-codex-ten">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-01</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
