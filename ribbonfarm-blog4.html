@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Venkatesh Rao · Ribbonfarm — 你得把世界压扁才看得懂它</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="ribbonfarm-blog4.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 04 · ribbonfarm.com</div>
+<h1>Venkatesh Rao · Ribbonfarm<br/>你得把世界压扁才看得懂它</h1>
+<p class="sub">2007–2024 · 1,117 篇正文 · 211 万词 · 60 位作者，其中他一人写了 875 篇、154 万字 · 13,230 条评论 · 2024 年 11 月停更，2026 年 4 月转为静态存档 · 本页通读 12 篇，跨度 2007 年 8 月至 2024 年 10 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2009 年秋天，一个在施乐研究中心上班的航天工程博士写了一篇文章，说美国情景喜剧《办公室》不是一堆办公室笑话。</p>
+<blockquote>
+<span class="en">It is a fully realized theory of management that falsifies 83.8% of the business section of the bookstore.</span>
+<span class="zh">它是一套完整成形的管理学理论，证伪了书店商业区里 83.8% 的书。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>那个 83.8% 是他现编的——一个精确到小数点后一位的假数字，本身就是个笑话。但这篇文章被 Slashdot 推上了首页，成了这个博客十七年里评论最多的一篇（283 条），也是他自己后来最常回头引用的文章之一（34 篇后文回引它）。</p>
+<p>它讲的东西是这样的。公司里有三层人：<strong>输家、糊涂人、反社会者</strong>。名字借自漫画家 Hugh MacLeod 的一张公司层级图。<strong>输家</strong>不是骂人——是经济学意义上的：他们做了一笔糟糕的交易，拿长期的经济自由换了短期的稳定，「简言之，用自由换了工资」。他们干活，但拿不到与创造的价值相称的报酬。所以理性的做法是：只出最低限度的力。</p>
+<p>接下来是那句反直觉的：<strong>如果你在输家这一层超额努力，你会被提拔——不是因为你优秀，而是因为你暴露了自己是个傻子。</strong></p>
+<blockquote>
+<span class="en">The simple reason is that if you over-perform at the Loser level, it is clear that you are an idiot.</span>
+<span class="zh">道理很简单：如果你在输家这一层超额表现，那就很清楚了，你是个傻子。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>你已经签了一份亏本合同，现在又多交货，把合同弄得更亏。于是你被提拔进中层，成为糊涂人——那一层的作用，是替上面的人承担后果。</p>
+<p>写这篇的人叫 Venkatesh Rao，一般写作 Venkat Rao。密歇根大学航空航天工程博士，2006 到 2011 年在施乐研究中心当高级研究员，2007 年 7 月开了 Ribbonfarm 这个博客，写了十七年，1,117 篇，211 万词，2024 年 11 月停更。</p>
+<p>这么多字底下只有一个东西，而且从他 2007 年的第一篇起就在那儿了。那第一篇写的是他在伊萨卡镇中心的咖啡馆二楼，看见楼下有个人带着一只巨大的白鹦鹉。他花了整篇文章观察路人怎么反应——大人们努力把这只鹦鹉塞进某个已有的格子里，小孩子不用塞。</p>
+<blockquote>
+<span class="en">a free mind is one which the parrot can occupy easily, and stay in as long as it chooses.</span>
+<span class="zh">自由的头脑，是那种鹦鹉能轻易住进去、并且爱住多久住多久的头脑。</span>
+<cite>《鹦鹉》，2007</cite>
+</blockquote>
+<p>这就是那件事：<strong>你必须先把世界压缩成一个看得懂的版本，才能在里面行动；而压缩的那一下，就是你从此看不见的东西。</strong>他后来十七年，是在不同题材上一遍遍重画这同一个机制。</p>
+<p>他最被自己回引的那篇（1,117 篇里被 50 篇后文引用，第一名，第二名是 34 篇）讲的是普鲁士人怎么弄死自己的森林。国家看不懂天然林——树种杂乱、随机生长、没法数、没法收税。于是有了「科学林业」：砍掉一切，种上整齐等距的单一树种。第一代长得很好。<strong>第二代死了。</strong>那些「乱七八糟」的东西——真菌、灌木、昆虫、腐殖质——原来是林子活着的原因。</p>
+<p>这个案例是从人类学家 James C. Scott 的《国家的视角》里搬来的，他一点不含糊地说明了出处。他自己加的那一句，是把它从一个历史批判变成了一个日常工具：</p>
+<blockquote>
+<span class="en">though this failure mode is easiest to describe in terms of high-modernist ideology, it is actually a basic failure mode for human thought that is time and ideology neutral.</span>
+<span class="zh">虽然这种失败模式用高等现代主义意识形态来描述最容易，但它其实是人类思维的一种基本失败模式，与时代和意识形态无关。</span>
+<cite>《一个叫可读性的小大想法》，2010</cite>
+</blockquote>
+<p>换句话说：这不是普鲁士人的毛病，也不是苏联的毛病。这是你重构自己简历时的毛病，是产品经理画用户画像时的毛病。而驱动它的不是傲慢，是焦虑——「可读性平息了表面混乱所激起的不安」。<strong>你不是因为想控制才去简化，你是因为看着一团乱会难受才去简化。</strong></p>
+<p>两年后他把同一个机制翻了个面。这一次，压缩不是权力从上面强加的，是你自己在做，而且做得很舒服。他管它叫<strong>人造常态场</strong>：</p>
+<blockquote>
+<span class="en">Life as we live it has this familiar sense of being a static, continuous <em>present</em>. Our ongoing time travel (at a velocity of one second per second) never seems to take us to a foreign place. It is always 4 PM; it is always tea-time.</span>
+<span class="zh">我们过着的生活，总有一种熟悉的、静止的、连续的<strong>当下</strong>感。我们持续不断的时间旅行（速度是每秒一秒）似乎从来没把我们带到任何陌生的地方去。永远是下午四点；永远是喝茶时间。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>这里他有个别人没有的身份优势。爬升率、倾斜角、加速度上限——这些客机参数他当年在航空系是当作业算的。他知道那些限制是<strong>故意</strong>卡在那儿的：为的是让你不觉得自己在飞。</p>
+<blockquote>
+<span class="en">Airline passengers don't fly.</span>
+<span class="zh">坐飞机的人并不在飞。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>你以三分之二倍音速坐在一根铝管里，而那根铝管其实能做出相当吓人的特技动作。你感觉不到，因为整个系统被设计成让你感觉不到。<strong>技术不是靠改变体验扩散的，是靠拒绝改变体验扩散的。</strong>手机不是从计算器来的，是从电话来的；网页不是从超文本数据库来的，是从「文档」来的。每一次，新东西都得先伪装成一件旧东西，才能进门。</p>
+<p>而他给这个故事的结尾不是「所以醒醒吧」。他说，当变化快到常态场撑不住的时候，你不会被击倒：</p>
+<blockquote>
+<span class="en">You're not going to be knocked out cold. You're just going to throw up in some existential sense of the word.</span>
+<span class="zh">你不会被一拳打晕。你只会在某种存在主义意义上吐出来。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>这个博客写到 2024 年 11 月的最后一篇。而对这十七年下过的最狠一句判词，是他自己写的，不是任何批评者：</p>
+<blockquote>
+<span class="en">This blog was sponsored by ZIRP.</span>
+<span class="zh">这个博客是由零利率政策赞助的。</span>
+<cite>《Ribbonfarm 退休了》，2024</cite>
+</blockquote>
+<p>他的意思不是玩笑。廉价的服务器、开源软件、不要钱的分发渠道、一大批闲着的聪明人——支撑一个人写十七年不收钱的那整套条件，是零利率时代的产物。他说他不认为有生之年还会再见到那种利率。<strong>所以也不会再见到这样的博客圈了。</strong>一个专门研究「你看不见自己身处何种简化之中」的人，最后交出的作品，是指认了他自己那十七年身处何种简化之中。</p>
+<p class="sub" style="margin-top:26px"><em>想看「优质平庸」那份清单和它背后那份看涨期权、他怎么把消费者定义成「一个新奇而稳定的行为模式」、他那三条反潮流的写作纪律（其中一条是「引用自己的次数要比引用别人多十倍」）、以及 Scott Alexander 用「绿型红型蓝型人」把格瓦斯法则整个拆掉的那一段——切到上面的「完整版」。</em></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<h3 style="margin-top:0">Glossary · 术语表</h3>
+<ul>
+<li><b>可读性（legibility）</b>：本页最重要的词。指一个复杂事物被外部权力「看懂」的程度——能不能数清、登记、征税、管理。让某物变得可读，通常要先把它改造成更整齐的样子。</li>
+<li><b>《国家的视角》（<em>Seeing Like a State</em>）</b>：人类学家、政治学家 James C. Scott 1998 年的书，legibility 这个用法的来源。Rao 那篇著名的文章是对这本书的转述加扩写，他自己讲得很清楚。</li>
+<li><b>高等现代主义（high modernism）</b>：二十世纪上半叶的一种信念——相信可以用科学理性把社会整个重新设计一遍。巴西利亚那种在图纸上画出来的首都是它的代表作。</li>
+<li><b>Hugh MacLeod 公司层级图</b>：漫画家 MacLeod 画的一张图，把公司画成三层：底层输家、中层糊涂人、顶层反社会者。Rao 借了这三个标签，并说明连他自己都觉得这些词的字面含义和他要指的东西不太对得上。</li>
+<li><b>《办公室》（<em>The Office</em>）</b>：英国喜剧演员 Ricky Gervais 创作的情景喜剧（Rao 分析的主要是美版）。「格瓦斯法则」就是拿他的姓命名的。</li>
+<li><b>被 Slashdot（slashdotted）</b>：Slashdot 是 2000 年代的极客新闻站。被它推上首页会带来巨大流量，通常也会把小博客的服务器压垮。</li>
+<li><b>ZIRP</b>：zero interest-rate policy，零利率政策。2008 年金融危机后各国央行长期把利率压到接近零，热钱变得极其便宜——这是 2010 年代大量免费互联网内容的经济背景。</li>
+<li><b>站内回链中心度</b>：一篇文章被同一个站里后来的文章引用了多少次。本页多处用到的这组数字，来自 Ribbonfarm 存档站自己发布的统计页，不是我的估算。</li>
+</ul>
+</div>
+<h2>一件怪事：一个精确到小数点后一位的假数字</h2>
+<p>2009 年 10 月 7 日，一个在纽约州罗切斯特郊外的施乐研究中心上班的工程师，发表了一篇分析情景喜剧的文章。第一段就把话说死了：</p>
+<blockquote>
+<span class="en">The Office is not a random series of cynical gags aimed at momentarily alleviating the existential despair of low-level grunts. It is a fully realized theory of management that falsifies 83.8% of the business section of the bookstore.</span>
+<span class="zh">《办公室》不是一串随机的犬儒段子，不是用来暂时缓解底层杂兵存在性绝望的。它是一套完整成形的管理学理论，证伪了书店商业区里 83.8% 的书。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>那个 83.8% 没有出处，因为它是编的。一个精确到小数点后一位、来路不明、语气笃定的数字——这种玩法在这个博客里会出现无数次：<strong>用一个假装严谨的形式，装一个他确实认真的判断。</strong>数字是假的，「书店商业区里绝大多数书是错的」这个断言是真心的。</p>
+<p>然后这篇文章被 Slashdot 推上了首页。用他自己回顾时的说法，这一篇「把 Ribbonfarm 放到了地图上」。十五年后，站方自己算出来的统计显示：这篇是全站评论最多的（283 条），是被站外引用最多的（在 Hacker News 上 1,272 分），也是被他自己后文回引第二多的（34 次）。</p>
+<p>值得停一下的地方在于：这是一个航天工程博士，在一家复印机公司的研究部门上班，业余时间靠拆解一部电视喜剧，写出了一套自成体系的组织理论。他没有商学院背景，没有做过管理者，也没打算要写一本书。<strong>这个组合本身，就是他后来所有文章的形状。</strong></p>
+<h2>这人是谁</h2>
+<p>Venkatesh Rao，一般写作 Venkat Rao。孟买印度理工学院机械工程学士（1997），密歇根大学系统与控制硕士（1999）、航空航天工程博士（2003），康奈尔大学博士后（2004–2006，做指挥与控制系统），2006 到 2011 年在施乐研究中心韦伯斯特分部当高级研究员。2011 年他离开施乐，此后一直是独立顾问兼写作者。</p>
+<p>2007 年 7 月他开了这个博客。名字来自十八世纪底特律的「缎带农场」——沿河切出来的一条条狭长地块，每家都有一小段临河。他给出的解释很准确地说明了一个写作者在互联网上的处境：<strong>一个博客，就是想从眼球汇成的那条大河里，取到窄窄的一条注意力。</strong></p>
+<p>有个细节很能说明他这个人。前十二年这个博客的副标题是「Experiments in refactored perception」（重构感知的实验）——他自己注明这是个极客玩笑：<strong>通过写作重写你脑袋里的软件，从而改变你看世界的方式。</strong>2019 年他把副标题换成了「Constructions in magical thinking」（魔法思维的建构），并把它形容为「有纪律的唯我论与逃避主义」。一个人肯把自己后期的模式命名为「逃避主义」，多少说明他对自己不客气。</p>
+<p>2015 年 1 月 Sarah Perry 成为特约编辑，博客从个人写作变成了群体写作（最终共 60 位作者，但他一人写了 875 篇、154 万字，占了全站近四分之三）。2012 到 2019 年他每年办一次叫 Refactor Camp 的非正式会议。</p>
+<p><strong>停更说明：</strong>Ribbonfarm 于 2024 年 11 月正式退休，最后一篇发在 11 月 13 日、他五十岁生日那天。2026 年 4 月全站转为静态存档，域名和链接全部保留，本页所有引用链接均已实测可打开。他本人仍在 Substack 上写作。</p>
+<h2>他跟什么较劲</h2>
+<p>如果你随手抽三篇 Ribbonfarm，你会得到：一篇讲东印度公司的金融史，一篇讲手模特的职业生涯，一篇讲太平洋西北地区的十几岁少年为什么在客厅里搭堡垒。看不出主线。</p>
+<p>但主线在第一篇里就有了，而且第一篇写的是一只鹦鹉。</p>
+<p>2007 年 8 月，他坐在伊萨卡镇中心咖啡馆的二楼靠窗位置，往下看，看见一个男人带着一只巨大的白鹦鹉。主人走开了，鹦鹉留在那儿。他没写鹦鹉，他写<strong>路人</strong>——每个人在看见这只鹦鹉的瞬间，脸上要做出什么表情。有个句子写得非常刻薄也非常准：你的脸必须看起来像一张见过鹦鹉的人的脸。大人们在忙着把这只鹦鹉归档；小孩子不用归档，他们就是在看鹦鹉。</p>
+<blockquote>
+<span class="en">The parrot is rare in adult life. For the child, everything is a parrot.</span>
+<span class="zh">鹦鹉在成年人的生活里很稀罕。对小孩来说，每样东西都是鹦鹉。</span>
+<cite>《鹦鹉》，2007</cite>
+</blockquote>
+<p>鹦鹉是那个还没有被归档的东西。而成年生活的运作方式，是把每件事在半秒之内归好档——归档让你能行动，归档也意味着你没在看。</p>
+<p>他十七年就没放下这件事。用最平实的话讲，他的根问题是：</p>
+<p><strong>人得先把复杂现实压缩成一个看得懂的版本才能在里面活动。那么，这个压缩包是谁做的、按谁的方便做的、丢掉了什么、谁在丢掉的那部分里付账？</strong></p>
+<p>这个问法有几个不常见的地方，值得说清楚。</p>
+<p>第一，<strong>他不认为简化是可以避免的</strong>。这不是一篇又一篇「世界很复杂，别简化」的文章。鹦鹉那篇里他已经说了，你不可能一直不归档。他要问的是简化的<strong>形态</strong>：谁做的、代价落在谁头上。</p>
+<p>第二，<strong>他把权力和舒适放在同一台机器里</strong>。普鲁士国家把森林简化，是自上而下的暴力；你把飞行简化成「坐在椅子上看剧」，是自愿的、舒服的、免费的。他坚持这两件事是同一个机制的两面——这在这个题材上是相当少见的立场，多数人写到一半就滑进「批判权力」的车道里去了。</p>
+<p>第三，也是他最容易被误读的地方：<strong>他不劝你摘掉眼镜</strong>。他反复讲的是，你摘不掉，摘掉了会吐。他能做的只是让你意识到眼镜的存在，然后在特定时刻有意识地换一副。这就是「重构感知的实验」的字面意思。</p>
+<h2>他的想法，讲成「他怎么发现的」</h2>
+<h3>一 · 让它可读，就是让它变脆</h3>
+<p>1,117 篇文章里，被后来的文章引用最多的一篇是 2010 年 7 月的《一个叫可读性的小大想法》——50 次回引，是第二名的近一倍半。这是他整个博客的承重墙。</p>
+<p>而这篇文章的开头并不像一篇理论文章。它开头是几张森林的照片。</p>
+<p>左边是一片天然林：树种杂乱，高矮不一，倒木、灌木、藤蔓、腐叶。右边是十八世纪末普鲁士人重造过的林子：一种树，等距，笔直，成排。</p>
+<p>为什么要改？因为天然林<strong>数不清</strong>。国家要的是一个能填进表格的数字：这片地每年出多少立方米可用木材、能收多少税。天然林在测量员眼里几乎是不可读的。于是有了「科学林业」——砍掉一切，只种产量最高的那一种，等距排列。</p>
+<p>第一代林子长得非常好，产量数据漂亮，模式被推广到全欧洲。</p>
+<p><strong>第二代垮了。</strong>德国人后来专门造了个词记这件事：Waldsterben，森林死亡。那些被清掉的「乱七八糟」——真菌网络、林下灌木、昆虫、腐殖层、混杂的树龄——原来不是噪声，是这片林子活着的原因。为了让森林可读而做的改造，把森林变脆了。</p>
+<p>Rao 从 James C. Scott 的《国家的视角》里拿到了这个案例（他从头到尾都在说这是 Scott 的书，甚至说自己这篇的主要功能是转述），然后他做了两件 Scott 没做的事。</p>
+<p>第一件是把它压成一个可以随身携带的配方。他把 Scott 那本厚书里的模式列成了七步，语气刻意刻薄：</p>
+<ol>
+<li>看着一个复杂而混乱的现实，比如一座老城的社会动态</li>
+<li>没能理解这个复杂现实运作中的全部微妙之处</li>
+<li>把这次失败归因于你所看之物的不理性，而不是你自己的局限</li>
+<li>提出一个理想化的、白纸一张的愿景，说现实<em>应该</em>是什么样</li>
+<li>论证该愿景的相对简单与柏拉图式的秩序感代表了理性</li>
+<li>动用威权力量强加这个愿景，必要时把旧现实拆掉</li>
+<li>眼看着你的理性乌托邦惨烈失败</li>
+</ol>
+<p>把这七步排出来的效果，是让你在自己的会议室里认出它。而他给出的机制句是全篇的核心：</p>
+<blockquote>
+<span class="en">This imposed simplification, in service of legibility to the state's eye, makes the rich reality brittle, and failure follows.</span>
+<span class="zh">这种为了在国家眼中变得可读而强加的简化，让丰富的现实变脆，失败随之而来。</span>
+<cite>《一个叫可读性的小大想法》，2010</cite>
+</blockquote>
+<p>第二件事更重要，也是让这篇文章成为承重墙的原因：<strong>他把它从政治史里搬了出来。</strong></p>
+<p>Scott 的书写的是国家。Rao 说这个失败模式不属于国家，也不属于任何一种意识形态：</p>
+<blockquote>
+<span class="en">though this failure mode is easiest to describe in terms of high-modernist ideology, it is actually a basic failure mode for human thought that is time and ideology neutral.</span>
+<span class="zh">虽然这种失败模式用高等现代主义意识形态来描述最容易，但它其实是人类思维的一种基本失败模式，与时代和意识形态无关。</span>
+<cite>《一个叫可读性的小大想法》，2010</cite>
+</blockquote>
+<p>他随即把刀转向了当时（以及现在）最受欢迎的那批「温和理性」方案：行为经济学的「选择架构」、设计界的「顺着人走出来的小路铺路」。他说这些不提供豁免权——天真地顺着小路铺路，本身就是这个失败模式的一个实例。因为问题从来不在「你有没有听取现实」，而在<strong>你打算把现实压成什么形状，以及为谁的方便</strong>。</p>
+<p>然后是那句把整件事从政治学变成心理学的话。他说，诱使我们掉进去的，是</p>
+<blockquote>
+<span class="en">legibility quells the anxieties evoked by apparent chaos.</span>
+<span class="zh">可读性平息了表面混乱所激起的不安。</span>
+<cite>《一个叫可读性的小大想法》，2010</cite>
+</blockquote>
+<p><strong>你不是因为想控制才去简化，你是因为看着一团乱会难受才去简化。</strong>这一句把这篇文章从一篇关于国家暴力的评论，变成了一件你今天下午就用得上的东西——因为让你难受的那团乱，大概率正躺在你自己的待办清单里。</p>
+<h3>二 · 组织不是生了病，组织本身就是病</h3>
+<p>回到 2009 年那篇。它值得讲透，因为它是这个博客最出名的东西，也是最容易被读浅的东西。</p>
+<p>他的起点不是一个理论，是一个观察上的不适：他发现《办公室》里有大量情节，用「这些人很蠢」是解释不通的。片中人物的行为在「愚蠢」假设下不自洽，在「每个人都在按自己那层的规则理性行事」假设下反而全部自洽。</p>
+<p>他接着注意到，管理学畅销书假设组织有一个健康状态，而各种问题是这个健康体上的病灶。他把这个假设整个掉了个个儿：</p>
+<blockquote>
+<span class="en">organizations don't suffer pathologies; they are intrinsically pathological constructs. Idealized organizations are not perfect. They are perfectly pathological.</span>
+<span class="zh">组织不是「患上」了各种病理；组织本身就是内在病理性的构造。理想化的组织并不完美。它们是完美地病态。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>这不是俏皮话，是一个可以推演的前提。如果病理是结构本身，那你就该能从结构推出所有那些「怪现象」。他就是这么做的。</p>
+<figure>
+<svg viewBox="0 0 660 400" role="img" aria-label="MacLeod 三层公司层级图，标出两条提拔路径">
+<defs>
+<marker id="ah" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#5eead4"/></marker>
+</defs>
+<polygon points="330,28 400,150 260,150" fill="rgba(94,234,212,.16)" stroke="#5eead4" stroke-width="1.5"/>
+<polygon points="400,150 462,258 198,258 260,150" fill="rgba(110,168,254,.13)" stroke="#6ea8fe" stroke-width="1.5"/>
+<polygon points="462,258 540,372 120,372 198,258" fill="rgba(255,255,255,.05)" stroke="#7d8794" stroke-width="1.5"/>
+<text x="330" y="112" fill="#5eead4" font-size="16" font-weight="700" text-anchor="middle" font-family="monospace">反社会者</text>
+<text x="330" y="200" fill="#6ea8fe" font-size="16" font-weight="700" text-anchor="middle" font-family="monospace">糊涂人</text>
+<text x="330" y="228" fill="#7d8794" font-size="11.5" text-anchor="middle">相信组织叙事是真的</text>
+<text x="330" y="312" fill="#b6c2cf" font-size="16" font-weight="700" text-anchor="middle" font-family="monospace">输家</text>
+<text x="330" y="340" fill="#7d8794" font-size="11.5" text-anchor="middle">用自由换工资，理性地只出最低限度的力</text>
+<path d="M112,318 C60,318 58,210 150,204" fill="none" stroke="#5eead4" stroke-width="1.6" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<text x="22" y="262" fill="#5eead4" font-size="11.5" font-family="monospace">超额努力的</text>
+<text x="22" y="278" fill="#5eead4" font-size="11.5" font-family="monospace">输家 ↗ 中层</text>
+<path d="M548,318 C610,318 616,120 372,86" fill="none" stroke="#6ea8fe" stroke-width="1.6" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+<text x="566" y="248" fill="#6ea8fe" font-size="11.5" font-family="monospace">出工不出力的</text>
+<text x="566" y="264" fill="#6ea8fe" font-size="11.5" font-family="monospace">输家 ↗ 顶层</text>
+<text x="330" y="392" fill="#5f6b77" font-size="11" text-anchor="middle" font-family="monospace">两条路径都跳过了中间那批「表现正常」的人</text>
+</svg>
+<figcaption>格瓦斯法则的两条提拔路径。标签沿用 Hugh MacLeod 的公司层级图。</figcaption>
+</figure>
+<p>先得把「输家」这个词的意思钉死，因为几乎所有的误读都从这里开始。他讲得极清楚，这是<strong>经济学意义上的</strong>，不是人格评价：</p>
+<blockquote>
+<span class="en">They've given up some potential for long-term economic liberty (as capitalists) for short-term economic stability. Traded freedom for a paycheck in short. They actually produce, but are not compensated in proportion to the value they create […]</span>
+<span class="zh">他们放弃了一部分长期经济自由（作为资本家的那种）的可能，换来了短期的经济稳定。简言之，用自由换了工资。他们确实在生产，但得到的报酬与他们创造的价值不成比例。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>钉死了这一点，那句著名的反直觉就成了纯粹的推论，不是姿态：如果你已经签了一份亏本合同，那么<strong>多干活等于把合同弄得更亏</strong>。而这件事是可观察的：</p>
+<blockquote>
+<span class="en">The simple reason is that if you over-perform at the Loser level, it is clear that you are an idiot.</span>
+<span class="zh">道理很简单：如果你在输家这一层超额表现，那就很清楚了，你是个傻子。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>于是提拔就有了新的含义。你不是因为优秀被提拔，你是因为<strong>暴露了自己不会为自己谈判</strong>而被提拔——被提拔进那个专门用来吸收后果的夹层。而那些一开始就出工不出力、但清楚自己在做什么的人，才是被往顶上培养的。图里那两条虚线之所以都绕过中间，是因为「表现正常」既没有暴露你是傻子，也没有暴露你看穿了游戏，因此不提供任何信息。</p>
+<p>这套东西真正的破坏力，在于它把整个公司的语言重新解释了一遍：三层人说的其实是三种不同的话，中层的会议发言之所以听着像空转，是因为它本来就不是用来传递信息的。这也是为什么他把整篇文章的落点放在了「输家」是理性的这件事上——那句最冷的话是给他们的：</p>
+<blockquote>
+<span class="en">They mortgage their lives away, and hope to die before their money runs out.</span>
+<span class="zh">他们把自己的一生抵押出去，然后指望在钱花完之前先死掉。</span>
+<cite>《格瓦斯法则》，2009</cite>
+</blockquote>
+<p>两年后他把同一把刀转向了消费那一侧，写了《咕噜效应》。他先回顾了自己早年从德鲁克式第一性原理推出的一个定义——「顾客不是一个人。顾客是一种新奇而稳定的行为模式」——然后说，他每写一篇建立在这个定义上的成功文章，就对它的含义更不安一分。因为把这些行为模式加起来，你得到的是一个被掏空的人：</p>
+<blockquote>
+<span class="en">consumerism is not about humans consuming products. It is about products consuming humans.</span>
+<span class="zh">消费主义不是人在消费产品。是产品在消费人。</span>
+<cite>《咕噜效应》，2011</cite>
+</blockquote>
+<p>咕噜（Gollum）是《魔戒》里那个被戒指吃空的角色。而戒指的高明之处在于，它不像毒品那样弄死宿主——它让宿主保持功能、保持可用、保持能挣钱。这跟他讲组织的那一套是严丝合缝的同一个东西：<strong>在生产端，人被压成一个岗位；在消费端，人被压成一组购买行为。两边都只保留刚好够用的那部分。</strong></p>
+<h3>三 · 人造常态场：技术靠拒绝改变体验而扩散</h3>
+<p>2012 年 5 月，他写出了我认为他最漂亮的一篇。</p>
+<p>起点是一个人人都注意到、但没人当回事的怪现象：<strong>未来到了，但从来不像未来。</strong>你口袋里的手机比《星际迷航》里柯克舰长的通讯器还好用，但你并不觉得自己活在未来里。</p>
+<p>关于这件事有两句被引滥了的名言：麦克卢汉的「我们透过后视镜看现在，倒退着走进未来」，以及 William Gibson 的「未来已经到来，只是分布不均」。他说这两句都有严重的局限，而它们共同漏掉的那个东西需要一个名字。他给的名字是<strong>人造常态场</strong>（Manufactured Normalcy Field，下称「常态场」）：</p>
+<blockquote>
+<span class="en">Life as we live it has this familiar sense of being a static, continuous <em>present</em>. Our ongoing time travel (at a velocity of one second per second) never seems to take us to a foreign place. It is always 4 PM; it is always tea-time.</span>
+<span class="zh">我们过着的生活，总有一种熟悉的、静止的、连续的<strong>当下</strong>感。我们持续不断的时间旅行（速度是每秒一秒）似乎从来没把我们带到任何陌生的地方去。永远是下午四点；永远是喝茶时间。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>接下来是这篇文章的撬棍，而且这根撬棍别人拿不到。</p>
+<p>他讲现代客机：爬升率、倾斜角、加速度曲线，全都被严格限制在某个范围内。然后他加了一句几乎是随口的话——<strong>当年我做作业算的就是这些限制。</strong>一个航空航天工程博士，坐在一架客机里，知道那些参数不是物理极限，是<strong>设计选择</strong>：它们被卡在那儿，为的是让你不觉得自己在飞。</p>
+<blockquote>
+<span class="en">Airline passengers don't fly.</span>
+<span class="zh">坐飞机的人并不在飞。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>你以约三分之二倍音速坐在一根铝管里，而那根铝管其实能做出相当吓人的特技动作。整个体验被设计成「一间会晃的候机室」。<strong>你不是在体验飞行，你是在一个专门制造出来的常态场里旅行。</strong></p>
+<p>从这里他做了那个关键的推广。既然飞行是这么进入日常的，那么所有技术大概都是这么进入日常的：<strong>成功的产品恰恰是那些不试图大幅移动用户体验的产品，哪怕底层技术已经彻底变了。</strong></p>
+<p>这句话反直觉的地方在于，它把科技行业最爱讲的那个故事整个否定了。行业叙事说，新技术因为「更好」而胜出。他说，新技术因为<strong>成功伪装成了一件旧东西</strong>而胜出。手机的祖先是电话不是计算器；网页的祖先是「文档」和「页面」，尽管底下什么都不是。每一代新技术都必须先找到一个旧隐喻当签证，才能入境。而入境之后，那个隐喻就成了你能想到的边界——这就是为什么真正的新东西总是先被做成旧东西的样子，然后过很多年才有人发现它其实可以是别的。</p>
+<p>他也顺手修正了 Gibson 那句名言。他说不均匀分布的不是「未来」，是常态场：总有一小撮人（飞行员、工程师）在场外，他们对那项技术有<strong>操作性</strong>的理解，但恰恰因此往往缺乏<strong>体会性</strong>的理解。</p>
+<p>然后是结尾。他说未来学家们警告的「未来冲击」（Future Shock）——变化太快把人击倒——搞错了症状。真正会发生的是常态场被拉伸到极限：你依然能操作一切，但已经无法体会自己身在何处。他给了这个状态一个非常不体面、因而非常准的名字，Future Nausea：</p>
+<blockquote>
+<span class="en">You're not going to be knocked out cold. You're just going to throw up in some existential sense of the word.</span>
+<span class="zh">你不会被一拳打晕。你只会在某种存在主义意义上吐出来。</span>
+<cite>《欢迎来到令人作呕的未来》，2012</cite>
+</blockquote>
+<p>他没有说该怎么办。他只是说：我想做点准备，希望有科幻作家写几个让人作呕的故事。这是他很典型的收尾——<strong>命名一个你此前没有名字的状态，然后就停在那儿。</strong></p>
+<p>三年后他在《论逃逸现实的设计》里给了这个机制一个漂亮的补角。当时所有人都在谈虚拟现实设备。他说大家搞反了强度的来源：</p>
+<blockquote>
+<span class="en">What determines the strength of an escaped reality is not the sophistication of the technology enabling it, but <em>the number of other people who believe absolutely in it.</em></span>
+<span class="zh">决定一个逃逸现实有多强的，不是支撑它的技术有多精密，而是<strong>有多少其他人绝对地相信它</strong>。</span>
+<cite>《论逃逸现实的设计》，2015</cite>
+</blockquote>
+<p>所以一座一千年前用石头盖起来的庙——几百个人围绕它绝对地相信、用石器和长矛组织起整个生活——是一个远比 VR 眼镜强大的虚拟现实。<strong>常态场从来不是技术做的，是人数做的。</strong></p>
+<h3>四 · 优质平庸：当被骗的人自己知道</h3>
+<p>2017 年 8 月的这一篇，是这台机器的晚期形态，也是他最广为流传的造词。</p>
+<p>发现过程很小：他在一家叫 Veggie Grill 的连锁餐厅吃饭，觉得这食物有种说不上来的性质——它不是好，也不完全是坏，它是<strong>披着「优质」外衣的平庸</strong>。他造了词，然后做了一件他常做的事：把这个词扔给几十个朋友玩一个「说出一个优质平庸的东西」的游戏，并且诚实地注明，下面这些例子里最好的几个都是别人给的。</p>
+<blockquote>
+<span class="en">Premium mediocre is the finest bottle of wine at Olive Garden. Premium mediocre is cupcakes and froyo. Premium mediocre is "truffle" oil on anything (no actual truffles are harmed in the making of "truffle" oil), and extra-leg-room seats in Economy. […] Premium mediocre is food that Instagrams better than it tastes.</span>
+<span class="zh">优质平庸是 Olive Garden 里最好的那瓶酒。优质平庸是纸杯蛋糕和冻酸奶。优质平庸是浇在任何东西上的「松露」油（制作「松露」油的过程中没有任何松露受到伤害），以及经济舱里那种多几厘米腿部空间的座位。……优质平庸是那种拍出来比吃起来好的食物。</span>
+<cite>《玛雅·千禧一代的优质平庸生活》，2017</cite>
+</blockquote>
+<p>这个词能火，靠的是这份清单本身的准头。但真正让它成为一个想法而不是一个段子的，是他接下来那个转折——而这个转折恰恰是对他自己前十年的一次修正。</p>
+<p>在《咕噜效应》里，被掏空的人是不知情的。在可读性那篇里，被简化的森林是没有意见的。但这里不是：</p>
+<blockquote>
+<span class="en">Maya Millennial is aware that what she is consuming is mediocre at its core, and only "premium" in some peripheral (and importantly, cheap, such as French-for-no-reason branding) ways. But she consumes it anyway. She is aware that her consumption is tasteless, yet she pretends it is tasteful anyway.</span>
+<span class="zh">玛雅·千禧一代清楚自己消费的东西核心上是平庸的，只在某些边缘的（而且关键是廉价的，比如毫无理由的法语品牌名）方面算「优质」。但她还是照买。她清楚自己的消费毫无品味，但她还是假装它有品味。</span>
+<cite>《玛雅·千禧一代的优质平庸生活》，2017</cite>
+</blockquote>
+<p>用他引述的品味研究者 Gabe Duquette 的话说：<strong>她明知是糊糊，还是把糊糊吃了。</strong></p>
+<p>这就把整件事从「虚假意识」里拿了出来。她没有被骗。她在执行一个策略。</p>
+<p>而策略是什么，是这篇文章最结实的部分。他说这是一份<strong>裸看涨期权</strong>：你按将来会成功的样子生活，把账单推给一个不确定的未来。在一个回报极度不均、且大部分靠运气的经济里，公开承认「这主要是靠运气」是把自己排除出抽奖池的最好办法——所以你必须表演相信。</p>
+<p>更狠的是他给出的两个受众。<strong>向后</strong>，这场表演是演给上一代人看的：他们确信自己已经把孩子托举到位了，而孩子替他们保住了这个确信。<strong>向前</strong>，它是演给出资方看的：证明这套体系仍在运转，下金蛋的鹅不该因为进展太慢而绝望。<strong>一整代人的日常消费，被解释成一场双向的、体贴的、成本高昂的合谋。</strong></p>
+<p>然后他给了那句最短的注脚：<strong>So you fake it till you make it. Unless you don't.</strong>（所以你就装到你成为。除非你没成为。）</p>
+<p>三年后他写了这个序列的最后一环。《牛肉互联网》（The Internet of Beefs）问的是：当一个人连「优质平庸」这份期权都买不起、当身份没有任何东西可以挂靠的时候，会发生什么？</p>
+<p>他的答案是：人会去打架，因为冲突至少能提供一个身份。他把网上的战场描述成一个封建结构——有名有姓的「骑士」在上层对轰，下面是自愿披上各家旗号、匿名而可替换的「小卒」（mook），而小卒最高的荣誉是被自己效忠的骑士注意到一次。他给出的诊断句借自计算机领域的「只能崩溃」（crash-only）设计：</p>
+<blockquote>
+<span class="en">A beef-only thinker is someone you cannot simply talk to. Anything that is not an expression of pure, unqualified support for whatever they are doing or saying is received as a mark of disrespect, and a provocation to conflict.</span>
+<span class="zh">「只会开撕的思考者」是那种你没法好好跟他说话的人。任何不属于「对他所做所说的纯粹的、无保留的支持」的东西，都会被接收为一种不敬，一次挑衅。</span>
+<cite>《牛肉互联网》，2020</cite>
+</blockquote>
+<p>而他给这场混战的根因，正好是他十七年那条主线的终点：<strong>我们之所以互撕，是因为我们不再知道自己是谁——每个人作为个体，以及我们作为一个物种，都不知道。</strong>压缩包彻底失效之后，剩下的不是清明，是打架。</p>
+<h2>他的思维方法</h2>
+<p>读一个写了十七年的人，最可迁移的往往不是结论。下面这几条是从上面那些文章里归纳出来的，不是从他的自述里抄的——除了第一条，因为第一条他自己写过，而且在数据里留下了指纹。</p>
+<p><strong>一、引用自己，比引用别人多十倍。</strong>2011 年他在《毅力的微积分》里写了三条写作纪律，其中一条听上去极其自恋：</p>
+<blockquote>
+<span class="en">it sounds narcissistic, but if you're not referencing your own work at least 10 times as often as you're referencing others, you're in trouble in the intrinsic navigation world.</span>
+<span class="zh">这听起来很自恋，但如果你引用自己作品的频率不到引用别人的十倍，那你在「靠内部导航」这件事上就有麻烦了。</span>
+<cite>《毅力的微积分》，2011</cite>
+</blockquote>
+<p>妙的是这条纪律在十五年后的统计数据里是<strong>可验证的</strong>：可读性那篇被站内 50 篇后文回引，格瓦斯 34 篇，常态场 25 篇，咕噜效应 22 篇。他不是写了 1,117 篇零散文章，他是搭了一座有承重结构的房子——每个新想法都被拧到几根老柱子上。这也解释了为什么读他单篇常常觉得跳脱，读一批就突然通了。他给的理由不是虚荣，是导航：不建立自己的惯性，你就会像布朗运动里的花粉一样被外力推来推去。</p>
+<p><strong>二、写作时长不算数，重写时长才算数。</strong>同一篇里的另一条。他的原话是「我恍然大悟的那一刻，是我意识到算数的不是写作小时数，而是<em>重写</em>小时数。人人都写。走在通往精通那条路上的人重写。」——这条是对「一万小时」的一次精准降解：一万小时的写作对任何识字的人都不构成门槛，因为人人每天都在写。</p>
+<p><strong>三、觉得难，说明选错了。</strong>这条在今天的语境下几乎是异端：</p>
+<blockquote>
+<span class="en">if you find that what you are doing is ridiculously hard for <em>you</em>, it is the wrong thing for you to be doing.</span>
+<span class="zh">如果你发现你正在做的事对<strong>你</strong>来说难得离谱，那它就是错的、不该由你来做的事。</span>
+<cite>《毅力的微积分》，2011</cite>
+</blockquote>
+<p>他的论证不是鸡汤。他说，别人眼里的超人毅力，往往只是那个人在做一件对他自己而言不费劲的事——「他们觉得这对我很难，是因为<strong>这对他们会很难</strong>」。所以正确动作不是翻过障碍，是绕过去。这条和第一条是同一件事的两面：<strong>放弃外部坐标系，改用内部坐标系。</strong></p>
+<p><strong>四、他的主要工具是造词，不是论证。</strong>这是他最独特、也最需要说清楚的一条。可读性、格瓦斯法则、咕噜效应、人造常态场、优质平庸、牛肉互联网、居家舒适、暖巢网、寻盐——他一生的输出，本质上是一条造词流水线。而这些词的构造有个共同的配方：<strong>一个高度具体、低身份的意象，配一个高度抽象的机制。</strong>咕噜是奇幻小说里的一个角色，被拿来装消费社会学；Olive Garden 是全美国最被嘲笑的连锁餐厅，被拿来装一整代人的阶级处境。低身份的载体做了两件事：它让抽象的东西可触摸，同时它自带一个判断（你一听就知道这不是好事），省掉了整段论证。</p>
+<p><strong>五、拿流行文化当撬棍，而不是当装饰。</strong>上一条的操作版本。一部电视喜剧、一张漫画、一份连锁餐厅酒单——这些东西的共同点是<strong>读者已经有第一手经验</strong>。他不需要先说服你相信一份田野调查，你自己在 Olive Garden 吃过饭。这是他绕开「我不是这个领域的专业人士」这个问题的方式：他从不试图比专家更懂那个领域，他只是把读者已经拥有的经验重新排列一次。</p>
+<p><strong>六、命名之后就停。</strong>他几乎从不给行动建议。《欢迎来到令人作呕的未来》的结尾是「我想做点准备」；《牛肉互联网》的结尾是我们得先搞清楚自己是谁。这在这个题材的写作里是个自觉的选择——一旦给了建议，那个建议本身就会变成新的简化包。他要做的是让你看见眼镜，不是给你配一副新的。</p>
+<h2>他哪里可能是错的</h2>
+<p><strong>一、Scott Alexander 把格瓦斯法则整个拆过一次，拆得很有力。</strong>2022 年他写了一篇书评，先称 Rao 为「后理性主义的异端首领」，肯定这本书「像是精神分析如果不那么执着于把自己弄得难以理解、会长成的样子」。然后他问了那个该问的问题：这里头有哪一条是真的吗？</p>
+<blockquote>
+<span class="en">I don't find myself or the people I know best falling clearly into any of these archetypes. They're useful to have around. I can see pieces of all of them. But none are a great match.</span>
+<span class="zh">我没发现我自己、或我最熟的那些人，能清楚地归进这些原型里的任何一个。它们放在手边有用。我在每一个里都能看见一点碎片。但没有一个是好的匹配。</span>
+<cite>Scott Alexander，《书评：格瓦斯法则》，2022</cite>
+</blockquote>
+<p>而他的杀招是随手编了三种人：绿型（内向、长发、喜欢冷天、抱怨太多）、红型（开朗、为小事发火、爱宠物和小孩）、蓝型（懂理财、不擅长恋爱、天生领导者、喜欢骑车）。他说，大多数人都会觉得自己在这三型里各占一点——<strong>而这只不过是「这套系统是我编的、且毫无用处」的自然结果。</strong>「Rao 用一句话说了每个人都兼有多种类型。那这套分类系统还有什么用？」</p>
+<p>他还指出格瓦斯法则的核心断言本来是<strong>可检验的</strong>（去查一家销售公司或投行，把第一年业绩和晋升做相关分析），并且给出了自己的先验：他猜大公司顶层多是「正常到超额表现」的人，如果有人真查出他们当年是欠佳表现者，他会大幅倒向 Rao 这边。他找不到这样的数据集。<strong>十五年过去，据我所见也没有人去做这件事。</strong>这是一个被广泛引用、被印成书、影响了很多人职业选择的理论，而它在最容易被证伪的那一点上，从来没被检验过。</p>
+<p><strong>二、造词的代价：一个好名字会让人觉得事情已经解释完了。</strong>这是上一节第四条的账单。「优质平庸」精准地<em>命名</em>了一个模式，但它并没有<em>解释</em>这个模式——你读完之后获得的那种「懂了」的感觉，来自你终于能指认它，而不是来自你知道了它为什么发生。他的词好用到可以替代论证，而在他最弱的那些文章里，确实是替代了。这也解释了为什么 Ribbonfarm 的模仿者往往写得很差：他们抄到了造词法，抄不到他造词之前那些真的做过的功课。</p>
+<p><strong>三、系统性偏斜：这台镜头只装得下权力、地位和捕食。</strong>他几乎所有的核心机制——组织、消费、注意力、网络冲突——最后都归到「谁在从谁身上榨取什么」。这个镜头非常锐利，代价是它几乎没有位置留给「事情就是运转得还行」和「这些人是真的想把这件事做好」。格瓦斯法则里没有一个格子可以放一个既不是输家、也不是糊涂人、也不是反社会者，只是喜欢自己工作的人。他把这一点当作现实主义，但它也可能只是镜头本身的形状。他的《野蛮人归来》里有一个诚实的自我诊断，虽然他是拿来讲文明的：<strong>他坚持「精致」不等于「先进」——而对一个以概念密度著称的写作者来说，这句话首先该拿来量他自己。</strong></p>
+<p><strong>四、最狠的那条批评是他自己写的。</strong>2024 年的退休公告里，他说整个三幕的 Ribbonfarm 故事都是低利率的产物：</p>
+<blockquote>
+<span class="en">This blog was sponsored by ZIRP.</span>
+<span class="zh">这个博客是由零利率政策赞助的。</span>
+<cite>《Ribbonfarm 退休了》，2024</cite>
+</blockquote>
+<p>他补充说这不是一句纯粹的俏皮话：这个博客鼎盛期是开源软件、廉价托管，以及最重要的——不要钱的分发渠道的产物。他甚至点名说，他的几个大热门（包括《优质平庸》和 2013 年的《蝗虫经济》）都有 ZIRP 的潜台词。<strong>一个花了十七年论证「人看不见自己身处何种简化之中」的人，最后把这个工具对准了自己：那些看上去是永恒洞察的东西，可能只是一段特定宏观经济条件的产物。</strong>他不认为有生之年会再见到那种利率，也因此不认为会再见到这样的博客圈。</p>
+<p>他对自己文风的判词同样不留情面。谈到为什么在 Substack 上待得不自在时，他说那边流行的是一种「室内乐风格」的认真写作，而他不擅长：<strong>「我太像个漫不经心的垃圾发帖者了，而室内乐那种风格要求某种恳切。」</strong>他还交代了一件很多读者不知道的事：2020 年之后他<em>刻意</em>不再写会火的文章，甚至刻意写反流行的文章——《牛肉互联网》「不只是我最后一篇爆款，也是我最后一篇<em>以爆款为目的</em>的文章」。</p>
+<p>最后一条事实上的限制：<strong>这个博客结束了。</strong>2024 年 11 月停更，2026 年 4 月转为静态存档。他仍在别处写作，但本页所讲的这个头脑，是一个已经收工的头脑。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://ribbonfarm.com/2010/07/26/a-big-little-idea-called-legibility/">A Big Little Idea Called Legibility</a></span>（2010）<span class="d">全站被回引最多的一篇（50 次）。普鲁士人为了看懂森林而重造森林，然后森林死了；以及那个七步失败配方。</span></li>
+<li><span class="t"><a href="https://ribbonfarm.com/2009/10/07/the-gervais-principle-or-the-office-according-to-the-office/">The Gervais Principle, Or The Office According to "The Office"</a></span>（2009）<span class="d">让这个博客出名的那一篇。三层组织模型，以及「超额努力的人被提拔是因为他暴露了自己是傻子」的推导。283 条评论，全站第一。</span></li>
+<li><span class="t"><a href="https://ribbonfarm.com/2012/05/09/welcome-to-the-future-nauseous/">Welcome to the Future Nauseous</a></span>（2012）<span class="d">人造常态场。为什么未来到了却从不像未来，以及一个航空工程师视角下的「坐飞机的人并不在飞」。</span></li>
+<li><span class="t"><a href="https://ribbonfarm.com/2017/08/17/the-premium-mediocre-life-of-maya-millennial/">The Premium Mediocre Life of Maya Millennial</a></span>（2017）<span class="d">优质平庸。一代人如何明知是糊糊还是把糊糊吃了，以及为什么这是一份理性的看涨期权。</span></li>
+<li><span class="t"><a href="https://ribbonfarm.com/2024/10/10/ribbonfarm-is-retiring/">Ribbonfarm is Retiring</a></span>（2024）<span class="d">十七年的收工报告。三个时代的划分、「这个博客是由零利率政策赞助的」，以及他对自己文风最不留情的一句评价。</span></li>
+</ul>
+<p style="font-size:.88rem;color:#7d8794">语料说明：本页依据 Ribbonfarm 静态存档站（2026 年 4 月上线）的公开正文。站方自己发布的统计页给出全站 1,117 篇、2,117,466 词、13,230 条评论、60 位作者，本页引用的站内回链数、评论数、站外引用分数均出自该页，非本页估算。通读 12 篇：《鹦鹉》（2007）、《格瓦斯法则》（2009）、《一个叫可读性的小大想法》（2010）、《咕噜效应》（2011）、《野蛮人归来》（2011）、《公司简史：1600 到 2100》（2011）、《毅力的微积分》（2011）、《欢迎来到令人作呕的未来》（2012）、《论逃逸现实的设计》（2015）、《玛雅·千禧一代的优质平庸生活》（2017）、《牛肉互联网》（2020）、《寻盐》（2023）、《Ribbonfarm 退休了》（2024）；另通读 Scott Alexander 2022 年那篇书评作为外部批评。全站无付费墙。所有引语均逐字核对过原文。</p>
+</div>
+<section class="updates" data-last-reviewed="2026-09-02" data-slug="ribbonfarm">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-02</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
