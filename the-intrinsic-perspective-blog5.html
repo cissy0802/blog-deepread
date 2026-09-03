@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Erik Hoel · The Intrinsic Perspective — 梦不是在整理白天，是在防止你被白天学傻</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="the-intrinsic-perspective-blog5.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 05 · theintrinsicperspective.com</div>
+<h1>Erik Hoel · The Intrinsic Perspective<br/>梦不是在整理白天，是在防止你被白天学傻</h1>
+<p class="sub">2021 年 4 月至今 · 228 篇 · 54 万词 · 10,763 条评论 · 其中 85 篇仅限付费订阅 · 仍在更新（最新一篇 2026 年 8 月）· 本页通读 12 篇公开文章，跨度 2021 年 4 月至 2026 年 4 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>1980 年代，芝加哥大学的一组研究者搭了一台装置：一个水池，水面上一块可以启动的跑步机踏板，老鼠身上接着脑电图。老鼠可以睡。深睡期来了，踏板不动，随它睡。但只要脑电波显示进入快速眼动期——也就是做梦的那一段——踏板立刻转起来，老鼠必须醒过来才不会掉进水里。</p>
+<p>不是剥夺睡眠。是<strong>单独剥夺做梦</strong>。</p>
+<blockquote>
+<span class="en">After a few days, the rats began to lose weight. After a few weeks, they began to jaundice. Even their fur turned yellow, then their eyes. Their yellowing paws developed lesions. And after a few weeks, every rat dropped dead from not dreaming.</span>
+<span class="zh">几天后，老鼠开始掉体重。几周后，它们开始发黄。连毛都黄了，然后是眼睛。发黄的爪子上长出溃疡。又过了几周，每一只老鼠都死于没有做梦。</span>
+<cite>《退出超感官商场》（Exit the Supersensorium），2022</cite>
+</blockquote>
+<p>大部分人读到这里会觉得：好吧，那说明做梦很重要。<strong>Erik Hoel 读到这里问的是另一个问题：那它到底在干什么，重要到这个地步？</strong></p>
+<p>主流答案是「巩固记忆」——白天学的东西，晚上重放一遍、归档。Hoel 觉得这个答案说不通，理由非常具体：<strong>梦里几乎从来不出现具体的记忆。</strong>你昨天开的会、走过的路、说过的话，在梦里基本不会原样重演。而且梦是<em>稀疏</em>的——你在梦里几乎从不读一本书、看清一个手机屏幕，因为梦没有那个分辨率。梦还是<em>荒诞</em>的：一个人同时是两个人，一个地方同时是你家和一艘飞船。</p>
+<blockquote>
+<span class="en">A theory of dreams must explain why every human, even the most unimaginative accountant, has within them a surrealist author scribbling away at night.</span>
+<span class="zh">一个关于梦的理论必须解释：为什么每一个人，哪怕是最没想象力的会计，体内都住着一位在夜里奋笔疾书的超现实主义作家。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>他的答案来自机器学习里一个所有人都熟悉的毛病：<strong>过拟合</strong>。一个神经网络在训练数据上练得太熟，就会把这批数据的偶然特征当成世界的规律，换一批数据就废。而大脑的训练集是什么？<strong>是你活过的那些日子。</strong>而它们高度重复、高度相关，而且大脑没法关掉学习。</p>
+<blockquote>
+<span class="en">Life alone is not a sufficient training set for the brain, and relying solely on it likely leads to overfitting.</span>
+<span class="zh">光靠生活，不足以构成大脑的训练集；只依赖它，很可能导致过拟合。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>深度学习里对付过拟合的两个标准招数，一个叫 dropout（训练时随机丢掉一部分数据或神经元，逼网络别死记）——<strong>这正是梦的稀疏</strong>；一个叫域随机化（把数据沿着某些维度扭曲、污染，喂进去一些不可能的输入）——<strong>这正是梦的荒诞</strong>。他 2021 年把这个想法作为论文发在 <em>Patterns</em> 上，叫「过拟合大脑假说」。梦不是在整理白天。<strong>梦是在把白天摇松，防止你被白天学傻。</strong></p>
+<p>然后他做了那件让这个假说从神经科学变成一整套世界观的事：<strong>他把它往外推了两层。</strong></p>
+<p>第一层是艺术。如果大脑需要每晚做梦来防止过拟合，那小说、电影、剧集是什么？<strong>是可携带的、外包的梦。</strong>他甚至注意到尺寸对得上：一集电视剧大约三十分钟，接近一次快速眼动期；一部电影大约九十分钟，接近一个完整睡眠周期。人类学会用火之后，把消化外包给了厨师；学会讲故事之后，把做梦外包给了小说家。</p>
+<p>但这里有个后果，而他毫不回避：<strong>这意味着「艺术」和「娱乐」的高低之分不是势利眼，是有机制依据的。</strong></p>
+<blockquote>
+<span class="en">For entertainment is Lamarckian in its representation of the world—it produces copies of copies of copies, until the image blurs.</span>
+<span class="zh">娱乐对世界的再现是拉马克式的——它生产副本的副本的副本，直到图像糊掉。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>糊掉的梦还能满足你做梦的冲动，但已经不能履行做梦的功能了——就像糖果还是热量，但不再是营养。所以他给出的处方不是戒断：<strong>「在一个体验无限供应的世界里，安全的是审美家，不是苦行僧。禁欲不管用。虚构过量的唯一解药是好的虚构。」</strong></p>
+<p>第二层，是把同一个机制推到整个文明头上。大脑关不掉学习，所以会过拟合。<strong>那文化也关不掉学习。</strong></p>
+<blockquote>
+<span class="en">So what if we thought of culture as a big “macroscale” global brain? Couldn’t that thing become overfitted too?</span>
+<span class="zh">那么，如果我们把文化想成一个巨大的「宏观尺度」全球大脑呢？那个东西难道不会也过拟合吗？</span>
+<cite>《我们过拟合的世纪》（Our Overfitted Century），2025</cite>
+</blockquote>
+<p>2024 年票房前十全是续集，书封面全长一个样，网红脸全长一个样，汽车外形全长一个样。通常的解释是资本、垄断、版权、算法。Hoel 说这些都对，但都在描述同一件事的不同层面，而那件事有个机器学的名字：<strong>一个系统一旦变得足够高效、反馈足够紧、判别足够灵敏，它就必然过拟合，而过拟合的系统住起来很难受。</strong>他甚至半开玩笑地说，很多关于「晚期资本主义」的抱怨，拆开来其实就是这句话。</p>
+<p>而他真正担心的不是电影难看：<strong>「造不出新东西，是泛化不了新处境的征兆。这在我看来可能非常危险。」</strong></p>
+<p>写这些的人是谁？Erik Hoel，1987 年生，在母亲开的独立书店里长大，少年时在店里卖小说。神经科学博士，导师是整合信息论的提出者 Giulio Tononi。2021 年出了一本长篇小说《The Revelations》，2023 年出了一本科普书《The World Behind the World》。2022 年 11 月辞掉塔夫茨大学的教职，理由是他这辈子最得意的工作都是「从老板和行政那儿偷时间偷出来的，而我不想再当松鼠了」。现在靠订阅制写作为生，最近在办一家专门想解决意识问题的研究所。</p>
+<p>他的博客叫 <strong>The Intrinsic Perspective</strong>——内在视角。这个名字就是他的整个纲领。因为科学恰恰是靠<strong>把内在视角切出去</strong>才启动的：伽利略在《试金者》里明确把颜色、气味、痛感这些「主观性质」划出物理学的管辖范围，科学才有了可算的对象。二十世纪行为主义又让「意识」变成一个脏词，好几十年不能在正经论文里说。代价是，直到今天，科学地图上还是缺一样东西——用他引的托马斯·内格尔的说法：<strong>地图可以完整、自洽、无懈可击，但上面永远没有那个写着「你在这里」的标记。</strong></p>
+<p>这个洞有多大？他去查了美国国立卫生研究院 2007 到 2017 十年间发出的 103,280 项科研资助，其中直接研究「意识的内容」的有几项？</p>
+<p><strong>五项。</strong></p>
+<p>他其余那几个核心命题，都是围着这个洞转的。<strong>因果涌现</strong>说：一个系统的宏观尺度可以比它的微观尺度拥有更强的因果关系——所以「你」这个层次不是原子层次上面飘着的一层装饰，它可能才是因果最清晰的那个尺度。<strong>「意识是科学语言里的哥德尔句」</strong>说：科学够不着意识，也许不是意识神秘，而是任何自指的形式系统都会有它证不出的真命题——那是关于科学的事实，不是关于意识的事实。</p>
+<p>这两个结论都指向同一个方向：<strong>内在视角是真的，而且科学目前的形状装不下它。</strong>这也正是读他时要留一份警惕的地方——一个在书店长大、写小说、并且希望「从里面看是什么感觉」这件事重要的人，他所有的科学立场恰好全都朝这个方向倾斜。这不证明他错。但方向这么一致，本身是一条信息。</p>
+<p>而对这种倾斜下过最狠判词的，是他自己。2022 年他写了一篇长文，用「八卦陷阱」解释人类为什么在史前卡了九万年，结尾突然掉头指着自己：</p>
+<blockquote>
+<span class="en">An admittance. For it should be obvious by now: this text is corrupted.</span>
+<span class="zh">一个招供。因为到现在应该很明显了：这篇文字是被污染的。</span>
+<cite>《八卦陷阱》（The Gossip Trap），2022</cite>
+</blockquote>
+<p class="sub" style="margin-top:26px"><em>想看过拟合大脑假说的完整推导、因果涌现到底怎么用一个电灯开关算出来（以及他和 Scott Aaronson 那场关于「公平比较尺度」的争吵）、他用僵尸笛卡尔证明的那个悖论、「八卦陷阱」怎么解释文明的起源、以及他自己写下的对自己理论最强的那条反驳——切到上面的「完整版」。</em></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>过拟合（overfitting）</b>：一个学习系统在训练数据上练得太熟，把这批数据的偶然特征当成了世界的规律，换一批新数据就失灵。「学得太好」反而变笨。</li>
+<li><b>泛化（generalization）</b>：过拟合的反面。能把学到的东西用在没见过的新情况上。</li>
+<li><b>dropout</b>：训练神经网络时故意随机丢掉一部分神经元或数据，逼它不许死记，从而改善泛化。</li>
+<li><b>REM / 快速眼动期</b>：睡眠周期里眼球快速转动的那一段，绝大多数做梦发生在这里。此时大脑活动接近清醒，但身体被抑制成瘫痪状态。</li>
+<li><b>感受质（qualia）</b>：体验本身的那个「感觉起来是什么样」——红的红、疼的疼。物理描述里没有它的位置，这正是争议所在。</li>
+<li><b>整合信息论（IIT）</b>：Giulio Tononi 提出的意识理论，主张意识对应于一个系统整合信息的量与结构。Hoel 的博士工作就在这条线上。</li>
+</ul>
+</div>
+<h2>一件怪事：把老鼠单独从梦里赶出来</h2>
+<p>做实验的人有时候需要一点残忍。1980 年代，芝加哥大学的一组研究者搭了这么一台装置：一个水池，水面上一块可以启动的跑步机踏板，老鼠身上接着脑电图，脑电图连着一个自动程序。程序会区分两件事：老鼠现在是在深睡期，还是进了快速眼动期。深睡期，踏板不动，随它睡。<strong>只要脑电波显示它开始做梦，踏板立刻转起来</strong>，老鼠必须醒过来走两步，否则掉进水里。</p>
+<p>这不是剥夺睡眠。这是把一只动物单独从<strong>梦</strong>里赶出来，一次又一次，看它会怎样。</p>
+<blockquote>
+<span class="en">After a few days, the rats began to lose weight. After a few weeks, they began to jaundice. Even their fur turned yellow, then their eyes. Their yellowing paws developed lesions. And after a few weeks, every rat dropped dead from not dreaming.</span>
+<span class="zh">几天后，老鼠开始掉体重。几周后，它们开始发黄。连毛都黄了，然后是眼睛。发黄的爪子上长出溃疡。又过了几周，每一只老鼠都死于没有做梦。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>你读到这里的正常反应大概是：好吧，做梦很重要。<strong>Erik Hoel 读到这里问的是另一个问题——那它到底在干什么，重要到能要命？</strong></p>
+<p>这是他所有文章的默认动作：不问「这说明什么」，问「这个东西的功能是什么，而现有的解释为什么不够好」。而他之所以敢对一个自己不是主攻方向的问题动手，是因为他博士期间恰好和世界上几个顶尖的睡眠研究者在同一个实验室，他知道一件外行不知道的事：<strong>关于人为什么做梦，业内其实没有答案。</strong>连「梦根本没有功能」这个零假设，都还有严肃的科学家认真对待。</p>
+<h2>这人是谁</h2>
+<p>Erik Hoel，1987 年生，住在波士顿附近。他是在母亲开的一家独立书店里长大的，少年时在店里打工——用他自己的话说，<strong>「卖虚构」</strong>。他先想当作家，上大学时发现自己也有做科学的天分，于是去了威斯康星大学麦迪逊分校读神经科学博士，导师是 Giulio Tononi——整合信息论的提出者。他参与开发过这套理论，当过普林斯顿高等研究院的访问学者，上过福布斯 30 岁以下科学榜。</p>
+<p>然后他两样都没放下：2021 年出了长篇小说《The Revelations》（背景设在纽约大学，八个年轻意识研究者之中有一个被谋杀），2023 年出了科普书《The World Behind the World：意识、自由意志与科学的极限》。</p>
+<p><strong>2022 年 11 月，他辞掉了塔夫茨大学的教职</strong>，转去靠订阅制写作为生。辞职信写得很直接：他说自己最自豪的几项工作都是从行政事务的缝里偷时间做出来的，</p>
+<blockquote>
+<span class="en">I did it in time squirreled away from bosses and administrators. And I’m tired of being a squirrel.</span>
+<span class="zh">那些是我从老板和行政那儿偷藏起来的时间里做的。而我不想再当松鼠了。</span>
+<cite>《再见学术界，你好 Substack》，2022</cite>
+</blockquote>
+<p>他给自己定的目标是每周至少一篇、写二十年，凑够一千篇。<strong>这个博客还在更新</strong>，最新一篇是 2026 年 8 月；228 篇里有 85 篇仅限付费订阅，本页只基于公开的那部分。2026 年他又开了一家叫 Bicameral Labs 的研究所，目的写在门口：解决意识问题，或者死在路上。</p>
+<h2>他跟什么较劲</h2>
+<p>博客的名字就是答案：<strong>The Intrinsic Perspective</strong>，内在视角。</p>
+<p>要理解这个名字有多不客气，得先知道科学是怎么起步的。哲学家 Philip Goff 指出过一件事，Hoel 反复引用：伽利略在 1623 年的《试金者》里，明确地把颜色、气味、味道、痛感这些「主观性质」划出了物理学的管辖范围——它们不在被研究的物体里，它们在观察者的心里。<strong>这一刀切下去，科学才终于知道自己该盯着什么、该忽略什么，然后开始狂奔。</strong>Goff 的说法是：伽利略要是活到今天，他会第一个说科学当然是不完整的——他本人就没打算让科学谈灵魂。</p>
+<p>三百年后又补了一刀。二十世纪上半叶，行为主义和逻辑实证主义当道，「意识」在科学里变成了一个脏词，几乎不能写进正经论文——Hoel 管这段叫<strong>「意识的寒冬」</strong>，而这段寒冬恰好是其余所有科学一路狂飙的那几十年。寒冬要到 1990 年代才结束，靠的是几位诺奖得主（Francis Crick、Gerald Edelman）用自己的分量硬把这个词重新变得可说。两个专门讨论意识的国际学术会议，也是那时才办起来的。</p>
+<p><strong>也就是说，现代科学正儿八经研究意识，到今天满打满算三十年。一代人。</strong></p>
+<p>那三十年花了多少钱？他去查了美国国立卫生研究院 2007 到 2017 这十年间发出去的 103,280 项科研资助，其中直接研究「意识的内容」的有几项。</p>
+<p><strong>五项。</strong></p>
+<p>作为对比，全人类每年往欧洲核子研究中心投大约十亿美元。而在钱是零的情况下，一个意识研究者能免费做的事只有一件：<strong>提出自己的理论。</strong>于是三十年来这个领域的通行玩法就是人人自立一派，百花齐放。Hoel 对这个局面的评价是他最刻薄的句子之一：</p>
+<blockquote>
+<span class="en">The problem is that, if any flower is at all true or promising, you can’t identify it, as its sweet subjectivity-solving scent is completely masked by the bunches of corpse flowers around it. We have too many flowers, and one more just isn’t meaningful anymore.</span>
+<span class="zh">问题在于，就算真有哪一朵花是对的、有希望的，你也认不出来，因为它那股解决主观性的香味，被周围一丛一丛的尸花彻底盖住了。我们的花太多了，再多一朵已经没有意义。</span>
+<cite>《我们意识研究者辜负了你们》，2026</cite>
+</blockquote>
+<p>那这个洞长什么样？他最喜欢引托马斯·内格尔的一个比喻：想象科学的世界图景是一张地图。这张地图可以是完整的、自洽的、像公理系统一样无懈可击的。但上面永远缺一样信息——<strong>那个写着「你在这里」的标记。</strong>把观察者和地图联系起来的那条信息，不在地图上的任何地方。</p>
+<p>Hoel 二十年来所有的活，无论是数学、神经科学还是文化批评，都是同一件事的不同做法：<strong>把那个标记放回去。</strong>证明内在视角不是物理故事上面飘着的一层装饰，它有因果力（因果涌现），有功能（过拟合大脑假说），而科学目前够不着它这件事，是关于科学的事实，不是关于它的事实（哥德尔句）。</p>
+<h2>他的想法，讲成「他怎么发现的」</h2>
+<h3>一 · 梦是大脑的 dropout</h3>
+<p>回到那些老鼠。既然梦不做会死，那关于「梦是干什么的」的主流理论是什么？<strong>记忆巩固。</strong>白天学到的东西，晚上重放一遍，跟已有的知识结构整合归档。</p>
+<p>Hoel 说这个解释有个躲不掉的麻烦：<strong>梦里几乎从来不出现具体的记忆。</strong>你昨天开的那个会、走过的那条路、说过的那句话，极少在梦中原样重演。如果记忆巩固理论是对的，那就意味着梦的内容本身只是副产品——是某个「整合」「巩固」过程（这两个词具体是什么意思，也从来没人说清）溅出来的幻觉泡沫。</p>
+<p>而他坚持一件在这个领域里其实很少有人坚持的事：<strong>一个关于梦的理论，必须解释梦是什么样子的。</strong>梦有两个非常稳定、非常奇怪的特征：</p>
+<p>第一，<strong>梦是稀疏的</strong>。它比清醒时模糊、缺细节。最好的例子是：你在梦里几乎从不真的读一本书、看清一个手机屏幕——梦没有那个分辨率去渲染一堆小字。</p>
+<p>第二，<strong>梦是幻觉性的</strong>。它爱出现不可能的事件、说不清类别的东西：一个人同时是两个人，一个地方同时是你家和一艘飞船。</p>
+<blockquote>
+<span class="en">A theory of dreams must explain why every human, even the most unimaginative accountant, has within them a surrealist author scribbling away at night.</span>
+<span class="zh">一个关于梦的理论必须解释：为什么每一个人，哪怕是最没想象力的会计，体内都住着一位在夜里奋笔疾书的超现实主义作家。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>他的解释来自机器学习里最常见的那个毛病。一个神经网络的训练集总是有限的，而且往往在某些不明显的地方高度相关；练得太熟，它就会把这批数据的偶然结构当成世界的规律，一换数据就废。这就是过拟合。</p>
+<p>然后他问了那个撬棍式的问题：<strong>大脑的训练集是什么？</strong></p>
+<blockquote>
+<span class="en">Real brains, in turn, rely on the training set of lived life. However, that set is limited in many ways, highly correlated in many ways. Life alone is not a sufficient training set for the brain, and relying solely on it likely leads to overfitting.</span>
+<span class="zh">而真实的大脑，依赖的训练集是活过的生活。可这个集合在很多方面是有限的，在很多方面又高度相关。光靠生活，不足以构成大脑的训练集；只依赖它，很可能导致过拟合。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>而且哺乳动物的大脑<strong>关不掉学习</strong>。它太可塑了，你重复地过着高度重复的日子，它就一天天往那个形状上收缩。</p>
+<p>接下来是全篇最漂亮的一步。深度学习对付过拟合有一套标准招数，Hoel 把它们和梦的两个怪特征一一对上：</p>
+<ul>
+<li><strong>dropout</strong>——训练时随机丢掉一部分数据或神经元，逼网络不许死记。<strong>这正是梦的稀疏。</strong></li>
+<li><strong>域随机化</strong>——把训练数据沿某些维度扭曲、污染，喂进去一些荒诞的、不可能的输入。<strong>这正是梦的幻觉性。</strong></li>
+<li>还有一类是<strong>把网络自己的输出、在它随机或有偏活动时喂回给它自己</strong>。这正是一个被感官切断、却仍在自己转的大脑。</li>
+</ul>
+<p>结论：梦不是白天的重放，<strong>梦是白天的解药</strong>。而且——这是最反直觉的一句——<strong>梦越不像你白天过的日子越好。</strong></p>
+<blockquote>
+<span class="en">Dreams warp and play with always-ossifying cognitive and perceptual categories, stress-testing and refining. The inner fabulist shakes up the categories of the plastic brain.</span>
+<span class="zh">梦扭曲、玩弄那些不断在硬化的认知与知觉范畴，对它们做压力测试、做打磨。那位内在的寓言家把可塑大脑里的范畴摇松。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>他 2021 年把这个想法作为正式论文发表在 <em>Patterns</em> 上，叫<strong>过拟合大脑假说</strong>（Overfitted Brain Hypothesis）。它顺带解释了一堆零碎事实：睡眠在实验里更多地和「抽象化、泛化能力提升」相关，而不是和单纯的记性变好相关；梦和创造力之间那个人尽皆知的联系；以及——如果你醒太久，你会开始出现幻觉，也许是因为你的知觉系统正在过拟合。</p>
+<figure>
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="过拟合与泛化的对比示意图">
+<rect fill="none" height="260" width="700" x="0" y="0"></rect>
+<g stroke="#39424d" stroke-width="1">
+<line x1="40" x2="320" y1="215" y2="215"></line><line x1="40" x2="40" y1="215" y2="40"></line>
+<line x1="380" x2="660" y1="215" y2="215"></line><line x1="380" x2="380" y1="215" y2="40"></line>
+</g>
+<g fill="#7d8794" font-family="monospace" font-size="12">
+<text x="40" y="240">过拟合 · overfitted</text>
+<text x="380" y="240">泛化 · generalized</text>
+</g>
+<g fill="#6ea8fe">
+<circle cx="75" cy="175" r="4"></circle><circle cx="115" cy="140" r="4"></circle><circle cx="150" cy="160" r="4"></circle><circle cx="190" cy="105" r="4"></circle><circle cx="230" cy="120" r="4"></circle><circle cx="270" cy="75" r="4"></circle>
+<circle cx="415" cy="175" r="4"></circle><circle cx="455" cy="140" r="4"></circle><circle cx="490" cy="160" r="4"></circle><circle cx="530" cy="105" r="4"></circle><circle cx="570" cy="120" r="4"></circle><circle cx="610" cy="75" r="4"></circle>
+</g>
+<path d="M60 195 L75 175 L95 195 L115 140 L133 178 L150 160 L170 128 L190 105 L210 145 L230 120 L250 96 L270 75 L290 92" fill="none" stroke="#f2a2a2" stroke-width="2.4"></path>
+<path d="M400 190 Q500 150 630 82" fill="none" stroke="#5eead4" stroke-width="2.4"></path>
+<g fill="#93a1ae" font-family="monospace" font-size="11">
+<text x="58" y="60">曲线穿过每一个点</text><text x="58" y="76">= 把偶然当规律</text>
+<text x="398" y="60">曲线放过一些点</text><text x="398" y="76">= 学到了趋势</text>
+</g>
+<g stroke="#5eead4" stroke-dasharray="4 4" stroke-width="1.5">
+<line x1="330" x2="370" y1="128" y2="128"></line>
+</g>
+<polygon fill="#5eead4" points="370,128 362,124 362,132"></polygon>
+<text fill="#5eead4" font-family="monospace" font-size="11" x="306" y="118">梦</text>
+</svg>
+<figcaption>过拟合大脑假说：白天让曲线一路收紧去穿过每一个点，梦把点摇乱、把曲线放松</figcaption>
+</figure>
+<h3>二 · 所以艺术是解药，而这个世纪过拟合了</h3>
+<p>如果到这里就停，这只是一篇神经科学论文。Hoel 做的事情是把它往外推了两层——<strong>而这两层，才是他真正的领地。</strong></p>
+<p>第一层：如果人每晚都需要做梦来防止过拟合，那我们花在虚构上的那些时间是怎么回事？从进化的角度看，人类愿意在「没发生过的事」上花掉这么多小时，本身就是件怪事。他引丹尼斯·达顿的设想：假如人类演化成只爱真事、不爱故事，那「虚构的哲学问题」根本不会存在——我们看待编出来的故事，会像看待一把钝刀，甚至像闻到腐肉。</p>
+<p>他的答案是：<strong>小说、电影、剧集是外包出去的梦。</strong>而且是被打磨过的、结构更好的梦。</p>
+<blockquote>
+<span class="en">Since society specializes for efficiency and competency, we began to outsource the labor of the internal fabulist to an external one. […] For what is a chef? Our mastery of fire allows us to do most of our digestion outside of our bodies […] The same for artists, but they allow you to dream without sleep.</span>
+<span class="zh">因为社会会为了效率和专业而分工，我们开始把那位内在寓言家的活外包给一个外在的。[……] 因为厨师是什么？我们对火的掌握，让我们能把大部分消化过程放到身体外面去完成。[……] 艺术家也一样，只不过他们让你不睡觉也能做梦。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>他还注意到一个尺寸上的巧合，作为旁证抛出来：一集传统电视剧大约三十分钟，接近一次快速眼动期的长度；一部电影大约九十分钟，接近一个完整的睡眠周期。</p>
+<p>但这个理论有个他必须自己扛下来的后果。既然梦是有<em>功能</em>的，那履行不了功能的梦就是坏的梦。<strong>也就是说：「艺术」和「娱乐」之间的高低之分不是势利眼，是有机制依据的。</strong>而在当下，公开主张这种高低之分几乎是禁忌——他自己就说，谈论艺术与娱乐的根本区别，如今会招来「阶级歧视、势利、精英主义」的指控。他还是主张了：</p>
+<blockquote>
+<span class="en">For entertainment is Lamarckian in its representation of the world—it produces copies of copies of copies, until the image blurs. The artificial dreams we crave to prevent overfitting become themselves overfitted, self-similar, too stereotyped and wooden to accomplish their purpose.</span>
+<span class="zh">因为娱乐对世界的再现是拉马克式的——它生产副本的副本的副本，直到图像糊掉。我们为了防止过拟合而渴求的人造梦，自己变得过拟合、自相似、太套路太僵硬，以致完不成它们的任务。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>糊掉的梦还能满足做梦的冲动，就像糖果还是热量。而好作品的标志，在他这里有个很具体的说法：<strong>它「回到世界这口井里去取水」</strong>——它有一种令人震惊的真实感。他引克瑙斯高在《纽约客》访谈里的那句：「文学的职责是对抗虚构。」</p>
+<p>所以他的处方不是戒断，是提高口味：</p>
+<blockquote>
+<span class="en">In a world of infinite experience, it is the aesthete who is safest, not the ascetic. Abstinence will not work. The only cure for too much fiction is good fiction.</span>
+<span class="zh">在一个体验无限供应的世界里，安全的是审美家，不是苦行僧。禁欲不管用。虚构过量的唯一解药是好的虚构。</span>
+<cite>《退出超感官商场》，2022</cite>
+</blockquote>
+<p>第二层推得更远，也更晚——2025 年底那篇《我们过拟合的世纪》。他先老老实实把市面上关于「文化停滞」的解释摆了一排：版权期太长（Chris Dalla Riva）、大公司垄断和金融化（Andrew deWaard）、互联网导致的平庸统一（David Marx）、越轨行为的消失（Adam Mastroianni——现在的高中生更少抽烟、更少打架、更少嗑药，连安全带都系得更勤）。他说这些多半都有道理。</p>
+<p>然后他给了一个不同层次的解释，起点还是那句：<strong>大脑关不掉学习，所以会过拟合。而文化也关不掉学习。</strong></p>
+<blockquote>
+<span class="en">So what if we thought of culture as a big “macroscale” global brain? Couldn’t that thing become overfitted too? In which case, culture might lose the ability to generalize, and one main sign of this would be an overall lack of creativity and decreasing variance in outputs.</span>
+<span class="zh">那么，如果我们把文化想成一个巨大的「宏观尺度」全球大脑呢？那个东西难道不会也过拟合吗？如果会，文化就可能失去泛化能力，而它的主要征兆之一，就是整体上缺乏创造力、产出的方差在下降。</span>
+<cite>《我们过拟合的世纪》，2025</cite>
+</blockquote>
+<p>这个说法的力气在于它给出的<strong>机制</strong>是可以逐项对上的。生成对抗网络里有个叫「模式崩溃」的失败：判别器变得过于灵敏挑剔，生成器为了讨好它，只好产出越来越相似越来越无聊的东西。Hoel 说超级英雄大片就是这个——判别器是整个大制片厂的票房与财务信号系统，它把维度压没了。网红脸也是这个：整形变得便宜高效，而点赞、左划右划构成的判别器同时变得极度灵敏，两头一夹，就得到<strong>那张脸</strong>。汽车外形也是这个：风洞、并购、效率，每一样都在往同一个形状挤。</p>
+<p>于是他得到一句可以拿去到处用的话：</p>
+<blockquote>
+<span class="en">I can’t help but wonder if some of the complaints about “late-stage capitalism” actually break down into something like “this system has gotten oppressively efficient and therefore overfitted, and overfitted systems suck to live in.”</span>
+<span class="zh">我忍不住怀疑，有些关于「晚期资本主义」的抱怨，拆开来其实就是这句话：这个系统已经高效到令人窒息、因而过拟合了，而过拟合的系统住起来很难受。</span>
+<cite>《我们过拟合的世纪》，2025</cite>
+</blockquote>
+<p>值得停一下的是他<strong>不</strong>把这笔账算在谁头上。他明确说：不能怪 AI——ChatGPT 才刚过三岁生日，而这个趋势比它早得多，AI 只是在加速一个已经在跑的过程。他也刻意绕开政治立场之争，理由是他要的是一个「机器式的解释」来配这个机器式的时代。</p>
+<p>而他真正害怕的不是电影难看：</p>
+<blockquote>
+<span class="en">An inability to create novelty is a sign of an inability to generalize to new situations. That seems potentially very dangerous to me.</span>
+<span class="zh">造不出新东西，是泛化不了新处境的征兆。这在我看来可能非常危险。</span>
+<cite>《我们过拟合的世纪》，2025</cite>
+</blockquote>
+<p>顺便说一句，这篇文章本来该是一本书。他一年半前拿着一份叫《文化崩塌》的选题去找出版社，被两家大社拒了，他和经纪人放弃了。<strong>他把这件事直接写在了文章里</strong>——包括那句自嘲的「要是真有这么一本大部头快出版了该多好啊」。这是他很典型的一手：把想法失败的过程也当内容摆出来。</p>
+<p>还有一篇更小、更好看的文章，是这条线的另一个入口。2024 年他给三岁儿子办了个「好奇猴乔治」主题的生日会，从亚马逊订了一套贴纸做伴手礼。做伴手礼那晚，他太太叫他过来看——那套贴纸里混着一批显然是算法胡乱抓图或直接生成的东西，有一张他称之为「双性恋乔治和衣柜」，还有一张是拿着突击步枪的乔治。他先是笑到不行（想象一下真发出去了），然后开始追问：这东西是怎么存在的？</p>
+<p>近因很清楚：一家中国贴纸厂自动化地抓图、拼版、开机。但他要的是终极原因，而他给的答案不是「资本主义」也不是「产业外移」：</p>
+<blockquote>
+<span class="en">The growing high strangeness I sense is that culture is draining of human consciousness, and therefore of sense itself.</span>
+<span class="zh">我感觉到的那种越来越浓的怪异感，是文化正在流失人类意识，因而也在流失「说得通」这件事本身。</span>
+<cite>《好奇猴乔治与无意识文化案》，2024</cite>
+</blockquote>
+<p>他把这三百年拍成一段快进的蒙太奇：先是手艺人在自家屋里，手指翻飞；然后是流水线上许多只手，有老有少，有的缺了指头；然后机器变大变安全，手越来越少；最后一只手也没有了，只剩一间嗡嗡作响的机器人工厂。<strong>可即使到这一步，画面里还有一盏灯是亮的——监工的办公室。然后有一天，连监工也没有了。整件事在黑暗里进行。</strong></p>
+<p>这一段，正是他后来把「过拟合的文化」和「意识」接上的那根线：如果一个文明在每一个决策点上都把人类意识换成了一套灵敏但脆的人造学习系统，那这个文明当然会过拟合。<strong>而且没有人在从上往下的位置上负责阻止它。</strong></p>
+<p>这篇的结尾也值得抄一遍。他说，乔治这个角色的笑点一直是他跟周围的世界脱节：他不说话，没有语言，学不会教训，所以整个现代世界对他永远是一场高度怪异——</p>
+<blockquote>
+<span class="en">And now, I guess, it is for us too. We’ve all become Curious George, primates living amidst alien machinery far from our homelands.</span>
+<span class="zh">而现在，我想，对我们也是了。我们都变成了好奇猴乔治，一群远离家乡、生活在外星机械之间的灵长类。</span>
+<cite>《好奇猴乔治与无意识文化案》，2024</cite>
+</blockquote>
+<h3>三 · 因果涌现：宏观尺度可以比微观尺度更有因果力</h3>
+<p>上面那些文化文章里，有一个词一直在偷偷承重：<strong>「宏观尺度」</strong>。「把文化当成一个宏观尺度的大脑」——凭什么？这不是一句修辞。这是他的博士方向。</p>
+<p>标准的还原论直觉是这样的：真正的因果发生在最底层。原子推原子，其余都是方便的说法。你说「按下开关导致灯亮」，那只是粗糙的近似，精确的故事在粒子那里。</p>
+<p>Hoel 的主张是：<strong>这个直觉是可以被计算推翻的。</strong></p>
+<blockquote>
+<span class="en">What’s causal emergence? It’s when the higher scale of a system has stronger causal relationships than its underlying lower scale. […] In something approaching plain English: macrostates can be strongly dependent even while their underlying microstates are only weakly dependent.</span>
+<span class="zh">什么是因果涌现？就是一个系统的高尺度拥有比它底下的低尺度更强的因果关系。[……] 用接近大白话的说法：宏观状态之间可以是强依赖的，哪怕它们底下的微观状态之间只是弱依赖。</span>
+<cite>《因果涌现入门》，2021</cite>
+</blockquote>
+<p>怎么计算？他用的工具是 Judea Pearl 的 do 算子和信息论。给一个系统做一次彻底的 A/B 测试——把输入随机化到最大熵，然后看输出反应了多少——得到的量叫<strong>有效信息</strong>（effective information, EI）。EI 高，意味着每一次干预都造成了独特的后果；如果所有干预都导致同一个结果（谁按都一样），或者所有干预都导致随机结果（按了跟没按一样），EI 就是零。</p>
+<p>他的例子简单到有点滑稽：一个开关和一盏灯。如果开关一推灯必亮，这个系统的 EI 是 1 比特。如果灯有 20% 的概率抽风不亮，EI 掉到 0.61 比特。如果换成一个 256 档的调光旋钮对 256 档亮度、每一档都精确对应，EI 是 8 比特——<strong>因果结构更「浓」了。</strong></p>
+<p>关键的一步是：<strong>EI 可以在不同尺度上分别测量，然后比较。</strong>而在某些系统里，宏观尺度（把若干微观状态归成一组，或者把某些元素放到模型外面去）测出来的 EI，比微观尺度更高。</p>
+<p>为什么可能？他给了两个解释。一个是机制层面的：微观机制组合起来会形成<em>不同</em>的宏观机制——一堆 NOR 门可以组成一个 COPY 门——而状态转移的条件概率在不同尺度上是不一样的，所以宏观的确定性可以更高、简并度可以更低。另一个是信息论层面的，也是更漂亮的那个：<strong>高尺度关系可以携带更多信息，是因为它们在做纠错。</strong>按香农的结论，改变输入分布可以提高一条信道的传输量；而在不同尺度上干预一个系统，就像往同一条信道里试不同的输入。</p>
+<p>他还给了一句我觉得是全篇最重要的话，因为它挡住了「那不就是相对主义吗」这个反驳：</p>
+<blockquote>
+<span class="en">In this sense, the theory says that causal interpretations are not relative or arbitrary, but ordered, and there is a best one.</span>
+<span class="zh">在这个意义上，这套理论说：因果解释不是相对的、也不是任意的，它们是有序的，而且存在一个最好的。</span>
+<cite>《因果涌现入门》，2021</cite>
+</blockquote>
+<p>换句话说：这不是「怎么看都行」，而是「有一个尺度是最对的，而它不一定在最底下」。他打的比方是相机对焦——你转动焦距（换尺度），系统的因果结构会在某一处「咔」地清晰起来。</p>
+<figure>
+<svg viewBox="0 0 700 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="微观状态粗粒化为宏观状态的示意图">
+<g fill="#6ea8fe" opacity="0.85">
+<circle cx="70" cy="60" r="9"></circle><circle cx="105" cy="45" r="9"></circle><circle cx="98" cy="82" r="9"></circle><circle cx="63" cy="95" r="9"></circle>
+<circle cx="70" cy="150" r="9"></circle><circle cx="105" cy="135" r="9"></circle><circle cx="98" cy="172" r="9"></circle><circle cx="63" cy="185" r="9"></circle>
+</g>
+<g fill="none" stroke="#4a525c" stroke-dasharray="3 4" stroke-width="1.2">
+<path d="M75 40 Q130 30 125 70 Q120 108 70 108 Q40 100 48 70 Q50 44 75 40"></path>
+<path d="M75 130 Q130 120 125 160 Q120 198 70 198 Q40 190 48 160 Q50 134 75 130"></path>
+</g>
+<g stroke="#39424d" stroke-width="1.4">
+<line x1="90" x2="150" y1="55" y2="140"></line><line x1="100" x2="140" y1="140" y2="70"></line>
+<line x1="60" x2="130" y1="80" y2="165"></line><line x1="112" x2="72" y1="52" y2="168"></line>
+</g>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="42" y="24">微观 · 弱依赖</text>
+<g stroke="#5eead4" stroke-width="2">
+<line x1="215" x2="290" y1="115" y2="115"></line>
+</g>
+<polygon fill="#5eead4" points="298,115 286,109 286,121"></polygon>
+<text fill="#5eead4" font-family="monospace" font-size="11" x="205" y="103">粗粒化</text>
+<g fill="none" stroke="#5eead4" stroke-width="2.2">
+<rect height="52" rx="10" width="104" x="360" y="44"></rect>
+<rect height="52" rx="10" width="104" x="360" y="134"></rect>
+</g>
+<g fill="#c8d2dc" font-family="monospace" font-size="13">
+<text x="399" y="76">A</text><text x="399" y="166">B</text>
+</g>
+<g stroke="#5eead4" stroke-width="2.4">
+<line x1="412" x2="412" y1="96" y2="128"></line>
+</g>
+<polygon fill="#5eead4" points="412,134 406,122 418,122"></polygon>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="360" y="24">宏观 · 强依赖</text>
+<g fill="#93a1ae" font-family="monospace" font-size="12">
+<text x="500" y="86">EI(宏观)</text><text x="500" y="112">&gt;</text><text x="500" y="138">EI(微观)</text>
+</g>
+</svg>
+<figcaption>因果涌现：把若干微观状态归成一组之后，状态之间的因果依赖反而可能变强</figcaption>
+</figure>
+<p>这套理论最出名的一场架，是和量子计算理论家 Scott Aaronson 打的。Aaronson 的反驳是：你在两个尺度上用了不同的干预分布，这个比较不公平；应该在所有尺度上用同一个干预分布——那样一来，尺度之间就不会有差别了。</p>
+<p>Hoel 的反击有一种很典型的、把对方的建议一路推到荒唐处的味道：如果你坚持用微观的干预分布去干预宏观，你就得按每个宏观状态里包含多少个微观状态来给它加权。<strong>也就是说，要算清「开关」和「灯泡」之间的因果关系有多强，你得先知道开关的「向上」这个状态里有多少个原子。</strong></p>
+<blockquote>
+<span class="en">This is the definition of comparing apples and oranges.</span>
+<span class="zh">这就是「拿苹果比橘子」的定义。</span>
+<cite>《因果涌现入门》，2021</cite>
+</blockquote>
+<p>他的总结是：坚持用同一个干预分布，你要么是在用宏观的方式干预微观（那微观按定义就变成了宏观），要么是在用微观的方式干预宏观（那宏观按定义就变成了微观）。二者必居其一，所以「公平比较」这个要求本身就是自毁的。</p>
+<p>但这篇文章真正值得抄作业的地方在最后一节，标题是<strong>「那什么才算有效的批评？」</strong>——他花了一整节替对手写更好的反驳，我们放到后面第六节说。</p>
+<h3>四 · 意识是科学语言里的一句哥德尔句</h3>
+<p>最后一个，也是最像哲学、但被他推得最认真的一个。他 2024 年那篇文章的开头，是一个漂亮的思想实验，句式是他最爱用的那种：<strong>「如果 X 是真的，世界看起来会是什么样？」</strong></p>
+<p>假设你真的活在一个二元论宇宙里——你是一个有肉身的灵魂，或者是嵌在一个模拟里的、来自更大现实的行动者。那么<strong>那个宇宙里的科学会长什么样？</strong></p>
+<p>大概会是这样：物理定律都很讲道理、都守规矩，唯独有一个显眼的空缺——没人能解释一具肉身怎么会有一个「你」。那里的科学家会打开大脑，说：嗯，它看起来遵守所有物理规则，但我们没法解释「你」是怎么装进这东西里的。那里的伟大思想家会写下这样的句子：「任何纯用物理术语给出的解释，都不可能说明它。」「我视它为基本的。我视物质为从它派生的。」</p>
+<p>然后他把括号打开：这三句话在我们这个宇宙里分别出自 David Chalmers、Max Planck、Eugene Wigner。</p>
+<p>他继续推：那个宇宙里的神经科学大概会明显落后于其他学科（对上了）；而且他们的人工智能大概会跟大脑的工作方式毫无关系，像是发现了一种完全正交的智能形式（他自己承认，写到这里「有点不舒服了」——因为这也对上了）。</p>
+<p>说到这一步，一条路是宣布这证明了宗教。但他立刻堵死：「一个不可解释的空缺，谁也不推荐。」——它不指向任何一个具体的教义。</p>
+<p>于是他去找另一条解释，而这条解释他认为几乎没人认真探过：<strong>会不会根本就不存在一种设置宇宙的方式，能避免这种困惑？</strong>换句话说：科学是不是本质上不完备的？</p>
+<p>这个问题在数学里有个著名的答案。哥德尔把一个形式系统编码成能谈论它自己，然后造出一句「本句在 S 中不可证」。如果它被证明为真，S 就不一致；如果 S 是一致的，它就证不出这句话——而这句话确实是真的。<strong>系统内部有真而不可证的命题。</strong></p>
+<p>Hoel 的主张是：</p>
+<blockquote>
+<span class="en">A theory of consciousness is like a Gödel sentence written in the language of science.</span>
+<span class="zh">一个意识理论，就像是一句用科学的语言写成的哥德尔句。</span>
+<cite>《意识作为科学语言中的一句哥德尔句》，2024</cite>
+</blockquote>
+<p>他非常明确地承认这没有直接证据，只有旁证。旁证有四条，其中最好看的一条是他自己造的一个悖论，用的是 Chalmers 那个著名的「哲学僵尸论证」——僵尸是一个和你原子对原子一样、神经元照常放电、但内部完全没有体验的东西；Chalmers 说：既然这样的世界可以设想，那物理定律就没有固定住意识，所以纯粹的物理主义是假的。</p>
+<p>Hoel 的反手是：<strong>那让一个僵尸来做这个论证。</strong></p>
+<p>僵尸设想了一个满是僵尸的可能世界，觉得可设想，于是得出结论：物理主义是假的。可是等一下——在僵尸的世界里，物理主义<strong>是真的</strong>。所以这个论证给出了错误的结论。也就是说，它的有效性依赖于一个隐藏前提：做这个论证的人本身不是僵尸。</p>
+<p>好，那就当它是个前提。但麻烦在于：如果这个论证成立，那么按定义，<strong>没有任何言语、行为、实验、内省能区分僵尸和非僵尸。</strong>可以有一个僵尸版的笛卡尔（他管他叫 Zescartes，「僵笛卡尔」），得出自己无疑是有意识的，然后做这个僵尸论证——而对他来说，结论是错的。而真笛卡尔和僵笛卡尔谁也没法把自己和对方分开。</p>
+<p>所以：<strong>如果不带那个前提也有效，一个物理主义世界里的僵尸就能用它反驳物理主义——这是不一致。如果只有带上那个前提才有效，那么任何有意识者都能做这个论证，然后发现自己是不是僵尸这件事既不能靠内省也不能靠证据解决——这是不完备。</strong>两条路都通向哥德尔式的结局。</p>
+<blockquote>
+<span class="en">The existence of consciousness appears to be the kind of true fact that cannot be proven from the inside.</span>
+<span class="zh">意识的存在，看起来正是那种从内部无法被证明的真事实。</span>
+<cite>《意识作为科学语言中的一句哥德尔句》，2024</cite>
+</blockquote>
+<p>另外三条旁证是：物理学里已经证明存在不可判定的性质（2015 年《自然》上那篇「谱隙的不可判定性」，而且同样是靠自指触发的）；心灵哲学的论证总是通向悖论；以及科学史本身的形状——伽利略把感受质括出去，好让物理学能跑；罗素和怀特海在《数学原理》里用类型层级把自指括出去，好让数学能跑。<strong>两次都只是把悖论推迟，没有消掉。</strong></p>
+<p>要注意他这个主张的真正内容：<strong>它不是神秘主义。</strong>他明确地和几个邻居划清界限——他不同意 Colin McGinn 的「神秘论」（说人类脑子不够用，超级智能就能解决），因为他说的是形式系统本身的限制，不是智力的限制；他也不同意侯世达把意识等同于符号递归（他的吐槽是：那《上古卷轴》里的 NPC 大概也有初级符号递归，可我们并不觉得它膝盖中了一箭真的疼）。</p>
+<p>而他给这一切的结尾，没有任何安慰：</p>
+<blockquote>
+<span class="en">It is merely a blankness, a clouded-over wall that extends infinitely in all directions. But still, upon finding such an inaccessible wall, we humans cannot help our nature. We cannot help but wonder: what’s behind the wall?</span>
+<span class="zh">它只是一片空白，一堵向所有方向无限延伸的、被云雾遮住的墙。但即便如此，人在发现这样一堵进不去的墙之后，仍然管不住自己的天性。我们忍不住要想：墙后面是什么？</span>
+<cite>《意识作为科学语言中的一句哥德尔句》，2024</cite>
+</blockquote>
+<h2>他的思维方法</h2>
+<p><strong>换一个尺度看，是他的默认动作。</strong>这几乎是他所有想法的生成器：因果涌现是问「这个系统在哪个尺度上因果最清晰」；过拟合大脑假说是把机器学习那一层的语言套到神经元这一层；《我们过拟合的世纪》是把神经元那一层的语言套到文明这一层。他自己在文章里点破过这个手法——他引 David Marr 的「分析层次」说，同一件事可以在计算层、算法层、物理层各解释一遍，都对，只是层不同。<strong>他把跨层类比当成工具，但要求这个类比得能算：</strong>能不能指出判别器是谁、反馈回路在哪、方差往哪个方向塌。这是他和一般「万物皆可类比」的文化评论真正的分界线。</p>
+<p><strong>他反着推：如果这是真的，世界应该长什么样？</strong>哥德尔句那篇整篇是这么走的——先假设灵魂宇宙，推出它的科学该有哪些特征，再把这些特征和我们这个宇宙一项项对，包括那些让他自己不舒服的对上的项。这个手法的好处是它把一个不可判定的形而上学问题变成了一份可以逐条比对的清单。</p>
+<p><strong>他要求理论解释现象学，不许把现象学扔进「副产品」这个筐。</strong>这是他推翻记忆巩固理论的整个杠杆：梦的稀疏和荒诞不是噪声，是待解释项。这个动作可以直接搬走用——每次有人跟你说「那只是副产品」，问一句：那为什么这个副产品这么有规律？</p>
+<p><strong>他替对手写更好的反驳。</strong>《因果涌现入门》最后一节的标题就是「那什么才算有效的批评？」，他在那儿亲手写下了自己理论最强的软肋（见下一节）。这不是姿态——他在那一节明确说，Aaronson 本来应该往这个方向批评，那样<strong>「会是一篇好得多的博客文章」</strong>。</p>
+<p><strong>他把「不舒服」当信号，不当刹车。</strong>《我们为什么不再制造爱因斯坦了》那篇结尾有一句很少有人敢写的话：</p>
+<blockquote>
+<span class="en">It’s telling I felt uncomfortable writing this essay, despite being confident it’s true.</span>
+<span class="zh">很说明问题的是：写这篇文章的时候我一直不舒服，尽管我确信它是对的。</span>
+<cite>《我们为什么不再制造爱因斯坦了》，2022</cite>
+</blockquote>
+<p>那篇的论点确实不讨喜：他统计了历史上大量天才的成长史（马可·奥勒留有十七个家教；罗素十六岁前没上过学；维特根斯坦十四岁前全是家教；爱因斯坦十二岁时由一个叫 Max Talmud 的家庭教师领进了几何学的门），得出结论是<strong>历史上唯一稳定产出天才的方法是「贵族式家教」，而这个方法极不公平</strong>。而今天我们把这套最有效的教育方法，几乎只用在考试上，而且几乎只用在成绩差的孩子身上——</p>
+<blockquote>
+<span class="en">In general, those doing well in school don’t get tutoring—it’s like we’re applying the secret genius sauce solely to the kids who aren’t going to be geniuses.</span>
+<span class="zh">一般来说，在学校里表现好的孩子是不请家教的——这就像我们把那罐天才秘制酱料，专门抹在了那些不会成为天才的孩子身上。</span>
+<cite>《我们为什么不再制造爱因斯坦了》，2022</cite>
+</blockquote>
+<p>他还把这一篇和「量产 vs 手工」连起来：老式的衣服、地毯、二十次折叠的钢刀、斯特拉迪瓦里的小提琴，都是量产替代不了的。而现代智识界，在他看来，充满了他们贵族前辈的量产仿制品——<strong>「质量还行，够用，而且天哪，它们生产起来真便宜。但我不觉得它们有同样的音色。」</strong></p>
+<p><strong>最后，他会在自己写得最得意的时候拆自己的台。</strong>2022 年他有一篇长文拿了 Scott Alexander 匿名书评比赛的第一名（奖金五千美元），叫《八卦陷阱》。它想解决的是「智人悖论」：人类存在了二十万年，为什么文明只有一万年？他的假说是：在群体规模不超过邓巴数（约 150 人）的时候，人类根本不需要发明正式的权力结构——你只需要「谁受欢迎、谁不受欢迎」就够了。</p>
+<blockquote>
+<span class="en">A “gossip trap” is when your whole world doesn’t exceed Dunbar’s number and to organize your society you are forced to discuss mostly people. It is Mean Girls (and mean boys), but forever.</span>
+<span class="zh">所谓「八卦陷阱」，就是当你的整个世界不超过邓巴数、而你为了组织社会被迫主要谈论「人」的那种状态。那是《贱女孩》（外加贱男孩），但是永远。</span>
+<cite>《八卦陷阱》，2022</cite>
+</blockquote>
+<p>在这样的世界里，所有认知资源都花在声誉管理上，没有余量留给发明、艺术或工程。于是有了他对文明的定义，一句反过来说的漂亮话：<strong>「文明是一种把『拉平机制』本身拉平的上层结构」</strong>——它的标志是对八卦的免疫，比如终身教职、比如大法官、比如受保护的记者。而社交媒体做的事，是拆掉了邓巴数这道墙，把我们最古老的那套政体召唤了回来。</p>
+<p>写到这里他大可以收工。他没有。他在最后一节掉过头来指着自己：</p>
+<blockquote>
+<span class="en">An admittance. For it should be obvious by now: this text is corrupted. The same corruption that I accused the Davids of falling victim to, and that they, in turn, accused Rousseau and Hobbes of falling victim to. I have made the past political, and prehistory a sepia reflection of the current day.</span>
+<span class="zh">一个招供。因为到现在应该很明显了：这篇文字是被污染的。正是我指控那两位 David 中的招、而他们又指控卢梭和霍布斯中过的那种污染。我把过去政治化了，把史前变成了当下的一张泛黄倒影。</span>
+<cite>《八卦陷阱》，2022</cite>
+</blockquote>
+<p>然后他说：我仍然认为这个故事是真的。<strong>两句话同时成立</strong>，他不在其中挑一句来收场。最后一句是：所有关于史前的叙述也许都只是一座镜厅，而在四周巨大变形的投影里，我们看见的只是自己的脸。</p>
+<h2>他哪里可能是错的</h2>
+<p><strong>因果涌现最强的那条反驳，是他自己写下的。</strong>他在《因果涌现入门》最后一节说，Aaronson 那种「比较不公平」的路子其实很弱，而真正难对付的问题是：因果涌现是在<em>某些</em>因果度量（有效信息、整合信息）下才显现的，那你凭什么让人相信这个度量是最好的、乃至是唯一正确的那个？</p>
+<blockquote>
+<span class="en">Perhaps one could convince an extreme skeptic like him by proving a measure like effective information is unique and best-fitted for measuring causation […] But proving this with any mathematical measure of anything is both rare and hard, and neither I nor anyone else has done this.</span>
+<span class="zh">也许要说服像他那样的极端怀疑论者，得先证明有效信息这类度量在测量因果性上是唯一的、最合适的 [……] 但对任何东西的任何数学度量证明这件事，都既罕见又困难，而我和其他任何人都没做到过。</span>
+<cite>《因果涌现入门》，2021</cite>
+</blockquote>
+<p>他随即说这不是不相信这套理论的理由，只是超出有效信息继续研究的理由。这个转折你同不同意是另一回事，但那条软肋是真的：<strong>整套论证依赖于一个没被证明是唯一的度量。</strong>（另外要说明：我读的是他这篇回应，没有读 Aaronson 2017 年那篇原始批评，所以关于 Aaronson 的立场，这里只转述 Hoel 的复述。）</p>
+<p><strong>他所在的整条研究线被同行公开点过名。</strong>2023 年 9 月，一百多位研究者联署了一封公开信，称整合信息论是「伪科学」，签名者包括 Daniel Dennett、Patricia Churchland、Joseph LeDoux、Hakwan Lau、Keith Frankish 等。Hoel 逐句反驳了这封信——尽管他自己刚出版的书里有好几章在讲整合信息论的失败与限制，尽管他说自己已经多年不参与这套理论的开发。他的核心论点是一句可以独立评估的话：<strong>「整合信息论的问题就是你们的问题」</strong>——那些被当作它独有的毛病（比如「替换论证」），其实是所有意识理论共有的，只是它形式化得足够彻底，所以毛病才看得见。这个论点有力量，但也要看清它的结构：<strong>它替一套理论辩护的方式，是论证所有理论都一样糟。</strong>（这里我读的是他的反驳全文，没有读那封公开信的原文与签名者后续的回应，所以只报书目事实与他的立场。）</p>
+<p><strong>过拟合大脑假说很漂亮，但漂亮不等于已证实。</strong>他自己在文章里就写过「没人确切知道做梦为什么会演化出来」。而这类理论有一个结构性的弱点值得读者自己掂量：它对梦的现象学解释得非常顺，可正因为顺，很难说清什么样的观察会<strong>推翻</strong>它——一个稀奇古怪的梦是域随机化，一个平淡无奇的梦也可以说成是别的正则化手段。他把它作为假说提出来，这没问题；但目前它的地位更接近一个有力的框架，而不是一个被实验挑出来的赢家。</p>
+<p><strong>「文化过拟合」是隐喻，而他知道。</strong>他在文中直说：「你当然不能靠几张图就证明文化过拟合了。」他也说他本来打算写成一本书、而那本书的选题被两家大出版社拒了。所以这一章要按它的实际身份读：一个组织力很强的比喻，附带一批对得上的机制类比，<strong>而不是一项测量</strong>。此外，「文化停滞」这个前提本身也不是无争议的——他自己就引了 Katherine Dee 的反驳（网络人格本身就是一种新形式，只是批评家看不见它），然后……没怎么处理就往下走了。</p>
+<p><strong>「天才在减少」这个前提有一个方法论上的坑，而他只承认了一半。</strong>他承认「证明一样东西不存在出奇地难」。但还有一层他没怎么碰：我们能列出十九世纪的世界级天才名单，是因为那份名单已经被一百五十年的筛选和封圣过滤过了；同代人几乎从来认不出同代的天才。用「你能说出过去十年里去世的谁属于这个万神殿吗」来论证衰减，很难和「万神殿本来就需要几十年才能造出来」区分开。</p>
+<p><strong>最后一条，也是最重要的一条：他的立场是同向倾斜的。</strong>把他的科学主张排成一列——涌现优于还原；整合信息论值得辩护；科学在意识面前不完备；语言模型「更像工具」；文化正在流失意识——<strong>每一条都朝同一个方向倾斜：给内在视角保留一个不可还原的位置。</strong>这不证明其中任何一条是错的。但一个在书店里长大、写小说、并且明显希望「从里面看是什么感觉」这件事是根本重要的人，恰好在每一个独立问题上都落在同一侧，这本身是读者该拿在手里的一条信息。</p>
+<p>而对这种倾斜下过最狠判词的，还是他自己：<em>this text is corrupted</em>。他把这句话用在了他最得意的那篇文章上。<strong>值得提醒的是，他没有把它用在自己的科学论文上。</strong></p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.theintrinsicperspective.com/p/exit-the-supersensorium">Exit the supersensorium</a>（2022）</span><span class="d">全站最完整的一篇：从老鼠死于不做梦讲到过拟合大脑假说，再讲到艺术为什么是可携带的梦、以及为什么存在一条客观的审美坐标轴。</span></li>
+<li><span class="t"><a href="https://www.theintrinsicperspective.com/p/our-overfitted-century">Our overfitted century</a>（2025）</span><span class="d">把过拟合从大脑推到整个文明：模式崩溃、网红脸、效率如何吃掉方差，以及那本没能出版的《文化崩塌》。</span></li>
+<li><span class="t"><a href="https://www.theintrinsicperspective.com/p/a-primer-on-causal-emergence">A primer on causal emergence</a>（2021）</span><span class="d">他的科学主业的非技术版：有效信息怎么算，宏观尺度为什么可能比微观更有因果力，以及和 Scott Aaronson 的那场争论。</span></li>
+<li><span class="t"><a href="https://www.theintrinsicperspective.com/p/consciousness-as-a-godel-sentence">Consciousness as a Gödel sentence in the language of science</a>（2024）</span><span class="d">「科学不完备」这个主张的完整陈述，包含僵尸笛卡尔那个自造的悖论。</span></li>
+<li><span class="t"><a href="https://www.theintrinsicperspective.com/p/the-gossip-trap">The gossip trap</a>（2022）</span><span class="d">获 Astral Codex Ten 匿名书评比赛第一名的长文：用邓巴数与「谁受欢迎」解释人类为何在史前卡了九万年，结尾自己拆自己的台。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-03" data-slug="the-intrinsic-perspective">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-03</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>
