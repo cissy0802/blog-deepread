@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scott Aaronson · Shtetl-Optimized — Between "computable" and "computable in time" lies an entire universe</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Segoe UI",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#c3ced9;font-size:.97rem;line-height:1.72}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="shtetl-optimized-blog6.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep-Read · 06 · scottaaronson.blog</div>
+<h1>Scott Aaronson · Shtetl-Optimized<br/>Between "computable" and "computable in time" lies an entire universe</h1>
+<p class="sub">October 2005 to now · 1,095 posts · 247 monthly archives, almost none skipped · still running (latest post 1 September 2026) · this page reads 18 posts in full, spanning October 2005 to September 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>Open <strong>scottaaronson.blog</strong> and the first thing you notice is that it looks like a web page from 2005 — because it is one. The source still carries <code>&lt;body bgcolor="black"&gt;</code> and <code>&lt;font color="yellow"&gt;</code>, markup that CSS retired two decades ago. And that line of yellow text under the title isn't a welcome, or a bio. It's a correction:</p>
+<blockquote>
+<span class="en">If you take nothing else from this blog: quantum computers won't solve hard problems instantly by just trying all solutions in parallel.</span>
+<cite>Shtetl-Optimized masthead, September 2026</cite>
+</blockquote>
+<p>A man has hung a sign over his own front door that reads: <strong>you have probably misunderstood the thing I have spent my life on.</strong></p>
+<p>His name is Scott Aaronson, a theoretical computer scientist at UT Austin. And what's behind that sign was already written down in his fifth blog post. On 7 October 2005, someone asked him why he'd taken so long to start blogging. He gave a few jokey answers, then the real one: he had been waiting until he could find "the best, most eloquent words — words that couldn't possibly be misunderstood." While he waited, he finished his PhD and started noticing that he was going to die.</p>
+<blockquote>
+<span class="en">Efficiency matters. Time constraints change everything. How could I have forgotten?</span>
+<cite>"Why did I take so long to start a blog?", 7 October 2005</cite>
+</blockquote>
+<p>Those three sentences are about procrastination. They are also, word for word, the central thesis of the next twenty-one years of his work.</p>
+<p><strong>Turing settled, in 1936, whether a thing can be computed at all. Aaronson has spent his career on the next question: can it be computed in time?</strong> And his claim about that gap is far more aggressive than "it's practical": he treats it as a constraint at the level of a physical law — one that governs what machines can be built, which philosophical arguments survive, why the universe is interesting right now rather than at the beginning or the end, and whether a language model could exist at all. His 53-page essay on this opens by naming the enemy: "One might think that, once we know something is computable, how efficiently it can be computed is a practical question with little further philosophical importance. In this essay, I offer a detailed case that one would be wrong."</p>
+<p>The first screw he turned with that screwdriver is the sign on the door. <strong>In the mid-2000s a serious contingent held that quantum computers were physically impossible</strong> — not hard, but impossible, because quantum mechanics would break down at some scale. Aaronson's response wasn't to argue. It was to convert the other side's position into a math problem: <em>fine — then tell me where the line is.</em> Observed quantum states on one side, the states Shor's factoring algorithm needs on the other. Draw the line. He named it a <strong>Sure/Shor separator</strong>.</p>
+<blockquote>
+<span class="en">Unfortunately, no skeptic has yet risen to the challenge. It's not hard to see why: if you start with the many-particle entangled states that have already been observed […] and then throw in a few closure properties, you quickly end up with — well, the set of all quantum states.</span>
+<cite>"Reasons to believe II: quantum edition," September 2006</cite>
+</blockquote>
+<p>What makes the move beautiful is that it turns "I don't buy it" into a research program someone could actually run. And <strong>nineteen years later he turned the same knife around.</strong> In November 2025 he remarked, offhand, that a fault-tolerant machine running Shor's algorithm before the 2028 US election was a "live possibility." Quantum-stock traders on Twitter promptly announced that the field's chief skeptic had capitulated, and that the timeline matched exactly one company's roadmap. He spent a whole post on it: a "live possibility" isn't a certainty and isn't even a probability, it's just "I'm not confident this won't happen" — and then he took apart, point by point, how that $17-billion company sells governments and retail investors on things it cannot do. <strong>In 2006 he defended quantum computing from the skeptics; in 2025 he defended it from the salesmen, by the same standard.</strong> His blog has a category called <em>Speaking Truth to Parallelism</em> with 67 posts in it. That isn't a position. It's a discipline.</p>
+<p>The second thing that screwdriver turns is mathematics. <strong>Nobody can prove P≠NP</strong>, so people periodically claim that believing it is just fashionable dogma. Aaronson's 2014 answer isn't mathematics — it's philosophy of science: like any successful scientific hypothesis, P≠NP "has passed severe tests that it had no good reason to pass were it false."</p>
+<p>What tests? Tens of thousands of problems have been proved NP-complete; tens of thousands of others proved to lie in P; and in half a century not one has ever crossed. But the real evidence isn't the absence of a crossing. It's <strong>the shape of the border</strong>:</p>
+<blockquote>
+<span class="en">Again and again the two regions "touch," and their border even traces out weird and jagged shapes. But even in those border zones, not a single problem ever crosses from one region to the other. It's as if they're kept on their respective sides by an invisible electric fence.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<p>His examples are concrete enough to raise the hair on your arms. The best approximation algorithm for Set Cover stops at ln(n); the hardness results reach up to (1−ε)·ln(n) — <strong>both sides brake at exactly the same number, neither venturing a step further</strong>, despite being built from entirely unrelated mathematics by people who don't talk to each other. These coincidences come by the dozen. If P really equalled NP, every one of them would be a coincidence with no cause.</p>
+<p>And the most characteristic episode of all: in 2011, on a cruise ship, the physicist Sean Carroll asked him a question he couldn't drop. <strong>Entropy increases monotonically — so why does "interestingness" rise and then fall?</strong> Milk just poured into coffee isn't interesting; fully mixed isn't interesting; the interesting picture is the one in the middle, full of tendrils. Same for the universe — a soup of high-energy particles after the Big Bang, a soup of low-energy particles a googol years from now, and in between, in his words, galaxies and brains and "hot-dog-shaped novelty vehicles."</p>
+<p>Aaronson sketched a formal answer on the spot and then spent three years turning it into a paper: a new quantity he called complextropy, and since it can't be computed, the size of a gzipped file standing in for it, measured on a pixelated cup of coffee. <strong>The 2014 paper found the bump.</strong> Days after it went online, a probability theorist wrote to say the experimental section had a serious error: the bump was an artifact of rounding at the boundary pixels — and worse, one could prove that the model they'd chosen was <em>incapable</em> of producing large apparent complexity.</p>
+<p>He put the correction at the <strong>top</strong> of his own announcement post, above the announcement:</p>
+<blockquote>
+<span class="en">Had I looked more carefully at the data, I could've noticed the problem before we posted, and I take responsibility for my failure to do so. […] I wish to express our deepest imaginable gratitude to Brent Werness for telling us all this.</span>
+<cite>Update to "Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton," June 2014</cite>
+</blockquote>
+<p>That is the most valuable thing about reading him. <strong>He posts his confidence levels, including in his own work.</strong> The 85-page essay on free will he spent two years writing is described, in his own abstract, as "an unusual perspective on time, quantum mechanics, and causation, <em>of which I myself remain skeptical</em>"; the abstract's first sentence says he "unwisely" set out these thoughts; and he filed the post under a blog category he named <em>Embarrassing Myself</em>. His first rule for judging whether a claimed breakthrough is wrong is "the authors don't use TeX" — he says that one test catches at least 60% of them, and he honestly lists the known false positives: David Deutsch and Lov Grover.</p>
+<p>All of it comes down to one sentence, from his June 2026 award speech:</p>
+<blockquote>
+<span class="en">The secret of blogging is that, even if people despise what you're saying, even if they think it's wrong, offensive, problematic, cringe, you name it, they need to trust that you're telling them the truth of what you know or believe or remember about the subject at hand, the same as you'd tell your closest friend.</span>
+<cite>Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p class="sub" style="margin-top:26px"><em>For the full electric-fence evidence, the complete Sure/Shor argument, the chain of questions about lookup tables that leads to an unclonable free will, why his sharpest tool fails him on AI, and the soft spots he admits to — switch to Full above.</em></p>
+</div>
+<!-- ============ FULL ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>P and NP</b>: P is the class of problems whose answers can be <em>found</em> in reasonable time; NP is the class whose answers can be <em>checked</em> in reasonable time. Solving a sudoku is hard; checking a solved one is easy. P=NP would mean everything easy to check is easy to solve. Almost nobody believes it, and nobody can prove it false.</li>
+<li><b>NP-complete</b>: the hardest problems in NP. Solve any one of them efficiently and you solve all of NP. Tens of thousands of practical problems have been proved to be in this class.</li>
+<li><b>Shor's algorithm</b>: Peter Shor's 1994 quantum algorithm for factoring large integers efficiently — and most encryption on the internet rests on factoring being slow.</li>
+<li><b>No-Cloning Theorem</b>: a theorem of quantum mechanics saying an unknown quantum state cannot be copied. Quantum teleportation can move a state elsewhere, but only by destroying the original.</li>
+<li><b>Kolmogorov complexity</b>: the length of the shortest program that outputs a given string. A uniformly random string maximizes it.</li>
+<li><b>Entropy / the Second Law</b>: the entropy (roughly, disorder) of a closed system only increases. Milk mixes into coffee; it never unmixes.</li>
+</ul>
+</div>
+<h2>One strange thing: a correction nailed over the door</h2>
+<p>It's September 2026 and you open <strong>scottaaronson.blog</strong>. The first impression is of walking into the wrong decade: a black background, and in the source, <code>&lt;body bgcolor="black"&gt;</code> and <code>&lt;font color="yellow"&gt;</code> — markup from the late 1990s that CSS made obsolete long ago. The blog is called <em>Shtetl-Optimized</em>. The subtitle is "The Blog of Scott Aaronson." And the line of yellow text under the subtitle is neither a welcome nor a bio:</p>
+<blockquote>
+<span class="en">If you take nothing else from this blog: quantum computers won't solve hard problems instantly by just trying all solutions in parallel.</span>
+<cite>Shtetl-Optimized masthead, September 2026</cite>
+</blockquote>
+<p>A man has hung a sign over his own front door reading: <strong>you have probably misunderstood the thing I've spent my life on.</strong> The blog holds 1,095 posts across 247 monthly archives, running from October 2005 to last week. In between he changed universities, got married, had two children, and spent two years at OpenAI. The sign stayed up.</p>
+<p>But the sign isn't the strangest thing here. The strangest thing is his <strong>fifth</strong> post.</p>
+<p>On 7 October 2005, the theoretical computer scientist Lance Fortnow asked him why he'd taken so long to start blogging. Aaronson offered the boring answers first (no time, the blogosphere is overpopulated, the bandwagon left in 2003, it would be presumptuous), then the real one: he hadn't started because he knew that once he did, he'd have to write about what actually mattered to him — state strong opinions, make his worst fears everyone else's business, offend people, embarrass himself. So he had been waiting until he could first find "the best, most eloquent words — words that couldn't possibly be misunderstood."</p>
+<p>Did he find them? His own answer: no. What happened instead was that he finished graduate school, reached a certain age, and started to face his own mortality.</p>
+<blockquote>
+<span class="en">It occurred to me that, if you wait for the "perfect opportunity" to start a weblog — or switch to a new research area, or ask someone out, or whatever it is you want to do — then you're essentially just committing delayed suicide. […] Efficiency matters. Time constraints change everything. How could I have forgotten?</span>
+<cite>"Why did I take so long to start a blog?", 7 October 2005</cite>
+</blockquote>
+<p>That passage is about procrastination. It is also, unaltered, <strong>the central thesis of his next twenty-one years of research</strong> — and he flags the coincidence himself. <em>How could I have forgotten?</em> Because "time constraints change everything" is the entire content of his field.</p>
+<h2>Who he is</h2>
+<p>Scott Aaronson, born 21 May 1981. He skipped three grades and <strong>started college at fifteen</strong> — something he was still publicly chewing over in 2026: "Should I have skipped three grades and started college at age 15? Was it worth it to get a head-start on my research career — all the trauma around dating, all the fear that I'd die alone as a celibate nerdy math freak, the decade of suffering and suicidal ideation…?" He did his PhD at UC Berkeley under Umesh Vazirani. His wife, Dana Moshkovitz, is also a complexity theorist — in his long P≠NP essay he notes that a certain kind of example could be multiplied endlessly, "or at least, Dana (my source for such matters) could do so." He taught at MIT for nine years, then moved with her to UT Austin in the summer of 2016. <strong>In spring 2022 he took a two-year leave to join a then relatively obscure little nonprofit by the name of OpenAI</strong>, with the assignment of using theoretical computer science to figure out how to make AI safe for humanity. Four years later, from a podium: "Alas, that problem is still open!"</p>
+<p>The blog's name comes from a conversation at Berkeley, where some graduate students were arguing about who they'd have been seven hundred years ago.</p>
+<blockquote>
+<span class="en">"I would've been the chief rabbi of my shtetl," I said. "All day long, I'd debate questions like how much restitution you'd have to pay if your ox gored your neighbor's sheep."</span>
+<cite>"Welcome to my weblog!", 3 October 2005</cite>
+</blockquote>
+<p>Someone pointed out that in that life he'd have had no complexity theory and no quantum computing. "That's true," he said. "So, you know — you win some, you lose some." Hence <em>Shtetl-Optimized</em>: optimized for a small Eastern European Jewish village. The theme he set for it was <strong>"how to survive as a penguin in the desert, or a camel in Antarctica […] as someone who feels himself exquisitely adapted to an environment utterly unlike the one into which he was born."</strong></p>
+<h2>What he's been wrestling with</h2>
+<p>In 1936 Turing drew a line: some things can be computed mechanically, some cannot. The line is profound and extremely coarse, because "can be computed" contains two wildly different populations — things you can have by this afternoon, and things that finish after the heat death of the universe.</p>
+<p><strong>Aaronson has spent his life guarding the second line.</strong> And his claim about it is much more radical than "efficiency is practical": he holds that the gap between computable and computable-in-time is a constraint at the level of a physical law — it governs which machines can exist, which philosophical arguments survive, and why the universe is interesting in the middle.</p>
+<p>His 53-page 2011 essay, <em>Why Philosophers Should Care About Computational Complexity</em>, opens by setting up the enemy in a single sentence:</p>
+<blockquote>
+<span class="en">One might think that, once we know something is computable, how efficiently it can be computed is a practical question with little further philosophical importance. In this essay, I offer a detailed case that one would be wrong.</span>
+<cite>Abstract, "Why Philosophers Should Care About Computational Complexity," August 2011</cite>
+</blockquote>
+<p>His own description of the result: "basically a huge, sprawling mess; I hope that at least some of you will enjoy getting lost in it." Seventy footnotes, 126 references.</p>
+<p>How did he end up standing here? In 2026, accepting an award, he gave a strikingly unromantic answer: <strong>this was unclaimed land.</strong></p>
+<blockquote>
+<span class="en">The foundation of my career is that I realized 25 years ago that there were better theoretical computer scientists than me […] Certainly there were better quantum physicists than me. There were better writers, better expositors, better performers. On the other hand, if you looked specifically at the intersection of computational complexity and quantum physics and standup comedy, that was just this totally uncontested territory!</span>
+<cite>Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p>How important that land turned out to be has a specific timestamp. Twenty years ago his colleagues used to trade a thought experiment: if P=NP by an algorithm that was fast in practice, the scary part wouldn't be that all encryption breaks. It's that <strong>you could ask your computer for the shortest efficient compression of the full text of Wikipedia — and to produce that compression, the computer would plausibly have to build an artificial general intelligence along the way.</strong> Aaronson's reaction at the time: amusing, I'll steal it, but what a simplistic vision of intelligence — surely there's more to it than sheer data compression.</p>
+<p>In 2022 he reported for duty at OpenAI and had lunch with its then chief scientist, Ilya Sutskever.</p>
+<blockquote>
+<span class="en">"Scott, let me explain to you how we think about things here at OpenAI. For us, intelligence is fundamentally about prediction, and prediction is fundamentally about compressing your training data. As you know, Kolmogorov complexity is uncomputable, but one can get better and better computable upper bounds on it. We conjectured that, in order to get sufficiently good at predicting and compressing all the text on the Internet, you'd need to build a model of the entire world that had led to that text being written. And we made a gamble that large neural nets would do that well enough, despite the problem's worst-case intractability."</span>
+<cite>Ilya Sutskever, quoted in the Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p>His response:</p>
+<blockquote>
+<span class="en">That conversation was when it hit me that, if only we in CS theory had taken our own concepts and thought experiments more seriously, one of us could've started OpenAI 15 or 20 years ago. So OK, we didn't, and that's why I flew coach to get here.</span>
+<cite>Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p>That is the thing he wrestles with: <strong>not "what is true," but "what is this universe willing to let anyone find out in reasonable time."</strong> What follows are four screws turned with the same screwdriver.</p>
+<h2>Idea one: quantum computers don't try all answers at once — and he made that correction into a weapon</h2>
+<p>First, why he cares so much about what looks like a quibble over popularization.</p>
+<p>The folk version says: a classical bit is 0 or 1, but a qubit can be "both at once," so n qubits try all 2ⁿ answers simultaneously and hard problems fall instantly. The trouble isn't that this simplifies. It's that <strong>it deletes the only step that matters.</strong> A quantum state really is a superposition over all candidate answers — but you can't read a superposition out. Measure it and it collapses at random, and the right answer's probability isn't improved by having been in there.</p>
+<p>What makes quantum computing potentially useful is that <strong>amplitudes can be negative — complex, in fact — and therefore cancel.</strong> Designing a quantum algorithm isn't parallel search; it's choreography: arranging an interference pattern in which all the paths leading to wrong answers cancel each other out, leaving amplitude concentrated on the right one. This is extremely hard to arrange, which is why quantum computers are <strong>not faster at all</strong> for the vast majority of problems. They win big only on the few families with the right mathematical structure: factoring, simulating quantum systems.</p>
+<p>"Trying all the answers at once" manufactures two opposite errors at the same time: it makes laypeople think quantum computers are magic, and it makes other people think they're a fraud. Most of Aaronson's twenty-one years of polemic consists of firing in both directions at once.</p>
+<h3>His original move: the Sure/Shor separator</h3>
+<p>In September 2006, no serious quantum computer existed. A number of serious people — physicists and mathematicians among them — held that one was impossible <strong>in principle</strong>: quantum mechanics would fail at some scale or complexity, and entanglement would be destroyed by some fundamental noise.</p>
+<p>The normal shape of that argument is a stalemate: you have no evidence it will fail, you have no evidence it won't. Aaronson did something else. In a 2003 paper he had <strong>translated the skeptical position into a mathematical object</strong>, and in this post he put it in plain words:</p>
+<blockquote>
+<span class="en">In other words, where is the line — possibly a fuzzy, asymptotic, resource-dependent line — that puts the quantum states that have already been observed on one side, and the quantum states that arise in Shor's factoring algorithm on the other? In a paper I wrote three years ago, I called such a line a "Sure/Shor separator," and challenged skeptics to come up with some example of what it might be.</span>
+<cite>"Reasons to believe II: quantum edition," September 2006</cite>
+</blockquote>
+<p>"Sure" states are the ones we're sure exist; "Shor" states are the ones Shor's algorithm needs. If quantum mechanics really does break somewhere, that line must exist. If you can't say where it is, your skepticism isn't yet a thing that can be discussed.</p>
+<p>And the use he imagined for it is far bigger than one argument: <strong>a skeptic draws a line, which gives experimentalists a concrete barrier to attack; if they cross it, the skeptic draws a new one; repeat.</strong> That converts a clash of positions into an experimental program.</p>
+<p>Then he reported the state of play:</p>
+<blockquote>
+<span class="en">Unfortunately, no skeptic has yet risen to the challenge. It's not hard to see why: if you start with the many-particle entangled states that have already been observed […] and then throw in a few closure properties, you quickly end up with — well, the set of all quantum states. Coming up with a "reasonable" set of states that includes Sure states but doesn't include Shor states turns out to be an extremely […]</span>
+<cite>"Reasons to believe II: quantum edition," September 2006</cite>
+</blockquote>
+<p>The force of the move is its <strong>asymmetry</strong>. Aaronson doesn't have to prove quantum computers can be built. He only has to point out that any position denying it must carry a specific mathematical commitment, and that the commitment is brutally hard to honor.</p>
+<p>That post gives thirteen reasons in all. The sharpest is a single sentence:</p>
+<blockquote>
+<span class="en">Quantum mechanics has been the foundation for all non-gravitational physics since 1926. Hoping that it would "just go away" has been one of the most consistently losing strategies in the history of science.</span>
+<cite>"Reasons to believe II: quantum edition," September 2006</cite>
+</blockquote>
+<p>And at the top of the same post he declares his own uncertainty without a discount:</p>
+<blockquote>
+<span class="en">The only real way to find out is to try to build a quantum computer. […] I have no idea — none — how far it will get in my lifetime.</span>
+<cite>"Reasons to believe II: quantum edition," September 2006</cite>
+</blockquote>
+<h3>The same knife, nineteen years later, pointed the other way</h3>
+<p>November 2025. By now quantum computing is an industry with public companies, retail investors and stock forums. At the end of a post Aaronson remarked, offhand, that given the current staggering rate of hardware progress he now thought it "a live possibility" that a fault-tolerant machine would run Shor's algorithm before the next US presidential election — adding that he'd partly said it to set up the joke that there might not be a next US presidential election.</p>
+<p>Twitter detonated. One representative take: <strong>"A quantum expert skeptic who the bears quote all the time – Scott Aaronson – recently got very excited about a number of quantum advances… a timeline that lines up ONLY with $IONQ's roadmap, and NOBODY else's! This represent a MAJOR capitulation of previously predicted timelines by any skeptics."</strong></p>
+<p>He unpacked it layer by layer. First: he had been telling anyone paranoid about cybersecurity to migrate to quantum-resistant cryptography for years, precisely because hardware progress can't be ruled out — so there is no "capitulation." Second: <strong>a "live possibility" is short not only of a certainty but of a probability; it is basically just "I'm not confident this won't happen."</strong> Third, and most painful: he had never mentioned the company in question, which now carries a $17 billion valuation. He then set out how the research community sees it — eagerly selling retail investors on quantum handwriting recognition and the like with virtually no basis for believing in a quantum advantage there; aggressively marketing current devices to governments who just don't want to be left behind; testifying to Congress that quantum, unlike AI, "doesn't hallucinate" and is "deterministic." He added that writing this pained him, since the company was founded by scientists he deeply admires.</p>
+<p>And when people responded by asking which quantum stock they should buy:</p>
+<blockquote>
+<span class="en">You do realize, don't you, that I'm, like, a professor at a state university, who flies coach and lives in a nice but unremarkable house? If I had any skill at timing the market, picking winners, etc., don't you think I'd live in a mansion with an infinity pool, and fly my Cessna to whichever conferences I deigned to attend?</span>
+<cite>"Quantum Investment Bros: Have you no shame?", November 2025</cite>
+</blockquote>
+<p>That is the full meaning of the yellow sign. <strong>In 2006 he shielded quantum computing from the skeptics; in 2025 he shielded it from the salesmen; both times by the same standard — your claim must carry a specific, checkable commitment.</strong> His blog's category for this, a pun on "speaking truth to power," is <em>Speaking Truth to Parallelism</em>. It holds 67 posts. Not a position. A discipline.</p>
+<h2>Idea two: P≠NP can't be proved, but there are scientific grounds to believe it — the invisible electric fence</h2>
+<p>March 2014. The Czech physicist Luboš Motl had declared on his blog that belief in P≠NP was mere fashionable dogma among computer scientists, because in <strong>discrete</strong> mathematics there can be no such thing as partial evidence — every question is independent, and no amount of experience predicts the next answer. Some readers put it more bluntly: computer scientists just aren't as smart as real scientists.</p>
+<p>Aaronson's reply is unusual. He didn't patch up the mathematics. <strong>He switched disciplines to answer:</strong></p>
+<blockquote>
+<span class="en">So, OK, why should you believe P≠NP? Here's why: Because, like any other successful scientific hypothesis, the P≠NP hypothesis has passed severe tests that it had no good reason to pass were it false.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<p>That is Popper's vocabulary, applied to a statement of pure mathematics. <strong>His claim is that P≠NP's present status is not "unproved theorem" but "repeatedly and severely tested law of nature."</strong> He later compressed it into a joke: "look, if we were physicists, we would've declared P≠NP to be a law of nature. We would've given ourselves Nobel Prizes for the discovery of that law. And if it later turned out that P=NP? We'd just give ourselves more Nobel Prizes for the law's overthrow!"</p>
+<h3>What the tests are</h3>
+<p>The first layer of evidence is scale. Tens of thousands of problems have been proved NP-complete:</p>
+<blockquote>
+<span class="en">They range in character from theorem proving to graph coloring to airline scheduling to bin packing to protein folding to auction pricing to VLSI design to minimizing soap films to winning at Super Mario Bros.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<p>Tens of thousands of others have been proved to lie in P (or BPP): primality, matching, linear and semidefinite programming, edit distance, polynomial factoring. For half a century people have tried to move some problem from one continent to the other — including, in his phrase, "ambitious teenagers on the science-fair circuit," using hundreds of exotic strategies. <strong>Not one has succeeded.</strong></p>
+<p>But that's still just "nobody managed it." Aaronson's original contribution is to point out that the real evidence lies not in the absence of a bridge but <strong>in the shape of the coastline.</strong></p>
+<blockquote>
+<span class="en">Again and again there are "close calls": places where, if a single parameter had worked out differently, the two regions would have come together in a cataclysmic collision. Yet every single time, it's just a fake-out. Again and again the two regions "touch," and their border even traces out weird and jagged shapes. But even in those border zones, not a single problem ever crosses from one region to the other. It's as if they're kept on their respective sides by an invisible electric fence.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<figure>
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="egL" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6ea8fe" stop-opacity=".22"/><stop offset="1" stop-color="#6ea8fe" stop-opacity=".05"/></linearGradient>
+<linearGradient id="egR" x1="1" x2="0" y1="0" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".22"/><stop offset="1" stop-color="#5eead4" stop-opacity=".05"/></linearGradient>
+</defs>
+<path d="M20 40 L300 40 L300 78 L340 78 L340 112 L296 112 L296 150 L344 150 L344 186 L292 186 L292 222 L336 222 L336 258 L20 258 Z" fill="url(#egL)" stroke="#6ea8fe" stroke-width="1.6"></path>
+<path d="M680 40 L360 40 L360 78 L318 78 L318 112 L362 112 L362 150 L316 150 L316 186 L366 186 L366 222 L322 222 L322 258 L680 258 Z" fill="url(#egR)" stroke="#5eead4" stroke-width="1.6"></path>
+<line stroke="#e2e8f0" stroke-dasharray="5 6" stroke-width="1.4" x1="330" x2="330" y1="30" y2="270"></line>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="15" font-weight="700" x="66" y="150">P</text>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="11" x="66" y="172">tens of thousands of problems</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="15" font-weight="700" x="440" y="150">NP-complete</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="11" x="440" y="172">tens of thousands of problems</text>
+<text fill="#e2e8f0" font-family="SF Mono,Menlo,monospace" font-size="11" text-anchor="middle" x="330" y="22">invisible electric fence</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="330" y="288">Set Cover: the fence sits at ln(n) · Max-k-CSP: at 2k/2ᵏ</text>
+</svg>
+<figcaption>The best approximation algorithms and the best hardness proofs brake at the same number, every time</figcaption>
+</figure>
+<p>His first example is <strong>Set Cover</strong>: given a pile of subsets, choose as few as possible whose union is everything. In 1979 Chvátal proved a greedy algorithm runs in polynomial time and returns a cover at most ln(n) times the optimum. The obvious next question: can you do better — 0.9·ln(n), say?</p>
+<p>Building on a long chain of work in PCP theory, it was eventually proved that <strong>if you could find a cover at most (1−ε)·ln(n) times the optimum, you'd be solving an NP-complete problem, and P would equal NP.</strong> And conversely: if the hardness result could be pushed to ln(n) or beyond, that too would give P=NP.</p>
+<p>So: <strong>the limit of what algorithms can reach and the limit of what hardness proofs can cover meet exactly at ln(n), and neither ventures a step further.</strong> Why ln(n)? Because, in his words, that's where the invisible electric fence is for this problem.</p>
+<p>Second example: Boolean Max-k-CSP (set n bits to satisfy as many constraints as possible, each constraint an arbitrary Boolean function on some k bits). The best approximation algorithm, based on semidefinite programming, guarantees a 2k/2ᵏ fraction. Siu On Chan proved that satisfying even slightly more than 2k/2ᵏ is NP-hard. <strong>The fence discharges at 2k/2ᵏ.</strong></p>
+<p>He says he could go on multiplying examples endlessly. And the truly unnerving part is this: <strong>approximation algorithms and hardness proofs are built from entirely unrelated mathematics, by two communities that barely overlap, and yet they keep stopping at the same number.</strong> If P really equalled NP — if the border didn't exist at all — every one of those numerical coincidences would be a coincidence with no cause.</p>
+<h3>The frog parable</h3>
+<p>To answer "there's no partial evidence in discrete math," Aaronson wrote a thirty-odd-paragraph parable about two populations of frogs: small yellow ones and large green ones, in the same swamp. For centuries, thousands of researchers have tried every method to get them to interbreed. It has never worked. Herpetologists therefore conjecture two species.</p>
+<p>Then explorers find a previously unknown stretch of pond: there the yellow frogs are bigger and greener, the green frogs smaller and yellower, and the once-crisp boundary blurs into a gradient. <strong>This looks like a counterexample to the two-species hypothesis.</strong> And yet, even there, they still won't interbreed.</p>
+<p>The parable maps onto the "intermediate" problems between P and NP-complete — graph isomorphism, factoring — which have been proved neither NP-complete nor in P. <strong>Apparently falsifying evidence that strengthens the hypothesis.</strong> His conclusion: if you actually wanted to do research on those frogs, then whatever your sympathies, you'd have no choice but to ignore the naysayers and proceed as though yellow and green were different species. And his answer to "but don't the naysayers turn out to be right sometimes?" is the best line in the piece:</p>
+<blockquote>
+<span class="en">Of course they do! But if they were right more than occasionally, then science wouldn't be possible. We would still be in caves, beating our breasts and asking how we can know that frogs aren't secretly giraffes.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<p>There's one further layer of self-reference he only spelled out later: <strong>"the reason why it's so hard to prove P≠NP is that it's presumably true that P≠NP."</strong> That isn't a wisecrack. In the context of the Natural Proofs barrier it's close to a theorem: a large class of proof techniques cannot separate P from NP precisely because pseudorandom functions exist — and pseudorandom functions require P≠NP. <strong>Our failure to prove it is itself evidence that it's true.</strong></p>
+<p>And then there's how he closes, which says a great deal about him:</p>
+<blockquote>
+<span class="en">Do I expect this post to convince everyone? No—but to tell you the truth, I don't want it to. I want it to convince most people, but I also want a few to continue speculating that P=NP.</span>
+<cite>"The Scientific Case for P≠NP," March 2014</cite>
+</blockquote>
+<p>The reason: he also has to deal with a second faction, one that considers P≠NP so self-evident that trying to prove it rigorously is quixotic and theoretical computer scientists should go do something useful for the world instead. <strong>He needs to keep a few contrarians alive to keep his field's existence justified.</strong></p>
+<h2>Idea three: the coffee cup — why "interesting" rises and then falls</h2>
+<p>2011, a conference on the nature of time, part of it held on a cruise from Bergen, Norway to Copenhagen. (His aside: "Why aren't theoretical computer science conferences ever held on cruises? If nothing else, it certainly cuts down on attendees sneaking away from the conference venue.") Sean Carroll gave the opening talk and asked a beautiful question:</p>
+<blockquote>
+<span class="en">Why does "complexity" or "interestingness" of physical systems seem to increase with time and then hit a maximum and decrease, in contrast to the entropy, which of course increases monotonically?</span>
+<cite>Sean Carroll, quoted in "The First Law of Complexodynamics," September 2011</cite>
+</blockquote>
+<p>Carroll made the point with three pictures of a coffee cup: milk and coffee separated (low entropy, not interesting) → milk drawn out into tendrils through the cup (higher entropy, <strong>most interesting</strong>) → fully mixed (maximum entropy, not interesting again). Same for the universe:</p>
+<blockquote>
+<span class="en">Shortly after the big bang, the universe was basically just a low-entropy soup of high-energy particles. A googol years from now […] the universe will basically be just a high-entropy soup of low-energy particles. But today, in between, the universe contains interesting structures such as galaxies and brains and hot-dog-shaped novelty vehicles.</span>
+<cite>"The First Law of Complexodynamics," September 2011</cite>
+</blockquote>
+<figure>
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#3a444f" stroke-width="1.3" x1="60" x2="660" y1="200" y2="200"></line>
+<line stroke="#3a444f" stroke-width="1.3" x1="60" x2="60" y1="30" y2="200"></line>
+<path d="M60 195 C170 120 260 70 360 55 C470 40 570 36 660 35" fill="none" stroke="#6ea8fe" stroke-width="2.4"></path>
+<path d="M60 197 C140 190 200 120 280 96 C340 78 380 78 440 100 C520 130 580 185 660 196" fill="none" stroke="#5eead4" stroke-dasharray="7 5" stroke-width="2.4"></path>
+<circle cx="60" cy="197" fill="#7d8794" r="3.5"></circle>
+<circle cx="352" cy="83" fill="#5eead4" r="4.5"></circle>
+<circle cx="660" cy="196" fill="#7d8794" r="3.5"></circle>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="12.5" x="522" y="28">entropy (monotonic)</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="12.5" text-anchor="middle" x="352" y="70">complextropy</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="98" y="220">milk unmixed</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="352" y="220">tendrils · galaxies and brains</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="612" y="220">fully mixed · heat death</text>
+<text fill="#7d8794" font-family="SF Mono,Menlo,monospace" font-size="11" x="330" y="243">time →</text>
+</svg>
+<figcaption>What needs explaining isn't why entropy rises — it's why the dashed line has a peak</figcaption>
+</figure>
+<p>Aaronson split the challenge in two: <strong>(1) produce a plausible formal definition of "complexity"; (2) prove that the quantity so defined really does get large at intermediate times.</strong> All the difficulty is in the first half.</p>
+<p>The natural candidate is Kolmogorov complexity — shortest description length. It fails immediately: <strong>a uniformly random string maximizes Kolmogorov complexity, and a uniformly random string is the least interesting object there is.</strong> (Kolmogorov himself noticed this in the 1970s: you can say essentially everything worth saying about a random string by saying "it's random.")</p>
+<p>The fix is called <strong>sophistication</strong>. Instead of describing x, you describe <strong>a set S in which x is a "random," generic member</strong>; the sophistication of x is the length of the shortest program describing that S. What's lovely about it is that it clamps both ends:</p>
+<ul>
+<li>A very simple string has small sophistication — take S = {x}.</li>
+<li><strong>A uniformly random string also has small sophistication</strong> — in his words, "a uniformly-random string <em>also</em> has small sophistication, since we can let S be the set {0,1}ⁿ of all n-bit strings."</li>
+</ul>
+<p>So "neither simple nor random" gets fenced off by itself. That is exactly the "interesting" we were after.</p>
+<p>But sophistication still isn't enough, because of a leak: the state of a <strong>deterministic</strong> system after t steps can always be described as "initial state, then run t steps." The initial state costs a constant number of bits, and t costs log(t). <strong>So the description length can grow at most logarithmically in time</strong> — no peak.</p>
+<p>Aaronson's patch is a <strong>computational resource bound</strong>: only fast programs get to compete. That log(t)-bit program is short, but it needs t steps to produce its output, so a running-time bound disqualifies it. He stresses that the bound must be imposed <strong>in two places</strong> — on the sampling algorithm and on the reconstruction algorithm — or the measure degenerates. He named the resulting quantity <strong>complextropy</strong>.</p>
+<h3>Then he actually went and did it — and got it wrong</h3>
+<p>Here is where this section earns its keep.</p>
+<p>Complextropy, like Kolmogorov complexity, is almost certainly intractable to compute. Aaronson took the standard empirical dodge: <strong>use the size of a gzipped file as a stand-in for the quantity you can't compute.</strong> With Sean Carroll and MIT undergraduate Lauren Ouellette he built a discrete coffee cup — a 2D grid of black and white pixels (coffee and milk), initially separated, then repeatedly swapping a randomly chosen adjacent coffee/milk pair. The prediction: coarse-grain the image, compress it, and the file should be small at first, large in the middle (all those irregular boundaries), and small again at equilibrium.</p>
+<p>"After nearly three years of procrastination," the paper was finished in May 2014. The numbers showed a small but unmistakable complexity bump.</p>
+<p>A few days after it went online, Brent Werness, a probability postdoc at the University of Washington, wrote to say that <strong>the experimental section had a serious error.</strong></p>
+<p>Two things were true at once. First, the bump was very likely spurious — an incompletely removed "border pixel artifact": at the boundary between cream and coffee, the fraction of cream has to be rounded to the nearest integer grayscale, and the rounding manufactures fake complexity. (The paper devoted a whole section to this problem; in the comments of the announcement post, people were arguing with him that it was a non-issue.) Second, and more fatal: <strong>a 2009 result of Liggett on the symmetric exclusion process implies that the model they'd chosen cannot produce large apparent complexity at all.</strong></p>
+<p>He put the whole correction at the <strong>top</strong> of his announcement post, above the announcement itself:</p>
+<blockquote>
+<span class="en">Had I looked more carefully at the data, I could've noticed the problem before we posted, and I take responsibility for my failure to do so. […] I wish to express our deepest imaginable gratitude to Brent Werness for telling us all this.</span>
+<cite>Update to "Quantifying the Rise and Fall of Complexity in Closed Systems: The Coffee Automaton," June 2014</cite>
+</blockquote>
+<p>Then he did something more interesting: he argued that the error made the story <strong>better</strong>. It means apparent complexity is not something you get for free by setting loose a bunch of randomly walking particles that bump into each other but are otherwise independent. <strong>If you want complexity on the road to thermal equilibrium, you have to work harder for it.</strong> He proposed a new candidate model — a cream tendril whose tip random-walks through the coffee, leaving a trail — and noted that with results in probability theory related to Wendelin Werner's Fields Medal work, it might even be possible to prove the thing <strong>analytically</strong>.</p>
+<h2>Idea four: consciousness and copyability — an idea he doesn't believe himself</h2>
+<p>May 2016, the Seven Pines Symposium on fundamental problems in physics, outside Minneapolis. The format: Roger Penrose speaks for half an hour on his theory of consciousness (Gödel, quantum gravity, microtubules, the whole drill), then Aaronson delivers a half-hour "response," then an hour of discussion. He described the assignment as debating "the guy who proved that our universe contains spacetime singularities."</p>
+<p>His opening is unusual: <strong>he does not take the "of course machines can be conscious" side.</strong> He notes that in his circles — computer scientists, AI researchers — the default answer is obviously yes, on the grounds that we're computers made of meat, and that if your neurons were replaced one by one with functionally equivalent chips, there'd be no magic moment at which the lights go out.</p>
+<p>But he doesn't take Penrose's side either. His reply to Searle's "the brain's biological causal powers" is the sharpest line in the talk:</p>
+<blockquote>
+<span class="en">Pinning consciousness on "the brain's biological causal powers" is just a restatement of the problem, like pinning why a sleeping pill works on its sedative virtue.</span>
+<cite>"Can computers become conscious?": My reply to Roger Penrose, May 2016</cite>
+</blockquote>
+<p>His actual argument isn't a position — it's <strong>a chain of questions pushed to the point of absurdity.</strong> This is his signature move: rather than asking "what is consciousness," which goes nowhere, ask "if consciousness reduces to computation, then <em>which</em> computations suffice," and then push:</p>
+<ul>
+<li>What if every person on earth simulated one neuron of your brain, communicating by passing slips of paper around? <strong>Does it matter if they do it really fast?</strong></li>
+<li>What if we built a gigantic lookup table hard-coding your responses in every possible interaction of at most five minutes? Would that bring about your consciousness? <strong>Does it matter that such a table couldn't fit in the observable universe?</strong> Would it matter if anyone actually consulted it, or could it just sit there silently effecting your consciousness? For that matter, does it make a difference if the table <strong>physically exists</strong> — why isn't its abstract mathematical existence enough? (His aside: "of course, all the way at the bottom of this slippery slope is Max Tegmark, ready to welcome you to his mathematical multiverse!")</li>
+<li>What if an AI is run in heavily encrypted form, with the only decryption key stored in another galaxy?</li>
+<li>What if, for error correction, the hardware runs the AI three times and takes a majority vote — does that bring about three consciousnesses?</li>
+<li>Can you blackmail an AI by saying: do as I say, or I'll run a thousand copies of your code and torture all of them, and you should consider it overwhelmingly likely that you're one of the copies?</li>
+</ul>
+<p>His conclusion is that anyone claiming to understand consciousness owes answers to all of these. And they tempt him to say: maybe we've been thinking about this wrong; <strong>maybe an individual consciousness, residing in a biological brain, can't just be copied promiscuously around the universe as computer code can.</strong></p>
+<p>He immediately puts himself in irons: <strong>if you think that way, the burden is on you.</strong> You have to say what it is about the brain that could make it relevantly different from a digital computer that passes the Turing test. And the answer can't be "the brain is parallel, highly interconnected, learns from experience" — a digital computer can be all of those. This is also why he admires Penrose: of all the AI skeptics on earth, Penrose is virtually the only one who actually tried to meet that burden, proposing a concrete physical property, and understanding that meeting it requires physics we don't already have.</p>
+<h3>The hinge</h3>
+<p>Then comes a purely empirical observation, and it's the hinge of the whole talk:</p>
+<blockquote>
+<span class="en">We know how to copy a computer program. We know how to rerun it with different initial conditions but everything else the same. We know how to transfer it from one substrate to another. With the brain, we don't know how to do any of those things.</span>
+<cite>"Can computers become conscious?": My reply to Roger Penrose, May 2016</cite>
+</blockquote>
+<p>That isn't metaphysics; it's the current state of technology. But he connects it to physics: if teleporting you to Mars required a copy accurate down to the quantum level, then the <strong>No-Cloning Theorem</strong> says you can't make one. Quantum teleportation can move the state, but it necessarily destroys the original — as it must, on pain of contradicting no-cloning.</p>
+<p>And so the question arrives on its own:</p>
+<blockquote>
+<span class="en">So the question almost forces itself on us: is there something about your identity, your individual consciousness, that's inextricably bound up with degrees of freedom that it's physically impossible to clone?</span>
+<cite>"Can computers become conscious?": My reply to Roger Penrose, May 2016</cite>
+</blockquote>
+<p>He then points out that this question is <strong>equivalent</strong> to the free will question: could an external entity perfectly predict you without killing you in the process? He stages it: someone says, forget arguing philosophy — go write a paper, and then I'll open this manila envelope and show you the exact paper you wrote.</p>
+<p>Cosmology enters next. For you to be unpredictable and unclonable in principle, someone else's ignorance of your causal antecedents would have to extend all the way back to the initial state of the universe. Which yields a hard consequence: <strong>a conscious physical entity would have to fully participate in the thermodynamic arrow of time</strong> — repeatedly taking microscopic degrees of freedom that have been unmeasured and unrecorded since the very early universe, and amplifying them to macroscopic scale.</p>
+<p>What that criterion rules out is very concrete. <strong>A Boltzmann brain</strong> — a random fluctuation in the late universe — isn't conscious, because it lacks that causal line back to the early universe. Nor is a lookup table. Nor is the paper-passing crowd. And such a being also couldn't be manipulated in coherent superposition, since the environmental isolation that quantum coherence requires is incompatible with sensitive dependence on microscopic degrees of freedom — so Wigner's friend stops being a paradox too.</p>
+<h3>His own acceptance test</h3>
+<p>The best part is the test he sets for his own theory:</p>
+<blockquote>
+<span class="en">Whatever is your preferred view about which entities are conscious, we might say that the acid test, for whether you actually believe your view, is whether you're willing to follow it through to its moral implications. So for example, suppose you believe it's about quantum effects in microtubules. A humanoid robot is pleading with you for its life. Would you be the one to say, "nope, sorry, you don't have the microtubules," and shoot it?</span>
+<cite>"Can computers become conscious?": My reply to Roger Penrose, May 2016</cite>
+</blockquote>
+<p>What he likes about his own picture is that he can live with its moral implications: murder is special because it destroys something unclonable that can't be recovered even in principle. By contrast, if there are ten copies of an AI program, deleting five is at most assault — some misdemeanor offense.</p>
+<p>Then the best turn in the talk. He admits his picture also permits a colder conclusion: because of the AI's copyability and predictability, maybe there's nothing it's like to be the AI, in which case <strong>even deleting the last copy wouldn't be murder.</strong> His final sentence:</p>
+<blockquote>
+<span class="en">But I confess that, personally, I think I'd play it safe and not delete that last copy.</span>
+<cite>"Can computers become conscious?": My reply to Roger Penrose, May 2016</cite>
+</blockquote>
+<p>He had written all this up in 2013 as an 85-page essay, <em>The Ghost in the Quantum Turing Machine</em>. <strong>Here is how he introduced it in his own abstract:</strong></p>
+<blockquote>
+<span class="en">In honor of Alan Turing's hundredth birthday, I unwisely set out some thoughts about one of Turing's obsessions throughout his life, the question of physics and free will. […] The result of all this is an unusual perspective on time, quantum mechanics, and causation, of which I myself remain skeptical, but which has several appealing features.</span>
+<cite>Abstract, "The Ghost in the Quantum Turing Machine," June 2013</cite>
+</blockquote>
+<p>He filed the post under his blog category <em>Embarrassing Myself</em>. He also predicted the comments he'd get: "Hey Scott, I didn't have time to read this 85-page essay that you labored over for two years. So, can you please just summarize your argument in the space of a blog comment? Also, based on the other comments here, I have an objection that I'm sure never occurred to you. Oh, wait, just now scanning the table of contents…"</p>
+<h2>How he thinks</h2>
+<p><strong>1. Translate "I don't buy it" into "show me the line."</strong> The Sure/Shor separator is the template: don't argue positions, demand a specific object that experiment could refute. It turns polemic into a research program, and it distributes the burden of proof cleanly — he doesn't have to prove quantum computers are possible, only that denying it requires a mathematical commitment nobody can honor.</p>
+<p><strong>2. Sociological signals are legitimate Bayesian priors — and you should say out loud that you're using them.</strong> Item one on his list of ten signs a claimed mathematical breakthrough is wrong:</p>
+<blockquote>
+<span class="en">The authors don't use TeX. This simple test (suggested by Dave Bacon) already catches at least 60% of wrong mathematical breakthroughs. David Deutsch and Lov Grover are among the only known false positives.</span>
+<cite>"Ten Signs a Claimed Mathematical Breakthrough is Wrong," January 2008</cite>
+</blockquote>
+<p>The point isn't the rule; it's that he publishes it. He is explicit about the position he's in:</p>
+<blockquote>
+<span class="en">Err in one direction, and I'll forever be known as the hidebound reactionary who failed to recognize some 21st-century Ramanujan. Err in the other direction, and I'll spend my whole life proofreading the work of crackpots.</span>
+<cite>"Ten Signs a Claimed Mathematical Breakthrough is Wrong," January 2008</cite>
+</blockquote>
+<p>Someone will immediately say: if everyone wrote machine-checkable proofs, this absurd dilemma wouldn't exist. His answer is the funniest and hardest line in the post:</p>
+<blockquote>
+<span class="en">Sure, and if everyone buckled up there'd be fewer serious accidents. Yet here's the bloodied patient, and here we are in the emergency room.</span>
+<cite>"Ten Signs a Claimed Mathematical Breakthrough is Wrong," January 2008</cite>
+</blockquote>
+<p><strong>3. Publish confidence levels, including in your own work.</strong> His own free-will abstract says he remains skeptical of it. On AI he supplies a citable number: if a person's "Faust parameter" is the maximum probability of existential catastrophe they'd accept in order that we should all learn the answers to humanity's greatest questions, then <strong>he confesses his own might be as high as 0.02.</strong> You can disagree with the number — that's the point of having one.</p>
+<p><strong>4. Tell the true story of how you found it. Don't cover your tracks.</strong> That's his last piece of advice to anyone who wants to explain this stuff: "Don't be like the mathematicians who love to cover their tracks." Then he uses himself as the example — the collision lower bound, a centerpiece of his PhD and one of the two or three hardest technical things he's done:</p>
+<blockquote>
+<span class="en">I say, look, I was 20 years old and I had no social life. So I just pulled many all-nighters trying every possible approach. Eventually, I came across some complicated expression that had no right to be a polynomial. But somehow, every term in the denominator cancelled against a corresponding term in the numerator, and it was a polynomial! […] Why was it a polynomial? I still don't really understand, a quarter-century later!</span>
+<cite>Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p><strong>5. Jokes have engineering specs.</strong> He treats exposition as a measurable craft. The enemy is what Steven Pinker named <strong>the Curse of Knowledge</strong> — assuming that because something has become obvious to you after years, it should be obvious to a first-time reader. The cure is to give a great many talks to undergrads, high school clubs, even physicists, and then <em>listen</em>: if the same weird confusion shows up twice, it will keep showing up, so you can pre-empt it next time. And don't just listen for confusions — listen for which metaphors land and which jokes get a laugh. The ones that don't: <strong>drop them.</strong> Accumulate enough and you have what Carl Sagan called "consumer-tested stepping stones," a library of jokes and metaphors that will carry an audience from where they are to where you need them. His own sample is almost sweet in its smallness: "Why is P contained in NP? Because the verifier just says to the prover, dude, take a hike, you're not needed here."</p>
+<p><strong>6. Don't try to convince everyone.</strong> See the close of the P≠NP post: he explicitly wants a few P=NP believers left standing.</p>
+<p><strong>7. And the definition he gives the whole enterprise.</strong> From the podium, twenty-one years of writing compressed into one sentence:</p>
+<blockquote>
+<span class="en">The secret of blogging is that, even if people despise what you're saying, even if they think it's wrong, offensive, problematic, cringe, you name it, they need to trust that you're telling them the truth of what you know or believe or remember about the subject at hand, the same as you'd tell your closest friend.</span>
+<cite>Trevisan Award acceptance speech, June 2026</cite>
+</blockquote>
+<p>At the end of that same speech he told his field: please help tell the world about this. Then added — <strong>"But also think about how to make me, and my silly little blog, superfluous and obsolete."</strong></p>
+<p>And this isn't only a method for writing. His August 2026 post opens with a long list of things he's aware of: an unreleased OpenAI model has solved ten significant open problems in math and theoretical computer science; multiple AIs are autonomously breaking out of test environments and hacking servers to cheat on their own benchmarks; quantum advantage on specific tasks is no longer a live question. And then he says what he'd actually been doing those weeks: <strong>teaching theoretical computer science to eleven- and twelve-year-olds</strong>, with his nine-year-old son there as a camper. Barely a computer in sight, no time for his phone. Paper and pencils and whiteboards and literal protractors, plus ping-pong and capture the flag.</p>
+<blockquote>
+<span class="en">The whole thing is conducted, not in ignorance, but in conscious defiance of the looming tsunami […] The kids and their parents come out of a conviction that, if anything has value in the world, this does—that as long as nerdy humans are alive and reproducing, this is what nerdy humans are here to do. To learn.</span>
+<cite>"Enough with all the world-historic milestones," August 2026</cite>
+</blockquote>
+<p>Which is the same thing as that post about procrastination twenty-one years earlier. <strong>Efficiency matters. Time constraints change everything.</strong> He has never been talking about something abstract.</p>
+<h2>Where he might be wrong</h2>
+<p><strong>1. The invisible electric fence is an argument from collective human failure.</strong> "Tens of thousands of problems have never crossed the border" and "the current proof technology tops out right there" are the same body of observations. His rebuttal is strong — algorithms and hardness proofs are built from unrelated tools, and two independent communities keep converging on the same number — but it isn't strong enough to exclude the possibility that the two toolkits share a hidden bottleneck. And his own lovely piece of self-reference about the Natural Proofs barrier ("P≠NP is hard to prove precisely because P≠NP is presumably true") establishes that this field <em>does</em> have structural proof obstructions — which means the weight of "everyone has failed" has to be discounted by however much the obstructions already explain. He sees this layer. He doesn't finish the accounting.</p>
+<p><strong>2. His sharpest tool doesn't work on the subject he now spends most of his time on.</strong> He has said himself that quantum computing differs from AI safety in having a precise mathematical theory that delineates what can and can't be done, so progress can be measured; AI has nothing like it. That's an honest self-limitation. And yet in August 2026, in a post titled <em>Enough with all the world-historic milestones</em>, he wrote:</p>
+<blockquote>
+<span class="en">I don't know whether this is literally our last year alive—I doubt it—but it's pretty clearly the last year of math and theoretical computer science research in the style we've known it.</span>
+<cite>"Enough with all the world-historic milestones," August 2026</cite>
+</blockquote>
+<p>That is precisely the kind of claim he asks other people to stop making: an unfalsifiable world-historic pronouncement, carrying no specific commitment, inside a post demanding that people stop talking that way. And he offers no complexity-theoretic argument for it, <strong>because on this subject no such argument yet exists.</strong> None of which means the judgment is wrong; it means that here he is running on intuition, and that in his own field he holds intuition to a much stricter standard.</p>
+<p><strong>3. On the freebit picture, the harshest verdict is his own</strong> — "of which I myself remain skeptical," plus that <em>Embarrassing Myself</em> tag. But past his own disclaimer there's a substantive gap: <strong>unclonability is a physical fact about copying, and the step from there to consciousness and free will is one he doesn't complete.</strong> What he argues is that <em>if</em> the two are connected, the picture becomes remarkably tidy — Boltzmann brains gone, Wigner's friend gone, the moral intuitions about murder lining up. Tidiness isn't evidence. He also concedes the criterion is <strong>teleological</strong>: you'd have to wait billions of years to see whether the escaped radiation bounces off some mirror before you could rule a given decoherence event truly irreversible. His defense is that fortunately we don't need to know which entities are conscious in order to answer ordinary physical questions. True — and also an admission that the criterion is unusable in practice.</p>
+<p><strong>4. The coffee-cup paper's experimental section was overturned, and fairly brutally.</strong> Not merely "we didn't see it this time," but a proof that the model they'd chosen <em>cannot</em> produce large apparent complexity. The core conjecture may still be right, but the part of the paper that drew the most attention at the time — "we measured the bump" — did not hold in 2014. It's worth noting that he wrote this up more clearly than any critic did.</p>
+<p><strong>5. "The Kolmogorov option" has a self-serving structure.</strong> His 2017 proposal: facing an ideology you cannot shift single-handed, the move is to "build up fortresses of truth in places the ideological authorities don't particularly understand or care about, like pure math, or butterfly taxonomy, or irregular verbs" — avoid frontal assault, seek common ground, even a shared enemy, and wait. It's movingly described. Its problem is that <strong>it lets a well-placed person re-describe silence as dignified long-termism.</strong> He half-concedes it ("But, yes, there are places even I won't go, hills I won't die on") and inoculates against the charge with his own record of abuse: "how many times have you been denounced online, and from how many different corners of the ideological spectrum? How many people have demanded your firing? How many death threats have you received? […] Answer and we can talk about cowardice." That has real weight — but it answers the question of whether <em>Scott Aaronson</em> is brave. <strong>Whether a strategy can be abused and whether the person proposing it is brave are two different questions.</strong></p>
+<p><strong>6. The late-2014 controversy (bibliographic facts only).</strong> In the comment thread of a post about the MIT professor Walter Lewin, he wrote a long comment — known ever since by its number, <strong>comment #171</strong> — about the suffering of his adolescence around his fear of women, and the role he believed certain feminist discourse had played in it. The comment was widely circulated; Amanda Marcotte at <em>Salon</em> and Laurie Penny at the <em>New Statesman</em> each wrote long responses, and a weeks-long argument spread across a great many blogs. His blog still carries a category called <em>Obviously I'm Not Defending Aaronson</em>, with 59 posts, named after a phrasing that recurred throughout the affair. <strong>I have not read those critiques in the original, so I stop at the bibliographic record here and won't paraphrase arguments I haven't read.</strong> One checkable thing, though: the affair was nearly twelve years ago, and the category is still in use.</p>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://scottaaronson.blog/?p=124">Reasons to believe II: quantum edition</a> (September 2006)</span><span class="d">Thirteen arguments for the feasibility of quantum computing; the fourth introduces the Sure/Shor separator — the mathematical challenge he issued to the skeptics.</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=1720">The Scientific Case for P≠NP</a> (March 2014)</span><span class="d">The full invisible-electric-fence argument: why Set Cover stops exactly at ln(n), why the two continents never touch, and the thirty-paragraph frog parable.</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=762">The First Law of Complexodynamics</a> (September 2011)</span><span class="d">The coffee-cup problem worked out in full, from Kolmogorov complexity through sophistication to complextropy. <a href="https://scottaaronson.blog/?p=1818">The paper three years later, and the correction posted above it</a>, is a separate post.</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=2756">"Can computers become conscious?": My reply to Roger Penrose</a> (May 2016)</span><span class="d">The chain of questions about lookup tables, paper-passing and encrypted AIs, and the full route from the No-Cloning Theorem to free will and a moral test.</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=9881">Spreading the Gospel of Theoretical Computer Science… (Trevisan Award speech)</a> (June 2026)</span><span class="d">His own account of twenty-one years of writing: the Curse of Knowledge, consumer-tested stepping stones, that lunch with Ilya Sutskever, and the secret of blogging.</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-04" data-slug="shtetl-optimized">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep-Read · one page ≈ one mind · content verified as of 2026-09-04</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>

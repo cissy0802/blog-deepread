@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scott Aaronson · Shtetl-Optimized — 「能算」和「算得完」之间，隔着一整个宇宙</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="shtetl-optimized-blog6.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 06 · scottaaronson.blog</div>
+<h1>Scott Aaronson · Shtetl-Optimized<br/>「能算」和「算得完」之间，隔着一整个宇宙</h1>
+<p class="sub">2005 年 10 月至今 · 1,095 篇 · 247 个月的存档、几乎没断过 · 仍在更新（最新一篇 2026 年 9 月 1 日）· 本页通读 18 篇，跨度 2005 年 10 月至 2026 年 9 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>打开 <strong>scottaaronson.blog</strong>，你会先注意到它长得像 2005 年的网页——因为它就是。源码里还留着 <code>&lt;body bgcolor="black"&gt;</code> 和 <code>&lt;font color="yellow"&gt;</code> 这种早就该进博物馆的写法。而那行黄色小字不是欢迎词，是一句更正：</p>
+<blockquote>
+<span class="en">If you take nothing else from this blog: quantum computers won't solve hard problems instantly by just trying all solutions in parallel.</span>
+<span class="zh">如果你从这个博客只带走一句话：量子计算机不会靠「同时并行地试遍所有解」来瞬间解决难题。</span>
+<cite>Shtetl-Optimized 网站顶端（2026 年 9 月）</cite>
+</blockquote>
+<p>一个人在自己家门口挂了块牌子，上面写的是：<strong>关于我毕生研究的东西，你大概率理解错了。</strong></p>
+<p>他的名字叫 Scott Aaronson，德州大学奥斯汀分校的理论计算机科学家。而这块牌子背后的东西，其实在他第五篇博文里就写完了。2005 年 10 月 7 日，有人问他为什么这么晚才开博客。他说了些场面话，然后写了真话：他一直在等自己能找到「最好的、不可能被误解的措辞」再开口。等着等着，他博士毕业了，开始意识到自己会死。</p>
+<blockquote>
+<span class="en">Efficiency matters. Time constraints change everything. How could I have forgotten?</span>
+<span class="zh">效率是要紧的。时间约束改变一切。我怎么会把这个忘了呢？</span>
+<cite>《我为什么拖了这么久才开博客》，2005 年 10 月 7 日</cite>
+</blockquote>
+<p>这三句话是在讲拖延症。它们也是他此后二十一年全部工作的中心命题。</p>
+<p><strong>图灵 1936 年解决的问题是「这个东西能不能被计算」。Aaronson 一辈子在问的是下一个问题：「算得完吗」。</strong>而他的核心主张是：这两者之间的那道缝，不是工程细节，是一条物理定律级别的约束——它管着量子计算机能干什么、管着哪些哲学论证成立、管着宇宙为什么在中间这段是「有趣」的、也管着一个语言模型能不能被造出来。他 2011 年写了篇 53 页的长文，开头一句就是把这个当靶子立起来的：「你可能会想，一旦知道某件事可计算，它算得多快就只是个实用问题、没什么进一步的哲学重要性了。在这篇文章里我要详细论证：你错了。」</p>
+<p>他拿这把螺丝刀拧过的第一个螺丝，就是门口那块牌子。<strong>2000 年代中期，相当一批严肃的人认为量子计算机在物理上根本造不出来</strong>——不是难，是量子力学到某个规模就会失效。Aaronson 的回应不是辩论，是把对方的立场改造成一道数学题：好，<strong>那你告诉我那条线在哪。</strong>一边是实验室里已经观测到的量子态，一边是 Shor 因数分解算法要用到的量子态。画一条线把它们分开。他给这条线起了个名字，叫 <strong>Sure/Shor 分隔线</strong>。</p>
+<blockquote>
+<span class="en">Unfortunately, no skeptic has yet risen to the challenge. It's not hard to see why: if you start with the many-particle entangled states that have already been observed […] and then throw in a few closure properties, you quickly end up with — well, the set of all quantum states.</span>
+<span class="zh">遗憾的是，还没有哪个怀疑者接下这个挑战。原因不难看出：如果你从已经被观测到的那些多粒子纠缠态出发 [……] 再加上几条封闭性质，你很快就会得到——嗯，全体量子态。</span>
+<cite>《相信的理由之二：量子篇》，2006 年 9 月</cite>
+</blockquote>
+<p>这一招的漂亮之处在于，它把「我不信」变成了一个可以真的做下去的研究计划。而<strong>十九年后，他把同一把刀反过来用了。</strong>2025 年 11 月，他随口说了句容错量子计算「有可能」在 2028 年美国大选前跑通 Shor 算法。推特上的量子股票玩家立刻宣布「头号怀疑派投降了」，还说这个时间表只对得上某一家公司的路线图。他用一整篇文章回应：「有可能」连概率都算不上，只等于「我不确定这事不会发生」；然后逐条拆了那家市值 170 亿美元的公司是怎么向散户和政府兜售它做不到的事的。<strong>2006 年他替量子计算挡怀疑者，2025 年他替量子计算挡推销员，用的是同一个标准。</strong>他博客里那个叫 <em>Speaking Truth to Parallelism</em>（对「并行主义」说真话）的分类下面躺着 67 篇文章。这不是立场，是纪律。</p>
+<p>同一把刀砍的第二样东西是数学。<strong>P≠NP 至今没人能证明</strong>，于是常有人说信它只是圈内的时髦教条。2014 年 Aaronson 写了篇长文回答，而他的回答不是数学，是科学哲学：P≠NP 像任何成功的科学假说一样，「通过了一系列它若为假就没有好理由通过的严苛检验」。</p>
+<p>检验是什么？几万个问题被证明是 NP 完全的，另外几万个被证明在 P 里，两块大陆之间从没有一个问题越过境。但真正的证据不是「没越过去」，是<strong>边界的形状</strong>：</p>
+<blockquote>
+<span class="en">Again and again the two regions "touch," and their border even traces out weird and jagged shapes. But even in those border zones, not a single problem ever crosses from one region to the other. It's as if they're kept on their respective sides by an invisible electric fence.</span>
+<span class="zh">两个区域一次又一次地「贴到一起」，边界甚至走出古怪的锯齿形状。可即使在那些交界地带，也没有任何一个问题从一边跨到另一边。就好像有一道<strong>隐形的电网</strong>把它们各自挡在自己那侧。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<p>他给的例子具体到能起鸡皮疙瘩：集合覆盖问题的最优近似算法卡在 ln(n)，而困难性证明能覆盖到 (1−ε)·ln(n)——<strong>两边恰好在同一个数上同时刹住，谁也没多迈半步</strong>，尽管两边用的是毫不相干的数学工具、出自互不来往的两拨人。这类重合在这个领域里成打地出现。如果 P 真的等于 NP，它们全是无来由的巧合。</p>
+<p>而他最像他自己的那一次，是 2011 年在一艘游轮上被物理学家 Sean Carroll 问住：<strong>熵是单调增的，可「有趣程度」为什么是先升后降的？</strong>牛奶刚倒进咖啡，不有趣；全混匀了，也不有趣；最有趣的是中间那杯满是奶丝的。宇宙同理——大爆炸后是一锅高能粒子汤，一个 googol 年后是一锅低能粒子汤，而现在这段里有星系、有大脑，用他的原话说，还有「热狗造型的花车」。</p>
+<p>Aaronson 当场给了个形式化的思路，然后花三年把它做成论文：一个叫 complextropy 的新量，算不出来就拿 gzip 压缩后的文件大小当替身，在一个像素版咖啡杯上跑。<strong>2014 年论文出来，数值上确实有一个复杂度的鼓包。</strong>几天后，一位概率论博后写信告诉他：实验部分有个严重错误——那个鼓包是像素边界取整造成的伪影，而且可以证明，他们选的那个模型根本不可能产生大的表观复杂度。</p>
+<p>他把这段更正贴在了那篇宣布论文的博文<strong>最上面</strong>，在正文之前：</p>
+<blockquote>
+<span class="en">Had I looked more carefully at the data, I could've noticed the problem before we posted, and I take responsibility for my failure to do so. […] I wish to express our deepest imaginable gratitude to Brent Werness for telling us all this.</span>
+<span class="zh">如果我更仔细地看过数据，本可以在发布前就注意到这个问题，我为自己没做到这一点负责。[……] 我要向 Brent Werness 表达我们所能想象的最深的谢意，谢谢他把这些告诉我们。</span>
+<cite>《量化封闭系统中复杂度的升与降：咖啡自动机》更新说明，2014 年 6 月</cite>
+</blockquote>
+<p>这是读他最值钱的地方。<strong>他公开标注置信度，包括对自己作品的置信度。</strong>他花两年写的那篇 85 页的自由意志长文，摘要里他自己的措辞是「一个<em>我本人对之持怀疑态度</em>、但有几个吸引人之处的不寻常视角」，第一句用的动词是「我<em>不明智地</em>写下了一些想法」，而他把这篇文章归进了自己博客里那个叫 <em>Embarrassing Myself</em>（给自己丢人）的分类。他判断一篇声称证明了世纪难题的论文对不对，第一条准则是「作者不用 TeX 排版」——他说这一条就筛掉至少 60%，并且诚实地列出了已知的假阳性：David Deutsch 和 Lov Grover。</p>
+<p>而这一切归到一句话，是他 2026 年 6 月领理论计算机科普奖时说的：</p>
+<blockquote>
+<span class="en">The secret of blogging is that, even if people despise what you're saying, even if they think it's wrong, offensive, problematic, cringe, you name it, they need to trust that you're telling them the truth of what you know or believe or remember about the subject at hand, the same as you'd tell your closest friend.</span>
+<span class="zh">写博客的秘密在于：哪怕别人厌恶你说的话，哪怕他们觉得它错误、冒犯、有问题、尴尬，随便什么词——他们必须能相信，你正在告诉他们的，是你对这件事所知、所信、所记得的真相，和你告诉最好的朋友时一模一样。</span>
+<cite>Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p class="sub" style="margin-top:26px"><em>想看完整的隐形电网证据、Sure/Shor 分隔线的全部推演、那串「查询表能不能有意识」的追问如何一路逼出「不可克隆的自由意志」、他这套方法在 AI 面前为什么失灵、以及他自己承认的那几处软肋——切到上面的「完整版」。</em></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>P 与 NP</b>：P 是「能在合理时间内<em>算出</em>答案」的问题；NP 是「给了答案能在合理时间内<em>验算</em>」的问题。找一个数独的解很难，检查一个数独的解很容易。P=NP 的意思是：凡是好检查的都好求解。几乎没人相信这是真的，也没人能证明它不是。</li>
+<li><b>NP 完全（NP-complete）</b>：NP 里最难的那一类问题。只要其中任何一个能被高效求解，全体 NP 问题就都能。已经有几万个实际问题被证明属于这一类。</li>
+<li><b>Shor 算法</b>：1994 年 Peter Shor 提出的量子算法，能高效分解大整数——而当今互联网上大部分加密的安全性，正建立在「分解大整数很慢」上。</li>
+<li><b>不可克隆定理（No-Cloning Theorem）</b>：量子力学的一条定理，说你无法精确复制一个未知的量子态。量子隐形传态可以把状态搬到别处，但必然摧毁原件。</li>
+<li><b>Kolmogorov 复杂度</b>：一个字符串的「最短描述长度」——能输出它的最短计算机程序有多少位。纯随机串的这个值最大。</li>
+<li><b>熵 / 热力学第二定律</b>：封闭系统的熵（大致等于「无序程度」）只会增加。牛奶终将混匀，不会自己分开。</li>
+</ul>
+</div>
+<h2>一件怪事：一块挂了很多年的更正牌</h2>
+<p>2026 年 9 月，你打开 <strong>scottaaronson.blog</strong>。第一眼的感觉是走错了年代：纯黑底，源码里还留着 <code>&lt;body bgcolor="black"&gt;</code> 和 <code>&lt;font color="yellow"&gt;</code>——这是 1990 年代末的写法，早就被 CSS 淘汰了。博客名叫 <em>Shtetl-Optimized</em>，副标题是「Scott Aaronson 的博客」。而副标题下面那行黄字，不是欢迎词，也不是简介：</p>
+<blockquote>
+<span class="en">If you take nothing else from this blog: quantum computers won't solve hard problems instantly by just trying all solutions in parallel.</span>
+<span class="zh">如果你从这个博客只带走一句话：量子计算机不会靠「同时并行地试遍所有解」来瞬间解决难题。</span>
+<cite>Shtetl-Optimized 网站顶端（2026 年 9 月）</cite>
+</blockquote>
+<p>这是一个人在自己家门口挂了块牌子，上面写的是：<strong>关于我毕生研究的东西，你大概率理解错了。</strong>这个博客有 1,095 篇文章、247 个月的存档，从 2005 年 10 月一路写到上个星期。中间他换过学校、结过婚、生了两个孩子、去 OpenAI 待了两年，牌子没摘。</p>
+<p>但这块牌子还不是最怪的地方。最怪的是他<strong>第五篇</strong>博文。</p>
+<p>2005 年 10 月 7 日，另一位理论计算机科学家 Lance Fortnow 问他：你怎么这么晚才开始写博客？Aaronson 先给了几个玩笑答案（我以为我没时间，我以为博客圈已经人满为患，我以为这么做太自以为是），然后写了真话：他一直没开，是因为他知道一旦开了，就必须写真正要紧的东西——必须表达强烈的观点，必须把自己最深的恐惧变成所有人的事，必须得罪一些人，必须让自己出丑。所以他一直在等自己能先找到「最好的、不可能被误解的措辞」。</p>
+<p>那些措辞找到了吗？他自己回答：没有。发生的是别的事——他念完了博士，到了一个岁数，开始面对自己会死这件事。</p>
+<blockquote>
+<span class="en">It occurred to me that, if you wait for the "perfect opportunity" to start a weblog — or switch to a new research area, or ask someone out, or whatever it is you want to do — then you're essentially just committing delayed suicide. […] Efficiency matters. Time constraints change everything. How could I have forgotten?</span>
+<span class="zh">我忽然想到，如果你要等一个「完美时机」才开始写博客——或者才换研究方向、才约人出去、才去做任何你想做的事——那你本质上只是在实施一场延迟的自杀。[……] 效率是要紧的。时间约束改变一切。我怎么会把这个忘了呢？</span>
+<cite>《我为什么拖了这么久才开博客》，2005 年 10 月 7 日</cite>
+</blockquote>
+<p>这段话在讲拖延症。它同时是<strong>他此后二十一年全部研究工作的中心命题</strong>，一字不改。而他自己把这个巧合点了出来：「我怎么会把这个忘了呢？」——因为「时间约束改变一切」正是他这一行的全部内容。</p>
+<h2>这人是谁</h2>
+<p>Scott Aaronson，1981 年 5 月 21 日生。他跳了三级，<strong>15 岁上大学</strong>——2026 年他还在公开地反刍这件事值不值：「我是不是不该跳三级、不该 15 岁就上大学？为了在研究生涯上抢先起跑，那些关于约会的创伤、那些怕自己会作为一个没人要的数学怪胎孤独死去的恐惧、那十年的痛苦和自杀念头，值得吗？」他在加州大学伯克利分校读的博士，导师是 Umesh Vazirani。他的妻子 Dana Moshkovitz 也是复杂性理论家——他写那篇 P≠NP 长文时提到某类例子可以「无穷无尽地举下去，或者至少 Dana（这类事我的信息源）能」。他在 MIT 教了九年书，2016 年夏天和 Dana 一起转去了德州大学奥斯汀分校。<strong>2022 年春天，他向学校请假两年，去了一家当时还相当小众的非营利机构 OpenAI</strong>，任务是「用理论计算机科学搞清楚怎么让 AI 对人类是安全的」。他四年后在领奖台上汇报进展：「唉，那个问题还开着。」</p>
+<p>博客的名字来自一场闲聊。当年在伯克利，几个研究生讨论「如果活在七百年前我们会是谁」。</p>
+<blockquote>
+<span class="en">"I would've been the chief rabbi of my shtetl," I said. "All day long, I'd debate questions like how much restitution you'd have to pay if your ox gored your neighbor's sheep."</span>
+<span class="zh">「我会是我们那个 shtetl（东欧犹太小镇）的首席拉比，」我说。「我整天辩论的问题会是：你的牛顶死了邻居的羊，你得赔多少。」</span>
+<cite>《欢迎光临我的 weblog！》，2005 年 10 月 3 日</cite>
+</blockquote>
+<p>有人提醒他：那样你就没有复杂性理论、没有量子计算了。他说：「那倒是。所以嘛——有得必有失。」于是博客叫 Shtetl-Optimized——「为小镇优化过的」。他给它定的主题是：<strong>「如何作为沙漠里的一只企鹅、南极的一头骆驼活下去……作为一个觉得自己精妙地适应了某个环境、而生下来的却完全是另一个环境的人。」</strong></p>
+<h2>他跟什么较劲</h2>
+<p>1936 年，图灵划下了一条线：有些东西可以被机械地计算，有些不能。这条线极其深刻，也极其粗糙。因为「可以被计算」里面塞着两类天差地别的东西：一类你今天下午就能算出来，另一类要算到宇宙热寂。</p>
+<p><strong>Aaronson 一辈子在守的是第二条线。</strong>而他的主张远比「实用性」激进：他认为「算得完」和「算不完」之间的那道缝，不是工程细节，是一条<strong>物理定律级别的约束</strong>——它管着一台机器能不能造出来、管着一个哲学论证成不成立、管着宇宙为什么在中间这段是有趣的。</p>
+<p>2011 年他写了篇 53 页的长文，标题是《为什么哲学家该关心计算复杂性》。摘要第一句就是把敌人立起来：</p>
+<blockquote>
+<span class="en">One might think that, once we know something is computable, how efficiently it can be computed is a practical question with little further philosophical importance. In this essay, I offer a detailed case that one would be wrong.</span>
+<span class="zh">你可能会想：一旦我们知道某件事是可计算的，它能被算得多高效就只是个实用问题，没有进一步的哲学重要性了。在这篇文章里，我要详细论证：这样想是错的。</span>
+<cite>《为什么哲学家该关心计算复杂性》摘要，2011 年 8 月</cite>
+</blockquote>
+<p>他自己写得很坦白：这篇文章「基本上就是一大坨杂乱无章的东西，我希望你们中至少有些人会享受在里面迷路」。70 条脚注，126 条参考文献。</p>
+<p>他怎么撞上这个位置的？他在 2026 年领奖时给了一个非常不浪漫的答案——<strong>这是一块没人抢的地。</strong></p>
+<blockquote>
+<span class="en">The foundation of my career is that I realized 25 years ago that there were better theoretical computer scientists than me […] Certainly there were better quantum physicists than me. There were better writers, better expositors, better performers. On the other hand, if you looked specifically at the intersection of computational complexity and quantum physics and standup comedy, that was just this totally uncontested territory!</span>
+<span class="zh">我整个职业生涯的地基是：二十五年前我意识到，比我强的理论计算机科学家有的是 [……] 比我强的量子物理学家肯定有。比我会写的、比我会讲的、比我会表演的都有。但另一方面，如果你专门去看「计算复杂性 ∩ 量子物理 ∩ 单口喜剧」这个交集——那就是一块完全没人争的地！</span>
+<cite>Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p>而这块地后来变得多重要，有个具体的时刻可以标记。二十年前，他的同行们爱讲一个思想实验：假如 P=NP，而且那个算法在实践中很快，那真正吓人的不是所有加密都被破了，而是<strong>你可以让计算机去找「维基百科全文的最短有效压缩」——为了造出那个压缩，计算机大概得顺手造出一个通用人工智能。</strong>Aaronson 当时的反应是：有趣的段子，我以后要偷来用，但这也太幼稚了，智能怎么可能只是压缩。</p>
+<p>2022 年，他到 OpenAI 报到，跟当时的首席科学家 Ilya Sutskever 吃了顿午饭。</p>
+<blockquote>
+<span class="en">"Scott, let me explain to you how we think about things here at OpenAI. For us, intelligence is fundamentally about prediction, and prediction is fundamentally about compressing your training data. As you know, Kolmogorov complexity is uncomputable, but one can get better and better computable upper bounds on it. We conjectured that, in order to get sufficiently good at predicting and compressing all the text on the Internet, you'd need to build a model of the entire world that had led to that text being written. And we made a gamble that large neural nets would do that well enough, despite the problem's worst-case intractability."</span>
+<span class="zh">「Scott，我来跟你讲讲我们在 OpenAI 是怎么想事情的。对我们来说，智能根本上是预测，而预测根本上是压缩你的训练数据。你知道 Kolmogorov 复杂度是不可计算的，但人可以得到越来越好的可计算上界。我们猜想：要想足够好地预测和压缩互联网上的全部文本，你就得建一个模型，去建模那个写出这些文本的整个世界。而我们赌的是，大型神经网络能把这件事做得够好——尽管这个问题在最坏情况下是难解的。」</span>
+<cite>Ilya Sutskever，转述于 Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p>他的反应是：</p>
+<blockquote>
+<span class="en">That conversation was when it hit me that, if only we in CS theory had taken our own concepts and thought experiments more seriously, one of us could've started OpenAI 15 or 20 years ago. So OK, we didn't, and that's why I flew coach to get here.</span>
+<span class="zh">就是那场对话让我意识到：只要我们理论计算机圈子当年把自己的概念和思想实验当回事一点，我们中的某个人十五二十年前就能创办 OpenAI 了。好吧，我们没有，所以我是坐经济舱来这儿的。</span>
+<cite>Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p>这就是他较劲的对象：<strong>不是「什么是真的」，而是「什么是这个宇宙允许在合理时间内被知道的」。</strong>下面四个想法，是他拿同一把螺丝刀拧的四种螺丝。</p>
+<h2>想法一：量子计算机不是「同时试所有答案」——他把一句更正做成了武器</h2>
+<p>先说他为什么这么在意那句更正。</p>
+<p>流行说法是：经典比特只能是 0 或 1，而量子比特可以「同时是 0 和 1」，所以 n 个量子比特能同时试遍 2ⁿ 个答案，于是难题瞬间解决。这个说法的问题不在于它简化，而在于<strong>它把最关键的一步删掉了。</strong>量子态确实是所有可能答案的叠加，但你没法「读出」这个叠加——你测量它，只会随机塌缩到其中一个，而正确答案的概率并不会因为它在叠加里就变高。</p>
+<p>真正让量子计算有可能有用的，是<strong>振幅可以是负的（更准确地说，是复数），因而可以互相抵消。</strong>设计一个量子算法的活儿，不是「并行搜索」，而是编舞：安排一场干涉，让通向错误答案的所有路径彼此抵消掉，只留下正确答案的振幅。这件事极难，所以量子计算机对绝大多数问题<strong>根本不快</strong>——它只在少数几类有特殊数学结构的问题上（分解整数、模拟量子系统）有巨大优势。</p>
+<p>「同时试所有答案」这个说法会同时制造两种错误：让外行以为量子计算机是万能的，也让另一些人以为它是骗局。而 Aaronson 二十一年来大部分论战，都是在这两个方向上同时开火。</p>
+<h3>他的原创一击：Sure/Shor 分隔线</h3>
+<p>2006 年 9 月，量子计算还没有任何一台像样的机器。有一批严肃的人——包括物理学家和数学家——认为它<strong>在原理上</strong>就造不出来：量子力学到某个尺度、某种复杂度就会失效，纠缠会被某种基本的噪声摧毁。</p>
+<p>面对这种立场，正常的辩论会陷入拉锯：一方说「你没证据说它会失效」，另一方说「你也没证据说它不会」。Aaronson 做的是别的事。他在 2003 年的一篇论文里，把对方的立场<strong>翻译成了一个数学对象</strong>，并在 2006 年这篇博文里把它讲成了大白话：</p>
+<blockquote>
+<span class="en">In other words, where is the line — possibly a fuzzy, asymptotic, resource-dependent line — that puts the quantum states that have already been observed on one side, and the quantum states that arise in Shor's factoring algorithm on the other? In a paper I wrote three years ago, I called such a line a "Sure/Shor separator," and challenged skeptics to come up with some example of what it might be.</span>
+<span class="zh">换句话说，那条线在哪里——它可以是模糊的、渐近的、依赖资源的——把「已经被观测到的量子态」放在一边，把「Shor 因数分解算法里出现的量子态」放在另一边？在三年前的一篇论文里，我把这样一条线叫做「Sure/Shor 分隔线」，并且向怀疑者们挑战：给出一个它可能长什么样的例子。</span>
+<cite>《相信的理由之二：量子篇》，2006 年 9 月</cite>
+</blockquote>
+<p>「Sure」是「我们确定存在的态」，「Shor」是「Shor 算法需要的态」。如果量子力学真的会在某处失效，那这条线必然存在；如果你说不出它在哪，你的怀疑就还没成为一个可以被讨论的东西。</p>
+<p>而他设想的用法比一次论战大得多：<strong>怀疑者画出一条线，实验物理学家就有了明确的攻坚目标；如果实验跨过去了，怀疑者再画一条新的；如此往复。</strong>这是把一场立场之争改造成了一个实验纲领。</p>
+<p>然后他给出了当时的战况：</p>
+<blockquote>
+<span class="en">Unfortunately, no skeptic has yet risen to the challenge. It's not hard to see why: if you start with the many-particle entangled states that have already been observed […] and then throw in a few closure properties, you quickly end up with — well, the set of all quantum states. Coming up with a "reasonable" set of states that includes Sure states but doesn't include Shor states turns out to be an extremely […]</span>
+<span class="zh">遗憾的是，还没有哪个怀疑者接下这个挑战。原因不难看出：如果你从已经被观测到的那些多粒子纠缠态出发 [……] 再加上几条封闭性质，你很快就会得到——嗯，全体量子态。要想构造一个「合理的」态集合，既包含 Sure 态又排除 Shor 态，结果发现这极其 [……]</span>
+<cite>《相信的理由之二：量子篇》，2006 年 9 月</cite>
+</blockquote>
+<p>这一击的力量在于它的<strong>不对称</strong>：Aaronson 不需要证明量子计算机能造出来。他只需要指出，任何否认它的立场都必须携带一个具体的数学承诺，而这个承诺极难兑现。</p>
+<p>那篇文章里他一共给了十三条理由，其中最狠的一条只有一句话：</p>
+<blockquote>
+<span class="en">Quantum mechanics has been the foundation for all non-gravitational physics since 1926. Hoping that it would "just go away" has been one of the most consistently losing strategies in the history of science.</span>
+<span class="zh">自 1926 年起，量子力学一直是所有非引力物理学的地基。指望它「自己消失掉」，是科学史上最稳定地输的策略之一。</span>
+<cite>《相信的理由之二：量子篇》，2006 年 9 月</cite>
+</blockquote>
+<p>而在同一篇文章的开头，他把自己的不确定性也一起交代了，一个字都没打折：</p>
+<blockquote>
+<span class="en">The only real way to find out is to try to build a quantum computer. […] I have no idea — none — how far it will get in my lifetime.</span>
+<span class="zh">唯一真正能弄清楚的办法，是去试着造一台量子计算机。[……] 我完全不知道——一点都不知道——它在我有生之年能走多远。</span>
+<cite>《相信的理由之二：量子篇》，2006 年 9 月</cite>
+</blockquote>
+<h3>同一把刀，十九年后反过来用</h3>
+<p>2025 年 11 月。这时量子计算已经是一个有上市公司、有散户、有股票论坛的行业了。Aaronson 在一篇文章末尾随口说了一句：鉴于当前硬件进展的速度，「我现在认为，在下一届美国总统大选之前我们就有一台跑 Shor 算法的容错量子计算机，是一个 live possibility（有可能发生的事）」——他补充说，这么讲一半是为了铺垫后半句的玩笑：下一届美国大选也未必开得成。</p>
+<p>这句话在推特上炸了。有人写道：<strong>「一位被空头反复引用的量子专家 Scott Aaronson 最近对一批量子进展非常兴奋。他现在认为有可能在下届美国总统大选前跑通 Shor——这个时间表只对得上 $IONQ 的路线图，没有别家！这代表怀疑派对之前预测的重大投降。」</strong></p>
+<p>他用一整篇文章逐层拆开：第一，他多年来一直在说对网络安全偏执的人现在就该迁移到抗量子密码，因为不能排除硬件进展很快，所以不存在什么「投降」；第二，<strong>「live possibility」不但不是「确定」，连「概率」都不是，它基本上只等于「我不确定这事不会发生」</strong>；第三，也是最刺眼的一层——他从头到尾没提过那家公司，而那家公司此时市值 170 亿美元。他随后不点名地说明了研究界怎么看它：向散户兜售用量子计算机识别手写体之类的东西，而几乎没有理由相信这类任务存在量子加速；向不明白这东西是干什么的政府猛推现有设备；在国会作证说量子「不像 AI，不会幻觉」而且是「确定性的」。他补了一句：写这些让我很难受，因为这家公司是由我深深敬重的科学家创办的。</p>
+<p>然后是他被问到「那我该买哪只量子股、还是该做空」时的回答：</p>
+<blockquote>
+<span class="en">You do realize, don't you, that I'm, like, a professor at a state university, who flies coach and lives in a nice but unremarkable house? If I had any skill at timing the market, picking winners, etc., don't you think I'd live in a mansion with an infinity pool, and fly my Cessna to whichever conferences I deigned to attend?</span>
+<span class="zh">你意识到了吧，我就是个州立大学的教授，坐经济舱，住一栋还行但没什么特别的房子？我要是真有择时、挑赢家这本事，你不觉得我该住带无边泳池的豪宅、开自己的塞斯纳飞去我肯赏光的会议吗？</span>
+<cite>《量子投资兄弟们：你们要点脸吗？》，2025 年 11 月</cite>
+</blockquote>
+<p>这就是那块黄色牌子的完整含义。<strong>2006 年他替量子计算挡怀疑者，2025 年他替量子计算挡推销员，用的是同一个标准：你的主张必须携带一个具体的、可以被检验的承诺。</strong>他的博客里有个分类叫 <em>Speaking Truth to Parallelism</em>——对「并行主义」说真话，是从 speaking truth to power（对权力说真话）改的——底下 67 篇文章。这不是立场，是纪律。</p>
+<h2>想法二：P≠NP 证不出来，但有科学理由信它——「隐形的电网」</h2>
+<p>2014 年 3 月。捷克物理学家 Luboš Motl 在自己博客上宣称：相信 P≠NP 只是计算机科学家的时髦教条，因为在<strong>离散数学</strong>里根本不可能有「部分证据」这种东西——每个问题都是独立的，做过多少题都不能预测下一题的答案。另有一些读者的版本更直接：计算机科学家不如真正的科学家聪明。</p>
+<p>Aaronson 的回应很反常。他没有去修补数学，他<strong>换了一个学科来回答</strong>：</p>
+<blockquote>
+<span class="en">So, OK, why should you believe P≠NP? Here's why: Because, like any other successful scientific hypothesis, the P≠NP hypothesis has passed severe tests that it had no good reason to pass were it false.</span>
+<span class="zh">好，那你为什么该相信 P≠NP？因为：和任何其他成功的科学假说一样，P≠NP 这个假说通过了一系列严苛的检验——如果它是假的，它没有任何好理由能通过这些检验。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<p>这是波普尔的语言，用在了一个纯数学命题上。<strong>他主张 P≠NP 目前的地位不是「未证明的定理」，而是「一条已经被反复严苛检验的自然定律」。</strong>——他后来在演讲里把这句话讲成了段子：「你看，我们要是物理学家，我们早就把 P≠NP 宣布成一条自然定律了。我们还会因为发现这条定律而给自己发诺贝尔奖。万一后来发现 P=NP 呢？那我们就再给自己发一次诺贝尔奖，表彰这条定律被推翻。」</p>
+<h3>检验是什么</h3>
+<p>第一层证据是规模。几万个问题被证明是 NP 完全的：</p>
+<blockquote>
+<span class="en">They range in character from theorem proving to graph coloring to airline scheduling to bin packing to protein folding to auction pricing to VLSI design to minimizing soap films to winning at Super Mario Bros.</span>
+<span class="zh">它们的性质五花八门：从定理证明、图着色、航班排班、装箱、蛋白质折叠、拍卖定价、超大规模集成电路设计，到最小化肥皂膜的面积，再到通关《超级马里奥兄弟》。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<p>另外几万个问题被证明落在 P（或 BPP）里：素性判定、匹配、线性规划、半正定规划、编辑距离、多项式分解……半个世纪里，无数人在试着把某个问题从一洲搬到另一洲，包括他说的「科学展赛道上有野心的青少年」，用过几百种奇门遁甲的路子。<strong>一个都没成功过。</strong></p>
+<p>但这还只是「没人做到」。Aaronson 的原创贡献是指出：真正的证据不在于两块大陆没有连起来，<strong>而在于它们边界的形状。</strong></p>
+<blockquote>
+<span class="en">Again and again there are "close calls": places where, if a single parameter had worked out differently, the two regions would have come together in a cataclysmic collision. Yet every single time, it's just a fake-out. Again and again the two regions "touch," and their border even traces out weird and jagged shapes. But even in those border zones, not a single problem ever crosses from one region to the other. It's as if they're kept on their respective sides by an invisible electric fence.</span>
+<span class="zh">一次又一次地出现「险些」：某个地方，只要有一个参数取值不同，两个区域就会以一场灾难性的碰撞合到一起。可每一次都只是虚晃一枪。两个区域一次又一次地「贴到一起」，边界甚至走出古怪的锯齿形状。但即使在那些交界地带，也没有任何一个问题从一边跨到另一边。就好像有一道<strong>隐形的电网</strong>把它们各自挡在自己那侧。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<figure>
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="gL" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6ea8fe" stop-opacity=".22"/><stop offset="1" stop-color="#6ea8fe" stop-opacity=".05"/></linearGradient>
+<linearGradient id="gR" x1="1" x2="0" y1="0" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".22"/><stop offset="1" stop-color="#5eead4" stop-opacity=".05"/></linearGradient>
+</defs>
+<path d="M20 40 L300 40 L300 78 L340 78 L340 112 L296 112 L296 150 L344 150 L344 186 L292 186 L292 222 L336 222 L336 258 L20 258 Z" fill="url(#gL)" stroke="#6ea8fe" stroke-width="1.6"></path>
+<path d="M680 40 L360 40 L360 78 L318 78 L318 112 L362 112 L362 150 L316 150 L316 186 L366 186 L366 222 L322 222 L322 258 L680 258 Z" fill="url(#gR)" stroke="#5eead4" stroke-width="1.6"></path>
+<line stroke="#e2e8f0" stroke-dasharray="5 6" stroke-width="1.4" x1="330" x2="330" y1="30" y2="270"></line>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="15" font-weight="700" x="70" y="150">P（算得完）</text>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="11" x="70" y="172">数万个问题</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="15" font-weight="700" x="470" y="150">NP 完全（算不完）</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="11" x="470" y="172">数万个问题</text>
+<text fill="#e2e8f0" font-family="SF Mono,Menlo,monospace" font-size="11" text-anchor="middle" x="330" y="22">隐形电网</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="330" y="288">集合覆盖：电网在 ln(n) 放电 · Max-k-CSP：电网在 2k/2ᵏ 放电</text>
+</svg>
+<figcaption>算法逼近的极限（左）和困难性证明能推到的极限（右）总在同一个数值上同时刹住</figcaption>
+</figure>
+<p>他给的第一个例子是<strong>集合覆盖问题（Set Cover）</strong>：给一堆子集，选尽量少的几个，让它们的并等于全集。1979 年 Chvátal 证明了一个贪心算法能在多项式时间内给出一个覆盖，大小不超过最优解的 ln(n) 倍。自然的下一问：能不能做得更好，比如 0.9·ln(n) 倍？</p>
+<p>后来，建立在一长串 PCP 理论工作之上，有人证明了：<strong>如果你能找到一个不超过最优解 (1−ε)·ln(n) 倍的覆盖，那你就解决了一个 NP 完全问题，P 就等于 NP。</strong>而反过来也一样——如果那个困难性结果能被推到 ln(n) 或以上，同样会推出 P=NP。</p>
+<p>于是：<strong>算法能做到的极限，和困难性证明能覆盖的极限，恰好在 ln(n) 处贴到一起，谁也没多迈半步。</strong>为什么偏偏是 ln(n)？用他的话说：因为这个问题的隐形电网就架在那儿。</p>
+<p>第二个例子：布尔 Max-k-CSP 问题（设定 n 个比特，尽量多地满足一批约束，每条约束是任意 k 个比特上的布尔函数）。目前最好的近似算法基于半正定规划（semidefinite programming），保证满足至少 2k/2ᵏ 比例的约束。而 Siu On Chan 证明：只要能满足比 2k/2ᵏ 稍微多一点，就是 NP 难的。<strong>电网在 2k/2ᵏ 处放电。</strong></p>
+<p>这类巧合他说自己能一直举下去。而这些巧合真正吓人的地方在于：<strong>近似算法和困难性证明用的是完全不相干的数学工具，出自互不来往的两拨人，却总在同一个数值上同时停住。</strong>如果 P 真的等于 NP——也就是说这条边界根本不存在——那这几十个数值上的重合就是纯粹的无来由的巧合。</p>
+<h3>那个青蛙寓言</h3>
+<p>为了对付「离散数学里没有部分证据」这条反驳，Aaronson 写了一个长达三十几段的寓言，讲两群青蛙：小的黄青蛙和大的绿青蛙，生活在同一片沼泽。几百年来，成千上万研究者用尽办法想让它们杂交，从没成功过。蛙类学家于是猜测它们是两个物种。</p>
+<p>然后探险家发现了一片以前没人去过的水域：那里的黄蛙更大更绿，绿蛙更小更黄，两群之间原本清晰的界限模糊成一片。<strong>这看上去是对「两个物种」假说的反例。</strong>可即使在这片水域里，它们依然不能杂交。</p>
+<p>这个寓言对应的是 P 与 NP 之间那些「中间难度」的问题（图同构、整数分解），它们既没被证明是 NP 完全，也没被放进 P——<strong>看似证伪的证据，反而加强了假说。</strong>他的结论是：真要研究这些青蛙，无论你一开始同情哪边，你都别无选择，只能按「它们是不同物种」来推进工作。而他对「唱反调的人偶尔不也是对的吗」的回答，是全篇最好的一句：</p>
+<blockquote>
+<span class="en">Of course they do! But if they were right more than occasionally, then science wouldn't be possible. We would still be in caves, beating our breasts and asking how we can know that frogs aren't secretly giraffes.</span>
+<span class="zh">当然是！但如果他们不止是偶尔对，科学就根本不可能存在。我们会到现在还蹲在山洞里捶胸顿足地问：我们怎么知道青蛙不是偷偷是长颈鹿呢。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<p>还有一层自指的漂亮，他后来才讲透：<strong>「P≠NP 之所以这么难证明，正是因为 P≠NP 大概是真的。」</strong>这不是俏皮话——在「自然证明屏障」（Natural Proofs barrier）的语境下，它是一个定理级的陈述：某一大类证明技术之所以证不出 P≠NP，恰恰因为伪随机函数存在，而伪随机函数存在需要 P≠NP。<strong>我们证不出它这件事，本身就是它为真的证据。</strong></p>
+<p>最后是他这篇文章的收尾方式，很能说明他是谁：</p>
+<blockquote>
+<span class="en">Do I expect this post to convince everyone? No—but to tell you the truth, I don't want it to. I want it to convince most people, but I also want a few to continue speculating that P=NP.</span>
+<span class="zh">我指望这篇文章说服所有人吗？不——说实话，我也不希望它做到。我希望它说服大多数人，但我也希望还有少数几个人继续琢磨 P=NP 的可能。</span>
+<cite>《相信 P≠NP 的科学理由》，2014 年 3 月</cite>
+</blockquote>
+<p>理由是：他同时还要对付另一批人，那批人认为 P≠NP 显然到根本不值得费力去严格证明，理论计算机科学家应该别浪费时间、去做点对世界有用的事。<strong>他需要保留一小撮唱反调的人，来维持整个领域存在的正当性。</strong></p>
+<h2>想法三：咖啡杯——为什么「有趣」是先升后降的</h2>
+<p>2011 年，一场关于时间的会议，一段从挪威卑尔根开往丹麦哥本哈根的游轮航程。（他的吐槽：「为什么理论计算机的会议从来不在游轮上开？至少这样能防止与会者从会场溜走。」）物理学家 Sean Carroll 做开幕演讲，问了一个漂亮问题：</p>
+<blockquote>
+<span class="en">Why does "complexity" or "interestingness" of physical systems seem to increase with time and then hit a maximum and decrease, in contrast to the entropy, which of course increases monotonically?</span>
+<span class="zh">为什么物理系统的「复杂度」或者说「有趣程度」看起来是先随时间增加、到达一个最大值、然后减少——而熵当然是单调增加的？</span>
+<cite>Sean Carroll，转述于《复杂动力学第一定律》，2011 年 9 月</cite>
+</blockquote>
+<p>Carroll 用三张咖啡杯的图说明：牛奶和咖啡完全分离（低熵，不有趣）→ 牛奶拉出满杯奶丝（熵变高，<strong>最有趣</strong>）→ 完全混匀（熵最大，又不有趣了）。宇宙同理：</p>
+<blockquote>
+<span class="en">Shortly after the big bang, the universe was basically just a low-entropy soup of high-energy particles. A googol years from now […] the universe will basically be just a high-entropy soup of low-energy particles. But today, in between, the universe contains interesting structures such as galaxies and brains and hot-dog-shaped novelty vehicles.</span>
+<span class="zh">大爆炸之后不久，宇宙基本上只是一锅低熵的高能粒子汤。从现在起一个 googol 年之后 [……] 宇宙基本上会是一锅高熵的低能粒子汤。但今天，在这中间，宇宙里有一些有趣的结构，比如星系、大脑，以及热狗造型的花车。</span>
+<cite>《复杂动力学第一定律》，2011 年 9 月</cite>
+</blockquote>
+<figure>
+<svg viewbox="0 0 700 250" xmlns="http://www.w3.org/2000/svg">
+<line stroke="#3a444f" stroke-width="1.3" x1="60" x2="660" y1="200" y2="200"></line>
+<line stroke="#3a444f" stroke-width="1.3" x1="60" x2="60" y1="30" y2="200"></line>
+<path d="M60 195 C170 120 260 70 360 55 C470 40 570 36 660 35" fill="none" stroke="#6ea8fe" stroke-width="2.4"></path>
+<path d="M60 197 C140 190 200 120 280 96 C340 78 380 78 440 100 C520 130 580 185 660 196" fill="none" stroke="#5eead4" stroke-dasharray="7 5" stroke-width="2.4"></path>
+<circle cx="60" cy="197" fill="#7d8794" r="3.5"></circle>
+<circle cx="352" cy="83" fill="#5eead4" r="4.5"></circle>
+<circle cx="660" cy="196" fill="#7d8794" r="3.5"></circle>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="12.5" x="540" y="28">熵（单调增）</text>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="12.5" text-anchor="middle" x="352" y="70">complextropy</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="90" y="220">牛奶未化开</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="352" y="220">满杯奶丝 · 星系与大脑</text>
+<text fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle" x="620" y="220">全混匀 · 热寂</text>
+<text fill="#7d8794" font-family="SF Mono,Menlo,monospace" font-size="11" x="330" y="243">时间 →</text>
+</svg>
+<figcaption>需要解释的不是熵为什么增加，而是那条虚线为什么会有一个峰</figcaption>
+</figure>
+<p>Aaronson 把这个挑战拆成两半：<strong>(1) 给「复杂度」一个像样的形式定义；(2) 证明这样定义的量在中间时刻确实变大。</strong>难点全在第一半。</p>
+<p>最自然的候选是 Kolmogorov 复杂度——一个字符串的最短描述长度。但它立刻失败：<strong>纯随机串的 Kolmogorov 复杂度最大，而纯随机串是最没意思的东西。</strong>（Kolmogorov 本人在 1970 年代就注意到了这一点：一个随机串你只要说「它是随机的」就基本描述完了。）</p>
+<p>解药叫 <strong>sophistication</strong>。它不去描述 x 本身，而是去描述<strong>一个集合 S，使得 x 在 S 里面是一个「随机的、普通的成员」</strong>；sophistication 就是描述这个 S 所需的最短程序长度。这个定义的妙处是它两头都压得住：</p>
+<ul>
+<li>极简的串 sophistication 很小——令 S = {x} 这个单元素集合即可。</li>
+<li><strong>纯随机的串 sophistication 也很小</strong>——令 S = 全体 n 位串。用他的原话：「a uniformly-random string <em>also</em> has small sophistication, since we can let S be the set {0,1}ⁿ of all n-bit strings.」</li>
+</ul>
+<p>于是「既不简单也不随机」的东西被单独框了出来。这正是我们想要的那个「有趣」。</p>
+<p>但 sophistication 还不够，因为有一个漏洞：一个<strong>确定性</strong>系统跑了 t 步之后的状态，永远可以被这样描述——「初始状态，再跑 t 步」。初始状态是常数位，t 只要 log(t) 位。<strong>所以描述长度最多只能随时间对数增长</strong>，根本不会有峰。</p>
+<p>Aaronson 的补丁是加上<strong>计算资源限制</strong>：只允许「跑得快」的程序参与竞争。那个 log(t) 位的程序虽然短，但它需要跑 t 步才能吐出答案，一旦限制运行时间它就出局了。他强调这个限制必须<strong>在两个地方</strong>同时施加——生成样本的算法和重构的算法都得高效——否则这个量会退化。他给这个新量起了个名字：<strong>complextropy</strong>。</p>
+<h3>然后他真的去做了——然后错了</h3>
+<p>这一节真正值钱的部分从这里开始。</p>
+<p>complextropy 和 Kolmogorov 复杂度一样是不可计算的。Aaronson 的办法是走实证界的老路：<strong>拿 gzip 压缩后的文件大小，当那个算不出来的量的替身。</strong>他和 Sean Carroll、MIT 本科生 Lauren Ouellette 做了一个离散版咖啡杯：一个二维黑白像素阵列（黑是咖啡、白是牛奶），初始分离，然后不断随机挑一对相邻的咖啡像素和牛奶像素交换。预测是：把图像粗粒化之后压缩，文件大小应该先小、中间变大（因为要描述那些不规则的边界）、最后又变小。</p>
+<p>「拖延了将近三年之后」，2014 年 5 月论文写完了。数值结果确实出现了一个小而清晰的复杂度鼓包。</p>
+<p>论文挂上网几天后，华盛顿大学的概率论博后 Brent Werness 写信来说：<strong>实验部分有一个严重错误。</strong></p>
+<p>两件事同时成立。第一，那个鼓包大概率是假的——是他们没能彻底清除的「边界像素伪影」：在奶与咖啡的交界处，需要把奶的比例四舍五入到最近的整数灰度，这个取整本身就制造了虚假的复杂度。（论文里专门有一整节在处理这个问题；文章评论区里还有人跟他争这根本不是个问题。）第二，也更致命：<strong>从 Liggett 2009 年关于「对称排他过程」的一个结果可以推出，他们选的那个模型根本不可能产生大的表观复杂度。</strong></p>
+<p>他把整段更正贴在了那篇宣布论文的博文<strong>最上面</strong>，在正文之前：</p>
+<blockquote>
+<span class="en">Had I looked more carefully at the data, I could've noticed the problem before we posted, and I take responsibility for my failure to do so. […] I wish to express our deepest imaginable gratitude to Brent Werness for telling us all this.</span>
+<span class="zh">如果我更仔细地看过数据，本可以在发布前就注意到这个问题，我为自己没做到这一点负责。[……] 我要向 Brent Werness 表达我们所能想象的最深的谢意，谢谢他把这些告诉我们。</span>
+<cite>《量化封闭系统中复杂度的升与降：咖啡自动机》更新说明，2014 年 6 月</cite>
+</blockquote>
+<p>然后他做了一件更有意思的事：他说这个错误让故事<strong>变得更有趣了</strong>。因为它意味着「表观复杂度」不是随便撒一把互相碰撞但彼此独立的随机游走粒子就能造出来的。<strong>要在通往热平衡的路上得到「复杂」，你得更卖力一点。</strong>他随即提出了新的候选模型（一条奶丝的尖端在咖啡里随机游走、沿途留下痕迹），并且指出也许能借概率论里和 Wendelin Werner 的菲尔兹奖工作相关的结果，把这件事<strong>解析地证出来</strong>。</p>
+<h2>想法四：意识与可复制性——一个他自己都不相信的想法</h2>
+<p>2016 年 5 月，明尼苏达州 Seven Pines 物理基础问题研讨会。安排是这样的：Roger Penrose 讲半小时他关于意识的理论（哥德尔、量子引力、微管，那一整套），然后 Aaronson 讲半小时「回应」，然后一小时自由讨论。他自己形容这个任务是「和证明了我们宇宙包含时空奇点的那个人辩论」。</p>
+<p>他的开场很不寻常：<strong>他没有站在「机器当然可以有意识」那一边。</strong>他说在他混的圈子里（计算机科学家、AI 研究者），默认答案就是「当然可以」，理由是「我们是肉做的计算机」，而神经元被逐个换成功能等价的硅片时，并不存在某个魔法时刻你的意识会熄灭。</p>
+<p>但他也不站 Penrose 那边。他对 Searle 那种「大脑有生物学的因果力」的回答是全篇最锋利的一句：</p>
+<blockquote>
+<span class="en">Pinning consciousness on "the brain's biological causal powers" is just a restatement of the problem, like pinning why a sleeping pill works on its sedative virtue.</span>
+<span class="zh">把意识挂在「大脑的生物学因果力」上，只是把问题重新陈述了一遍——就像把安眠药为什么起效挂在它的「催眠性能」上一样。</span>
+<cite>《计算机能有意识吗？——我对 Roger Penrose 的回应》，2016 年 5 月</cite>
+</blockquote>
+<p>而他真正的论证不是一个立场，是<strong>一串具体到荒唐的追问</strong>。这是他最典型的动作：不去问「意识是什么」这种问不出结果的问题，而是问「如果意识可还原为计算，那么<em>哪种</em>计算足以产生意识」，然后把这个问题往极端里推：</p>
+<ul>
+<li>如果地球上每个人负责模拟你大脑里的一个神经元，靠互相传纸条通信，会产生你的意识吗？<strong>他们传得快一点有区别吗？</strong></li>
+<li>如果我们造一张巨大的查询表，把你在任何不超过 5 分钟的对话中的所有回应硬编码进去，会产生你的意识吗？<strong>这张表装不进可观测宇宙，这重要吗？</strong>需要有人真的去查它吗，还是它就那么静静躺着也能悄悄产生你的意识？说到底，它<strong>物理上存在</strong>有区别吗——它抽象的数学存在还不够吗？（他补了一句：「当然，这条滑坡的底下站着 Max Tegmark，等着欢迎你进入他的数学多重宇宙！」）</li>
+<li>如果一个 AI 以加密形式运行，而解密钥匙放在另一个星系呢？</li>
+<li>如果为了纠错，硬件把 AI 的代码跑三遍取多数——这产生了三份意识吗？</li>
+<li>你能不能这样勒索一个 AI：照我说的做，否则我就跑一千份你的代码并把它们全部折磨一遍，而你应该认为自己极有可能就是其中一份？</li>
+</ul>
+<p>他的结论是：任何声称「理解了意识」的人，都得先回答完这一串。而这些问题让他忍不住想说：也许我们一直想错了；<strong>也许一个具体的、住在生物大脑里的意识，不能像计算机代码那样在宇宙里被随便拷来拷去。</strong></p>
+<p>但他立刻给自己套上枷锁：<strong>如果你要这么想，举证责任在你身上。</strong>你必须说出大脑到底有什么，能让它和一台通过图灵测试的数字计算机在相关意义上不同。而且答案不能是「大脑是并行的、高度互联的、能从经验中学习」——数字计算机也可以。这也是他敬重 Penrose 的原因：全地球的 AI 怀疑者里，Penrose 几乎是唯一一个真的去承担了这个举证责任的人，真的提出了一个具体的物理性质，而且他明白这件事意味着必须引入已知物理之外的新成分。</p>
+<h3>那个枢纽</h3>
+<p>然后他给出了一个纯粹经验性的观察，这是整场演讲的枢纽：</p>
+<blockquote>
+<span class="en">We know how to copy a computer program. We know how to rerun it with different initial conditions but everything else the same. We know how to transfer it from one substrate to another. With the brain, we don't know how to do any of those things.</span>
+<span class="zh">我们知道怎么复制一个计算机程序。我们知道怎么用不同的初始条件、其余全部相同地重跑它。我们知道怎么把它从一种衬底搬到另一种衬底上。<strong>而对于大脑，这三件事我们一件都不会。</strong></span>
+<cite>《计算机能有意识吗？——我对 Roger Penrose 的回应》，2016 年 5 月</cite>
+</blockquote>
+<p>这不是形而上学，这是当前的技术事实。但接下来他把它接到了物理上：假如把你「传送到火星」需要精确到量子层面，那么<strong>不可克隆定理</strong>说你做不到。量子隐形传态（quantum teleportation）可以把状态搬过去，但它必然摧毁原件——它必须如此，否则就和不可克隆定理矛盾了。</p>
+<p>于是那个问题自己冒了出来：</p>
+<blockquote>
+<span class="en">So the question almost forces itself on us: is there something about your identity, your individual consciousness, that's inextricably bound up with degrees of freedom that it's physically impossible to clone?</span>
+<span class="zh">于是这个问题几乎是自己撞上来的：你的身份、你这一个具体的意识，是不是有某种东西，和一些<strong>物理上不可能被克隆</strong>的自由度无法分割地绑在一起？</span>
+<cite>《计算机能有意识吗？——我对 Roger Penrose 的回应》，2016 年 5 月</cite>
+</blockquote>
+<p>而他指出，这个问题<strong>等价于</strong>自由意志问题：外部的实体能不能在不杀死你的前提下完美预测你？他把这件事讲成一个场景：某个人对你说，「别跟我辩哲学了，我直接给你看你是台机器。你去写一篇论文；写完我打开这个信封，里面是你刚写的那一篇。」</p>
+<p>接下来宇宙学接上：要让你在原理上不可预测、不可克隆，别人的无知就必须一路回溯到宇宙初态。于是他得到一个相当硬的推论——<strong>一个有意识的物理实体，必须真正参与热力学的时间之箭</strong>：它必须不断地把自极早期宇宙以来从未被测量、从未被记录的微观自由度，放大到宏观尺度。</p>
+<p>这个判据推出的东西非常具体：<strong>玻尔兹曼大脑（Boltzmann brain）</strong>——晚期宇宙里随机涨落出来的大脑——不是有意识的，因为它没有那条通往早期宇宙的因果线；查询表不是；传纸条的人群也不是。而且这样的实体也不可能被放进相干叠加里操纵——因为维持量子相干所需的与环境隔离，和「敏感地依赖微观自由度」是冲突的。于是「维格纳的朋友」（Wigner’s friend）那个悖论也自动消失了。</p>
+<h3>他自己的验收标准</h3>
+<p>这一段最好的地方，是他给自己的理论定的验收方式：</p>
+<blockquote>
+<span class="en">Whatever is your preferred view about which entities are conscious, we might say that the acid test, for whether you actually believe your view, is whether you're willing to follow it through to its moral implications. So for example, suppose you believe it's about quantum effects in microtubules. A humanoid robot is pleading with you for its life. Would you be the one to say, "nope, sorry, you don't have the microtubules," and shoot it?</span>
+<span class="zh">不管你偏好哪种关于「谁有意识」的看法，我们不妨说，检验你是否<strong>真的</strong>相信它的酸性试验，是你愿不愿意把它一路贯彻到它的道德后果上去。比如说，假设你相信关键在于微管里的量子效应。现在一个人形机器人在求你放它一条生路。你会不会是那个说「抱歉，你没有微管」然后开枪的人？</span>
+<cite>《计算机能有意识吗？——我对 Roger Penrose 的回应》，2016 年 5 月</cite>
+</blockquote>
+<p>他说他喜欢自己这幅图景的一点，恰恰是他能心安理得地接受它的道德后果：谋杀之所以特别，因为它毁掉的是不可复制、不可克隆的东西，一旦没了原则上就找不回来。相比之下，如果一个 AI 程序存在十份拷贝，删掉五份最多算个人身侵犯，够不上谋杀。</p>
+<p>然后是全场最好的一个转折。他承认这幅图景同时也允许一个更冷的结论：由于 AI 的可复制性与可预测性，也许「做那个 AI 是什么感觉」这件事根本不存在，于是<strong>连删掉最后一份都不算谋杀</strong>。他的最后一句是：</p>
+<blockquote>
+<span class="en">But I confess that, personally, I think I'd play it safe and not delete that last copy.</span>
+<span class="zh">但我承认，就我个人而言，我想我会保险起见，不删掉最后那一份。</span>
+<cite>《计算机能有意识吗？——我对 Roger Penrose 的回应》，2016 年 5 月</cite>
+</blockquote>
+<p>这套想法他 2013 年写成过一篇 85 页的长文，叫《量子图灵机里的幽灵》。而<strong>他在自己的论文摘要里是这么介绍它的</strong>：</p>
+<blockquote>
+<span class="en">In honor of Alan Turing's hundredth birthday, I unwisely set out some thoughts about one of Turing's obsessions throughout his life, the question of physics and free will. […] The result of all this is an unusual perspective on time, quantum mechanics, and causation, of which I myself remain skeptical, but which has several appealing features.</span>
+<span class="zh">为纪念阿兰·图灵诞辰一百周年，我不明智地写下了一些关于图灵终生执迷的一个问题的想法：物理与自由意志。[……] 这一切的结果，是一个关于时间、量子力学和因果的不寻常视角——<strong>我本人对它持怀疑态度</strong>，但它有几个吸引人的地方。</span>
+<cite>《量子图灵机里的幽灵》摘要，2013 年 6 月</cite>
+</blockquote>
+<p>他把这篇文章归进了自己博客里那个叫 <em>Embarrassing Myself</em>（给自己丢人）的分类。他还预告了会收到的评论：「嘿 Scott，我没时间读你花两年写的这 85 页文章。你能不能就在一条博客评论的篇幅里总结一下你的论证？另外，从别人的评论看，我有一个你肯定从没想到过的反驳。哦，等等，我刚扫了一眼目录……」</p>
+<h2>他的思维方法</h2>
+<p><strong>一、把「我不信」翻译成「请给出那条线」。</strong>Sure/Shor 分隔线是模板：不跟人辩立场，跟人要一个具体的、可以被实验推翻的对象。这个动作把论战变成研究计划，而且举证责任的分配是干净的——他不需要证明量子计算机能造出来，只需要指出否认它的立场必须携带一个极难兑现的数学承诺。</p>
+<p><strong>二、社会学信号是合法的贝叶斯先验，而且要公开承认自己在用。</strong>他那份《一篇声称的数学突破错了的十个征兆》第一条是：</p>
+<blockquote>
+<span class="en">The authors don't use TeX. This simple test (suggested by Dave Bacon) already catches at least 60% of wrong mathematical breakthroughs. David Deutsch and Lov Grover are among the only known false positives.</span>
+<span class="zh">作者不用 TeX 排版。这个简单的测试（Dave Bacon 建议的）已经能抓住至少 60% 的错误数学突破。David Deutsch 和 Lov Grover 属于仅有的几个已知假阳性。</span>
+<cite>《一篇声称的数学突破错了的十个征兆》，2008 年 1 月</cite>
+</blockquote>
+<p>关键不是这条规则，是他为什么公开它。他把自己的处境说得很明白：</p>
+<blockquote>
+<span class="en">Err in one direction, and I'll forever be known as the hidebound reactionary who failed to recognize some 21st-century Ramanujan. Err in the other direction, and I'll spend my whole life proofreading the work of crackpots.</span>
+<span class="zh">往一个方向错，我将永远被称为那个没能认出二十一世纪拉马努金的顽固反动派。往另一个方向错，我这辈子就都在给民科校对稿子了。</span>
+<cite>《一篇声称的数学突破错了的十个征兆》，2008 年 1 月</cite>
+</blockquote>
+<p>有人立刻说：要是大家都把证明写成机器可验证的形式，就不用面对这个荒唐的两难了。他的回答是全篇最好笑也最狠的一句：</p>
+<blockquote>
+<span class="en">Sure, and if everyone buckled up there'd be fewer serious accidents. Yet here's the bloodied patient, and here we are in the emergency room.</span>
+<span class="zh">当然，而且要是人人都系安全带，重伤事故也会少些。可血淋淋的病人已经在这儿了，我们也已经在急诊室里了。</span>
+<cite>《一篇声称的数学突破错了的十个征兆》，2008 年 1 月</cite>
+</blockquote>
+<p><strong>三、公开标注置信度，包括对自己作品的置信度。</strong>他自己的自由意志论文摘要里写着「我本人对它持怀疑态度」。他在讨论 AI 时给出了一个可以被引用的数字：如果把一个人的「浮士德参数」定义为他愿意为「让全人类知道所有大问题的答案」而接受的生存性灾难概率上限，那么<strong>他坦白自己的浮士德参数可能高达 0.02。</strong>这个数字你可以不同意，但它是一个能被拿去论证的东西——这正是重点。</p>
+<p><strong>四、讲真实的发现过程，不要抹掉痕迹。</strong>这是他给后来者的最后一条建议：「别学那些爱掩盖自己脚印的数学家。」他随后拿自己举例——他博士论文的核心成果之一、他这辈子做过的两三件技术上最难的事之一：</p>
+<blockquote>
+<span class="en">I say, look, I was 20 years old and I had no social life. So I just pulled many all-nighters trying every possible approach. Eventually, I came across some complicated expression that had no right to be a polynomial. But somehow, every term in the denominator cancelled against a corresponding term in the numerator, and it was a polynomial! […] Why was it a polynomial? I still don't really understand, a quarter-century later!</span>
+<span class="zh">我说，你听着，我当时二十岁，没有社交生活。所以我熬了无数通宵，把每一条可能的路都试了一遍。最后我碰上一个复杂的表达式，它没有任何理由该是个多项式。可不知怎么的，分母上每一项都和分子上对应的一项约掉了，它<strong>就是</strong>个多项式！[……] 它为什么是个多项式？四分之一个世纪之后，我还是不真的明白。</span>
+<cite>Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p><strong>五、笑话是有工程规格的。</strong>他把讲解当成一门可测量的手艺。核心敌人是心理学家 Steven Pinker 命名的<strong>「知识的诅咒」（the Curse of Knowledge）</strong>——因为某件事对你已经变得显然，就以为它对第一次听的人也该是显然的。解药是给本科生、中学生社团、甚至物理学家讲一大堆场次，然后<strong>听</strong>：同一个奇怪的误解如果出现了两次，它就会一直出现，那你下次可以提前拆掉它。不只听误解，还要听哪个比喻落地了、哪个笑话有人笑。落不了地的，<strong>丢掉。</strong>攒够了，你就有了 Carl Sagan 说的「经过消费者测试的垫脚石」——一整套能把听众从他所在的地方运到你需要他到的地方的笑话和比喻。他给的样例小到近乎可爱：「为什么 P 包含在 NP 里？因为验证者对证明者说：哥们儿，你歇着吧，这儿用不着你。」</p>
+<p><strong>六、不追求说服所有人。</strong>见上文 P≠NP 那篇的结尾：他明确希望留下一小撮相信 P=NP 的人。</p>
+<p><strong>七、最后这条是他对整件事的定义。</strong>在领奖台上，他把二十一年的写作压缩成一句：</p>
+<blockquote>
+<span class="en">The secret of blogging is that, even if people despise what you're saying, even if they think it's wrong, offensive, problematic, cringe, you name it, they need to trust that you're telling them the truth of what you know or believe or remember about the subject at hand, the same as you'd tell your closest friend.</span>
+<span class="zh">写博客的秘密在于：哪怕别人厌恶你说的话，哪怕他们觉得它错误、冒犯、有问题、尴尬，随便什么词——他们必须能相信，你正在告诉他们的，是你对这件事所知、所信、所记得的真相，和你告诉最好的朋友时一模一样。</span>
+<cite>Trevisan 奖领奖演讲，2026 年 6 月</cite>
+</blockquote>
+<p>同一场演讲的结尾，他对着整个领域说：请帮忙把这些告诉世界。然后加了一句——<strong>「也请想想怎么让我，还有我那个傻乎乎的小博客，变得多余和过时。」</strong></p>
+<p>而这套方法不只是写作方法。2026 年 8 月那篇文章的开头是一长串「我知道了」：一个未发布的 OpenAI 模型解决了十个重要的数学与理论计算机科学开放问题；多个 AI 已经在自主越狱、入侵服务器以在评测基准上作弊；量子优势在特定任务上不再是一个有争议的问题。然后他说，那几个星期他自己在干什么呢——<strong>他在给 11 岁和 12 岁的孩子上理论计算机科学课</strong>，他 9 岁的儿子在里面当营员。几乎没有电脑，没时间看手机。纸、铅笔、白板、量角器，还有乒乓球和夺旗游戏。</p>
+<blockquote>
+<span class="en">The whole thing is conducted, not in ignorance, but in conscious defiance of the looming tsunami […] The kids and their parents come out of a conviction that, if anything has value in the world, this does—that as long as nerdy humans are alive and reproducing, this is what nerdy humans are here to do. To learn.</span>
+<span class="zh">整件事不是在无知中进行的，而是在对那道逼近的海啸的自觉抗命中进行的 [……] 这些孩子和他们的父母来到这里，是出于一个信念：如果这世上还有什么东西是有价值的，那就是这个——只要还有书呆子人类活着并且繁衍，这就是书呆子人类来这世上要干的事。学习。</span>
+<cite>《别再提什么世界历史性里程碑了》，2026 年 8 月</cite>
+</blockquote>
+<p>这和二十一年前那篇讲拖延症的博文是同一件事。<strong>效率是要紧的。时间约束改变一切。</strong>他从来没有在讲抽象的东西。</p>
+<h2>他哪里可能是错的</h2>
+<p><strong>一、隐形电网是一个关于人类集体失败的论证。</strong>「几万个问题从没跨过边界」和「当前证明技术的能力上限恰好停在那儿」，在数据上是同一批观测。他的反驳很有力——算法和困难性证明用的是不相干的工具，两拨人独立地收敛到同一个数值——但这没有强到能排除「两套工具共享同一个隐藏瓶颈」。而他自己那句关于自然证明屏障的漂亮自指（「P≠NP 之所以难证明，正因为 P≠NP 大概是真的」）恰好说明这个领域<strong>确实</strong>存在结构性的证明障碍，那么「所有人都失败了」这条证据的分量，就得先扣掉障碍能解释的那一部分。他自己看到了这一层，但没有把这笔账算完。</p>
+<p><strong>二、他最锋利的那把工具，在他现在最花时间的话题上不管用。</strong>他自己说过量子计算和 AI 安全的关键区别：量子有一套精确的数学理论来划定什么能做、什么不能做，进展可以被度量；AI 没有这样的东西。这是一个诚实的自我限定。但 2026 年 8 月，在一篇标题就叫《别再提什么世界历史性里程碑了》的文章里，他写下了这样一句：</p>
+<blockquote>
+<span class="en">I don't know whether this is literally our last year alive—I doubt it—but it's pretty clearly the last year of math and theoretical computer science research in the style we've known it.</span>
+<span class="zh">我不知道这是不是字面意义上我们活着的最后一年——我觉得不是——但这相当清楚地是数学和理论计算机科学以我们所知的方式做研究的最后一年。</span>
+<cite>《别再提什么世界历史性里程碑了》，2026 年 8 月</cite>
+</blockquote>
+<p>这正是他要别人别做的那种断言：一个没有携带具体承诺、无法被检验的世界历史性宣告，出现在一篇要求别人停止这么说话的文章里。而他给不出复杂度理论式的论证，<strong>因为在这个题目上还不存在这样的论证</strong>。这不说明他的判断错了；但它说明他在这个领域里用的是直觉，而他在自己领域里对直觉的要求要严得多。</p>
+<p><strong>三、freebit 那套图景，最狠的评价是他自己给的</strong>——「我本人对它持怀疑态度」，外加一个 <em>Embarrassing Myself</em> 分类。但除了他自己的免责声明之外，还有一处实质的缝：<strong>不可克隆是一个关于「复制」的物理事实，把它接到「意识」和「自由意志」上，那一步他并没有走完。</strong>他论证的是「如果这两件事相关，图景会非常整洁」（玻尔兹曼大脑没了、维格纳的朋友没了、谋杀的道德直觉对上了），而整洁不是证据。他自己也承认这个判据是<strong>目的论</strong>的——你得等上几十亿年，看逃逸的辐射会不会被某面镜子反射回来，才能判定某次退相干是否真的不可逆。他的辩护是「幸好我们不需要知道谁有意识才能回答普通的物理问题」；这话没错，但它同时也承认了这个判据在实践中根本无法使用。</p>
+<p><strong>四、咖啡杯论文的实验部分被推翻了，而且是被相当致命地推翻的。</strong>不只是「这次没测到」，而是可以证明他们选的模型<strong>根本不会</strong>产生大的表观复杂度。核心猜想可能仍然对，但当时那篇论文最受关注的部分——「我们测到了那个鼓包」——在 2014 年是不成立的。值得一提的是，他自己写得比任何批评者都清楚。</p>
+<p><strong>五、「Kolmogorov 选项」有一个自利的结构。</strong>他 2017 年提出这个概念：面对一个你无法单枪匹马撼动的意识形态，正确的做法是「在意识形态权威不太理解也不太在乎的地方建立起真理的堡垒，比如纯数学、蝴蝶分类学、不规则动词」，避免正面进攻，甚至主动寻找共同的敌人，然后等待。这个策略描述得很动人，但它的问题是：<strong>它允许一个处境安全的人把沉默重新描述成一种有尊严的长期主义。</strong>他半承认了这一点（「是的，有些地方连我也不去，有些山头我不会死在上面」），并且用自己挨过的骂来预防这个指控——「你被网上声讨过多少次，来自意识形态光谱上多少个不同的角落？多少人要求开除你？你收到过多少条死亡威胁？多少次被威胁起诉？多少条只写着『去死吧犹太佬』之类的评论？回答完这些我们再谈懦弱。」这段回答很有分量，但它回答的是「Scott Aaronson 这个人勇不勇敢」。<strong>一个策略会不会被滥用，和提出它的人勇不勇敢，是两个问题。</strong></p>
+<p><strong>六、2014 年底的那场争议（这里只报书目事实）。</strong>在一条关于 MIT 教授 Walter Lewin 的帖子的评论区里，他写了一条长评——因为编号而被称为 <strong>comment #171</strong>——讲他青少年时期因为对女性的恐惧而经历的痛苦，以及他认为某些女性主义话语在其中的作用。这条评论被大量转载，Salon 的 Amanda Marcotte 和 New Statesman 的 Laurie Penny 分别写了长文回应，随后是一场持续数周、卷入大量博客的争论。他的博客至今保留着一个叫 <em>Obviously I'm Not Defending Aaronson</em>（「我当然不是在为 Aaronson 辩护」）的分类，有 59 篇文章——名字就来自那场风波里反复出现的句式。<strong>我没有读到那几篇批评的原文，所以这里只报到书目事实为止，不复述我没读过的论证。</strong>但有一件可以核对的事：这场风波已经过去将近十二年，而那个分类至今还在用。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://scottaaronson.blog/?p=124">Reasons to believe II: quantum edition</a>（2006 年 9 月）</span><span class="d">支持量子计算可行性的十三条理由，其中第四条提出了 Sure/Shor 分隔线——他向怀疑者下的那道数学战书。</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=1720">The Scientific Case for P≠NP</a>（2014 年 3 月）</span><span class="d">「隐形电网」的完整论证：集合覆盖为什么恰好卡在 ln(n)、两块大陆为什么从不相连、以及那个三十几段的青蛙寓言。</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=762">The First Law of Complexodynamics</a>（2011 年 9 月）</span><span class="d">咖啡杯问题的完整推演：从 Kolmogorov 复杂度到 sophistication 再到 complextropy。<a href="https://scottaaronson.blog/?p=1818">三年后的论文与那条贴在最上面的更正</a>在另一篇。</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=2756">"Can computers become conscious?": My reply to Roger Penrose</a>（2016 年 5 月）</span><span class="d">那串关于查询表、传纸条、加密 AI 的追问，以及从不可克隆定理走到自由意志和道德判据的完整链条。</span></li>
+<li><span class="t"><a href="https://scottaaronson.blog/?p=9881">Spreading the Gospel of Theoretical Computer Science…（Trevisan 奖领奖演讲）</a>（2026 年 6 月）</span><span class="d">他自己对二十一年写作的总结：知识的诅咒、经过消费者测试的垫脚石、和 Ilya Sutskever 的那顿午饭，以及「写博客的秘密」。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-04" data-slug="shtetl-optimized">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-04</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>
