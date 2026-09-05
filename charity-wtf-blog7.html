@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Charity Majors · charity.wtf — 你读代码，是读不出它到底干了什么的</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="charity-wtf-blog7.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 07 · charity.wtf</div>
+<h1>Charity Majors · charity.wtf<br/>你读代码，是读不出它到底干了什么的</h1>
+<p class="sub">2015 年 12 月至今 · 127 篇 · 仍在更新（最新一篇 2026 年 7 月 8 日）· 2025 年 12 月从 WordPress 搬到 Substack，旧链接全部保留 · 本页通读 14 篇，跨度 2016 年 5 月至 2026 年 6 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2019 年 10 月，Charity Majors 在自己的博客上摆了两家公司出来，让你猜。</p>
+<p><strong>X 公司</strong>：成立三年的创业公司，多租户平台，分布式系统，流量忽高忽低，海量用户提交的数据，底层是一个很年轻的数据库。每天部署一次 API，每周二全服务统一发布一次。周二那天经常一整天都在「发上去、再撤回来」。工程师大概<strong>每周被半夜叫醒两次</strong>。</p>
+<p><strong>Z 公司</strong>：成立三年的创业公司，多租户平台，分布式系统，流量忽高忽低，海量用户提交的数据，底层是一个自己写的、很年轻的列式存储引擎。代码合并后 30 分钟内自动部署。工程师<strong>一年被半夜叫醒不超过两次</strong>。</p>
+<p>两家公司都是给开发者用的平台，都跑 Go 写的弹性微服务，都把用户自定义数据塞进一个自研的年轻存储引擎里。甚至<strong>有四个开发者是同一批人</strong>。</p>
+<p>然后她揭晓答案：这是她自己前后两份工作。X 是 Parse（2012–2016），Z 是 Honeycomb（2016 至今）。基础设施两边都是她搭的。</p>
+<p>差了两个数量级的那个东西，不是技术栈，不是人的水平，也不是运气。<strong>是从「写完这行代码」到「亲眼看见它在生产环境里干了什么」之间隔了多久。</strong></p>
+<p>这就是 Charity Majors 十一年、127 篇博客里唯一的那个想法。她把它翻来覆去用在四个看上去毫不相干的地方，每次都得出让人不太舒服的结论。</p>
+<h3>她跟什么较劲</h3>
+<p>她是 Honeycomb 的联合创始人兼 CTO，可观测性（observability）这个词在软件业的当代用法基本是她和同事 2016 年从控制论里搬过来的。但她真正的根问题比这个朴素得多，而且<strong>几乎所有程序员都默认它不成问题</strong>：</p>
+<p><strong>你写的代码，你其实不知道它在干什么。</strong>读代码读不出来，跑测试也跑不出来。唯一能知道的办法，是让真实用户去跑它，然后你去看。</p>
+<blockquote>
+<span class="en">You’ll never know — not really — what the code you wrote does just by reading it. The only way to be sure is by instrumenting your code and watching real users run it in production.</span>
+<span class="zh">光靠读，你永远不会真的知道自己写的代码干了什么。唯一能确定的办法，是给代码打上埋点，然后看着真实用户在生产环境里跑它。</span>
+<cite>《In Praise of "Normal" Engineers》，2025 年 6 月</cite>
+</blockquote>
+<p>如果你接受这一条，剩下的全是推论。而她的推论一路推到了一个很少有人愿意说出口的地方：<strong>软件行业几乎所有的功能失调，都是同一个东西——一条被拉长或者被切断的反馈回路。</strong>技术上的、组织上的，现在还有 AI 上的。</p>
+<h3>她最狠的四下</h3>
+<p><strong>一、恐惧是最大的技术债。</strong>2019 年有人发了个「周五别推生产」的可爱表情包，她回了一条自己都承认「同样夸张、同样站不住脚」的推文：害怕周五部署的话，把所有开发人力从功能开发上撤下来去修流水线，修多久都值。互联网炸了半年。她后来写文章解释：真正的成本不在周五那天，在你为了绕过恐惧而养成的所有习惯——攒着改动一起发、发完提心吊胆、周一花两天在一坨混在一起的改动里找是谁的锅。</p>
+<blockquote>
+<span class="en">Fear of deploys is the ultimate technical debt.</span>
+<span class="zh">对部署的恐惧，是终极的技术债。</span>
+<cite>《Friday Deploy Freezes Are Exactly Like Murdering Puppies》，2019 年 5 月</cite>
+</blockquote>
+<p>而她给出的证据不是道理，是上面那两家公司。她的原话是：<strong>「我们的系统在总是改完就发的时候更稳定，在我们划出时间段暂停部署的时候更不稳定。」</strong>她自己说这在当时不是共识，她也被这个结果吓了一跳。</p>
+<p><strong>二、指标在写入的那一刻就把上下文扔了。</strong>业界十年来把可观测性讲成「三大支柱：指标、日志、链路追踪」。她 2024 年干了一件很不客气的事：给这套东西编了个版本号，叫<strong>可观测性 1.0</strong>，然后宣布它是上一代。理由是纯技术的：一个「指标」就是一个数字加几个标签，请求的其余全部上下文在写进去的那一刻就被丢掉了，所以你事后永远无法把它和同一个请求的别的数据关联起来。你只能提前猜自己将来想问什么问题。</p>
+<blockquote>
+<span class="en">Metrics are a terrible building block for understanding rich data, because you have to discard all that valuable context at write time […] You will go broke and go mad if you try.</span>
+<span class="zh">指标是理解丰富数据的一块糟糕基石，因为你必须在写入时丢掉所有那些宝贵的上下文 [……] 你要是硬来，会既破产又发疯。</span>
+<cite>《Is it time to version observability? Signs point to yes》，2024 年 8 月</cite>
+</blockquote>
+<p>她还去数了账单：同一个用户请求，你可能同时付费存了日志、指标、APM、链路追踪、前端监控五份。<strong>「五倍」还算是保守的。</strong></p>
+<p><strong>三、管理不是升职。</strong>她 2017 年那篇《The Engineer/Manager Pendulum》是她全站被自己回引最多的一篇。核心是一句在硅谷职级体系里近乎异端的话：</p>
+<blockquote>
+<span class="en">Management is not a promotion, management is a change of profession. And you will be bad at it for a long time after you start doing it. If you don’t think you’re bad at it, you aren’t doing your job.</span>
+<span class="zh">管理不是升职，管理是转行。而且你开始做它之后，会有很长一段时间做得很烂。如果你不觉得自己烂，那说明你没在做这份工作。</span>
+<cite>《The Engineer/Manager Pendulum》，2017 年 5 月</cite>
+</blockquote>
+<p>由此她推出「钟摆」：最好的一线工程经理，是那些离开动手写代码从没超过两三年的人；最好的技术负责人，是做过管理的人。所以别选车道，来回走。<strong>「既然不是升职，你也就没有什么身份可以放弃。」</strong></p>
+<p><strong>四、代码不是理解本身，只是理解的一份缓存。</strong>2026 年她把同一把刀捅进了 AI。她的结论跟两边都不一样：AI 不是让工程纪律变得不必要，而是让它<strong>第一次变得非要不可</strong>。因为代码一旦可以随时重新生成，「我们不敢删掉重写」就不再是谨慎，而是一个诊断结果——它说明我们根本不知道这段代码到底承诺了什么。</p>
+<blockquote>
+<span class="en">The fact that we cannot regenerate our code in the same way is a sign that we do not understand it. We do not know which commitments we have made, we do not know which dependencies will break. We find them by breaking them, mostly.</span>
+<span class="zh">我们没法像重建基础设施那样重新生成代码，这件事本身就说明我们不理解它。我们不知道自己做过哪些承诺，不知道哪些依赖会断。我们基本上是靠把它们弄断来发现它们的。</span>
+<cite>《AI demands more engineering discipline. Not less》，2026 年 6 月</cite>
+</blockquote>
+<p>还有一句会让很多人不高兴的：别把「人类不可替代」的论证押在人类是更好的质量把关人上。<strong>「说到验证，我们就是最弱的那一环。」</strong></p>
+<h3>她哪里可能站不住</h3>
+<p>最大的那条她自己说过：<strong>可观测性 2.0 的正确答案，恰好就是她公司卖的东西。</strong>她在 2019 年那篇文章里承认，正因为怕听着像个烦人的推销员，她一直没敢把这个论点讲透——「这对我的论证绝对是有害的」。而 2024 年给别人的架构编上「1.0」这个版本号，本身就是一次命名权的争夺。</p>
+<p>其次是样本。她的黄金案例 Honeycomb 是她自己从零搭起来的、客户就是工程师的开发者工具公司。她的建议默认你所在的组织有权力去修流水线——很多人没有。</p>
+<p>但她也是那种会把自己的翻车写成故障复盘的人。2018 年她发了一篇给女性的职业建议，被网络围攻一周，她的处理方式是照 SRE 的格式写了篇《事后复盘》，逐条列「不后悔 / 后悔 / 半后悔」。2023 年她回头看自己「最自豪的管理成就」——花了好几年、每周 50% 到 75% 的情绪带宽把一个人留在团队里——重新判定为失败：</p>
+<blockquote>
+<span class="en">All that my coddling ultimately did was teach them the wrong lessons, and prevent them from learning the right ones.</span>
+<span class="zh">我那样宠着他，最后只是教会了他错误的功课，同时挡住了他学会正确那些。</span>
+<cite>《Helicopter Management》，2023 年 6 月</cite>
+</blockquote>
+<p class="sub" style="margin-top:26px"><em>想看完整的四个想法各自是怎么被发现的、她怎么用一条「站不住脚」的推文当鱼饵钓出自己论证的弱点、「运维」这个词是怎么在二十年里变成脏话的（她把锅扣给了谁）、可观测性 1.0 和 2.0 的数据模型到底差在哪一步，以及她自己在 2026 年承认的那个数字——切到上面的「完整版」。</em></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>部署（deploy）</b>：把写好的代码送到真实用户在用的服务器上跑。「一天部署 50 次」和「一个月部署一次」是两种完全不同的工作方式。</li>
+<li><b>生产环境（production，简称 prod）</b>：真实用户实际访问的那套系统。跟它相对的是测试环境——一个模拟的、没有真实用户的副本。</li>
+<li><b>on-call / 被呼叫（paging）</b>：工程师轮流值班，系统出事时手机会在任何时刻响，包括凌晨三点。这行的职业倦怠很大一部分来自这里。</li>
+<li><b>可观测性（observability）</b>：从系统对外吐出的数据，反推它内部正在发生什么的能力。原本是控制论术语，2016 年被 Charity 一伙人搬进软件业。</li>
+<li><b>指标 / 日志 / 链路追踪（metrics / logs / traces）</b>：三种监控数据。指标是一个数字（比如「每秒请求数：4200」）；日志是一行行文字记录；链路追踪记录一个请求穿过了哪些服务、各花了多久。业界曾把这三样称为可观测性的「三大支柱」。</li>
+<li><b>基数（cardinality）</b>：某个字段有多少种不同的取值。「国家」的基数是两百上下，「用户 ID」的基数是几百万。高基数字段最有用（能定位到具体是哪个用户出事），也最贵——传统指标系统几乎处理不了。</li>
+<li><b>结构化事件（structured event）</b>：不是一行行零散的文字日志，而是把一个请求的全部信息（用户是谁、走了哪条分支、耗时多少、报了什么错……几百个字段）打包成一条记录。本页的核心技术争论就是围绕它。</li>
+<li><b>不可变基础设施（immutable infrastructure）</b>：服务器出问题不去修，直接销毁、重建一台新的。2013 年前后成为主流做法，取代了「精心呵护每一台服务器」的老派运维。</li>
+<li><b>DevOps / SRE</b>：两场试图弥合「写代码的人」和「运维系统的人」之间裂缝的运动。SRE（站点可靠性工程）是 Google 的版本。</li>
+</ul>
+</div>
+<h2>一件怪事</h2>
+<p>2019 年 10 月，Charity Majors 在博客上摆出两家公司，让读者猜差别在哪。</p>
+<p><strong>X 公司</strong>成立三年，是个规模不小、增长很快的多租户平台，跑在一套分布式系统上，流量忽高忽低，存着海量用户提交的数据，底下压着一个很年轻的数据库。API 每天部署一次，每周二做一次全服务统一发布。部署常常要伴随救火和一两次回滚，周二往往是一整天「发上去、撤回来、再发上去」。呼叫量「不算最糟」，大概<strong>每周把人从床上叫起来两次</strong>；差不多每三次部署就有一次触发告警，然后要花时间去查是谁的哪一行改动干的。</p>
+<p><strong>Z 公司</strong>成立三年，是个规模不小、增长很快的多租户平台，跑在一套分布式系统上，流量忽高忽低，存着海量用户提交的数据，底下压着一个自己写的、很年轻的列式存储引擎。代码合并进主干后 30 分钟内，所有受影响的服务自动部署。部署几乎不触发呼叫——大部分问题在告警响起之前就被那个提交代码的工程师<strong>用眼睛看出来</strong>、改掉或撤回了。工作时间之外每周大约响一次，<strong>一年里没有人被半夜叫醒超过两次</strong>。</p>
+<p>这两家公司共同点多到离谱。都是做给开发者用的平台产品，都跑 Go 写的高弹性微服务，都接海量突发流量，都把用户自定义的数据塞进一个自研的、年轻的列式存储引擎。<strong>它们甚至有四个共同的开发者。</strong></p>
+<p>然后她揭晓：这是她自己前后两份工作。X 是 Parse（2012–2016 年），Z 是 Honeycomb（2016 年至今）。<strong>两边的基础设施都是她搭的。</strong></p>
+<p>所以那个把「每周两次」变成「每年两次」的东西，不可能是技术栈，不可能是人的天分，也不太可能是运气。她认为它只有一个来源，而且整个软件行业系统性地对它投资不足：<strong>从工程师写完一行代码，到他亲眼看见这行代码在真实用户身上产生了什么后果，中间隔了多久。</strong></p>
+<h2>这人是谁</h2>
+<p>Charity Majors 十五岁离家，此前在一个她自己形容为「原教旨、极度厌女」的环境里长大。她的第一个职位头衔是「系统管理员」，那时她还是个青少年，在大学里干活，手上握着<strong>每一台机器的 root 权限</strong>——用她的话说，那是在人们意识到绝对不该这么干之前的年代。</p>
+<p>2012 到 2016 年她在 Parse，帮它从几个 app 长到一百多万个，中途被 Facebook 收购。2016 年她和 Christine Yen 一起创办 Honeycomb，至今是 CTO。她合写过两本 O'Reilly 的书：《Database Reliability Engineering》和《Observability Engineering》（第二版 2026 年出）。博客从 2015 年 12 月 27 日写到今天，127 篇，中间没有明显断档，<strong>2025 年 12 月从 WordPress 搬到了 Substack</strong>——她为此专门写了一篇，理由不是理念，是「WordPress 感觉太重了」，而 Substack「更像在写邮件」，她希望这能让自己写得更勤。她同时承诺永不开付费订阅。</p>
+<p>关于称呼：她 2025 年专门写过一篇谈代词的文章，里面说自己的代词是「she/her 或者 they/them」，又说「我对阴性代词和阴性身份从来没有过任何亲近感，但我也懒得去纠正谁」。本页沿用她自己列在前面的「她」。顺带一提，那篇文章的论点是：让人公开自己的代词是好事，<strong>强制</strong>所有人公开是坏事，而她给出的第一条理由是「我不想被逼着在公开场合选边站，我只是想干我他妈的活」。这个句式你在她所有文章里都会反复读到。</p>
+<h2>她跟什么较劲</h2>
+<p>把 Charity Majors 归类成「可观测性的布道者」是对的，但那是结论，不是问题。她真正十一年没放下的那个根问题要朴素得多，朴素到几乎没人把它当问题：</p>
+<p><strong>你写的代码，你并不知道它在干什么。</strong></p>
+<p>不是「你可能有 bug 没发现」这种意义上的不知道，而是更根本的：读代码读不出来，因为代码写的是意图，不是行为；跑测试也跑不出来，因为测试只覆盖你想到的情况。唯一能知道的办法，是把它放到真实用户面前跑起来，然后去看。</p>
+<blockquote>
+<span class="en">You’ll never know — not really — what the code you wrote does just by reading it. The only way to be sure is by instrumenting your code and watching real users run it in production.</span>
+<span class="zh">光靠读，你永远不会真的知道自己写的代码干了什么。唯一能确定的办法，是给代码打上埋点，然后看着真实用户在生产环境里跑它。</span>
+<cite>《In Praise of "Normal" Engineers》，2025 年 6 月</cite>
+</blockquote>
+<p>她是怎么撞上这个问题的，比这段论证重要得多——因为她是被它折磨了四年才想明白的。</p>
+<p>Parse 是个后端即服务的平台：全世界的手机 app 开发者把自己的数据模型、查询、业务逻辑扔进来，Parse 替他们跑。这意味着 Parse 的生产环境里跑的<strong>绝大部分代码不是 Parse 写的</strong>，是一百多万个陌生人写的，而且随时在变。任何一个 app 开发者写出一条烂查询，都可能在半夜三点把 Charity 从床上叫起来。而她面对的监控系统只能告诉她「整体延迟涨了」，没法告诉她是哪个 app、哪个用户、哪条查询。</p>
+<p>她后来说 2013 年的 Parse「是场垃圾大火」。转机是被 Facebook 收购之后——他们开始把数据集喂进 Facebook 内部一个叫 <strong>Scuba</strong> 的工具。Scuba 界面很烂，但它干一件别的工具都不干的事：把每个请求的全部上下文原样存成一条宽记录，然后允许你任意切片、任意提问，包括你提出问题的那一刻才想到的问题。</p>
+<p>这就是那个转折点。<strong>Honeycomb 本质上是「把 Scuba 做成一个所有人都能用的产品」</strong>，而她此后所有的写作，都是在把这一次私人经验推广成一条普遍主张。</p>
+<p>值得注意的是这条主张真正的形状。它不是「买个好监控工具」。它是：<strong>一个人无法理解一个自己得不到反馈的系统，而软件行业几乎所有的功能失调——技术的、组织的、现在还有 AI 的——都是同一个东西的不同长相：一条被拉长了或者被切断了的反馈回路。</strong>而她的第二个动作永远一样：<strong>发现回路断了，不要加规则，去把回路接上、缩短。</strong></p>
+<p>下面四个想法，是同一把螺丝刀拧的四颗螺丝。</p>
+<h2>她的想法，讲成「她怎么发现的」</h2>
+<h3><span class="tag">01</span>运维不是一个岗位，是一种涌现属性</h3>
+<p>2016 年 5 月，第一届 Serverless 大会在纽约开。主办方请她去讲，她拒绝了几次，答应了，又反悔，最后在最后一刻答应了。原因她写得很直白：她觉得<strong>台下的人不会想听她要说的东西</strong>。</p>
+<p>她当时刚从 Parse 出来。而会场上的口号是「未来是无服务器的！」「#NoOps！」（不需要运维了）。她的反应是：</p>
+<blockquote>
+<span class="en">I’ve lived the other side of this fairytale. I’ve seen what happens when application developers think they don’t have to care about the skills associated with operations engineering. When they forget that no matter how pretty the abstractions are, you’re still dealing with dusty old concepts like "persistent state" and "queries" and "unavailability".</span>
+<span class="zh">这个童话的另一面我住过。我见过应用开发者以为自己不必在乎运维工程那套技能之后会发生什么。见过他们忘记：不管抽象层封装得多漂亮，你面对的仍然是「持久化状态」「查询」「不可用」这些落满灰的老概念。</span>
+<cite>《WTF is operations? #serverless》，2016 年 5 月</cite>
+</blockquote>
+<p>但她没有停在吐槽。她做了一件更有意思的事：<strong>她回去把「运维」这个词重新定义了一遍。</strong>而这个定义是全篇的转折点——</p>
+<blockquote>
+<span class="en">At a macro level, operational excellence is not a role, it’s an emergent property. It is how you get shit done.</span>
+<span class="zh">在宏观层面上，卓越的运维不是一个岗位，它是一种涌现属性。它就是你把事情干成的方式。</span>
+<cite>同上</cite>
+</blockquote>
+<p>她给的类比很刻薄，而且很难反驳：说「我们有个运维团队，可靠性归他们负责」，就跟说<strong>「我们公司的文化由 HR 定义并且归 HR 所有」</strong>一样荒唐。文化是涌现出来的，从 CEO 到客服到产品经理人人有份，几个坏演员就能毁掉一桶苹果。可靠性也一样。</p>
+<p>为什么这条要紧？因为如果运维是一种岗位，那么「让运维负责稳定性」是个合理的组织设计；<strong>但如果它是一种涌现属性，那么把它切出去交给另一个团队，本身就是在切断反馈回路</strong>——写代码的人不再承担代码的后果，于是他也不再收到关于代码的信息。这就是同一个根问题的组织版本。</p>
+<p>同年 10 月，她把这套东西演示了一遍。有家叫 CleverTap 的公司写了篇复盘，讲他们升级 MongoDB 时丢了数据，结论是「MongoDB 太烂」。她读完气得牙痒。她逐条列出他们干了什么：三天之内，同时做了大版本升级<strong>和</strong>存储引擎更换，并且没有留下任何一个还装着旧引擎数据的从库。然后她说了一段很她的话：</p>
+<blockquote>
+<span class="en">But *I* can criticize Mongo all day long. You children on hacker news who have never run it don’t get to. If you don’t know what the fuck you’re talking about, if you’re cargo culting other people’s years-old complaints, just shut up already.</span>
+<span class="zh">但<em>我</em>可以整天批评 Mongo。你们这些从来没真跑过它的 Hacker News 小孩不行。如果你根本不知道自己在说什么，如果你只是在照抄别人几年前的抱怨，那就闭嘴吧。</span>
+<cite>《The Accidental DBA》，2016 年 10 月</cite>
+</blockquote>
+<p>她给出的正面做法是她在 Parse 的真实经历：他们从 MMAPv1 换到 RocksDB 时，<strong>混合运行了两套存储引擎六到九个月</strong>，花半年时间录下生产流量反复重放，把 Rocks 提成主库再退回去，两种引擎的快照和从库同时留了好几个月。她的原则是：越靠近「把比特写到盘上」，你就该越保守、越害怕。这句话十年后原封不动出现在她 2026 年的文章里。</p>
+<p>然后就是二十年后的结账。2026 年 1 月，她在 Honeycomb 博客发了篇文章，标题是《你只有一个任务：为什么二十年的 DevOps 没做到》。她的判词是：</p>
+<blockquote>
+<span class="en">In retrospect, I think the entire DevOps movement was a mighty, twenty year battle to achieve one thing: a single feedback loop connecting devs with prod. On those grounds, it failed.</span>
+<span class="zh">回头看，我认为整个 DevOps 运动是一场持续二十年的大战，为的就是达成一件事：一条把开发者和生产环境连起来的反馈回路。就这一点而言，它失败了。</span>
+<cite>转引自《Bring Back Ops Pride》，2026 年 1 月</cite>
+</blockquote>
+<p>而她认为失败的原因不是工程师不努力，是<strong>工具不够好</strong>——用那些工具去连通反馈回路，会让一个人写业务逻辑的时间翻倍甚至翻四倍，所以理性的人都不会去做。</p>
+<p>这篇文章还有一段抓锅的。她问：「运维」在软件业变成脏话，到底是谁的错？业务运营、市场运营、销售运营、产品运营，没有哪一个被这样鄙视过，为什么偏偏软件的运维被鄙视？她的答案很不客气：</p>
+<blockquote>
+<span class="en">Whose fault is it? Google. It’s Google’s fault. I know this, because I asked Google and it told me so.</span>
+<span class="zh">谁的错？Google。是 Google 的错。我知道这一点，因为我去问了 Google，它自己这么告诉我的。</span>
+<cite>《Bring Back Ops Pride》，2026 年 1 月</cite>
+</blockquote>
+<p>玩笑底下是个正经论断：Google 说传统运维扩展不了、必须变得更像软件工程，这在当时是对的话、说在对的时候。<strong>但翻译过程中有一条关键的区分被丢掉了</strong>——大家开始把这件事理解成「开发者（写代码的人：好）对运维者（手工干活的人：坏）」。而她坚持真正的区分不是会不会写代码（「老兄，都 2026 年了，人人都写软件」），是<strong>关注点的分离</strong>：你的关注点是造新功能吸引客户，你是 dev；你的关注点是守住核心服务的可用性、抵御一切威胁（威胁名单上排第一的就是你自己的开发者），你是 ops。</p>
+<p>她还顺手把行业的鄙视链倒了个个儿：产品工程通常<strong>比</strong>基础设施工程简单，恰恰因为运维的核心职能之一就是吸收掉最难的技术问题，给产品开发留一个简单可靠的表面。</p>
+<blockquote>
+<span class="en">The cost and pain of developing software is approximately zero compared to the operational cost of maintaining it over time.</span>
+<span class="zh">跟长期维护它的运维成本比起来，开发一个软件的成本和痛苦约等于零。</span>
+<cite>同上</cite>
+</blockquote>
+<h3><span class="tag">02</span>恐惧是最大的技术债，而部署间隔是那个主变量</h3>
+<p>2019 年 4 月，有人在推特上发了个 ASCII 小兔子表情包，举着牌子说「周五别推生产」。这种东西她已经好几年没见到了，她以为行业早就翻篇了。</p>
+<p>于是她回了一条推。而她后来自己是这么描述这条推的——注意她的用词：</p>
+<blockquote>
+<span class="en">So I responded with an equally hyperbolic and indefensible claim: "If you’re scared of pushing to production on Fridays, I recommend reassigning all your developer cycles off of feature development and onto your CI/CD process and observability tooling for as long as it takes to ✨fix that✨."</span>
+<span class="zh">于是我回了一条同样夸张、同样站不住脚的主张：「如果你害怕在周五推生产，我建议你把所有的开发人力从功能开发上撤下来，投到 CI/CD 流程和可观测性工具上，修多久就投多久，直到✨修好为止✨。」</span>
+<cite>《Friday Deploy Freezes Are Exactly Like Murdering Puppies》，2019 年 5 月</cite>
+</blockquote>
+<p>她说她以为大家看得出这是半开玩笑。「我这里也错了。」互联网炸了。</p>
+<p>被炸出来的东西才是这个故事的重点。为了应付潮水般的反驳，她被迫把一个原本只是直觉的东西展开成了完整论证，而这个论证有三层。</p>
+<p><strong>第一层：真正的成本不在周五那一天，在恐惧本身。</strong>她列了一张账单——工程师等着「安全」的时间窗口、为了等窗口把改动攒成大包（于是那一包变得确实不安全）、调试一个混了七八个人改动的失败部署、部署完提心吊胆地等着被呼叫、花时间判断「现在到底能不能发」、以及事后收拾残局。她的结论是：在很多组织里，<strong>跟部署有关的焦虑是最大的单一技术债来源</strong>。而技术债不等于烂代码——技术债伤的是人。</p>
+<blockquote>
+<span class="en">Deploys are the heartbeat of your company. […] Every time your production pipeline stops, it is a heart attack.</span>
+<span class="zh">部署是你公司的心跳。[……] 你的生产流水线每停一次，就是一次心梗。</span>
+<cite>同上</cite>
+</blockquote>
+<p><strong>第二层：这是个自我强化的循环，方向和直觉相反。</strong>直觉说「不确定就慢一点」。而她援引 DORA 报告和《Accelerate》的研究说：部署频率和错误率不是此消彼长，是同向的——一个变好另一个也会变好。所以放慢、攒包、暂停部署，是在<strong>主动让自己的状况变糟</strong>。她把两条路都堵死了：如果你周五连合并都禁，你损失了五分之一的产出；如果你只禁部署不禁合并，那你是在攒一堆改动等着周一一起发，而那时写代码的人已经忘了一半上下文——那你打算搭进去一个周一，还是周一加周二，还是周一二三？</p>
+<p><strong>第三层，也是她最想要的那一层：规则是判断力的劣质替代品。</strong></p>
+<blockquote>
+<span class="en">Policies (and enumerated exceptions to policies, and exceptions to exceptions) are a piss-poor substitute for judgment. Rules are blunt instruments that stunt your engineers’ development and critical thinking skills.</span>
+<span class="zh">政策（以及政策的例外清单，以及例外的例外）是判断力的劣质替代品。规则是钝器，它会阻碍你的工程师发展自己的判断力和批判性思维。</span>
+<cite>同上（引自她自己的推文）</cite>
+</blockquote>
+<p>她自己完全同意好的部署卫生习惯：别在下班走人前发版、别在周末前发大功能、用功能开关把「上线代码」和「放开功能」拆开。<strong>但她要的是习惯，不是禁令</strong>——因为禁令恰恰阻止了判断力的养成。</p>
+<p>文章末尾她记了一件让她难过的事：不少人私下承认周五禁发既没用又有反效果，但他们仍然支持，<strong>因为那是一个表明「我们重视工作生活平衡」的象征性姿态</strong>。她的回应是这一整场争论里最狠的一句：</p>
+<blockquote>
+<span class="en">Blocking Friday deploy is not a mark of moral virtue; it is a physical bash script patching over technical rot. And technical rot is bad because it HURTS PEOPLE.</span>
+<span class="zh">禁止周五部署不是一枚道德勋章，它是一个用来糊住技术腐烂的 bash 脚本。而技术腐烂之所以糟糕，正是因为它<strong>伤害人</strong>。</span>
+<cite>同上</cite>
+</blockquote>
+<p>半年后有人写了篇长文（她形容为「一篇很长的暗贴」）反驳她。这一回合值得完整看，因为它是她方法的样板。她读完的第一反应不是反驳，是「我们其实几乎完全同意」。然后她只挑了一句来打——对方写道，自己「一直为极度（过度？）保护工程师的工作生活平衡而感到快乐和自豪」。她的拆解是：</p>
+<p><strong>你刚才做了一个偷换。你把「不在周五部署」直接定义成了「保护工程师的工作生活平衡」。</strong>而她的全部论点恰恰是：跟禁止周五部署捆绑在一起的那些行为和习惯，正在<strong>伤害</strong>你的工程师。她说，我也极度、甚至过度地保护我的工程师的作息——<strong>所以我们才在周五部署。</strong></p>
+<p>然后她端出了那两家公司。X 和 Z，参数几乎逐条相同，连开发者都有四个重合，一个每周叫醒两次，一个每年叫醒两次。她说差别归结为三件事：可观测性、观测驱动开发（写代码的同时就打埋点，代码评审时互相问「这东西坏了你怎么知道？」，每次发布后养成用埋点去看一眼的肌肉记忆），以及<strong>一次部署只带一个改动集</strong>。</p>
+<p>关于最后这条她讲了一个纯认知层面的理由，我认为是全文最有说服力的一段。你把代码合进主干之后，只会发生两件事之一：要么你立刻拉开一个窗口看着它发布出去，检查埋点是不是符合预期、有没有什么看着「怪怪的」；要么你关掉这个项目，打开下一个。而一旦你切到下一个项目，<strong>你的大脑会开始飞快地驱逐关于刚才那件事的全部丰富上下文，用新项目的细节覆盖掉它。</strong>这不是纪律问题，是大脑的工作方式。所以「合并后隔几小时甚至几天再部署」这件事的代价，是你永久失去了那个唯一有能力一眼看出问题的人。</p>
+<p>而她说 80% 到 90% 的问题本来可以在这里就被抓住——在用户注意到之前，在告警响起之前。</p>
+<p>最反直觉的是她给出的经验结论，她自己说这在当时不是共识、也让她吃了一惊：</p>
+<blockquote>
+<span class="en">Our systems were more stable when we always shipped right after the changes were merged. Our systems were less stable when we carved out times to pause deployments.</span>
+<span class="zh">我们的系统在「改动一合并就发」的时候更稳定。在我们划出时间段暂停部署的时候，反而更不稳定。</span>
+<cite>《Deploys: It’s Not Actually About Fridays》，2019 年 10 月</cite>
+</blockquote>
+<p>2025 年她把这条推到了一个更普遍的形式。在《In Praise of "Normal" Engineers》里，她攻击「10 倍工程师」这个说法，用的不是政治理由，是流水线理由：</p>
+<blockquote>
+<span class="en">Everyone uses the same software delivery pipeline. If it takes the slowest engineer at your company five hours to ship a single line of code, it’s going to take the fastest engineer at your company five hours to ship a single line of code.</span>
+<span class="zh">所有人用的是同一条软件交付流水线。如果你公司最慢的那个工程师要花五小时才能把一行代码送上线，那么你公司最快的那个工程师，也要花五小时才能把一行代码送上线。</span>
+<cite>《In Praise of "Normal" Engineers》，2025 年 6 月</cite>
+</blockquote>
+<p>由此她提出了一个我认为是她全部写作里最值得带走的判断标准：<strong>一个真正好的工程组织，不是聚集了最厉害的人的地方，而是普通工程师也能持续做出好工作的地方。</strong>她的原话没那么客气：</p>
+<blockquote>
+<span class="en">Any asshole can build an org where the most experienced, brilliant engineers in the world can build product and make progress. That is not hard.</span>
+<span class="zh">随便哪个混蛋都能建一个「让全世界最有经验、最聪明的工程师做出产品、取得进展」的组织。那不难。</span>
+<cite>同上</cite>
+</blockquote>
+<p>她还指出这里有个把「个人能动性」当解释的通病：把聚光灯全打在个人能力上，<strong>正好让领导者不必做自己那份工作</strong>。以及一句她说得很轻但分量很重的话——「天赋大概是均匀分布在人群里的，机会不是。」</p>
+<h3><span class="tag">03</span>指标在写入的那一刻，就把上下文扔掉了</h3>
+<p>这一节是技术核心，而她发现它的路径是从<strong>账单</strong>开始的，不是从架构开始的。</p>
+<p>2024 年初她注意到一件事：所有人都在抱怨成本，但人们谈到可观测性账单时，<strong>声音里有一种特别的、不一样的刺</strong>。她的判断是这不只是钱的问题：</p>
+<blockquote>
+<span class="en">I think it’s because people are beginning to correctly intuit that the value they get out of their tooling has become radically decoupled from the price they are paying.</span>
+<span class="zh">我认为那是因为人们开始正确地直觉到：他们从工具里得到的价值，已经和他们付出的价格彻底脱钩了。</span>
+<cite>《The Cost Crisis in Observability Tooling》，2024 年 1 月</cite>
+</blockquote>
+<p>注意「彻底脱钩」的具体含义。她说最好的情况是价格涨得比价值快几倍；而对相当多的人来说，<strong>账单上涨的同时，他们得到的价值实际上在下降。</strong></p>
+<p>然后她去数了。这是她最典型的动作：把一个模糊的怨气变成一个可以数的数字。她数的是「乘数」——同一个用户请求，你到底付费存了几遍？</p>
+<p>演化路径她写得很生动：所有人都有日志，于是上一个日志聚合服务。但日志很贵而且大家都想要仪表盘，于是买一个指标工具。软件工程师想给自己的应用打埋点，于是买一个 APM。单体拆成微服务之后没有链路追踪什么都看不懂，于是买一个追踪工具。前端同事说我们需要会话和浏览器数据，于是买一个 RUM。</p>
+<p><strong>日志、指标、APM、追踪、前端监控——同一个请求，你在五个地方、用五种格式，付费存了五遍。</strong>而她说 5 倍还是保守的一端，因为很多公司在同一个品类里还买了多个重叠的工具。</p>
+<p>数完之后，架构上的诊断才出现，而且它极其具体，具体到一个动词：<strong>写入时（at write time）</strong>。</p>
+<blockquote>
+<span class="en">A "metric" consists of a single number, often with tags appended. All of the context of the request gets discarded at write time; each individual metric is emitted separately. This means you can never correlate one metric with another from the same request.</span>
+<span class="zh">一个「指标」就是一个数字，通常挂几个标签。请求的全部上下文在写入的那一刻就被丢弃了；每个指标是各自单独发出去的。这意味着你永远无法把一个指标和同一个请求里的另一个指标关联起来。</span>
+<cite>同上</cite>
+</blockquote>
+<p>这一句是整个论证的支点。因为上下文是在写入时丢的，<strong>它就是不可恢复的</strong>——不管你事后多有钱、多聪明、买了多贵的工具。你在收集数据的那一刻，就已经决定好了自己将来能问哪些问题。而调试真实系统的困难恰恰在于，你需要问的是<strong>你当时想不到要问的那个问题</strong>。</p>
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="可观测性 1.0 与 2.0 的数据模型对比图">
+<text x="12" y="20" fill="#6ea8fe" font-family="monospace" font-size="14" font-weight="bold">可观测性 1.0：写入时丢掉上下文</text>
+<rect x="12" y="34" width="120" height="42" rx="6" fill="rgba(110,168,254,.10)" stroke="#6ea8fe" stroke-width="1.2"/>
+<text x="72" y="52" fill="#c8d2dc" font-family="monospace" font-size="11" text-anchor="middle">一个用户请求</text>
+<text x="72" y="67" fill="#7d8794" font-family="monospace" font-size="9.5" text-anchor="middle">（几百个字段）</text>
+<g stroke="#5f6b77" stroke-width="1" stroke-dasharray="3,3">
+<line x1="132" y1="55" x2="215" y2="30"/><line x1="132" y1="55" x2="215" y2="72"/>
+<line x1="132" y1="55" x2="215" y2="114"/><line x1="132" y1="55" x2="215" y2="156"/>
+<line x1="132" y1="55" x2="215" y2="198"/>
+</g>
+<text x="168" y="128" fill="#f0a0a0" font-family="monospace" font-size="10" text-anchor="middle">✂ 上下文</text>
+<text x="168" y="141" fill="#f0a0a0" font-family="monospace" font-size="10" text-anchor="middle">在此丢弃</text>
+<g font-family="monospace" font-size="10.5">
+<rect x="215" y="18" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="35" fill="#9aa6b2" text-anchor="middle">指标库</text>
+<rect x="215" y="60" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="77" fill="#9aa6b2" text-anchor="middle">日志库</text>
+<rect x="215" y="102" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="119" fill="#9aa6b2" text-anchor="middle">APM</text>
+<rect x="215" y="144" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="161" fill="#9aa6b2" text-anchor="middle">链路追踪库</text>
+<rect x="215" y="186" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="203" fill="#9aa6b2" text-anchor="middle">前端监控</text>
+</g>
+<text x="274" y="238" fill="#f0a0a0" font-family="monospace" font-size="11" text-anchor="middle">存 5 遍 · 付 5 份钱</text>
+<text x="274" y="256" fill="#7d8794" font-family="monospace" font-size="10" text-anchor="middle">互相之间无法关联</text>
+<line x1="360" y1="14" x2="360" y2="280" stroke="rgba(110,168,254,.2)" stroke-width="1"/>
+<text x="378" y="20" fill="#5eead4" font-family="monospace" font-size="14" font-weight="bold">可观测性 2.0：存一遍，读时再聚合</text>
+<rect x="378" y="34" width="120" height="42" rx="6" fill="rgba(94,234,212,.10)" stroke="#5eead4" stroke-width="1.2"/>
+<text x="438" y="52" fill="#c8d2dc" font-family="monospace" font-size="11" text-anchor="middle">一个用户请求</text>
+<text x="438" y="67" fill="#7d8794" font-family="monospace" font-size="9.5" text-anchor="middle">（几百个字段）</text>
+<line x1="438" y1="76" x2="438" y2="104" stroke="#5eead4" stroke-width="1.4"/>
+<polygon points="438,112 434,104 442,104" fill="#5eead4"/>
+<rect x="368" y="114" width="140" height="46" rx="6" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="1.4"/>
+<text x="438" y="133" fill="#d5dce4" font-family="monospace" font-size="11" text-anchor="middle">一条任意宽的</text>
+<text x="438" y="149" fill="#d5dce4" font-family="monospace" font-size="11" text-anchor="middle">结构化事件</text>
+<text x="438" y="176" fill="#5eead4" font-family="monospace" font-size="10.5" text-anchor="middle">上下文完整保留</text>
+<g stroke="#5eead4" stroke-width="1" stroke-dasharray="2,3">
+<line x1="508" y1="137" x2="576" y2="112"/><line x1="508" y1="137" x2="576" y2="146"/><line x1="508" y1="137" x2="576" y2="180"/>
+</g>
+<g font-family="monospace" font-size="10">
+<rect x="576" y="100" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="116" fill="#9aa6b2" text-anchor="middle">派生出指标</text>
+<rect x="576" y="134" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="150" fill="#9aa6b2" text-anchor="middle">派生出追踪</text>
+<rect x="576" y="168" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="184" fill="#9aa6b2" text-anchor="middle">派生出 SLO</text>
+</g>
+<text x="528" y="238" fill="#5eead4" font-family="monospace" font-size="11" text-anchor="middle">存 1 遍 · 付 1 份钱</text>
+<text x="528" y="256" fill="#7d8794" font-family="monospace" font-size="10" text-anchor="middle">任意维度可事后追问</text>
+</svg>
+<figcaption>她的全部技术论证压在一个动词上：聚合发生在「写入时」还是「读取时」</figcaption>
+</figure>
+<p>2024 年 8 月，她做了那个引起最多争议的动作：<strong>给这套东西编版本号。</strong>三大支柱那一代工具叫「可观测性 1.0」，建立在任意宽的结构化事件、单一事实来源之上的工具叫「可观测性 2.0」。她的理由是语义化版本号本来的定义——主版本号是留给<strong>破坏性的、不向后兼容的变更</strong>的：</p>
+<blockquote>
+<span class="en">You cannot simultaneously store your data across both multiple pillars and a single source of truth. Incompatible. Breaking change.</span>
+<span class="zh">你不可能同时既把数据存成多根支柱、又把它存成单一事实来源。不兼容。破坏性变更。</span>
+<cite>《Is it time to version observability? Signs point to yes》，2024 年 8 月</cite>
+</blockquote>
+<p>由这一个存储层的改动，她推出了一串后果，其中最有意思的两条都跟技术无关，跟<strong>谁能调试系统</strong>有关。</p>
+<p>在 1.0 世界里，你在仪表盘之间来回翻，用眼睛做模式匹配，靠直觉、经验和一个脑内的系统模型。所以——她说——<strong>最好的调试者永远是待得最久、见得最多的那个人。</strong>在 2.0 世界里，你不需要靠那个永远过时的脑内模型，你直接向数据提问、顺着面包屑往下走。所以<strong>最好的调试者是最好奇的那个人。</strong></p>
+<p>另一条是关于问题本身的：</p>
+<blockquote>
+<span class="en">When it comes to understanding your software, it’s often harder to identify the question than the answer. Once you know what the question is, you probably know the answer too.</span>
+<span class="zh">在理解自己的软件这件事上，找出该问什么问题，往往比找出答案更难。一旦你知道问题是什么，你八成也就知道答案了。</span>
+<cite>同上</cite>
+</blockquote>
+<p>而 1.0 的静态仪表盘只有在你已经知道要找什么的时候才好用——「你得先知道要去找它，才能找到它」。</p>
+<p>这篇文章最反直觉的一段，是她指出人们卡住的心理机制。她说很多团队觉得<strong>「得先把 1.0 搞明白了才有资格上 2.0」</strong>，而这把事情完全弄反了，因为 2.0 更简单、更便宜。</p>
+<blockquote>
+<span class="en">Observability 1.0 *is* the hard way. It’s so fucking hard. We’ve been doing it so long that we are blind to just how HARD it is.</span>
+<span class="zh">可观测性 1.0 <em>本身</em>就是那条难路。它太他妈难了。我们干这件事干得太久了，久到看不见它到底有多难。</span>
+<cite>同上</cite>
+</blockquote>
+<p>她给出的画面是：一整支一整支的工程团队，把整个职业生涯花在「揉搓基数以控制成本」上。然后她问了一个几乎是温柔的问题——<strong>「如果你根本不必干这件事呢？你会拿你的人生去做什么？」</strong></p>
+<p>值得记一笔的是这篇文章的结尾。她公开呼吁世界上出现更多<strong>不是 Honeycomb 的</strong> 2.0 工具，明确说「世界迫切需要一个 Honeycomb 的开源对应物」，并且劝人别再做基于指标的可观测性创业公司——因为 Datadog 和 Prometheus 是那条路上最后两个赢家，你追不上。这是她全篇最有说服力的一步：<strong>一个卖 2.0 的人，公开希望市场上多几个卖 2.0 的对手。</strong></p>
+<h3><span class="tag">04</span>代码不是理解本身，只是理解的一份缓存</h3>
+<p>2026 年，她把同一把刀捅进了 AI。而她进入这个话题的姿势很值得看：<strong>她一开始并不兴奋。</strong>她说 Honeycomb 2025 年 8 月发了 AI 强制令，她「全押在 AI 上，但心底里说不上多激动」。</p>
+<p>她先做的是诊断这场争论本身，而她的诊断当然是——反馈回路断了。</p>
+<p>她观察到一个具体场景：一场技术大会上，讲者展示了纯靠 vibe coding 取得的惊人成果，台下的管理者兴奋地议论「终于有证据可以拿去说服我那些抗拒的工程师了」。而她认识那家公司的其他人，那些人形容同一批项目是「一场恐怖秀」——几个月后还有团队在清理残局。</p>
+<blockquote>
+<span class="en">The wins and costs are happening to two different groups of people. There is no natural feedback loop. […] It has become very easy to do things without context or mastery, and the downstream costs are often invisible to the person who incurs them. All they see is the win.</span>
+<span class="zh">收益和代价落在两拨不同的人身上。中间没有天然的反馈回路。[……] 现在做事情不需要上下文、也不需要真正掌握，变得非常容易，而下游的代价对那个造成它的人往往是不可见的。他看到的只有胜利。</span>
+<cite>《AI enthusiasts are in a race against time, AI skeptics are in a race against entropy》，2026 年 6 月</cite>
+</blockquote>
+<p>她拒绝站队，理由是两边都对：狂热派没错，落后的团队可能等不到尘埃落定就出局了；<strong>怀疑派也没错</strong>——</p>
+<blockquote>
+<span class="en">When you ship code faster than engineers can read it, in domains where nobody has full context, you are making withdrawals from a trust account that took years to build.</span>
+<span class="zh">当你把代码推出去的速度快过工程师读它的速度，而且是在没人拥有完整上下文的领域里，你是在从一个花了很多年才攒起来的信任账户里取钱。</span>
+<cite>同上</cite>
+</blockquote>
+<p>两周后她给出了自己的正面主张，而它跟两边都不一样。</p>
+<p>转折点是她读到 Chad Fowler 关于「凤凰架构」的一系列文章。她说读了两三篇就「咔哒一声」——她已经知道对方接下来要说什么了。她引的那句让她想通的话是 Fowler 的：<strong>当重新生成变得廉价时，代码就不再是资产，而开始像一个缓存——一份关于理解的物化视图，新鲜时有用，过期就该丢。</strong></p>
+<p>为什么她一读就懂？因为她亲身经历过完全同构的一次转变。她第一个头衔是系统管理员，她活过了从「精心照料每一台服务器」到「不可变基础设施」的那次迁移。她在《Observability Engineering》第二版的最后一章里写：</p>
+<blockquote>
+<span class="en">The shift from handcrafted servers to immutable infrastructure taught us that mutability is the sworn enemy of understanding. Any artifact that is edited in place creates drift. Drift is what makes systems impossible to maintain.</span>
+<span class="zh">从手工雕琢的服务器转向不可变基础设施，这件事教给我们的是：可变性是理解的死敌。任何被就地修改的产物都会产生漂移。而漂移正是让系统变得无法维护的东西。</span>
+<cite>转引自《AI demands more engineering discipline. Not less》，2026 年 6 月</cite>
+</blockquote>
+<p>这里有一个具体到近乎粗暴的细节，是她整套哲学最好的实物证据：<strong>在 Honeycomb，他们用 cron 定时任务，每周二杀掉生产环境里最老的那个 Kafka 节点。</strong>不是演习，是常规。她给的理由是：正因为这样，他们才敢相信自己的引导和再平衡流程是好的——一切都可重复，数据可以再生成，真正的承诺存在别的地方。</p>
+<p>然后是那个推论：</p>
+<blockquote>
+<span class="en">The fact that we cannot regenerate our code in the same way is a sign that we do not understand it. We do not know which commitments we have made, we do not know which dependencies will break. We find them by breaking them, mostly.</span>
+<span class="zh">我们没法像重建基础设施那样重新生成代码，这件事本身就说明我们不理解它。我们不知道自己做过哪些承诺，不知道哪些依赖会断。我们基本上是靠把它们弄断来发现它们的。</span>
+<cite>同上</cite>
+</blockquote>
+<p>注意这一步的漂亮之处。<strong>「我们不敢删掉重写」在过去是一种美德，是对复杂性的敬畏。她把它重新归类成了一个诊断结果</strong>——它是无知的证据，而不是谨慎的证据。代码之所以变得珍贵，是因为它成了知识唯一的存放处。</p>
+<p>由此她给出了她那个会得罪很多人的结论。既然代码变廉价了，那么工程的重心就该从「产出代码」移到「验证行为」；而那些技术早就存在，只是长期被软件工程界瞧不起——它们来自运维和 QA。行为测试、特征化测试、录制回放、流量分流、可观测性。这些东西不测「应该发生什么」，它们观测并编码<strong>「实际正在发生什么」</strong>。</p>
+<p>然后是那句最不留情的：</p>
+<blockquote>
+<span class="en">Human brains are not good at validation. The nitpickiness, the repetition. […] We are never going to beat the machine when it comes to validation — we are literally the weakest link! […] PLEASE do not rest your killer argument for humans in software on us being the best quality gate.</span>
+<span class="zh">人脑不擅长验证。那种吹毛求疵，那种重复。[……] 说到验证，我们永远赢不了机器——我们根本就是最弱的那一环！[……] 拜托，不要把「软件需要人类」的杀手锏论证，押在「我们是最好的质量把关人」上面。</span>
+<cite>同上</cite>
+</blockquote>
+<p>而她真正的落点，是把 AI 变成一个反过来支持她十年主张的论据：<strong>非确定性的系统需要更多工程纪律，不是更少。</strong>她甚至坦白了自己的算盘——多年来行业不肯投资的那些东西（短反馈回路、埋点、生产环境验证），现在因为「每个 CEO 都急着要 AI 那块饼干」，终于可能被投资了。她的原话是：<strong>「先纪律，后饼干。」</strong></p>
+<p>这里她给了一个数字，是全篇最应该被记住的一个，因为它同时是她的野心和她的自白：</p>
+<blockquote>
+<span class="en">The share of software engineering teams that work in short, fast feedback loops (the cardinal sign of discipline in my book) is, and always has been, appallingly small. Five percent, maybe? Definitely less than 10%.</span>
+<span class="zh">真正工作在短而快的反馈回路里的软件工程团队占比（在我看来这是纪律的首要标志），一直都少得吓人。百分之五？肯定不到百分之十。</span>
+<cite>同上</cite>
+</blockquote>
+<p>换句话说：<strong>她写了十一年、被广泛引用、进了 O'Reilly 的书，而她自己估计这套东西的采用率不到一成。</strong></p>
+<h2>她的思维方法</h2>
+<p><strong>一、故意抛出一个站不住脚的说法，用被引出来的反驳去定位自己论证的真正弱点。</strong>这不是我的推测，是她自己写下来的用词——「同样夸张、同样站不住脚的主张」。她知道那条推文是钓饵。而事情的关键在于后半段：被炸出来之后，她没有防守，她把六个月的反驳材料吞下去，重新组织，产出了一篇比原推文强得多的文章，并且在里面明确承认「我这里也错了」。<strong>她把公开争吵当成一种同行评议</strong>——一种粗糙、吵闹，但速度极快的同行评议。这本身就是短反馈回路。</p>
+<p><strong>二、把模糊的怨气变成可以数的数字。</strong>大家都在抱怨可观测性太贵——这是情绪。她问：你的乘数是多少？同一个请求你付费存了几遍？去看你的分项账单。<strong>一个可以被具体回答、并且答案会吓到人的问题。</strong>她的整个 2.0 论证是从这个数字开始的，不是从架构美学开始的。</p>
+<p><strong>三、拿自己的两份工作当对照实验。</strong>X 公司和 Z 公司之所以有说服力，是因为她真的把变量控住了：同样的年限、同样的架构形态、同样的语言、同样的自研存储引擎，甚至同样的四个人。这在软件工程写作里极其罕见——大部分人只能给你他们成功那一次的故事。<strong>她给了你她失败那一次，而且她自己是两次的施工方。</strong></p>
+<p><strong>四、遇到分歧，先问「反馈回路断在哪」，而不是「谁对」。</strong>这是她最可迁移的一招，而且它不只用于技术。AI 狂热派和怀疑派为什么谈不拢？她的答案不是任何一方蠢，是<strong>收益和代价落在了不同的人身上，所以中间没有天然的回路</strong>。开发者为什么不在乎可靠性？不是因为他们不负责任，是因为被呼叫的是别人。这个动作的价值在于：它把道德指控转换成了系统设计问题，而系统设计问题是可以修的。</p>
+<p><strong>五、把自己的失败按事故复盘的格式写出来。</strong>2018 年她发了一篇给女性的职业建议，一周之内被网络围攻。她的处理方式是——写一篇《事后复盘：女权建议熔断事故（3 月 2 日）》。开头一句是：</p>
+<blockquote>
+<span class="en">As of today it’s been one week since I wrote some advice and the internet exploded in my face, so now it’s time to do what I always do: post mortem that shit.</span>
+<span class="zh">到今天为止，距离我写了点建议、然后互联网在我脸上炸开，已经过去一周了，所以现在是时候做我一贯做的事了：给这玩意儿写个复盘。</span>
+<cite>《Post-mortem: feminist advice meltdown (March 2nd)》，2018 年 3 月</cite>
+</blockquote>
+<p>文章里有「发生了什么」的时间线（包括「我可以是个记仇的小混蛋」这种对自己动机的诚实交代——她承认对方的批评之所以被她一口回绝，部分是因为私人恩怨），有她收集到的反馈分类，然后是一张<strong>「不后悔 / 后悔 / 半后悔」</strong>的清单，逐条判定。她既道了歉（对含糊处理自己性别议题的部分），也拒绝道歉（对建议本身），并且明确写出「我无意在一群嚎叫的暴民面前下跪」。<strong>这套格式是她从故障复盘里搬过来的：分清哪些是真的做错了，哪些只是结果不好。</strong>大部分人做不到第二件。</p>
+<p><strong>六、重新给词命名，而且知道自己在争夺什么。</strong>「运维不是岗位，是涌现属性」「管理不是升职，是转行」「可观测性 1.0 / 2.0」——这是同一个动作反复出现。她很清楚定义权就是权力：她自己写过，2018 年「三大支柱」这个说法之所以流行开来，一部分原因是<strong>厂商们「碰巧」手上有指标产品、日志产品和追踪产品要卖</strong>。她对此的回应不是抱怨，是自己也去下一次定义。这一招的道德位置很微妙，见下一节。</p>
+<h2>她哪里可能是错的</h2>
+<p><strong>最大的那条，她自己说过，而且说得比批评者还准。</strong>可观测性 2.0 的正确答案，恰好是她公司卖的产品。她在 2019 年就承认，正是因为怕听着像推销员，她一直不敢把这个论点讲透：</p>
+<blockquote>
+<span class="en">I think that I’ve been reluctant to hammer this home as much as I ought to, because I’m exquisitely sensitive about sounding like an obnoxious vendor trying to sell you things. (Which has absolutely been detrimental to my argument.)</span>
+<span class="zh">我想我一直不太愿意把这一点讲到位，因为我极度敏感于自己听起来像个想卖你东西的讨厌厂商。（而这对我的论证绝对是有害的。）</span>
+<cite>《Deploys: It’s Not Actually About Fridays》，2019 年 10 月</cite>
+</blockquote>
+<p>这段坦白值得赞赏，但它没有解决问题，只是把问题说清楚了。<strong>2024 年给竞争对手的架构编上「1.0」这个版本号，是一次明确的定价权动作</strong>——语义化版本号听起来是中立的技术语汇，实际效果是把别人的产品定义成上一代。她自己刚刚才指出过厂商是怎么用「三大支柱」这个说法来对齐自家产品线的；她做的是同一类事，只是她认为自己这边的技术判断是对的。这也许确实是对的，但它不构成方法上的差别。真正的对冲是她公开呼吁出现更多非 Honeycomb 的 2.0 工具——这个动作是真诚的，但它并不消除利益冲突，只是抬高了她自己的成本。</p>
+<p><strong>第二条是样本。</strong>Honeycomb 是她自己从零搭起来的、客户就是工程师的开发者工具公司，规模不大。她那个漂亮的对照实验里，Z 公司之所以能有那样的反馈回路，一部分原因是它足够新、足够小，而且 CTO 本人就是最在乎这件事的人。她给的建议——「拿几个周期下来修你他妈的部署流水线」——预设了你有权力做这个决定。<strong>很多工程师没有。</strong>而她在 2026 年那篇 AI 文章里其实非常明确地画出了适用边界（她说自己写的不是给管理层脱节的团队，不是给纪律和信任度低的团队，不是给毫无客户的小创业公司，也不是给还在为拿一个模型许可证跟红头文件搏斗的巨头），<strong>但这个边界只在那一篇里出现过；她大部分文章的音量并不带这个限定</strong>，这是她最容易被误读、也最容易得罪人的地方。</p>
+<p><strong>第三条来自她的批评者，而这一条我只能读到她自己转述的版本。</strong>2019 年有人写了长文反驳她的周五部署论，她在回应里逐字引用了对方这一段：</p>
+<blockquote>
+<span class="en">Lastly there is some strange argument that choosing not to deploy on Friday "Shouldn’t be a source of glee and pride". That one I haven’t figured out yet, because I have always had a lot of glee and pride in being extremely (overly?) protective of the work/life balance of the engineers who either work for me, or with me.</span>
+<span class="zh">最后还有个奇怪的论点，说选择不在周五部署「不该成为快乐和自豪的来源」。这条我到现在没想明白，因为我一直都为自己极度（过度？）保护那些为我工作、或者和我一起工作的工程师的工作生活平衡，而感到快乐和自豪。</span>
+<cite>她在《Deploys: It’s Not Actually About Fridays》中引用的原文（原文发表于 HackerNoon）</cite>
+</blockquote>
+<p><strong>说明：那篇原文本身我在本次写作中未能打开</strong>（本页所在环境的网络策略拦截了该站点，Hacker News 的相关讨论串同样打不开），所以我只能引用她转载的这一段，不能替原作者复述他的完整论证。同样地，我看到有资料提到过若干针对「可观测性 2.0」的技术质疑（主要是成本：宽事件保留了全部高基数和高维度，单请求数据量因此超过任一根单独的支柱，而指标在大规模聚合场景下仍然便宜得多），<strong>但那些原文我一篇都没读到，所以这里只报书目事实，不复述我没读过的论证。</strong></p>
+<p>不过她转述的这一段本身就够有意思。她的拆解（你把「不在周五部署」偷换成了「保护工程师」）在逻辑上是干净的。但对方那句话里其实还藏着一个她始终没有正面回应的东西：<strong>对方谈的是「我能给我的人保证什么」，她谈的是「系统应该长成什么样」。</strong>一个身在她描述的 X 公司、又没有权力把它改造成 Z 公司的经理，在她的框架里是没有位置的——她能给的只有「如果这是你唯一的杠杆，那就用它，但请把它当成一个丑陋的补丁而不是道德立场」。这是让步，但那篇文章的音量把这个让步盖住了。她自己后来也承认过，她并不是别人争论的那个绝对主义者，「而这是这场对话里最让人挫败的事情」。</p>
+<p><strong>最后，她最狠的那条批评是她自己写的。</strong>2023 年她回头看自己曾经的「最自豪的管理成就」——多年里花掉每周 50% 到 75% 的情绪带宽，把一个高才但难搞的组员留在团队里、留在公司里，还救回过一次几乎要走的危机。她重新判了这个案子：</p>
+<blockquote>
+<span class="en">All that my coddling ultimately did was teach them the wrong lessons, and prevent them from learning the right ones. It delayed those lessons by a few years, and made learning them all the more painful when they finally came.</span>
+<span class="zh">我那样宠着他，最后只是教会了他错误的功课，同时挡住了他学会正确那些。它把那些功课推迟了几年，也让它们真正到来时更痛。</span>
+<cite>《Helicopter Management》，2023 年 6 月</cite>
+</blockquote>
+<p>她给出的判据是一句可以直接拿走用的话：<strong>「如果你是把一个人拖过终点线的，那不叫成功。」</strong>值得注意的是这条自我批评和她整套哲学的关系——它就是同一个错误的组织版本。<strong>她当年做的事，本质上是用自己的情绪劳动去人肉补偿一条断掉的反馈回路，而不是让那个人自己收到反馈。</strong>她花了几年才在自己身上看出这一点，而这大概是这个博客里最能说明她的一处：她连自己的善意都拿去做了故障复盘。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://charity.wtf/p/wtf-is-operations-serverless">WTF is operations? #serverless</a>（2016 年 5 月）</span><span class="d">「运维不是岗位，是一种涌现属性」的原始定义，以及她为什么差点推掉那场演讲。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/the-engineer-manager-pendulum">The Engineer/Manager Pendulum</a>（2017 年 5 月）</span><span class="d">全站被自己回引最多的一篇：管理不是升职是转行，以及在工程和管理之间来回摆动作为一种正经职业路径。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/friday-deploy-freezes-are-exactly-like-murdering-puppies">Friday Deploy Freezes Are Exactly Like Murdering Puppies</a>（2019 年 5 月）</span><span class="d">恐惧作为终极技术债的完整账单，以及那句「规则是判断力的劣质替代品」。半年后的<a href="https://charity.wtf/p/deploys-its-not-actually-about-fridays">《Deploys: It's Not Actually About Fridays》</a>里有 X 公司与 Z 公司的对照。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/is-it-time-to-version-observability-signs-point-to-yes">Is it time to version observability? Signs point to yes</a>（2024 年 8 月）</span><span class="d">可观测性 1.0 与 2.0 的逐条对比：存储、成本、谁能调试、以及为什么她认为 1.0 才是那条难路。成本侧的算账在<a href="https://charity.wtf/p/the-cost-crisis-in-observability-tooling">《The Cost Crisis in Observability Tooling》</a>。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/in-praise-of-normal-engineers">In Praise of "Normal" Engineers</a>（2025 年 6 月）</span><span class="d">对「10 倍工程师」的流水线式反驳，以及那个判据：好的工程组织是普通人也能做出好工作的地方。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/ai-demands-more-engineering-discipline">AI demands more engineering discipline. Not less</a>（2026 年 6 月）</span><span class="d">代码作为「理解的物化视图」，每周二被 cron 杀掉的 Kafka 节点，以及那个不到一成的数字。前情是<a href="https://charity.wtf/p/ai-enthusiasts-are-in-a-race-against">《AI enthusiasts are in a race against time, AI skeptics are in a race against entropy》</a>。</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/helicopter-management">Helicopter Management</a>（2023 年 6 月）</span><span class="d">她把自己「最自豪的管理成就」重新判定为失败的那一篇。另有 2018 年的<a href="https://charity.wtf/p/post-mortem-feminist-advice-meltdown-march-2nd">《Post-mortem: feminist advice meltdown》</a>，用故障复盘格式处理自己的公开翻车。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-05" data-slug="charity-wtf">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-05</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>

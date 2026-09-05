@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Charity Majors · charity.wtf — You Cannot Read Your Code And Know What It Does</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#c3cdd8;font-size:.97rem;line-height:1.72}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.tag{display:inline-block;font-family:"SF Mono",Menlo,monospace;font-size:.7rem;letter-spacing:.8px;color:#0d1117;background:#5eead4;padding:2px 9px;border-radius:10px;vertical-align:middle;margin-right:8px}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="charity-wtf-blog7.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep-Read · 07 · charity.wtf</div>
+<h1>Charity Majors · charity.wtf<br/>You Cannot Read Your Code And Know What It Does</h1>
+<p class="sub">December 2015 to now · 127 posts · still active (latest 8 July 2026) · moved from WordPress to Substack in December 2025, all old links preserved · this page is based on 14 posts read in full, spanning May 2016 to June 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>In October 2019, Charity Majors put two companies side by side on their blog and invited readers to spot the difference.</p>
+<p><strong>Company X.</strong> Three years old. A large, fast-growing multi-tenant platform on a big distributed system, spiky traffic, mountains of user-submitted data, a very green database underneath. Ships the API about once a day, does a global deploy every Tuesday. Deploys usually involve some firefighting and a rollback or two. Engineers get <strong>woken up roughly twice a week</strong>.</p>
+<p><strong>Company Z.</strong> Three years old. A large, fast-growing multi-tenant platform on a big distributed system, spiky traffic, mountains of user-submitted data, a very green home-built columnar storage engine underneath. Deploys automatically within 30 minutes of a merge. Engineers get woken up <strong>no more than a couple of times a year</strong>.</p>
+<p>Both are developer platforms. Both run elastic microservices written in Go. Both stuff user-defined data into a young, homegrown storage engine. <strong>They even share four of the same developers.</strong></p>
+<p>Then comes the reveal: these are Majors' last two jobs. X is Parse (2012–2016), Z is Honeycomb (2016–present). They built the infrastructure at both.</p>
+<p>The thing that differs by two orders of magnitude is not the stack, not the talent, and not luck. <strong>It is how long it takes between writing a line of code and seeing what that line actually does to real users.</strong></p>
+<p>That is the single idea behind eleven years and 127 posts. Majors keeps applying it to four things that look unrelated, and keeps arriving at conclusions people would rather not hear.</p>
+<h3>The fight</h3>
+<p>Majors is cofounder and CTO of Honeycomb, and the modern software usage of the word <em>observability</em> was largely lifted out of control theory by them and their colleagues in 2016. But the root problem is far more mundane than that, and almost every programmer assumes it isn't a problem at all:</p>
+<p><strong>You do not know what your code does.</strong> You cannot get it by reading. You cannot get it from tests. The only way to know is to let real users run it and then go look.</p>
+<blockquote>
+<span class="en">You'll never know — not really — what the code you wrote does just by reading it. The only way to be sure is by instrumenting your code and watching real users run it in production.</span>
+<cite>"In Praise of 'Normal' Engineers", June 2025</cite>
+</blockquote>
+<p>Accept that, and the rest is consequences. And the consequences run somewhere few people are willing to go: <strong>nearly every dysfunction in software — technical, organizational, and now AI-shaped — is the same thing wearing different clothes. A feedback loop that has been stretched or cut.</strong></p>
+<h3>The four hardest swings</h3>
+<p><strong>1. Fear is the biggest technical debt there is.</strong> In 2019 someone posted a cute ASCII bunny holding a "don't push to production on Friday" sign. Majors fired back with what they themselves later called an "equally hyperbolic and indefensible claim": if you're scared to deploy on Fridays, pull every developer off feature work and onto the pipeline until it's fixed. The internet detonated for six months. The eventual argument: the real cost isn't Friday, it's every habit you build to route around the fear — batching changes up, waiting anxiously to get paged, losing Monday to debugging a blob nobody can untangle.</p>
+<blockquote>
+<span class="en">Fear of deploys is the ultimate technical debt.</span>
+<cite>"Friday Deploy Freezes Are Exactly Like Murdering Puppies", May 2019</cite>
+</blockquote>
+<p>And the evidence offered isn't reasoning, it's those two companies:</p>
+<blockquote>
+<span class="en">Our systems were more stable when we always shipped right after the changes were merged. Our systems were less stable when we carved out times to pause deployments.</span>
+<cite>"Deploys: It's Not Actually About Fridays", October 2019</cite>
+</blockquote>
+<p><strong>2. Metrics throw away the context at write time.</strong> For a decade the industry described observability as "three pillars: metrics, logs, traces." In 2024 Majors did something impolite: assigned that generation a version number, <strong>Observability 1.0</strong>, and declared it superseded. The reason is purely technical. A metric is one number plus some tags; the rest of the request's context is discarded the instant it is written, so you can never correlate it back. You have to guess in advance which questions future-you will need to ask.</p>
+<blockquote>
+<span class="en">Metrics are a terrible building block for understanding rich data, because you have to discard all that valuable context at write time […] You will go broke and go mad if you try.</span>
+<cite>"Is it time to version observability? Signs point to yes", August 2024</cite>
+</blockquote>
+<p>They also went and counted the bill: the same user request stored and paid for five times over, in logs, metrics, APM, tracing and RUM. <strong>A 5x multiplier is the modest end.</strong></p>
+<p><strong>3. Management is not a promotion.</strong> The 2017 essay "The Engineer/Manager Pendulum" is the most self-cited post in the entire corpus. Its core claim is near-heresy inside a Silicon Valley career ladder:</p>
+<blockquote>
+<span class="en">Management is not a promotion, management is a change of profession. And you will be bad at it for a long time after you start doing it. If you don't think you're bad at it, you aren't doing your job.</span>
+<cite>"The Engineer/Manager Pendulum", May 2017</cite>
+</blockquote>
+<p>Hence the pendulum: the best frontline managers are never more than two or three years from hands-on work, the best tech leads have done time managing, so stop picking a lane and swing back and forth. <strong>"It isn't a promotion, so you don't have any status to give up."</strong></p>
+<p><strong>4. Code is not understanding. It is a cache of understanding.</strong> In 2026 Majors turned the same blade on AI, and landed somewhere neither camp likes: AI does not make engineering discipline optional, it makes it <em>mandatory for the first time</em>. Once code can be regenerated cheaply, "we can't just throw it away and rewrite it" stops being prudence and becomes a diagnosis.</p>
+<blockquote>
+<span class="en">The fact that we cannot regenerate our code in the same way is a sign that we do not understand it. We do not know which commitments we have made, we do not know which dependencies will break. We find them by breaking them, mostly.</span>
+<cite>"AI demands more engineering discipline. Not less", June 2026</cite>
+</blockquote>
+<p>Plus a line that will annoy a lot of people: don't rest the case for humans in software on humans being the better quality gate. <strong>"We are literally the weakest link."</strong></p>
+<h3>Where this might not hold</h3>
+<p>The biggest problem is one Majors named first: <strong>the correct answer to Observability 2.0 happens to be the product their company sells.</strong> They admitted in 2019 that fear of sounding like a vendor had kept them from making the argument properly — "which has absolutely been detrimental to my argument." And stamping a rival architecture with the version number "1.0" is itself a move in a fight over naming rights.</p>
+<p>Second, the sample. Honeycomb is a developer-tools company they built from scratch, whose customers are engineers. The advice assumes you have the authority to go fix your pipeline. Many people do not.</p>
+<p>But this is also someone who writes their own disasters up as incident reviews. After a week of being mobbed online in 2018 over a piece of career advice, the response was a formal <em>post-mortem</em> with a "regrets / no regrets / semi-regrets" ledger. And in 2023 they went back to what they'd have filed under "proudest manager moments" — years of spending 50–75% of their emotional bandwidth keeping one person on the team — and reclassified it as a failure:</p>
+<blockquote>
+<span class="en">All that my coddling ultimately did was teach them the wrong lessons, and prevent them from learning the right ones.</span>
+<cite>"Helicopter Management", June 2023</cite>
+</blockquote>
+<p class="sub" style="margin-top:26px"><em>For how each of the four ideas was actually discovered, how an admittedly indefensible tweet got used as bait to locate the weak points in their own argument, how "ops" became a slur over twenty years (and who gets blamed), exactly where the 1.0 and 2.0 data models diverge, and the number they conceded in 2026 — switch to Full above.</em></p>
+</div>
+<!-- ============ FULL ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>Deploy</b> — pushing finished code onto the servers real users are hitting. "Fifty deploys a day" and "one deploy a month" are two different professions.</li>
+<li><b>Production (prod)</b> — the system real users actually touch, as opposed to a staging copy with no real users in it.</li>
+<li><b>On-call / paging</b> — engineers take shifts where their phone can go off at any hour, including 3am, when the system breaks. A large share of burnout in this industry starts here.</li>
+<li><b>Observability</b> — the ability to work out what is happening inside a system from the data it emits. Originally a control-theory term, imported into software in 2016.</li>
+<li><b>Metrics / logs / traces</b> — three kinds of telemetry. A metric is a number ("4,200 requests/sec"); logs are lines of text; a trace records which services a request passed through and how long each took. The industry once called these observability's "three pillars."</li>
+<li><b>Cardinality</b> — how many distinct values a field can take. "Country" has a couple hundred; "user ID" has millions. High-cardinality fields are the most useful (they tell you <em>which</em> user broke) and the most expensive — traditional metrics systems can barely handle them.</li>
+<li><b>Structured event</b> — instead of scattered log lines, one record packing everything about a single request (who, which branch, how long, what error — hundreds of fields). The central technical fight on this page is about this.</li>
+<li><b>Immutable infrastructure</b> — when a server misbehaves you don't repair it, you destroy it and build a new one. Became mainstream around 2013, replacing the older craft of tending each machine by hand.</li>
+<li><b>DevOps / SRE</b> — two movements aimed at closing the gap between the people who write code and the people who run it. SRE (Site Reliability Engineering) is Google's version.</li>
+</ul>
+</div>
+<h2>One strange thing</h2>
+<p>In October 2019, Charity Majors laid out two companies and asked readers to find the difference.</p>
+<p><strong>Company X</strong> is three years old: a large, fast-growing multi-tenant platform on a big distributed system with spiky traffic, lots of user-submitted data, and a very green database. It ships the API about once a day and does a global deploy of all services every Tuesday. Deploys often involve firefighting and a rollback or two, and Tuesdays are frequently a whole day of shipping and reverting. Pager volume "isn't the worst" — it usually means <strong>getting woken up a couple of times a week</strong> — and roughly a third of deploys throw an alert that then has to be triaged to work out whose diff caused it.</p>
+<p><strong>Company Z</strong> is three years old: a large, fast-growing multi-tenant platform on a big distributed system with spiky traffic, lots of user-submitted data, and a very green home-built columnar storage engine. A merge to master automatically triggers a deploy of every affected service within 30 minutes. Deploys rarely page anyone, because most problems are <strong>caught visually</strong> by the engineer who made the change and fixed or reverted before an alert can fire. Roughly one alert per week outside working hours, and <strong>nobody is woken up more than a couple of times a year</strong>.</p>
+<p>The two have an absurd amount in common. Both are platform products for developers. Both run highly elastic microservices in Go. Both take lots of spiky traffic. Both store user-defined data in a young, homegrown columnar engine. <strong>They even share four of the same developers.</strong></p>
+<p>Then the reveal: these are Majors' own last two jobs. X is Parse (2012–2016), Z is Honeycomb (2016–present). <strong>They built the infrastructure at both.</strong></p>
+<p>So whatever turns "twice a week" into "twice a year" cannot be the stack, is unlikely to be raw talent, and is almost certainly not luck. Majors thinks it has exactly one source, and that the industry systematically underinvests in it: <strong>the interval between an engineer writing a line of code and that engineer seeing what the line did to a real user.</strong></p>
+<h2>Who this is</h2>
+<p>Charity Majors left home at fifteen, out of what they describe as a "fundamentalist and misogynist af" upbringing. Their first job title was System Administrator — as a teenager, working at a university, holding <strong>root on every machine on campus</strong>, in what they call the days before people learned they should definitely not do that.</p>
+<p>From 2012 to 2016 they were at Parse, helping it grow from a handful of apps to over a million, and through an acquisition by Facebook. In 2016 they cofounded Honeycomb with Christine Yen and have been CTO since. They co-wrote two O'Reilly books, <em>Database Reliability Engineering</em> and <em>Observability Engineering</em> (second edition, 2026). The blog runs from 27 December 2015 to today, 127 posts, no visible dry spell, and <strong>moved from WordPress to Substack in December 2025</strong> — for which they wrote a dedicated post whose reasoning is not ideological but ergonomic: WordPress "feels so heavyweight," Substack feels "more like writing an email," and they hoped that would make them post more. They also committed to never taking paid subscriptions.</p>
+<p>On pronouns: in a 2025 post on exactly this subject, Majors writes that their pronouns are "she/her or they/them," and adds, "I've never felt any affinity with feminine pronouns or identity, but I don't care enough to correct anyone or assert a preference for they/them." This page uses they/them. Incidentally, the argument of that post is that making it safe to share pronouns is good and <strong>mandating</strong> that everyone share them is bad — and the first reason given is "I resent being forced to pick a side in public when I'm just trying to do my goddamn job." You will meet that sentence structure everywhere in this blog.</p>
+<h2>What they're fighting</h2>
+<p>Filing Charity Majors under "observability evangelist" is accurate but backwards — that's the conclusion, not the question. The thing they haven't put down in eleven years is much plainer, plain enough that almost nobody treats it as a problem:</p>
+<p><strong>You do not know what your code does.</strong></p>
+<p>Not in the sense that you might have an undiscovered bug. In a more basic sense: reading won't tell you, because code expresses intent rather than behavior; tests won't tell you, because tests only cover the cases you thought of. The only way to know is to put it in front of real users and go look.</p>
+<blockquote>
+<span class="en">You'll never know — not really — what the code you wrote does just by reading it. The only way to be sure is by instrumenting your code and watching real users run it in production.</span>
+<cite>"In Praise of 'Normal' Engineers", June 2025</cite>
+</blockquote>
+<p>How they arrived at this matters more than the argument, because they were tortured by it for four years first.</p>
+<p>Parse was a backend-as-a-service: app developers worldwide threw their data models, queries and business logic at it, and Parse ran them. Which meant that <strong>most of the code running in Parse's production environment was not written by Parse</strong>. It was written by a million strangers, and it changed constantly. Any one of them could write a bad query and put Majors on the floor at 3am. And the monitoring available could tell them that overall latency was up — not which app, which user, which query.</p>
+<p>They later described Parse in 2013 as "a trash fire." The turn came after the Facebook acquisition, when they started feeding datasets into an internal Facebook tool called <strong>Scuba</strong>. Scuba's interface was ugly, but it did the one thing nothing else did: it stored the full context of every request as one wide record, and let you slice it any way you liked — including in ways you only thought of at the moment you asked.</p>
+<p>That is the hinge. <strong>Honeycomb is essentially "make Scuba into a product anyone can buy,"</strong> and everything written since is an attempt to generalize one private experience into a public claim.</p>
+<p>It's worth being precise about the shape of that claim. It is not "buy better monitoring." It is: <strong>you cannot understand a system you get no feedback from, and nearly every dysfunction in software — technical, organizational, and now AI-shaped — is the same thing wearing different clothes: a feedback loop stretched out or cut.</strong> And the second move is always identical: <strong>when you find a broken loop, don't add a rule. Shorten the loop.</strong></p>
+<p>The four ideas below are one screwdriver turning four screws.</p>
+<h2>The ideas, told as the discovery</h2>
+<h3><span class="tag">01</span>Ops is not a role. It is an emergent property.</h3>
+<p>May 2016, the first Serverlessconf in New York. The organizers invited Majors to speak. They turned it down, accepted, backed out, and accepted again at the last minute. The stated reason is blunt: they thought <strong>the attendees wouldn't want to hear what they had to say</strong>.</p>
+<p>They had just come out of Parse. The room's slogans were "the future is serverless!" and "#NoOps!"</p>
+<blockquote>
+<span class="en">I've lived the other side of this fairytale. I've seen what happens when application developers think they don't have to care about the skills associated with operations engineering. When they forget that no matter how pretty the abstractions are, you're still dealing with dusty old concepts like "persistent state" and "queries" and "unavailability" and so forth.</span>
+<cite>"WTF is operations? #serverless", May 2016</cite>
+</blockquote>
+<p>But they didn't stop at grumbling. They did something more interesting: <strong>they went home and redefined the word.</strong> That definition is the pivot of the whole essay.</p>
+<blockquote>
+<span class="en">At a macro level, operational excellence is not a role, it's an emergent property. It is how you get shit done.</span>
+<cite>Same</cite>
+</blockquote>
+<p>The analogy offered is nasty and hard to escape: saying you have an ops team solely responsible for reliability is about as silly as saying <strong>"HR defines and owns our company culture!"</strong> Culture is emergent; everyone from the CEO to support contributes, and a couple of bad actors can spoil the bushel. Reliability works the same way.</p>
+<p>Why does this matter? Because if ops is a role, then "make ops responsible for stability" is a sane org design. <strong>But if it is an emergent property, then carving it out and handing it to another team is itself an act of cutting a feedback loop</strong> — the people writing the code stop bearing its consequences, and therefore stop receiving information about it. This is the org-chart version of the root problem.</p>
+<p>That October they demonstrated the method. A company called CleverTap published a write-up of losing data during a MongoDB upgrade, concluding that MongoDB was bad. Majors read it grinding their teeth, and enumerated what had actually been done: within three days, a major version upgrade <em>and</em> a storage engine swap, simultaneously, with zero secondaries left holding data in the old engine. Then this:</p>
+<blockquote>
+<span class="en">But *I* can criticize Mongo all day long. You children on hacker news who have never run it don't get to. If you don't know what the fuck you're talking about, if you're cargo culting other people's years-old complaints, just shut up already.</span>
+<cite>"The Accidental DBA", October 2016</cite>
+</blockquote>
+<p>The constructive half is their own Parse experience. Moving from MMAPv1 to RocksDB, they <strong>ran hybrid replica sets for six to nine months</strong>, spent half a year capturing production workloads and replaying them, electing Rocks primaries and rolling back, keeping snapshots and secondaries of both engines for months. The governing principle: the closer you get to laying bits down on disk, the more conservative and afraid you should be. That sentence reappears verbatim in their 2026 writing.</p>
+<p>Then, twenty years later, the reckoning. In January 2026 they published a piece on the Honeycomb blog titled "You Had One Job: Why Twenty Years of DevOps Has Failed to Do It." The verdict:</p>
+<blockquote>
+<span class="en">In retrospect, I think the entire DevOps movement was a mighty, twenty year battle to achieve one thing: a single feedback loop connecting devs with prod. On those grounds, it failed.</span>
+<cite>quoted in "Bring Back Ops Pride", January 2026</cite>
+</blockquote>
+<p>And the reason for failure is not that engineers didn't care — it's that <strong>the tools weren't good enough</strong>. Connecting that loop with those tools could double, triple or quadruple the time it took to do the actual job of writing business logic, so rational people didn't do it.</p>
+<p>That post also assigns blame. Why is "ops" a slur only in software, when business ops, marketing ops, sales ops and product ops are treated with ordinary respect?</p>
+<blockquote>
+<span class="en">Whose fault is it? Google. It's Google's fault. I know this, because I asked Google and it told me so.</span>
+<cite>"Bring Back Ops Pride", January 2026</cite>
+</blockquote>
+<p>Underneath the joke is a serious claim. Google said traditional operations couldn't scale and had to become more like software engineering, which was the right message at the right moment. <strong>But a crucial distinction was lost in translation</strong> — people started reading it as developers (who write code: good) versus operators (who do things by hand: bad). Majors insists the real distinction is not whether you write code ("Dude, it's 2026: everyone writes software") but <strong>a separation of concerns</strong>: if your concern is new features and new revenue, you're a dev; if your concern is keeping core services serving customers in the face of all threats — including, top of the list, your own developers — you are in ops.</p>
+<p>They also invert the industry's status ladder. Product engineering is typically <em>simpler</em> than infrastructure engineering, precisely because one of ops' core functions is to absorb the hardest technical problems and present product development with a surface that is simple and reliable. Not because product engineers are lesser, but because cognitive bandwidth is the scarcest resource in any engineering org.</p>
+<blockquote>
+<span class="en">The cost and pain of developing software is approximately zero compared to the operational cost of maintaining it over time.</span>
+<cite>Same</cite>
+</blockquote>
+<h3><span class="tag">02</span>Fear is the biggest technical debt, and deploy interval is the master variable</h3>
+<p>April 2019. Someone tweeted an ASCII bunny holding a "Don't push to production" sign for Friday. Majors hadn't seen that sentiment in years and thought the zeitgeist had moved on. So they replied — and note how they later described their own reply:</p>
+<blockquote>
+<span class="en">So I responded with an equally hyperbolic and indefensible claim: "If you're scared of pushing to production on Fridays, I recommend reassigning all your developer cycles off of feature development and onto your CI/CD process and observability tooling for as long as it takes to ✨fix that✨."</span>
+<cite>"Friday Deploy Freezes Are Exactly Like Murdering Puppies", May 2019</cite>
+</blockquote>
+<p>They assumed it would read as tongue-in-cheek. "I was wrong there too." The internet detonated.</p>
+<p>What got detonated out is the point of the story. Forced to handle a tide of objections, Majors had to expand an intuition into a full argument, and it has three layers.</p>
+<p><strong>Layer one: the cost isn't Friday, it's the fear.</strong> They itemize the bill — engineers waiting until it's "safe," batching changes into bigger changes that are genuinely unsafe, debugging broken deploys with many changes glommed together, waiting nervously to get paged, working out whether now is a good time, and cleaning up afterwards. The conclusion: in many orgs, <strong>deploy anxiety is the single largest source of technical debt</strong>. And technical debt is not the same as bad code — tech debt hurts <em>people</em>.</p>
+<blockquote>
+<span class="en">Deploys are the heartbeat of your company. […] Every time your production pipeline stops, it is a heart attack.</span>
+<cite>Same</cite>
+</blockquote>
+<p><strong>Layer two: the loop is self-reinforcing, in the direction opposite to intuition.</strong> Intuition says slow down when uncertain. Citing the DORA research and <em>Accelerate</em>, Majors argues deploy velocity and low error rates are not in tension — improve one and the other improves too. So slowing down, batching, and pausing are <strong>actively making your own state worse</strong>. Both escapes are closed off: block merges on Fridays and you sacrifice a fifth of your output; block only deploys and you queue up a pile of changes to ship days later, long after the authors have lost half their context — so are you spending Monday on it, or Monday and Tuesday, or Monday through Wednesday?</p>
+<p><strong>Layer three, the one they actually want:</strong></p>
+<blockquote>
+<span class="en">Policies (and enumerated exceptions to policies, and exceptions to exceptions) are a piss-poor substitute for judgment. Rules are blunt instruments that stunt your engineers' development and critical thinking skills.</span>
+<cite>Same (quoting their own tweet)</cite>
+</blockquote>
+<p>They fully endorse good deploy hygiene: don't ship as you walk out the door on any day, don't ship big gnarly features right before the weekend, use feature flags to decouple deploys from releases. <strong>But they want habits, not bans</strong> — because bans are precisely what prevents judgment from developing.</p>
+<p>The essay ends on something that clearly upset them: an alarming number of people privately admitted Friday freezes were useless or counterproductive but supported them anyway, <strong>as a symbolic gesture showing they cared about work/life balance</strong>. The response is the sharpest line in the whole affair:</p>
+<blockquote>
+<span class="en">Blocking Friday deploy is not a mark of moral virtue; it is a physical bash script patching over technical rot. And technical rot is bad because it HURTS PEOPLE.</span>
+<cite>Same</cite>
+</blockquote>
+<p>Six months later someone published a long rebuttal (Majors called it "basically a very long subtweet"). This round is the template for their whole method. The first reaction isn't counterattack, it's "we are actually in violent agreement, almost entirely." Then they pick exactly one sentence to hit — the author had written that they'd always taken glee and pride in being extremely (overly?) protective of their engineers' work/life balance. The dismantling:</p>
+<p><strong>You just performed a substitution. You defined "not deploying on Friday" as synonymous with "protecting engineers' work/life balance."</strong> Whereas the entire argument is that the practices bundled with blocking Friday deploys are <em>hurting</em> your engineers. Majors, too, is extremely and even overly protective of their engineers' hours — <strong>and that is why we deploy on Fridays.</strong></p>
+<p>Then out come the two companies. X and Z, matched nearly line for line, four developers in common, one waking people twice a week and the other twice a year. The difference reduces to three things: observability; observability-driven development (instrument as you write, make "how will you know if this is broken?" a code-review habit, build the muscle memory of going to look after every deploy); and <strong>a single merge per deploy</strong>.</p>
+<p>On that last one they give a purely cognitive argument that I think is the most persuasive passage in the piece. After you merge, exactly one of two things happens: either you promptly pull up a window and watch it roll out, checking whether the instrumentation says what you expected and whether anything looks weird — or you close the project and open a new one. And the moment you switch projects, <strong>your brain starts rapidly evicting all the rich context about what you had intended, overwriting it with the new project's details.</strong> That isn't a discipline failure, it's how brains work. So the price of deploying hours or days after merge is that you permanently lose the one person capable of spotting the problem at a glance.</p>
+<p>They claim 80–90% of problems could be caught right there, before users notice and before alerts fire.</p>
+<p>The counterintuitive part is the empirical finding, which they say surprised them and was not conventional wisdom at the time:</p>
+<blockquote>
+<span class="en">Our systems were more stable when we always shipped right after the changes were merged. Our systems were less stable when we carved out times to pause deployments.</span>
+<cite>"Deploys: It's Not Actually About Fridays", October 2019</cite>
+</blockquote>
+<p>In 2025 this got pushed into a more general form. "In Praise of 'Normal' Engineers" attacks the "10x engineer" not on political grounds but on pipeline grounds:</p>
+<blockquote>
+<span class="en">Everyone uses the same software delivery pipeline. If it takes the slowest engineer at your company five hours to ship a single line of code, it's going to take the fastest engineer at your company five hours to ship a single line of code.</span>
+<cite>"In Praise of 'Normal' Engineers", June 2025</cite>
+</blockquote>
+<p>Which yields what may be the single most portable standard in all their writing: <strong>a great engineering org is not one stocked with the best people, it's one where perfectly ordinary engineers can consistently do good work.</strong> Their own phrasing is less polite:</p>
+<blockquote>
+<span class="en">Any asshole can build an org where the most experienced, brilliant engineers in the world can build product and make progress. That is not hard.</span>
+<cite>Same</cite>
+</blockquote>
+<p>And they identify the failure mode in treating individual agency as the explanation: putting all the spotlight on individual ability <strong>lets your leaders off the hook for doing their jobs</strong>. Plus a quiet line carrying a lot of weight — "Talent may be evenly distributed across populations, but opportunity is not."</p>
+<h3><span class="tag">03</span>Metrics discard the context at write time</h3>
+<p>This is the technical core, and the path in runs through <strong>the invoice</strong>, not the architecture.</p>
+<p>In early 2024 Majors noticed something: everyone complains about costs, but when people talked about their observability bill there was <strong>a particular edge in their voices</strong>. The read was that this wasn't only about money:</p>
+<blockquote>
+<span class="en">I think it's because people are beginning to correctly intuit that the value they get out of their tooling has become radically decoupled from the price they are paying.</span>
+<cite>"The Cost Crisis in Observability Tooling", January 2024</cite>
+</blockquote>
+<p>Note what "radically decoupled" means concretely. The happiest case is that price rises several times faster than value. For an alarming number of people, <strong>the value actually decreases as the bill goes up.</strong></p>
+<p>Then they went and counted — the signature move, turning a vague grievance into a number. The number is the multiplier: how many times are you paying to store data about the same request?</p>
+<p>The evolutionary path is vividly told. Everybody has logs, so you spin up log aggregation. But logs are expensive and everyone wants dashboards, so you buy a metrics tool. Engineers want to instrument their applications, so you buy APM. You unbundle the monolith and can't understand anything without traces, so you buy tracing. Front-end says they need sessions and browser data, so you buy RUM.</p>
+<p><strong>Logs, metrics, APM, traces, RUM — the same request, stored five ways, in five places, paid for five times.</strong> And 5x is the modest end, because plenty of companies also run multiple overlapping tools in the same category.</p>
+<p>Only after the counting does the architectural diagnosis arrive, and it lands on one specific phrase: <strong>at write time</strong>.</p>
+<blockquote>
+<span class="en">A "metric" consists of a single number, often with tags appended. All of the context of the request gets discarded at write time; each individual metric is emitted separately. This means you can never correlate one metric with another from the same request.</span>
+<cite>Same</cite>
+</blockquote>
+<p>That sentence is the fulcrum. Because the context is discarded at write time, <strong>it is unrecoverable</strong> — no amount of later money or cleverness brings it back. At the moment of collection you have already decided which questions you will ever be able to ask. And the difficulty of debugging real systems is precisely that the question you need is <strong>the one you didn't think to ask</strong>.</p>
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="Diagram comparing the Observability 1.0 and 2.0 data models">
+<text x="12" y="20" fill="#6ea8fe" font-family="monospace" font-size="13" font-weight="bold">Observability 1.0: context discarded at write time</text>
+<rect x="12" y="34" width="120" height="42" rx="6" fill="rgba(110,168,254,.10)" stroke="#6ea8fe" stroke-width="1.2"/>
+<text x="72" y="52" fill="#c8d2dc" font-family="monospace" font-size="11" text-anchor="middle">one request</text>
+<text x="72" y="67" fill="#7d8794" font-family="monospace" font-size="9.5" text-anchor="middle">(hundreds of fields)</text>
+<g stroke="#5f6b77" stroke-width="1" stroke-dasharray="3,3">
+<line x1="132" y1="55" x2="215" y2="30"/><line x1="132" y1="55" x2="215" y2="72"/>
+<line x1="132" y1="55" x2="215" y2="114"/><line x1="132" y1="55" x2="215" y2="156"/>
+<line x1="132" y1="55" x2="215" y2="198"/>
+</g>
+<text x="168" y="128" fill="#f0a0a0" font-family="monospace" font-size="10" text-anchor="middle">✂ context</text>
+<text x="168" y="141" fill="#f0a0a0" font-family="monospace" font-size="10" text-anchor="middle">dropped here</text>
+<g font-family="monospace" font-size="10.5">
+<rect x="215" y="18" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="35" fill="#9aa6b2" text-anchor="middle">metrics</text>
+<rect x="215" y="60" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="77" fill="#9aa6b2" text-anchor="middle">logs</text>
+<rect x="215" y="102" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="119" fill="#9aa6b2" text-anchor="middle">APM</text>
+<rect x="215" y="144" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="161" fill="#9aa6b2" text-anchor="middle">tracing</text>
+<rect x="215" y="186" width="118" height="26" rx="5" fill="rgba(255,255,255,.04)" stroke="#5f6b77"/><text x="274" y="203" fill="#9aa6b2" text-anchor="middle">RUM</text>
+</g>
+<text x="274" y="238" fill="#f0a0a0" font-family="monospace" font-size="11" text-anchor="middle">stored 5x · paid for 5x</text>
+<text x="274" y="256" fill="#7d8794" font-family="monospace" font-size="10" text-anchor="middle">cannot be correlated</text>
+<line x1="360" y1="14" x2="360" y2="280" stroke="rgba(110,168,254,.2)" stroke-width="1"/>
+<text x="378" y="20" fill="#5eead4" font-family="monospace" font-size="13" font-weight="bold">Observability 2.0: store once, aggregate at read time</text>
+<rect x="378" y="34" width="120" height="42" rx="6" fill="rgba(94,234,212,.10)" stroke="#5eead4" stroke-width="1.2"/>
+<text x="438" y="52" fill="#c8d2dc" font-family="monospace" font-size="11" text-anchor="middle">one request</text>
+<text x="438" y="67" fill="#7d8794" font-family="monospace" font-size="9.5" text-anchor="middle">(hundreds of fields)</text>
+<line x1="438" y1="76" x2="438" y2="104" stroke="#5eead4" stroke-width="1.4"/>
+<polygon points="438,112 434,104 442,104" fill="#5eead4"/>
+<rect x="368" y="114" width="140" height="46" rx="6" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="1.4"/>
+<text x="438" y="133" fill="#d5dce4" font-family="monospace" font-size="11" text-anchor="middle">one arbitrarily wide</text>
+<text x="438" y="149" fill="#d5dce4" font-family="monospace" font-size="11" text-anchor="middle">structured event</text>
+<text x="438" y="176" fill="#5eead4" font-family="monospace" font-size="10.5" text-anchor="middle">context preserved intact</text>
+<g stroke="#5eead4" stroke-width="1" stroke-dasharray="2,3">
+<line x1="508" y1="137" x2="576" y2="112"/><line x1="508" y1="137" x2="576" y2="146"/><line x1="508" y1="137" x2="576" y2="180"/>
+</g>
+<g font-family="monospace" font-size="10">
+<rect x="576" y="100" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="116" fill="#9aa6b2" text-anchor="middle">derive metrics</text>
+<rect x="576" y="134" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="150" fill="#9aa6b2" text-anchor="middle">derive traces</text>
+<rect x="576" y="168" width="106" height="24" rx="5" fill="rgba(94,234,212,.05)" stroke="#5eead4" stroke-opacity=".5"/><text x="629" y="184" fill="#9aa6b2" text-anchor="middle">derive SLOs</text>
+</g>
+<text x="528" y="238" fill="#5eead4" font-family="monospace" font-size="11" text-anchor="middle">stored 1x · paid for 1x</text>
+<text x="528" y="256" fill="#7d8794" font-family="monospace" font-size="10" text-anchor="middle">any dimension, asked later</text>
+</svg>
+<figcaption>The entire technical argument rests on one verb: does aggregation happen at write time or at read time?</figcaption>
+</figure>
+<p>In August 2024 came the move that drew the most fire: <strong>assigning version numbers.</strong> The three-pillars generation becomes "Observability 1.0"; tools built on arbitrarily-wide structured events with a single source of truth become "Observability 2.0." The justification is what semantic versioning was invented for — major version bumps are reserved for backwards-incompatible breaking changes:</p>
+<blockquote>
+<span class="en">You cannot simultaneously store your data across both multiple pillars and a single source of truth. Incompatible. Breaking change.</span>
+<cite>"Is it time to version observability? Signs point to yes", August 2024</cite>
+</blockquote>
+<p>From that one storage change they derive a chain of consequences, and the two most interesting have nothing to do with technology and everything to do with <strong>who is allowed to debug</strong>.</p>
+<p>In the 1.0 world you flip between dashboards pattern-matching with your eyeballs, leaning on intuition, experience and a mental model. Therefore — and this is the sharp bit — <strong>the best debuggers are always the engineers who have been there longest and seen the most.</strong> In the 2.0 world you don't need the perpetually out-of-date mental model; you interrogate the data and follow the breadcrumbs. Therefore <strong>the best debuggers are the people who are the most curious.</strong></p>
+<p>The other concerns the nature of questions:</p>
+<blockquote>
+<span class="en">When it comes to understanding your software, it's often harder to identify the question than the answer. Once you know what the question is, you probably know the answer too.</span>
+<cite>Same</cite>
+</blockquote>
+<p>And a static 1.0 dashboard is only useful once you already know what you're after — "you need to know to look for it before you can find it."</p>
+<p>The most counterintuitive passage identifies the psychological trap. Many teams believe they <strong>have to get a handle on 1.0 before they can adopt 2.0</strong>, which gets things exactly backwards, because 2.0 is simpler and cheaper.</p>
+<blockquote>
+<span class="en">Observability 1.0 *is* the hard way. It's so fucking hard. We've been doing it so long that we are blind to just how HARD it is.</span>
+<cite>Same</cite>
+</blockquote>
+<p>The image offered is entire teams of engineers spending whole careers massaging cardinality to control costs. Then comes an almost gentle question — <strong>"What if you just .. didn't have to do that? What would you do with your lives?"</strong></p>
+<p>Worth recording: the essay ends by publicly calling for more 2.0 tools that <strong>are not Honeycomb</strong>, stating outright that "the world desperately needs an open source analogue to Honeycomb," and advising people to stop founding metrics-based observability startups because Datadog and Prometheus are the last winners on that road. It is the most persuasive step in the piece: <strong>someone selling 2.0 publicly wishing for more competitors selling 2.0.</strong></p>
+<h3><span class="tag">04</span>Code isn't understanding. It's a cache of understanding.</h3>
+<p>In 2026 the same blade went into AI. The posture of entry is worth noting: <strong>they were not initially excited.</strong> Honeycomb issued an AI mandate in August 2025, and Majors describes being all in on AI while not being "super excited about it, in my heart of hearts."</p>
+<p>The first thing they did was diagnose the argument itself — and the diagnosis is, of course, a broken feedback loop.</p>
+<p>The scene: at a conference, a speaker showcased astonishing results achieved by pure vibe coding, and managers in the hallway were excitedly saying they'd finally have proof to overcome their resistant engineers. But Majors knew other people at that company, who described the same projects as a horror show, with teams still grinding through cleanup months later.</p>
+<blockquote>
+<span class="en">The wins and costs are happening to two different groups of people. There is no natural feedback loop. […] It has become very easy to do things without context or mastery, and the downstream costs are often invisible to the person who incurs them. All they see is the win.</span>
+<cite>"AI enthusiasts are in a race against time, AI skeptics are in a race against entropy", June 2026</cite>
+</blockquote>
+<p>They refuse to take a side, because both sides are right. The enthusiasts are not wrong: teams that sit this out could be out of business before the dust settles. <strong>The skeptics are also not wrong:</strong></p>
+<blockquote>
+<span class="en">When you ship code faster than engineers can read it, in domains where nobody has full context, you are making withdrawals from a trust account that took years to build.</span>
+<cite>Same</cite>
+</blockquote>
+<p>Two weeks later came the positive claim, which matches neither camp.</p>
+<p>The hinge was reading Chad Fowler's writing on Phoenix Architectures. Two or three essays in, it clicked — they could predict what he'd say next. The line they credit with doing it is Fowler's: <strong>when regeneration is easy, code stops being an asset and starts acting as a cache — a materialized view of understanding, useful while current, disposable when stale.</strong></p>
+<p>Why did it land so fast? Because they had lived through a structurally identical transition. Their first title was sysadmin; they lived the shift from handcrafted server pets to immutable infrastructure. From the final chapter of <em>Observability Engineering</em>, 2nd edition:</p>
+<blockquote>
+<span class="en">The shift from handcrafted servers to immutable infrastructure taught us that mutability is the sworn enemy of understanding. Any artifact that is edited in place creates drift. Drift is what makes systems impossible to maintain.</span>
+<cite>quoted in "AI demands more engineering discipline. Not less", June 2026</cite>
+</blockquote>
+<p>There is one detail here so concrete it functions as physical evidence for the whole philosophy: <strong>at Honeycomb, a cron job kills off the oldest Kafka node every Tuesday.</strong> Not a drill — routine. The stated reason: that is exactly why they are confident in their bootstrapping and rebalancing processes. Everything is repeatable, the data can be regenerated, and the commitments live elsewhere.</p>
+<p>Then the inference:</p>
+<blockquote>
+<span class="en">The fact that we cannot regenerate our code in the same way is a sign that we do not understand it. We do not know which commitments we have made, we do not know which dependencies will break. We find them by breaking them, mostly.</span>
+<cite>Same</cite>
+</blockquote>
+<p>Notice the elegance of that step. <strong>"We can't just throw the code away and rewrite it" used to be a virtue, a proper respect for complexity. It gets reclassified as a diagnosis</strong> — evidence of ignorance rather than evidence of prudence. Code becomes precious when it is the only place knowledge lives.</p>
+<p>From there comes the conclusion that offends people. If code is cheap, engineering's center of gravity should shift from producing code to validating behavior — and those techniques already exist, having long been looked down on by software engineering, because they come from operations and QA. Behavioral tests, characterization tests, capture/replay, traffic splitters, observability. These don't test what <em>ought</em> to happen; they observe and encode <strong>what is happening.</strong></p>
+<p>Then the least forgiving line:</p>
+<blockquote>
+<span class="en">Human brains are not good at validation. The nitpickiness, the repetition. […] We are never going to beat the machine when it comes to validation — we are literally the weakest link! […] PLEASE do not rest your killer argument for humans in software on us being the best quality gate.</span>
+<cite>Same</cite>
+</blockquote>
+<p>The real destination is to turn AI into an argument for the thing they've been arguing for a decade: <strong>nondeterministic systems require more engineering discipline, not less.</strong> They even confess the strategy — the industry has refused to invest in short feedback loops, instrumentation and production validation for years, and now that "every CEO in existence is chomping at the bit to get some of those AI cookies," maybe it finally will. Their phrasing: <strong>"Discipline first, cookies second."</strong></p>
+<p>And here is the number most worth remembering, because it is simultaneously their ambition and their confession:</p>
+<blockquote>
+<span class="en">The share of software engineering teams that work in short, fast feedback loops (the cardinal sign of discipline in my book) is, and always has been, appallingly small. Five percent, maybe? Definitely less than 10%.</span>
+<cite>Same</cite>
+</blockquote>
+<p>In other words: <strong>eleven years of writing, wide citation, two O'Reilly books — and by their own estimate the adoption rate is under ten percent.</strong></p>
+<h2>How they think</h2>
+<p><strong>1. Deliberately float an indefensible claim, then use the objections it draws to locate the real weak points in your own argument.</strong> This isn't my inference; it's their own wording — "an equally hyperbolic and indefensible claim." They knew it was bait. What matters is the second half: having been detonated, they didn't defend. They swallowed six months of counterargument, reorganized, produced a far stronger essay, and explicitly wrote "I was wrong there too" inside it. <strong>Public argument is being used as peer review</strong> — crude, loud, and extremely fast. Which is itself a short feedback loop.</p>
+<p><strong>2. Convert a vague grievance into a countable number.</strong> Everyone complains observability is expensive — that's a mood. They asked: what's your multiplier? How many times are you paying to store the same request? Go look at your itemized bill. <strong>A question with a specific answer, and an answer that frightens people.</strong> The entire 2.0 argument starts from that number, not from architectural aesthetics.</p>
+<p><strong>3. Use your own two jobs as a controlled experiment.</strong> X and Z are persuasive because the variables really were held: same age, same architecture shape, same language, same homegrown storage engine, even four of the same people. This is vanishingly rare in software writing — most people can only offer you the story of the time it worked. <strong>They give you the time it didn't, and they were the contractor on both.</strong></p>
+<p><strong>4. When people disagree, ask where the feedback loop broke, not who is right.</strong> This is the most portable move, and it isn't only technical. Why can't AI enthusiasts and skeptics talk? Not because either side is stupid, but because <strong>the wins and the costs land on different people, so no loop forms between them.</strong> Why don't developers care about reliability? Not irresponsibility — someone else carries the pager. The value of this move is that it converts a moral accusation into a systems-design problem, and systems-design problems can be fixed.</p>
+<p><strong>5. Write up your own failures in incident-review format.</strong> In 2018 they published career advice for women and were mobbed for a week. The response was a piece titled "Post-mortem: feminist advice meltdown (March 2nd)." It opens:</p>
+<blockquote>
+<span class="en">As of today it's been one week since I wrote some advice and the internet exploded in my face, so now it's time to do what I always do: post mortem that shit.</span>
+<cite>"Post-mortem: feminist advice meltdown (March 2nd)", March 2018</cite>
+</blockquote>
+<p>It contains a "what happened" timeline (including an honest accounting of their own motives — they concede that they rejected one critic's feedback partly out of personal history, admitting "I can be a resentful little shit"), a categorized list of the feedback received, and then a ledger of <strong>NO REGRETS / REGRETS / SEMI-REGRETS</strong>, adjudicated item by item. They apologize (for being sloppy about their own gender questions) and refuse to apologize (for the advice itself), stating plainly that they are "disinclined to grovel before a howling mob." <strong>The format is lifted straight from incident review: separate what was actually done wrong from what merely turned out badly.</strong> Most people cannot do the second part.</p>
+<p><strong>6. Rename things, and know what you're fighting over.</strong> "Ops is not a role, it's an emergent property." "Management is not a promotion, it's a change of profession." "Observability 1.0 / 2.0." It is one move repeated. They understand perfectly well that definition is power — they've written that "three pillars" caught on partly because <strong>vendors "coincidentally" had metrics products, logging products and tracing products to sell.</strong> Their response isn't to complain about it but to go define something themselves. The ethics of that are delicate; see below.</p>
+<h2>Where they might be wrong</h2>
+<p><strong>The biggest problem is one they stated better than their critics do.</strong> The correct answer to Observability 2.0 happens to be the product their company sells. They admitted as early as 2019 that fear of sounding like a vendor had stopped them from making the argument properly:</p>
+<blockquote>
+<span class="en">I think that I've been reluctant to hammer this home as much as I ought to, because I'm exquisitely sensitive about sounding like an obnoxious vendor trying to sell you things. (Which has absolutely been detrimental to my argument.)</span>
+<cite>"Deploys: It's Not Actually About Fridays", October 2019</cite>
+</blockquote>
+<p>The confession is admirable but it doesn't dissolve the problem, it just states it clearly. <strong>Stamping a competitor's architecture with the version number "1.0" in 2024 is unambiguously a move over pricing power</strong> — semantic versioning sounds like neutral technical vocabulary, and its practical effect is to define someone else's product as last generation. They had just finished pointing out how vendors used "three pillars" to align with their own product lines; this is the same species of act, differing only in that they believe their own technical judgment is correct. It may well be correct. That is not a methodological difference. The genuine hedge is the public call for more non-Honeycomb 2.0 tooling — which is sincere, but raises their own cost rather than removing the conflict.</p>
+<p><strong>Second, the sample.</strong> Honeycomb is a developer-tools company they built from scratch whose customers are engineers, and it is not large. Part of why Company Z could have that feedback loop is that it was new, small, and had as its CTO the person who cared most about this in the world. The advice — "take some cycles off product and fix your fucking deploy pipeline" — presupposes you have the authority to make that call. <strong>Many engineers do not.</strong> Notably, the 2026 AI piece draws its boundary of applicability with real precision (explicitly not written for teams whose management is disconnected from engineering reality, nor for low-discipline low-trust teams, nor for tiny startups with no customers, nor for behemoths still fighting red tape for a model license) — <strong>but that boundary appears only in that one piece. Most of the writing carries the same volume without the qualifier</strong>, which is where they are most readily misread and most likely to give offense.</p>
+<p><strong>Third, an objection from a critic — and here I can only read the version they quoted.</strong> In 2019 someone published a long rebuttal to the Friday-deploy argument, and Majors reproduces this passage verbatim:</p>
+<blockquote>
+<span class="en">Lastly there is some strange argument that choosing not to deploy on Friday "Shouldn't be a source of glee and pride". That one I haven't figured out yet, because I have always had a lot of glee and pride in being extremely (overly?) protective of the work/life balance of the engineers who either work for me, or with me.</span>
+<cite>quoted by Majors in "Deploys: It's Not Actually About Fridays" (original published on HackerNoon)</cite>
+</blockquote>
+<p><strong>A disclosure: I was not able to open that original piece while writing this page</strong> — the network policy in this environment blocks that site, as it does the relevant Hacker News threads — so I can quote only the passage Majors reproduced, and cannot summarize the author's full argument on their behalf. Likewise, I have seen references to several technical objections to "Observability 2.0" (chiefly cost: wide events preserve full high cardinality and high dimensionality, so per-request data volume exceeds any single pillar, while metrics remain far cheaper for large-scale aggregation). <strong>I could not read any of those originals, so I report only the bibliographic fact and will not paraphrase arguments I haven't read.</strong></p>
+<p>Even so, the quoted passage is interesting on its own. The dismantling — you substituted "not deploying on Friday" for "protecting engineers" — is logically clean. But there is something inside that sentence they never quite address head-on: <strong>the critic is talking about what they can guarantee their people; Majors is talking about what the system ought to look like.</strong> A manager sitting inside the Company X they describe, with no authority to turn it into Company Z, has no place in the framework. All they are offered is: if that's the only lever you have, use it, but treat it like the ugly hack it is rather than a moral stance. That's a concession — but the volume of the original essay buries it. Majors later acknowledged as much, noting that they are not in fact the absolutist people were arguing against, and that this had been the most frustrating thing about the conversation.</p>
+<p><strong>Finally, the harshest criticism of them was written by them.</strong> In 2023 they revisited what they would once have filed under "proudest manager moments" — years of spending 50–75% of their total emotional bandwidth keeping one talented, high-strung report on the team, including one dramatic save when that person nearly quit. They reversed the verdict:</p>
+<blockquote>
+<span class="en">All that my coddling ultimately did was teach them the wrong lessons, and prevent them from learning the right ones. It delayed those lessons by a few years, and made learning them all the more painful when they finally came.</span>
+<cite>"Helicopter Management", June 2023</cite>
+</blockquote>
+<p>The standard they extract is portable as-is: <strong>"If you haul someone over the finish line, that is not a success."</strong> What's worth noticing is how this self-criticism relates to the rest of the philosophy — it is the same error in organizational form. <strong>What they had been doing was using their own emotional labor to manually compensate for a broken feedback loop, instead of letting the person receive the feedback themselves.</strong> It took them years to see it in their own conduct, which is probably the most revealing thing on the whole blog: they ran an incident review on their own kindness.</p>
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://charity.wtf/p/wtf-is-operations-serverless">WTF is operations? #serverless</a> (May 2016)</span><span class="d">The original definition of ops as an emergent property rather than a role, and why they nearly turned the talk down.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/the-engineer-manager-pendulum">The Engineer/Manager Pendulum</a> (May 2017)</span><span class="d">The most self-cited post in the corpus: management as a change of profession, and swinging between engineering and management as a deliberate career path.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/friday-deploy-freezes-are-exactly-like-murdering-puppies">Friday Deploy Freezes Are Exactly Like Murdering Puppies</a> (May 2019)</span><span class="d">The full itemized bill for fear as technical debt, and "rules are a piss-poor substitute for judgment." Six months later, <a href="https://charity.wtf/p/deploys-its-not-actually-about-fridays">Deploys: It's Not Actually About Fridays</a> carries the Company X / Company Z comparison.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/is-it-time-to-version-observability-signs-point-to-yes">Is it time to version observability? Signs point to yes</a> (August 2024)</span><span class="d">Observability 1.0 vs 2.0 line by line: storage, cost, who gets to debug, and why 1.0 is the hard way. The cost arithmetic is in <a href="https://charity.wtf/p/the-cost-crisis-in-observability-tooling">The Cost Crisis in Observability Tooling</a>.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/in-praise-of-normal-engineers">In Praise of "Normal" Engineers</a> (June 2025)</span><span class="d">The pipeline-based rebuttal to the 10x engineer, and the standard: a great org is one where ordinary engineers can do great work.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/ai-demands-more-engineering-discipline">AI demands more engineering discipline. Not less</a> (June 2026)</span><span class="d">Code as a materialized view of understanding, the Kafka node killed by cron every Tuesday, and the under-ten-percent number. Preceded by <a href="https://charity.wtf/p/ai-enthusiasts-are-in-a-race-against">AI enthusiasts are in a race against time, AI skeptics are in a race against entropy</a>.</span></li>
+<li><span class="t"><a href="https://charity.wtf/p/helicopter-management">Helicopter Management</a> (June 2023)</span><span class="d">Where they reclassify their proudest management achievement as a failure. See also the 2018 <a href="https://charity.wtf/p/post-mortem-feminist-advice-meltdown-march-2nd">Post-mortem: feminist advice meltdown</a>, which handles a public disaster in incident-review format.</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-05" data-slug="charity-wtf">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep-Read · one page ≈ one mind · content verified as of 2026-09-05</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>
