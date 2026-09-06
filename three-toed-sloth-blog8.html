@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Cosma Shalizi · Three-Toed Sloth — 数据里浮出来的那个结构，多半是你方法的影子</title>
 <style>
@@ -50,138 +51,87 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <div class="langbar"><a href="three-toed-sloth-blog8.en.html">English →</a></div>
 <header>
 <div class="kicker">博客精读 · 08 · bactra.org</div>
-<h1>Cosma Shalizi · Three-Toed Sloth<br/>数据里浮出来的那个结构，多半是你方法的影子</h1>
+<h1 data-tts="cf87f16f425f0a85">Cosma Shalizi · Three-Toed Sloth<br/>数据里浮出来的那个结构，多半是你方法的影子</h1>
 <p class="sub">2003 年至今 · 约 1250 篇 · 仍在更新（最新一篇 2026 年 7 月 31 日）· 2013 至 2014 年间篇数从每年近百骤降到十余篇，长文的位置改由每月书评栏目承接 · 本页通读 16 篇，跨度 2004 年 12 月至 2026 年 7 月</p>
 </header>
 <div class="modebar">
 <button class="on" id="btn-pop">精华版</button>
 <button id="btn-deep">完整版</button>
 </div>
-
 <!-- ============ 精华版 ============ -->
 <div class="mode-pop" id="mode-pop">
-
 <p>Cosma Shalizi 每一篇文章的第一行，都是一句劝你别读的话。他给这个东西取了个正式名字，叫「<strong>注意力节约声明</strong>（Attention Conservation Notice）」，二十多年来一篇不落。</p>
-
 <p>他那篇后来被引用了无数次的智商长文，开头是这样的：</p>
-
 <blockquote>
 <span class="en">About 11,000 words on the triviality of finding that positively correlated variables are all correlated with a linear combination of each other, and why this becomes no more profound when the variables are scores on intelligence tests. […] Includes multiple simulations, exasperation, and lots of unwarranted intellectual arrogance on my part.</span>
 <span class="zh">约 11000 字，讲一件微不足道的事：一堆正相关的变量，当然都会跟它们自己的某个线性组合相关；而当这些变量是智力测验分数时，这件事也并不因此就变得更深刻。……内含多个模拟、恼怒，以及我这边大量没有根据的智力上的傲慢。</span>
 <cite>《g, a Statistical Myth》，2007 年 10 月</cite>
 </blockquote>
-
 <p>另一篇写苏联计划经济的，他说这个话题「跟我们身处的世界的相关程度，大概相当于讨论一个信奉奥林匹斯诸神的人该不该赞成转基因生物。（或者说：半人马，赞成还是反对？）」。一篇讲互联网中心化的，他自己评价是「玄奥、思辨，就算说对了也没什么可操作性。你不如拿这时间去读本书」。今年 7 月那篇书评的开头则是：「我没有品味，而且对热力学发言的资格只剩下记忆了。」</p>
-
 <p>把这当谦虚就误读了。<strong>这是他花了二十多年对别人的数据做的那件事，转过来对着自己做了一遍。</strong>他毕生的活儿，就是问「你这个结论里，有多少是世界的性质，有多少是你用的那套方法的算术必然？」——一个把这个问题问了一辈子的人，当然会在自己每篇文章顶上贴一张标签，写明本产品的已知失真。</p>
-
-<h3>他真正在跟什么较劲</h3>
-
+<h3 data-tts="17ebc0747e878e7e">他真正在跟什么较劲</h3>
 <p>Shalizi 是卡内基梅隆大学的统计学教授，也在圣塔菲研究所挂职。他原本是物理学家，做非线性动力学和统计力学。这个出身很重要，因为二十一世纪初，正是他那个部落大举涌进网络科学、经济学、社会学的时候——口号是「一切都是多体问题」。他当年也是其中一员。然后他去把统计学认真学了一遍，回过头来端了自己老家。</p>
-
 <p>他反复回来的那个根问题是：<strong>一堆数字里浮现出的「结构」，什么时候是世界的骨头，什么时候只是你那把尺子的形状？</strong></p>
-
 <p>他给出的答案，都是同一种形状的：<strong>造一个你事先知道答案的假世界，把标准方法扔进去，看它报出什么。</strong></p>
-
-<h3>2766 个能力，和一个不存在的 g</h3>
-
+<h3 data-tts="3dc675edbb12fa82">2766 个能力，和一个不存在的 g</h3>
 <p>最漂亮的一次是关于 g——所谓的「一般智力因子」。它的证据是这样来的：给人做一批智力测验，分数之间彼此正相关，用因子分析（factor analysis）一提，就浮出一个能解释很大一块方差的主导因子。这个因子被命名为 g，然后被当成心智的一个真实部件来讨论。</p>
-
 <p>Shalizi 干了两件事。</p>
-
 <p>第一件：他让电脑<strong>随机生成</strong>相关矩阵——纯噪声，背后没有任何因果结构——再照标准流程造出 1000 个「受试者」的分数，跑一遍因子分析。结果第一个因子解释了 55.9% 的方差。重复一千次，平均 47%。他补了一句：真实智力测验里 g 解释的方差比例通常在四分之一到三分之二之间，而且多半靠近下限，大约三分之一。<strong>随机噪声比真实智商测验的 g 还强。</strong></p>
-
 <p>第二件更狠。1914 年，一个叫 Godfrey Thomson 的人提出过一个模型：假设人有海量彼此完全独立的小能力，每个测验随机抽用其中一批。Shalizi 照着做了一遍：11 个测验（对应韦氏成人智力量表的 11 项），总共 2766 个能力，<strong>彼此之间不相关到不能再不相关</strong>，没有任何一个能力在任何一个测验里占主导。跑因子分析，出来一个 g，解释 47.8% 的方差，各项载荷漂亮得可以直接拿去发表；再跑单因子检验，卡方 38.41、44 个自由度、p 值 0.709——<strong>完美通过</strong>。</p>
-
 <p>他还顺手证明了这个假 g 可以做得「可遗传」：身高的遗传度约 0.8，血液甘油三酯约 0.5，那么「身高加甘油三酯」这个量也是可遗传的——可遗传并不能让一个毫无意义的量变得有意义。</p>
-
 <p>这背后其实有个纯代数的理由，Perron–Frobenius 定理：只要相关矩阵全是正数，就<strong>必然</strong>存在一个方差占比最大、且所有变量都正载荷其上的因子。而智力测验本来就是照着彼此相关的标准挑出来的。</p>
-
 <blockquote>
 <span class="en">So making up tests so that they're positively correlated and discovering they have a dominant factor is just like putting together a list of big square numbers and discovering that none of them is prime — it's necessary side-effect of the construction, nothing more.</span>
 <span class="zh">所以，把测验造得彼此正相关，然后发现它们有一个主导因子，就好比列一串很大的平方数，然后发现里面没有一个是质数——这是构造方式的必然副产品，仅此而已。</span>
 <cite>《g, a Statistical Myth》脚注 8</cite>
 </blockquote>
-
 <p>请注意他<strong>没有</strong>说的话。他没说 g 不存在。他说的是那块表停了：</p>
-
 <blockquote>
 <span class="en">If, after looking at your watch, you say that it's 12 o'clock, and I point out that your watch has stopped at 12, I am not saying that it's not 12 o'clock, just that your watch doesn't actually give you any evidence about the time.</span>
 <span class="zh">如果你看了一眼表说现在是十二点，而我指出你的表停在了十二点，我并不是在说现在不是十二点，我只是在说，你的表并没有给你任何关于时间的证据。</span>
 <cite>《g, a Statistical Myth》</cite>
 </blockquote>
-
-<h3>同一把刀，砍了四样东西</h3>
-
+<h3 data-tts="00176131103facc7">同一把刀，砍了四样东西</h3>
 <p>这个动作他做了不止一次。</p>
-
 <p><strong>幂律。</strong>2005 年，Barabási 在《自然》上发文说达尔文和爱因斯坦的回信间隔服从幂律。Shalizi 指出那批数据被对数正态分布拟合得像教科书插图，然后借高尔顿的口气下了一句判词：「你不可在我面前有别的分布，因为我是忌邪的极限定理。」两年后他不再嘴炮，跟 Clauset 和 Newman 合写了那篇著名的方法论文，把 24 个被宣称为幂律的真实数据集重新跑了一遍：对数正态几乎总是有竞争力，常常还更好。他估计这套标准若被采纳，「《Physica A》每期会少掉一半以上」。</p>
-
 <p><strong>社会传染。</strong>Joey 昨天跳了桥，今天 Irene 也跳的概率上升了——这是传染，还是他们本来就是同一类人？Shalizi 和 Andrew C. Thomas 证明：在观察数据里，这两者<strong>一般而言不可分辨</strong>。不是数据不够，是不同的因果结构会产生完全相同的可观测结果。</p>
-
 <p><strong>最优计划经济。</strong>2012 年他读了小说《Red Plenty》，然后去算了一笔账。已知最快的线性规划算法，步数大约按 n<sup>3.5</sup> 增长——问题规模乘一千，时间乘三百亿。而据经济学家 Alec Nove 统计，1983 年苏联有 1200 万种可区分的商品；还必须按地点索引，否则计划算不出运输。一台一秒能解 1200 万变量的机器，处理 120 亿变量要一千年。<strong>把「最优计划在道德上是否可欲」这个吵了一百年的问题，换成了一道算术题。</strong></p>
-
 <p>然后他给出了那个让所有人都不舒服的结论：这件事最该让资本主义的拥护者感到不安，因为它意味着他们的制度<strong>面对不了任何竞争，连竞争的威胁都没有</strong>——而按他们自己的理论，此时体系的主人们会越来越多地把产出当作垄断租金收走。「这不会有什么好结局。」</p>
-
-<h3>他自己写下的、最狠的那条批评</h3>
-
+<h3 data-tts="e7df1b3ef44dfdd4">他自己写下的、最狠的那条批评</h3>
 <p>在那篇 g 的文章里，他讲完 2766 个能力的模拟之后，主动加了一句：Thomson 模型<strong>最大的问题是 g 显得太强了</strong>——它轻松通过单因子检验，而真实的智力测验（比如韦氏量表）全都通不过。</p>
-
 <p>也就是说：他用来拆掉 g 的那个反例，对数据的拟合比 g 本身还要「好过头」，因此作为世界的模型反而更不像真的。他把这一点写在了自己论证的正中间。</p>
-
 <p>这大概是最能说明他的地方。一个人可以花二十年拆别人的方法，也可以顺手在自己最有力的那一击上标出裂纹。而这两件事，其实是同一件事——就是那句写在每篇文章顶上的、劝你别读的话。</p>
-
 </div>
-
 <!-- ============ 完整版 ============ -->
-<div class="mode-deep" id="mode-deep" hidden>
-
-<h2>一、一件怪事：一个把「别读这篇」写在每篇文章第一行的人</h2>
-
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2 data-tts="39646a8a6ae1ac5d">一、一件怪事：一个把「别读这篇」写在每篇文章第一行的人</h2>
 <p>2007 年 10 月 18 日，Cosma Shalizi 发出了一篇一万一千字的文章，题为《g, a Statistical Myth》（《g，一个统计学神话》）。这篇文章后来被无数人引用、翻译、在论坛上贴了十几年。它的第一行不是论点，不是钩子，是一段劝退：</p>
-
 <blockquote>
 <span class="en">Attention conservation notice: About 11,000 words on the triviality of finding that positively correlated variables are all correlated with a linear combination of each other, and why this becomes no more profound when the variables are scores on intelligence tests. Unlikely to change the opinion of anyone who's read enough about the area to have one, but also unlikely to give enough information about the underlying statistical techniques to clarify them to novices. Includes multiple simulations, exasperation, and lots of unwarranted intellectual arrogance on my part.</span>
 <span class="zh">注意力节约声明：约 11000 字，讲一件微不足道的事：一堆正相关的变量，当然都会跟它们自己的某个线性组合相关；而当这些变量是智力测验分数时，这件事也并不因此就变得更深刻。不太可能改变任何一个在这领域读得够多、已经有立场的人的看法；也不太可能给新手提供足够的信息，把底下那些统计技术讲清楚。内含多个模拟、恼怒，以及我这边大量没有根据的智力上的傲慢。</span>
 <cite>《g, a Statistical Myth》，2007 年 10 月 18 日</cite>
 </blockquote>
-
 <p>这不是那一篇的特例。「注意力节约声明」是他的固定装置，二十多年来一篇不落，而且每一篇都在说一件不同的、具体的坏话。写苏联计划经济那篇：「这个话题跟我们身处的世界的相关程度，大概相当于讨论一个信奉奥林匹斯诸神的人该不该赞成转基因生物。（或者说：半人马，赞成还是反对？）」写互联网为什么注定中心化那篇：「玄奥、思辨，就算说对了也没什么可操作性。你不如拿这时间去读本书。」写自己和人合写的《经济学人》文章那篇：「自我推销一篇付费墙后面的东西，把一个时髦话题和一个连我自己都承认有点民科的老念头凑在了一起。」2026 年 7 月的书评栏目开头：「我没有品味，而且对热力学发言的资格只剩下记忆了。」</p>
-
 <p>把这些当成英式自嘲就把他读丢了。<strong>这是他二十多年来对别人的数据做的那件事，转过来对着自己做了一遍。</strong>他毕生的工作可以压缩成一个问题：你这个结论里，多少是世界的性质，多少是你使用的那套方法的算术必然？一个把这个问题问了一辈子的人，理所当然会在自己每一件产品上贴一张标签，标明已知的失真、已知的利益冲突、已知的资格缺失。</p>
-
 <p>顺带一提，他的个人主页至今骄傲地引用着某个网站给它的评价——「有史以来最烂的主页」。他不设评论区。在 g 那篇的一条脚注末尾，他写道：「人们还奇怪我为什么不开评论区。」</p>
-
-<h2>二、这人是谁</h2>
-
+<h2 data-tts="bb758f54373e0330">二、这人是谁</h2>
 <p>Cosma Rohilla Shalizi，卡内基梅隆大学统计与数据科学系教授，同时是圣塔菲研究所（Santa Fe Institute）的外聘研究员。博客 Three-Toed Sloth（三趾树懒）2003 年开写，副标题是「Slow Takes from the Canopy（来自树冠层的慢评论）」，至今约 1250 篇，仍在更新——本页写作时最新一篇发表于 2026 年 7 月 31 日。<strong>没有停更，但发生过一次很陡的转折</strong>：2003 到 2013 年他每年写几十到一百多篇，2014 年骤降到 22 篇，此后长期在每年十几篇的水平，其中大半是每月一期的书评栏目《Books to Read While the Algae Grow in Your Fur》（《等你毛上长出藻类时可以读的书》）。他自己在后期文章里给出过解释：2021 年那篇《Bayesianism in Math: No Dice》的声明里写着「大体上是 2013 年起的草稿，然后搁下了。现在贴出来，聊胜于没有新东西」；2026 年 3 月那篇讲搜索引擎与中心化的，声明里写「2018 年起草，且有意没怎么更新」。<strong>他后期的博客，很大程度上是在清自己的草稿库存。</strong></p>
-
 <p>几个有画面感的细节，都是他自己写下的：网站每一页的标题都取自 Talking Heads 的歌词，理由是「歌词够费解，总能扭一句来配上眼下的题目，而且这多半构成某种知识产权侵权：夫复何求」。在讨论社会主义计算的那篇文章的第一条脚注里，他把自己的立场偏见列成了一张清单：「隐约偏左？打钩。科幻读者？打钩。对经济学感兴趣？打钩。事实上：家族社会主义传统深到有个亲戚的中间名就叫『卡尔·马克思』？打钩。……小时候在父亲膝上学会线性规划？打钩。」在解释自己一篇论文为什么从 2003 年拖到 2009 年才写完时，他说：「我确实是只树懒。」</p>
-
-<h2>三、他跟什么较劲</h2>
-
+<h2 data-tts="f209421d347c851d">三、他跟什么较劲</h2>
 <p>他是从物理学出身的——非线性动力学、统计力学那一支。这件事对理解他至关重要，因为二十一世纪最初那几年，正是他这个部落大举涌进网络科学、经济学、社会学的时候。口号大致是：既然我们懂大量个体的相互作用如何产生大尺度模式，那么经济学不过是另一个多体问题罢了。</p>
-
 <p>他当年也是这么想的。他在 2007 年那篇长达六千字的《Why Oh Why Can't We Have Better Econophysics?》（《为什么我们就不能有更好的经济物理学？》）的声明里，把自己的转变写得很清楚：「一篇怒斥物理学家做经济学之惨状的长文，作者曾经更同情他们，但此后离开了物理学，而且在经济学上没有任何资历。」</p>
-
 <p><strong>他是个叛教者，而叛教者最狠。</strong>他知道那个部落的思维习惯从哪里来：物理学家习惯了极大量、极高质量、而且往往是自己控制生成过程的数据。在那种条件下，粗糙的分析手段也不会害你——「你的数据会救你，除非你的分析程序是恶意的」。可社会数据不是那样的，而这套习惯被原样搬了过来。</p>
-
 <p>由此，他二十多年反复回来的根问题成型了：</p>
-
 <p><strong>一堆数字里浮现出来的「结构」，什么时候是世界的骨头，什么时候只是你那把尺子的形状？</strong></p>
-
 <p>而他一路挖下去，撞上了一个更难堪的推论：社会科学用来做因果推断的那一整套主力工具——线性回归、方差分析、因子分析、路径分析，说到底都是最小二乘、线性回归和奇异值分解的各种组合——<strong>根本就不是因果推断工具</strong>。它们描述相关，不揭示原因。而绝大多数使用者从未问过这个问题。他在 g 那篇里把这件事写成了一段仿休谟的判词：</p>
-
 <blockquote>
 <span class="en">When we run over libraries, persuaded of these principles, what havoc must we make? If we take in our hand any paper; of macroeconomics or correlational psychology, for instance; let us ask, Does it draw its causal inferences from observations with consistent methods? No. Does it draw its causal inferences from experiments, controlled or randomized? No. Commit it then to the recycling bin: for it can contain nothing but sophistry and illusion.</span>
 <span class="zh">当我们信服了这些原则再去翻检图书馆，我们将造成何等的浩劫？若我们拿起任何一篇文章，比如宏观经济学的，或相关性心理学的，且让我们问：它是用一致的方法从观察中作出因果推断的吗？不是。它是从实验——受控的或随机化的——作出因果推断的吗？不是。那么就把它扔进回收桶：因为它里面除了诡辩和幻觉，别无他物。</span>
 <cite>《g, a Statistical Myth》</cite>
 </blockquote>
-
 <p>他也解释过为什么这种事能一代一代地传下去，用的是 Harlow 那个著名的猴子实验：观察性社会科学面前摆着两个方法论上的「母亲」，一个温暖、毛茸茸、亲切而毫无营养（旧世界的线性回归、方差分析、因子分析），另一个冰冷、金属、扎人，但真的能提供东西（那些至少不是明确无法做到你想做的事的统计方法）。「毫不意外地，社会科学家，作为灵长类，压倒性地选择了那个毛茸茸的。」</p>
-
 <div class="glossary">
-<h2 style="border:none;padding-left:0;margin-top:0;font-size:1.05rem">Glossary · 术语表</h2>
+<h2 data-tts="acefd62faea2f1f4" style="border:none;padding-left:0;margin-top:0;font-size:1.05rem">Glossary · 术语表</h2>
 <ul>
 <li><b>因子分析（factor analysis）</b>：一堆彼此相关的测量值，找几个看不见的「共同因子」把它们的相关性概括掉。是很好的数据压缩工具；本页的全部争议在于它<em>不是</em>发现原因的工具。</li>
 <li><b>幂律（power law）</b>：一种「极端事件比直觉中常见得多」的分布。特征是在双对数坐标纸上画出来接近一条直线——问题在于，很多别的分布也是。</li>
@@ -192,27 +142,18 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><b>线性规划（linear programming）</b>：在一堆线性约束下最大化一个线性目标。苏联数学家 Kantorovich（康托罗维奇）在 1939 年前后发明了它，最优计划经济的梦想就建立在它上面。</li>
 </ul>
 </div>
-
-<h2>四、他的四把刀</h2>
-
-<h3>1. 那条直线是你画上去的：幂律的十年清算</h3>
-
+<h2 data-tts="bd52b03e2b7850eb">四、他的四把刀</h2>
+<h3 data-tts="c3515a8e2d2e5d26">1. 那条直线是你画上去的：幂律的十年清算</h3>
 <p>2005 年 10 月，事情从一篇《自然》论文开始。Albert-László Barabási 和合作者报告说，人类活动的时间间隔——电子邮件的回复间隔，乃至达尔文和爱因斯坦的通信回复间隔——服从幂律分布，并提出了一个「优先级排队」模型来解释这种爆发性。</p>
-
 <p>Shalizi 指出，Stouffer、Malmgren 和 Amaral 重新分析了同一批数据，发现<strong>那个幂律纯粹是数据分析方式的产物</strong>；同一批数据被对数正态分布拟合得像教科书插图。他解释了为什么这几乎是必然的：若干独立因素相加，中心极限定理给你正态分布；若干独立因素<em>相乘</em>，取对数就变成相加，于是给你对数正态。而对数正态在双对数图上很容易被错认成幂律，「尤其是当你的统计知识跟大多数理论物理学家一样有限的时候」。</p>
-
 <p>接着他把话筒交给了 Francis Galton——引了那段著名的、把中心极限定理说成「宇宙秩序的奇妙形式」、说野蛮人若能理解它会把它当神来拜的话——然后自己下判词：</p>
-
 <blockquote>
 <span class="en">Thou shalt have no other distribution before me, for I am a jealous limit theorem.</span>
 <span class="zh">你不可在我面前有别的分布，因为我是忌邪的极限定理。</span>
 <cite>《Gauss Is Not Mocked》，2005 年 10 月</cite>
 </blockquote>
-
 <p>他自己承认，这个阶段他只是在博客上发牢骚：「我甚至抱怨过，我真该去写一篇讲怎么把这件事做对的论文，而不是仅仅在博客上冷嘲热讽。」</p>
-
 <p><strong>两年后他真去写了。</strong>2007 年 6 月，《So You Think You Have a Power Law — Well Isn't That Special?》（《所以你觉得你有个幂律——那可真了不起呢？》）宣布了他与 Aaron Clauset、M. E. J. Newman 合写的论文。这篇文章的价值在于它不是抱怨，是一套可以照着做的操作规程，而且每一条都对应一个具体的、常见的错误：</p>
-
 <ul>
 <li><strong>别拿最小二乘去拟合双对数图上的直线。</strong>他的原话是「滥用线性回归会让高斯宝宝哭泣」。这种做法通常连一个概率分布都给不出来；就算你的数据真的服从幂律，它给出的参数估计也是坏的；而回归软件吐给你的误差估计不能用，因为那些公式所依赖的假设跟「这是幂律样本」直接矛盾。至于用高 R² 来证明幂律——别的分布也能给你很高的 R²，这个检验没有功效。</li>
 <li><strong>用极大似然估计标度指数。</strong>「快！公式简单！而且最棒的是——它管用！」</li>
@@ -220,54 +161,36 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><strong>用为分布设计的统计量做拟合优度检验</strong>（Kolmogorov–Smirnov 统计量），而不是为回归曲线设计的 R²；由于参数是从数据里估出来的，显著性水平要用自助法（bootstrap）算。</li>
 <li><strong>用 Vuong 检验去比对手，并做好失望的准备。</strong></li>
 </ul>
-
 <p>最后一条是全篇的重心，因为那才是结果：</p>
-
 <blockquote>
 <span class="en">In the two dozen data sets we looked at, all chosen because people had claimed they followed power laws, the log-normal's fit was almost always competitive with the power law, usually insignificantly better and sometimes substantially better.</span>
 <span class="zh">在我们考察的两打数据集里——它们全都是因为有人宣称其服从幂律才被选进来的——对数正态的拟合几乎总是与幂律不相上下，通常是好一点点但不显著，有时则是显著地更好。</span>
 <cite>《So You Think You Have a Power Law》，2007 年 6 月</cite>
 </blockquote>
-
 <p>还有一半的数据集，加上一个指数截断之后拟合会明显变好。他点明了这意味着什么：<strong>存在一个特征尺度</strong>；超大事件（相对于仅仅是大事件而言）确实是指数级稀有的。而这恰恰是幂律叙事最想否认的一点。</p>
-
 <p>他估算了这套标准若被采纳的后果：「《Physica A》每一期会消失一半以上。」这不是修辞——这是他真心的估计，也是他为什么把代码一并公开：「因为这本来就是任何一篇计算类论文该做的事。」</p>
-
 <p>但这一节最能说明他的，是最后一条建议，一条几乎所有论战者都不会写的建议：<strong>问问你自己是不是真的在乎。</strong>他说，很多时候真正重要的只是尾巴很重，至于它是随变量的对数线性衰减（幂律）还是二次衰减（对数正态），根本无所谓；如果只是这样，那你该做的是非参数密度估计。只有当你的论断严重依赖「超大观测到底有多常见」，或者你心里有个模型专门预测了尾部形状时，是不是幂律才真的对你重要。而他补了一句：如果你那个模型<strong>唯一</strong>可检验的预测就是尾巴的形状，那听上去就不像是个好模型。</p>
-
-<h3>2. 2766 个能力：一个不存在的东西如何通过每一项检验</h3>
-
+<h3 data-tts="cc44ad8da4b1e5f1">2. 2766 个能力：一个不存在的东西如何通过每一项检验</h3>
 <p>这是他最著名的一篇，也是他那套动作最完整的一次示范。</p>
-
 <p>争议的对象是 g，所谓的一般智力因子。它的证据链很短：给人做一批智力测验，分数彼此正相关；用因子分析一提，浮出一个主导因子，能解释很大一块方差；这个因子被命名为 g，然后被当成心智的一个真实部件——一个可以被遗传、可以被测量、可以拿去解释个人和族群命运的东西——来使用。</p>
-
 <p>Shalizi 先做了件很少有人做的事：<strong>他在文章开头声明了自己的利益冲突。</strong>他写道，十年前他系里的一些资深教员——也就是一些将来要投票决定他合同续签和终身教职的人——参与编写过一本反驳《钟形曲线》的书，而他在下文里引用了其中的工作。「这是否应当改变你对我所作论证的评价，由你自己决定。」</p>
-
 <p>然后他动手。</p>
-
 <p><strong>第一步：随机噪声。</strong>他让 R 随机生成一个五维相关矩阵——元素在 0 到 1 之间均匀独立抽取，除了必须满足相关矩阵的数学要求之外<strong>没有任何结构</strong>，背后没有任何因果机制。然后按这个相关结构生成 1000 个「受试者」的分数，均值 100、标准差 15（跟智商测验一样），跑一遍标准的极大似然因子分析。</p>
-
 <p>第一个因子解释了 55.9% 的方差。他还顺手演示了一个真实研究里天天发生的动作：看到第 2 号变量载荷偏低（0.279），把它从测验组里剔掉，重算——解释比例升到 67.9%。</p>
-
 <p>重复一千次，平均 47.1%，标准差 7.9%。他把这个数字和现实对照：真实智力测验里 g 解释的方差比例，「大约在四分之一到三分之二之间，而且一般靠近下限，比如三分之一左右」。<strong>纯噪声的表现比真东西还好。</strong></p>
-
 <p><strong>第二步：Thomson 的抽样模型。</strong>这一步才是要害。有人会说：分数之间确实存在这些相关，那背后总得有个共同的东西吧？</p>
-
 <p>Shalizi 的回答是一个字：不。而且这不是他想出来的，是 Godfrey Thomson 在 1914 年就演示过的——他在 2007 年重做了一遍，「希望能降低我们再花 93 年去争论一件本该早已了结的事的概率」。</p>
-
 <p>模型是这样的：设想人有海量的、彼此独立的小能力。每个测验会调用其中一批，有些是与别的测验共享的，有些是这个测验专属的。他设了 11 个测验（对应韦氏成人智力量表的 11 个分测验），从一个 500 个共享能力的池子里为每个测验抽一批，再各配一批专属能力，总共动用 2766 个能力。</p>
-
 <p>关键在于这些能力的设定，他强调了两遍：它们<strong>完全、彻底地互不相关</strong>，独立同分布；而且每个测验都至少调用 232 个不同的能力，所以就算某个能力被很多测验共享，它也远远算不上任何一个测验分数的主导决定因素。<strong>这个世界里没有任何东西可以被称作「一般智力」。</strong></p>
-
 <figure>
-<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Thomson 抽样模型示意图">
+<svg aria-label="Thomson 抽样模型示意图" role="img" viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
 <rect fill="none" height="300" width="700" x="0" y="0"></rect>
 <text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" x="10" y="20">2766 个彼此完全独立的小能力</text>
 <g fill="#6ea8fe" opacity="0.55">
 <circle cx="30" cy="45" r="4"></circle><circle cx="62" cy="52" r="4"></circle><circle cx="96" cy="42" r="4"></circle><circle cx="128" cy="55" r="4"></circle><circle cx="160" cy="44" r="4"></circle><circle cx="194" cy="53" r="4"></circle><circle cx="226" cy="43" r="4"></circle><circle cx="258" cy="54" r="4"></circle><circle cx="292" cy="45" r="4"></circle><circle cx="324" cy="52" r="4"></circle><circle cx="356" cy="43" r="4"></circle><circle cx="390" cy="55" r="4"></circle><circle cx="422" cy="44" r="4"></circle><circle cx="454" cy="53" r="4"></circle><circle cx="488" cy="42" r="4"></circle><circle cx="520" cy="54" r="4"></circle><circle cx="552" cy="45" r="4"></circle><circle cx="586" cy="52" r="4"></circle><circle cx="618" cy="43" r="4"></circle><circle cx="650" cy="54" r="4"></circle><circle cx="678" cy="46" r="4"></circle>
 </g>
 <text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" x="10" y="78">彼此之间相关系数 = 0，没有任何一个占主导</text>
-<g stroke="#6ea8fe" opacity="0.28" stroke-width="1">
+<g opacity="0.28" stroke="#6ea8fe" stroke-width="1">
 <line x1="30" x2="90" y1="49" y2="120"></line><line x1="96" x2="90" y1="46" y2="120"></line><line x1="160" x2="90" y1="48" y2="120"></line><line x1="292" x2="90" y1="49" y2="120"></line><line x1="454" x2="90" y1="57" y2="120"></line>
 <line x1="62" x2="240" y1="56" y2="120"></line><line x1="226" x2="240" y1="47" y2="120"></line><line x1="356" x2="240" y1="47" y2="120"></line><line x1="520" x2="240" y1="58" y2="120"></line><line x1="678" x2="240" y1="50" y2="120"></line>
 <line x1="128" x2="400" y1="59" y2="120"></line><line x1="292" x2="400" y1="49" y2="120"></line><line x1="422" x2="400" y1="48" y2="120"></line><line x1="586" x2="400" y1="56" y2="120"></line><line x1="650" x2="400" y1="58" y2="120"></line>
@@ -280,10 +203,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <text x="90" y="140">测验 1</text><text x="240" y="140">测验 2</text><text x="400" y="140">测验 …</text><text x="560" y="140">测验 11</text>
 </g>
 <text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" x="10" y="172">每个测验随机抽用其中一批（每个至少 232 个）</text>
-<g stroke="#5eead4" stroke-width="1.4" opacity="0.75" marker-end="url(#ar)">
+<g marker-end="url(#ar)" opacity="0.75" stroke="#5eead4" stroke-width="1.4">
 <line x1="90" x2="330" y1="150" y2="205"></line><line x1="240" x2="345" y1="150" y2="205"></line><line x1="400" x2="360" y1="150" y2="205"></line><line x1="560" x2="375" y1="150" y2="205"></line>
 </g>
-<defs><marker id="ar" markerHeight="6" markerWidth="6" orient="auto" refX="5" refY="3"><path d="M0,0 L6,3 L0,6 z" fill="#5eead4"></path></marker></defs>
+<defs><marker id="ar" markerheight="6" markerwidth="6" orient="auto" refx="5" refy="3"><path d="M0,0 L6,3 L0,6 z" fill="#5eead4"></path></marker></defs>
 <rect fill="rgba(110,168,254,0.16)" height="42" rx="8" stroke="#6ea8fe" stroke-width="1.6" width="230" x="235" y="208"></rect>
 <text fill="#e2e8f0" font-family="SF Mono, Menlo, monospace" font-size="14" font-weight="700" text-anchor="middle" x="350" y="234">因子分析报出一个「g」</text>
 <text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11.5" text-anchor="middle" x="350" y="270">解释 47.8% 的方差 · 单因子检验 p = 0.709 · 完美通过</text>
@@ -291,46 +214,30 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </svg>
 <figcaption>Thomson 抽样模型：所有的「证据」都出现了，而被证明的东西并不存在</figcaption>
 </figure>
-
 <p>结果：因子分析报出一个 g，解释了 47.8% 的标准化方差。11 个载荷从 0.416 到 0.955，「即使最小的那个也相当体面，有几个还很漂亮」——他还给了个链接，让你去跟某位 g 的支持者从韦氏儿童量表真实数据里得到的载荷比一比。因子载荷与该测验调用的共享能力数量之间的相关是 +0.816。最后他跑了标准的单因子适配检验：卡方 38.41，44 个自由度，<strong>p 值 0.709——完美通过</strong>。</p>
-
 <p>他补了一句：「以上全部，就构造而言，是彻头彻尾的假象。」</p>
-
 <p><strong>第三步：遗传度也拦不住。</strong>有人会说，g 是高度可遗传的，如果它只是个假象就不可能可遗传。他的反驳只用了三句话：在发达国家，身高的遗传度约为 0.8；血液甘油三酯水平的遗传度约为 0.5；那么「身高加甘油三酯」这个量也是可遗传的。「这个性状是可遗传的，这一事实并不能让它变得不那么毫无意义。」而 Thomson 模型只要给每个小能力配上「加性遗传 + 基因互作 + 环境」这套经典生物统计学分解，产生出的假 g 自然也是可遗传的。</p>
-
 <p><strong>为什么这不是巧合。</strong>背后有个纯代数的理由，他放在脚注里：因子分析通常是取相关矩阵的特征向量。而 Perron–Frobenius 定理说，任何元素全为正的矩阵，都有一个唯一的最大特征值，且对应的特征向量元素全为正。翻译过来就是：<strong>只要所有相关系数都是正的，就必然存在一个方差占比最大、且所有变量都正载荷其上的因子。</strong>而智力测验从一开始就是照着「彼此相关」的标准筛选出来的。</p>
-
 <p>于是那句名言：把测验造得彼此正相关然后发现它们有一个主导因子，「就好比列一串很大的平方数，然后发现里面没有一个是质数——这是构造方式的必然副产品，仅此而已」。</p>
-
 <p>他还指出了这套体系的循环性：新测验的效度，是靠它与既有的共同因子高度相关来验证的；而 g 的真实性，又靠智力测验之间相关得多好来确认。「到了这个地步，我猜一个东西如果跟韦氏及其同类相关得不好，就不可能被接受为『智力测验』，无论它在日常意义上需要多少智力。」他甚至说，真正令人意外的是<strong>这套自我确认的循环居然还没有工作得更好</strong>。</p>
-
 <p>最后是那个把整篇文章的分寸定住的比喻。他反复强调他<strong>没有</strong>证明 g 不存在：</p>
-
 <blockquote>
 <span class="en">If, after looking at your watch, you say that it's 12 o'clock, and I point out that your watch has stopped at 12, I am not saying that it's not 12 o'clock, just that your watch doesn't actually give you any evidence about the time.</span>
 <span class="zh">如果你看了一眼表说现在是十二点，而我指出你的表停在了十二点，我并不是在说现在不是十二点，我只是在说，你的表并没有给你任何关于时间的证据。</span>
 <cite>《g, a Statistical Myth》</cite>
 </blockquote>
-
 <p>他的结论因此是一句关于研究方向的话，而不是关于智力的话：「我们越早不再关注 g，就能越早把精力投到理解心智上去。」</p>
-
-<h3>3. Joey 跳了桥，Irene 也跳了：一个原则上无解的问题</h3>
-
+<h3 data-tts="9ce6c1178ad5da59">3. Joey 跳了桥，Irene 也跳了：一个原则上无解的问题</h3>
 <p>这一次的对手是社会传染研究。Christakis 和 Fowler 有一批著名的结果：如果 Joey 去年变胖了，Irene 今年变胖的几率显著上升。他们把这解释为一种社会传染。类似的结论被套用在吸烟、饮酒、自杀、政治立场、给猫图配拼错的笑话等等一长串行为上。</p>
-
 <p>Shalizi 的切入点是那句所有家长都说过的话：「如果你朋友 Joey 从桥上跳下去，你也跳吗？」他说，事实是——会。问题是<strong>为什么</strong>。他列了五种机制：社会影响（Joey 的示范激励了 Irene，或者重新校准了她对冒险的容忍度）；生物传染（Joey 感染了某种抑制恐高的寄生虫并传给了 Irene）；显性同质性（他们成为朋友<em>就是因为</em>都爱跳桥）；隐性同质性（他们都是肾上腺素成瘾者，在过山车俱乐部认识，共同的瘾让两人都开始跳桥）；外部原因（有时候从桥上跳下去是唯一理智的选择）。</p>
-
 <p>对 Irene 的父母来说，前两种和后三种的差别是天壤之别：前两种意味着该让 Irene 离 Joey 远点，后三种意味着这么做毫无意义——伤害早就造成了，他们爱一起玩多久玩多久。</p>
-
 <p>而统计学家看到的只有一件事：跳桥行为在社交网络上相关。</p>
-
 <p>Shalizi 和 Andrew C. Thomas 证明的是：<strong>这几种机制在观察数据里一般而言不可分辨。</strong>理由画成图就一目了然。</p>
-
 <figure>
-<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="同质性与传染的后门路径图">
+<svg aria-label="同质性与传染的后门路径图" role="img" viewbox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
 <rect fill="none" height="260" width="700" x="0" y="0"></rect>
-<defs><marker id="a2" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#7d8794"></path></marker>
-<marker id="a3" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#5eead4"></path></marker></defs>
+<defs><marker id="a2" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#7d8794"></path></marker>
+<marker id="a3" markerheight="7" markerwidth="7" orient="auto" refx="6" refy="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#5eead4"></path></marker></defs>
 <g fill="rgba(110,168,254,0.14)" stroke="#6ea8fe" stroke-width="1.5">
 <rect height="40" rx="8" width="140" x="30" y="30"></rect><rect height="40" rx="8" width="140" x="520" y="30"></rect>
 </g>
@@ -340,7 +247,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </g>
 <rect fill="rgba(94,234,212,0.12)" height="34" rx="8" stroke="#5eead4" stroke-width="1.5" width="180" x="255" y="33"></rect>
 <text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle" x="345" y="55">是否成为朋友 A(i,j)</text>
-<g stroke="#5eead4" stroke-width="1.6" marker-end="url(#a3)"><line x1="172" x2="252" y1="50" y2="50"></line><line x1="518" x2="438" y1="50" y2="50"></line></g>
+<g marker-end="url(#a3)" stroke="#5eead4" stroke-width="1.6"><line x1="172" x2="252" y1="50" y2="50"></line><line x1="518" x2="438" y1="50" y2="50"></line></g>
 <g fill="rgba(110,168,254,0.14)" stroke="#6ea8fe" stroke-width="1.5">
 <rect height="40" rx="8" width="140" x="30" y="175"></rect><rect height="40" rx="8" width="140" x="520" y="175"></rect>
 </g>
@@ -348,7 +255,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <text x="100" y="192">Joey 昨天跳桥</text><text x="100" y="208">Y(j, t-1)</text>
 <text x="590" y="192">Irene 今天跳桥</text><text x="590" y="208">Y(i, t)</text>
 </g>
-<g stroke="#7d8794" stroke-width="1.5" marker-end="url(#a2)"><line x1="100" x2="100" y1="72" y2="172"></line><line x1="590" x2="590" y1="72" y2="172"></line></g>
+<g marker-end="url(#a2)" stroke="#7d8794" stroke-width="1.5"><line x1="100" x2="100" y1="72" y2="172"></line><line x1="590" x2="590" y1="72" y2="172"></line></g>
 <line marker-end="url(#a2)" stroke="#7d8794" stroke-dasharray="6 5" stroke-width="2" x1="172" x2="516" y1="195" y2="195"></line>
 <text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle" x="344" y="184">传染？（我们想测的就是这一条）</text>
 <text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11.5" text-anchor="middle" x="344" y="234">上面那条绕行的通路（后门路径）也会产生同样的相关</text>
@@ -356,53 +263,33 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </svg>
 <figcaption>后门路径：从 Joey 的行为可以推知 Joey 的特质，经由友谊连线推知 Irene 的特质，再推知 Irene 的行为——全程不需要任何传染</figcaption>
 </figure>
-
 <p>他把这条链讲得很清楚：如果我们得知 Joey 昨天跳了桥，这就透露了 Joey 是个什么样的人；如果 Joey 和 Irene 是朋友，这又透露了 Irene 是个什么样的人，因而透露了她今天会不会跳桥。<strong>而这一切与是否存在直接影响毫无关系。</strong>Judea Pearl 把这条绕行的通路叫做「后门路径」。只要它开着，Irene 的行为就多少可以从 Joey 的行为预测出来，「足够聪明的回归会检测到这一点，但它们无法区分这份可预测性有多少来自后门路径、多少来自直接影响」。</p>
-
 <p>Christakis 和 Fowler 其实提出过一个很聪明的辩护，Shalizi 说那是他们最难对付的一点：友谊有时是不对称的，Irene 说 Joey 是朋友，Joey 却没提 Irene。在这些不对称的配对里，用被提名者的行为去预测提名者，比反过来更准。这看起来非常像「你会被你自己认作朋友的人影响」。</p>
-
 <p>Shalizi 和 Thomas 造了个反例。只需要假设：某种潜在特质越接近分布的中位数，越容易被别人（或被自己）说成是朋友。那么「Irene 认 Joey 为友而 Joey 不认」这件事本身，就成了「Irene 的特质比 Joey 更极端」的一个信号，而这会改变两人行为之间的互相预测程度。他们把这个很基本的模型跑出来，<strong>在完全没有传染的情况下稳健地复现了那种不对称</strong>。</p>
-
 <p>反过来的方向同样致命。人们普遍相信社会阶层影响政治选择。Shalizi 用 Andrew Thomas 的软件做了个模拟：每个人有一个固定的二元「阶层」，同类之间更容易连边，于是网络自然分成上下两团；每个人还有一个可变的二元「选择」，红或蓝，<strong>初始时与阶层完全无关</strong>。然后让选择按最简单的规则演化——随机挑一个人，随机挑他的一个邻居，抄过来。几百步之后，下层全红了，上层全蓝了。而且这不是偶然，模式可靠地重现，只是哪个颜色配哪个阶层是随机的。跑个逻辑回归，你会得到「阶层显著预测选择」的统计结果。</p>
-
 <p>他明确指出这是他从元胞自动机学来的「投票者模型」在图上的对应行为，也明确承认这类过分简单的模型他自己一向看不上——「我不认为我违反了自己的禁令，因为我并没有说政治意见的传播真的遵循投票者模型。这些模型让已经被证明的事变得可见，并显示产生这些现象所需的条件其实并不极端。」</p>
-
 <p>那么建设性的部分在哪？他给了一个方向：即使因果效应无法被<strong>识别</strong>，也许可以被<strong>界定上下界</strong>，沿着 Manski 的路子。而他猜测，一个可行的办法是利用网络的连边结构做社群检测，把估计出来的社群当作那个测不到的同质性特质的代理——如果人们因为相似而结交，网络就会结成一团团相似的人。他很老实地加了一句：「不过现在，这个想法还只是我们正在追的一个猜想。」</p>
-
 <p>而这一节最像他的一句，是他给自己下的定语：</p>
-
 <blockquote>
 <span class="en">My motto as a writer might as well be "the urge to destroy is also a creative urge", but in this paper we do hold out some hope […]</span>
 <span class="zh">我作为一个写作者的座右铭，大概可以就是「破坏欲也是一种创造欲」；不过在这篇论文里，我们确实留了点希望……</span>
 <cite>《Return of "Homophily, Contagion, Confounding: Pick Any Three"》，2010 年 4 月</cite>
 </blockquote>
-
-<h3>4. 最优计划经济的问题不是道德的，是 n<sup>3.5</sup></h3>
-
+<h3 data-tts="93021be80f73d2e3">4. 最优计划经济的问题不是道德的，是 n<sup>3.5</sup></h3>
 <p>2012 年，他读了 Francis Spufford 的小说《Red Plenty》——写苏联六十年代那批数学经济学家如何相信自己能用线性规划算出一个比市场更好的经济。他喜欢这本书，喜欢到他说自己「太在这本书的目标受众里了，说出来都不好笑」，还在脚注里把自己的偏见列成清单：隐约偏左、科幻读者、对经济学感兴趣、家里有个亲戚中间名叫「卡尔·马克思」、小时候在父亲膝上学会线性规划。</p>
-
 <p>然后他把这个吵了一百年的政治问题，换成了一道算术题。</p>
-
 <p>他先把 Kantorovich 式计划所需的东西一条条列出来：一个要最大化的目标函数；关于全部物理约束的完整准确知识；关于全部生产能力的完整准确知识；这一切都必须是线性的；以及——他真正想谈的那一条——<strong>计算时间必须不只是便宜到不用计量，而是真正的浩瀚</strong>。</p>
-
 <p>已知最快的线性规划算法是内点法。它需要的算术运算次数，大致正比于 (m+n)<sup>3/2</sup>·n<sup>2</sup>·log(1/ε)，其中 n 是变量数、m 是约束数、ε 是你能接受的误差。这个复杂度是多项式的，所以在理论家眼里属于「可解」——但它随 n 的增长像 n<sup>3.5</sup>。</p>
-
 <p>他把这句话翻译成了一句人能感受到的：</p>
-
 <blockquote>
 <span class="en">Expanding the problem size by a factor of a thousand takes us not a thousand times as long, but about 30 billion times as long.</span>
 <span class="zh">把问题规模扩大一千倍，花的时间不是一千倍，而是大约三百亿倍。</span>
 <cite>《In Soviet Union, Optimization Problem Solves You》，2012 年 5 月</cite>
 </blockquote>
-
 <p>然后他去找了那个真实的数字。经济学家 Alec Nove 在《可行的社会主义经济学》里写道：1983 年的苏联有<strong>一千二百万种可区分的商品</strong>（细分到具体型号的滚珠轴承、布料的花色、棕色鞋子的尺码），近五万家工业企业，外加数以千计的建筑、运输、集体农庄、批发和零售单位。</p>
-
 <p>好，一台现代商用求解器在台式机上几分钟能处理一千两百万变量的问题。慷慨一点，把它压到一秒。那么一百二十亿变量要多久？三百亿秒，大约一千年。</p>
-
 <p>而一千二百万还远远不够：<strong>商品必须按地点索引</strong>——斯摩棱斯克的一件冬季男式部分丝绸衬里精纺毛呢大衣，和莫斯科的同一件，是两个变量，否则你的计划算不出运输，东西不会出现在需要它的地方。会腐坏的、有时令的还得按时间索引。「一千个地点已经是非常保守的估计了」——而光是这个因子，就足以把我们推进「算一版计划要一千年」的区间。</p>
-
 <p>他随后逐条堵死了逃生口，每一条都干净利落：</p>
-
 <ul>
 <li><strong>「只要近似最优就行。」</strong>那个复杂度公式里已经含了近似项，而且它只随精度<em>对数式地</em>变化——多容忍一点误差，省下的时间微乎其微。这条路堵死了。</li>
 <li><strong>「经济问题有特殊结构，可以拆开算。」</strong>要能拆，就得有大批变量彼此毫无关联。但正如列宁据说说过的，「万物皆相互联系」；至少劳动力是一切生产都需要且总量有限的，这就把整个经济耦合在了一起。</li>
@@ -410,79 +297,46 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><strong>「那就只算影子价格，让个体自己去买卖。」</strong>这正是 Kantorovich 周围那批人的方案。但就目前所知，<strong>计算最优价格的复杂度与计算最优计划本身相同</strong>。「想主张这条路的人需要证明它可行，而不只是虔诚地希望。」</li>
 <li><strong>「等算力上去。」</strong>抵消那三百亿倍需要大约 35 次翻倍，按摩尔定律要半个世纪；而如果地点因子实际上是一百万而不是一千，那就是 10<sup>21</sup> 倍——将近 70 次翻倍，一个多世纪。「如果 Iain Banks 或 Ken MacLeod 想写本小说，说最优计划经济会在二十二世纪初变得技术上可行，我会热切地读。但作为一份严肃的预测，这属于让某个年纪的极客大喊『我的喷气背包呢』的那类思维。」</li>
 </ul>
-
 <p>而且这还只是线性的情形。现实里有规模报酬递增——飞机每飞一班有固定成本，无论装多少；写软件、写论文、开产线都一样。规模报酬递增意味着<strong>非凸约束</strong>，而非凸优化<strong>没有</strong>通用算法，一般而言相当难解。他还顺手补了一刀：非凸性同样搞坏了新古典经济学「市场总是最优」的那些定理——这印证了 Stiglitz 的说法，<strong>如果新古典派对资本主义如何运作的描述是对的，那么 Kantorovich 式的社会主义本来是完全可行的。</strong></p>
-
 <p>接着他做了整篇文章里最重要的一次转身：<strong>就算算力是无限的，你仍然过不去。</strong>因为线性规划要求先有一个目标函数，而目标函数就是一组权重——多织一条床单值不值得少做几片尿布——也就是一组价值判断。任何一个人类计划者都不可能对全经济、按时空索引的所有商品编出真实的偏好，「要不然就超出了人性的界限」。集体来定就撞上社会选择的全部悖论。让民众投票，那投的只能是高度聚合的摘要，而把摘要展开成细节的过程<strong>同样充满价值判断</strong>——「我们并没有真的给计划机构一个可解的技术问题」。独裁也不解决：独裁者也只是一个人，同样编不出这些偏好。</p>
-
 <p>他给市场留下的位置很窄，但很实：市场是一种反馈机制，能把使用者的信息传回生产者并在全经济中传播，而不需要任何人显式地追踪这些信息。「这一点上，哈耶克和（战前的）兰格都说得非常对。」他甚至引了托洛茨基的一段来支持——并加了个括号：「或许我该写成『甚至托洛茨基有时也能说对』。」然后他说，「可以设想存在某种别的反馈机制，跟市场一样丰富、适应性强、好用而又不是市场，哪怕是伪装的市场。但没有人提出过这样的东西。」</p>
-
 <p>可他对市场同样毫不客气。市场只让人「按其所需与其相对力量发出信号」到他有多少钱为止——这本身就跟给计划者一个目标函数一样，是一次价值选择：</p>
-
 <blockquote>
 <span class="en">Those values are not pretty. They are that the whims of the rich matter more than the needs of the poor; that it is more important to keep bond traders in strippers and cocaine than to feed hungry children. At the extreme, the market literally starves people to death, because feeding them is a less "efficient" use of food than helping rich people eat more.</span>
 <span class="zh">那些价值观并不好看。它们是：富人的一时兴起比穷人的需要更重要；让债券交易员有脱衣舞女和可卡因可享，比喂饱饥饿的儿童更重要。在极端情况下，市场是字面意义上把人饿死的，因为拿粮食去喂他们，是一种不如帮富人多吃一点那么「有效率」的用途。</span>
 <cite>《In Soviet Union, Optimization Problem Solves You》</cite>
 </blockquote>
-
 <p>他认为这种病不是市场交换本身固有的，是「市场交换加上严重不平等」的结果——因此存在一个很强的理由，说明<strong>财富的平等分配是市场配置的补充品，而不是它的对立面</strong>。「不过在政治上，祝你好运，让这两样凑到一起。」</p>
-
 <p>最后是那个让两边都不舒服的结论。他没有说「所以资本主义赢了」。他说的是：</p>
-
 <blockquote>
 <span class="en">That planning is not a viable alternative to capitalism (as opposed to a tool within it) should disturb even capitalism's most ardent partisans. It means that their system faces no competition, nor even any plausible threat of competition. Those partisans themselves should be able to say what will happen then: the masters of the system, will be tempted, and more than tempted, to claim more and more of what it produces as monopoly rents. This does not end happily.</span>
 <span class="zh">计划不是资本主义的一个可行替代品（而只是它内部的一件工具），这一点应当连资本主义最热忱的拥护者都感到不安。它意味着他们的制度面对不了任何竞争，甚至没有任何像样的竞争威胁。这些拥护者自己就该能说出接下来会发生什么：这个体系的主人们将会被诱惑，而且不止是被诱惑，去把它产出的越来越多的东西当作垄断租金拿走。这不会有什么好结局。</span>
 <cite>《In Soviet Union, Optimization Problem Solves You》</cite>
 </blockquote>
-
-<h3>另一条线：那些跑在人身上的怪物</h3>
-
+<h3 data-tts="bb12149e753ec352">另一条线：那些跑在人身上的怪物</h3>
 <p>上面四把刀都是「拆」。但他有一条埋了二十年的建设性线索，值得单独提一句，因为它是他现在还在做的事。</p>
-
 <p>2004 年，他写过一篇短文，标题叫《Popular Delusions of Distributed Multi-Agent Systems》（《分布式多智能体系统的流行错觉》）。他附议了一个说法：「群体的智慧」不过是「分布式算法的行为」的另一种叫法，而后一个名字之所以更好，是因为它<strong>不神秘</strong>——它逼你去问那些真正的问题：这个算法怎么传递信息？怎么达成共识？反馈回路在哪？角落里的诡异情形会怎样？「任何跟分布式系统缠斗过的计算机科学家都知道，设计一个真能做到你想要它做的事的分布式算法，是极其棘手的。」</p>
-
 <p>2023 年，他和 Henry Farrell 在《经济学人》上写了一篇文章，论点是：<strong>那个把大语言模型比作 shoggoth（洛夫克拉夫特笔下的无定形怪物）的梗是对的</strong>——因为 LLM 是一种把「记录在网上的人类书面语言」这团巨大混沌加以简化和抽象的方式。用 Alison Gopnik 的话说，它们是文化技术，更像图书馆目录而不像单个的心智。而这让它们成为一个更古老家族的晚辈成员，这个家族里还有<strong>市场、公司、国家，乃至民主国家</strong>——它们同样是简化、抽象、再利用人类心智的分布式信息处理系统，而且不只是吞食人类智能的产物，它们<strong>就跑在人身上</strong>。他在博客里注明：这是「一个我已经吹了一阵子的调子」，链接指向的正是那篇 2004 年的文章。</p>
-
 <p>他还列了一串因为篇幅而没能写进去的东西，其中一条是这样的：这些东西涌现自人类社会互动与个体智能的聚合结果，因此与人类心智非常不同——「特别是，它们往往有自己的内在动力学，那通常不是任何人所意图的，而且常常是没有人想要的。这不意味着它们无法被控制；这意味着控制很难，而且控制本身通常也是非人格的。」</p>
-
 <p>2026 年 3 月，他在纽约大学的一个工作坊上把这条线又推了一步，题目是《Aware of All Internet Traditions: Generative AI as Information Retrieval and Synthesis》（《知悉一切互联网传统：生成式 AI 作为信息检索与综合》）。他的结论链条是：生成式 AI 是信息检索与综合；它以套路化的方式生成；人类文化同样以套路运作；套路就是传统；因此生成式 AI 是<strong>被机械化的传统</strong>。他在博客里加了一句：「我正在琢磨 Leif 的那个说法——我是在试图复活结构主义。」</p>
-
 <p>这条线和前面四把刀是同一件事的两面。<strong>前者说的是「你以为自己看见了一个统一的原因，其实那是很多东西加在一起的算术后果」；后者说的是「你以为自己面对的是一个心智，其实那是很多人加在一起的运行后果」。</strong>他二十多年只在处理一个母题：涌现出来的整体，和你为它取的那个名字之间，隔着多远。</p>
-
-<h2>五、他的思维方法</h2>
-
+<h2 data-tts="6fa96d6e38ca6a19">五、他的思维方法</h2>
 <p>把这些文章摞在一起看，会发现他每次的动作几乎是同一套。</p>
-
 <p><strong>先做算术，再谈立场。</strong>这是最核心的一条。面对一个大论断，他的第一反应不是找反例、不是讲道理，而是问：如果这是真的，哪个数字必须成立？然后他去把那个数字找出来。计划经济那篇里是 Nove 的一千二百万种商品和 n<sup>3.5</sup>；幂律那篇里是 24 个数据集的重新拟合；g 那篇里是 2766 个能力和 p=0.709。他的论战几乎从不停留在「我认为」这个层面上。</p>
-
 <p><strong>造一个你事先知道答案的假世界。</strong>这是他的招牌器械，而且要看清它是<strong>证伪装置</strong>，不是演示装置。他不是在说「世界大概是这样运行的」；他是在说「我造了一个世界，我确切地知道里面没有 X，而你那套标准方法看着它报告说有 X，所以你那套方法在这个问题上没有证据能力」。他在 g 那篇里把这层意思说得非常明白：「我要给你看一些例子，你可以看出这些数据没有单一的主导原因，<strong>因为是我随机造出来的</strong>，但透过因子分析这个镜头看，它们依然呈现出那种样子。」他甚至预先声明了 Thomson 模型不是对思维如何运作的严肃描述。</p>
-
 <p><strong>攻击方法，而不是结论。</strong>这一条是他与绝大多数论战者的分野，而且他执行得非常严格。他反复声明他没有证明 g 不存在、没有证明社会传染不发生、没有证明幂律都是假的。他证明的是「支持它的那条论证是无效的，那批证据是不相干的」。停摆的表那个比喻就是专门用来守住这条界线的。这让他的结论比一般的驳论更窄，也更难被推翻。</p>
-
 <p><strong>把自己的失真写在产品标签上。</strong>注意力节约声明是这条原则的日常形式；更硬的形式是 g 那篇开头对终身教职投票人的利益冲突披露，是社会主义那篇脚注里对自己政治偏见的逐项打钩，是他谈贝叶斯统计时那句括号里的「其中有些人将在我的终身教职委员会上」。他不假装自己站在没有位置的地方。</p>
-
 <p><strong>不设评论区，但手工回链。</strong>他每篇文章末尾有一份「manual trackback」名单，把写过这篇文章的人一个个列出来，包括骂他的。在计划经济那篇的回链里，他列了一个标题为《一个不值得羡慕的处境》的博客，并在方括号里注道：「虽然『Shalizi 是个白痴』这个论断轮不到我来争，但 Edenbaum 认为我会不同意他下面这段话——『我们需要的不是更好、更聪明的宇宙主宰，我们需要的是一个受过更好教育的民众，和有反讽感的学者……』——这说明我这边的表达出现了相当严重的失败。」<strong>他把批评者的辱骂原样贴出来，然后只反驳那个可以反驳的部分，并把误解归为自己的表达问题。</strong></p>
-
 <p><strong>他真的把书读完。</strong>他后期几乎唯一稳定的产出是每月的书评栏目，而那不是消遣。2026 年 7 月他为了交一篇论文，把一本 1962 年的非平衡热力学专著<strong>从头到尾重读了一遍</strong>，然后在栏目里老实交代：多年前他在一个项目上卡住，想出了一个「一度让我相当得意」的技巧，后来才发现「我的」技巧其实就是这本书第十章里的东西。他还顺手对整个子领域下了个判断——线性不可逆热力学「几乎已经完成了」，从 Onsager 到 Prigogine 再到 Mazur 那一两代人基本已经把该说的都说了——然后立刻自嘲：「我意识到我这么说，就（恕我用词）热力学地必然会有一位读者来告诉我近年来这领域有多少开创性工作，而另一位读者则会解释这套理论已经被彻底推翻了。」</p>
-
-<h2>六、他哪里可能是错的</h2>
-
+<h2 data-tts="eea1d00a4fe195c3">六、他哪里可能是错的</h2>
 <p><strong>他自己写下的那条最狠的批评。</strong>在 g 那篇的后半，讲完 2766 个能力之后，他主动加了这么一句：Thomson 模型<strong>最大的问题是 g 显得太强了</strong>——它轻轻松松就通过了单因子检验，而真实的智力测验，比如韦氏量表，全都通不过。</p>
-
 <p>把这句话摊开：他用来拆掉 g 的那个反例，对数据的拟合「好过了头」，因此作为对世界的描述反而更不可信。他说如果这不是从正事上分心，他会去研究放松「测验是从共享能力池里完全独立、均匀抽样」这个假设能不能造出更真实的东西。<strong>他把自己那一击的裂纹画在了论证的正中间，然后没有去补。</strong>这既是他最值得敬重的地方，也确实是那篇文章的一个真实缺口。</p>
-
 <p><strong>有一篇成规模的实名反驳，而他没有回应。</strong>2013 年 4 月 3 日，署名 Dalliard 的作者在 Human Varieties 站上发表了《Is Psychometric g a Myth?》，逐条反驳 g 那篇；物理学家、后转基因组学的 Steve Hsu 在自己的博客 Information Processing 上转载推荐。<strong>此处需要说明：该站在本页写作环境的网络策略下无法打开，我没有读到原文，因此不复述它的论证。</strong>我读到的是 Hsu 转引的概要，其中的核心指控是「Shalizi 声称测验编制者会剔除不相关的测验以制造正流形，而事实大致相反」。这条指控值不值得成立，我无法在没读原文的情况下判断，只能如实记下：<strong>它存在、它有署名、它有分量，而在我通读的全部档案里，Shalizi 此后没有公开回应过它。</strong>这与他在那篇文章开头写的「这个话题已经耗尽了我写它的兴趣」是一致的——但不回应终究是不回应。</p>
-
 <p><strong>破与立的严重不对称。</strong>这是他整个作品最系统性的偏斜，而且他自己命名了它：「我作为一个写作者的座右铭，大概可以就是『破坏欲也是一种创造欲』。」他的否定性结果干净、著名、经得起时间——幂律那篇成了标准引用，同质性—传染那篇成了这个子领域的定理。而他的建设性方案则一律处在早期状态：用社群检测去代理同质性特质，他自己标注为「现在还只是我们正在追的一个猜想」；2021 年那篇用随机特征做模拟推断的，他自己叫它「初步的、概念验证的札记」。他形容自己在一篇论文上「从看出需要某个约束，到看出哪个约束管用，中间隔了好几年」，并加了一句「我确实是只树懒」。</p>
-
 <p>这个不对称有实际后果。一个能可靠地告诉你「你不能从这批数据里知道那件事」的方法，对审稿人价值极高，对<strong>周二之前必须做出决定的人</strong>价值就低得多。他给出的替代方案往往是「去做非参数密度估计」「去算界而不是点估计」「去做真正的因果推断」——都对，但都比被他拆掉的那套贵得多、慢得多，而且有时并不存在现成的做法。他很少正面处理这个成本问题。</p>
-
 <p><strong>他把酸也泼在自己的领域上——这既是优点，也让他难以被归类。</strong>2005 年他谈学科为什么存在时，写下了这么一句关于自己出身的复杂系统研究的话：「复杂系统这个领域会走上更像认知科学而不是更像一般系统论的轨迹，这对我来说并不显然；它是否配得上前一种轨迹，也不显然。」一个人如果连自己所属的学术运动都不肯给出保票，那他确实很难被当成任何阵营的资产——这大概也是他影响力集中在方法论层面、而不是在任何一个实质领域里的原因。</p>
-
 <p><strong>立场偏斜。</strong>他明确是偏左的，也明确披露了这一点（社会主义那篇脚注里的逐项打钩、g 那篇开头对系里同事的利益冲突声明）。披露比不披露好得多，但披露不等于抵消。值得注意的是，他在同一篇文章里同时得罪了左右两边——对市场的道德判词和对计划的算术判词一样重——这本身是他没有在为某个结论倒推论证的最好证据；但读他的时候仍应记得，他挑选战场的方式不是中立的。</p>
-
-<h2>七、出处</h2>
-
+<h2 data-tts="3e9b65ed86977584">七、出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://bactra.org/weblog/523.html">g, a Statistical Myth</a>（2007 年 10 月）</span><span class="d">一万一千字，用随机噪声和 Thomson 的 2766 个能力，演示因子分析如何在没有共同原因的世界里报出一个漂亮的 g。附利益冲突声明与停摆的表。</span></li>
 <li><span class="t"><a href="https://bactra.org/weblog/918.html">In Soviet Union, Optimization Problem Solves You</a>（2012 年 5 月）</span><span class="d">把最优计划经济换算成计算复杂度问题：n<sup>3.5</sup>、一千二百万种商品、一千个地点、一千年。以及那个让市场派同样难受的结论。</span></li>
@@ -492,15 +346,12 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://bactra.org/weblog/517.html">Why Oh Why Can't We Have Better Econophysics?</a>（2007 年 9 月）</span><span class="d">六千字讨伐物理学家做经济学，也是理解他为什么会变成今天这样的传记性文件：一个叛教者对自己老家的完整清算。</span></li>
 <li><span class="t"><a href="https://bactra.org/weblog/601.html">Bayes &lt; Darwin-Wallace</a>（2009 年 1 月）</span><span class="d">贝叶斯更新其实就是离散时间的复制者方程；以及贝叶斯学习者如何像人一样养成坏习惯——记住那个把前 13127 个观测背下来的模型。</span></li>
 </ul>
-
 <section class="updates" data-last-reviewed="2026-09-06" data-slug="three-toed-sloth">
-<h2>更新记录</h2>
+<h2 data-tts="04a590354c373a4e">更新记录</h2>
 <!-- updates -->
 </section>
 <footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-06</footer>
-
 </div>
-
 <script>
 (function(){
   var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
