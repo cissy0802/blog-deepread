@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cosma Shalizi · Three-Toed Sloth — The structure you found in the data is probably the shape of your ruler</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Inter",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#c8d2dc;line-height:1.72}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="three-toed-sloth-blog8.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep-Read · 08 · bactra.org</div>
+<h1>Cosma Shalizi · Three-Toed Sloth<br/>The structure you found in the data is probably the shape of your ruler</h1>
+<p class="sub">2003 to now · roughly 1,250 posts · still running (latest post 31 July 2026) · a sharp break between 2013 and 2014, when the yearly count fell from near a hundred to the low teens and the monthly book-notes column took over · this page is based on a full reading of 16 posts, from December 2004 to July 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>The first line of every piece Cosma Shalizi writes is a line telling you not to read it. He gave the device a formal name — the <strong>Attention Conservation Notice</strong> — and he has not skipped one in twenty-odd years.</p>
+
+<p>His much-cited essay on intelligence testing opens like this:</p>
+
+<blockquote>
+<span class="en">About 11,000 words on the triviality of finding that positively correlated variables are all correlated with a linear combination of each other, and why this becomes no more profound when the variables are scores on intelligence tests. […] Includes multiple simulations, exasperation, and lots of unwarranted intellectual arrogance on my part.</span>
+<cite>"g, a Statistical Myth", October 2007</cite>
+</blockquote>
+
+<p>His essay on Soviet economic planning warns that the topic "is about as relevant to the world around us as debating whether a devotee of the Olympian gods should approve of transgenic organisms. (Or: centaurs, yes or no?)" A piece on why the web centralises: "Arcane, speculative, and not actionable even if correct. You would be better off spending your time reading a book." This July's book column: "I have no taste, and only the memory of qualification to opine on thermodynamics."</p>
+
+<p>Reading this as modesty misses it. <strong>It is the operation he has performed on other people's data for twenty years, turned around and performed on himself.</strong> His life's work compresses to one question: how much of your conclusion is a property of the world, and how much is an arithmetical necessity of the method you used? A man who asks that for a living will naturally put a label on his own product listing its known distortions.</p>
+
+<h3>What he is actually fighting</h3>
+
+<p>Shalizi is a professor of statistics at Carnegie Mellon and external faculty at the Santa Fe Institute. He came out of physics — nonlinear dynamics and statistical mechanics — and that matters, because the early 2000s were exactly when his tribe was pouring into network science, economics and sociology under the slogan that everything is just another many-body problem. He was one of them. Then he learned statistics properly and turned on his own kin.</p>
+
+<p>The root question he keeps coming back to: <strong>when is a "structure" that emerges from a pile of numbers a bone of the world, and when is it merely the shape of your ruler?</strong></p>
+
+<p>And his answers all have the same shape: <strong>build a fake world where you already know the answer, throw the standard method at it, and see what it reports.</strong></p>
+
+<h3>2,766 abilities and a g that isn't there</h3>
+
+<p>The finest instance concerns g, the supposed general factor of intelligence. The evidence chain is short: give people a battery of mental tests; the scores correlate positively; run factor analysis and a dominant factor pops out accounting for a large share of the variance; name it g; treat it as a real part of the mind.</p>
+
+<p>Shalizi did two things.</p>
+
+<p>First, he had his computer <strong>generate correlation matrices at random</strong> — pure noise, no causal structure behind them whatsoever — manufactured scores for a thousand "subjects", and ran a standard factor analysis. The leading factor described 55.9% of the variance. Repeated a thousand times, the average was 47%. He then noted the comparison: on real intelligence tests, g typically accounts for somewhere between a quarter and two-thirds of the variance, "generally in the lower part of that range, say around a third." <strong>The noise outperformed the real thing.</strong></p>
+
+<p>The second was worse. In 1914, Godfrey Thomson proposed a model in which the mind has a huge number of small, entirely independent abilities, and each test draws on some random subset of them. Shalizi built it: 11 tests (matching the Wechsler Adult Intelligence Scale), 2,766 abilities in total, <strong>every one of them completely uncorrelated with every other</strong>, and none of them dominant in any test. Factor analysis reported a g accounting for 47.8% of the variance, with loadings good enough to publish. The standard test of whether a single factor suffices gave chi-squared 38.41 on 44 degrees of freedom, p = 0.709 — <strong>a clean pass</strong>.</p>
+
+<p>He then showed the fake g can be made heritable too: height has a heritability around 0.8, blood triglycerides about 0.5, so "height plus triglycerides" is heritable — and remains perfectly meaningless.</p>
+
+<p>There is a purely algebraic reason for all this, the Perron–Frobenius theorem: any matrix with all-positive entries has a unique largest eigenvalue whose eigenvector is all-positive. And intelligence tests are selected in the first place for correlating with one another.</p>
+
+<blockquote>
+<span class="en">So making up tests so that they're positively correlated and discovering they have a dominant factor is just like putting together a list of big square numbers and discovering that none of them is prime — it's necessary side-effect of the construction, nothing more.</span>
+<cite>"g, a Statistical Myth", footnote 8</cite>
+</blockquote>
+
+<p>Note what he does <strong>not</strong> say. He does not say g is unreal. He says the watch has stopped:</p>
+
+<blockquote>
+<span class="en">If, after looking at your watch, you say that it's 12 o'clock, and I point out that your watch has stopped at 12, I am not saying that it's not 12 o'clock, just that your watch doesn't actually give you any evidence about the time.</span>
+<cite>"g, a Statistical Myth"</cite>
+</blockquote>
+
+<h3>The same knife, four times</h3>
+
+<p><strong>Power laws.</strong> In 2005 Barabási reported in <cite>Nature</cite> that the reply intervals in Darwin's and Einstein's correspondence follow a power law. Shalizi pointed out that the same data are fit textbook-perfectly by a log-normal, and delivered judgment through Francis Galton: "Thou shalt have no other distribution before me, for I am a jealous limit theorem." Two years later he stopped sniping and wrote the paper — with Aaron Clauset and M. E. J. Newman — refitting two dozen real data sets that had all been claimed as power laws. The log-normal was almost always competitive and often better. He estimated that adopting the standard would make "half or more each issue of <cite>Physica A</cite>" disappear.</p>
+
+<p><strong>Social contagion.</strong> Joey jumped off a bridge yesterday and Irene is more likely to jump today — is that contagion, or were they always the same kind of person? Shalizi and Andrew C. Thomas proved these are <strong>generically indistinguishable</strong> in observational data. Not a shortage of data: the rival causal structures produce identical observable outcomes.</p>
+
+<p><strong>Optimal central planning.</strong> In 2012, after reading the novel <cite>Red Plenty</cite>, he did the arithmetic. The fastest known linear-programming algorithms need a number of steps growing like n<sup>3.5</sup> — multiply the problem size by a thousand and you multiply the time by thirty billion. The economist Alec Nove counted 12 million identifiably different products in the USSR of 1983; and goods must also be indexed by location, or the plan cannot account for transport. A machine solving 12 million variables in one second would need about a thousand years for 12 billion. <strong>He replaced a century-old argument about whether optimal planning is morally desirable with a sum.</strong></p>
+
+<p>Then came the conclusion that satisfies nobody: this should trouble capitalism's defenders most, because it means their system <strong>faces no competition, nor even a plausible threat of one</strong> — and by their own theory the masters of such a system will take more and more of the output as monopoly rents. "This does not end happily."</p>
+
+<h3>The sharpest criticism of him, written by him</h3>
+
+<p>In the g essay, right after the 2,766-ability simulation, he volunteers this: the biggest problem with the Thomson model is that <strong>the appearance of g is too strong</strong> — it sails through the single-factor test, whereas real intelligence tests like the Wechsler all fail it.</p>
+
+<p>Which is to say: the counter-example he used to dismantle g fits the data <em>too</em> well, and is therefore less believable as a picture of the world. He wrote that into the middle of his own argument.</p>
+
+<p>That is probably the most characteristic thing about him. A man can spend twenty years taking apart other people's methods and still mark the crack in his own best blow. And the two are the same act — the same act as that line at the top of every post, telling you not to read it.</p>
+
+</div>
+
+<!-- ============ FULL ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<h2>1. A strange thing: a man who begins every piece by telling you not to read it</h2>
+
+<p>On 18 October 2007, Cosma Shalizi published an eleven-thousand-word essay called "g, a Statistical Myth". People have been citing, translating and arguing about it for nearly twenty years. Its first line is not a thesis and not a hook. It is a warning-off:</p>
+
+<blockquote>
+<span class="en">Attention conservation notice: About 11,000 words on the triviality of finding that positively correlated variables are all correlated with a linear combination of each other, and why this becomes no more profound when the variables are scores on intelligence tests. Unlikely to change the opinion of anyone who's read enough about the area to have one, but also unlikely to give enough information about the underlying statistical techniques to clarify them to novices. Includes multiple simulations, exasperation, and lots of unwarranted intellectual arrogance on my part.</span>
+<cite>"g, a Statistical Myth", 18 October 2007</cite>
+</blockquote>
+
+<p>This is not a one-off. The Attention Conservation Notice is standard equipment, present on essentially every post for over two decades, and each one says something different and specific and unflattering. On Soviet planning: the topic "is about as relevant to the world around us as debating whether a devotee of the Olympian gods should approve of transgenic organisms. (Or: centaurs, yes or no?)" On why the internet centralises: "Arcane, speculative, and not actionable even if correct. You would be better off spending your time reading a book." On his own piece in <cite>The Economist</cite>: "Self-promotion of a pay-walled piece which combines a trendy topic with what even I admit is a long-held semi-crank notion." On the July 2026 book column: "I have no taste, and only the memory of qualification to opine on thermodynamics."</p>
+
+<p>Reading these as English self-deprecation loses the man. <strong>This is the operation he has run on other people's data for twenty years, turned around and run on himself.</strong> His work compresses to one question — how much of your conclusion is a property of the world, and how much is an arithmetical necessity of the method you used? — and someone who asks that professionally will of course label his own product with its known distortions, known conflicts of interest, and known lack of standing.</p>
+
+<p>Incidentally, his homepage still proudly quotes a site that called it the "worst home page ever." He runs no comment section. At the end of one footnote in the g essay he remarks: "And people wonder why I don't set up comments."</p>
+
+<h2>2. Who this is</h2>
+
+<p>Cosma Rohilla Shalizi is a professor in the Department of Statistics and Data Science at Carnegie Mellon University and external faculty at the Santa Fe Institute. Three-Toed Sloth began in 2003, subtitled "Slow Takes from the Canopy (My Very Own Internet Tradition)", and now runs to roughly 1,250 posts. It is still going — the latest post as this page was written is dated 31 July 2026. <strong>Not dormant, but sharply inflected.</strong> From 2003 to 2013 he wrote between fifty and a hundred and sixty posts a year; 2014 collapsed to 22, and the count has hovered in the teens ever since, most of it the monthly column "Books to Read While the Algae Grow in Your Fur". He has explained the late period himself, in the notices: the 2021 post "Bayesianism in Math: No Dice" is marked "Largely drafted back in 2013, then laid aside. Posted now in lieu of new content"; a March 2026 post on search engines and centralisation is "Drafted in 2018, and deliberately not much updated." <strong>His recent blog is substantially him working down his own backlog of drafts.</strong></p>
+
+<p>A few details with a picture in them, all of which he wrote himself. Every page heading on the site is taken from a Talking Heads lyric, on the grounds that "the songs are sufficiently cryptic that there's usually at least one line I can twist to the topic at hand, and it's probably some sort of intellectual property offense: what more could one ask for?" In the first footnote of his essay on socialist calculation, he lists his own biases as a checklist: "Vaguely lefty? Check. Science fiction reader? Check. Interested in economics? Check. In fact: family tradition of socialism extending to having a relative whose middle name was 'Karl Marx'? Check. […] Learned linear programming at my father's knee as a boy? Check." Explaining why one of his papers took from 2003 to 2009: "I am, in fact, a sloth."</p>
+
+<h2>3. What he is fighting</h2>
+
+<p>He came out of physics — the nonlinear dynamics and statistical mechanics wing. This matters, because the opening years of this century were precisely when that tribe poured into network science, economics and sociology. The slogan, roughly: we understand how the interactions of many individuals generate large-scale patterns, so economics must be just another many-body problem.</p>
+
+<p>He thought so too, once. The notice on his six-thousand-word 2007 essay "Why Oh Why Can't We Have Better Econophysics?" states the conversion plainly: "A rant […] about the horrors of physicists trying to do economics, by someone who used to be more sympathetic, but has since left physics, and has no credentials in economics."</p>
+
+<p><strong>He is an apostate, and apostates are the harshest.</strong> He knows where the habits come from: physicists are used to enormous quantities of very high-quality data, often generated by processes they control. Under those conditions crude analysis will not hurt you — "your data will save you unless your analytical procedures are actively malicious." Social data is not like that, and the habits came over unchanged.</p>
+
+<p>Out of this came the root question he has returned to for twenty years:</p>
+
+<p><strong>When is a "structure" emerging from a pile of numbers a bone of the world, and when is it merely the shape of your ruler?</strong></p>
+
+<p>Following it down, he hit an uglier corollary: the entire workhorse toolkit that the social sciences use for causal inference — linear regression, analysis of variance, factor analysis, path analysis, all of which reduce to some combination of least squares, linear regression and the singular value decomposition — <strong>is not a set of causal inference tools at all</strong>. It describes correlations; it does not reveal causes. And almost nobody who uses it has asked. In the g essay he renders the verdict as a paraphrase of Hume:</p>
+
+<blockquote>
+<span class="en">When we run over libraries, persuaded of these principles, what havoc must we make? If we take in our hand any paper; of macroeconomics or correlational psychology, for instance; let us ask, Does it draw its causal inferences from observations with consistent methods? No. Does it draw its causal inferences from experiments, controlled or randomized? No. Commit it then to the recycling bin: for it can contain nothing but sophistry and illusion.</span>
+<cite>"g, a Statistical Myth"</cite>
+</blockquote>
+
+<p>He also has an explanation for why this survives generation after generation, built on Harlow's monkeys. Observational social science, he writes, has been offered a choice between two methodological mothers: "one of the warm and cuddly and familiar and utterly un-nourishing (the old world of linear regression, analysis of variance, factor analysis, etc.), the other cold, metallic, hurtful and actually able to help materially." And: "Not surprisingly, social scientists, being primates, overwhelmingly go for the warm fuzzies."</p>
+
+<div class="glossary">
+<h2 style="border:none;padding-left:0;margin-top:0;font-size:1.05rem">Glossary</h2>
+<ul>
+<li><b>Factor analysis</b> — take many correlated measurements and represent them as combinations of a few unobserved "factors". A fine tool for data reduction; the whole argument on this page is that it is <em>not</em> a tool for finding causes.</li>
+<li><b>Power law</b> — a distribution in which extreme events are far commoner than intuition expects. Its signature is a near-straight line on a log-log plot. The trouble: so are a lot of other distributions.</li>
+<li><b>Log-normal</b> — what you get when independent factors <em>multiply</em> rather than add. It also looks nearly straight on a log-log plot, which is why it is so easily mistaken for a power law.</li>
+<li><b>Confounding / back-door path</b> — A and B are correlated, not because A causes B, but because some third thing X drives both. Judea Pearl's name for the route from A through X to B is a "back-door path".</li>
+<li><b>Identifiability</b> — the key word on this page. Two entirely different causal mechanisms can produce <em>exactly</em> the same observable data. This is not a shortage of data; more data will not help.</li>
+<li><b>Homophily / contagion</b> — the first is that similar people tend to form ties; the second is that ties spread behaviour. Both make friends resemble each other.</li>
+<li><b>Linear programming</b> — maximising a linear objective under linear constraints. Invented by the Soviet mathematician Leonid Kantorovich around 1939; the dream of the optimal planned economy was built on it.</li>
+</ul>
+</div>
+
+<h2>4. His four knives</h2>
+
+<h3>1. You drew that line yourself: a decade of reckoning with power laws</h3>
+
+<p>It starts in October 2005 with a paper in <cite>Nature</cite>. Albert-László Barabási and collaborators reported that the intervals of human activity — reply times for email, and for the correspondence of Darwin and Einstein — follow a power law, and proposed a priority-queueing model to explain the burstiness.</p>
+
+<p>Shalizi pointed to a re-analysis by Stouffer, Malmgren and Amaral showing that <strong>the apparent power law was purely an artifact of the data analysis</strong>; the same data are fit by a log-normal at textbook quality. He explained why this is nearly inevitable: add many independent contributions and the central limit theorem gives you a Gaussian; <em>multiply</em> them and, taking logs, you are adding again, so you get a log-normal. Log-normals are easily mistaken for power laws, "especially if your knowledge of statistics is as limited as most theoretical physicists'."</p>
+
+<p>He then handed the microphone to Francis Galton — the famous passage about the central limit theorem as a "wonderful form of cosmic order", which a savage would worship as a god — and delivered his own verdict:</p>
+
+<blockquote>
+<span class="en">Thou shalt have no other distribution before me, for I am a jealous limit theorem.</span>
+<cite>"Gauss Is Not Mocked", October 2005</cite>
+</blockquote>
+
+<p>He admits what this stage amounted to: "I have even whined about how I should really be working on a paper about how to do all this right, rather than merely snarking in a weblog."</p>
+
+<p><strong>Two years later he went and did it.</strong> In June 2007, "So You Think You Have a Power Law — Well Isn't That Special?" announced the paper with Aaron Clauset and M. E. J. Newman. Its value is that it is not a complaint but a procedure, each item of which corresponds to a specific, common error:</p>
+
+<ul>
+<li><strong>Do not fit a line to your log-log plot by least squares.</strong> His phrasing: "Abusing linear regression makes the baby Gauss cry." It generally does not even give you a probability distribution; even if your data really are power-law, it gives bad parameter estimates; and you cannot use the error estimates your regression software prints, "because those formulas incorporate assumptions which directly contradict the idea that you are seeing samples from a power law." As for a high R² proving anything — other distributions give high R² too; that test has no power.</li>
+<li><strong>Use maximum likelihood for the scaling exponent.</strong> "It's fast! The formula is easy! Best of all, it works!"</li>
+<li><strong>Use goodness of fit to find where the tail starts</strong>, rather than squinting at the plot.</li>
+<li><strong>Use a goodness-of-fit statistic meant for distributions</strong> — the Kolmogorov–Smirnov statistic — not R², which is for regression curves; and because the parameters are estimated from the data, get the significance levels by bootstrap.</li>
+<li><strong>Use Vuong's test against the alternatives, and be prepared for disappointment.</strong></li>
+</ul>
+
+<p>That last item is where the weight falls, because it is the result:</p>
+
+<blockquote>
+<span class="en">In the two dozen data sets we looked at, all chosen because people had claimed they followed power laws, the log-normal's fit was almost always competitive with the power law, usually insignificantly better and sometimes substantially better.</span>
+<cite>"So You Think You Have a Power Law", June 2007</cite>
+</blockquote>
+
+<p>For about half the data sets, the fit improved substantially once an exponential cut-off was added. He spells out what that means: <strong>there is a characteristic scale after all</strong>, and truly enormous events, as opposed to merely enormous ones, are exponentially rare. Which is precisely what the power-law story most wants to deny.</p>
+
+<p>He estimated the consequence of adopting the standard: "half or more each issue of <cite>Physica A</cite> would disappear." Not a rhetorical flourish — an estimate, and the reason he put the code online, "because this is, of course, what everyone ought to do with a computational paper."</p>
+
+<p>But the most characteristic item is the last, and almost no polemicist writes it: <strong>ask yourself whether you really care.</strong> A lot of the time, he says, all that genuinely matters is that the tail is heavy, and whether it decays linearly in the log of the variable (power law) or quadratically (log-normal) is beside the point — in which case what you want is non-parametric density estimation. It matters only if your claim leans heavily on how common the hugely large observations are, or if you have a model that predicts a particular tail. And then he adds the sting: if the tail shape is the <em>only</em> testable prediction your model makes, "it doesn't sound like a very good model."</p>
+
+<h3>2. 2,766 abilities: how something that isn't there passes every test</h3>
+
+<p>This is his most famous piece and the most complete demonstration of his method.</p>
+
+<p>The target is g, the supposed general factor of intelligence. Its evidence chain is short: give people a battery of tests; the scores correlate positively; extract a factor and a dominant one appears, accounting for a large share of variance; name it g; and then use it as a real component of the mind — something heritable, measurable, and capable of explaining the fates of individuals and peoples.</p>
+
+<p>Shalizi begins with something few people do: <strong>he declares his conflict of interest.</strong> A decade earlier, he writes, some of the senior faculty in his department — "i.e., some of the people who will be voting on my contract renewal and tenure" — helped put together a book responding to <cite>The Bell Curve</cite>, work he goes on to cite. "Whether this should alter your evaluation of the case I make is for you to decide."</p>
+
+<p>Then he gets to work.</p>
+
+<p><strong>Step one: pure noise.</strong> He had R generate a five-variable correlation matrix at random — entries drawn uniformly and independently, with <strong>no structure whatsoever</strong> beyond the mathematical requirements on a correlation matrix, and no causal mechanism behind it. He then generated scores for a thousand "subjects" with mean 100 and standard deviation 15, just like an IQ test, and ran a standard maximum-likelihood factor analysis.</p>
+
+<p>The single factor described 55.9% of the variance. He then demonstrated a move that happens constantly in real research: variable 2 loads poorly (0.279), so drop it from the battery and recompute — and the figure rises to 67.9%.</p>
+
+<p>Repeated a thousand times, the mean is 47.1% with a standard deviation of 7.9%. He sets this against reality: for real intelligence tests, the fraction of variance described by g runs "somewhere in the range of a quarter to two-thirds, and generally in the lower part of that range, say around a third." <strong>Random noise beats the real thing.</strong></p>
+
+<p><strong>Step two: Thomson's sampling model.</strong> This is the crux. Surely, someone objects, those correlations must come from something shared?</p>
+
+<p>The answer is no — and not his answer, but one Godfrey Thomson demonstrated in 1914. Shalizi rebuilt it in 2007, "in the hope that it will lessen the odds that we have to spend the next 93 years debating what ought to be a closed issue."</p>
+
+<p>The model: suppose the mind has a very large number of small abilities. Each test draws on many of them, some shared with other tests, some specific. He set up 11 tests (matching the 11 subtests of the Wechsler Adult Intelligence Scale), drawing from a pool of 500 shared abilities plus test-specific ones, for 2,766 abilities in all.</p>
+
+<p>The crucial stipulation, which he emphasises twice: these abilities are <strong>totally and completely uncorrelated</strong>, independent and identically distributed; and every test invokes at least 232 distinct abilities, so even a widely shared ability is nowhere near a dominant determinant of any score. <strong>There is nothing in this world that could be called general intelligence.</strong></p>
+
+<figure>
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the Thomson sampling model">
+<rect fill="none" height="300" width="700" x="0" y="0"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" x="10" y="20">2,766 completely independent small abilities</text>
+<g fill="#6ea8fe" opacity="0.55">
+<circle cx="30" cy="45" r="4"></circle><circle cx="62" cy="52" r="4"></circle><circle cx="96" cy="42" r="4"></circle><circle cx="128" cy="55" r="4"></circle><circle cx="160" cy="44" r="4"></circle><circle cx="194" cy="53" r="4"></circle><circle cx="226" cy="43" r="4"></circle><circle cx="258" cy="54" r="4"></circle><circle cx="292" cy="45" r="4"></circle><circle cx="324" cy="52" r="4"></circle><circle cx="356" cy="43" r="4"></circle><circle cx="390" cy="55" r="4"></circle><circle cx="422" cy="44" r="4"></circle><circle cx="454" cy="53" r="4"></circle><circle cx="488" cy="42" r="4"></circle><circle cx="520" cy="54" r="4"></circle><circle cx="552" cy="45" r="4"></circle><circle cx="586" cy="52" r="4"></circle><circle cx="618" cy="43" r="4"></circle><circle cx="650" cy="54" r="4"></circle><circle cx="678" cy="46" r="4"></circle>
+</g>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" x="10" y="78">pairwise correlation = 0; none of them dominant</text>
+<g stroke="#6ea8fe" opacity="0.28" stroke-width="1">
+<line x1="30" x2="90" y1="49" y2="120"></line><line x1="96" x2="90" y1="46" y2="120"></line><line x1="160" x2="90" y1="48" y2="120"></line><line x1="292" x2="90" y1="49" y2="120"></line><line x1="454" x2="90" y1="57" y2="120"></line>
+<line x1="62" x2="240" y1="56" y2="120"></line><line x1="226" x2="240" y1="47" y2="120"></line><line x1="356" x2="240" y1="47" y2="120"></line><line x1="520" x2="240" y1="58" y2="120"></line><line x1="678" x2="240" y1="50" y2="120"></line>
+<line x1="128" x2="400" y1="59" y2="120"></line><line x1="292" x2="400" y1="49" y2="120"></line><line x1="422" x2="400" y1="48" y2="120"></line><line x1="586" x2="400" y1="56" y2="120"></line><line x1="650" x2="400" y1="58" y2="120"></line>
+<line x1="194" x2="560" y1="57" y2="120"></line><line x1="356" x2="560" y1="47" y2="120"></line><line x1="488" x2="560" y1="46" y2="120"></line><line x1="618" x2="560" y1="47" y2="120"></line><line x1="678" x2="560" y1="50" y2="120"></line>
+</g>
+<g fill="rgba(94,234,212,0.14)" stroke="#5eead4" stroke-width="1.4">
+<rect height="30" rx="6" width="86" x="47" y="120"></rect><rect height="30" rx="6" width="86" x="197" y="120"></rect><rect height="30" rx="6" width="86" x="357" y="120"></rect><rect height="30" rx="6" width="86" x="517" y="120"></rect>
+</g>
+<g fill="#d5dce4" font-family="SF Mono, Menlo, monospace" font-size="11" text-anchor="middle">
+<text x="90" y="140">Test 1</text><text x="240" y="140">Test 2</text><text x="400" y="140">Test …</text><text x="560" y="140">Test 11</text>
+</g>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" x="10" y="172">each test samples a random subset (at least 232 each)</text>
+<g stroke="#5eead4" stroke-width="1.4" opacity="0.75" marker-end="url(#ar)">
+<line x1="90" x2="330" y1="150" y2="205"></line><line x1="240" x2="345" y1="150" y2="205"></line><line x1="400" x2="360" y1="150" y2="205"></line><line x1="560" x2="375" y1="150" y2="205"></line>
+</g>
+<defs><marker id="ar" markerHeight="6" markerWidth="6" orient="auto" refX="5" refY="3"><path d="M0,0 L6,3 L0,6 z" fill="#5eead4"></path></marker></defs>
+<rect fill="rgba(110,168,254,0.16)" height="42" rx="8" stroke="#6ea8fe" stroke-width="1.6" width="250" x="225" y="208"></rect>
+<text fill="#e2e8f0" font-family="SF Mono, Menlo, monospace" font-size="14" font-weight="700" text-anchor="middle" x="350" y="234">Factor analysis reports a "g"</text>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11.5" text-anchor="middle" x="350" y="270">47.8% of variance · single-factor test p = 0.709 · clean pass</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" text-anchor="middle" x="350" y="290">in a world where no common factor exists at all</text>
+</svg>
+<figcaption>The Thomson sampling model: every sign of the thing shows up, and the thing is not there</figcaption>
+</figure>
+
+<p>The result: a g accounting for 47.8% of the standardised variance. The eleven loadings run from 0.416 to 0.955 — "even the smallest of these would be pretty respectable, and some of them are great" — and he links out so you can compare them with loadings a g advocate obtained from real Wechsler data for children. The correlation between a test's loading and the number of shared abilities it draws on is +0.816. Finally he ran the standard test of whether one factor suffices: chi-squared 38.41 on 44 degrees of freedom, <strong>p = 0.709, a clean pass</strong>.</p>
+
+<p>His note: "All of which is, by construction, a complete artifact."</p>
+
+<p><strong>Step three: heritability doesn't save it.</strong> Someone will object that g is highly heritable and could not be if it were an artifact. His rebuttal takes three sentences: in developed countries height has a heritability around 0.8; blood triglyceride levels about 0.5; so the sum of height and triglycerides is heritable. "The fact that this trait is heritable doesn't make it any less meaningless." And the Thomson model, given the classical decomposition of each ability into additive-genetic, gene-interaction and environmental components, produces a fake g that is duly heritable.</p>
+
+<p><strong>Why this is no coincidence.</strong> There is a purely algebraic reason, which he confines to a footnote: factor analysis typically takes eigenvectors of the correlation matrix, and the Perron–Frobenius theorem says any all-positive matrix has a unique largest eigenvalue whose eigenvector is all-positive. Translated: <strong>if all the correlations are positive, there must be a factor that describes more variance than any other and on which every variable loads positively.</strong> And intelligence tests are selected from the start for correlating with each other.</p>
+
+<p>Hence the line: constructing tests to be positively correlated and then discovering a dominant factor "is just like putting together a list of big square numbers and discovering that none of them is prime — it's necessary side-effect of the construction, nothing more."</p>
+
+<p>He also names the circularity in the enterprise: new tests are validated by correlating well with the existing common factor, while the reality of g is confirmed by how well intelligence tests correlate with one another. "By this point, I'd guess it's impossible for something to become accepted as an 'intelligence test' if it doesn't correlate well with the Weschler and its kin, no matter how much intelligence, in the ordinary sense, it requires." His sting is that given such a self-confirming circle, <strong>"the real surprise is that it doesn't work better."</strong></p>
+
+<p>And then the metaphor that fixes the essay's scope. He insists repeatedly that he has <strong>not</strong> shown g to be unreal:</p>
+
+<blockquote>
+<span class="en">If, after looking at your watch, you say that it's 12 o'clock, and I point out that your watch has stopped at 12, I am not saying that it's not 12 o'clock, just that your watch doesn't actually give you any evidence about the time.</span>
+<cite>"g, a Statistical Myth"</cite>
+</blockquote>
+
+<p>His conclusion is therefore about where to spend effort, not about intelligence: "The sooner we stop paying attention to g, the sooner we can devote our energies to understanding the mind."</p>
+
+<h3>3. Joey jumped, and Irene jumped: a problem with no solution in principle</h3>
+
+<p>The target this time is social contagion research. Christakis and Fowler had a celebrated result: if Joey became obese last year, Irene's odds of becoming obese this year rise substantially. They read this as contagion. Similar conclusions have been drawn about smoking, drinking, suicide, political ideology, and attaching misspelled jokes to pictures of cats.</p>
+
+<p>Shalizi's way in is the question every parent has asked: "If your friend Joey jumped off a bridge, would you jump too?" The fact of the matter, he says, is that the answer is yes. The question is <strong>why</strong>. He lists five mechanisms: social influence (Joey's example inspires Irene, or recalibrates her tolerance for risk); biological contagion (Joey has a parasite that suppresses fear of heights and passes it on); manifest homophily (they are friends <em>because</em> they both like jumping off bridges); latent homophily (they are both adrenaline junkies who met at a roller-coaster club, and the shared addiction leads both to bridge-jumping); and external causation ("Sometimes, jumping off a bridge is the only sane thing to do").</p>
+
+<p>For Irene's parents the difference is enormous: the first two mean keep Irene away from Joey; the others mean that is pointless — the damage was already done, and they can hang out as much as they like.</p>
+
+<p>What the statistician sees is only that bridge-jumping is correlated across the network.</p>
+
+<p>What Shalizi and Andrew C. Thomas proved is that <strong>these are generically indistinguishable in observational data</strong>. The reason is obvious once drawn.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Back-door path diagram for homophily and contagion">
+<rect fill="none" height="260" width="700" x="0" y="0"></rect>
+<defs><marker id="a2" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#7d8794"></path></marker>
+<marker id="a3" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#5eead4"></path></marker></defs>
+<g fill="rgba(110,168,254,0.14)" stroke="#6ea8fe" stroke-width="1.5">
+<rect height="40" rx="8" width="150" x="24" y="30"></rect><rect height="40" rx="8" width="150" x="516" y="30"></rect>
+</g>
+<g fill="#d5dce4" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle">
+<text x="99" y="47">Joey's latent traits</text><text x="99" y="63">X(j)</text>
+<text x="591" y="47">Irene's latent traits</text><text x="591" y="63">X(i)</text>
+</g>
+<rect fill="rgba(94,234,212,0.12)" height="34" rx="8" stroke="#5eead4" stroke-width="1.5" width="190" x="250" y="33"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle" x="345" y="55">friendship A(i,j)</text>
+<g stroke="#5eead4" stroke-width="1.6" marker-end="url(#a3)"><line x1="176" x2="247" y1="50" y2="50"></line><line x1="514" x2="443" y1="50" y2="50"></line></g>
+<g fill="rgba(110,168,254,0.14)" stroke="#6ea8fe" stroke-width="1.5">
+<rect height="40" rx="8" width="150" x="24" y="175"></rect><rect height="40" rx="8" width="150" x="516" y="175"></rect>
+</g>
+<g fill="#d5dce4" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle">
+<text x="99" y="192">Joey jumped yesterday</text><text x="99" y="208">Y(j, t-1)</text>
+<text x="591" y="192">Irene jumps today</text><text x="591" y="208">Y(i, t)</text>
+</g>
+<g stroke="#7d8794" stroke-width="1.5" marker-end="url(#a2)"><line x1="99" x2="99" y1="72" y2="172"></line><line x1="591" x2="591" y1="72" y2="172"></line></g>
+<line marker-end="url(#a2)" stroke="#7d8794" stroke-dasharray="6 5" stroke-width="2" x1="176" x2="512" y1="195" y2="195"></line>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="12" text-anchor="middle" x="344" y="184">contagion? (the thing we want to measure)</text>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11.5" text-anchor="middle" x="344" y="234">the route around the top — the back-door path — produces the same correlation</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11" text-anchor="middle" x="344" y="252">unless you measured X, no regression however clever can separate them</text>
+</svg>
+<figcaption>The back-door path: Joey's behaviour reveals Joey's traits, the friendship tie reveals Irene's traits, and those predict Irene's behaviour — with no contagion anywhere</figcaption>
+</figure>
+
+<p>He spells the chain out: if we learn Joey jumped off a bridge yesterday, that tells us something about what kind of person Joey is; if Joey and Irene are friends, that tells us something about what kind of person Irene is, and hence whether she will jump today. <strong>"And this is so whether or not there is any direct influence of Joey's behavior on Irene's, whether or not there is contagion."</strong> Judea Pearl called this route a back-door path. While it is open, Irene's behaviour is at least somewhat predictable from Joey's, "and sufficiently clever regressions will detect this, but they cannot distinguish how much of the predictability is due to the back door path and how much to direct influence."</p>
+
+<p>Christakis and Fowler had one genuinely clever defence, which Shalizi says was the hardest thing to deal with: friendships are sometimes not reciprocated — Irene names Joey as a friend but Joey does not name Irene. In those asymmetric pairs, the nominator's behaviour is better predicted by the nominee's than the reverse. That looks a great deal like being influenced by those you regard as friends.</p>
+
+<p>Shalizi and Thomas built a counter-example. You need only suppose that being nearer the median of some latent trait makes you likelier to be named as a friend. Then "Irene names Joey but not vice versa" is itself a signal that Irene's trait is more extreme than Joey's, which changes how well each predicts the other. A very basic model of this kind <strong>robustly generates the asymmetry with no contagion at all</strong>.</p>
+
+<p>The reverse direction is just as damaging. People are convinced that social class influences political choices. Shalizi ran a simulation with Thomas's software: each person has a fixed binary "class"; like links to like, so the network splits into two clusters; each person also has a mutable binary "choice", red or blue, <strong>initially independent of class</strong>. Then let choices evolve by the simplest possible rule — pick a random person, pick a random neighbour, copy their opinion. After a few hundred updates the lower cluster has gone red and the upper blue. The pattern repeats reliably; only which colour goes with which class is random. Run a logistic regression and you get statistically significant prediction of choice from trait.</p>
+
+<p>He is explicit that this is the "voter model" he learned from cellular automata, transposed onto a graph, and equally explicit that he generally disdains models this simple: "I don't think I'm guilty of violating my own strictures, however, because I'm not saying that the processes of, say, spreading political opinions really follows a voter model. […] The models make vivid what was already proved, and show that the conditions needed to produce the phenomena are not actually very extreme."</p>
+
+<p>Where is the constructive part? He offers a direction: even where a causal effect cannot be <em>identified</em>, it may be <em>bounded</em>, following Manski. And he conjectures that one route to useful bounds is community detection — using estimated communities as proxies for the unmeasured homophilous trait, since people who befriend the similar will clump into clusters of the similar. He adds, honestly: "Right now, though, this idea is just a conjecture we're pursuing."</p>
+
+<p>And the most characteristic line in the piece is the one he applies to himself:</p>
+
+<blockquote>
+<span class="en">My motto as a writer might as well be "the urge to destroy is also a creative urge", but in this paper we do hold out some hope […]</span>
+<cite>"Return of 'Homophily, Contagion, Confounding: Pick Any Three'", April 2010</cite>
+</blockquote>
+
+<h3>4. The problem with optimal planning isn't moral, it's n<sup>3.5</sup></h3>
+
+<p>In 2012 he read Francis Spufford's <cite>Red Plenty</cite>, a novel about the Soviet mathematical economists of the 1960s who believed linear programming could compute an economy better than markets could. He loved it — so much so that he says he is "so much in its target demographic that it's not even funny" — and listed his biases in a footnote: vaguely lefty, science fiction reader, interested in economics, a relative middle-named "Karl Marx", and linear programming learned at his father's knee.</p>
+
+<p>Then he converted a century-old political argument into a sum.</p>
+
+<p>He lists what Kantorovich-style planning requires: an objective function to maximise; complete and accurate knowledge of all physical constraints; complete and accurate knowledge of all productive capacities; all of it linear; and — the one he actually wants to discuss — <strong>computing time that is not merely too cheap to meter but genuinely immense.</strong></p>
+
+<p>The fastest known algorithms for linear programming are interior-point methods. The best guarantee on their arithmetic operations is proportional to (m+n)<sup>3/2</sup>·n<sup>2</sup>·log(1/ε), where n is the number of variables, m the number of constraints, and ε the tolerable error. That is polynomial, so theorists file it under "tractable" — but it grows like n<sup>3.5</sup>.</p>
+
+<p>He translates that into something a person can feel:</p>
+
+<blockquote>
+<span class="en">Expanding the problem size by a factor of a thousand takes us not a thousand times as long, but about 30 billion times as long.</span>
+<cite>"In Soviet Union, Optimization Problem Solves You", May 2012</cite>
+</blockquote>
+
+<p>Then he goes and finds the real number. Alec Nove, in <cite>The Economics of Feasible Socialism</cite>: in the USSR of 1983 there were <strong>12 million identifiably different products</strong> — "disaggregated down to specific types of ball-bearings, designs of cloth, size of brown shoes, and so on" — plus close to 50,000 industrial establishments and thousands of construction, transport, farming, wholesale and retail units.</p>
+
+<p>A good modern solver handles 12 or 13 million variables in a few minutes on a desktop. Be generous and call it one second. Then 12 billion variables takes about 30 billion seconds: roughly a thousand years.</p>
+
+<p>And 12 million is nowhere near enough, because <strong>goods must be indexed by location</strong>: a "coat, winter, men's, part-silk lining, wool worsted tricot, cloth group 29–32" in Smolensk is a different variable from the same coat in Moscow, or the plan cannot account for transport and things will not be where they are needed. Perishable and time-sensitive goods need indexing by time as well. "A thousand locations would be very conservative" — and that factor alone puts us in the thousand-years-per-plan regime.</p>
+
+<p>He then closes the escape routes one by one:</p>
+
+<ul>
+<li><strong>"Approximate optimality is enough."</strong> The complexity formula already allows for approximation, and it depends on precision only <em>logarithmically</em> — accepting more slop buys almost nothing. "This route is blocked."</li>
+<li><strong>"Economic problems have special structure; split them up."</strong> Splitting requires large sets of variables with nothing to do with each other. But, as Lenin is supposed to have said, "everything is connected to everything else" — labour alone is needed for all production and is in finite supply, which couples the whole economy.</li>
+<li><strong>"Then split it anyway and ignore the couplings."</strong> You can. But then something interesting happens — what he calls a desperately crude hack, thinking like a programmer: each processor optimises its own patch and ignores the others. And at that point <strong>"each processor is something very much like a firm", and the mismatches from their ignoring each other are "something very much like 'the anarchy of the market'."</strong> You have gone round in a circle and reinvented the market.</li>
+<li><strong>"Just compute the shadow prices and let people trade."</strong> This was the alternative the people around Kantorovich pushed. But so far as anyone knows, <strong>computing optimal prices has the same complexity as computing the optimal plan.</strong> "Anyone who wants to advocate this needs to show that it is possible, not just hope piously."</li>
+<li><strong>"Wait for faster computers."</strong> Cancelling thirty billion needs about 35 doublings, half a century of Moore's rule of thumb; and if the location factor is really a million rather than a thousand, it is 10<sup>21</sup>, nearly 70 doublings, over a century. "If someone like Iain Banks or Ken MacLeod wants to write a novel where they say that the optimal planned economy will become technically tractable sometime around the early 22nd century, then I will read it eagerly. As a serious piece of prognostication, however, this is the kind of thinking which leads to 'where's my jet-pack?' ranting on the part of geeks of a certain age."</li>
+</ul>
+
+<p>And that is only the linear case. Reality has increasing returns to scale — a flight from Moscow to Novosibirsk has a fixed cost however full the plane; so does writing software, or a paper, or running a steel mill. Increasing returns mean <strong>non-convex constraints</strong>, and non-convex programming has no general-purpose algorithms and is "generally quite intractable". He adds a twist: non-convexity also wrecks the markets-are-always-optimal theorems of neoclassical economics, which illustrates Stiglitz's contention that <strong>if the neoclassicals were right about how capitalism works, Kantorovich-style socialism would have been perfectly viable.</strong></p>
+
+<p>Then comes the essay's most important turn: <strong>even with infinite computing power you are still stuck</strong>, because linear programming needs an objective function first, and an objective function is a set of weights — how many extra diapers are worth one fewer bed-sheet — which is to say a set of value judgements. No single human planner can come up with real preferences over every good in the economy indexed by space and time; "to do otherwise is simply beyond the bounds of humanity." A group runs into every paradox of social choice. Let the public vote and they can only vote on highly aggregated summaries, while filling in the details "is just as much driven by values and preferences" — so "we have not actually given the planning apparatus a tractable technical problem." Dictatorship does not help: the dictator is also just one person.</p>
+
+<p>He leaves the market a narrow but real place: it is a mechanism for feedback from users to producers that propagates through the whole economy without anyone having to track the information explicitly. "This is a point which both Hayek, and Lange (before the war) got very much right." He even quotes Trotsky in support, with a parenthesis: "(I should perhaps write that 'even Trotsky sometimes got right'.)" And then: "It is conceivable that there is some alternative feedback mechanism which is as rich, adaptive, and easy to use as the market but is not the market, not even in a disguised form. Nobody has proposed such a thing."</p>
+
+<p>He is no gentler on markets. A market lets people signal their needs and relative strength only up to how much money they have — which is as much a choice of values as handing a planner an objective function:</p>
+
+<blockquote>
+<span class="en">Those values are not pretty. They are that the whims of the rich matter more than the needs of the poor; that it is more important to keep bond traders in strippers and cocaine than to feed hungry children. At the extreme, the market literally starves people to death, because feeding them is a less "efficient" use of food than helping rich people eat more.</span>
+<cite>"In Soviet Union, Optimization Problem Solves You"</cite>
+</blockquote>
+
+<p>He does not think this pathology is intrinsic to market exchange; it comes from "market exchange plus gross inequality." Hence there is "a strong case to be made for egalitarian distributions of resources being a <em>complement</em> to market allocation. Politically, however, good luck getting those to go together."</p>
+
+<p>And then the conclusion that leaves nobody comfortable. He does not say capitalism wins. He says:</p>
+
+<blockquote>
+<span class="en">That planning is not a viable alternative to capitalism (as opposed to a tool within it) should disturb even capitalism's most ardent partisans. It means that their system faces no competition, nor even any plausible threat of competition. Those partisans themselves should be able to say what will happen then: the masters of the system, will be tempted, and more than tempted, to claim more and more of what it produces as monopoly rents. This does not end happily.</span>
+<cite>"In Soviet Union, Optimization Problem Solves You"</cite>
+</blockquote>
+
+<h3>The other thread: the monsters that run on people</h3>
+
+<p>All four knives above take things apart. But there is a constructive thread he has been laying for twenty years, and it is what he is still doing now.</p>
+
+<p>In 2004 he wrote a short post called "Popular Delusions of Distributed Multi-Agent Systems". He endorsed the observation that "the wisdom of crowds" is just another name for "the behavior of distributed algorithms" — and that the second name is better because it is <strong>not mystifying</strong>. It forces the real questions: how does this algorithm pass information? How does it reach consensus? Where are the feedback loops? What happens in the obscure corner cases? "Any computer scientist who has tangled with distributed systems knows that designing a distributed algorithm that actually does what you want it to do is extraordinarily tricky."</p>
+
+<p>In 2023, he and Henry Farrell wrote a piece in <cite>The Economist</cite> arguing that <strong>the meme comparing large language models to shoggoths is right</strong> — because an LLM is "a way of taking the vast incohate chaos of written-human-language-as-recorded-on-the-Web and simplifying and abstracting it in potentially useful ways." In Alison Gopnik's phrase, they are cultural technologies, "more analogous to library catalogs than to individual minds." Which makes them junior members of an older family of monsters: <strong>the market system, the corporation, the state, even the democratic state</strong> — "distributed information-processing systems which don't just ingest the products of human intelligence, but actually run on human beings." His blog note calls this "a theme I have been sounding for while now", and the link points back to that 2004 post.</p>
+
+<p>Among the things he listed as cut for length: these systems emerge from massed human interaction and are therefore very different from human minds — "in particular, they tend to have their own intrinsic dynamics, which are usually not things anyone intends, and often things no-one wants. That doesn't mean they can't be controlled; it means control is hard, and usually itself impersonal."</p>
+
+<p>In March 2026 he took the thread further at a workshop at NYU, under the title "Aware of All Internet Traditions: Generative AI as Information Retrieval and Synthesis". The chain of the conclusion: generative AI is information retrieval and synthesis; it generates in formulaic ways; human culture works through formulas too; formulas are traditions; therefore generative AI is <strong>mechanised tradition</strong>. His blog note adds: "I am meditating on Leif's suggestion that I am trying to revive structuralism."</p>
+
+<p>This thread and the four knives are the same thing from two sides. <strong>The first says: you think you are looking at one unified cause, but that is the arithmetical residue of very many things added together. The second says: you think you are facing a mind, but that is the operational residue of very many people added together.</strong> For twenty years he has been working one motif — the distance between an emergent whole and the name you gave it.</p>
+
+<h2>5. How he thinks</h2>
+
+<p>Stack the essays together and the move is almost always the same one.</p>
+
+<p><strong>Do the arithmetic before taking a position.</strong> This is the core. Faced with a large claim, his first reflex is not a counter-example or an argument but a question: if this is true, what number has to hold? Then he goes and gets the number. Nove's 12 million goods and n<sup>3.5</sup>; twenty-four refitted data sets; 2,766 abilities and p = 0.709. His polemics almost never rest at the level of "I think".</p>
+
+<p><strong>Build a fake world where you already know the answer.</strong> This is his signature instrument, and it is important to see it as a <strong>falsification device</strong>, not a demonstration. He is not saying "the world probably works like this". He is saying: I built a world, I know for certain there is no X in it, your standard method looked at it and reported X, therefore your method has no evidential force on this question. He says so plainly in the g essay: "I'm going to show you some cases where you can see that the data don't have a single dominant cause, <strong>because I made them up randomly</strong>, but they nonetheless give that appearance when viewed through the lens of factor analysis." He even pre-emptively disclaims the Thomson model as a serious account of thought.</p>
+
+<p><strong>Attack the method, not the conclusion.</strong> This is what separates him from most polemicists, and he enforces it strictly. He repeatedly states that he has not shown g to be unreal, that contagion does not happen, that all power laws are false. What he shows is that the argument for them is invalid and the cited evidence irrelevant. The stopped-clock metaphor exists precisely to hold that line. It makes his conclusions narrower than an ordinary refutation — and much harder to overturn.</p>
+
+<p><strong>Print your own distortions on the label.</strong> The Attention Conservation Notice is the daily form. The harder forms are the conflict-of-interest disclosure at the head of the g essay about the colleagues who would vote on his tenure; the checklist of political priors in the socialism footnote; the parenthesis when discussing Bayesian statisticians — "some of them will be on my tenure committee". He does not pretend to stand nowhere.</p>
+
+<p><strong>No comments, but manual trackbacks.</strong> Every post ends with a hand-compiled list of everyone who wrote about it, including his attackers. In the trackbacks to the planning essay he lists a blog called <cite>An Unenviable Situation</cite> and notes in brackets: "While it's not for me to argue whether 'Shalizi is an idiot', the fact that Edenbaum thinks I would disagree with him when he says 'We don't need better, smarter, masters of the universe, we need a more educated populace and scholars with a sense of irony…' suggests a really massive failure on my part to be clear." <strong>He reprints the insult, answers only the answerable part, and files the misunderstanding as his own failure of exposition.</strong></p>
+
+<p><strong>He actually finishes the books.</strong> His only steady late-period output is the monthly book column, and it is not light reading. In July 2026, in the course of finally submitting a paper, he <strong>re-read a 1962 treatise on non-equilibrium thermodynamics cover to cover</strong>, and confessed in the column that years earlier he had got stuck on a project until he came up with a trick he "was briefly very proud of" — and then realised that "my" trick was something he had read in chapter X of that very book. He also passed judgement on the whole subfield — linear irreversible thermodynamics is "almost" done, the generation from Onsager through Prigogine to Mazur having said nearly everything worth saying — and immediately mocked himself: "I realize that my saying this makes it (forgive the expression) thermodynamically inevitable that one reader will inform me of all the groundbreaking work done in linear irreversible thermodynamics in recent years, while another reader explains how the theory is entirely refuted."</p>
+
+<h2>6. Where he might be wrong</h2>
+
+<p><strong>The sharpest criticism, written by him.</strong> Late in the g essay, having finished with the 2,766 abilities, he volunteers this: the biggest problem with the Thomson model is that <strong>the appearance of g is too strong</strong> — it easily passes tests for there being only a single factor, "when real intelligence tests, such as the Weschler, all fail them."</p>
+
+<p>Unpack that. The counter-example he used to dismantle g fits the data <em>too</em> well, and is therefore less credible as a description of the world. He says that if it were not a distraction from his real work, he would look into whether relaxing the assumption that tests are complete, uniform independent samples from the ability pool would produce something more realistic. <strong>He drew the crack in his own best blow right in the middle of the argument, and then did not go back to fill it.</strong> That is both the most admirable thing about him and a genuine gap in the essay.</p>
+
+<p><strong>There is a substantial signed rebuttal, and he never answered it.</strong> On 3 April 2013, an author writing as Dalliard published "Is Psychometric g a Myth?" at Human Varieties, going through the g essay point by point; the physicist-turned-genomicist Steve Hsu amplified it on his blog Information Processing. <strong>A necessary disclosure: that site is unreachable under the network policy of the environment this page was written in, so I have not read the original and will not reproduce its argument.</strong> What I did read is Hsu's relay, in which the central charge is that Shalizi claims test-makers exclude non-correlating tests to manufacture the positive manifold, whereas "more or less the opposite is true." Whether that charge holds I cannot judge without the original. What I can record is that <strong>it exists, it is signed, it is substantial — and in the whole archive I read, Shalizi never publicly answered it.</strong> That is consistent with the line at the top of the essay — the subject "has certainly exhausted my interest in writing about it" — but a non-answer is still a non-answer.</p>
+
+<p><strong>A severe asymmetry between destruction and construction.</strong> This is the most systematic bias in his body of work, and he named it himself: "My motto as a writer might as well be 'the urge to destroy is also a creative urge'." His negative results are clean, famous and durable — the power-law paper became a standard citation, the homophily-contagion paper a theorem of its subfield. His constructive proposals are uniformly early-stage: using community detection as a proxy for the homophilous trait is, in his own words, "just a conjecture we're pursuing"; his 2021 method for simulation-based inference by matching random features he himself calls a "preliminary, proof-of-concept note". Of one paper he wrote that "there was a gap of several years between seeing that some constraint was needed, and seeing <em>what</em> constraint would work. I am, in fact, a sloth."</p>
+
+<p>The asymmetry has consequences. A method that reliably tells you "you cannot learn that from these data" is worth a great deal to a referee and much less to <strong>someone who has to make a decision by Tuesday</strong>. His replacements tend to be: do non-parametric density estimation; compute bounds rather than point estimates; do real causal inference. All correct, all far more expensive and slower than what he dismantled, and sometimes without an off-the-shelf implementation. He rarely takes that cost head-on.</p>
+
+<p><strong>He pours acid on his own field too — which is a virtue and also makes him hard to place.</strong> Writing in 2005 about why disciplines exist, he said this about the complex-systems research he came out of: "It is not obvious to me that the field of complex systems is going to follow a trajectory more like that of cognitive science than of general systems theory, nor that it deserves to." A man who will not vouch for his own intellectual movement is hard to claim as anyone's asset — which is probably why his influence is concentrated at the level of method rather than inside any substantive field.</p>
+
+<p><strong>Positional bias.</strong> He is explicitly on the left and explicitly discloses it (the checklist in the socialism footnote, the conflict-of-interest note at the head of the g essay). Disclosure beats no disclosure, but disclosure is not cancellation. It is worth noting that he manages to offend both sides in the same essay — his moral verdict on markets is as heavy as his arithmetical verdict on planning — which is the best available evidence that he is not reverse-engineering arguments toward a conclusion. Still, the way he picks his battlefields is not neutral.</p>
+
+<h2>7. Sources</h2>
+
+<ul class="reads">
+<li><span class="t"><a href="https://bactra.org/weblog/523.html">g, a Statistical Myth</a> (October 2007)</span><span class="d">Eleven thousand words using random noise and Thomson's 2,766 abilities to show factor analysis reporting a handsome g in a world with no common cause. Includes the conflict-of-interest disclosure and the stopped watch.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/918.html">In Soviet Union, Optimization Problem Solves You</a> (May 2012)</span><span class="d">Optimal planning converted into a question of computational complexity: n<sup>3.5</sup>, 12 million goods, a thousand locations, a thousand years. Plus the conclusion that makes market partisans just as uncomfortable.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/491.html">So You Think You Have a Power Law — Well Isn't That Special?</a> (June 2007)</span><span class="d">The procedure for testing power laws, and the refit of two dozen data sets. The prequel is 2005's <a href="https://bactra.org/weblog/390.html">Gauss Is Not Mocked</a>, where the jealous limit theorem comes from.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/656.html">Return of "Homophily, Contagion, Confounding: Pick Any Three"</a> (April 2010)</span><span class="d">Joey and Irene's back-door path, the voter model conjuring "class predicts politics" out of nothing, and why asymmetric friendships do not prove contagion either.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/699.html">On Shoggothim</a> (June 2023)</span><span class="d">Language models, markets, corporations and states as one family of distributed information-processing systems that run on human beings. The thread starts at 2004's <a href="https://bactra.org/weblog/315.html">Popular Delusions of Distributed Multi-Agent Systems</a> and reaches <a href="https://bactra.org/research/2026-03-10.html">an NYU talk</a> in March 2026.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/517.html">Why Oh Why Can't We Have Better Econophysics?</a> (September 2007)</span><span class="d">Six thousand words on physicists doing economics, and the biographical document for understanding how he became what he is: an apostate settling accounts with his own kin.</span></li>
+<li><span class="t"><a href="https://bactra.org/weblog/601.html">Bayes &lt; Darwin-Wallace</a> (January 2009)</span><span class="d">Bayesian updating as the discrete-time replicator equation, and how a Bayesian learner picks up bad habits like anyone else — remember the model that memorised the first 13,127 observations.</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-06" data-slug="three-toed-sloth">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep-Read · one page ≈ one mind · content verified as of 2026-09-06</footer>
+
+</div>
+
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</div>
+</body></html>
