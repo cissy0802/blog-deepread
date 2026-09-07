@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Julia Evans · jvns.ca — 「不懂」不是你的资质问题，是一个可以拆开的问题</title>
 <style>
@@ -50,184 +51,124 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <div class="langbar"><a href="jvns-ca-blog9.en.html">English →</a></div>
 <header>
 <div class="kicker">博客精读 · 09 · jvns.ca</div>
-<h1>Julia Evans · jvns.ca<br/>「不懂」不是你的资质问题，是一个可以拆开的问题</h1>
+<h1 data-tts="e1ce5a941afcfe86">Julia Evans · jvns.ca<br/>「不懂」不是你的资质问题，是一个可以拆开的问题</h1>
 <p class="sub">2013 年至今 · 596 篇 · 仍在更新（最新一篇 2026 年 7 月 21 日）· 2018 年注册公司、2019 年 8 月辞职靠卖 zine 为生，博客自此从「我在工作里学到了什么」转向「我来把我已经懂的东西讲清楚」· 本页通读 22 篇，跨度 2013 年 9 月至 2026 年 7 月</p>
 </header>
 <div class="modebar">
 <button class="on" id="btn-pop">精华版</button>
 <button id="btn-deep">完整版</button>
 </div>
-
 <!-- ============ 精华版 ============ -->
 <div class="mode-pop" id="mode-pop">
-
 <p>2026 年 7 月，Julia Evans 在一张 <strong>4000 行</strong>的表上跑了一个查询。花了 <strong>5 秒</strong>。</p>
-
 <p>她的反应是：</p>
-
 <blockquote>
 <span class="en">That seemed wrong to me: computers are fast!</span>
 <span class="zh">我觉得这不对：计算机是很快的！</span>
 <cite>《Learning a few things about running SQLite》，2026 年 7 月 17 日</cite>
 </blockquote>
-
 <p>「计算机是很快的」是她 <strong>2014 年</strong>一篇文章的标题。那篇文章里，她找来一集美剧《新闻编辑室》（1GB），写了个 C 程序把文件里每个字节加起来，就为了亲手量一量自己的机器到底有多快。答案：读盘 2 秒，加法 0.6 秒；换成 CPU 的向量指令，0.25 秒；再故意制造缓存未命中，20 秒——「我们学到了，缓存未命中可以让你的代码慢 40 倍」。</p>
-
 <p>十二年过去，她已经写了 596 篇博客、十几本编程 zine（自印小册子），靠讲解计算机为生。而她面对一个慢查询时的第一反应，跟 2014 年一字不差。这不是没长进，这是她整个工作的方法：<strong>她把「这不对劲」这个反应，当成一种需要终身维护的器材。</strong></p>
-
 <p>还有一件更怪的事。这个人有数学和计算机科学的两个学位，毕业的时候<strong>不知道什么是系统调用</strong>（system call，程序请求操作系统干活的那道接口）。有人说这是 CS 教育的失败。她的回应是把自己修过的课全列了出来——13 门荣誉数学、量子信息论、编译器设计、组合优化——然后说：</p>
-
 <blockquote>
 <span class="en">But more importantly – it's ok to not know things.</span>
 <span class="zh">但更重要的是——不知道一些东西，是没关系的。</span>
 <cite>《How I got a CS degree without learning what a system call is》，2016 年 9 月 12 日</cite>
 </blockquote>
-
-<h3>她十四年没放下的那个问题</h3>
-
+<h3 data-tts="dbc68d7c88043fe0">她十四年没放下的那个问题</h3>
 <p>把她 596 篇文章摊开，主题跨度大得吓人：TCP、gzip 的哈夫曼编码、Linux 容器、DNS、git 的数据模型、CSS 的 flexbox、股票期权怎么算、怎么给同事写绩效评语、怎么用 crochet 钩仙人掌。看上去像一个什么都好奇的人的流水账。</p>
-
 <p>但底下只有一个问题，而且是个社会学问题不是技术问题：<strong>为什么「会用」和「懂」之间的那道缝，会让人觉得羞耻？</strong></p>
-
 <p>她全部的活儿，是把这道缝从「你不行」重新描述成「这里有一件具体的事你还不知道，它有名字，可以查」。她给出的答案有三个，每一个都反直觉。</p>
-
-<h3>答案一：懂一个东西要花十六年，而这是正常速度</h3>
-
+<h3 data-tts="b4af05a5eb1d6dee">答案一：懂一个东西要花十六年，而这是正常速度</h3>
 <p>她学会 DNS（域名系统，把网址翻译成 IP 地址的那套东西）花了十六年。从她第一次买域名、配 DNS 记录，到她真觉得自己懂了这套系统怎么运作，中间隔了十六年。</p>
-
 <p>关键在于她怎么解释这十六年。不是「我笨」，也不是「我一直在刻苦钻研」，而是：</p>
-
 <blockquote>
 <span class="en">My favorite way of learning things is to do nothing, most of the time. That's why it takes 10 years.</span>
 <span class="zh">我最喜欢的学习方式是：绝大部分时间什么都不做。这就是为什么要花十年。</span>
 <cite>《Learning DNS in 10 years》讲座实录，2023 年 5 月 8 日</cite>
 </blockquote>
-
 <p>「六个月什么都不干，然后疯狂学 30 分钟、或者三小时、或者一个下午，然后宣布胜利，再回去几个月什么都不干。」她管这叫<strong>微型深潜</strong>（tiny deep dives）。</p>
-
 <p>这为什么有效？因为每次深潜都是被一个真实的 bug 逼出来的，所以它一定精确地落在你缺的那一块上。她讲过一个案例：她给新项目配好 DNS 记录，刷新页面，不通。她的心智模型说缓存最多 5 分钟，可等了 5 分钟还是不通——<strong>模型破了，这是最难受的时刻，也是最值钱的时刻。</strong>她带着「我到底要等多久」这一个问题，去翻了 1987 年写的 RFC 2308 第 3 节的一句极其无聊的话，算出答案是 10800 秒，也就是 3 小时。她等了 3 小时，通了。</p>
-
 <p>而这件事的重点是：</p>
-
 <blockquote>
 <span class="en">So sometimes learning one small thing really can solve all your problems.</span>
 <span class="zh">所以有时候，学会一件很小的事，真的可以解决你全部的问题。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>她缺的那一块只是「不存在的域名也会被缓存」这一条。不是「我不懂 DNS」，是「我少了一条」。这个换算——把弥漫的无能感换成一条可查的事实——就是她全部工作的核心动作。</p>
-
-<h3>答案二：「我不懂」不是一种情绪，是一句可以翻译的话</h3>
-
+<h3 data-tts="181a89e885b30408">答案二：「我不懂」不是一种情绪，是一句可以翻译的话</h3>
 <p>她管这叫最重要的学习技能，而它只是一个翻译动作：</p>
-
 <blockquote>
 <span class="en">This is the skill of translating "I'm confused, I don't get it" to "I have a specific question about X".</span>
 <span class="zh">这是把「我很懵，我搞不懂」翻译成「我对 X 有一个具体的问题」的技能。</span>
 <cite>《How to teach yourself hard things》，2018 年 9 月 1 日</cite>
 </blockquote>
-
 <p>她自己的例子够难堪：她对 Rust 的引用和借用（borrowing）困惑了<strong>三年</strong>。三年里她一直"知道自己不懂"，但那没有用。直到她坐下来，把这团雾拆成三个能回答的事实问题——<code>&amp;</code> 到底是什么意思？怎么判断一个变量在栈上还是堆上？怎么避免给结构体加生命周期标注？——查完之后，那团雾就永久地散了。</p>
-
 <p>而这个技能有个必须配套的反面：<strong>知道自己确实知道什么。</strong>她说她不懂网络的很多东西，但她 100% 知道 TCP 端口只有 65535 个，因为端口字段是 16 位，2<sup>16</sup>=65536，塞不下更多。所以日志里打出「端口 1823832」时，她不会怀疑自己，她直接判定那是个 bug。</p>
-
 <blockquote>
 <span class="en">there is a big difference between "I'm 97% sure this is true" and "I am 100% sure about this and I never need to question it again"</span>
 <span class="zh">「我 97% 确定这是真的」和「我 100% 确定这件事、我再也不需要怀疑它」，这两者差别巨大。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>两个技能合起来，画出的是一条<strong>边界</strong>：这边是硬地，那边是雾。人能干活的地方，是站在硬地上往雾里伸一只手。而她所有的写作，都是在替读者往硬地上多铺一块砖。</p>
-
-<h3>答案三：难懂的解释不是「写得不好」，是十三种有形状的错误</h3>
-
+<h3 data-tts="c3a4acef5db8ab06">答案三：难懂的解释不是「写得不好」，是十三种有形状的错误</h3>
 <p>2021 年她做了一件很少有人做的事：她问自己，为什么我读到的技术解释<strong>几乎全是</strong>难懂的？她的写作流程一直是「学一个东西 → 读一堆让我很懵的解释 → 终于懂了 → 写一个我自己看得懂的版本」。那么，前面那一堆到底出了什么毛病？</p>
-
 <p>她逆向工程出十三种模式。比如「对读者知识的过时假设」：某本 Git 教材解释分支时，拿它跟别的版本控制系统对比——这在 2009 年成立，因为那时候学 Git 的人是从 Subversion 转过来的；到 2021 年，学 Git 的人根本没用过别的东西，这段对比就是纯粹的噪音。</p>
-
 <p>最漂亮的是她为什么用负面框架来写这个清单：</p>
-
 <blockquote>
 <span class="en">the problem with positive patterns (like "avoid introducing unnecessary jargon") is that they seem so obvious that I trick myself into thinking I'm following them, even when I'm not!</span>
 <span class="zh">正面的准则（比如「别引入不必要的行话」）的问题在于，它们显得太理所当然，以至于我会骗自己说我在遵守它，哪怕我根本没有。</span>
 <cite>《Patterns in confusing explanations》，2021 年 8 月 19 日</cite>
 </blockquote>
-
 <p>而这份清单对读者的用处，比对写作者的用处更大——它把「我看不懂」这件事的归因整个搬了家：</p>
-
 <blockquote>
 <span class="en">"oh, I'm not confused by this explanation because I'm stupid, I'm confused because it's introduced 6 new-to-me concepts and it hasn't explained what any of them is yet!"</span>
 <span class="zh">「哦，我读不懂这段解释不是因为我笨，是因为它一口气引入了 6 个我没见过的概念，而且一个都还没解释。」</span>
 <cite>同上</cite>
 </blockquote>
-
-<h3>那些可爱的小画，是一个赤裸的功利选择</h3>
-
+<h3 data-tts="f57491489b7ca88c">那些可爱的小画，是一个赤裸的功利选择</h3>
 <p>2016 年，有人在技术新闻网站上评论她的漫画：「我不明白这些坦率地说很幼稚的画——内容你读读维基百科就能学到——凭什么这么受欢迎。」</p>
-
 <p>她的回答不是辩护自己的艺术：</p>
-
 <blockquote>
 <span class="en">I don't do it because I'm a visual thinker or because I'm a good artist or because I think comics are always the best way to learn. I just do it because it works, and it's fun.</span>
 <span class="zh">我画画不是因为我是视觉型思考者，不是因为我画得好，也不是因为我觉得漫画永远是最好的学习方式。我画它，只是因为它有效，而且好玩。</span>
 <cite>《Why cute drawings?》，2016 年 11 月 14 日</cite>
 </blockquote>
-
 <p>她给的证据是数字：一篇 1200 字的技术博客，读者说要 15 分钟才读懂；配一张漫画，30 秒就抓住了主旨。一张画 <code>/proc</code> 目录的图，她花了大概 15 分钟，发到推特上 18 万次展示。她的原话是「我可以骗人去读那些他们本来觉得太难、没用或者不好玩的概念」。</p>
-
 <p>2018 年她开始卖 zine，一本 10 美元。她公开算过账：免费下载最多的那本 5000 次点击，卖得最好的那本 3000 份销量。她的判断是——</p>
-
 <blockquote>
 <span class="en">3,000 sales is WAY BETTER than 5,000 clicks</span>
 <span class="zh">3000 份销量比 5000 次点击好得多。</span>
 <cite>《Why sell zines?》，2018 年 9 月 23 日</cite>
 </blockquote>
-
 <p>理由是买了的人读它的概率大概是点开 PDF 的人的 4 倍（她自己注明这个 4 倍是「完全不科学的随便一个数」）。<strong>定价在这里不是收入手段，是注意力的过滤器。</strong>这笔账让她 2019 年 8 月辞了职。</p>
-
-<h3>所以读完她，你带走什么</h3>
-
+<h3 data-tts="7b08a3a9e798c9c1">所以读完她，你带走什么</h3>
 <p>不是 TCP 或 DNS 的知识——那些都在她的原文里，而且她本人也不在乎你学不学 DNS（讲座里她原话是「我不在乎你学不学 DNS 怎么工作」）。</p>
-
 <p>你带走的是一套对待「不懂」的操作规程：<strong>不懂是一种可以定位、可以拆分、可以排期的工程状态，不是关于你是谁的判决。</strong>它有具体的动作——去监听真实流量（strace、tcpdump、Wireshark），带着一个问题去读无聊的规范，做便宜的实验，写一个很烂的自己的版本。而它最重要的一条是社会性的，来自她 2013 年待过的 Recurse Center 手册：<strong>不要假装惊讶</strong>——别人说不知道某件事时，你不要摆出惊讶的样子，哪怕你是真的惊讶。因为无论真假，效果一样：那让说话的人下次不敢承认自己不知道。</p>
-
 <p>2026 年，她在做 Git 的手册页（man page）。用了 SQLite 建第四个网站，然后写道：「我并不很懂怎么运维数据库。」十四年了，那个反应还在：这不对劲，计算机是很快的，让我去看看。</p>
-
 </div>
-
 <!-- ============ 完整版 ============ -->
-<div class="mode-deep" id="mode-deep" hidden>
-
-<h2>一件怪事</h2>
-
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2 data-tts="e850df84346925bf">一件怪事</h2>
 <p>2026 年 7 月，Julia Evans 在一张 <strong>4000 行</strong>的表上跑了一个全文搜索查询。花了 <strong>5 秒</strong>。</p>
-
 <p>4000 行。这是一张能放进任何一台手机内存里、用肉眼几乎能翻完的表。她写道：</p>
-
 <blockquote>
 <span class="en">That seemed wrong to me: computers are fast!</span>
 <span class="zh">我觉得这不对：计算机是很快的！</span>
 <cite>《Learning a few things about running SQLite》，2026 年 7 月 17 日</cite>
 </blockquote>
-
 <p>「计算机是很快的」（Computers are *fast*!）是她 <strong>2014 年 5 月</strong>写的一篇文章的标题。那篇文章里，她跟朋友 Sasha Laundy 结对，找来一集美剧《新闻编辑室》（The Newsroom，1GB），写了个 C 程序把文件里所有字节加起来求和——她说这是她能想到的、最简单的、又必须真的碰到每一个字节的任务。然后她开始量：第一次跑 2.5 秒，第二次 0.6 秒（文件已进内存），于是她推断出自己的固态硬盘读速大约 500MB/s。换成 CPU 的向量指令（SIMD），0.25 秒。最后她<strong>故意</strong>写了个跳着访问内存的版本来制造缓存未命中，20 秒——结论：「缓存未命中可以让你的代码慢 40 倍。」</p>
-
 <p>十二年之间，她写了 596 篇博客、十几本编程小册子，辞掉工作靠讲解计算机为生。而她 2026 年面对一个慢查询时的第一句话，和 2014 年的标题一字不差。</p>
-
 <p>还有一件更怪的：这个人拿着数学和计算机科学两个学位从麦吉尔大学毕业，<strong>毕业时不知道什么是系统调用</strong>。2016 年有人指出这是 CS 教育的失败，她的回应是把自己修过的课一门不落地贴出来：13 门荣誉数学（代数 1 到 4、分析 1 到 4、复分析、数论、概率）、量子信息论、编译器设计、组合优化、计算生物学方法——课表精美得像个理论学者的简历，而里面确实没有一门课会告诉你什么是系统调用。</p>
-
 <p>她没有借此批评谁：</p>
-
 <blockquote>
 <span class="en">But more importantly – it's ok to not know things. I knew practically nothing about a lot of really important programming concepts when I got out of grad school. Even though I'd started learning to program 8 years before! Now I know those things! I learned them.</span>
 <span class="zh">但更重要的是——不知道一些东西，是没关系的。我从研究生院出来的时候，对很多非常重要的编程概念几乎一无所知。哪怕我在那之前已经学了 8 年编程！现在我知道那些东西了！我学会了它们。</span>
 <cite>《How I got a CS degree without learning what a system call is》，2016 年 9 月 12 日</cite>
 </blockquote>
-
 <p>这三段话——一个慢查询、一张课表、一句「没关系」——放在一起，就是这个博客十四年的全部形状。</p>
-
 <div class="glossary">
-<h2 style="border:none;padding-left:0;margin:0 0 8px;font-size:1rem">Glossary · 术语表</h2>
+<h2 data-tts="502076fd49929d58" style="border:none;padding-left:0;margin:0 0 8px;font-size:1rem">Glossary · 术语表</h2>
 <ul>
 <li><b>系统调用（system call）</b>——普通程序不能直接碰硬盘、网络、内存分配，得请操作系统代劳；请求的那道正式接口就叫系统调用。<code>strace</code> 就是用来偷看这些请求的工具。</li>
 <li><b>DNS（Domain Name System，域名系统）</b>——把 <code>example.com</code> 这样的域名翻译成机器能用的 IP 地址的全球系统。1987 年的 RFC 1035 定义了它，至今照那份文档写出的程序仍然能用。</li>
@@ -238,341 +179,228 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><b>Recurse Center</b>（旧名 Hacker School）——纽约的一个自主学习编程社区，为期数月，没有课程也没有老师，人们自己决定学什么。它的《手册》里那几条社交规则对她影响极大。</li>
 </ul>
 </div>
-
-<h2>这人是谁</h2>
-
+<h2 data-tts="eb4177c70b158e9b">这人是谁</h2>
 <p>Julia Evans 住在蒙特利尔，麦吉尔大学数学／计算机科学本科加硕士。2013 年秋天她去了纽约的 Recurse Center 待了一个季度——那是这个博客真正的起点，因为她在那里做了一件今天看来近乎鲁莽的事：<strong>她每天把自己不懂的东西公开写下来。</strong></p>
-
 <p>不是整理好的教程，是日志。标题长这样：《第 1 天：shell 到底在干嘛？》《第 2 天：netcat 真好玩》《第 3 天：Linux 内核到底在干嘛？》《第 42 天：怎么从零跑一个简单的 ELF 可执行文件（我不知道）》。而她自己后来把《第 43 天》标成了「favorite」，那篇的标题是：</p>
-
 <p style="font-family:'SF Mono',Menlo,monospace;font-size:.95rem;color:#5eead4;padding-left:14px;border-left:2px solid rgba(94,234,212,.4)">Day 43: SOMETHING IS ERASING MY PROGRAM WHILE IT'S RUNNING (oh wait oops)<br/><span style="color:#7d8794">第 43 天：有个东西在我程序运行时把它擦掉了（噢等等，我错了）</span></p>
-
 <p>正文是一串崩溃实录：升级 Rust、依赖库全炸、折腾编译工具链一整天、终于编过了、跑起来数组里神秘地全是 0。中间有一句：「我的二进制文件运行时有一半被 0 覆盖了。为什么。我做错了什么要遭这个报应？」然后是文末一行补记：找到了，因为她在引导代码里只加载了程序的前 12KB。</p>
-
 <p>这个人后来当了几年程序员（博客中期大量是「我在工作里学到什么」），2018 年 9 月注册了公司，2019 年 8 月辞职。她给辞职给出的理由是引用朋友 Mat 的一句话：「有些事你就是觉得非做不可。」如今她主要收入来自那家卖编程 zine 的小公司 Wizard Zines——不招员工，不接咨询和定制，只做自己想做的选题。</p>
-
 <p>博客本身：<strong>2013 年 2 月至今 596 篇，仍在更新</strong>，最新一篇 2026 年 7 月 21 日。频率有个明显的形状：2013–2018 每年五六十到近百篇，2019 年之后降到每年二三十篇，2025 年只有 7 篇。她 2019 年辞职时就预告过这个转向：「这个博客可能会从『我最近在工作里学到什么』，变成『我尝试解释一些我大体已经懂的东西』。」</p>
-
-<h2>她跟什么较劲</h2>
-
+<h2 data-tts="7031dfe15c444ab5">她跟什么较劲</h2>
 <p>把 596 篇文章的题目摊开，主题跨度大得没有道理：TCP 为什么值得懂一点、gzip 怎么用哈夫曼编码、SQLite 的页和 B 树、Linux 容器其实是什么、进程启动时发生了什么、DNS 会怎么坏、git 的术语为什么全是坑、CSS 的 flexbox、股票期权谈 offer 前该算什么、怎么给同事写正面而具体的绩效评语、怎么用钩针钩仙人掌。</p>
-
 <p>这看上去像一个什么都好奇的人的流水账。但底下只有一个问题，而且它<strong>不是技术问题，是社会问题</strong>：</p>
-
 <p style="font-size:1.08rem;color:#d5dce4;padding:14px 18px;background:rgba(110,168,254,.06);border-radius:10px"><strong>为什么「会用一个东西」和「懂它」之间的那道缝，在编程这一行会让人觉得羞耻？</strong></p>
-
 <p>她是怎么撞上这个问题的？不是想出来的，是被自己的处境撞的。她受过极好的数学训练，却在第一份工作里发现自己不懂计算机——她后来直白地写过：「我有一个很棒的数学和理论 CS 学位，而我在那里没学到任何关于计算机的东西。」这是一个很容易让人闭嘴的处境：你有两个学位，承认自己不知道什么是系统调用，成本很高。</p>
-
 <p>然后 2013 年秋天，Recurse Center 给了她一样东西——不是课程，是<strong>一条社交规则</strong>。它的手册里写着：</p>
-
 <blockquote>
 <span class="en">… you shouldn't act surprised when people say they don't know something. This applies to both technical things ("What?! I can't believe you don't know what the stack is!") and non-technical things ("You don't know who RMS is?!"). Feigning surprise has absolutely no social or educational benefit: When people feign surprise, it's usually to make them feel better about themselves and others feel worse.</span>
 <span class="zh">……当别人说自己不知道某件事时，你不该表现得惊讶。技术的（「什么？！你居然不知道什么是栈？！」）和非技术的（「你不知道 RMS 是谁？！」）都算。假装惊讶没有任何社交或教育上的好处：人们假装惊讶，通常是为了让自己感觉好一点、让别人感觉差一点。</span>
 <cite>Recurse Center 手册，她引于《No feigning surprise》，2017 年 4 月 27 日</cite>
 </blockquote>
-
 <p>她说这是这份手册里对她影响最大的一条。而她补的那句才是关键：<strong>「诀窍是即使你真的惊讶，也不要表现出惊讶。」</strong>因为无论表演的还是真实的，效果一模一样——它让对方下一次不敢承认自己不知道。</p>
-
 <p>这条规则给了她一个假设：**那道缝之所以让人羞耻，不是因为它天然羞耻，而是因为整个行业在用「惊讶」这个表情持续地维护它。**如果羞耻是被制造的，那它就是可以被拆掉的。她之后十四年做的所有事——写博客、画漫画、印小册子、做交互式练习网站、去改 git 的手册页——都是在拆这个东西。</p>
-
 <p>她自己在「关于」页面把这件事说成一句正面的话，那是她全站唯一一句自称的「主要观点」：</p>
-
 <blockquote>
 <span class="en">I have one main opinion about programming, which is that deeply understanding the underlying systems you use (the browser, the kernel, the operating system, the network layers, your database, HTTP, whatever you're running on top of) is essential if you want to do technically innovative work and be able to solve hard problems.</span>
 <span class="zh">关于编程我只有一个主要观点：如果你想做技术上有创造性的工作、想能解决难问题，那么深入理解你所使用的底层系统（浏览器、内核、操作系统、网络各层、你的数据库、HTTP，以及任何你跑在其上的东西）是必需的。</span>
 <cite>jvns.ca 关于页</cite>
 </blockquote>
-
 <p>但这句话本身是个陈词滥调——每个资深工程师都会这么说。她的原创性不在这个主张，在<strong>她给出的三个关于「怎么可能做到」的答案</strong>。因为如果你真信这句话，你马上会撞上一个绝望：底层系统太多了，一个人一辈子学不完，那这句话就等于在告诉大多数人「你完了」。她的全部工作，是让这句话不再是一句判决。</p>
-
-<h2>她的三个答案（外加一笔账）</h2>
-
-<h3>一、懂一个东西要十六年，而十六年是正常速度</h3>
-
+<h2 data-tts="524b0c846b7ad79e">她的三个答案（外加一笔账）</h2>
+<h3 data-tts="f98ddd92e1571b90">一、懂一个东西要十六年，而十六年是正常速度</h3>
 <p>2022 年她在 RubyConf Mini 做了一场主题演讲，题目叫《用十年学会 DNS》。开场第一句是：这场演讲跟 DNS 没什么关系。</p>
-
 <blockquote>
 <span class="en">It took me maybe 16 years from the first time that like I bought a domain name and set up my DNS records to when I really felt like I understood how the system worked. And one thing I want to say at the beginning of this talk, is that I think that taking like 16 years to learn something like DNS is kind of normal. The idea that "I should understand this already" is a bit silly.</span>
 <span class="zh">从我第一次买域名、配 DNS 记录，到我真的觉得自己懂了这套系统怎么运作，大概花了 16 年。这场演讲开头我想说的一件事是：我认为花 16 年学会 DNS 这种东西，是相当正常的。「我早就该懂这个了」这个念头，有点傻。</span>
 <cite>《Learning DNS in 10 years》讲座实录，2023 年 5 月 8 日发布</cite>
 </blockquote>
-
 <p>然后她给出这十六年真实的时间分布，而这才是这个想法真正反直觉的地方：</p>
-
 <blockquote>
 <span class="en">My favorite way of learning things is to do nothing, most of the time. That's why it takes 10 years. So for six months I'll do nothing and then like I'll furiously learn something for maybe 30 minutes or three hours or an afternoon. And then I'll declare success and go back to doing nothing for months.</span>
 <span class="zh">我最喜欢的学习方式是：绝大部分时间什么都不做。这就是为什么要花十年。我会六个月什么都不干，然后疯狂地学 30 分钟、或者三小时、或者一个下午。然后我宣布胜利，再回去几个月什么都不干。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>她管这叫<strong>微型深潜</strong>（tiny deep dives）。注意这不是「细水长流」的鸡汤版本——细水长流的意思是每天学一点。她说的是相反的东西：<strong>绝大部分时间是零，然后是几个极短、极密集的峰。</strong></p>
-
 <figure>
-<svg viewBox="0 0 700 260" role="img" aria-label="两种学习曲线的对比图">
+<svg aria-label="两种学习曲线的对比图" role="img" viewbox="0 0 700 260">
 <defs>
-<linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#6ea8fe"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+<lineargradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#6ea8fe"></stop><stop offset="1" stop-color="#5eead4"></stop></lineargradient>
 </defs>
-<line x1="60" y1="215" x2="670" y2="215" stroke="#333b45" stroke-width="1.5"/>
-<line x1="60" y1="215" x2="60" y2="30" stroke="#333b45" stroke-width="1.5"/>
-<text x="46" y="36" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">懂</text>
-<text x="46" y="219" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">0</text>
-<text x="60" y="238" fill="#7d8794" font-size="11" font-family="monospace">第 1 年</text>
-<text x="670" y="238" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">第 16 年</text>
-<path d="M60 215 C 220 200, 420 120, 660 55" fill="none" stroke="#4a525c" stroke-width="2" stroke-dasharray="5 5"/>
-<text x="300" y="150" fill="#6b7480" font-size="12.5" font-family="-apple-system,sans-serif">想象中的样子：稳定投入，稳定进步</text>
-<path d="M60 215 L120 215 L128 190 L136 190 L215 190 L222 152 L230 152 L330 152 L337 138 L345 138 L430 138 L437 96 L445 96 L540 96 L547 84 L555 84 L610 84 L617 55 L625 55 L660 55" fill="none" stroke="url(#g1)" stroke-width="2.6" stroke-linejoin="round"/>
-<circle cx="132" cy="190" r="3.4" fill="#5eead4"/><circle cx="226" cy="152" r="3.4" fill="#5eead4"/><circle cx="341" cy="138" r="3.4" fill="#5eead4"/><circle cx="441" cy="96" r="3.4" fill="#5eead4"/><circle cx="551" cy="84" r="3.4" fill="#5eead4"/><circle cx="621" cy="55" r="3.4" fill="#5eead4"/>
-<text x="150" y="182" fill="#5eead4" font-size="10.5" font-family="monospace">一个下午</text>
-<text x="245" y="144" fill="#5eead4" font-size="10.5" font-family="monospace">30 分钟</text>
-<text x="455" y="88" fill="#5eead4" font-size="10.5" font-family="monospace">三小时</text>
-<text x="90" y="208" fill="#7d8794" font-size="10.5" font-family="monospace">什么都不做</text>
-<text x="360" y="205" fill="#93a1ae" font-size="12.5" font-family="-apple-system,sans-serif">实际的样子：长段的零，加上几个被 bug 逼出来的峰</text>
+<line stroke="#333b45" stroke-width="1.5" x1="60" x2="670" y1="215" y2="215"></line>
+<line stroke="#333b45" stroke-width="1.5" x1="60" x2="60" y1="215" y2="30"></line>
+<text fill="#7d8794" font-family="monospace" font-size="11" text-anchor="end" x="46" y="36">懂</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" text-anchor="end" x="46" y="219">0</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="60" y="238">第 1 年</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" text-anchor="end" x="670" y="238">第 16 年</text>
+<path d="M60 215 C 220 200, 420 120, 660 55" fill="none" stroke="#4a525c" stroke-dasharray="5 5" stroke-width="2"></path>
+<text fill="#6b7480" font-family="-apple-system,sans-serif" font-size="12.5" x="300" y="150">想象中的样子：稳定投入，稳定进步</text>
+<path d="M60 215 L120 215 L128 190 L136 190 L215 190 L222 152 L230 152 L330 152 L337 138 L345 138 L430 138 L437 96 L445 96 L540 96 L547 84 L555 84 L610 84 L617 55 L625 55 L660 55" fill="none" stroke="url(#g1)" stroke-linejoin="round" stroke-width="2.6"></path>
+<circle cx="132" cy="190" fill="#5eead4" r="3.4"></circle><circle cx="226" cy="152" fill="#5eead4" r="3.4"></circle><circle cx="341" cy="138" fill="#5eead4" r="3.4"></circle><circle cx="441" cy="96" fill="#5eead4" r="3.4"></circle><circle cx="551" cy="84" fill="#5eead4" r="3.4"></circle><circle cx="621" cy="55" fill="#5eead4" r="3.4"></circle>
+<text fill="#5eead4" font-family="monospace" font-size="10.5" x="150" y="182">一个下午</text>
+<text fill="#5eead4" font-family="monospace" font-size="10.5" x="245" y="144">30 分钟</text>
+<text fill="#5eead4" font-family="monospace" font-size="10.5" x="455" y="88">三小时</text>
+<text fill="#7d8794" font-family="monospace" font-size="10.5" x="90" y="208">什么都不做</text>
+<text fill="#93a1ae" font-family="-apple-system,sans-serif" font-size="12.5" x="360" y="205">实际的样子：长段的零，加上几个被 bug 逼出来的峰</text>
 </svg>
 <figcaption>她自己 2015 年也画过一张「完全不科学的图」来描述十年学编程的感觉。这张图画的是她 2022 年演讲里描述的那个形状。</figcaption>
 </figure>
-
 <p>这为什么不是偷懒的自我合理化？因为每次深潜都是<strong>被一个真实故障逼出来的</strong>，所以它必然精确地落在你缺的那一块上——而不是落在教材作者认为你该学的那一块上。</p>
-
 <p>她在演讲里完整讲了一次这样的深潜，叫「神秘缓存事件」。她要给一个新项目开子域名，比如 <code>new.jvns.ca</code>。配好 DNS 记录，刷新页面，不通。她的心智模型说：我把 TTL 设成 5 分钟，所以最多等 5 分钟。等了 5 分钟，还是不通。</p>
-
 <p>她写下的那一刻，是这整套方法里最重要的一刻：</p>
-
 <blockquote>
 <span class="en">And I was like, oh, no. My mental model was broken! I did not feel good.</span>
 <span class="zh">我当时想，噢，不。我的心智模型破了！我感觉很不好。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>她紧接着承认了大多数人的默认选择：「通常这种时候，你会放过它，对吧？你可能会决定，好吧，我没时间深入调查，我再多等等就是了。」——她没有把这个选择说成懒惰，她说这取决于你那天有没有那个精力。而那天她有，而且是因为生气：「计算机今天赢不了我。」</p>
-
 <p>接下来是三步。第一步她在 Stack Overflow 上找到一个词：<strong>负缓存</strong>（negative caching）——她第一次访问那个还没配好的域名时，DNS 服务器返回了 NXDOMAIN（「这个域名不存在」），而<strong>「不存在」这件事本身被缓存了</strong>。</p>
-
 <p>第二步是她整个方法里最不舒服的一环：去读无聊的规范文件。但她读的方式很特别：</p>
-
 <blockquote>
 <span class="en">I think like maybe the most upsetting learning technique to me is to read a very boring technical document. […] And so when I read something very boring, I like to bring a specific question.</span>
 <span class="zh">我觉得对我来说最难受的学习技巧，大概就是去读一份非常无聊的技术文档。……所以当我读很无聊的东西时，我喜欢带着一个具体的问题去。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>她带着「我到底要等多久」这一个问题，翻开 RFC 2308，只读第 3 节的一句话：这条记录的 TTL 取 SOA 记录的 minimum 字段和 SOA 记录自身 TTL 两者中的较小值。她说「幸好我们只有一个问题——我不需要读完整份无聊的文档，我只需要分析这一句话」。第三步：跑一条 <code>dig</code> 命令，把这两个数字调出来看，都是 10800。10800 秒，3 小时。</p>
-
 <p>她等了 3 小时。通了。而她给这件事的评语，是这一整节的结论：</p>
-
 <blockquote>
 <span class="en">Sometimes when I find my mental model is broken, it feels like I don't know anything. But in this case, and I think in a lot of cases, there's often just a few things I'm missing? […] So sometimes learning one small thing really can solve all your problems.</span>
 <span class="zh">有时候当我发现自己的心智模型破了，感觉就像我什么都不懂。但在这个例子里，而且我想在很多例子里，其实我只是缺了那么几件事。……所以有时候，学会一件很小的事，真的可以解决你全部的问题。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>这就是那个换算：<strong>把「我不懂 DNS」这种弥漫的、关于自己是谁的无能感，换成「我少了一条：不存在也会被缓存」这种可查、可修、有编号的事实。</strong>前者会让人放弃，后者只花一个下午。</p>
-
 <p>她还顺手补了一个小得可笑但很她的收尾：这个问题的根本解法是——<strong>域名没配好之前，别去访问它。</strong>她说学会这个之后就几乎再没遇到过这问题了。以及那句最能说明她性格的话：「如果你去查 DNS 的建议，它会告诉你出问题要等 48 小时。而我不想等 48 小时！所以当我能用脑子算出我可以少等一点的时候，我很开心。」</p>
-
-<h3>二、「我不懂」不是一种情绪，是一句能翻译的话</h3>
-
+<h3 data-tts="e7ea656ff0624e89">二、「我不懂」不是一种情绪，是一句能翻译的话</h3>
 <p>2018 年她写了一篇叫《怎么自学难的东西》的文章，把「学习」拆成四项可以分别练的技能。排第一的那项，她说是最重要的，而它其实只是一个翻译动作：</p>
-
 <blockquote>
 <span class="en">I think this is the most important learning skill. This is the skill of translating "I'm confused, I don't get it" to "I have a specific question about X".</span>
 <span class="zh">我认为这是最重要的学习技能。它是把「我很懵，我搞不懂」翻译成「我对 X 有一个具体的问题」的技能。</span>
 <cite>《How to teach yourself hard things》，2018 年 9 月 1 日</cite>
 </blockquote>
-
 <p>她举的例子够难堪，也正因此可信。她对 Rust 的引用（reference）和借用（borrowing）困惑了很久——"知道自己不懂"这个状态本身完全没用，因为它无法转化成任何行动。直到她坐下来，硬把那团雾拆成三个能被回答的事实问题：</p>
-
 <ul>
 <li>Rust 里的 <code>&amp;</code> 符号究竟是什么意思？</li>
 <li>怎么判断一个 Rust 变量是分配在栈上还是堆上？有没有可能总是判断得出来？</li>
 <li>怎样才能避免给我的结构体加生命周期标注？</li>
 </ul>
-
 <p>查完这三个之后，她说自己对借用的理解「强了非常多，而且永久地不再困惑了」。而她坦白的那个时间成本是这一段最诚实的地方：<strong>这三个问题，是她第一次用 Rust 之后的第三年才想出来的。</strong>她的解释是：因为你必须真的<strong>决定</strong>坐下来，注意自己到底在哪儿卡住，然后专门花时间去搞清楚自己是在什么地方懵的。这件事本身要花时间。</p>
-
 <p>然后是配套的另一半，而这一半通常被励志话语完全忽略：<strong>确认你确实知道什么。</strong></p>
-
 <p>她的例子是 TCP 端口。她说她不懂网络的很多事，但她 100% 知道 TCP 端口只有 65535 个——不是因为维基百科这么写，而是因为 TCP 头部里的源／目的端口字段是 16 位，2<sup>16</sup>=65536，物理上塞不下更多。所以当一个程序在日志里打出「端口 1823832」，她不会花一秒钟怀疑「是不是我理解错了、端口其实可以更大」。她直接判定：那是个 bug。</p>
-
 <blockquote>
 <span class="en">Taking a bit of extra time to take a piece of knowledge that you're pretty sure of ("there are 65535 ports, Wikipedia said so") and make it totally ironclad ("that's because the port field in the TCP header is only 16 bits") is super useful because there is a big difference between "I'm 97% sure this is true" and "I am 100% sure about this and I never need to question it again".</span>
 <span class="zh">多花一点时间，把一条你相当确信的知识（「有 65535 个端口，维基百科说的」）变成铁板一块（「那是因为 TCP 头里的端口字段只有 16 位」），非常有用——因为「我 97% 确定这是真的」和「我 100% 确定这件事、我再也不需要怀疑它」之间，差别巨大。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>这两半合起来，画出的是一条<strong>边界</strong>：这一侧是可以承重的硬地，那一侧是雾。人能干活的地方就是站在硬地上往雾里伸一只手。而她的全部写作，本质上是替读者往硬地上多铺几块砖——每篇文章只铺一两块，但铺得实。她说过写博客只需要「知道 1 到 2 件读者不知道的有意思的事」，说的就是这个。</p>
-
 <p>那么砖从哪来？她的回答是 bug：</p>
-
 <blockquote>
 <span class="en">My favourite way to learn what's underneath an abstraction is bugs! Bugs often break through abstraction boundaries […] So they're a great excuse to learn what's underneath, they show you exactly how the underlying thing (like TCP) is connected to the abstraction (like an HTTP request). And they inherently help you learn one step at a time, because each bug will usually teach you about just one or two things.</span>
 <span class="zh">我最喜欢的、了解一层抽象底下是什么的方法，是 bug！Bug 经常会捅穿抽象的边界。……所以它们是学习底下那层的绝佳借口，它们会精确地告诉你底层的东西（比如 TCP）是怎么跟上层抽象（比如一个 HTTP 请求）连起来的。而且它们天然让你一次只学一步，因为每个 bug 通常只教你一两件事。</span>
 <cite>《Teaching by filling in knowledge gaps》，2021 年 9 月 20 日</cite>
 </blockquote>
-
 <p>这就闭环了：bug 是随机抽样器，它不管你的学习计划，只精确命中你心智模型上那个真实的洞。所以微型深潜不需要课程表——<strong>课程表由你自己的故障产生。</strong>这也是为什么她 2021 年那篇《靠了解事物如何运作来变成更好的程序员》里，把「感觉很挫败、这 bug 我修不动、我问不出正确的问题」直接定义成一个信号：这不是能力不足，这是你的心智模型在报警。</p>
-
 <p>而调试时她给自己下的那道命令，是她全站最著名的一句话，也是这整套方法在情绪层面的锚：</p>
-
 <blockquote>
 <span class="en">Also known as "OK JULIA IT IS NOT FAIRIES WHAT ACTUAL REASON COULD BE CAUSING THIS?"</span>
 <span class="zh">也可以叫做：「好了 JULIA 这不是仙女干的 到底有什么真实的原因会导致这件事？」</span>
 <cite>《How I got better at debugging》，2015 年 11 月 22 日</cite>
 </blockquote>
-
 <p>这句玩笑话底下是一条严肃的公理：计算机上发生的每一件事都有逻辑原因，无论它多努力地想让你相信不是。她那篇文章里给的其他几条同样朴素得可疑——「对自己能修好这个 bug 抱有不合理的自信」「多知道一些事」「跟人说话」（她描述自己在 Slack 频道里自言自语，说到第五句突然「噢对我忘了 ABC」，自己解决了）。以及那句最短的：「说真的，没有 strace 我修不了 bug。」</p>
-
-<h3>三、难懂的解释不是「写得不好」，是十三种有形状的错误</h3>
-
+<h3 data-tts="9e48566721411048">三、难懂的解释不是「写得不好」，是十三种有形状的错误</h3>
 <p>2021 年 8 月她做了一件很少有人做的事：她把批评的枪口调转，对准了自己写作的<strong>动机来源</strong>。</p>
-
 <p>她的写作流程一直是固定的四步：学一个东西 → 读一堆让她很懵的解释 → 终于懂了 → 写一个她自己看得懂的版本给别人。这个流程的第二步是她全部产出的燃料。于是她问：<strong>那一堆解释，到底出了什么毛病？</strong></p>
-
 <p>她逆向工程出十三种模式。挑几个说：</p>
-
 <p><strong>「对读者知识的过时假设」。</strong>她拿了一本 Git 教材开刀。那本书解释分支时说：「几乎所有版本控制系统都有某种分支支持。……在很多 VCS 工具里，这是个相当昂贵的操作，通常需要你复制一份完整的源码目录，大项目会花很长时间。」她的诊断是：这段话假设你知道<strong>别的</strong>版本控制系统是怎么实现分支的。这在 2009 年成立——那时学 Git 的人都是从 Subversion 或 CVS 转过来的；到 2021 年，学 Git 的人根本没用过别的东西，这段对比是纯噪音。她还补了一句这个毛病的普遍成因：写作者是很多年前学会那个概念的，而且他缺少在<strong>当下</strong>解释它的经验，于是他默认读者知道的，是 2005 年他和他朋友们知道的那些东西。</p>
-
 <p><strong>「对读者知识的期待前后不一致」。</strong>一份新语言教程会认真解释 for 循环是干嘛用的（几乎所有程序员都知道），紧接着的段落却默认你懂栈和 malloc。</p>
-
 <p>其余的还有：牵强的类比、给干巴巴的解释配可爱插图、不真实的例子、不指向任何东西的行话、一次引入太多概念、从抽象开始讲、没有例子、讲了「什么」不讲「为什么」。</p>
-
 <p>但最漂亮的一步是<strong>她为什么用负面框架写这份清单</strong>。她在文章里专门解释了这件事，因为这跟她一贯的风格相反——她说自己「几乎永远用正面的方式写作」：</p>
-
 <blockquote>
 <span class="en">And the problem with positive patterns (like "avoid introducing unnecessary jargon") is that they seem so obvious that I trick myself into thinking I'm following them, even when I'm not! So I'm writing these down to try to keep myself honest.</span>
 <span class="zh">正面的准则（比如「别引入不必要的行话」）的问题在于，它们显得太理所当然，以至于我会骗自己说我在遵守它们，哪怕我根本没有。所以我把这些写下来，是想让自己保持诚实。</span>
 <cite>《Patterns in confusing explanations》，2021 年 8 月 19 日</cite>
 </blockquote>
-
 <p>这是一个很精细的自我认识：<strong>正面准则无法证伪，所以它无法约束你。</strong>「要写清楚」这条准则从来没有阻止过任何一篇难懂的文章诞生。而「你是不是一口气引入了 6 个新概念」是可以当场数出来的。</p>
-
 <p>更重要的是，这份清单最大的受益者其实不是写作者，是读者。她自己指出了这一层：</p>
-
 <blockquote>
 <span class="en">Being aware of these patterns also helps me when reading a confusing explanation: "oh, I'm not confused by this explanation because I'm stupid, I'm confused because it's introduced 6 new-to-me concepts and it hasn't explained what any of them is yet!".</span>
 <span class="zh">意识到这些模式，在我读一段难懂的解释时也有帮助：「哦，我读不懂这段解释不是因为我笨，是因为它一口气引入了 6 个我没见过的概念，而且一个都还没解释。」</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>这一句就把她第三个答案和前两个焊在了一起。<strong>她一直在做同一件事：把归因从「我这个人」搬到「眼前这个可以指认的对象」上。</strong>DNS 那次，搬到了「负缓存这一条」；Rust 那次，搬到了「三个具体问题」；这一次，搬到了「这段文字犯了第 8 条」。三次都是同一个动作。</p>
-
 <p>这个想法有个非常实际的产物：<strong>她拒绝从头讲起。</strong>2021 年 9 月那篇《靠填补知识缺口来教学》里，她讲了自己写 bash 小册子的做法——她<strong>没有</strong>解释什么是 bash、也没讲脚本的基本语法，因为这本册子是写给<strong>已经在用 bash 的人</strong>的。她只讲那些用了很久的人多半仍然不知道的事：<code>/usr/bin/[</code> 其实是一个程序；<code>a{.png,.svg}</code> 里的花括号和 <code>{ command1; command2 }</code> 里的花括号意思完全不同；你可以用 <code>${}</code> 在字符串里做查找替换。</p>
-
 <p>她说这种写法在她这里很自然，而别人告诉她「不从头解释就写不下去」。她给出的来源很具体，而且不是编程：<strong>她 15 到 20 岁之间做过五份左右的兼职，在数学和物理的「随到随学」辅导中心当辅导员。</strong>她要面对随机走进来的学生，只有 20 分钟，可能一辈子只见这一次。</p>
-
 <blockquote>
 <span class="en">I learned to listen a lot and not jump to conclusions about what the person didn't know – often they already actually understood a lot about the math class they were taking and I just needed to explain one or two small things. […] I have no idea who's reading my writing or what they already know, and they're probably going to only spend 10 minutes or so reading it. So I can only intervene in a really limited way.</span>
 <span class="zh">我学会了大量地听，不要急着下结论说这个人不懂什么——通常他们对自己上的那门数学课其实已经懂得挺多，我只需要解释一两件小事。……我完全不知道谁在读我的文章、他们已经知道什么，而且他们大概只会花 10 分钟读它。所以我能做的干预非常有限。</span>
 <cite>《Teaching by filling in knowledge gaps》，2021 年 9 月 20 日</cite>
 </blockquote>
-
 <p>「我能做的干预非常有限」——这句谦逊的话其实是一个强硬的编辑决定。它解释了为什么她的 zine 是二三十页而不是四百页，为什么她的文章几乎从不超过 2500 词，为什么她公开说「更多材料总是更好」是个迷思：「我宁可读点短的，学到几件新东西，然后走人。」</p>
-
-<h3>外加一笔账：她把「免费更好」这件事算了一遍，然后推翻了它</h3>
-
+<h3 data-tts="8417e1cab50fcf03">外加一笔账：她把「免费更好」这件事算了一遍，然后推翻了它</h3>
 <p>这不算她的第四个大命题，但它是这个博客能活到今天的原因，而且她的算法本身是原创的。</p>
-
 <p>2018 年之前，她的 zine 是免费的。之后开始卖，10 美元一本。她专门写了一篇文章来公开这个纠结，因为她的目标里有一条明确是「让那些原本可能永远听不到这些重要想法的人接触到它们」——按这个目标，免费显然更好。她甚至引用了 Michael Nielsen 的开放获取案例：读者总时长约 25 万小时，相当于 125 个全职工作年。</p>
-
-<p>然后她拿出自己的数据，做了一个很少有人敢做的比较：免费下载最多的一本 5000 次点击；卖得最好的一本 3000 份销量。按直觉，5000 > 3000，免费赢。她的结论相反：</p>
-
+<p>然后她拿出自己的数据，做了一个很少有人敢做的比较：免费下载最多的一本 5000 次点击；卖得最好的一本 3000 份销量。按直觉，5000 &gt; 3000，免费赢。她的结论相反：</p>
 <blockquote>
 <span class="en">This actually feels like selling zines results in more people reading the zine – to me, 3,000 sales is WAY BETTER than 5,000 clicks, because I think that someone who bought a zine is probably like 4x more likely to read it than someone who just clicked on a PDF. (4x being a Totally Unscientific Arbitrary Number).</span>
 <span class="zh">这其实让人感觉，卖 zine 反而让更多人真的读了它——对我来说，3000 份销量比 5000 次点击好得多，因为我认为买了 zine 的人，读它的概率大概是随手点开一个 PDF 的人的 4 倍。（这个 4 倍是一个完全不科学的、随便定的数字。）</span>
 <cite>《Why sell zines?》，2018 年 9 月 23 日</cite>
 </blockquote>
-
 <p>注意她自己给那个 4 倍加的括号。这是她的典型动作：给出一个能推动决策的估计，同时公开标明它的置信度。</p>
-
 <p>她还给了第二个理由，比第一个更少见：<strong>「这东西要花钱」是一个信号，意思是「我真的在这上面花了时间，这是好东西」。</strong>以及一个纯粹务实的：卖钱之后，她买 iPad、雇插画师、印刷，都不再需要犹豫——她说她在设备和外包上花了大约 5000 美元，而收入远超这个数，于是「投资在这些上面就变成了一个非常容易做的决定」。</p>
-
 <p>这笔账让她 2019 年 8 月辞了职。她当时给自己的期限是「一年」，理由是「我大概有一年份的想法，而且我没法预测干满一年之后自己会是什么感觉」。七年过去了。</p>
-
-<h2>她的思维方法</h2>
-
+<h2 data-tts="de52dc8f437fcbd4">她的思维方法</h2>
 <p>如果说上面三个答案是她的结论，这一节是她实际的手法——而这些手法比结论更可搬走。</p>
-
 <p><strong>先去监听，别先去读。</strong>她的工具箱里排第一的永远是「看这个程序<strong>实际上</strong>在干什么」而不是「看文档说它该干什么」。她讲过一个例子：她的 Redis 请求被判为无效，她读代码、问同事，所有人都说「看着没问题啊」。然后——她的原话是全大写——「然后我想起来还有 TCPDUMP。」她在一台已知能发出正确请求的机器上抓包，把 ASCII 直接打在终端上，答案全在那儿。她的结论是：「说真的，没有 strace 我修不了 bug。」</p>
-
 <p><strong>写一个很烂的自己的版本。</strong>这是她自称最喜欢、也最费力的一招。在 DNS 演讲里她当场演示：要发一个 DNS 查询，但她不打算先学会 DNS 报文格式。她的做法是打开 Wireshark，在一条真实的 DNS 查询上右键，「复制为十六进制流」，然后把这串十六进制粘进四行 Ruby 里发出去。它工作了。</p>
-
 <blockquote>
 <span class="en">It doesn't know that we copied and pasted it and that we have no idea what it means!</span>
 <span class="zh">它不知道我们是复制粘贴来的，也不知道我们完全不懂这堆东西是什么意思！</span>
 <cite>《Learning DNS in 10 years》讲座实录</cite>
 </blockquote>
-
 <p>然后她才开始把那串十六进制一段段拆开：前 12 字节是头部，6 个双字节数字；后面是问题段，<code>7 example 3 com 0</code>——先一个数字说明接下来几个字符，再是那几个字符。<strong>顺序是反的：先让它跑起来，再理解它。</strong>她对这一招的评价是：</p>
-
 <blockquote>
 <span class="en">writing my very bad implementation gives me a really unreasonable amount of confidence</span>
 <span class="zh">写一个我自己的、非常糟糕的实现，会给我一种真的很不合理的自信。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p><strong>做便宜的实验，并且允许它当众失败。</strong>她在台上做了一个缓存实验：向 Cloudflare 的 1.1.1.1 查同一条记录二十来次，按她的模型，源头服务器应该只收到 1 次查询。结果收到了 8 次。她当场的反应是「哦，酷，这不是我预期的。不过这很好玩」——然后现场推断出 1.1.1.1 大概有 8 个各自独立的缓存，因为 Cloudflare 的网络是分布式的，她在普罗维登斯连到的机器和在蒙特利尔连到的不是同一批。她对这件事的说明是：</p>
-
 <blockquote>
 <span class="en">One reason I like to do demos live on stage is that sometimes […] what happens isn't exactly what I think will happen.</span>
 <span class="zh">我喜欢在台上做现场演示的一个原因是，有时候……发生的事并不完全是我以为会发生的事。</span>
 <cite>同上</cite>
 </blockquote>
-
 <p>她还补了一句：这场演讲里本来有个例子，她做实验去验证，发现那个例子是错的，于是删了——「现在我知道了。我喜欢计算机上的实验又快又便宜、而且通常没有后果。」</p>
-
 <p><strong>用「我觉得」当成本控制手段。</strong>她公开承认自己不追求 100% 正确，而是在没把握的句子前加「我的理解是」或「我觉得」。她给的理由是纯经济的：这省下了大量「我其实不知道该怎么核实」的核实成本。她甚至把自己历年文章里的这类句子挑出来展示：「我觉得我本地网络的 MTU 是 1500 字节。」「Etsy 用 PHP，我觉得这意味着他们不能有长连接的持久 TCP 连接。」——她说她至今不知道 PHP 那句是不是真的，而且她对核实它没什么兴趣。<strong>这不是懒惰，这是一种明确的资源分配：把核实成本花在读者真正会用到的地方。</strong>她也承认自己「有点用过头了（坏习惯！）」。</p>
-
 <p><strong>写你挣扎过的，而不是写你学过的。</strong>这是她给别人的建议里最有操作性的一条，而她说明了为什么这个措辞很重要：「我们都学过很多东西啊。」比如她学过 Go——那该写什么？语法？net/http？模块系统？但如果她问自己「我在 Go 上<strong>挣扎</strong>过什么」，答案立刻具体了：死锁。她还加了一条限定，防止这条建议被误用成诉苦：「重点不是那个挣扎，是你学到了什么。」——她说自己 Rust 至今写得不好，但她不会写一篇叫《我觉得 Rust 很难》的文章，那帮不了任何人；她写的是《Rust 里的引用是什么？》。</p>
-
 <p><strong>把选题变成一道信息不对称的算术题。</strong>2020 年那篇讲漫画的文章里，她把自己的素材来源分了两代。第一代是「我最近学到的、让我惊讶的事」——这是免费的、自动的。第二代她称之为「困难模式」：<strong>我不再感到惊讶、但大部分还不知道的人会感到惊讶的事。</strong>找法只有一个，就是跟不懂的人说话、观察他们在哪儿睁大眼睛。她举的例子是 HTTP cookie——她学得太早了，早就忘了这东西可以是新鲜的。</p>
-
 <p>她 2023 年做 git 的时候，直接把这套方法工业化了：她在 Mastodon 上公开发问，「你觉得 git 的哪些术语最让人困惑？」然后按回答的密度排出一张单子——HEAD 和 heads、游离 HEAD 状态、合并时的 ours 和 theirs、<code>..</code> 和 <code>...</code>、tree-ish、refspec、index/staged/cached。她自己承认了做这件事的原因：「用了将近 15 年 git 之后，我已经太习惯它的怪癖了，我很容易忘记什么才是让人困惑的。」这是同一个洞的自觉版本——<strong>她的方法依赖「最近困惑过」，而成功正在耗尽这个供给，所以她转而去众包别人的困惑。</strong></p>
-
 <p><strong>最后一条是社交的，也是她方法的地基：不假装惊讶。</strong>她自己举的例子很小：她问别人什么是 PCI 总线，对方说「你认真的？？」她说「认真的！！」——「我可能心里偷偷觉得这人有点没礼貌，但他们完整地跟我解释了什么是 PCI 总线，所以我也没那么生气。」以及反过来，她学会把惊讶转成兴奋：她表妹问「互联网是走海底电缆的？你说真的吗？」她的反应是「对！很酷吧！」然后开始讲数据包怎么过大西洋。</p>
-
-<h2>她哪里可能是错的</h2>
-
+<h2 data-tts="dd9836b0d33d2231">她哪里可能是错的</h2>
 <p>先说一句方法上的诚实话：<strong>我没有找到针对她的、有分量的实名批评。</strong>公开搜索的结果基本是正面引用。所以下面这些不是转述别人的论证，而是从我实际读到的 22 篇里推出来的问题，其中有几条是她自己写下的。</p>
-
 <p><strong>一、微型深潜有一个它够不着的形状，而她的读者未必知道。</strong>这套方法之所以在 DNS 上完美有效，有一个她自己点破却没有强调的前提：<strong>DNS 不动。</strong>她说 RFC 1035 写于 1987 年，照那份文档写出的程序今天仍然能跑——「基础部分自我出生前就没变过。所以如果你学得慢一点，没关系：它不会从你脚底下变掉。」这是「六个月不做事」得以成立的条件。放到一个每 18 个月换一次的领域，「六个月什么都不做」不是从容，是掉队。同样地，这套方法天然适合<strong>可以被单条事实修补的知识</strong>（负缓存、端口 16 位、<code>/usr/bin/[</code> 是个程序），而对<strong>只有整体才付得出收益的知识</strong>——一套证明技术、一个理论框架、一门语言的类型系统——几乎无能为力：那些东西没有「学会一件很小的事就解决全部问题」的时刻。她从没声称她的方法万能，但她也从没画出它的边界，而读者是会整包借走的。</p>
-
 <p><strong>二、她主动选择的浅，是真的浅。</strong>她公开把「更多材料总是更好」列为迷思，说自己宁可读短的、学两件新东西、然后走人。这个偏好贯穿全部产出：596 篇里几乎没有一篇是持续两千五百词以上的完整论证，也几乎没有一篇会去处理一个需要她改变立场的难题。后果是可以预期的：<strong>一份好的速查表会让人产生「我懂 grep 了」的感觉，而那个感觉和懂 grep 不是一回事。</strong>最好的证据是她 2026 年那篇 SQLite——用 SQLite 建了<strong>第四个</strong>网站之后，她写道：</p>
-
 <blockquote>
 <span class="en">what I did not fully appreciate is that SQLite is still a database, databases are complicated, and I do not know a lot about operating databases.</span>
 <span class="zh">我当时没有充分意识到的是，SQLite 仍然是一个数据库，数据库是复杂的，而我并不很懂怎么运维数据库。</span>
 <cite>《Learning a few things about running SQLite》，2026 年 7 月 17 日</cite>
 </blockquote>
-
 <p>她是诚实的，她把这堵墙写下来了。但这堵墙也正是她方法的产物：<strong>一次修一个洞的策略，会让你在很多主题上都停在「能用、遇到怪事再说」的水位。</strong>那篇文章里她还写「也许哪天我会学会读查询计划吧」——十四年过去，读查询计划仍然在「哪天」里。这对她可能完全没问题（她的网站只有一万行数据），但一个照搬这套方法去做生产系统的读者，会撞上比 5 秒查询严重得多的东西。</p>
-
 <p><strong>三、她自己写下的那条最狠的批评：她正在离她的读者越来越远。</strong>2023 年那篇讲博客迷思的文章里，有一段是她因为审稿人提到而临时加上去的：</p>
-
 <blockquote>
 <span class="en">I think this is because the gap between me and who I'm writing for has gotten a bigger over time, and so it gets a little harder for me to relate to people who know less about the topic. […] I don't have any advice to give about this right now.</span>
 <span class="zh">我想这是因为，随着时间推移，我和我在为之写作的人之间的差距变大了，所以我要与那些对这个主题所知更少的人产生共情，就变得难了一点。……对这件事我现在给不出任何建议。</span>
 <cite>《Some blogging myths》，2023 年 6 月 5 日</cite>
 </blockquote>
-
 <p>这是对她整套方法的釜底抽薪，而她知道。她的写作引擎烧的是「我最近很困惑」，而十四年的成功正在系统性地耗尽这个燃料。她的应对是众包别人的困惑（Mastodon 上问 git 术语、给 zine 招募 beta 读者、把「测试你的解释」写成硬规矩、并且特意加粗提醒<strong>不要</strong>找已经懂的人来审）。这些都是聪明的补救，但它们把她从「一个正在学的人」变成了「一个组织学习调研的人」——这两者的写作不是同一种东西，而她给不出建议这件事，本身就是坦白。</p>
-
 <p><strong>四、这个博客随时间变得更安全了，而她没解释为什么。</strong>这是我读的时候没预料到、但数据摆在那里的一件事。她的博客有一个「inclusion」分类，共 7 篇，全部落在 2013 到 2017 年之间：一份关于「guys」在英语里到底算不算中性称呼的<strong>自制问卷调查</strong>（2013）、《编程不属于男人（它属于我）》（2014）、《雇初级开发者的一个论证》（2015）、《只限女性的空间是一种 hack》（2016）、《职位描述的一个石蕊测试》（2016）。2017 年 4 月那篇《不假装惊讶》之后，这个分类<strong>再无新篇</strong>——而她此后又写了近三百篇。</p>
-
 <p>我不知道原因，她也从未解释过，我不打算替她编一个。但可以并置的是她 2023 年写下的处理批评的政策：「我不回复它们。哪怕它们是错的。我讨厌在网上争论，而且我极其不擅长，所以那不是我时间的好用法。」以及她另一条更精细的自我训练：「我有时会发现，把『人们在生气』重新解释成『人们在困惑或好奇』，是有帮助的。」——她举的例子是有人不满她的玩具 DNS 解析器没处理报文解析，她起初觉得这挺无理取闹的，后来意识到对方可能只是想知道怎么做，于是那些评论催生了后来的《一个周末实现 DNS》。</p>
-
 <p>这是一套极其有效的<strong>耐久性策略</strong>：不争论、把敌意翻译成需求、只谈可验证的技术事实。它让一个人能连续写十四年而不燃尽，这在互联网上罕见到近乎孤例。<strong>但它的代价是：这个博客有系统性的话题回避，而回避掉的恰好是那些无法通过跑一个实验来解决的问题。</strong>她 2013 年那个「guys」调查是真正的原创工作——她自己设计问卷、自己收数据。那个版本的她后来没再出现过。</p>
-
 <p><strong>五、那条最著名的差评，其实没被真正回答。</strong>2016 年有人在技术新闻站上写：「我不明白这些坦率地说很幼稚的画——内容你读读维基百科就能学到——凭什么这么受欢迎。」她把这条评论完整抄进了自己的文章，并且说「这条评论有点挑衅，但我觉得这其实是个有意思的问题」。然后她的回答是彻底功利主义的：</p>
-
 <blockquote>
 <span class="en">I don't do it because I'm a visual thinker or because I'm a good artist or because I think comics are always the best way to learn. I just do it because it works, and it's fun.</span>
 <span class="zh">我画它不是因为我是视觉型思考者，不是因为我画得好，也不是因为我觉得漫画永远是最好的学习方式。我画它，只是因为它有效，而且好玩。</span>
 <cite>《Why cute drawings?》，2016 年 11 月 14 日</cite>
 </blockquote>
-
 <p>「它有效」的证据她给了：一篇 1200 字的文章读者要 15 分钟读懂，一张配套漫画 30 秒；一张画 <code>/proc</code> 的图 15 分钟画完，18 万次展示。<strong>但这些指标测的是「接触」和「觉得有用」，不是「后来真的会了」。</strong>那条差评问的其实是后者，而这个问题至今没有人（包括她）有数据回答。她自己的目标陈述是「用最简单的方式解释复杂的想法（但不要更简单！！！）」——「但不要更简单」这个爱因斯坦式的但书，在实践中怎么判定，她从来没说过。</p>
-
-<h2>出处</h2>
-
+<h2 data-tts="8299119a6cffd621">出处</h2>
 <ul class="reads">
 <li><a href="https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/"><span class="t">Learning DNS in 10 years（用十年学会 DNS）</span></a><span class="d">2022 年 RubyConf Mini 主题演讲的完整文字实录。整套方法在一个案例上跑完一遍：微型深潜、监听、注意到自己困惑、带着一个问题读 RFC、做实验、写一个很烂的自己的版本。开场就说「这场演讲跟 DNS 没什么关系」。</span></li>
 <li><a href="https://jvns.ca/blog/confusing-explanations/"><span class="t">Patterns in confusing explanations（难懂的解释里的模式）</span></a><span class="d">十三种让技术解释变得难懂的具体错误，每一条配她自己的替代做法。附一段解释她为什么故意用负面框架写这份清单。</span></li>
@@ -580,14 +408,11 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><a href="https://jvns.ca/blog/2014/05/12/computers-are-fast/"><span class="t">Computers are *fast*!（计算机是很快的！）</span></a><span class="d">2014 年，她和朋友用一集《新闻编辑室》和一个 C 程序，把「我的电脑到底有多快」量成了具体数字。她本人标为 favorite；十二年后那句标题又原样出现在她的 SQLite 笔记里。</span></li>
 <li><a href="https://jvns.ca/blog/2023/06/05/some-blogging-myths/"><span class="t">Some blogging myths（关于写博客的一些迷思）</span></a><span class="d">八条迷思，包括「你得原创」「你得是专家」「文章得 100% 正确」「浏览量重要」。也是她少数正面写自己怎么处理恶意评论、以及承认写作随经验增长反而变难的地方。</span></li>
 </ul>
-
 <section class="updates" data-last-reviewed="2026-09-07" data-slug="jvns-ca">
-<h2>更新记录</h2>
+<h2 data-tts="04a590354c373a4e">更新记录</h2>
 <!-- updates -->
 </section>
-
 </div>
-
 <footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-07</footer>
 </div>
 <script>
