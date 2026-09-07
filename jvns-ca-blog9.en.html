@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Julia Evans · jvns.ca — Not understanding isn't a verdict on you; it's a problem you can take apart</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#c2ccd6;font-size:.96rem;line-height:1.72}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="jvns-ca-blog9.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Read · 09 · jvns.ca</div>
+<h1>Julia Evans · jvns.ca<br/>Not understanding isn't a verdict on you. It's a problem you can take apart.</h1>
+<p class="sub">2013 to now · 596 posts · still going (most recent 21 July 2026) · incorporated in 2018, quit her job in August 2019 to sell zines full time, after which the blog turned from "here's what I'm learning at work" to "here's an attempt to explain something I mostly already know" · this page is built on 22 posts read end to end, spanning September 2013 to July 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>In July 2026, Julia Evans ran a query against a table with <strong>4,000 rows</strong>. It took <strong>5 seconds</strong>.</p>
+
+<p>Her reaction:</p>
+
+<blockquote>
+<span class="en">That seemed wrong to me: computers are fast!</span>
+<cite>"Learning a few things about running SQLite", 17 July 2026</cite>
+</blockquote>
+
+<p>"Computers are *fast*!" is the title of a post she wrote in <strong>2014</strong>. In it she took a 1GB episode of The Newsroom, wrote a C program to add up every byte in the file, and measured her own machine by hand. Two seconds to read from disk, 0.6 to do the arithmetic. Switch to the CPU's vector instructions: 0.25 seconds. Then she deliberately wrote a version that skipped around memory to manufacture cache misses: 20 seconds. Conclusion: cache misses can make your code 40 times slower.</p>
+
+<p>Twelve years, 596 blog posts and a dozen programming zines later, her first thought on hitting a slow query is word-for-word what it was in 2014. That isn't a failure to develop. It's the method: <strong>she treats the reflex "that seems wrong" as a piece of equipment that has to be maintained for life.</strong></p>
+
+<p>Here's a stranger fact. She holds two degrees in mathematics and computer science, and she graduated <strong>not knowing what a system call is</strong> — the interface a program uses to ask the operating system to do anything at all. When someone said this was a failure of CS education, she published her entire transcript instead: thirteen honours math courses, quantum information theory, compiler design, combinatorial optimisation. Then:</p>
+
+<blockquote>
+<span class="en">But more importantly – it's ok to not know things.</span>
+<cite>"How I got a CS degree without learning what a system call is", 12 September 2016</cite>
+</blockquote>
+
+<h3>The thing she's been fighting for fourteen years</h3>
+
+<p>Lay all 596 posts out and the range is alarming: TCP, Huffman coding in gzip, Linux containers, DNS, git's data model, CSS flexbox, how to do the math on your stock options, how to write a performance review, how to crochet a cactus. It looks like the notebook of someone who is curious about everything.</p>
+
+<p>Underneath there is one question, and it isn't a technical one. It's social: <strong>why does the gap between using a thing and understanding it carry shame in this profession?</strong></p>
+
+<p>Her entire body of work is an attempt to re-describe that gap — from "you're not good enough" to "there is one specific thing here you don't know yet, it has a name, and you can look it up." She has three answers, and each is counterintuitive.</p>
+
+<h3>Answer one: understanding something takes sixteen years, and sixteen years is normal speed</h3>
+
+<p>It took her sixteen years to learn DNS — the system that turns a domain name into an IP address. Sixteen years from buying her first domain and setting up records to feeling she actually understood how it worked.</p>
+
+<p>What matters is how she accounts for those years. Not "I'm slow." Not "I studied hard." This:</p>
+
+<blockquote>
+<span class="en">My favorite way of learning things is to do nothing, most of the time. That's why it takes 10 years.</span>
+<cite>"Learning DNS in 10 years", talk transcript, published 8 May 2023</cite>
+</blockquote>
+
+<p>Six months of nothing, then a furious thirty minutes or three hours or one afternoon, then declare victory and go back to nothing. She calls them <strong>tiny deep dives</strong>.</p>
+
+<p>Why does it work? Because every dive is forced by a real bug, so it lands precisely on the piece you're missing rather than on the piece a textbook author thought you'd need. Her worked example: she set up DNS records for a new subdomain, refreshed, nothing. Her mental model said the cache expires in five minutes. She waited five minutes. Still nothing — <strong>the model broke, which is the worst moment and the most valuable one.</strong> Carrying exactly one question ("how long do I actually have to wait?"), she opened RFC 2308, read one deeply boring sentence in section 3, worked out the answer was 10,800 seconds — three hours — waited three hours, and it worked.</p>
+
+<p>And the point:</p>
+
+<blockquote>
+<span class="en">So sometimes learning one small thing really can solve all your problems.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>What she'd been missing was one fact: a negative answer gets cached too. Not "I don't understand DNS" — one missing line. That conversion, from a diffuse sense of incompetence into a single lookupable fact, is the core move of everything she does.</p>
+
+<h3>Answer two: "I'm confused" is not an emotion. It's a sentence you can translate.</h3>
+
+<p>She calls this the most important learning skill, and it's just an act of translation:</p>
+
+<blockquote>
+<span class="en">This is the skill of translating "I'm confused, I don't get it" to "I have a specific question about X".</span>
+<cite>"How to teach yourself hard things", 1 September 2018</cite>
+</blockquote>
+
+<p>Her own example is embarrassing enough to be credible: she was confused about references and borrowing in Rust for <strong>three years</strong>. Three years of knowing she didn't understand, which is useless, because it converts to no action. Then she sat down and broke the fog into three answerable factual questions — what does <code>&amp;</code> actually mean? how do I tell whether a variable lives on the stack or the heap? how do I avoid putting lifetimes on my structs? — and the fog lifted permanently.</p>
+
+<p>The skill has a mandatory other half: <strong>knowing what you do know.</strong> She says she doesn't know everything about networking, but she is 100% certain there are 65,535 TCP ports, because the port field in the TCP header is 16 bits and 2<sup>16</sup> = 65,536. So when a log prints "port 1823832," she doesn't spend a second doubting herself. She calls it a bug.</p>
+
+<blockquote>
+<span class="en">there is a big difference between "I'm 97% sure this is true" and "I am 100% sure about this and I never need to question it again"</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>Together the two halves draw a <strong>boundary</strong>: solid ground on one side, fog on the other. Work happens standing on the solid ground with one hand in the fog. All of her writing is laying another paving stone on someone else's solid ground.</p>
+
+<h3>Answer three: confusing explanations aren't "badly written". They're thirteen specific, shaped mistakes.</h3>
+
+<p>In 2021 she did something few writers do: she asked why nearly every technical explanation she reads is confusing. Her writing process had always been learn a thing → read a pile of confusing explanations → finally understand → write the version that would have helped. So what exactly was wrong with the pile?</p>
+
+<p>She reverse-engineered thirteen patterns. One is "outdated assumptions about the audience's knowledge": a Git book explains branching by comparing it to other version control systems — true value in 2009, when everyone learning Git was coming from Subversion; pure noise by 2021, when almost nobody learning Git has used anything else.</p>
+
+<p>The best move is why she framed the list negatively at all, against her usual habit:</p>
+
+<blockquote>
+<span class="en">the problem with positive patterns (like "avoid introducing unnecessary jargon") is that they seem so obvious that I trick myself into thinking I'm following them, even when I'm not!</span>
+<cite>"Patterns in confusing explanations", 19 August 2021</cite>
+</blockquote>
+
+<p>And the list turns out to help readers more than writers, because it moves the blame:</p>
+
+<blockquote>
+<span class="en">"oh, I'm not confused by this explanation because I'm stupid, I'm confused because it's introduced 6 new-to-me concepts and it hasn't explained what any of them is yet!"</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<h3>The cute drawings are a nakedly utilitarian decision</h3>
+
+<p>In 2016 someone on a tech news site wrote: "I don't understand why these, frankly, childish drawings of things you can learn from reading a wikipedia article have reached this level of popularity."</p>
+
+<p>She didn't defend her art:</p>
+
+<blockquote>
+<span class="en">I don't do it because I'm a visual thinker or because I'm a good artist or because I think comics are always the best way to learn. I just do it because it works, and it's fun.</span>
+<cite>"Why cute drawings?", 14 November 2016</cite>
+</blockquote>
+
+<p>Her evidence is numbers. A 1,200-word post readers said took fifteen minutes to understand; the accompanying comic got the main ideas across in thirty seconds. A drawing about the <code>/proc</code> directory took her fifteen minutes and got 180,000 impressions. In her words, comics let her "trick people into reading about useful concepts that they might otherwise think are too hard or not useful or not fun."</p>
+
+<p>In 2018 she started charging $10 a zine and published the arithmetic: her most-downloaded free zine got 5,000 clicks; her best-selling one got 3,000 sales. Her verdict:</p>
+
+<blockquote>
+<span class="en">3,000 sales is WAY BETTER than 5,000 clicks</span>
+<cite>"Why sell zines?", 23 September 2018</cite>
+</blockquote>
+
+<p>Because someone who paid is roughly four times likelier to actually read it — a number she labels, in parentheses, "a Totally Unscientific Arbitrary Number." <strong>Price here isn't a revenue mechanism; it's a filter on attention.</strong> That arithmetic is what let her quit her job in August 2019.</p>
+
+<h3>So what do you walk away with</h3>
+
+<p>Not TCP or DNS — that's all in her posts, and she says outright in the talk that she doesn't care whether you learn DNS.</p>
+
+<p>You walk away with an operating procedure for not knowing things: <strong>confusion is an engineering state that can be located, split up and scheduled, not a judgement about who you are.</strong> It has concrete moves — go watch the real traffic (strace, tcpdump, Wireshark), read the boring spec carrying exactly one question, run cheap experiments, write your own terrible version. And its most important rule is social, from the Recurse Center manual she read in 2013: <strong>don't feign surprise</strong> when someone says they don't know something — not even if you're genuinely surprised. Real or performed, the effect is the same: next time, they won't admit it.</p>
+
+<p>In 2026 she's working on Git's man pages. She built her fourth website on SQLite and then wrote: "I do not know a lot about operating databases." Fourteen years in, the reflex is intact. That seems wrong. Computers are fast. Let me go look.</p>
+
+</div>
+
+<!-- ============ FULL ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<h2>One strange thing</h2>
+
+<p>In July 2026, Julia Evans ran a full-text search query against a table holding <strong>4,000 rows</strong>. It took <strong>5 seconds</strong>.</p>
+
+<p>Four thousand rows. A table that fits in any phone's memory, that you could very nearly read by eye. She wrote:</p>
+
+<blockquote>
+<span class="en">That seemed wrong to me: computers are fast!</span>
+<cite>"Learning a few things about running SQLite", 17 July 2026</cite>
+</blockquote>
+
+<p>"Computers are *fast*!" is the title of a post she wrote in <strong>May 2014</strong>. In it she paired with her friend Sasha Laundy, took a 1GB episode of the TV show The Newsroom, and wrote a C program to add up every byte in the file — the simplest task she could think of that still had to touch all of it. Then she measured. First run 2.5 seconds, second run 0.6 (the file was now in RAM), from which she inferred her SSD read speed was about 500MB/s. Rewritten with the CPU's vector instructions: 0.25 seconds. Finally she wrote a version that <strong>deliberately</strong> strode through memory out of order to manufacture cache misses: 20 seconds. Conclusion: cache misses can make your code forty times slower.</p>
+
+<p>In the twelve years between, she wrote 596 blog posts and a dozen-plus programming zines, and quit her job to explain computers for a living. Her first sentence on meeting a slow query in 2026 is identical to the title she wrote in 2014.</p>
+
+<p>Here's a stranger fact. This person graduated from McGill with degrees in mathematics and computer science, and <strong>did not know what a system call was</strong>. When someone in 2016 called that a failure of CS education, her response was to publish the whole transcript: thirteen honours math courses (algebra 1 through 4, analysis 1 through 4, complex analysis, number theory, probability), quantum information theory, compiler design, discrete optimisation, computational biology methods. A course list handsome enough for a theorist's CV, containing indeed nothing that would tell you what a system call is.</p>
+
+<p>She used it to criticise no one:</p>
+
+<blockquote>
+<span class="en">But more importantly – it's ok to not know things. I knew practically nothing about a lot of really important programming concepts when I got out of grad school. Even though I'd started learning to program 8 years before! Now I know those things! I learned them.</span>
+<cite>"How I got a CS degree without learning what a system call is", 12 September 2016</cite>
+</blockquote>
+
+<p>A slow query, a transcript, and a shrug. Put together, that's the shape of fourteen years of this blog.</p>
+
+<div class="glossary">
+<h2 style="border:none;padding-left:0;margin:0 0 8px;font-size:1rem">Glossary</h2>
+<ul>
+<li><b>System call</b> — an ordinary program can't touch the disk, the network or memory allocation directly; it has to ask the operating system. The formal interface for asking is the system call. <code>strace</code> is the tool for spying on those requests.</li>
+<li><b>DNS (Domain Name System)</b> — the global system that translates a name like <code>example.com</code> into an IP address. RFC 1035 defined it in 1987, and a program written today to that document still works.</li>
+<li><b>TTL / caching / NXDOMAIN</b> — a DNS query first hits a caching server called a resolver. TTL (time to live) says how long a record may be cached. NXDOMAIN is the response code for "this domain doesn't exist" — DNS's version of a 404.</li>
+<li><b>RFC (Request for Comments)</b> — the numbered specification documents of internet protocols. The name is a fossil: DNS's two main specs were written in 1987 and the comment period is long over.</li>
+<li><b>strace / tcpdump / Wireshark / dig</b> — four tools for watching, respectively: which system calls a program makes, which packets a machine sends and receives, those packets broken out field by field, and a hand-made DNS query. They appear in her writing more often than any programming language.</li>
+<li><b>Zine</b> — a self-published booklet, a form borrowed from punk and science-fiction fandom. She repurposed it as programming pedagogy: twenty or thirty pages, hand-drawn, one topic.</li>
+<li><b>Recurse Center</b> (formerly Hacker School) — a self-directed programming community in New York, a few months long, with no curriculum and no teachers. Its <em>Manual</em> contains a handful of social rules that shaped her enormously.</li>
+</ul>
+</div>
+
+<h2>Who she is</h2>
+
+<p>Julia Evans lives in Montreal and did a joint math/CS undergraduate degree plus a master's at McGill. In the autumn of 2013 she spent a term at the Recurse Center in New York — the real origin of this blog, because there she did something that now looks close to reckless: <strong>she published, every day, the things she did not understand.</strong></p>
+
+<p>Not tidy tutorials. A log. The titles run: "Day 1: What does a shell even do?", "Day 2: netcat fun!", "Day 3: What does the Linux kernel even do?", "Day 42: How to run a simple ELF executable, from scratch (I don't know)". And the one she later tagged as a personal favourite:</p>
+
+<p style="font-family:'SF Mono',Menlo,monospace;font-size:.95rem;color:#5eead4;padding-left:14px;border-left:2px solid rgba(94,234,212,.4)">Day 43: SOMETHING IS ERASING MY PROGRAM WHILE IT'S RUNNING (oh wait oops)</p>
+
+<p>The body is a log of collapse: upgrade Rust, watch the dependency break, spend a day wrestling clang into compiling anything, finally compile, run it, and find the array mysteriously full of zeroes. In the middle: "Half of my binary gets overwritten with 0s at runtime. Why. What did I do to deserve this?" Then a one-line edit at the bottom: found it, she'd only been loading 12k of the binary in her bootloader.</p>
+
+<p>She then worked as a programmer for several years — the blog's middle period is largely "what I'm learning at work." She incorporated in September 2018 and quit in August 2019. The reason she gave for quitting was a quote from her friend Mat: "well, sometimes there are things you just feel compelled to do." Most of her income now comes from Wizard Zines, a business she runs deliberately small: no employees, no consulting, no commissions, only ideas she wants to build.</p>
+
+<p>The blog itself: <strong>596 posts from February 2013 to now, still going</strong>, most recent 21 July 2026. The frequency has a shape. Fifty to ninety posts a year through 2018; twenty-five to fifty after 2019; seven in 2025. She predicted the turn herself when she quit: the blog "might change a bit away from 'here's what I'm learning at work these days' and towards 'here are attempts at explaining things that I mostly already know'."</p>
+
+<h2>What she's fighting</h2>
+
+<p>Spread the 596 titles out and the range is unreasonable: why you should understand a little about TCP, how gzip uses Huffman coding, SQLite's pages and B-trees, what a container actually is, what happens when you start a process on Linux, the ways DNS breaks, why git's vocabulary is a minefield, CSS flexbox, what to compute before negotiating stock options, how to write a performance review with positive constructive feedback, how to crochet a cactus.</p>
+
+<p>It reads like the notebook of someone curious about everything. But underneath there is a single question, and it is <strong>not technical. It's social:</strong></p>
+
+<p style="font-size:1.08rem;color:#d5dce4;padding:14px 18px;background:rgba(110,168,254,.06);border-radius:10px"><strong>Why does the gap between using something and understanding it carry shame in this profession?</strong></p>
+
+<p>She didn't reason her way to that question; her situation handed it to her. She had an excellent mathematical training and discovered in her first job that she didn't understand computers — as she later put it flatly, "I had an awesome math &amp; theoretical CS degree and I did not learn anything about computers there." That's a situation that shuts most people up. With two degrees, admitting you don't know what a system call is costs something.</p>
+
+<p>Then in autumn 2013 the Recurse Center handed her something. Not a curriculum — <strong>a social rule</strong>. From its manual:</p>
+
+<blockquote>
+<span class="en">… you shouldn't act surprised when people say they don't know something. This applies to both technical things ("What?! I can't believe you don't know what the stack is!") and non-technical things ("You don't know who RMS is?!"). Feigning surprise has absolutely no social or educational benefit: When people feign surprise, it's usually to make them feel better about themselves and others feel worse.</span>
+<cite>Recurse Center Manual, quoted in "No feigning surprise", 27 April 2017</cite>
+</blockquote>
+
+<p>She says this is the rule from that manual that has had the biggest impact on her. And the line she adds is the load-bearing one: <strong>"A key trick here is to not act surprised even if you're actually surprised."</strong> Because performed or genuine, the effect is identical — it teaches the other person not to admit ignorance next time.</p>
+
+<p>That rule gives her a hypothesis: the gap is shameful not intrinsically, but because the industry maintains it continuously with a facial expression. And if the shame is manufactured, it can be dismantled. Everything she has done since — blogging, comics, printed zines, interactive practice sites, going and fixing git's man pages — is dismantling work.</p>
+
+<p>On her About page she states the positive version, the only thing on the entire site she calls her main opinion:</p>
+
+<blockquote>
+<span class="en">I have one main opinion about programming, which is that deeply understanding the underlying systems you use (the browser, the kernel, the operating system, the network layers, your database, HTTP, whatever you're running on top of) is essential if you want to do technically innovative work and be able to solve hard problems.</span>
+<cite>jvns.ca, About</cite>
+</blockquote>
+
+<p>But that sentence on its own is a platitude — every senior engineer says it. Her originality is not the claim; it's <strong>the three answers she gives to how anyone could possibly do it.</strong> Because if you actually believe that sentence you immediately hit despair: there are far too many underlying systems for one lifetime, so the claim amounts to telling most people they've already lost. Her life's work is making that sentence stop being a verdict.</p>
+
+<h2>Her three answers (and one piece of arithmetic)</h2>
+
+<h3>One: understanding a thing takes sixteen years, and sixteen years is normal speed</h3>
+
+<p>In 2022 she gave a keynote at RubyConf Mini called "Learning DNS in 10 years." Her opening line was that the talk is not really about DNS.</p>
+
+<blockquote>
+<span class="en">It took me maybe 16 years from the first time that like I bought a domain name and set up my DNS records to when I really felt like I understood how the system worked. And one thing I want to say at the beginning of this talk, is that I think that taking like 16 years to learn something like DNS is kind of normal. The idea that "I should understand this already" is a bit silly.</span>
+<cite>"Learning DNS in 10 years", transcript published 8 May 2023</cite>
+</blockquote>
+
+<p>Then she gives the actual distribution of those sixteen years, and this is where the idea turns genuinely counterintuitive:</p>
+
+<blockquote>
+<span class="en">My favorite way of learning things is to do nothing, most of the time. That's why it takes 10 years. So for six months I'll do nothing and then like I'll furiously learn something for maybe 30 minutes or three hours or an afternoon. And then I'll declare success and go back to doing nothing for months.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>She calls them <strong>tiny deep dives</strong>. Note that this is not the inspirational version of "slow and steady" — slow and steady means a little every day. She is describing the opposite: <strong>almost all zero, punctuated by a few extremely short, extremely dense spikes.</strong></p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Two learning curves compared">
+<defs>
+<linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#6ea8fe"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+</defs>
+<line x1="60" y1="215" x2="670" y2="215" stroke="#333b45" stroke-width="1.5"/>
+<line x1="60" y1="215" x2="60" y2="30" stroke="#333b45" stroke-width="1.5"/>
+<text x="46" y="36" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">know</text>
+<text x="46" y="219" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">0</text>
+<text x="60" y="238" fill="#7d8794" font-size="11" font-family="monospace">year 1</text>
+<text x="670" y="238" fill="#7d8794" font-size="11" text-anchor="end" font-family="monospace">year 16</text>
+<path d="M60 215 C 220 200, 420 120, 660 55" fill="none" stroke="#4a525c" stroke-width="2" stroke-dasharray="5 5"/>
+<text x="300" y="150" fill="#6b7480" font-size="12.5" font-family="-apple-system,sans-serif">imagined: steady effort, steady progress</text>
+<path d="M60 215 L120 215 L128 190 L136 190 L215 190 L222 152 L230 152 L330 152 L337 138 L345 138 L430 138 L437 96 L445 96 L540 96 L547 84 L555 84 L610 84 L617 55 L625 55 L660 55" fill="none" stroke="url(#g1)" stroke-width="2.6" stroke-linejoin="round"/>
+<circle cx="132" cy="190" r="3.4" fill="#5eead4"/><circle cx="226" cy="152" r="3.4" fill="#5eead4"/><circle cx="341" cy="138" r="3.4" fill="#5eead4"/><circle cx="441" cy="96" r="3.4" fill="#5eead4"/><circle cx="551" cy="84" r="3.4" fill="#5eead4"/><circle cx="621" cy="55" r="3.4" fill="#5eead4"/>
+<text x="150" y="182" fill="#5eead4" font-size="10.5" font-family="monospace">one afternoon</text>
+<text x="245" y="144" fill="#5eead4" font-size="10.5" font-family="monospace">30 minutes</text>
+<text x="455" y="88" fill="#5eead4" font-size="10.5" font-family="monospace">three hours</text>
+<text x="90" y="208" fill="#7d8794" font-size="10.5" font-family="monospace">doing nothing</text>
+<text x="352" y="205" fill="#93a1ae" font-size="12.5" font-family="-apple-system,sans-serif">actual: long flats, plus spikes forced by bugs</text>
+</svg>
+<figcaption>She drew her own "totally unscientific graph" of ten years of learning to program in 2015. This is the shape described in the 2022 talk.</figcaption>
+</figure>
+
+<p>Why isn't this just laziness dressed up? Because each dive is <strong>forced by a real failure</strong>, so it necessarily lands on the piece you're missing rather than the piece a textbook author decided you needed.</p>
+
+<p>She narrates one such dive in full, "the case of the mysterious caching." She was setting up a new subdomain, say <code>new.jvns.ca</code>. Records configured, page refreshed, nothing. Her mental model said the TTL was five minutes so five minutes was the worst case. Five minutes passed. Nothing.</p>
+
+<p>What she writes about that moment is the most important beat in the whole method:</p>
+
+<blockquote>
+<span class="en">And I was like, oh, no. My mental model was broken! I did not feel good.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>She immediately concedes what most people do next: "if something weird happens with a computer, you let it go, right? You might decide okay, I don't have time to go into a deep investigation here. I'll just wait longer." She doesn't call that laziness — she says it depends on whether you have the energy that day. That day she did, and specifically because she was annoyed: "the computer can't beat me today."</p>
+
+<p>Three steps follow. First she finds a word on Stack Overflow: <strong>negative caching</strong>. The first time she'd loaded the not-yet-configured domain, the DNS servers had returned NXDOMAIN — and <strong>the nonexistence itself got cached.</strong></p>
+
+<p>Second is the least comfortable move in her repertoire — reading the spec. But note how she reads it:</p>
+
+<blockquote>
+<span class="en">I think like maybe the most upsetting learning technique to me is to read a very boring technical document. […] And so when I read something very boring, I like to bring a specific question.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>Carrying the single question "how long do I have to wait," she opens RFC 2308 and reads one sentence in section 3: the TTL of this record is the minimum of the SOA record's minimum field and the SOA's own TTL. "Luckily, we only have one question: I don't need to read the entire boring document. I just need to like analyze this one sentence and figure it out." Third: run <code>dig</code>, look at those two numbers, both 10800. Three hours.</p>
+
+<p>She waited three hours. It worked. And her verdict on the episode is the conclusion of the whole section:</p>
+
+<blockquote>
+<span class="en">Sometimes when I find my mental model is broken, it feels like I don't know anything. But in this case, and I think in a lot of cases, there's often just a few things I'm missing? […] So sometimes learning one small thing really can solve all your problems.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>That's the conversion: <strong>from "I don't understand DNS" — a diffuse feeling about who you are — to "I was missing one line: nonexistence gets cached too" — a numbered, lookupable, fixable fact.</strong> The first makes people quit. The second costs an afternoon.</p>
+
+<p>She then adds a coda that is absurdly small and entirely characteristic: the real fix is <strong>don't visit the domain before you've set it up.</strong> She learned that and has barely hit the problem since. Plus the line that captures her temperament best: DNS advice tells you to wait 48 hours when something goes wrong, "and I do not want to wait 48 hours! I hate waiting. So I love it when I can like use my brain to figure out that I can wait for less time."</p>
+
+<h3>Two: "I'm confused" is not an emotion; it's a sentence you can translate</h3>
+
+<p>In 2018 she wrote "How to teach yourself hard things," which breaks learning into four separately practisable skills. The one she ranks first is only an act of translation:</p>
+
+<blockquote>
+<span class="en">I think this is the most important learning skill. This is the skill of translating "I'm confused, I don't get it" to "I have a specific question about X".</span>
+<cite>"How to teach yourself hard things", 1 September 2018</cite>
+</blockquote>
+
+<p>Her example is embarrassing enough to be believable. She was confused about references and borrowing in Rust for a long time — and the state of "knowing I don't understand" was useless, because it converts into no action at all. Until she sat down and forced the fog into three answerable factual questions:</p>
+
+<ul>
+<li>What does the <code>&amp;</code> symbol in Rust actually mean?</li>
+<li>How can I tell if a variable is allocated on the stack vs the heap? Is it always possible to tell?</li>
+<li>How can I avoid putting lifetimes on my structs?</li>
+</ul>
+
+<p>After answering those, she says, her understanding was "MUCH stronger" and she was "permanently less confused." And the cost she admits is the most honest part of the passage: <strong>she only came up with those three questions three years after first using Rust.</strong> Her explanation is that you have to actually <em>decide</em> to sit down, notice where you're stuck, and spend time working out what you're confused about. That itself takes time.</p>
+
+<p>Then the counterpart half, which motivational writing almost always skips: <strong>confirming what you do know.</strong></p>
+
+<p>Her example is TCP ports. She says she doesn't know everything about networking, but she is 100% sure there are 65,535 of them — not because Wikipedia says so, but because the port fields in the TCP header are 16 bits and 2<sup>16</sup> = 65,536, so there is physically no room. So when a program logs "port 1823832," she does not spend one second wondering whether ports can secretly be bigger. She calls it a bug.</p>
+
+<blockquote>
+<span class="en">Taking a bit of extra time to take a piece of knowledge that you're pretty sure of ("there are 65535 ports, Wikipedia said so") and make it totally ironclad ("that's because the port field in the TCP header is only 16 bits") is super useful because there is a big difference between "I'm 97% sure this is true" and "I am 100% sure about this and I never need to question it again".</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>The two halves together draw a <strong>boundary</strong>: load-bearing ground on one side, fog on the other. Work happens standing on the ground with one hand out in the fog. All her writing amounts to laying a few more paving stones on the reader's side — one or two per post, but laid solidly. When she says blogging only requires knowing "1-2 interesting things that the reader doesn't," this is what she means.</p>
+
+<p>So where do the stones come from? Bugs:</p>
+
+<blockquote>
+<span class="en">My favourite way to learn what's underneath an abstraction is bugs! Bugs often break through abstraction boundaries […] So they're a great excuse to learn what's underneath, they show you exactly how the underlying thing (like TCP) is connected to the abstraction (like an HTTP request). And they inherently help you learn one step at a time, because each bug will usually teach you about just one or two things.</span>
+<cite>"Teaching by filling in knowledge gaps", 20 September 2021</cite>
+</blockquote>
+
+<p>Which closes the loop: a bug is a random sampler that ignores your study plan and hits the real hole in your mental model. Tiny deep dives need no syllabus — <strong>your own failures generate it.</strong> That's also why her 2021 post "Get better at programming by learning how things work" defines the feeling of frustration — I can't fix this bug, I can't find the right question to ask — as a <em>signal</em>: not incompetence, but your mental model raising an alarm.</p>
+
+<p>And the order she gives herself while debugging is the best-known line on the site, and the emotional anchor of the whole method:</p>
+
+<blockquote>
+<span class="en">Also known as "OK JULIA IT IS NOT FAIRIES WHAT ACTUAL REASON COULD BE CAUSING THIS?"</span>
+<cite>"How I got better at debugging", 22 November 2015</cite>
+</blockquote>
+
+<p>Under the joke is a serious axiom: everything on a computer happens for a logical reason, however hard the computer works to convince you otherwise. The rest of that post is suspiciously plain — be unreasonably confident you can fix it; know more things; talk to people (she describes rambling into a Slack channel and solving it herself by the fifth message). Plus the shortest one: "Seriously I could not fix bugs without strace."</p>
+
+<h3>Three: confusing explanations aren't badly written — they're thirteen shaped mistakes</h3>
+
+<p>In August 2021 she did something rare: she turned the gun around on the <strong>source of her own motivation.</strong></p>
+
+<p>Her process had always been four fixed steps: learn a thing → read a pile of explanations that confuse her → finally understand → write the version she can follow. Step two is the fuel for her entire output. So she asked: <strong>what exactly is wrong with the pile?</strong></p>
+
+<p>She reverse-engineered thirteen patterns. A few:</p>
+
+<p><strong>"Outdated assumptions about the audience's knowledge."</strong> She takes a Git book to pieces. Explaining branching, it says nearly every VCS has branching, and that in many of them it's expensive, often requiring a full copy of your source directory. Her diagnosis: the passage assumes you know how <em>other</em> version control systems implement branching. True in 2009, when everyone learning Git came from Subversion or CVS. By 2021, when almost nobody learning Git has used anything else, it's pure noise. She names the general cause too: the writer learned the concept years ago and lacks recent practice explaining it, so they assume the reader knows roughly what they and their friends knew in 2005.</p>
+
+<p><strong>"Inconsistent expectations of the reader's knowledge."</strong> A new language tutorial carefully explains what a for loop is (which nearly every programmer knows), and the very next paragraph assumes you know how the stack and malloc work.</p>
+
+<p>The rest: strained analogies, fun illustrations pasted onto dry explanations, unrealistic examples, jargon that doesn't mean anything, too many concepts at once, starting out abstract, no examples, "what" without "why."</p>
+
+<p>But the finest move is <strong>why she framed the list negatively</strong>, which she explains in the post because it runs against her habit — she says she "practically always" writes positively:</p>
+
+<blockquote>
+<span class="en">And the problem with positive patterns (like "avoid introducing unnecessary jargon") is that they seem so obvious that I trick myself into thinking I'm following them, even when I'm not! So I'm writing these down to try to keep myself honest.</span>
+<cite>"Patterns in confusing explanations", 19 August 2021</cite>
+</blockquote>
+
+<p>That's a fine piece of self-knowledge: <strong>a positive rule can't be falsified, so it can't constrain you.</strong> "Write clearly" has never once stopped an unclear post from existing. "Did you introduce six new concepts in a row" can be counted on the spot.</p>
+
+<p>More importantly, the list's biggest beneficiary isn't writers. It's readers, and she says so:</p>
+
+<blockquote>
+<span class="en">Being aware of these patterns also helps me when reading a confusing explanation: "oh, I'm not confused by this explanation because I'm stupid, I'm confused because it's introduced 6 new-to-me concepts and it hasn't explained what any of them is yet!".</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>That sentence welds the third answer to the first two. <strong>She has been doing one thing the whole time: moving the attribution off "me as a person" and onto an object you can point at.</strong> With DNS it moved onto "negative caching." With Rust, onto three specific questions. Here, onto "this paragraph commits pattern 8." Same move, three times.</p>
+
+<p>It has a very practical product: <strong>she refuses to start from the beginning.</strong> In September 2021's "Teaching by filling in knowledge gaps" she describes writing her bash zine — she did <em>not</em> explain what bash is or the basic syntax of a script, because the zine is for people <strong>already writing bash</strong>. She covered only what long-time users still tend not to know: that <code>/usr/bin/[</code> is a program; that the curly brace in <code>a{.png,.svg}</code> means something completely different from the one in <code>{ command1; command2 }</code>; that you can search and replace inside a string with <code>${}</code>.</p>
+
+<p>She says this feels natural to her while others tell her they can't write without explaining everything from scratch. And she names a specific, non-programming source: <strong>between the ages of 15 and 20 she held about five part-time jobs tutoring math or physics at drop-in tutoring centres.</strong> Random students, twenty minutes, quite possibly never seen again.</p>
+
+<blockquote>
+<span class="en">I learned to listen a lot and not jump to conclusions about what the person didn't know – often they already actually understood a lot about the math class they were taking and I just needed to explain one or two small things. […] I have no idea who's reading my writing or what they already know, and they're probably going to only spend 10 minutes or so reading it. So I can only intervene in a really limited way.</span>
+<cite>"Teaching by filling in knowledge gaps", 20 September 2021</cite>
+</blockquote>
+
+<p>"I can only intervene in a really limited way" sounds modest but is a hard editorial decision. It explains why her zines are thirty pages and not four hundred, why her posts rarely pass 2,500 words, and why she publicly lists "more material is always better" as a myth: "I'd rather read something short, learn a couple of new things, and move on."</p>
+
+<h3>Plus one piece of arithmetic: she computed whether free is better, and concluded it isn't</h3>
+
+<p>This isn't a fourth thesis, but it's why the blog is still alive, and the calculation is her own.</p>
+
+<p>Her zines were free until 2018. Then $10. She wrote a whole post about the conflict, because one of her stated goals is explicitly to "expose people to new important ideas that they might never have heard of otherwise" — by which free obviously wins. She even cites Michael Nielsen's open-access case: roughly 250,000 reader-hours, about 125 full-time working years.</p>
+
+<p>Then she puts up her own numbers and makes a comparison few would risk. Most-downloaded free zine: 5,000 clicks. Best-selling paid zine: 3,000 sales. Intuitively 5,000 beats 3,000. Her conclusion goes the other way:</p>
+
+<blockquote>
+<span class="en">This actually feels like selling zines results in more people reading the zine – to me, 3,000 sales is WAY BETTER than 5,000 clicks, because I think that someone who bought a zine is probably like 4x more likely to read it than someone who just clicked on a PDF. (4x being a Totally Unscientific Arbitrary Number).</span>
+<cite>"Why sell zines?", 23 September 2018</cite>
+</blockquote>
+
+<p>Note the parenthesis she attaches to her own multiplier. That's her signature: give an estimate strong enough to act on, and label its confidence in public.</p>
+
+<p>She gives a second reason, rarer than the first: <strong>"this costs money" is a nice way to signal "I actually spent time on this, this is good".</strong> And a purely practical third: once it earned money, buying an iPad, hiring illustrators and paying for print runs stopped requiring deliberation — she'd spent around $5,000 on tools and freelancers and made substantially more, so "investing in things like that is now a really easy decision."</p>
+
+<p>That arithmetic is what let her quit in August 2019. She gave herself "a year," on the grounds that "I think I have at least a year's worth of ideas and I can't predict how I'll feel after doing this for a year." That was seven years ago.</p>
+
+<h2>How she thinks</h2>
+
+<p>If the three answers are her conclusions, this is her actual technique — and the technique travels better than the conclusions.</p>
+
+<p><strong>Go and watch it, before you go and read about it.</strong> The first tool in her box is always "see what the program is <em>actually</em> doing," not "see what the docs say it should do." Her example: a Redis request was being rejected as invalid; she read the code, asked colleagues, everyone said it looked right. And then — her own capitals — "AND THEN I REMEMBERED ABOUT TCPDUMP." She ran tcpdump on a machine known to be sending valid requests, looked at the ASCII in her terminal, and the answer was sitting right there. Her summary: "Seriously I could not fix bugs without strace."</p>
+
+<p><strong>Write your own terrible version.</strong> This is the one she calls her favourite and the most work. In the DNS talk she demonstrates live: she needs to send a DNS query, and she does not intend to learn the packet format first. Instead she opens Wireshark, right-clicks a real DNS query, "copy as hex stream," and pastes that hex into four lines of Ruby. It works.</p>
+
+<blockquote>
+<span class="en">It doesn't know that we copied and pasted it and that we have no idea what it means!</span>
+<cite>"Learning DNS in 10 years", transcript</cite>
+</blockquote>
+
+<p>Only <em>then</em> does she start pulling the hex apart: the first 12 bytes are the header, six two-byte numbers; then the question section, <code>7 example 3 com 0</code> — a length, then that many characters. <strong>The order is inverted: make it run first, understand it second.</strong> Her assessment of the technique:</p>
+
+<blockquote>
+<span class="en">writing my very bad implementation gives me a really unreasonable amount of confidence</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p><strong>Run cheap experiments, and let them fail in public.</strong> On stage she ran a caching experiment: query the same record about twenty times against Cloudflare's 1.1.1.1, expecting the origin server (which she controls) to see exactly one query. It saw eight. Her live reaction was "Oh, cool. This isn't what I expected to see. This is fun, though" — followed by an on-the-spot inference that 1.1.1.1 has around eight independent caches, because Cloudflare's network is distributed and the machines she's reaching in Providence aren't the ones she reaches from Montreal. Her note on why she does this:</p>
+
+<blockquote>
+<span class="en">One reason I like to do demos live on stage is that sometimes […] what happens isn't exactly what I think will happen.</span>
+<cite>ibid.</cite>
+</blockquote>
+
+<p>She adds that the talk had contained another example which she tested, found false, and cut — "And now I know that. I love that experiments on computers are very fast and cheap and usually have no consequences."</p>
+
+<p><strong>Use "I think" as cost control.</strong> She openly declines to aim for 100% correctness, preferring to put "my understanding is" or "I think" in front of anything she isn't sure of. Her reason is purely economic: it saves a great deal of fact-checking on statements she honestly wouldn't know how to check. She even exhibits her own past ones: "I think the MTU on my local network is 1500 bytes." "Etsy uses PHP, which I think means they can't have long-lived persistent TCP connections." She says she still doesn't know whether the PHP one is true and has little interest in checking. <strong>This isn't laziness; it's explicit resource allocation — spend the verification budget where the reader will actually use it.</strong> She also admits she "tends to overdo the 'I think that…' statements a bit (bad habit!)."</p>
+
+<p><strong>Blog about what you struggled with, not what you learned.</strong> This is her most actionable advice, and she explains why the wording matters: "we've all learned lots of things!" She learned Go at some point — so what should she write? The syntax? net/http? Modules? But asking what she <em>struggled</em> with in Go makes it instantly concrete: deadlocks. She adds a guard so it can't be mistaken for complaining: "it's not about the struggle, it's about what you learned." She still isn't good at Rust, she says, but she wouldn't write a post called "I find Rust hard" — that helps nobody. She wrote "What's a reference in Rust?"</p>
+
+<p><strong>Turn topic selection into an information-asymmetry calculation.</strong> Her 2020 post on comics splits her material into two generations. The first is "things I learned somewhat recently that surprised me" — free and automatic. The second she calls Hard Mode: <strong>things that no longer surprise her but would surprise most people who don't know the topic.</strong> There's exactly one way to find those: talk to people who don't know, and watch where their eyes widen. Her example is HTTP cookies — she learned them so long ago she'd forgotten they could be news.</p>
+
+<p>By 2023, working on git, she industrialised this. She asked Mastodon outright which git jargon people find confusing, then ranked the answers: HEAD and heads, detached HEAD state, "ours" and "theirs" during a merge, <code>..</code> versus <code>...</code>, tree-ish, refspecs, index/staged/cached. She stated her reason plainly: "after almost 15 years of using git, I've become very used to git's idiosyncracies and it's easy for me to forget what's confusing about it." That is the self-aware version of a real hole — <strong>her method runs on having been confused recently, and success is consuming that supply, so she has started crowdsourcing other people's confusion instead.</strong></p>
+
+<p><strong>And the last one is social, and it's the foundation: don't feign surprise.</strong> Her own example is small: she asked someone what a PCI bus was and they said "are you serious??" and she said "yes!!" — "And I maybe secretly thought that person was being a bit rude but they totally explained what a PCI bus was to me so I wasn't that mad =)". And in the other direction, she's learned to transmute surprise into excitement: when her cousin asked "the internet travels in cables under the ocean? are you serious?" her response was YES COOL RIGHT, followed by an explanation of how packets cross the Atlantic.</p>
+
+<h2>Where she might be wrong</h2>
+
+<p>A methodological note first: <strong>I could not find substantial, named criticism of her work.</strong> Public search turns up essentially positive citation. So what follows is not a relay of anyone else's argument; it's drawn from the 22 posts I actually read, and several of the items are ones she wrote herself.</p>
+
+<p><strong>1. Tiny deep dives have a shape they can't reach, and her readers may not know it.</strong> The method works perfectly on DNS because of a precondition she names but doesn't emphasise: <strong>DNS doesn't move.</strong> She points out that RFC 1035 was written in 1987 and a program written to it still works — "The basics haven't changed since before I was born. So if you're a little slow about learning about it, that's ok: it's not going to change out from under you." That's the condition under which "six months of nothing" is composure rather than falling behind. Applied to a field that turns over every eighteen months, it's the latter. Likewise the method suits <strong>knowledge repairable one fact at a time</strong> (negative caching, 16-bit port fields, <code>/usr/bin/[</code> is a program) and is nearly useless for <strong>knowledge that only pays off whole</strong> — a proof technique, a theoretical framework, a language's type system. Those have no "learning one small thing solves all your problems" moment. She never claims universality; she also never draws the boundary, and readers borrow methods wholesale.</p>
+
+<p><strong>2. The shallowness she chooses is real shallowness.</strong> She publicly lists "more material is always better" as a myth and says she'd rather read something short and move on. That preference runs through everything: among 596 posts there is almost no sustained argument past 2,500 words, and almost nothing that would require her to change a position. The consequence is predictable: <strong>a good cheat sheet produces the feeling of understanding grep, and that feeling is not the same as understanding grep.</strong> The best evidence is her own 2026 SQLite post. After building her <strong>fourth</strong> website on SQLite, she writes:</p>
+
+<blockquote>
+<span class="en">what I did not fully appreciate is that SQLite is still a database, databases are complicated, and I do not know a lot about operating databases.</span>
+<cite>"Learning a few things about running SQLite", 17 July 2026</cite>
+</blockquote>
+
+<p>She's honest — she wrote the wall down. But the wall is also a product of the method: <strong>patching one hole at a time leaves you, on many subjects, permanently at the water line of "it works, I'll deal with weirdness when it shows up."</strong> In the same post: "Maybe one day I'll learn to read a query plan." Fourteen years in, reading a query plan is still in "one day." That may be entirely fine for her (her database has maybe 10,000 rows). A reader who transplants the method into a production system will hit something considerably worse than a five-second query.</p>
+
+<p><strong>3. The harshest criticism of her is one she wrote herself: she is drifting away from her readers.</strong> In the 2023 post on blogging myths there's a section she added because a draft reader raised it:</p>
+
+<blockquote>
+<span class="en">I think this is because the gap between me and who I'm writing for has gotten a bigger over time, and so it gets a little harder for me to relate to people who know less about the topic. […] I don't have any advice to give about this right now.</span>
+<cite>"Some blogging myths", 5 June 2023</cite>
+</blockquote>
+
+<p>This cuts the fuel line of her whole method, and she knows it. Her writing engine burns "I was recently confused," and fourteen years of success is systematically exhausting the supply. Her mitigations are smart — crowdsourcing confusion on Mastodon, recruiting beta readers for zines, making "test your explanations" a hard rule and specifically bolding that you must <strong>not</strong> ask someone who already understands the concept. But they convert her from <em>a person who is learning</em> into <em>a person who organises research into other people's learning</em>, and those don't produce the same writing. That she has no advice to give is itself the admission.</p>
+
+<p><strong>4. The blog has grown safer over time, and she has never explained why.</strong> This one I didn't expect, but the data is sitting on her own site. She has an "inclusion" category, seven posts, all between 2013 and 2017: a <strong>self-run survey</strong> on whether "guys" actually reads as gender-neutral (2013), "Programming doesn't belong to men (it belongs to me)" (2014), "An argument for hiring junior developers" (2015), "Women-only spaces are a hack" (2016), "A litmus test for job descriptions" (2016). After "No feigning surprise" in April 2017, <strong>the category has no new entries</strong> — and she has published roughly three hundred posts since.</p>
+
+<p>I don't know the reason, she has never given one, and I'm not going to invent one for her. What can be placed alongside it is the policy she wrote down in 2023 for handling criticism: "I don't reply to them. Even if they're wrong. I dislike arguing on the internet and I'm extremely bad at it, so it's not a good use of my time." Plus a subtler self-training: "I've sometimes found it helpful to reinterpret people being mad as people being confused or curious." Her example there: commenters were annoyed that her toy DNS resolver skipped packet parsing; she initially thought that was silly, then realised they probably wanted to know how — and those comments partly produced her later "Implement DNS in a weekend."</p>
+
+<p>This is an extraordinarily effective <strong>durability strategy</strong>: don't argue, translate hostility into demand, stay on verifiable technical ground. It lets one person write for fourteen years without burning out, which is close to unique on the internet. <strong>But the cost is a systematic topic avoidance, and what gets avoided is precisely the class of question you can't settle by running an experiment.</strong> That 2013 survey was genuinely original work — she designed the instrument and collected the data herself. That version of her hasn't appeared since.</p>
+
+<p><strong>5. The most famous criticism of her work was never really answered.</strong> In 2016 someone on a tech news site wrote: "I don't understand why these, frankly, childish drawings of things you can learn from reading a wikipedia article have reached this level of popularity." She quoted it in full in her own post and said "this comment was a bit inflammatory, but I think it's actually an interesting question." Her answer is thoroughly utilitarian:</p>
+
+<blockquote>
+<span class="en">I don't do it because I'm a visual thinker or because I'm a good artist or because I think comics are always the best way to learn. I just do it because it works, and it's fun.</span>
+<cite>"Why cute drawings?", 14 November 2016</cite>
+</blockquote>
+
+<p>Her evidence for "it works": a 1,200-word post readers needed fifteen minutes to understand versus thirty seconds for the comic; a fifteen-minute drawing about <code>/proc</code> that got 180,000 impressions. <strong>But those metrics measure reach and perceived usefulness, not whether anyone later knew the thing.</strong> The hostile comment was asking about the latter, and nobody — including her — has data on it. Her own stated goal is to "explain complicated ideas in the simplest possible way (but not simpler!!!)". How the "but not simpler" clause gets adjudicated in practice, she has never said.</p>
+
+<h2>Sources</h2>
+
+<ul class="reads">
+<li><a href="https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/"><span class="t">Learning DNS in 10 years</span></a><span class="d">Full transcript of her 2022 RubyConf Mini keynote. The entire method run end to end on one case: tiny deep dives, spying, noticing confusion, reading an RFC with one question in hand, running experiments, writing your own terrible version. Opens by saying the talk isn't really about DNS.</span></li>
+<li><a href="https://jvns.ca/blog/confusing-explanations/"><span class="t">Patterns in confusing explanations</span></a><span class="d">Thirteen specific mistakes that make technical explanations hard to follow, each with what she does instead. Includes her account of why she deliberately framed the list negatively.</span></li>
+<li><a href="https://jvns.ca/blog/2018/09/01/learning-skills-you-can-practice/"><span class="t">How to teach yourself hard things</span></a><span class="d">Learning broken into four separately practisable skills. The pair "identify what you don't understand" and "have confidence in your knowledge" is the core of her whole approach. The 65,535 ports example lives here.</span></li>
+<li><a href="https://jvns.ca/blog/2014/05/12/computers-are-fast/"><span class="t">Computers are *fast*!</span></a><span class="d">2014: she and a friend measure how fast her machine actually is, using one episode of The Newsroom and a C program. Tagged by her as a favourite; twelve years later the title reappears verbatim in her SQLite notes.</span></li>
+<li><a href="https://jvns.ca/blog/2023/06/05/some-blogging-myths/"><span class="t">Some blogging myths</span></a><span class="d">Eight myths, including "you need to be original", "you need to be an expert", "posts need to be 100% correct" and "page views matter". Also one of the few places she writes directly about handling hostile comments, and admits that writing has gotten harder as she's gotten more experienced.</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-07" data-slug="jvns-ca">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+
+</div>
+
+<footer>Blog Deep Read · one page ≈ one mind, read through · content verified as of 2026-09-07</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
