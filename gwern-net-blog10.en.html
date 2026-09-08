@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gwern Branwen · Gwern.net — How one person finds out what's true, and keeps the answer from evaporating along with the internet</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",Inter,sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc;font-style:italic}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="gwern-net-blog10.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Reads · 10 · gwern.net</div>
+<h1>Gwern Branwen · Gwern.net<br/>How one person finds out what's true — and keeps the answer from evaporating along with the internet</h1>
+<p class="sub">2009–present · 440+ text files, 4.3m+ words · still updating (changelog runs through June 2026) · the hinge is May 2020, "The Scaling Hypothesis": before it, a self-taught researcher outside every institution; after it, the person who saw it coming from outside the labs · this page is based on 13 pieces read in full, spanning January 2009 to May 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+
+<p>The most complete resource on the internet about whether a memory game called dual n-back can raise your IQ took ten years to write. One person wrote it. Pull out the body text and it runs to nearly sixty thousand words.</p>
+
+<p>At the top of that document, the author has stamped himself with this:</p>
+
+<div class="meta-card">certainty: <b>unlikely</b></div>
+
+<p>The person who wrote the FAQ is also the person who demolished it. In 2009 he read in <em>Wired</em> that the game raised fluid intelligence and was genuinely shaken — IQ is one of the hardest things about a person to push upward — so he started tracking every study. By 2012 he noticed that nobody had done a meta-analysis on the question, so he did one himself. The finding: <strong>the studies showing an effect were almost all studies whose control group did nothing at all.</strong> Give the control group something to train on and the effect collapses. What had been measured was not intelligence going up; it was that people who had just trained on something try harder on the post-test.</p>
+
+<p>Then he left the FAQ up. He didn't delete it. He just added the stamp.</p>
+
+<h3>What he's been wrestling with</h3>
+
+<p>Gwern Branwen is a pen name. The person under it has been hearing-impaired since birth, learned much of his vocabulary from books and still mispronounces words because of it, lives on a Patreon bringing in $900–1,000 a month plus some early Bitcoin — under $12,000 a year — keeps a cat, and when he sat for a long interview in 2024 his one condition was no audio and no video. No PhD, no lab, no grant, no peer review, no credential vouching for him.</p>
+
+<p>The question he has not put down in seventeen years grows straight out of that situation: <strong>how does a person like that find out whether something he actually cares about is true? And once he's found out, how does he keep the answer from evaporating along with the rest of the internet?</strong></p>
+
+<p>Two enemies: self-deception, and forgetting. Every answer he gives is counterintuitive.</p>
+
+<h3>Answer one: never start</h3>
+
+<p>The odd thing he noticed is that blog posts are almost all disposable.</p>
+
+<blockquote>most blog posts are the triumph of the hare over the tortoise. They are meant to be read by a few people on a weekday in 2004 and never again, and are quickly abandoned…(But isn't that sad? Isn't it a terrible ROI for one's time?)
+<cite>"About This Website"</cite></blockquote>
+
+<p>His fix isn't to work harder. It's to abolish the act of starting:</p>
+
+<blockquote>So this suggests a solution: never start. Merely have perpetual drafts, which one tweaks from time to time. And the rest takes care of itself.
+<cite>ibid.</cite></blockquote>
+
+<p>So every page on his site carries a date <em>range</em> instead of a publication date (the "About" page reads 2010-10-01 to 2024-08-30 — fourteen years, 5,083 days), plus a completion status, a confidence tag, and an importance score out of 10. Every year that appears in the body text carries a small superscript telling you how long ago that was — because he isn't writing for you, this year. He says the real intended reader of these pages is:</p>
+
+<blockquote>my future self, who is intelligent and interested, but has forgotten.
+<cite>ibid.</cite></blockquote>
+
+<h3>Answer two: first calculate whether the experiment is worth running</h3>
+
+<p>He tried a near-infrared light therapy supposed to sharpen cognition. He used it on and off for over a year, ran the numbers, and found it correlated strongly with his daily self-ratings — effect size 0.455, not small. Most people would have posted a recommendation.</p>
+
+<p>He asked the opposite question: might the good days be causing the <em>usage</em>? So from August 2014 to March 2015, <strong>167 days, he flipped a coin at noon every day</strong> to decide whether to use it. The effect size fell to 0.07. He gave the LED away.</p>
+
+<p>Better still is how he decides whether to run an experiment at all. For fish oil he wrote out the arithmetic: power × prior × benefit − cost of experimentation = (0.20 × 0.30 × 540) − 41 = <strong>−9</strong>. Negative, so he didn't run it. The reasoning is cold: he was already taking fish oil and already believed in it, so a underpowered experiment returning "no effect" wouldn't be strong enough to change his behavior anyway.</p>
+
+<h3>Answer three: everything is correlated, so correlations are nearly worthless</h3>
+
+<p>This is his most original idea and his least fun one. Past a certain sample size, any two variables you measure will be statistically significantly correlated:</p>
+
+<blockquote>If you fail to reject the null hypothesis with p &lt; 0.05, you simply haven't collected enough data yet.
+<cite>"Why Correlation Usually ≠ Causation"</cite></blockquote>
+
+<p>So he went and compiled every pairing he could find, across medicine, economics and psychology, where an observational study was later followed by a randomized trial — and checked whether the observational study called it right. Verdict: <strong>the best correlational research barely beats a coin flip.</strong></p>
+
+<p>Then comes his own explanation: reality is a <strong>dense causal graph</strong>. Every variable is wired to several others, so the number of indirect paths that carry information grows far faster than the number of direct causal edges you could actually push on. Any correlation you happen to observe is therefore very unlikely to sit on a direct edge. And our intuitions were formed in a sparse world — catching a ball, walking through a door — which is why we underestimate confounding systematically rather than randomly. His prescription is a sentence turned inside out: the question should never be whether it's ethical to run a randomized experiment here, but whether it could possibly be ethical <em>not</em> to.</p>
+
+<h3>Answer four: we are already living in the scaling world</h3>
+
+<p>In May 2020 the GPT-3 paper landed and, in his words, "appears to have sunk almost without a trace."</p>
+
+<p>The good part is that <strong>he had been the loudest skeptic of this very idea.</strong> From 2004 to 2010, reading the people who claimed that enough compute would summon the right algorithm, he thought it was magical thinking — algorithms are hard, you can't just buy a pile of computers and expect intelligence to fall out.</p>
+
+<p>What changed him wasn't a flash. It was a decade of drips: datasets kept getting bigger, models kept getting bigger, GPUs went from one to eight, convolutional nets kept eating new domains. He describes noticing, over and over, that the world was starting to look more like <em>their</em> world than like his. GPT-3 was the crucial test: if scaling were bogus, the paper should have been unimpressive. He got to the few-shot learning chart on the second page — we are living in the scaling world.</p>
+
+<p>Then he opened Twitter and found everyone saying this proved how badly scaling worked, since it wasn't even state of the art. One of the most-cited AI essays of the decade began like this:</p>
+
+<blockquote>That made me so angry I had to write all this up. Someone was wrong on the Internet.
+<cite>Dwarkesh Patel interview, 2024</cite></blockquote>
+
+<p>All four answers are really one answer. A person without a lab has exactly two assets. <strong>One is willingness to go deeper than anyone thinks the question is worth</strong> — of his most popular pages he says anyone could have compiled them, and that if he did anything meritorious it was "simply putting more work into them than someone else would have." <strong>The other is time.</strong> For an institution time is the enemy: grants end, papers must ship. For him it's the only source of compound interest. In his 2020 essay there's a question about whether some enormous multimodal agent might eventually appear. Next to that line today sits an annotation:</p>
+
+<div class="meta-card">[Roughly, yes. —Editor <b>2025-10-19</b>]</div>
+
+<p>His five-years-later self came back to grade his five-years-earlier self, in the margin of the original sentence, without deleting a word of it.</p>
+
+</div>
+
+<!-- ============ FULL ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>One strange thing</h2>
+
+<p>The most complete resource on the internet about whether dual n-back training raises IQ is a FAQ that took ten years to write. One person wrote it. I pulled out the body text and counted: close to sixty thousand words. It is detailed enough to track which forum thread challenged which study, and what the study's authors said when he emailed them.</p>
+
+<p>And at the top of that FAQ, the author has stamped himself with this:</p>
+
+<div class="meta-card">2009-03-25 – 2019-12-05 <span style="color:#5f6b77">(ten years)</span><br/>status: in progress<br/>certainty: <b>unlikely</b><br/>importance: 7/10</div>
+
+<p>"certainty: unlikely" is not modesty; it's a term with a definition. He borrowed a scale from an American intelligence-community document, the Kesselman List of Estimative Words: certain, highly likely, likely, possible, unlikely, highly unlikely, remote, impossible. Every essay on his site carries one. The one on this FAQ is "unlikely."</p>
+
+<p>In other words: this person spent ten years building the world's best archive on a subject, then posted a sign at the door telling you the subject is probably bunk.</p>
+
+<p>The stranger part is that he didn't delete it.</p>
+
+<div class="glossary">
+<h2 style="border:none;padding-left:0;margin:0 0 8px;font-size:1rem">Glossary</h2>
+<ul>
+<li><b>Dual n-back</b>: a memory game in which you track both the position of a square and a spoken letter, and answer what appeared n steps back. A 2008 study claimed training on it raised IQ, and it went viral.</li>
+<li><b>Randomized controlled trial (RCT)</b>: assigning people to treatment or control by coin flip. It is currently the only reliable way humans have of separating correlation from causation.</li>
+<li><b>Meta-analysis</b>: pooling all existing studies on a question to compute a combined answer, which reveals when a conclusion rests on a handful of small studies.</li>
+<li><b>Effect size (often written d)</b>: a measure of how large a difference is that doesn't depend on sample size. Roughly: 0.2 small, 0.5 medium, 0.8 large.</li>
+<li><b>Reverse causation</b>: you think A causes B, but B causes A. "Days I used the treatment were better days" may just mean "on good days I remembered to use it."</li>
+<li><b>Scaling hypothesis</b>: the claim that intelligence needs no clever new algorithm — that simple neural networks plus enough data and compute will make capabilities emerge on their own.</li>
+<li><b>Bit</b>: the unit of information. One bit halves the possibilities. "Leaked 6 bits" means the suspect pool shrank to one sixty-fourth of its size.</li>
+</ul>
+</div>
+
+<h2>Who he is</h2>
+
+<p>Gwern Branwen is a pen name. The person under it is an American freelance writer and researcher who started the site in 2009 and is still at it — the changelog runs through June 2026.</p>
+
+<p>He has been hearing-impaired since birth. He describes carrying a big brown box of hearing equipment up to the teacher at the start of every class as a child, and how it marked him out; conversation was always a beat behind, so he became a bookworm, which he calls one of the few things a kid can do that hearing impairment doesn't touch. The cost is that he learned many words only on the page and still mispronounces them.</p>
+
+<p>The money is equally concrete: $900–1,000 a month from Patreon, plus some leftover early Bitcoin — under $12,000 a year in living expenses. He keeps a cat. He has consulted for or published in <em>Wired</em>, MIRI, GiveWell and the FBI, though the site says he isn't taking new commissions. When Dwarkesh Patel interviewed him at length in 2024, his one condition was that no audio or video be released, only a transcript — because he and his family have been harassed before.</p>
+
+<p>These constraints aren't background scenery. They determine what the site is. With no institution there is no deadline — and nobody to vouch for your credibility either. Both have to be manufactured from scratch.</p>
+
+<h2>What he's wrestling with</h2>
+
+<p>He was snagged by a specific question, not by a philosophy.</p>
+
+<p>In 2008 <em>Wired</em> reported that a memory exercise called dual n-back had been found to substantially increase fluid intelligence. His reaction wasn't curiosity; it was shock. IQ, he wrote, is one of the most stubborn properties of a mind, one of the most fragile, the hardest to affect positively, and also one of the most valuable traits one could have. In a footnote he put it more brutally:</p>
+
+<blockquote>It is very easy to lower IQ; you can do it with a baseball bat. It's the other way around that's nearly impossible.
+<cite>"About This Website," footnote</cite></blockquote>
+
+<p>So: train, or not? The game would cost him half an hour a day.</p>
+
+<p>The shape of the problem is set right there. Answering it means tracking a live, contradictory psychology literature; it takes years; it requires knowing how to run a meta-analysis; and no institution will ever pay anyone to do it, because it advances nobody's career. In his words:</p>
+
+<blockquote>Questions of great import like this are worth studying carefully. The wheels of academia grind exceeding slow, and only a fool expects unanimous answers from fields like psychology. Any attempt to answer the question 'is DNB worthwhile?' will require years and cover a breadth of material.
+<cite>"About This Website"</cite></blockquote>
+
+<p>He didn't pick a method and then look for topics; the topic forced the method on him. And behind that topic stands the larger question he has been fighting for seventeen years: <strong>how does a person with no lab, no funding, no peer review and no credential find out whether something he genuinely cares about is true — and once he knows, how does he keep the answer from evaporating along with the internet?</strong></p>
+
+<p>Two enemies: self-deception, and forgetting. Everything he built afterward is aimed at one or the other.</p>
+
+<p>It also explains the site's almost deranged range of subject matter. The same person writes about statistics, psychology self-experiments, the economics of darknet drug markets, exegesis of <em>Neon Genesis Evangelion</em>, poetry, Haskell, and leaked movie scripts. It looks like the diary of someone curious about everything. Underneath, it's one move repeated: <strong>"I want to know X, nobody is going to find out for me, so I'll do it myself."</strong> He says he never expected to write this much — he just discovered that once he had a hammer, nails were everywhere. The tools are general, which is why the topics can be anything.</p>
+
+<h2>His ideas, told as how he found them</h2>
+
+<h3>1. Never start</h3>
+
+<p>Take forgetting first.</p>
+
+<p>For years he opened this argument by quoting Julian Assange from 2006, and the quote is more or less the bedrock of the site:</p>
+
+<blockquote>The Internet is self destructing paper. A place where anything written is soon destroyed by rapacious competition and the only preservation is to forever copy writing from sheet to sheet faster than they can burn. If it's worth writing, it's worth keeping.
+<cite>Julian Assange, "Self destructing paper," 2006; quoted in "About This Website"</cite></blockquote>
+
+<p>Then comes his own observation, which is where it actually begins:</p>
+
+<blockquote>most blog posts are the triumph of the hare over the tortoise. They are meant to be read by a few people on a weekday in 2004 and never again, and are quickly abandoned…(But isn't that sad? Isn't it a terrible ROI for one's time?)
+<cite>"About This Website"</cite></blockquote>
+
+<p>Note the phrase "ROI." He is looking at writing as a rate of return: you spend a nonrenewable hour and get back something nobody reads after Thursday. The arithmetic doesn't work.</p>
+
+<p>So what does? His answer is <strong>Long Content</strong>, and the operating instruction sounds like cheating:</p>
+
+<blockquote>Half the challenge of fighting procrastination is the pain of starting—I find when I actually get into the swing of working on even dull tasks, it's not so bad. So this suggests a solution: never start. Merely have perpetual drafts, which one tweaks from time to time. And the rest takes care of itself.
+<cite>"About This Website"</cite></blockquote>
+
+<p>"Never start" doesn't mean don't work. It means abolishing the psychological event where an essay goes from nothing to something. The essay is permanently a draft; you just pass by occasionally and add a citation, a number, a better sentence. Three years later it happens to be the most complete thing on the subject anywhere. This, he says, is what the framework is really for: <strong>it lets you take on projects that are too big or too tedious to do the normal way.</strong> And the promise it makes to the writer is genuinely moving:</p>
+
+<blockquote>if one holds onto every glimmer of genius for years, then even the dullest person may look a bit like a genius himself.
+<cite>ibid.</cite></blockquote>
+
+<p>The idea has a visible shape on the page. Each of his pages is headed not by a publication date but by a range — the "About" page reads 2010-10-01 to 2024-08-30, and hovering tells you the range "lasted 14 years (5,083 days)." Under it sit three lines of metadata: status (notes / draft / in progress / finished), confidence (those eight estimative words), and importance (deciles from 0 to 10, sorted with a tool he wrote himself — embryo selection rates a 10, some small personal supplement trial rates a 0 or 1).</p>
+
+<p>The detail that gives the whole game away is one almost nobody would bother with: every year mentioned in the text carries a tiny superscript saying how long ago that was. "2008" renders as "2008⁽¹⁸ʸᵃ⁾". Today that's redundant. It isn't for today. It's so that whoever opens the page in 2070 doesn't have to do the subtraction.</p>
+
+<p>Off the page there's an entire anti-rot engineering effort. He insists on static HTML, open formats and entirely free software, on the theory that in thirty years you can at least still open it in a text editor; the sources live in git; every external link is automatically archived and also pushed to the Internet Archive; you can read the Markdown source of any page by appending <code>.md</code> to its URL; the whole site is released under CC-0, because lots of copies keeps stuff safe. He even wrote a linter that watches for domains known to die or to be unreliable, and demands they be replaced or pre-emptively mirrored. His principle is as plain as a plumber's rule: <strong>"The best time to fix broken links is when you're already editing a page."</strong> The scale is concrete too: as of November 2022 the site's source was 440-odd text files and over 4.38 million words; compiled, with all the mirrored papers and images, it runs past 72 GB. He has made a private backup of the portion of the internet he has ever cited.</p>
+
+<p>Because, as he keeps saying, you were never the intended reader:</p>
+
+<blockquote>I am attempting to explain things to my future self, who is intelligent and interested, but has forgotten. What I am doing is explaining why I decided what I did to myself and noting down everything I found interesting about it for future reference.
+<cite>"About This Website"</cite></blockquote>
+
+<p>And he wants to push one step further. Not rotting isn't enough; he wants writing that <strong>gets better with time</strong> — essays carrying falsifiable long-term predictions, so that time itself does the grading. This isn't a slogan. In his 2020 essay on AI scaling he asks whether we'll soon be discussing some enormous multimodal agent trained on thousands of tasks at once. Next to that line today sits: <code>[Roughly, yes. —Editor 2025-10-19]</code>. His later self came back to grade his earlier self, in the margin, without deleting a word.</p>
+
+<p>Written in 2010, this doctrine grew a use in 2024 that he can't have foreseen. Asked why writing matters especially now, his answer had mutated into this:</p>
+
+<blockquote>By writing, you are voting on the future of the Shoggoth using one of the few currencies it acknowledges: tokens it has to predict. If you aren't writing, you are abdicating the future or your role in it.
+<cite>Dwarkesh Patel interview, 2024</cite></blockquote>
+
+<p>("Shoggoth" is the internet's nickname for large language models, after Lovecraft's shapeless monster.) The argument is cold: if your values and preferences never became text, then as far as the model is concerned they don't exist — and that is one short step from never existing. From the same interview, the shortest statement of fourteen years of philosophy:</p>
+
+<blockquote>If it wasn't written down, it wasn't written down.
+<cite>ibid.</cite></blockquote>
+
+<h3>2. First calculate whether the experiment is worth running</h3>
+
+<p>Now the self-deception half.</p>
+
+<p>There's one small complete story here that I think is the fastest way into this person.</p>
+
+<p>In 2013 someone recommended near-infrared light therapy to him — shine a cheap infrared LED at your head, on the theory that it assists mitochondrial respiration. He bought a $13 infrared illuminator meant for security cameras, used it on and off for more than a year, and since he was already rating his own state daily, he ran the numbers. Days he used it looked meaningfully better than days he didn't: effect size 0.455.</p>
+
+<p>Most people would post about it here. He didn't. What occurred to him was <strong>reverse causation</strong>: what if the good days weren't caused by the light, but were the days he happened to remember to use it?</p>
+
+<p>So he did something very few people do to themselves. From 2 August 2014 to 3 March 2015 — <strong>167 days</strong> — he flipped a bit at noon each day to decide whether to use the device, skipping any day he forgot to randomize. He had calculated the sample he needed in advance and ended up running twice that.</p>
+
+<p>Result: effect size 0.07. His conclusion is written very calmly:</p>
+
+<blockquote>A randomized non-blind self-experiment of LLLT 2014–2015 yields a causal effect which is several times smaller than a correlative analysis and non-statistically-significant/very weak Bayesian evidence for a positive effect. This suggests that the earlier result had been driven primarily by reverse causation.
+<cite>"Nootropics"</cite></blockquote>
+
+<p>He gave the LEDs away.</p>
+
+<p>What makes the story beautiful is that it's a live demonstration of his own big law, performed on himself: a respectable-looking correlation (0.455) collapsing into noise (0.07) the moment a coin got involved. And he caught it not in someone else's work but in the thing he most wanted to work.</p>
+
+<p>His methods have a workshop-built ingenuity. Blinding yourself is hard — you packed the capsules, you know what's in them. His solution: put nine real doses and nine placebos in identical clear capsules in one bag, take one blind each day, write down the day's observations and your guess, then count what's left in the bag to deduce what you took, and replace one to keep the ratio — because if you don't, after a few days you can infer the answer from the odds alone.</p>
+
+<p>And the way he reports results is among the best things on the site. In the nicotine round, his guesses about what he'd taken were worse than chance:</p>
+
+<blockquote>Ouch, so my guesses were actually worse than random; this isn't encouraging (if nicotine was helpful, why didn't I notice?) but it does indicate the blinding was successful.
+<cite>"Nootropics"</cite></blockquote>
+
+<p>Lithium: "There is no detectable effect, good or bad." Adderall: his predictions beat chance clearly, so it really was doing something to him — and the conclusion was still that it isn't worth it, because it's expensive and it wrecked his sleep.</p>
+
+<p>But the most counterintuitive move in this whole section happens <em>before</em> any experiment.</p>
+
+<p>He calculates whether the experiment is worth running. He calls it value of information, and the formula is <strong>power × prior × benefit − cost of experimentation</strong>. For fish oil it came out to <code>(0.20 × 0.30 × 540) − 41 = −9</code>. Negative, so he <em>didn't run it</em>, and said exactly why: he was already taking fish oil and already believed in it, so an experiment with 20% power returning "no effect" wouldn't be strong enough evidence to change his behavior — the time would be a pure loss. He then noted that at 40% power the same calculation flips from −9 to +23.8, and it would be worth doing. For Adderall the number came out to +512, so he ran that one.</p>
+
+<p>This step deserves a pause. Most serious people agonize at the level of "should I believe X?" He pushed the question down a floor, into a decision with a price attached: <strong>how much should I spend to improve this belief, and will I actually change my behavior afterward? If not, don't spend it.</strong> It is a posture of extreme stinginess with his own time and extreme ruthlessness toward his own beliefs.</p>
+
+<h3>3. Everything is correlated, so correlations are nearly worthless</h3>
+
+<p>The first two are working methods. This one is a worldview, and it's his most original contribution.</p>
+
+<p>It starts from a fact statisticians have long known and most people refuse to face: past a certain sample size, any two variables will be significantly correlated, regardless of whether they have anything to do with each other. He states it flatly:</p>
+
+<blockquote>Everything is correlated. If you fail to reject the null hypothesis with p &lt; 0.05, you simply haven't collected enough data yet. So, as Meehl asked, what does a correlation between 2 variables mean if we know perfectly well in advance that it will either be positive or negative, but we can't predict which or how large it is?
+<cite>"Why Correlation Usually ≠ Causation"</cite></blockquote>
+
+<p>Then he does what he always does: instead of arguing, he counts. He compiled a running list of every pairing he could find, across medicine, economics, psychology and education, where an observational finding was later followed by an actual randomized trial, and checked how often the observational result held up. He kept that list updated for eight years. The verdict:</p>
+
+<blockquote>the highest quality correlational research still struggles to outperform a coin flip in predicting the results of a randomized experiment.
+<cite>"Why Correlation Usually ≠ Causation"</cite></blockquote>
+
+<p>Up to here he is relaying other people's bad news. His own contribution is the next step: <strong>why?</strong></p>
+
+<p>His answer is graph-theoretic and immediately intuitive. Picture reality as a causal graph: variables are nodes, and "A directly causes B" is an arrow. In a <em>sparse</em> graph — the world of reaching out to catch a ball — there are few paths between nodes, so an observed correlation basically is causation. But in a <em>dense</em> graph, where every node connects to several others, the number of paths along which two variables can carry information about each other grows far faster than the number of one-way causal chains running straight from A to B.</p>
+
+<figure>
+<svg viewBox="0 0 700 260" role="img" aria-label="Sparse versus dense causal graphs">
+<defs>
+<marker id="ahe" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#5eead4"/></marker>
+<marker id="ahe2" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="#4a5560"/></marker>
+</defs>
+<text x="20" y="24" fill="#5eead4" font-family="monospace" font-size="12.5">SPARSE · the world of catching a ball</text>
+<text x="372" y="24" fill="#5eead4" font-family="monospace" font-size="12.5">DENSE · the world of IQ / income / health</text>
+<line x1="345" y1="40" x2="345" y2="240" stroke="rgba(110,168,254,.18)" stroke-width="1"/>
+<circle cx="60" cy="90" r="16" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.4"/><text x="60" y="95" fill="#d5dce4" font-size="12" text-anchor="middle">A</text>
+<circle cx="170" cy="90" r="16" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.4"/><text x="170" y="95" fill="#d5dce4" font-size="12" text-anchor="middle">B</text>
+<circle cx="280" cy="90" r="16" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.4"/><text x="280" y="95" fill="#d5dce4" font-size="12" text-anchor="middle">C</text>
+<circle cx="115" cy="180" r="16" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.4"/><text x="115" y="185" fill="#d5dce4" font-size="12" text-anchor="middle">D</text>
+<line x1="78" y1="90" x2="152" y2="90" stroke="#5eead4" stroke-width="2" marker-end="url(#ahe)"/>
+<line x1="188" y1="90" x2="262" y2="90" stroke="#5eead4" stroke-width="2" marker-end="url(#ahe)"/>
+<line x1="70" y1="104" x2="103" y2="164" stroke="#5eead4" stroke-width="2" marker-end="url(#ahe)"/>
+<text x="42" y="225" fill="#7d8794" font-size="11" font-family="monospace">A correlates with C → push A and C moves</text>
+<circle cx="420" cy="70" r="14" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.3"/><text x="420" y="75" fill="#d5dce4" font-size="11" text-anchor="middle">A</text>
+<circle cx="530" cy="60" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<circle cx="640" cy="80" r="14" fill="rgba(110,168,254,.14)" stroke="#6ea8fe" stroke-width="1.3"/><text x="640" y="85" fill="#d5dce4" font-size="11" text-anchor="middle">C</text>
+<circle cx="470" cy="140" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<circle cx="580" cy="135" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<circle cx="420" cy="205" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<circle cx="530" cy="210" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<circle cx="645" cy="185" r="14" fill="rgba(110,168,254,.1)" stroke="#4a5560" stroke-width="1.3"/>
+<g stroke="#4a5560" stroke-width="1.3" marker-end="url(#ahe2)">
+<line x1="433" y1="76" x2="458" y2="130"/><line x1="482" y1="146" x2="567" y2="136"/><line x1="592" y1="139" x2="629" y2="93"/>
+<line x1="429" y1="83" x2="414" y2="190"/><line x1="434" y1="207" x2="516" y2="210"/><line x1="543" y1="207" x2="632" y2="192"/>
+<line x1="645" y1="171" x2="642" y2="95"/><line x1="516" y1="65" x2="434" y2="68"/><line x1="544" y1="66" x2="627" y2="75"/>
+<line x1="478" y1="129" x2="519" y2="72"/><line x1="573" y1="122" x2="536" y2="74"/><line x1="482" y1="149" x2="519" y2="199"/>
+<line x1="576" y1="149" x2="540" y2="197"/><line x1="633" y1="177" x2="592" y2="147"/>
+</g>
+<line x1="434" y1="66" x2="626" y2="78" stroke="#5eead4" stroke-width="2.4" marker-end="url(#ahe)"/>
+<text x="368" y="240" fill="#7d8794" font-size="11" font-family="monospace">dozens of paths link A and C; only one of them moves C</text>
+</svg>
+<figcaption>His explanation: in a dense graph, informative paths multiply far faster than pushable causal edges</figcaption>
+</figure>
+
+<p>The conclusion follows: <strong>any correlation you observe is very unlikely to be sitting on that direct edge.</strong> So correlation isn't merely often not causation — not being causation is the default case, and being causation is the exception that needs explaining.</p>
+
+<p>Why do human intuitions resist this so stubbornly? Because they were grown in the sparse world. Catching, walking, opening doors — the brain deliberately models those domains as simple so that planning is tractable. He calls it "folk causality," by analogy with folk physics: even physics students trained in Newtonian mechanics still fall back on Aristotelian intuitions when predicting orbits. In genuinely dense domains like economics, biology or education, that intuition isn't merely imprecise — it is <strong>wrong in a consistent direction</strong>.</p>
+
+<p>The practical conclusion he draws is a sentence turned inside out, and I think it's the most forceful thing he has written:</p>
+
+<blockquote>The question should never be, "is it ethical to run a randomized experiment here?" but "could it possibly be ethical to <em>not</em> run a randomized experiment here?"
+<cite>"Why Correlation Usually ≠ Causation"</cite></blockquote>
+
+<p>His reasoning: if not experimenting means acting on other people's lives with evidence barely better than a coin flip, then <em>not</em> experimenting is the option whose ethics needs interrogating. Which is why he flipped a coin for 167 days over a $13 infrared lamp. In his frame that isn't obsessive; it's the only honest option available.</p>
+
+<h3>4. We are already living in the scaling world</h3>
+
+<p>The first three gave him a method. This one is the report card that method turned in.</p>
+
+<p>In May 2020, OpenAI released GPT-3. The first thing he recorded was how quiet the release was: no blog post, no media blitz, remarkably little interest from researchers, and almost no public discussion beyond the snidely dismissive. The announcement, he wrote, "appears to have sunk almost without a trace."</p>
+
+<p>What makes the story worth telling is his own prehistory. He was not a believer — <strong>he had been this idea's least generous critic.</strong> From 2004 to 2010, reading Moravec and Kurzweil argue that once the compute arrived the right algorithm would follow, he thought it was nonsense:</p>
+
+<blockquote>Algorithms are really complex and hard! They require deep insight—or at least I thought they did. It seemed like really difficult mathematics. You can't just buy a bunch of computers and expect to get this advanced AI out of it! It just seemed like magical thinking.
+<cite>Dwarkesh Patel interview, 2024</cite></blockquote>
+
+<p>Nothing converted him in a moment. His own description is the most honest account of changing one's mind I've read:</p>
+
+<blockquote>So for me it was this gradual trickle of drops hitting me in the background as I was going along with my life. Every few days, another drop would fall… I would just pay attention and notice that the world over time looked more like their world than it looked like my world—where algorithms are super important and you need like deep insight to do stuff. Their world just kept happening.
+<cite>Dwarkesh Patel interview, 2024</cite></blockquote>
+
+<p>"Their world just kept happening." That is what it looks like when reality grinds an old model out of someone, with no drama at all.</p>
+
+<p>Then GPT-3 became the crucial test, and his reasoning is clean: GPT-2 to GPT-3 was one of the largest scale-ups in the history of neural networks, and it wasn't some narrow task like Go. <strong>If the scaling hypothesis were false, the paper should have been unimpressive.</strong> He got to the first or second page, saw the few-shot learning chart, and: we are living in the scaling world.</p>
+
+<p>What had he seen, exactly? The central observation he named:</p>
+
+<blockquote>The blessings of scale is the observation that for deep learning, hard problems are easier to solve than easy problems—everything gets better as it gets larger (in contrast to the usual outcome in research, where small things are hard and large things impossible).
+<cite>"The Scaling Hypothesis," 2020</cite></blockquote>
+
+<p>Why should that be? His mechanism: a large model amounts to an ensemble of a staggering number of sub-models, which average out into a preference for simple solutions — an Occam's razor. But — and this is the key clause — neural nets are lazy. As long as the data is small or easy, a model will grab the memorization and surface-correlation shortcuts, because those are what it learns fastest. Only when the data gets big enough that memorizing every instance of arithmetic would take more room than actually learning addition does the model get forced into the abstraction.</p>
+
+<blockquote>"NNs are lazy": they can do far more than we make them do when we push them beyond easy answers &amp; cheap shortcuts. The bitter lesson is the harder and bigger, the better.
+<cite>"The Scaling Hypothesis"</cite></blockquote>
+
+<p>His argument for why predicting the next word leads to understanding is the finest passage in the essay. He tells training as a walk downhill: first the model learns letter frequencies (error drops from 8 bits to about 5), then which words exist (down to 3–4), then which words cluster together (under 3), then how a sentence holds together (around 2). All of that is still form. So what lives in the last bit or less? His example is precisely aimed: "Janelle ate some ice cream, because <em>he</em> likes sweet things" versus "because <em>she</em> likes sweet things" is a difference of one letter, under 0.02 bits — and not one human would miss it. Below that lie ice cream that freezes rather than melts in a freezer, remembering that someone was alive ten sentences ago, and a dozen people at a dinner table scheming against each other. Humans doing this same task reach around 0.7 bits. What is in the missing part?</p>
+
+<blockquote>For a language model, the truth is that which keeps on predicting well—because truth is one and error many. Each of these cognitive breakthroughs allows ever so slightly better prediction of a few relevant texts; nothing less than true understanding will suffice for ideal prediction.
+<cite>"The Scaling Hypothesis"</cite></blockquote>
+
+<p>He compresses this into four words: <strong>"The last bits are deepest."</strong> Then he tosses off a line worth keeping forever: why do humans have such enormous brains when a chimpanzee handles most daily business on a fraction of the budget? Because the difference between people doesn't live in daily actions; it lives in the rare choices you make once, where being wrong ends you — "We may be at our most human while filling out the paperwork for life insurance."</p>
+
+<p>Which raises the question: Google and DeepMind had the money, the chips and the people. Why did OpenAI do it?</p>
+
+<p>His analysis here is careful, and it isn't name-calling — it's taking apart a worldview. DeepMind, he says, held what you might call the weak scaling hypothesis: they believed the road to general intelligence ran through <em>finding the right algorithms module by module</em>, effectively reverse-engineering a mammalian brain. Each module would be huge and expensive by current standards, but each still had to be invented and tuned piece by piece, with little risk or surprise until final assembly — so once you have a rat-level AGI, human-level is just more of the same. That belief is coherent, and it explains their emphasis on neuroscience and their taste for systems that throw everything at the wall to see what sticks. Google Brain, meanwhile, was too practical and too short-term, dabbling in mixture-of-expert models mostly because they expected to ship them inside Google Translate. Neither was stupid. They just <strong>didn't believe</strong>. OpenAI, with neither Google's cash flow nor its headcount, could only make a startup's bet that they knew a secret. His conclusion doesn't spare anyone:</p>
+
+<blockquote>said competitors lack the very most important thing, which no amount of money or GPUs can ever cure: the courage of their convictions.
+<cite>"The Scaling Hypothesis"</cite></blockquote>
+
+<p>The essay's closing section is the most destructive thing he has written. He doesn't refute any particular expert. He describes a <strong>voice</strong> — the voice that speaks whenever the public is told not to worry, and that sounds identical whether it happens to be right or wrong. He lists it out: the voice insists on calm and on people not panicking; it assures you it won't happen, because it can't happen; it does not deal in uncertainty; <strong>it does not believe in drawing lines on graphs (that is rank numerology)</strong>; it issues no numerical predictions that could be falsified; it will not share its source code, for complicated reasons that cannot be explained to the laity; <strong>it speaks, and is not spoken to — you cannot ask the voice what objective fact would change its mind</strong>; it never changes its mind (until it does); it is never surprised by events, only disappointed. And last:</p>
+
+<blockquote>The voice advises you to go back to sleep (right now).
+<cite>"The Scaling Hypothesis"</cite></blockquote>
+
+<p>And the origin of the whole thing is almost comic. Having read the paper in 2020, he turned to Twitter and found everyone saying this proved how badly scaling worked, since it wasn't even state of the art:</p>
+
+<blockquote>That made me so angry I had to write all this up. Someone was wrong on the Internet.
+<cite>Dwarkesh Patel interview, 2024</cite></blockquote>
+
+<p>"Someone is wrong on the internet" is the famous webcomic joke about the kind of person who won't go to bed until the argument with a stranger is finished. This time, that person produced the most-cited AI essay of the decade.</p>
+
+<h2>How he thinks</h2>
+
+<p><strong>Go deeper than anyone thinks the question is worth.</strong> In "About This Website" he adopts a passage from the magician Teller as his methodology: make the secret a lot more trouble than the trick seems worth — you are fooled because the method takes more time, money and practice than any sane onlooker would invest. To produce 500 live cockroaches from a top hat on David Letterman's desk, Teller and Penn hired an entomologist to supply slow, camera-friendly roaches, learned to pick bugs up without screaming, and built a secret compartment out of the one material roaches can't cling to. Of his own most famous pages, he says:</p>
+
+<blockquote>Anyone could've compiled the DNB FAQ… If I have done anything meritorious with them, it was perhaps simply putting more work into them than someone else would have.
+<cite>"About This Website"</cite></blockquote>
+
+<p><strong>Find topics by noticing when you're irritated.</strong> This is his one piece of advice about how to start writing, and it's concrete enough to copy: pay attention to any time you think "how irritating that there's no good webpage on X," or "I wonder if Y," or "has anyone done Z," or "this is the third time I've had to explain this." All his examples work that way — the dual n-back FAQ began because people kept repeating themselves on a mailing list; the modafinil article began because it was a pain to figure out where one could order the stuff; the Silk Road page (later the most-trafficked on the site) began because he groused about how shallow and sensationalist the mainstream coverage was; the three Death Note essays began, he says, because he had an amusing thought about information theory.</p>
+
+<p><strong>Carry twelve problems around with you.</strong> He quotes the mathematician Gian-Carlo Rota's version of Feynman's advice as his own method: keep a dozen of your favorite problems constantly present in your mind, mostly dormant; every time you hear a new trick or result, test it against each of the twelve. Every once in a while there's a hit, and people say: how did he do it, he must be a genius. His real example is delightfully absurd: in March 2013, while meditating, the thought floated by — "I wonder if more doujin music gets released when unemployment goes up and people may have more spare time or fail to find jobs?" — followed immediately by: hey, that giant Touhou music torrent I downloaded, with its 45,000 songs all tagged with release year, could probably answer that.</p>
+
+<p><strong>Point quantitative tools at anything, including comics.</strong> In 2011 he wrote an analysis of the manga <em>Death Note</em> using information theory to count how much anonymity the protagonist Light leaks. Killing on an over-regular schedule: 6 bits. Taking the bait of a televised decoy: 1.6 bits. Using his policeman father's credentials to access confidential files — the single most expensive mistake — 11 bits. Murdering the FBI agents tailing him: another 6. Over 25 bits in total, meaning the suspect pool shrinks by a factor of thirty million or so, after which a detective's intuition suffices. And this apparently frivolous essay delivers a real security lesson:</p>
+
+<blockquote>Light's fundamental mistake is to kill in ways unrelated to his goal.
+<cite>"Death Note: L, Anonymity &amp; Eluding Entropy," 2011</cite></blockquote>
+
+<p><strong>At global scale, an anecdote is approximately zero information.</strong> This is how he reads the news, set out in "Littlewood's Law and the Global Media." Littlewood's Law says that in a normal person's life, miracles happen at a rate of roughly one per month. Scaled to eight billion people, a one-in-a-billion event happens eight times a month. So no matter how bizarre a story is or how heavily it's covered, it tells you almost nothing about what the world is like. His example is absurd enough to be perfect: the 2017 wave of bomb threats against American Jewish institutions turned out to be largely the work of one Jewish teenager in Israel who may have had a personality-altering brain tumor. He notes that if anyone had proposed this hypothesis in advance you would have thought they were shamelessly making excuses — "Yet, there you have it!" From which he draws a lovely paradox:</p>
+
+<blockquote>The paradox of news is that by design, the more you read, the less you might know, by accumulating an ever greater arsenal of facts and examples which are (usually) true, but whose interpretation bears ever less resemblance to reality.
+<cite>"Littlewood's Law and the Global Media"</cite></blockquote>
+
+<p>He has even sketched a "proportional newspaper": if a murder earns a headline, then a year with fifty fewer murders should earn fifty headlines; and if you write one page about someone who says X cured their dandruff, you must then write a hundred pages about the n=100 study showing X doesn't — "that's only fair, since that study is made of 100 anecdotes."</p>
+
+<p><strong>Use machinery against yourself instead of willpower.</strong> He knows the great danger of one person accumulating evidence for years is successfully brainwashing himself, so he adopts Darwin's golden rule (write down every fact opposed to your results immediately, because those are the ones that escape memory) and adds his own: the only solution is to be diligent about including criticism, so that even if you don't escape brainwashing, at least your readers have a chance. His finishing checklist mandates that any use of "significant" be marked "[statistically] significant" so effect size isn't confused with statistical significance; that all statistical code be rerun to verify reproducibility; and that the word "obvious" be avoided — "if it is really is, why do I need to say it?" He tags every essay with a confidence level and ranks the whole site's importance in deciles with a sorting tool he wrote. He put an anonymous feedback box in the footer, then came back two years later and tabulated it: 116 submissions over 754 days — 34 corrections, 31 pieces of praise, 9 criticisms, one request for cybersex, and one attempt at extortion. <strong>He turned even his own harassment into a frequency table.</strong></p>
+
+<p><strong>His experience of writing is not most people's.</strong> Other people, he says, are stuck at the blank page; he never is, because the paragraphs come to him — like an earworm or an intrusive thought, a passage loops in his head until he writes it down and it consents to leave.</p>
+
+<blockquote>I don't experience the 'tyranny of the blank page', so much as the 'tyranny of transcription'…I am simply an amanuensis for the voice in my head…I am apparently so disagreeable that my brain can't stop arguing with itself.
+<cite>"About This Website"</cite></blockquote>
+
+<h2>Where he might be wrong</h2>
+
+<p>The sharpest criticism was written by him, so let's give him that one first. About the whole body of his self-experiments, he posts this caveat: an experiment may be wrong or erroneous or unlucky in some way (no internal validity), or right but of no relevance to anyone else (no external validity). His example is alcohol: he could run hundreds of perfect blinded randomized trials establishing beyond doubt that alcohol makes him sad, and this would be worth exactly zero to someone who has never had a drink. "Keep this in mind if you are minded to take the experiments too seriously."</p>
+
+<p>But that confession doesn't go far enough, and there's a layer he leaves unstated: <strong>the standard of evidence he demands from the world is one his own output routinely fails.</strong> His daytime modafinil trial ran 8 days on subjective ratings, and he grades it himself — "The experiment was not my best… the measurements were subjective." For Noopept he computed the power outright at around 26% and wrote that the experiment was too small to reliably detect any effect. By his own knife — underpowered small-n studies are noise machines — very few of his personal experiments survive. He knows this and he writes it down, and then he keeps doing them, and those pages remain among the most popular on the site. There's an unresolved tension here: the statistical discipline is devastating when aimed at dismantling other people's conclusions, and chronically underpowered when aimed at the private questions he actually wants answered.</p>
+
+<p>The second concerns how to read the scaling victory. Treating "who called it in 2020" as methodological evidence misses something: <strong>the same intuition had him wrong about the same question for six straight years, 2004 to 2010.</strong> He writes this down himself — "in 2020, I have to admit, I was wrong and they were right" — which is real honesty. But the essay signs off with "all honor to the fanatics, shame and humiliation to the critics!", written by a man who had just admitted to six years as a critic. What we remember is the bet that landed; the site holds hundreds of other pages of predictions, plenty of which nobody is going back to settle. The antidote he invented — attach falsifiable long-term predictions and let time grade them — is exactly the right antidote. Those accounts just aren't closed yet.</p>
+
+<p>Third is the cost of his correlational nihilism. If correlations barely beat coin flips at predicting randomized trials, and randomized trials are unavailable to most people most of the time, then very little actionable knowledge survives — and the doctrine slides easily toward believing nothing at all. More pointedly: his conclusions about intelligence heritability and embryo selection lean heavily on exactly the kind of large-scale association research he corrodes elsewhere. He has a specific defense (polygenic scores predict growing amounts of out-of-sample variance, genetic correlations across cohorts, countries and eras are high, and the effects hold up in within-family comparisons between siblings — and within-family designs are precisely what screens out the confounding he worries about most). That's a real answer, not a dodge. But it does show that the acid is not poured evenly across all fields, and where it gets poured has something to do with what he believes.</p>
+
+<p>Last, the anonymity. His reasons are hard to argue with: pseudonymity means people can't retaliate — can't mail heroin to your house, can't call in a SWAT team — and the bigger benefit, he says, is that you get a hearing at all, instead of being written off immediately by your context. That's true, and especially true for someone without a degree. But the cost is equally real. A site whose creed is that everything is checkable — every external link archived, every statistic accompanied by code, every conclusion tagged with a confidence level — has exactly one uncheckable element, and it is the author. His credibility rests entirely on his own record; no institution vouches for him, and no institution corrects him when he's wrong. That is simultaneously the most impressive thing about the site and its only structural weakness, and they are the same thing.</p>
+
+<h2>Sources</h2>
+
+<ul class="reads">
+<li><span class="t"><a href="https://gwern.net/scaling-hypothesis">The Scaling Hypothesis</a></span><span class="d">Written weeks after the GPT-3 release in May 2020: the blessings of scale, why pretraining leads to understanding, and the catalogue of "the voice of authority" at the end.</span></li>
+<li><span class="t"><a href="https://gwern.net/about">About This Website</a></span><span class="d">The site's manifesto and operating manual: Long Content, "never start," the confidence and importance tags, the finishing checklist, and his own experience of writing.</span></li>
+<li><span class="t"><a href="https://gwern.net/dnb-meta-analysis">Dual n-Back Meta-Analysis</a></span><span class="d">The meta-analysis he ran himself, dismantling the conclusion he most wanted to be true: the studies showing an effect nearly all used control groups that trained on nothing.</span></li>
+<li><span class="t"><a href="https://gwern.net/causality">Why Correlation Usually ≠ Causation</a></span><span class="d">His most original contribution: dense causal graphs explain why correlation failing to be causation is the default case rather than the exception.</span></li>
+<li><span class="t"><a href="https://gwern.net/littlewood">Littlewood's Law and the Global Media</a></span><span class="d">At the scale of eight billion people any anecdote is nearly zero information — and "the more you read, the less you might know."</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-08" data-slug="gwern-net">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>Blog Deep Reads · one page ≈ one mind, read through · content verified as of 2026-09-08</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
