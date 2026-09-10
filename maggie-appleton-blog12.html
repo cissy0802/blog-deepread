@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Maggie Appleton · maggieappleton.com — 「那是什么 app？」永远是错的问题</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="maggie-appleton-blog12.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 12 · maggieappleton.com</div>
+<h1>Maggie Appleton<br/>「那是什么 app？」永远是错的问题</h1>
+<p class="sub">2019 年 1 月至今 · 141 篇（其中 18 篇长文）· 仍在更新（最新 2026 年 8 月）· 两次转折：2020 年中从「画编程概念的插画师」转成人类学式的写作者，2022 年底转向 AI 界面 · 本页通读 18 篇，跨度 2020 年 1 月至 2026 年 4 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>maggieappleton.com 上被站内回链最多的思想长文之一，叫《思维工具是文化实践，不是计算对象》。今天点开它，往下滚到正中间，会撞上一个灰框：「草稿进行中。这条线以下的文字是零散的、脱节的、不成话的。你最好过一阵再回来。」再往下几段，正文里嵌着一句写给自己、忘了删的备注：<strong>[need evidence for this claim]</strong>。再往下：「Obsidian comes out in xxxx.」——那个 <strong>xxxx</strong> 就那么留着，等人填年份。</p>
+<p>这篇发表于 2021 年 7 月，页首写着「上次照料是将近四年前」。这不是荒废——这是她的主张本身。</p>
+<h3>这人是谁</h3>
+<p>Maggie Appleton，伦敦人，在香港、越南、泰国、新加坡的国际学校长大，本科在美国一所「小小的、嬉皮的文理学院」读文化人类学。用她自己的话，人类学「不怎么好就业（除非你想当学者，或者军方顾问）」，于是她转去做插画付房租——14 岁时她盗了一份 Photoshop 来做拟物风桌面壁纸，「从没想到这事能赚钱」。之后五年在开发者教育公司 Egghead 当艺术总监，画了 150 多张课程封面，专职把抽象编程概念变成看得见的图。再往后是 AI 研究机构 Elicit 的创始产品设计师，2025 年 10 月起是 GitHub Next 的 staff research engineer。她给自己的三个词是：<strong>设计师、人类学家、平庸的开发者。</strong></p>
+<h3>她跟什么较劲</h3>
+<p>画那 150 张封面的五年里，她被问得最多的一句是：<strong>「那是什么 app？」</strong></p>
+<p>她的回答藏在 2020 年那篇《为什么你买了 iPad 还是不会画画》里。她把画画拆成三样东西——材料（iPad 和笔）、媒介（构图、明度、光影这套视觉语言）、肉（你到底想说什么）——然后给注意力配比：<strong>2% 材料，18% 媒介，80% 肉。</strong></p>
+<p>这本来只是手艺人的观察。但她把同一把刀往整个技术行业上一切，发现它是个通则：<strong>人系统性地把器物错当成实践。</strong>把 app 错当成思考，把模型错当成界面，把 agent 错当成团队共识。落法永远一样：先承认那个器物真的有用，再指出被它挡住的那 98%。</p>
+<h3>一：「tools for thought」这个词里没有「计算机」</h3>
+<p>2021 年，「思维工具」成了每个笔记 app 首页上的词，也成了风投数据库里的分类标签。她注意到一件所有人都没提的事：<strong>这词组里根本没有「计算机」或「数字」这几个字。</strong></p>
+<p>于是她去查它是谁造的：Kenneth Iverson，1979 年 ACM 那篇《记号作为思维工具》。然后她把这一行反复被引的「奠基者」列了一遍——Iverson、Licklider、Bush、Kay、Engelbart、Bret Victor、Rheingold——接着做人类学家该做的动作：这些人全是男性、白人、北美人，全出自 MIT／加州理工／斯坦福／伯克利，「他们大多共事过，或者最多隔一个人就认识下一个」。结论：这个概念以计算机为中心，不是关于思考的发现，是<strong>一个小社交网络留下的指纹</strong>。</p>
+<p>然后她摆反面清单：文字、绘画、地图、苏格拉底问答法、卡片盒笔记法、澳洲原住民的「歌之途」（一套唱出来的地景记忆路径，约六万年前，实测比记忆宫殿更能装东西）。「上面每一样都比数字计算机早了至少几百年，很多是几千年、几万年。」所以她给这个词改名，没留情面：应该叫 <strong>CMFWCKW——白领知识工作的计算式媒介</strong>。</p>
+<h3>二：反向图灵测试</h3>
+<p>2022 年 12 月，ChatGPT 出来三周后：</p>
+<blockquote><span class="en">Our new challenge as little snowflake humans will be to prove we aren't language models. It's the reverse turing test.</span><span class="zh">我们这些小雪花人类的新挑战，是证明自己不是语言模型。这是反向图灵测试。</span><cite>The Dark Forest and Generative AI, 2022</cite></blockquote>
+<p>原版图灵测试里，要证明自己够格的是机器。新的网络上<strong>被审查的是我们</strong>——默认是模型，直到能证明自己是人。</p>
+<p>但更耐读的是第二层。2023 年她在台上正面回答了听众最强的反驳：模型比大多数人更准确更博学，那内容出自谁到底有什么关系？她给了三条差别，第三条别人不说：「作品的另一端永远有一个人，你可以跟他建立一段完整的人的关系。我们中有些人会说，这就是在网上写作的全部意义。」</p>
+<h3>三：赤脚开发者</h3>
+<p>2024 年，她盯着 Copilot 让职业程序员变快，然后判定这是个没意思的问题：「恕我直言，我们过得挺好。我们的问题很无聊。」有意思的人群在中间那一带：做出精妙 Notion 表格的老师、写巨型表格的理财迷。他们技术上很灵，很想解决身边人的问题，但永远越不过<strong>「命令行那道墙」</strong>。她给他们起名<strong>赤脚开发者</strong>，典出毛时代的赤脚医生。而她对缺什么的判断又是同一把刀：不缺模型能力——<strong>「语言模型的乐高积木缺胶水。」</strong>模型给你界面元素、状态管理、API 调用，但不告诉你怎么部署、怎么存数据：「你大概根本不知道数据库是什么。」</p>
+<p>到 2026 年 4 月她把这条线推到最新一格：一个人指挥二十个 agent 并行写代码看起来是生产力顶点，但「软件不是一个人在真空里做出来的」。<strong>「难题不再是『怎么做出来』。是『该不该做』。」</strong></p>
+<h3>她哪里可能是错的</h3>
+<p>花园伦理许可了永久的未完成，而账单正好落在她最承重的那几篇上。CMFWCKW 那个改名可以说是她单项最好的想法——它就落在被她自己标为「不成话」的那一节里。</p>
+<p>还有一处她每次都申报、却始终没和解的冲突。2023 年 4 月她在台上说：「如果你在做的工具让人不经查证、不经反思就大批量生产文字，然后并行推送到每个平台上——求你了，停下。」到 2026 年，她在 GitHub 演示的原型，前提正是「一堵墙的 agent 并行跑」就是近未来。她清楚这件事。她没写的是：她现在设计的工具，会不会让森林更黑。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>一件怪事</h2>
+<p>maggieappleton.com 上被站内回链最多的两篇思想长文，是《数字花园简史与伦理》和《思维工具是文化实践，不是计算对象》——这个站的两根承重柱。今天点开第二根，往下滚到全文正中间，会撞上一个灰框：</p>
+<blockquote><span class="en">Draft in Progress. The quality of writing below this point is haphazard, disjointed, and nonsensical. It's probably a good idea to come back later.</span><span class="zh">草稿进行中。这条线以下的文字是零散的、脱节的、不成话的。你最好过一阵再回来。</span><cite>Tools for Thought as Cultural Practices, not Computational Objects</cite></blockquote>
+<p>再往下几段，正文里嵌着一句显然是写给自己、忘了删的备注：<strong>[need evidence for this claim]</strong>（这个说法需要证据）。再往下一段：「Obsidian comes out in xxxx. Logseq is released in xxxx.」——两个 <strong>xxxx</strong> 原样留着，等人填年份。</p>
+<p>这篇发表于 2021 年 7 月，页首元信息写着「上次照料是将近四年前」。一个被自己全站反复回引的核心论证，在「需要证据」和「xxxx」的状态下公开挂了四年。同站另外两篇长文结尾直接写着「Coming Soon. Feel free to bug me on Bluesky to finish writing this.」（快了。欢迎去 Bluesky 上催我写完。）而 2020 年 1 月那篇《怎么画看不见的编程概念》开头就预告这是四部分的系列——全站 141 条更新里，第二部分从未出现过。</p>
+<p>如果你以为这是一个荒废的站，那就完全看反了。这站每一页顶上都挂着状态徽章：🌱 幼苗 / 🌿 长起来了 / 🌳 常青，还有「种下」和「上次照料」两个日期。<strong>「未完成」在这里不是失误，是被明确声明、被设计进版式的状态。</strong>那两个 xxxx 不是漏掉的，是她那套主张的直接后果——只是也顺便是它最贵的一张账单。</p>
+<h2>这人是谁</h2>
+<p>Maggie Appleton，伦敦人，在香港、越南、泰国、新加坡的国际学校长大。本科在美国一所她自己形容为「小小的、嬉皮的文理学院」读文化人类学，然后——用她的原话——人类学「不怎么好就业（除非你想当学者，或者军方顾问）」，于是她「立刻转去做自由设计和插画来付房租」。</p>
+<p>一个有画面的细节：她 14 岁开始学视觉设计，起因是<strong>盗了一份 Photoshop 来做拟物风的桌面壁纸和图标集</strong>，「从没想到这事能赚钱」。二十几岁一路换国家：跟越南的网页开发者共事，在洛杉矶跟做电影概念图的插画师受训，在布拉格学字体和品牌。总结是：「我做了一大堆丑东西，但顺路搞清楚了自己喜欢什么。」</p>
+<p>之后五年在开发者教育公司 Egghead 当插画师和艺术总监，画了 150 多张课程封面——本职就是把抽象编程概念变成看得见的图。再往后：HASH 设计负责人、AI 研究机构 Elicit 的创始产品设计师，2025 年 10 月起在 GitHub Next——她管这个团队叫「胡搞并看看会怎样部」——做 staff research engineer。她的自我介绍只有三个词：<strong>设计师、人类学家、平庸的开发者。</strong>她还在写，最新一条是 2026 年 8 月。</p>
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>参与观察（participant observation）</b> — 人类学研究文化的核心方法：长期泡进一种文化里，同时是参与者也是观察者。她的说法是「你先加入这支舞，再分析这支舞是什么意思」。</li>
+<li><b>tools for thought（思维工具）</b> — 指能让人想出「原本想不出来的那类念头」的东西。1979 年由 Kenneth Iverson 用在编程记号研究上，2019 年后被笔记软件圈重新捡起来当旗号。</li>
+<li><b>黑暗森林理论</b> — Yancey Strickler 2019 年提出，借自刘慈欣《三体》：网络的公开地带看起来死气沉沉、没有人味，因为真人都躲进了私密空间——一出声就会被自动化的捕食者盯上。</li>
+</ul>
+</div>
+<h2>她跟什么较劲</h2>
+<p>在 Egghead 画那 150 张封面的五年里，她被问得最多的一句话不是「你怎么想到这个比喻的」，而是：</p>
+<blockquote><span class="en">"What app is that?"</span><span class="zh">「那是什么 app？」</span><cite>How to Draw Invisible Programming Concepts: Part I, 2020</cite></blockquote>
+<p>她甚至专门写了一篇题为《What App is That?》来一次性回答。但她真正的回答是另一句：所有人问的都是<strong>蛋糕最顶上那层的奶油和樱桃</strong>——「这在每个行业都会发生：任何创造物最显眼的那一层，感觉上就像是最重要的那一部分。」</p>
+<p>2020 年 8 月她把这个判断写成了更狠的一篇：《为什么你买了 iPad 还是不会画画》。开场是她真实的处境——一堆聪明又有决心的朋友，为了学画去买了 iPad，然后来问她该买哪款、用什么 app、笔刷多大。她说这些问题「一点都不错，其实完全合理」，然后把画画拆成三样：<strong>材料</strong>（在表面留下痕迹的物理工具，iPad 加 Procreate 是「贵得离谱的选项」，彩铅配新闻纸「便宜得多，也完全够」）、<strong>媒介</strong>（视觉语言：构图、明度、光影、形体、透视、节奏——她说这些「相当于字词、动词、句子、开头段落，以及讽刺性的后现代小说」）、<strong>肉</strong>（你到底想说什么；她引一位写作老师的话：「没有观点的，扣 39 分。」）。</p>
+<p>然后给配比：<strong>2% 材料，18% 媒介，80% 肉。</strong></p>
+<p>这本来只是一条手艺人的观察，讲的是画画。<strong>但她拿同一把刀往整个技术行业上一切，发现它不是手艺经验，是个通则：人系统性地把器物错当成实践。</strong>把 app 错当成思考。把模型错当成界面。把 agent 错当成团队共识。把「有工具了」错当成「问题解决了」。她 2020 年之后每一个核心论点，都是这把刀落在一个新位置上——而且落法完全一样：先承认那个器物是真的有用，再指出被它挡住的那 98%。</p>
+<p>她能反复看见这一点，靠的不是技术判断力，是学科错位。她不是一个看工具的技术人，她是一个刚好住在程序员部落里的民族志作者——所以她笔下会出现《React 的文化人类学》《机械键盘与拜物教》这类题目。程序员在她这里不是同行，是田野。</p>
+<h2>她的想法，讲成「她怎么发现的」</h2>
+<h3>一、数字花园：把「没写完」变成一个可以公开的状态</h3>
+<p>2020 年 4 月 15 日，她在推特上发了一条长串，列了一堆她和朋友收集的个人维基站点。她的记录是：「它引起了一点小小的动静，也让人看清我们正处在一个时刻——这个概念有某种文化上的吸引力。」</p>
+<p>她注意到的具体特征是：<strong>这些站不遵守「个人博客」的惯例。</strong>不是一组打磨完的文章按发表日期倒序摆着，而更像自由生长、进行中的维基；笔记靠语义关联互链，而且「以半成品的形态被发表出来，之后会长、会变」。</p>
+<p>然后她做了她每次都做的事：<strong>去查这个词是什么时候出生的。</strong>结果是三段互不相认的历史。第一次有记载的用法是 1998 年 Mark Bernstein 的《Hypertext Gardens》，但她读完老实说，那篇「更像一份关于用户体验流和内容组织的宣言」。这个词随后沉了将近十年。第二段最好笑：2007 年 4 月推特刚开张，Rory Sutherland——她加了一句「奇怪的是，奥美集团的副总裁」——发推说「数字园艺，就是瞎捣腾同步、整理磁盘碎片，年轻人版的修枝剪叶」，接下来十几条提及全是这个意思：清文件夹、清代码库、清照片库。她的判词只有一句：「这些人干的是数字瞎捣腾，不是园艺。」第三段才是真正的源头：2015 年 Mike Caulfield 的演讲《花园与河流》——「如果说有谁该被当作数字园艺的原始出处，那就是 Caulfield。」</p>
+<p>她自己的贡献是把散落的实践收成六条模式，而承重的是第三条「刻意的不完美与公开学习」。她对它的说明是这篇最好的一段：</p>
+<blockquote><span class="en">In performance-blog-land you do that thinking and researching privately, then shove it out at the final moment. A grand flourish that hides the process.</span><span class="zh">在表演式博客的国度里，你私下完成思考和研究，然后在最后一刻把它推出去。一个华丽的收势，藏住了整个过程。</span><cite>A Brief History &amp; Ethos of the Digital Garden, 2020</cite></blockquote>
+<p>关键在于，这条模式在她这里<strong>不是许可，是义务</strong>。她的原话是：「花园要让读者知道它的不完美。」所以才有 🌱🌿🌳 三级徽章和两个日期。她还把这件事抽成两条配套模式：<strong>认识论披露</strong>（开头交代你怎么知道你知道的、花了多少力气、有多确定；她点名的先行者是 Scott Alexander 和 gwern.net），和<strong>假定读者</strong>（开头一个小框写明这篇是给谁看的——「读者是每个写作者的难题。写作者必须为某一个具体的人写。而那个具体的人几乎总是想象出来的。」）。</p>
+<p>三条合起来看，才看得出她真正改的是什么：<strong>她没有改变写作，她改变了「发表」这个动作的含义。</strong>发表不再意味着「我认为这是对的、这写完了」，而只意味着「这是我目前的状态，标签在此」。她给读者的回报，是那句最不像技术写作的话：</p>
+<blockquote><span class="en">They come to realise you are not a magical idea machine banging out perfectly formed thoughts, but instead an equally mediocre human doing The Work of trying to understand the world and make sense of it alongside you.</span><span class="zh">他们会慢慢意识到，你不是一台不断敲出完美成品念头的魔法机器，而是一个同样平庸的人，正在做「弄懂世界」这份活——和他们并排做。</span><cite>A Brief History &amp; Ethos of the Digital Garden, 2020</cite></blockquote>
+<h3>二、「tools for thought」这个词里没有「计算机」</h3>
+<p>这是她全部工作中最锋利的一次。起点是一个语料观察，不是一个立场。2021 年，「思维工具」成了新的集结点：有 meetup，有研究小组，「思维工具现在是风投公司数据库里的一个分类标签」，而且它出现在「每一个当红知识管理应用的首页上」。这些产品对「思维工具是什么」显然有个清楚共识：写笔记、把笔记连起来、探索动态视图，然后「体验到某种涌现出来的智慧」。她评了一句：「一个迷人的承诺。」</p>
+<p>然后她指出那件所有人都没提的事，指得极其平实：</p>
+<blockquote><span class="en">Taken at face value, the phrase tool for thought doesn't have the word 'computer' or 'digital' anywhere in it.</span><span class="zh">照字面看，「思维工具」这个词组里，任何地方都没有「计算机」或「数字」这两个字。</span><cite>Tools for Thought as Cultural Practices, not Computational Objects, 2021</cite></blockquote>
+<p>接下来分两步做实。<strong>第一步：查这个词是谁造的，以及那个人身处什么位置。</strong>Kenneth Iverson，第一篇公开论文是 1979 年发在 ACM 的《记号作为思维工具》。然后她把这一行被反复引用的「主要思想家」列成名单：Iverson、Licklider、Vannevar Bush、Alan Kay、Douglas Engelbart、Seymour Papert、Bret Victor、Howard Rheingold。列完之后是那个人类学家的动作——这些人全是男性、白人、北美人，全挂在 MIT、加州理工、斯坦福、伯克利这类名校上，1960 到 1990 年代基本都在加州。她加了一句：「这个人群构成如此压倒性地一致，以至于他们有时被称作思维工具的『族长』。」而族长有个副作用：他们大多共事过，「或者最多隔一个人就认识下一个」。</p>
+<blockquote><span class="en">Tools for thought is a community scene as much as it's a concept. This gives tools for thought a distinctly computer-oriented, male, American, middle-class flavour.</span><span class="zh">「思维工具」既是一个概念，也同样是一个圈子。这让「思维工具」带上了一种鲜明的计算机取向、男性、美国、中产阶级的味道。</span><cite>Tools for Thought as Cultural Practices, not Computational Objects, 2021</cite></blockquote>
+<p>这一步的力道在于它把结论换了性质：这个概念以计算机为中心，<strong>不是关于「人怎么思考」的发现，而是一个小社交网络留下的指纹。</strong></p>
+<p><strong>第二步：摆反面清单。</strong>她列出人类历史上真正扩展过「能想出什么念头」的东西，每条都配年代：文字（公元前 3200 年）、绘画（约七万三千年前）、地图、印度—阿拉伯数字、苏格拉底问答法、科学方法、笛卡尔坐标、卡片盒笔记法、澳洲原住民的「歌之途」、电子表格、数据可视化。歌之途是最好的一个，因为它把「工具」这个词逼到极限：那是穿过澳洲地景的实际路径，配着一首首歌，歌与路一一对应，编码了土地信息、政治与社会规则、文化知识——她加了句实证注脚，它「类似记忆宫殿，但被证明在记忆巨量信息上更有效」。这不是机器，也不是 app，是<strong>一套代代相传的文化技法</strong>。判词是：「上面每一样都比数字计算机早了至少几百年，很多是几千年、几万年。」</p>
+<p>压死骆驼的是第二件事，来自完全不同的语料：2020 年前后笔记 app 井喷，YouTube 上随之炸出一大堆上手指南——「奇怪的是，这些指南里有很多只是表面上在讲它们所演示的那个应用。大多数教的是具体的文化技法：Zettelkasten、间隔重复、批判性思考。」也就是说，app 只是实践的运载工具，而这些实践<strong>只覆盖人类活动里很窄的一条带：白领知识工作者干的那些事。</strong>于是有了最终版的改名：</p>
+<blockquote><span class="en">If we're being honest about our current interpretation of TFT's, we should actually rename it to CMFWCKW – computational mediums for white-collar knowledge work.</span><span class="zh">如果我们对「思维工具」当下的实际用法诚实一点，其实该把它改名叫 CMFWCKW——白领知识工作的计算式媒介。</span><cite>Tools for Thought as Cultural Practices, not Computational Objects, 2021</cite></blockquote>
+<figure>
+<svg viewbox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+<rect fill="none" height="398" rx="14" stroke="rgba(110,168,254,.35)" width="698" x="1" y="1"></rect>
+<text fill="#6ea8fe" font-family="monospace" font-size="14" x="24" y="34">TFT — tools for thought</text>
+<text fill="#7d8794" font-family="monospace" font-size="11.5" x="24" y="54">songlines · writing · maps · numerals · Socratic method · zettelkasten</text>
+<rect fill="rgba(110,168,254,.05)" height="240" rx="10" stroke="rgba(110,168,254,.3)" width="440" x="150" y="80"></rect>
+<text fill="#5eead4" font-family="monospace" font-size="13" x="170" y="106">CMFT — computational mediums for thought</text>
+<text fill="#7d8794" font-family="monospace" font-size="11.5" x="170" y="126">Memex · Xanadu · spreadsheets · Photoshop · Metaculus</text>
+<rect fill="rgba(94,234,212,.09)" height="140" rx="8" stroke="rgba(94,234,212,.45)" width="300" x="240" y="150"></rect>
+<text fill="#e2e8f0" font-family="monospace" font-size="12.5" x="258" y="178">CMFWCKW</text>
+<text fill="#93a1ae" font-family="monospace" font-size="11" x="258" y="198">computational mediums for</text>
+<text fill="#93a1ae" font-family="monospace" font-size="11" x="258" y="214">white-collar knowledge work</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="258" y="240">Roam · Obsidian · Notion ·</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="258" y="256">Logseq · Muse · Reflect</text>
+<text fill="#5f6b77" font-family="monospace" font-size="10.5" x="258" y="278">= what the phrase now means</text>
+<text fill="#7d8794" font-family="monospace" font-size="11.5" x="24" y="352">73,000 yrs of drawing ────────── 60,000 yrs of songlines ──────── 1979: the phrase</text>
+<text fill="#7d8794" font-family="monospace" font-size="11.5" x="24" y="374">──────────────────────────────────── 2019: the app category</text>
+</svg>
+<figcaption>她自己在文中画过这个嵌套：真正的思维工具绝大多数不涉及计算，而「思维工具」这个词今天只指最内圈那一格</figcaption>
+</figure>
+<h3>三、黑暗森林与反向图灵测试</h3>
+<p>2022 年 12 月 31 日，ChatGPT 发布三周后，她发出了这个站上传播最广的一篇。结构很干净：借一个现成理论（Yancey Strickler 2019 年的「互联网黑暗森林理论」），加一个新变量，然后把结论倒过来。新变量是大语言模型，而她的论证不是抽象的：她数出当时半年内涌出的一批文案生成产品，指出它们特别好用是因为 GPT-3 的训练语料本来就是网页文本——「它对我们在网上使用的语言风格熟得不能再熟」；再算一笔账：生成 100 篇一千字的文章，当时只要两美分。</p>
+<p>然后是那一下倒转：</p>
+<blockquote><span class="en">Our new challenge as little snowflake humans will be to prove we aren't language models. It's the reverse turing test.</span><span class="zh">我们这些小雪花人类的新挑战，是证明自己不是语言模型。这是反向图灵测试。</span><cite>The Dark Forest and Generative AI, 2022</cite></blockquote>
+<p>原版图灵测试里，需要证明自己够格的是机器。她 2023 年在台上把这层说透：「在新的网络上，被审查的是我们。所有人都被默认是模型，直到能证明自己是人。」</p>
+<p>她给了五条自证手段——最漂亮的一条借索绪尔的区分：模型固化的是 la langue（写进词典的规范语言），剩下能玩的是 la parole（日常说话里那些非正式、有创造性的言语行为，「语言就是在这里演化的」），所以生造词、行话、圈内方言会变成人性的信号。而这篇的痛感来自一个比喻和一段坦白。比喻是：靠提到冷门概念、真实但不出名的朋友和最近的事件来自证，「这诡异地像一个人质举着昨天的报纸来证明自己此刻确实在危险中。也许是个预兆」。坦白是：<strong>这套方案对一部分人根本不成立</strong>——身体残疾的、住在偏远农村的、时间被照护老幼占满的。「他们会更难在网上验证自己的人性。我没有什么了不起的主意能解决这件事。」</p>
+<p>更耐读的其实是第二层，它只出现在 2023 年那场演讲里，因为她在台上必须面对听众最强的反驳：<strong>模型往往比大多数人更准确、更博学，那内容出自谁又有什么关系？</strong>她的原话是「我对这个观点是有同感的」，然后给出三条差别。第一，跟实在的关系不同——「模型不能拿它的说法去对照实在，因为它接触不到实在」，但也不能说它跟实在无关：「它有点像是关于实在的一段模糊记忆。」第二，社会位置不同：「所有真理和知识都不存在于社会脉络之外」，而模型「不是从某一个稳定的社会位置在说话」。第三条别人不说：</p>
+<blockquote><span class="en">There is always someone on the other side of the work who you can have a full human relationship with. Some of us might argue this is the whole point of writing on the web.</span><span class="zh">作品的另一端永远有一个人，你可以跟他建立一段完整的人的关系。我们中有些人会说，这就是在网上写作的全部意义。</span><cite>The Expanding Dark Forest and Generative AI, 2023</cite></blockquote>
+<p>然后是这场演讲真正的最深处，也是只有人类学家会说的一段。模型代表的是「一群以英语为主的、西方的、在 Reddit 上写了很多东西的、活在大约 1900 到 2023 年之间的人的平均看法。放到历史和地理的大盘子里，这是人类极窄的一小片」。她说「戴上人类学家的帽子看这个问题，它显得格外可悲」——整个人类学都在试图扩展人对「人类文化可以有多不同」的理解，而用一种世界观大批量生产内容，会「把我们漏斗式地收窄进一种单一栽培」，关掉未来人类文化本可以长成的一大堆样子。</p>
+<p>最后她做了那个她永远会做的动作，把责任从器物挪回实践：</p>
+<blockquote><span class="en">At this point I should make clear generative AI is not the destructive force here. The way we're choosing to deploy it in the world is. The product decisions that expand the dark forestness of the web are the problem.</span><span class="zh">说到这里我该讲清楚：生成式 AI 不是这里的破坏力量。我们选择把它投放到世界上的方式才是。那些让网络更黑暗森林化的产品决策，才是问题。</span><cite>The Expanding Dark Forest and Generative AI, 2023</cite></blockquote>
+<h3>四、赤脚开发者，以及 2026 年瓶颈的搬家</h3>
+<p>2024 年 5 月，她在柏林的 Local-first 大会上讲了一场。起点是一个主动的取舍：她盯了一年语言模型对软件开发的影响，看到 Copilot 让职业程序员完成任务快了 55%，然后决定不谈这个——「恕我直言，我们过得挺好。我们的问题很无聊。」她要谈的人在别处。路径还是先排谱系（Clay Shirky 2004 年的「情境软件」、Robin Sloan 2020 年的《一个 app 可以是一顿家常饭》），然后<strong>去收集实例，看它们有什么共性</strong>。例子里最好的一个，是有人为糖尿病伴侣重做的血糖界面——因为血糖仪自带的界面「没给他们真正需要的关键信息」。共性是这一句：「我举的这些家常软件例子，处理的都是那种你不想让它离开自己家门的数据——孩子、身体机能、健康、财务。」这些需求全落在「长尾」上：Google 地图永远不会支持显示历史疆界或潮汐规律，因为「支持长尾在财务上说不通」。</p>
+<p>然后是全场最狠的一张图。想做家常软件的人，和有能力做家常软件的人，这两个集合的文氏图是什么形状？她的答案是：<strong>一个同心圆。</strong>她刚才展示的所有例子，作者全都是职业开发者。</p>
+<p>于是有了那个名字，以及她处理得很小心的类比：毛时代的赤脚医生——从村里选人培训，再送回本村服务熟人，「他们还是和别人一样的赤脚农民，只是多了些技能」。到 1970 年代中期有超过一百五十万人在岗，同期人均寿命从 35 岁升到 63 岁。她还加了句典型的她式括注：「我不是说毛做的每件事都很好，但这个项目还不错。我确信他跟这事关系不大。」</p>
+<p>赤脚开发者是中间那一带：做出精妙 Notion 表格来管班级的老师，写巨型电子表格的理财迷。他们「技术上很灵、也有兴趣替自己和身边的人解决问题，但不想成为一个完整的程序员」。但他们永远越不过<strong>「命令行那道墙」</strong>——终端离 Airtable 和 Notion 是「复杂度、可用性和挫败感上的一次巨大跳跃」。</p>
+<figure>
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<rect fill="none" height="298" rx="14" stroke="rgba(110,168,254,.35)" width="698" x="1" y="1"></rect>
+<line stroke="rgba(110,168,254,.3)" stroke-width="1.5" x1="40" x2="660" y1="150" y2="150"></line>
+<rect fill="rgba(110,168,254,.07)" height="46" rx="6" stroke="rgba(110,168,254,.28)" width="170" x="42" y="127"></rect>
+<text fill="#93a1ae" font-family="monospace" font-size="12" x="58" y="150">end users</text>
+<text fill="#5f6b77" font-family="monospace" font-size="10.5" x="58" y="166">"don't want to code"</text>
+<rect fill="rgba(94,234,212,.12)" height="46" rx="6" stroke="rgba(94,234,212,.5)" width="200" x="250" y="127"></rect>
+<text fill="#5eead4" font-family="monospace" font-size="12" x="266" y="150">barefoot developers</text>
+<text fill="#7d8794" font-family="monospace" font-size="10.5" x="266" y="166">Notion · Airtable · sheets</text>
+<rect fill="rgba(110,168,254,.07)" height="46" rx="6" stroke="rgba(110,168,254,.28)" width="170" x="488" y="127"></rect>
+<text fill="#93a1ae" font-family="monospace" font-size="12" x="504" y="150">professionals</text>
+<text fill="#5f6b77" font-family="monospace" font-size="10.5" x="504" y="166">"invent excuses to code"</text>
+<line stroke="#6ea8fe" stroke-dasharray="5 4" stroke-width="2" x1="469" x2="469" y1="60" y2="240"></line>
+<text fill="#6ea8fe" font-family="monospace" font-size="11.5" x="380" y="50">the command line wall</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="250" y="222">↑ the long tail lives here</text>
+<text fill="#7d8794" font-family="monospace" font-size="11" x="250" y="240">missing: the glue, not the model</text>
+</svg>
+<figcaption>她的核心判断：赤脚开发者被卡在这道墙前，而缺的东西不在模型能力那一侧</figcaption>
+</figure>
+<p>那么缺的到底是什么？答案又是同一把刀落下：</p>
+<blockquote><span class="en">Language model legos need glue.</span><span class="zh">语言模型的乐高积木缺胶水。</span><cite>Home-Cooked Software and Barefoot Developers, 2024</cite></blockquote>
+<p>模型给你界面元素、状态管理、API 调用、基础逻辑，但不告诉你怎么把它们粘成一个能跑的应用。「你还是完全不知道怎么把它部署到某个域名上……或者怎么设置数据库来存数据。你大概根本不知道数据库是什么。」她还顺手跟整个端用户编程学派划清了界限：「我觉得我们该停止骚扰那些普通的护士、老师和心理治疗师，逼他们在不想写代码的时候写代码。」</p>
+<p>然后是这条线在 2026 年的最新一格，同一个动作的第 N 次重复。2026 年 4 月她在 GitHub Next 的演讲开场，摆出一段流传很广的演示视频：一个人的机器上并排跑着一整墙终端里的编码 agent。她管这套愿景叫「一个人，两打 Claude」，然后一句话拆掉它：「这个梦最大的问题是，它假定软件是一个人做出来的。」相信个人产出提高就能带来好软件，是「九个女人一个月生一个孩子」的逻辑。</p>
+<blockquote><span class="en">Implementation is rapidly becoming a solved problem… The hard question is no longer how to build it. It's should we build it. Agreeing on what to build is the new bottleneck.</span><span class="zh">实现正在迅速变成一个已解决的问题……难题不再是「怎么做出来」。是「该不该做」。就「做什么」达成一致，才是新的瓶颈。</span><cite>One Developer, Two Dozen Agents, Zero Alignment, 2026</cite></blockquote>
+<p>机制讲得很具体：过去流程里散布着很多对齐接触点——Slack 讨论、issue 评论、草稿 PR——它们存在，是因为实现慢到留得下时间。「但那个实现的窗口已经塌了。」于是接触点全被推到实现的错误一侧，「这就让可怜的 pull request 去承担所有这些检查点的重量，而且是在流程最末端、已经太晚的时候」。她的断言——她自己都说这在 GitHub 内部听起来像异端——是：<strong>PR 和 issue 是错的原语。</strong>而对齐所需的上下文大半不在代码库里，「在人的脑子里」，「agent 永远不可能自己发现」。</p>
+<h2>她的思维方法</h2>
+<p><strong>一、先查这个词的出生年月。</strong>她每篇重头文章都从一次断代开始：数字花园 → 1998 / 2007 / 2015；tools for thought → Iverson 1979；folk → 古英语 <em>folc</em>；双向链接 → Bush 1945、Nelson 1965；barefoot → 1960 年代的赤脚医生。她给过理由：「语言总是对不断变化的世界的一种回应……命名既是一种诗学行为，也同样是一种政治行为。」这个手法为什么有用：一个词的出生年月和出生地，会告诉你它是<strong>为谁的问题而造的</strong>。CMFWCKW 那一击就是这么打出来的。</p>
+<p><strong>二、隐喻是工具，不是修辞。</strong>她把隐喻当可操作的部件用，甚至有一套记号：🎯 标目标（要解释的东西），⛲️ 标来源（用来解释的东西）。然后当场拆自己的插画：「Vue-Router 🎯 是一套地下铁路系统和在上面跑的车厢 ⛲️。每个页面 🎯 是一个站 ⛲️。」她对这么干有一句自嘲：「我知道这有点像讲了个笑话，然后再解释这笑话为什么好笑。挺扫兴的。」但拆解能训练你有意识地看见隐喻怎么搭起来，「你不再靠自动驾驶运转」。关键的一步是那个取景框比喻：来源像一个窗框，框内的性质被凸显，框外的被藏起来——「我们挑哪个隐喻，取决于我们想凸显或藏起哪些性质。」这后来变成了她的批判武器：因为我们用纸做网页的隐喻，我们把纸的限制带了进来，同时把纸最好的性质丢在了外面（页边批注、把好几张纸摊开重排、拿着一张纸走过房间跟人一起看）。处方是一句方法论：「练习用多种方式看同一个系统。」</p>
+<p><strong>三、把自己算进样本里。</strong>《旧石器怀旧》整篇在挖苦当代人对石器时代的浪漫想象，然后她自己踩刹车：「这不是要做什么不友善的、凶狠的批评。我写这些，是作为一个穿赤足鞋跑步、并且尽量不吃自己高祖母认不出来是食物的东西的人。」黑暗森林那场演讲的第一句是「我是 Maggie，我想先把我所有的偏见摆到桌面上」。写思维工具时她在论证中段插一句透明声明，说自己 2019 年 11 月起就把 Roam 当主知识库，「所以我对这段历史的理解肯定被这层关系染了色」。</p>
+<p><strong>四、主动招骂。</strong>赤脚开发者那场演讲的最后一句是：「我非常希望能得到建设性的批评，指出你觉得我哪里错了。只是请你友善一点。」</p>
+<p>四样加起来是一个非常一致的姿态：<strong>她不主张自己的结论正确，她主张自己的过程是可查的。</strong>这也正是这套做法最强和最弱的地方。</p>
+<h2>她哪里可能是错的</h2>
+<p><strong>花园伦理许可了永久的未完成，而账单正好落在她最承重的几篇上。</strong>CMFWCKW 那个改名可以说是她单项最好的想法——它就落在被她自己标注为「零散、脱节、不成话」的那一节里；同一篇里「[need evidence for this claim]」和两个「xxxx」原样挂了四年。认识论披露是诚实的，但它不是论证的替代品——读者知道这里没写完，不等于这里的推论站得住。同样地，反向图灵测试那五条自证手段，她当时就给多模态那条判了「这道防线大概只能再撑 6 到 12 个月」；一篇文章被引用最多的部分刚好最经不起时间。</p>
+<p><strong>位置冲突，每次申报，从未和解。</strong>2023 年 4 月她在台上求人：「如果你在做的工具让人不经查证、不经反思、不经批判性思考就大批量生产文字，然后并行推送到每个平台上——求你了，停下。」到 2026 年 4 月，她是 GitHub Next 的研究工程师，在台上演示一个多人 agent 工作区，而这个原型的整个前提就是「一堵墙的 agent 并行跑」是近未来常态。要公平地说：她那场演讲的论点恰恰是反着的——她说质量会成为新的分野，「手艺才是把你和氛围编码出来的垃圾区分开的东西」。<strong>但她没写那篇文章：她现在设计的这类工具，究竟会让森林更黑还是更亮。</strong>这是她全部工作里最该由她自己写、也最有理由不写的一篇。</p>
+<p><strong>赤脚开发者的强命题还没兑现，而那个类比里有一处她没检查的重量。</strong>两年过去，可见的现象主要是「氛围编码」，参与者多半本来就会写代码；她自己 2025 年 8 月那条札记的标题是《氛围代码就是遗留代码》——转述 Steve Krouse 的定义：「没有人理解的代码」。更要紧的是类比本身：赤脚医生之所以成立，是因为那是一个有筛选、有培训、有监督的建制项目。她明确写了开发者版本「不会由中央政府来组织」，然后没有追问：把筛选、培训和监督拿掉，剩下的是什么。在医学里，无监督的执业者不是一个愉快的故事。</p>
+<p><strong>样本偏差，她诊断得极漂亮，但没把这台仪器对准自己。</strong>《思维工具》最好的一击，是指出那份族长名单的计算机中心主义其实是一个小社交网络的指纹。可她命名的几乎每一个现象——数字花园、民俗界面、赤脚开发者——都是从同一个推特／Bluesky 街区的几百个人身上归纳出来的。她自己在台上说过：「我是我们所说的『非常在线』。我住在推特上，写很多东西。我和做同样事情的人混在一起。」<strong>把偏差说出来不等于把它修掉。</strong>她对别人用的是词源学和人群构成分析，对自己用的是免责声明。</p>
+<p><strong>关于批评，一句必要的说明。</strong>她的文章页不带评论区，围绕她的讨论主要在 Bluesky 和 Hacker News；这两处从本页的写作环境都无法访问（网络层被挡），所以本页不复述任何我没读到的批评论证。我能读到的最实质的外部回应是 Simon Willison 对赤脚开发者那场演讲的评论，而它是赞同而非批评的——他称之为「a great talk」。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><a href="https://maggieappleton.com/tools-for-thought/"><span class="t">Tools for Thought as Cultural Practices, not Computational Objects</span></a><span class="d">2021 年 7 月。查出「思维工具」这个词的出生年月和族长名单，摆出六万年的反面清单，最后把它改名叫 CMFWCKW。也是本页开头那两个 xxxx 的所在地。</span></li>
+<li><a href="https://maggieappleton.com/garden-history/"><span class="t">A Brief History &amp; Ethos of the Digital Garden</span></a><span class="d">2020 年 6 月。全站被回链最多的一篇。三段互不相认的词源史，加她自己收的六条模式；那条「花园要让读者知道它的不完美」是她整套发表伦理的地基。</span></li>
+<li><a href="https://maggieappleton.com/forest-talk/"><span class="t">The Expanding Dark Forest and Generative AI</span></a><span class="d">2023 年 4 月的演讲全文加幻灯，是 2022 年 12 月那篇 <a href="https://maggieappleton.com/ai-dark-forest/">The Dark Forest and Generative AI</a> 的扩写版。反向图灵测试的完整版本，以及那三条差别：跟实在的关系、社会位置、建立关系的可能。</span></li>
+<li><a href="https://maggieappleton.com/home-cooked-software/"><span class="t">Home-Cooked Software and Barefoot Developers</span></a><span class="d">2024 年 5 月的演讲全文。情境软件 → 家常饭 → 那个同心圆的文氏图 → 赤脚医生 → 「语言模型的乐高积木缺胶水」。</span></li>
+<li><a href="https://maggieappleton.com/drawinginvisibles1/"><span class="t">How to Draw Invisible Programming Concepts: Part I</span></a><span class="d">2020 年 1 月。她的方法论源头：隐喻的来源／目标、取景框、🎯⛲️ 记号，以及那个四层蛋糕。配着读 <a href="https://maggieappleton.com/still-cant-draw/">Why You Own an iPad and Still Can't Draw</a> 里的 2% / 18% / 80%。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-10" data-slug="maggie-appleton">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-10</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ma-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ma-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
