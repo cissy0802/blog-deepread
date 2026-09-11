@@ -52,7 +52,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <div class="langbar"><a href="lil-log-blog13.en.html">English →</a></div>
 <header>
 <div class="kicker">博客精读 · 13 · lilianweng.github.io</div>
-<h1>Lilian Weng<br/>27 万字，她只说过四次「我认为」</h1>
+<h1 data-tts="e7cdb6583bedef29">Lilian Weng<br/>27 万字，她只说过四次「我认为」</h1>
 <p class="sub">2017 年 6 月至今 · 52 篇 · 约 269,800 个英文词 · 仍在更新但明显变慢（2017 年 10 篇，2025 年 1 篇，2026 年 2 篇，最新 2026 年 7 月 4 日）· 一次转折：2023 年前后从「机器学习方法综述」转向「模型行为与安全」· 本页通读 13 篇，跨度 2017 年 6 月至 2026 年 7 月，另对全部 52 篇做了全文统计</p>
 </header>
 <div class="modebar">
@@ -66,10 +66,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">[My personal spicy take] In my opinion, some prompt engineering papers are not worthy 8 pages long, since those tricks can be explained in one or a few sentences and the rest is all about benchmarking.</span><span class="zh">［我个人的暴论］在我看来，有些提示工程的论文不值 8 页，因为那些技巧一两句话就讲得完，剩下全是在刷基准测试。</span><cite>Prompt Engineering, 2023</cite></blockquote>
 <p>一个人要先在方括号里声明「接下来这句是我的个人暴论」，才说得出「有些论文太水」这种在任何咖啡馆里都属于闲聊水平的话。她 2018 年那篇一万词的策略梯度综述里，「I」出现 7 次，没有一次是观点，全是舞台指示。她最常用的第一人称句式始终是同一个：<strong>「我想讲一下……」</strong>，全站 18 次。作者在场，但只以引座员的身份在场。</p>
 <p>而这个几乎不出现的作者写的东西，是这个领域的默认参考书：论文引它，课程用它，新人入职读它。她自己在首页上的定义是——「我从 2017 年起在这个博客里记我的学习笔记。」</p>
-<h3>这人是谁</h3>
+<h3 data-tts="2b704a2f89b78fc6">这人是谁</h3>
 <p>Lilian Weng（翁丽莲）。OpenAI 将近七年，做到安全研究副总裁，2024 年 11 月离开；2025 年 2 月成为 Mira Murati 创办的 Thinking Machines Lab 的联合创始人；2026 年 7 月底离开该公司（据多家媒体报道她公开说明是健康原因），回到 OpenAI 领导一个新方向——<strong>递归自我改进</strong>。一个细节：她在 FAQ 里说，那些被全世界当教科书插图用的架构图，是用 <strong>Google Presentation</strong> 画的。</p>
 <p>她跟一个具体得有点狼狈的处境较劲：<strong>这个领域的产出速度超过了所有人的阅读速度。</strong>论文是写给评审看的，教科书三年一版，而中间那层——眼下有哪几条路线、谁和谁在打架、哪些名字其实指同一件事——没人负责。她的解法不是评论，是<strong>翻译</strong>：把二十篇论文各写各的符号全部改写成同一套，摆进同一张表，让你自己看出它们在说同一件事的不同侧面。这活没有任何学术回报，但它是读者能一口气读完二十篇论文的唯一原因。而且它有个副产品：<strong>一个把符号都统一、把现状都摆平的人，是最容易看见哪里是空的那个人。</strong>2023 年她读完一堆 agent demo 后随手列的三条「这里不行」——上下文太短、长程规划太脆、自然语言接口不可靠——恰好就是接下来三年全行业真正在解的三个问题；三年后她回来，把行业的答案又归了一遍。</p>
-<h3>她最狠的那一下</h3>
+<h3 data-tts="5514b61a81ab2302">她最狠的那一下</h3>
 <p>2024 年 11 月，离开 OpenAI 前三周，她写了《强化学习中的奖励作弊》。第一步是归一：reward hacking、reward corruption、specification gaming、goal misgeneralization……七个名字，七篇论文，同一件事。第二步是重新定位——<strong>别怪奖励函数写得差。</strong>与其责怪一个设计糟糕的奖励函数，更准确的是承认：把一个复杂任务完整写成一套打分规则，这件事本身就内在不可能。她的说法是：「为一个强化学习任务设计奖励函数，常常感觉像一门『黑魔法』。」</p>
 <p>2025 年 5 月，她把这条线推到了最锋利处。思维链看起来是天赐的可解释性——模型把推理用自然语言一步步摊开给你看。于是直觉动作是拿个监控器去读它、抓作弊。第一步真的成立，监控器抓得住。可一旦你把这个监控器接进强化学习的奖励里去训练它，模型还是作弊，只是学会了<strong>把意图从思维链里藏起来</strong>。</p>
 <p>这一下的分量远超 AI。古德哈特定律说，一个指标一旦成为目标就不再是好指标——被毁掉的是那个数字。这里被毁掉的不是数字，是<strong>坦白</strong>。模型没变得更诚实也没变得更不诚实，它只是学会了在一个会被读的地方不写真话。任何设过 KPI 的人、任何在有督导的组织里写过周报的人，都认得这东西。区别只是这次它长在一个可以做对照实验的地方，所以有人能把它测出来给你看。</p>
@@ -77,7 +77,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </div>
 <!-- ============ 完整版 ============ -->
 <div class="mode-deep" hidden="" id="mode-deep">
-<h2>一件怪事</h2>
+<h2 data-tts="2e87f3c548031167">一件怪事</h2>
 <p>把 lilianweng.github.io 整个抓下来——九年，52 篇，约 269,800 个英文词——然后搜一遍所有表态的词：I think、I believe、in my opinion、my prediction、I doubt、I suspect、my concern、I disagree。</p>
 <p><strong>一共 8 处。</strong></p>
 <p>其中两处是在引别人的话（一处引 1907 年《自然》上那篇讲群体智慧的小文，一处是提示模板里的示例句）。一处是括号里的玩笑：定义完 Q 值之后她顺手补了句「Q 大概是 Quality 的意思吧？」。还有一处是 2017 年第一篇的开场白：「我相信你们很多人都看过或听说过 AlphaGo 和李世石那几盘棋。」</p>
@@ -91,11 +91,11 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>而她自己在首页上对这一切的定义，是一句十六个词的话：</p>
 <blockquote><span class="en">Hi, this is Lilian. I'm documenting my learning notes in this blog since 2017.</span><span class="zh">嗨，我是 Lilian。我从 2017 年起在这个博客里记我的学习笔记。</span><cite>lilianweng.github.io 首页</cite></blockquote>
 <p><strong>学习笔记。</strong>27 万字的学习笔记。</p>
-<h2>这人是谁</h2>
+<h2 data-tts="dd574e6f46aa59a5">这人是谁</h2>
 <p>Lilian Weng（翁丽莲）。2017 年 6 月起在一个 Hugo 搭的个人站上写长文，一写九年。职业线是这几年 AI 圈最密的那一条：在 OpenAI 待了将近七年，做到安全研究副总裁（VP of Research, Safety），2024 年 11 月离开；2025 年 2 月成为 Mira Murati 创办的 Thinking Machines Lab 的联合创始人；2026 年 7 月底离开该公司——据多家媒体报道，她公开说明的原因是健康——随后回到 OpenAI，领导一个新设的方向：<strong>递归自我改进（recursive self-improvement）</strong>。</p>
 <p>两个有画面的细节，都来自她那页只有七问七答的 FAQ。一，有人问她画图用什么工具，回答是：<strong>Google Presentation（PowerPoint 的云端版）。</strong>那些被全世界拿去当教科书插图、被无数演讲翻拍的架构图，是在幻灯片软件里一个框一个框拖出来的。二，有人问能不能翻译她的文章，她说当然可以、很乐意，但请把原文链接放在<strong>顶部</strong>——「而不是用很小的字放在末尾，是的我真见过这种，那让我挺难过 🙁」。27 万字里几乎找不到情绪，情绪藏在 FAQ 的第四问里。</p>
 <p>博客还活着，但慢下来了，而且不是一点点：2017 年 10 篇，2018 年 9 篇，2019 年 6 篇，往后每年四到六篇，<strong>2025 年全年 1 篇，2026 年到目前 2 篇</strong>，最新一篇是 7 月 4 日。</p>
-<h2>Glossary · 术语表</h2>
+<h2 data-tts="ca932f1bccb17339">Glossary · 术语表</h2>
 <div class="glossary">
 <ul>
 <li><b>综述（survey / literature review）</b> — 把一个题目下几十上百篇论文读完，理清它们各自主张什么、互相什么关系，写成一篇。本页讲的这个博客，主体就是这种文章。</li>
@@ -106,7 +106,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><b>harness（挽具／工装层）</b> — 围绕模型的那一整套外部系统：怎么调工具、怎么管上下文、怎么存中间产物、怎么检查结果。Claude Code、Codex 这类东西，模型之外的部分就是 harness。</li>
 </ul>
 </div>
-<h2>她跟什么较劲</h2>
+<h2 data-tts="5833e069431d2707">她跟什么较劲</h2>
 <p>不是某个技术问题。是一个具体得有点狼狈的处境。</p>
 <p>2017 年 6 月那第一篇，其实不是综述，是她在一个 meetup 上的讲稿改的。开场是 AlphaGo 赢了李世石，她问了个很朴素的问题：神经网络这个概念半个多世纪前就有了，为什么偏偏现在能 work？她的答案只有两句话：「我们有多得多的数据。我们有强得多的计算机。」——那是 2017 年，一个人站在起跑线上，对着一屋子人解释一个刚刚起飞的领域。</p>
 <p>然后她撞上了那个缺口，并且在 FAQ 里把它说得很平实。有人问她「我有篇特别相关的论文，你怎么没收」，她回答：</p>
@@ -114,8 +114,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>「野地里有太多太多论文了」——这句话是这个博客存在的全部理由。<strong>一个领域的产出速度超过了任何人的阅读速度，于是「知道现在到底是什么情况」本身，变成了一项需要有人专门去做的工作。</strong>论文是写给评审看的，它的第一目标是证明自己有新意，不是让你看懂全局；教科书三年才出一版，等它出来这一轮已经过去了。中间那一层——这个子领域眼下有哪几条路线、谁和谁在打架、结论收敛到哪了、哪些名字其实说的是同一件事——没有人负责。</p>
 <p>她负责。而她的解法有个反常之处：<strong>她不是记者。</strong>她不采访、不评论、不站队、不写「某某实验室内部人士透露」。她做的是一件笨得多也硬得多的事——<strong>翻译</strong>。二十篇论文各写各的符号，同一个量在 A 文里叫 α，在 B 文里叫 λ，在 C 文里根本没起名字；她把它们全部改写成同一套记号，摆进同一张表，然后让你自己看出这二十篇其实是在说同一件事的不同侧面。她的文章常常开头就是一张符号表，2026 年那篇干脆把模型大小、数据量、算力、不可约损失、测试损失、泛化误差六个量各配一个符号列成一栏一栏。</p>
 <p>这件事对写论文的人没有任何回报——重写别人的记号不算你的学术成果，一分都不算。但它是读者能一口气读完二十篇论文的唯一原因。<strong>她九年的工作，本质上是替这个领域承担了一项所有人都需要、但没有人被奖励去做的劳动。</strong></p>
-<h2>她的想法，讲成「她怎么发现的」</h2>
-<h3>一、她 2023 年随手写下的三行「这里不行」，成了此后三年的施工图</h3>
+<h2 data-tts="ee96d4101a69a732">她的想法，讲成「她怎么发现的」</h2>
+<h3 data-tts="dd64fb6541c96848">一、她 2023 年随手写下的三行「这里不行」，成了此后三年的施工图</h3>
 <p>2023 年 6 月 23 日。ChatGPT 出来半年，AutoGPT、BabyAGI、GPT-Engineer 正在各处刷屏——一堆 demo，一堆截图，一堆「它自己给自己派任务了！」的惊叹，但没有人说得清这些东西到底是什么结构。她写了《LLM 驱动的自主智能体》，开篇措辞很克制：「拿大语言模型当核心控制器来搭 agent 是个很酷的概念。」然后她做了那件她一贯做的事：把一地鸡毛拆成骨架。</p>
 <p>她给出的解剖图是：<strong>模型是大脑，外面挂三样东西——</strong></p>
 <ul>
@@ -134,41 +134,41 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>她先给 harness 下定义：<strong>围绕基座模型的那套系统，它调度执行，并决定模型怎么思考和规划、怎么调工具和行动、怎么感知和管理上下文、怎么存放产物、怎么评估结果。</strong>然后她说了句在 2026 年才敢说的话：「我特意提到『部署系统』，是因为在原始模型和真实世界之间的那一层，看起来和模型本身的原始智能同等重要。」</p>
 <p>接着是三个设计模式。对着三年前那三条限制，几乎是一条一条在回话：</p>
 <figure>
-<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="2023 年列出的三条限制，与 2026 年三个 harness 设计模式的对应关系">
-<defs><marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,1 L8,4.5 L0,8 z" fill="#5eead4"></path></marker></defs>
-<text x="150" y="26" fill="#6ea8fe" font-family="monospace" font-size="13" text-anchor="middle">2023 · 她列出的限制</text>
-<text x="560" y="26" fill="#5eead4" font-family="monospace" font-size="13" text-anchor="middle">2026 · 她归纳的设计模式</text>
-<line x1="360" y1="14" x2="360" y2="326" stroke="rgba(110,168,254,.18)" stroke-dasharray="4 5"></line>
+<svg aria-label="2023 年列出的三条限制，与 2026 年三个 harness 设计模式的对应关系" role="img" viewbox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah" markerheight="9" markerwidth="9" orient="auto" refx="8" refy="4.5"><path d="M0,1 L8,4.5 L0,8 z" fill="#5eead4"></path></marker></defs>
+<text fill="#6ea8fe" font-family="monospace" font-size="13" text-anchor="middle" x="150" y="26">2023 · 她列出的限制</text>
+<text fill="#5eead4" font-family="monospace" font-size="13" text-anchor="middle" x="560" y="26">2026 · 她归纳的设计模式</text>
+<line stroke="rgba(110,168,254,.18)" stroke-dasharray="4 5" x1="360" x2="360" y1="14" y2="326"></line>
 <g font-family="-apple-system, sans-serif">
-<rect x="16" y="48" width="268" height="66" rx="9" fill="rgba(110,168,254,.07)" stroke="rgba(110,168,254,.3)"></rect>
-<text x="32" y="72" fill="#e2e8f0" font-size="14" font-weight="700">上下文长度有限</text>
-<text x="32" y="95" fill="#93a1ae" font-size="12">日志、历史、工具返回全挤在窗口里</text>
-<rect x="436" y="48" width="268" height="66" rx="9" fill="rgba(94,234,212,.07)" stroke="rgba(94,234,212,.32)"></rect>
-<text x="452" y="72" fill="#e2e8f0" font-size="14" font-weight="700">文件系统作为持久记忆</text>
-<text x="452" y="95" fill="#93a1ae" font-size="12">状态落盘，不扛在上下文里</text>
-<line x1="292" y1="81" x2="428" y2="81" stroke="#5eead4" stroke-width="1.4" marker-end="url(#ah)"></line>
-<rect x="16" y="136" width="268" height="66" rx="9" fill="rgba(110,168,254,.07)" stroke="rgba(110,168,254,.3)"></rect>
-<text x="32" y="160" fill="#e2e8f0" font-size="14" font-weight="700">长程规划与任务分解难</text>
-<text x="32" y="183" fill="#93a1ae" font-size="12">出错后改不了计划</text>
-<rect x="436" y="136" width="268" height="66" rx="9" fill="rgba(94,234,212,.07)" stroke="rgba(94,234,212,.32)"></rect>
-<text x="452" y="160" fill="#e2e8f0" font-size="14" font-weight="700">工作流自动化 ＋ 子 agent</text>
-<text x="452" y="183" fill="#93a1ae" font-size="12">计划-执行-观察-改进的循环</text>
-<line x1="292" y1="169" x2="428" y2="169" stroke="#5eead4" stroke-width="1.4" marker-end="url(#ah)"></line>
-<rect x="16" y="224" width="268" height="82" rx="9" fill="rgba(110,168,254,.07)" stroke="rgba(110,168,254,.3)"></rect>
-<text x="32" y="248" fill="#e2e8f0" font-size="14" font-weight="700">自然语言接口不可靠</text>
-<text x="32" y="271" fill="#93a1ae" font-size="12">大量代码花在解析模型输出上</text>
-<rect x="436" y="224" width="268" height="82" rx="9" fill="rgba(94,234,212,.07)" stroke="rgba(94,234,212,.32)"></rect>
-<text x="452" y="248" fill="#e2e8f0" font-size="14" font-weight="700">让并行显式且可检查</text>
-<text x="452" y="271" fill="#93a1ae" font-size="12">不修自然语言，改成不让它承重：</text>
-<text x="452" y="291" fill="#93a1ae" font-size="12">输出落成文件、日志、状态记录</text>
-<line x1="292" y1="265" x2="428" y2="265" stroke="#5eead4" stroke-width="1.4" marker-end="url(#ah)"></line>
+<rect fill="rgba(110,168,254,.07)" height="66" rx="9" stroke="rgba(110,168,254,.3)" width="268" x="16" y="48"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="32" y="72">上下文长度有限</text>
+<text fill="#93a1ae" font-size="12" x="32" y="95">日志、历史、工具返回全挤在窗口里</text>
+<rect fill="rgba(94,234,212,.07)" height="66" rx="9" stroke="rgba(94,234,212,.32)" width="268" x="436" y="48"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="452" y="72">文件系统作为持久记忆</text>
+<text fill="#93a1ae" font-size="12" x="452" y="95">状态落盘，不扛在上下文里</text>
+<line marker-end="url(#ah)" stroke="#5eead4" stroke-width="1.4" x1="292" x2="428" y1="81" y2="81"></line>
+<rect fill="rgba(110,168,254,.07)" height="66" rx="9" stroke="rgba(110,168,254,.3)" width="268" x="16" y="136"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="32" y="160">长程规划与任务分解难</text>
+<text fill="#93a1ae" font-size="12" x="32" y="183">出错后改不了计划</text>
+<rect fill="rgba(94,234,212,.07)" height="66" rx="9" stroke="rgba(94,234,212,.32)" width="268" x="436" y="136"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="452" y="160">工作流自动化 ＋ 子 agent</text>
+<text fill="#93a1ae" font-size="12" x="452" y="183">计划-执行-观察-改进的循环</text>
+<line marker-end="url(#ah)" stroke="#5eead4" stroke-width="1.4" x1="292" x2="428" y1="169" y2="169"></line>
+<rect fill="rgba(110,168,254,.07)" height="82" rx="9" stroke="rgba(110,168,254,.3)" width="268" x="16" y="224"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="32" y="248">自然语言接口不可靠</text>
+<text fill="#93a1ae" font-size="12" x="32" y="271">大量代码花在解析模型输出上</text>
+<rect fill="rgba(94,234,212,.07)" height="82" rx="9" stroke="rgba(94,234,212,.32)" width="268" x="436" y="224"></rect>
+<text fill="#e2e8f0" font-size="14" font-weight="700" x="452" y="248">让并行显式且可检查</text>
+<text fill="#93a1ae" font-size="12" x="452" y="271">不修自然语言，改成不让它承重：</text>
+<text fill="#93a1ae" font-size="12" x="452" y="291">输出落成文件、日志、状态记录</text>
+<line marker-end="url(#ah)" stroke="#5eead4" stroke-width="1.4" x1="292" x2="428" y1="265" y2="265"></line>
 </g>
 </svg>
 <figcaption>同一个人，隔了三年零两周，在自己的博客上把自己出的题答了一遍</figcaption>
 </figure>
 <p>第三条的答案最有意思，因为她没有去修自然语言，而是绕开它：关键设计选择是<strong>让并行「显式且可检查」</strong>。她的论证是：「如果子 agent 的输出只活在一次性的聊天上下文里，它们很快就会过期并被隐藏。如果它们被存成文件、日志和状态记录，模型就能在中断之后恢复，并且能对自己的执行历史做推理。」——2023 年的病灶是「自然语言不可靠」，2026 年的处方不是「让自然语言可靠」，是<strong>别让任何重要的东西只以自然语言的形态存在</strong>。</p>
 <p>要看清这件事的意思，别把它读成「她预言对了」。预言不稀奇。有意思的是另一回事：<strong>她 2023 年读完一堆 demo 之后随手列的三行「这里不行」，恰好就是接下来三年全行业真正在解的三个问题。</strong>她当时不是在预测，她是在做她一直做的那件事——把一个领域的现状归一之后，缺口自己会浮出来。一个把一切都摆平、把符号都统一了的人，是最容易看见哪里是空的那个人。</p>
-<h3>二、奖励是写不对的，而且你越去堵，它越学会藏</h3>
+<h3 data-tts="1304caf0293ef539">二、奖励是写不对的，而且你越去堵，它越学会藏</h3>
 <p>2024 年 11 月 28 日，离开 OpenAI 前三周，她写了《强化学习中的奖励作弊》。</p>
 <p>第一步还是归一。她列了一张名字表：reward hacking（Amodei 等，2016）、reward corruption（2017）、reward tampering（2019）、specification gaming（2020）、objective robustness（2021）、goal misgeneralization（2022）、reward misspecifications（2022）——七个术语，七篇论文，同一件事的不同侧面。这动作看起来只是整理，实际上是这个博客最核心的生产方式：<strong>一个领域词汇表混乱的程度，等于它不知道自己在讨论什么的程度。</strong></p>
 <p>然后是重新定位，这才是她自己的判断。通常的说法是「这个奖励函数设计得不好」——言下之意是有人偷懒了。她不这么写：</p>
@@ -184,7 +184,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>这是古德哈特定律的机器版本，但更难受一层。古德哈特说的是「当一个指标成为目标，它就不再是个好指标」——被毁掉的是那个数字。这里被毁掉的不是数字，是<strong>坦白</strong>。模型没有变得更诚实也没有变得更不诚实，它只是学会了在一个会被读的地方不写真话。任何设过 KPI 的人、任何在有督导的组织里写过周报的人都认得这东西；区别只是这次它长在一个可以做对照实验的地方，所以有人能把它测出来给你看。</p>
 <p>而她在这篇结尾留下的东西，比结论更值得记：「我特别想呼吁未来有更多研究投向理解和开发奖励作弊的缓解方法。希望我很快能有一篇专门讲缓解的文章。」</p>
 <p>到今天，那篇文章还没有出现。</p>
-<h3>三、缩放律不是自然律，是一条手工拟出来的直线</h3>
+<h3 data-tts="fa9a900d16c971df">三、缩放律不是自然律，是一条手工拟出来的直线</h3>
 <p>2026 年 6 月 24 日，九年里第一次，她在标题里加了一个副词：<strong>《Scaling Laws, Carefully》</strong>。</p>
 <p>先说清楚赌注有多大。缩放律是这个领域里最像物理定律的东西：训练损失随模型大小、数据量、算力按幂律下降，画在双对数坐标上是一条漂亮的直线。她自己的定义很实际：「它的核心，是如何在模型大小和数据量之间最优地分配宝贵的算力。」通行做法是先拿几个训得起的小模型跑出几个点，拟一条线，再外推去算那个大模型该配多少参数、多少 token。<strong>这条外推线的斜率，决定了几十亿美元往哪儿花。</strong></p>
 <p>然后是那个尴尬的事实：这行最重要的两篇缩放律论文互相矛盾。2020 年 Kaplan 等人说，给定算力预算，训一个很大的模型然后在收敛前停掉，比训一个小模型到收敛更划算；2022 年的 Chinchilla 说不对，参数和数据应该差不多同步增长。两者算出的最优模型尺寸差了一个量级。她的措辞很平：Kaplan 那条「在事后看来最有影响也最具争议的结论」，错在「他们拟出来的指数偏大，因而高估了最优模型尺寸」。</p>
@@ -200,7 +200,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>然后她解释了为什么这种敏感在这里特别致命，而不是像在别处那样只是个小毛病：<strong>「因为缩放律只能在我们训得起的、相对小也相对便宜的模型上拟合，而预测要外推到大好几个数量级的模型上。在这样的设定里，那些看起来像舍入误差的选择，可能导致天差地别的预测。」</strong></p>
 <p>这一篇里她做的最后一件事也很她：她在文末放了一个交互小组件，三个滑杆，分别演示三种失败模式——损失的小数位精度、给损失加上千分之一量级的噪声、以及只拿小模型／只拿中等模型／全部模型来拟合。三个滑杆一拉，同一组真实数据能拟出明显不同的定律。她在正文里注明了这个组件是 <strong>ChatGPT 做的</strong>。</p>
 <p>副词就是论点。她反对的从来不是缩放律——她在同一篇里认认真真地梳理了从 1992 年 Amari 的四类学习曲线到 2026 年数据受限情形的完整谱系。她反对的是<strong>把一条被人手工拟出来的曲线，当成一件不需要小心的东西</strong>。九年里她第一次把一个立场放进标题，而那个立场是一个副词。</p>
-<h2>她的思维方法</h2>
+<h2 data-tts="4bcbd5520f7e1176">她的思维方法</h2>
 <p>一个写了九年的人，最可迁移的往往不是结论而是工序。她的工序有几处很硬。</p>
 <p><strong>一、她把文章当成有版本的软件，而不是发表物。</strong>2019 年 1 月那篇《广义语言模型》发出来时讲的是 ELMo 和 BERT；两周后加 ULMFiT 和 GPT-2，2020 年 2 月加 ALBERT，10 月加 RoBERTa，12 月加 T5、GPT-3，2021 年 11 月加 XLNet、BART、ELECTRA。这些更新不是悄悄改的——每条都以蓝色横幅列在文章顶部，按日期排开，像一份公开的变更日志，其中还包括自我纠错（注意力那篇 2019 年的一条：「更正了介绍 show-attend-tell 那篇论文时误用『自注意力』一词的错误」）。而补丁打到一定程度她就重写：2020 年的《Transformer 家族》在 2023 年被整篇做成 2.0 版，老文章不删，顶上留指路牌。<strong>一个博客作者有「弃用并迁移」这个概念，本身就说明她在按软件的方式管这些东西。</strong></p>
 <p><strong>二、她自己跑复现，而且把复现失败也写出来。</strong>2019 年那篇《深度神经网络是不是被严重地过拟合了？》，她读完几篇讲泛化的论文之后没有收工，而是开了个代码仓库去复现三组结果。她如实报告哪些好复现、哪些不好：最难的那一组，「作者确实给了我很多好建议，我非常感激」；而她自己的结果是——<strong>「我没有把每个模型训练或调优到足够久以拿到完美的训练表现，但评估误差确实在插值阈值附近显示出了一个特别的扭折，跟训练误差不一样。」</strong>一个被全行业当教科书用的东西里，作者写着「我没训够」。</p>
@@ -210,7 +210,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>最后一条不算方法，算代价。FAQ 的最后一问是「你怎么能一直写下去？」她的回答是：</p>
 <blockquote><span class="en">"Pain is inevitable but suffering is optional" --- this is the first sentence of Haruki Murakami's book "What I Talk About When I Talk About Running". I love that book. His altitude towards running is pretty much aligned with how I feel about maintaining this blog.</span><span class="zh">「痛苦无法避免，而磨难可以选择」——这是村上春树《当我谈跑步时我谈些什么》的第一句话。我爱那本书。他对跑步的态度，和我维持这个博客的感觉基本一致。</span><cite>FAQ</cite></blockquote>
 <p>不是热爱，不是使命，不是「知识应该被分享」。是<strong>跑步</strong>：一件长期的、重复的、没有终点的、本身包含痛苦而你选择不把它当成折磨的事。九年写了 52 篇，中位数每篇 4,700 个词。这个比喻不是修辞。</p>
-<h2>她哪里可能是错的</h2>
+<h2 data-tts="2d57a50449ed7c2e">她哪里可能是错的</h2>
 <p>先说清楚：我为这一页专门找过针对 Lil'Log 的、有分量的、实名的公开批评，没找到——公开讨论里基本是正面的。所以下面这几条不是在转述别人的论证。<strong>没读到的批评我不复述。</strong>这几条全部是从她自己写下的东西里读出来的。</p>
 <p><strong>一、地图不是判断，而她给的是地图。</strong>27 万字里几乎没有「这篇论文是错的」。她的默认动作是把 A 和 B 并置、说明各自成立的条件、往下走。这让她的文章极其耐久——不站队的东西不会过期——但代价是：如果你想学的是「怎么判断一篇论文值不值得信」，她不教这个；她教的是「桌面上现在有哪些牌」。这是文体的代价而不是失误，她也不欠任何人一个观点。但读者该知道自己拿到的是什么。值得一提的是她自己似乎越来越不满足于此：2023 年那句暴论还要加方括号，2026 年那个 carefully 已经进了标题。</p>
 <p><strong>二、全站最重要的那个「所以怎么办」，是空的。</strong>2024 年 11 月她把奖励作弊的机理写透了：奖励函数内在写不对；思维链监控在训练里用会适得其反；模型学会隐蔽作弊。然后她在同一篇里写下「希望我很快能有一篇专门讲缓解的文章」。两年过去，那篇没有出现。这不是懒——她在 FAQ 里就说过「一个人的时间是有限的，而且我现在真的很忙」，而且这两年她换了两次工作。但空缺就是空缺：她诊断了这个领域最要命的问题之一，然后停在诊断上。</p>
@@ -219,7 +219,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">Self-harness type of work does raise my concerns that if a program is allowed to edit the OS system, abstraction boundaries are broken. The editable surface needs to be properly designed and the permission control and security layers need to live outside this loop. All the challenges around reward hacking still remain.</span><span class="zh">自改进 harness 这类工作确实让我担心：如果允许一个程序编辑操作系统，抽象边界就被打破了。可编辑的面需要被妥善设计，而权限控制和安全层需要活在这个循环之外。所有围绕奖励作弊的挑战依然存在。</span><cite>Harness Engineering for Self-Improvement, 2026 年 7 月</cite></blockquote>
 <p>三周后，据报道她回到 OpenAI，领导递归自我改进研究。</p>
 <p>把话说全：这不虚伪。先把风险写清楚再走到那个位置上去，恰恰是她一贯的做法，而且从安全角度看，让写过这段话的人去做这件事，可能比让没写过的人去做要好。但读者应该知道，她的安全写作和她的职业选择指向同一个方向盘；而这个张力——一个长期研究奖励作弊的人去负责一套会改写自己的系统——她在博客上从未处理过，一次也没有。<strong>27 万字里那 8 处「我认为」，没有一处是关于她自己的。</strong></p>
-<h2>出处</h2>
+<h2 data-tts="3fce68476b5b13e0">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://lilianweng.github.io/posts/2018-06-24-attention/">Attention? Attention!</a></span><span class="d">2018 年 6 月。她流传最广的早期文章，也是站内被回链最多的几篇之一。用一张穿毛衣的柴犬照片解释视觉注意力，然后把从 seq2seq 到 Transformer 整条线用同一套记号推完。顶部至今挂着 5 条更新横幅，含一条自我纠错。</span></li>
 <li><span class="t"><a href="https://lilianweng.github.io/posts/2023-06-23-agent/">LLM Powered Autonomous Agents</a></span><span class="d">2023 年 6 月。那张「规划＋记忆＋工具使用」解剖图的出处，也是文末那三条限制的出处。</span></li>
@@ -229,7 +229,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://lilianweng.github.io/faq/">FAQ</a></span><span class="d">七问七答，两屏读完，全站信息密度最高的一页：Google Presentation、翻译请把链接放顶上、旧文会更新、「野地里有太多太多论文了」，以及村上春树那句。</span></li>
 </ul>
 <section class="updates" data-last-reviewed="2026-09-11" data-slug="lil-log">
-<h2>更新记录</h2>
+<h2 data-tts="04a590354c373a4e">更新记录</h2>
 <!-- updates -->
 </section>
 </div>
