@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Martin Kleppmann · martin.kleppmann.com — 他花十九年证明：骗你的不是代码，是描述系统的那些词</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="martin-kleppmanns-blog-blog14.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 14 · martin.kleppmann.com</div>
+<h1>Martin Kleppmann<br/>骗你的不是代码，是描述系统的那些词</h1>
+<p class="sub">2007 年 7 月至今 · 126 篇 · 仍在更新但极慢（2008 年 31 篇，2023 年 0 篇，2025 年 1 篇，最新 2025 年 12 月 8 日；2026 年已排四场演讲）· 两次转折：2012 年前后从可用性／创业写作转向数据系统，2016 年前后从工业界转向学术与形式化验证 · 本页通读 16 篇，跨度 2008 年 6 月至 2025 年 12 月，选文以他自己首页的「Highlights」为准</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>把 martin.kleppmann.com 的归档页从头拉到尾：126 篇，跨十九年。<strong>前 70 篇里，只有一篇跟数据库沾边。</strong></p>
+<p>其余六十九篇写的是：燃气灶的可用性。英国和德国的火车售票机对比（上下两集，外加一篇「德国售票机的最新进展」）。《找到离我最近的厕所、咖喱，随便什么》。《「是／否／取消」让阿司匹林销量暴涨》。光 2008 年他就发了 31 篇。而 2023 年，一篇也没有。</p>
+<p>写这些的人后来写了 <em>Designing Data-Intensive Applications</em>（《数据密集型应用系统设计》）——一代工程师用来思考数据库的那本书。看上去像转行，但他一次都没换过题目。</p>
+<p>一台让你按错键的售票机，和一个把「repeatable read」（可重复读）在三个产品里指三件不同事情的数据库，是同一个 bug。这不是我的类比，是他 2014 年自己写下的，而他说的是 ACID 事务：</p>
+<blockquote><span class="en">The levels basically have no intuitive meaning, because they are an incredibly leaky abstraction — they are defined by implementation detail, not because someone thought they'd make a great API.</span><span class="zh">这些级别基本没有任何直觉含义，因为它们是一个漏得不能再漏的抽象——它们是由实现细节定义出来的，而不是因为有人觉得它们能构成一套好 API。</span><cite>Hermitage: Testing the “I” in ACID, 2014</cite></blockquote>
+<h3>他较劲的那件事</h3>
+<p>他为写书去查「隔离级别到底保证什么」，结果发现<strong>词本身是空的</strong>：PostgreSQL、MySQL、SQL Server 都有一个叫 repeatable read 的级别，三家含义各不相同；Oracle 那个写着 serializable 的级别根本不可串行化。更要命的是——差点让一家比特币交易所破产的那个并发漏洞，<strong>绝大多数号称 ACID 的数据库在默认配置下也防不住。</strong></p>
+<p>危险不在于你搞不清，而在于<strong>你以为自己是安全的</strong>。一个听起来像承诺、实际上只是在描述某人 1975 年那套实现的名字，会让你在错误的地方放心。此后十年他一次次回到同一个动作：不去解那道题，先把大家用来看这道题的眼镜摘下来检查镜片。</p>
+<h3>他最狠的那一下</h3>
+<p>2015 年，他回去读 CAP 定理的原始证明，发现里面的词全不是大家以为的意思：Consistency 特指线性一致性，跟 ACID 里那个 C 毫无关系；Availability 要求<strong>每一个</strong>没挂的节点都能应答；Partition tolerance 根本不是选项。而那个定理的系统模型是<strong>一个读写寄存器</strong>——跨对象的事务压根不在射程内，延迟更是一个字没提。</p>
+<p>然后他一个一个去归类真实系统，一个都归不进去。单主复制的关系数据库：写不了所以不 CAP-available，读从库又不线性一致，两边都不是。ZooKeeper——所有教科书里「CP 系统」的标准例子——默认读不线性一致，写要多数派所以不 CAP-available，而 3.4.0 加的只读模式反倒是 CAP-available 的。</p>
+<blockquote><span class="en">They are neither “CP” nor “AP”, they are just “P”, whatever that means. (Yes, the “two out of three” formulation does allow you to pick only one out of three, or even none out of three!)</span><span class="zh">它们既不是「CP」也不是「AP」，它们就是「P」，不管那是什么意思。（是的，「三选二」这个说法确实允许你三个里只拿到一个，甚至一个都拿不到！）</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
+<p>他要说的不止是「这标签不够准」，而是它会<strong>反转判断</strong>：ZooKeeper 那个「AP」只读模式仍然给你历史写入的全序，比 Cassandra 的「AP」强出好几个量级——「把它们扔进同一个桶里是荒谬的」。一比特装不下这些差别，而人们正在拿这一比特做架构决策。</p>
+<h3>然后他把这套做法推到了尽头</h3>
+<p>2016 年，他发现 Redis 官网推荐的分布式锁 Redlock 把「时钟大致准、进程不会长时间暂停」偷偷当成了公理——一次 GC 停顿就能让两个客户端同时以为自己持锁。修法是 fencing token：一个只增不减的数字，存储端必须拒绝编号倒退的写入。<strong>好的共识算法在时序崩坏时会变慢，但不会做出错误的决定；Redlock 会。</strong></p>
+<p>2015 年他盯着数据库的复制流看，发现那条 UPDATE 一进日志就变成了不可变的事实，而索引、缓存、物化视图其实是同一件事的三个名字——只不过索引是数据库的责任、缓存是你的责任，于是前者优雅后者灾难。提议：把那条一直被藏着的复制流<strong>翻到外面</strong>，让它成为唯一的写入口，所有数据库都只是它的物化视图。</p>
+<p>2021 年他说 GPL 已经没用了——不是因为它坏，是因为<strong>敌人换了</strong>。今天把你的数据拿走的不是闭源，是云：一次无预警的封号就够了。而互联网档案馆让十万个历史程序在浏览器里跑起来，<strong>从来没拿到过源代码</strong>——可见保住软件自由的不是开源，是「你手里有一份拷贝」。于是有了 local-first software：数据在你自己的硬盘上，同时保留实时协作。技术押注是 CRDT，而 CRDT 恰恰是人脑推不清楚的那类东西，所以他去证明助手里把它证了一遍。</p>
+<p>2025 年底他预测大模型会让形式化验证变成主流，理由很像他：<strong>「它胡说八道也没关系，因为证明检查器会拒绝任何无效的证明，逼那个 AI 代理重来。」</strong></p>
+<p>十九年是一条完整的升级路线：<strong>先要更准的词，再要更好的架构，再要机器检查的证明，最后给出一个想要这一切的政治理由。</strong>起点是一台德国售票机。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>一件怪事</h2>
+<p>把 martin.kleppmann.com 的归档页从头拉到尾，126 篇，跨十九年。<strong>前 70 篇里——2007 到 2009 这三年——跟数据库沾边的只有一篇。</strong></p>
+<p>其余六十九篇写的是这些：《燃气灶的可用性》。《火车售票机——英国 vs 德国（上）》，五个月后的《德国的火车售票机（下）》，再五个月后的《德国售票机的最新进展》。《找到离我最近的厕所、咖喱，随便什么》。《Windows Vista 更新界面截图》。《「是／否／取消」让阿司匹林销量暴涨》。</p>
+<p>光 2008 年一年他发了 <strong>31 篇</strong>。而 2023 年一整年，<strong>一篇也没有</strong>。</p>
+<p>写这些东西的人，后来写了 <em>Designing Data-Intensive Applications</em>（《数据密集型应用系统设计》，业内简称 DDIA）——一代工程师用来思考数据库的那本书，Kafka 的作者 Jay Kreps 称它是「过去十年里理解分布式系统最好的一本书」。</p>
+<p>看上去像一次彻底转行。但他一次都没换过题目。</p>
+<p>一台让你按错键的德国售票机，和一个把「repeatable read」（可重复读）在三个产品里指三件不同事情的数据库，在他眼里是同一个 bug。这不是我的类比——2014 年他自己写下了这句话，而他说的对象是 ACID 事务的隔离级别：</p>
+<blockquote><span class="en">The levels basically have no intuitive meaning, because they are an incredibly leaky abstraction — they are defined by implementation detail, not because someone thought they'd make a great API. And that's also why they are so hard to understand.</span><span class="zh">这些级别基本没有任何直觉含义，因为它们是一个漏得不能再漏的抽象——它们是由实现细节定义出来的，而不是因为有人觉得它们能构成一套好 API。这也正是它们为什么这么难懂。</span><cite>Hermitage: Testing the “I” in ACID, 2014 年 11 月</cite></blockquote>
+<p>这是一句用户体验投诉。对象是 ACID。</p>
+<h2>这人是谁</h2>
+<p>Martin Kleppmann，德国人，长年在剑桥。两家创业公司卖掉（Go Test It 2009 年卖给 Red Gate，Rapportive 2012 年卖给 LinkedIn），然后在 LinkedIn 做流处理框架 Apache Samza；2014 年他辞掉工作，<strong>整整一年没有收入</strong>，靠积蓄写那本书。现在是剑桥大学计算机系副教授，中间去慕尼黑工大做过两年（2022–2023）研究员又回来，方向是 local-first 协作软件与安全协议。DDIA 第二版 2026 年 3 月出版，与 Chris Riccomini 合著，670 页。</p>
+<p>一个有画面的细节：在他那张严肃的学术主页上，论文列表之间夹着一行——他写过一部音乐剧，《二月之塔》（Die Türme des Februar），2007 年首演，150 人的卡司。另一个：他把自己那本书的版税收入<strong>精确到美元</strong>公布在博客上，好让别人算得出这笔账划不划算。</p>
+<p>博客还活着，但慢得惊人：2007 年 20 篇，2008 年 31 篇，2009 年 19 篇；一路掉到 2018 年 1 篇、<strong>2023 年 0 篇</strong>、2025 年 1 篇（12 月 8 日）。不是停更——他 2026 年排了四场会议演讲，包括一场 SRDS 主旨报告。是一个高频博主变成了一个每年发一次的学者。</p>
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>CAP 定理</b> — 2000 年提出的一条广为流传的说法，通常被转述为「一致性、可用性、分区容错三者只能取其二」。本页大半篇幅在讲这个转述为什么是坏的。</li>
+<li><b>线性一致性（linearizability）</b> — 一种很强的一致性：让整个系统表现得好像数据只有一份。如果操作 B 在操作 A 成功完成之后才开始，B 就必须看到 A 之后的状态。</li>
+<li><b>事务隔离级别（isolation level）</b> — ACID 里的 I。数据库同时处理多个事务时，允许多大程度的互相干扰。级别名有「读已提交」「可重复读」「可串行化」等。</li>
+<li><b>CRDT（无冲突复制数据类型）</b> — 一类特殊数据结构：多个副本各自离线修改，之后不管以什么顺序合并结果都一样，且不需要中央服务器仲裁。协作编辑器的底层技术之一。</li>
+<li><b>形式化验证 / 证明助手（proof assistant）</b> — 用数学方式写下「这段代码应当满足什么性质」，再由机器逐步检查证明是否成立。Isabelle、Rocq、Lean 是常见的几种。它检查的是<strong>所有可能情况</strong>，不是你想到的那些测试用例。</li>
+</ul>
+</div>
+<h2>他跟什么较劲</h2>
+<p>2014 年，他在写 DDIA 的事务那一章，想把隔离级别讲清楚到读者能判断自己的代码在哪个级别下安全。结果他卡住了，因为他发现<strong>这些词本身是空的</strong>。</p>
+<p>他没有绕过去，而是干了件很笨的事：写了个叫 <a href="https://martin.kleppmann.com/2014/11/25/hermitage-testing-the-i-in-acid.html">Hermitage</a> 的测试套件，把学术论文里定义的每一种并发异常翻译成具体 SQL，拿去跑 PostgreSQL、MySQL、Oracle、SQL Server 的每一个隔离级别，看谁真挡住了。</p>
+<p>结果：三家都有一个叫 repeatable read 的级别，<strong>含义各不相同</strong>；Oracle 那个写着 serializable 的级别根本不可串行化，实际是快照隔离；SQL Server 默认的锁模式跟 1975 年的 System R 惊人地像。</p>
+<p>但最刺的一下在文章开头。他讲了个真实事故：一家比特币交易所因为出款路径上的竞态条件差点破产——攻击者并发发起大量提现，绕过了余额检查。网上评论一致：涉及钱就该用 ACID 数据库。然后他写：</p>
+<blockquote><span class="en">Yes, you read that right. Those databases — the ones that have probably processed the vast majority of commercial transactions over the last 20 years — do not by default guarantee that your transactions are protected from race conditions.</span><span class="zh">是的，你没看错。那些数据库——过去二十年里很可能处理了绝大多数商业交易的那些——在默认配置下并不保证你的事务免于竞态条件。</span><cite>Hermitage: Testing the “I” in ACID, 2014</cite></blockquote>
+<p>他还下了一道任何人都能当场验证的战书：<strong>在你公司里找一个人，让他不看文档、脱口说出「repeatable read」和「read committed」的区别，并举一个它们表现不同的例子。</strong>他赌你找不到——除非这人做过数据库内核。</p>
+<p>这就是他此后十年真正较劲的东西，它比「分布式系统很难」具体得多：<strong>让你相信假话的通常不是错误的代码，而是那些设计得很差、却被当成承诺来读的词。</strong>「repeatable read」听起来像保证，其实是在描述某人 1975 年那套实现的副作用；「ACID」听起来像安全证书，可那个 C 跟 CAP 里的 C 毫无关系；「这是个 CP 系统」听起来像架构判断，其实是把一堆压不扁的差别硬塞进了一比特。</p>
+<h2>他的想法，讲成「他怎么发现的」</h2>
+<h3>一、你的数据库既不是 CP 也不是 AP，它只是「P」</h3>
+<p>2015 年春天。当时「我们是 CP 的」「他们是 AP 的」已经成了架构讨论的通用语——起因是一篇很受欢迎的入门文章建议新人用 CAP 定理去评判系统。Kleppmann 说其他每一条他都同意，唯独这条不行，然后他做了件几乎没人做的事：<strong>回去读那个定理的原始证明，逐个词核对。</strong></p>
+<p>核对结果是四颗雷。Consistency 特指<strong>线性一致性</strong>，「跟 ACID 里那个 C 毫无关系，尽管那个 C 也叫 consistency」。Availability 的定义是每一个未故障节点收到的每个请求都必须返回非错误响应——是<strong>每一个</strong>节点，而很多号称「高可用」（意思是停机少）的系统根本不满足它。Partition tolerance（他说这名字起得糟透了）只是说「你在一个可能延迟或丢消息的异步网络上通信」，互联网和所有数据中心都有这个性质，<strong>你在这件事上没有选择权</strong>。最致命的第四颗：这个定理描述的系统模型是<strong>一个单独的读写寄存器</strong>，仅此而已——跨对象的事务不在射程内，延迟一个字都没提，一个「CAP-可用」的系统允许慢到天荒地老仍算可用。</p>
+<blockquote><span class="en">Mathematics requires precision. The proof only holds if you use the words with the same meaning as they are used in the proof.</span><span class="zh">数学要求精确。只有当你使用的词与证明中使用的是同一个意思时，那个证明才成立。</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
+<p>接着是这篇文章真正的重量：<strong>他一个一个去归类真实系统，然后一个都归不进去。</strong>单主复制的关系数据库——绝大多数生产环境的标准配置——和主库断连就写不了，不是 CAP-available（不管市场材料上怎么印「高可用」）；但允许读异步从库就会读到旧数据，也不线性一致。两边都不是。带快照隔离的数据库更是<strong>故意</strong>非线性一致的，因为强上去会砍掉并发度。MongoDB 同样两边都不是。</p>
+<p>压轴的是 ZooKeeper——所有教科书里「用了共识算法，所以是明摆着的 CP 系统」的标准例子。他去翻官方文档：ZooKeeper <strong>默认的读不是线性一致的</strong>（每个客户端连到一个节点就读那个节点，哪怕别处有更新的写）；加一条 <code>sync</code> 能拿到线性一致，但有性能代价，所以默认不开。写需要多数派，少数派那边的节点虽然活着却处理不了写，<strong>也不是 CAP-available</strong>。而 3.4.0 加的只读模式让少数派能继续服务读——<strong>那个模式反倒是 CAP-available 的</strong>。</p>
+<blockquote><span class="en">They are neither “CP” nor “AP”, they are just “P”, whatever that means. (Yes, the “two out of three” formulation does allow you to pick only one out of three, or even none out of three!)</span><span class="zh">它们既不是「CP」也不是「AP」，它们就是「P」，不管那是什么意思。（是的，「三选二」这个说法确实允许你三个里只拿到一个，甚至一个都拿不到！）</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
+<p>而他对 ZooKeeper 的不满是<strong>反方向</strong>的，这一点最能说明他在乎什么：因为默认不线性一致就说它「不一致」也严重歪曲了它——它提供原子广播加会话级因果一致性，比「读你自己的写」「单调读」「一致前缀读」三条加起来还强。他要的不是骂这些系统，是要说明<strong>一比特装不下这些差别，而人们正在拿这一比特做架构决策</strong>：ZooKeeper 那个「AP」只读模式仍然给你历史写入的全序，比 Riak、Cassandra 的「AP」强出好几个量级——「把它们扔进同一个桶里是荒谬的」。</p>
+<p>最后是他的姿态。他没说「所以我发明一个更好的分类法」，他说：如果 CAP 不适用，<strong>你就得自己把取舍想一遍</strong>；你完全可以用你自己的定义来推理，「而且欢迎你去证明你自己的定理。但请别管它叫 CAP 定理，因为那个名字已经有人用了。」然后甩出一串论文链接让你自己读，并自己写了一篇经同行评审的正式论文《A Critique of the CAP Theorem》。</p>
+<h3>二、Redlock：一个算法把「时钟大致准」偷偷当成了公理</h3>
+<p>2016 年初，还是在给书做背景研究，他在 Redis 官网撞见一个叫 Redlock 的算法：在五个 Redis 实例上靠多数派投票实现容错的分布式锁，页面上写着欢迎懂分布式系统的人提意见。</p>
+<blockquote><span class="en">The algorithm instinctively set off some alarm bells in the back of my mind, so I spent a bit of time thinking about it and writing up these notes.</span><span class="zh">这个算法本能地让我后脑勺响起了警报，于是我花了点时间想了想，把这些笔记写了下来。</span><cite>How to do distributed locking, 2016</cite></blockquote>
+<p>他补了句现实压力：已经有超过十个独立实现了，而没人知道谁在靠它撑着什么。</p>
+<p>他的第一刀不是技术，是<strong>一个分类问题</strong>，而这一刀决定了整篇的结构。你拿这把锁干什么？区分方法是问：<strong>如果锁失效了，会发生什么？</strong>为<strong>效率</strong>加锁，失效的代价是多付给 AWS 五美分，或者用户收到两封一样的邮件。为<strong>正确性</strong>加锁，失效的代价是「一个损坏的文件、数据丢失、永久性的不一致、<strong>给病人用错剂量的药</strong>，或者别的什么严重问题」。</p>
+<p>然后是那一击。他先放上一段任何人都会写的代码：拿锁、读文件、改、写回、释放。然后说：<strong>哪怕你有一个完美无缺的锁服务，这段代码也是错的。</strong>客户端 1 拿到租约（带超时的锁，这是好设计，否则崩溃的客户端会永久占着锁），然后它的垃圾回收器开始一次「停止世界」的暂停，暂停超过了租约有效期。客户端 1 醒来，对此一无所知，继续往下写——而客户端 2 早已拿到锁开始干活。数据坏了。HBase 真出过这个 bug。</p>
+<p>你也不能靠「写之前再检查一次有没有过期」来修，因为 GC <strong>可以在任意一点</strong>暂停你的线程，包括最后那次检查和写操作之间那个对你最不利的位置。而对那些觉得「我的语言没有 GC 所以没事」的人，他把退路堵死：</p>
+<blockquote><span class="en">Maybe your process tried to read an address that is not yet loaded into memory, so it gets a page fault and is paused until the page is loaded from disk. Maybe your disk is actually EBS, and so reading a variable unwittingly turned into a synchronous network request over Amazon's congested network. […] Maybe someone accidentally sent SIGSTOP to the process. Whatever. Your processes will get paused.</span><span class="zh">也许你的进程读了一个还没载入内存的地址，于是触发缺页中断，被暂停到那一页从磁盘读上来为止。也许你的磁盘其实是 EBS，于是「读一个变量」不知不觉变成了一次穿过亚马逊拥塞网络的同步网络请求。……也许有人手滑给这个进程发了个 SIGSTOP。随便什么。<strong>反正你的进程一定会被暂停。</strong></span><cite>How to do distributed locking, 2016</cite></blockquote>
+<p>修法简单到令人生气：<strong>fencing token（栅栏令牌）</strong>。锁服务每发一次锁就附一个严格递增的数字。客户端 1 拿到 33，暂停；客户端 2 拿到 34，带着 34 写入成功；客户端 1 醒来带着 33 去写——<strong>存储服务器记得自己已经处理过 34，于是拒绝 33。</strong>注意责任转移：存储端必须主动检查令牌、拒绝倒退的写，「但这并不特别难，一旦你知道了这个窍门」。用 ZooKeeper 的话，现成的 zxid 就是合格的令牌。</p>
+<p>而 Redlock 给不出这个数字。它的唯一随机值没有单调性；在一个节点上放计数器，那节点会挂；在几个节点上各放一个，它们会不一致。他的结论带着黑色幽默：<strong>「很可能你需要一个共识算法，才能生成这些 fencing token。」</strong>——那你当初为什么要用 Redlock？</p>
+<p>然后是全篇最可迁移的那一层，也是它十年后还在被引用的原因。主流分布式算法（Raft、Paxos、Zab、Viewstamped Replication）<strong>不对时序做任何假设</strong>：进程可以任意长暂停，包可以任意延迟，时钟可以任意错。它们只把时钟用来生成超时，而超时只是猜测，不是判决。</p>
+<blockquote><span class="en">In plain English, this means that even if the timings in the system are all over the place (processes pausing, networks delaying, clocks jumping forwards and backwards), the performance of an algorithm might go to hell, but the algorithm will never make an incorrect decision.</span><span class="zh">说人话就是：哪怕系统里的时序全乱套了（进程在暂停、网络在延迟、时钟在前跳后跳），算法的性能可能烂到家，但<strong>算法永远不会做出错误的决定</strong>。</span><cite>How to do distributed locking, 2016</cite></blockquote>
+<p>Redlock 不是这样的：<strong>它的安全性本身建立在时序假设上</strong>——所有节点大约在正确时长后过期、网络延迟远小于过期时间、进程暂停远短于过期时间。在管理良好的数据中心里这些<strong>大部分时候</strong>成立，而这正是他要钉死的地方：「如果你的正确性依赖这把锁，『大部分时候』是不够的——你需要它<strong>永远</strong>正确。」判词是「neither fish nor fowl」（非鱼非禽）：对效率锁过于笨重昂贵，对正确性锁又不够安全。</p>
+<p>这篇还有个细节比论证更能说明这个人。文末致谢名单里，除了 Kyle Kingsbury、Camille Fournier、Flavio Junqueira，还有 <strong>Salvatore Sanfilippo</strong>——Redis 的作者，也就是他正在拆的这个算法的发明人。<strong>他把稿子寄给了被批评的人，发表前。</strong>次日对方发表反驳，他没删文也没长篇辩护，只加了一小段更新：</p>
+<blockquote><span class="en">He makes some good points, but I stand by my conclusions. […] but please form your own opinions – and please consult the references below, many of which have received rigorous academic peer review (unlike either of our blog posts).</span><span class="zh">他提了一些很好的点，但我坚持我的结论。……但<strong>请形成你自己的判断</strong>——也请去看下面的参考文献，其中很多经过了严格的学术同行评审（不像我们俩的博客文章）。</span><cite>How to do distributed locking, 2016 年 2 月 9 日更新</cite></blockquote>
+<h3>三、把数据库翻过来：日志才是真相，数据库只是它的缓存</h3>
+<p>这一条的发现过程，从盯着一件所有人每天都做、却从没细看的小事开始。</p>
+<p>你执行一条 <code>UPDATE</code>：把顾客 123 购物车里商品 999 的数量从 1 改成 3。数据库找到那一行，把 1 覆盖成 3。完事。但如果有从库，主库还得把这次修改传过去，其中一种做法是写下这条查询<strong>产生的效果</strong>——哪一行被改了，新值是什么。</p>
+<p>Kleppmann 在这里停住了，因为有件事悄悄发生了。你写下的是一条<strong>命令</strong>：「去把满足某条件的行改掉。」而复制流里流出来的是另一种东西——一个<strong>事件</strong>。</p>
+<blockquote><span class="en">And this is a fact — even if the customer later removes the item from their cart, or changes the quantity again, or goes away and never comes back, that doesn't change the fact that this state change occurred. The fact always remains true.</span><span class="zh">而这是一个事实——哪怕这位顾客后来把商品从购物车里删了，或者又改了数量，或者干脆走了再没回来，都不改变「这次状态变更发生过」这个事实。<strong>事实永远为真。</strong></span><cite>Turning the database inside-out, 2015</cite></blockquote>
+<p>换句话说：就算你完全按传统方式用数据库、老老实实用新状态覆盖旧状态，<strong>数据库内部其实一直在把你的命令翻译成一串不可变的事件</strong>。只不过这被藏在公开接口后面，被明确划为「实现细节」。</p>
+<p>先记住这点。他接着去看第二件事：<strong>索引</strong>。你写一句 <code>CREATE INDEX</code>，数据库扫全表建出一个辅助结构。索引不增加任何新信息，只是把已有数据换种结构摆放，删掉它不丢数据。更妙的是它<strong>持续</strong>维护：底表一变索引自动跟上，而且往往是事务一致的——事务回滚，索引的改动也回滚；PostgreSQL 甚至能在一张持续被写入的大表上在线建索引，<strong>索引构建器在追一个移动的靶子，而它追上了</strong>。</p>
+<p>第三件事：<strong>应用层缓存</strong>。而这件事是个灾难。缓存失效——底层数据变了，你怎么知道该让哪些条目过期？推算的失效算法又脆又易错，靠 TTL 就得接受脏数据。竞态条件——两个进程并发写库和写缓存，两边顺序可能是反的。冷启动——重启缓存后每个请求都是 miss，数据库被瞬间打爆。</p>
+<blockquote><span class="en">I suspect that most of us building these systems just pretend that the race conditions don't exist, because they are just too much to think about.</span><span class="zh">我怀疑我们这些造系统的人，大多数只是假装那些竞态条件不存在，因为它们实在太费脑子了。</span><cite>Turning the database inside-out, 2015</cite></blockquote>
+<p>对比就摆在那里：建二级索引是一行 SQL，数据库全自动、事务一致、还能在线建；维护缓存是一坨失效逻辑、竞态条件和运维事故。<strong>但这两件事在数学上是同一件事</strong>——都是从原始数据派生出来、结构不同、用来加快读取的冗余结构，丢了都能重建。那为什么一个优雅一个灾难？不是难度不同。<strong>是因为一个是数据库的责任，另一个是你的责任。</strong></p>
+<p>两条线到这里接上了，提议自然浮出来：</p>
+<blockquote><span class="en">What if we changed our infrastructure so that the replication stream was not an implementation detail, but a key part of the public interface of the database? What if we turn the database inside-out, take the implementation detail that was previously hidden, and make it a top-level concern?</span><span class="zh">如果我们改造基础设施，让复制流不再是一个实现细节，而成为数据库公开接口的关键部分呢？如果我们<strong>把数据库翻过来</strong>，把原先藏起来的那个实现细节拿出来，当成最顶层的关注点呢？</span><cite>Turning the database inside-out, 2015</cite></blockquote>
+<figure>
+<svg viewbox="0 0 700 300" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah" markerheight="6" markerwidth="7" orient="auto" refx="6" refy="3"><path d="M0,0 L7,3 L0,6 z" fill="#6ea8fe"></path></marker>
+<marker id="ah2" markerheight="6" markerwidth="7" orient="auto" refx="6" refy="3"><path d="M0,0 L7,3 L0,6 z" fill="#5eead4"></path></marker></defs>
+<text fill="#7d8794" font-family="monospace" font-size="12" x="10" y="18">传统架构</text>
+<rect fill="rgba(110,168,254,.08)" height="34" rx="6" stroke="#6ea8fe" width="96" x="10" y="34"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="11" text-anchor="middle" x="58" y="56">应用</text>
+<rect fill="rgba(110,168,254,.08)" height="34" rx="6" stroke="#6ea8fe" width="112" x="168" y="34"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="11" text-anchor="middle" x="224" y="56">数据库（可变）</text>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-width="1.5" x1="110" x2="163" y1="45" y2="45"></line>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-width="1.5" x1="163" x2="110" y1="59" y2="59"></line>
+<text fill="#7d8794" font-family="monospace" font-size="10" x="118" y="42">写</text>
+<text fill="#7d8794" font-family="monospace" font-size="10" x="118" y="76">读</text>
+<rect fill="none" height="26" rx="5" stroke="#5f6b77" stroke-dasharray="4 3" width="120" x="300" y="38"></rect>
+<text fill="#5f6b77" font-family="monospace" font-size="10" text-anchor="middle" x="360" y="55">复制流（隐藏）</text>
+<line stroke="#5f6b77" stroke-dasharray="3 3" x1="282" x2="298" y1="51" y2="51"></line>
+<line stroke="rgba(110,168,254,.2)" x1="10" x2="690" y1="100" y2="100"></line>
+<text fill="#5eead4" font-family="monospace" font-size="12" x="10" y="126">翻过来之后</text>
+<rect fill="rgba(94,234,212,.08)" height="34" rx="6" stroke="#5eead4" width="96" x="10" y="150"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="11" text-anchor="middle" x="58" y="172">应用</text>
+<rect fill="rgba(94,234,212,.14)" height="52" rx="6" stroke="#5eead4" stroke-width="1.6" width="126" x="168" y="141"></rect>
+<text fill="#d5dce4" font-family="monospace" font-size="11" text-anchor="middle" x="231" y="163">只追加的日志</text>
+<text fill="#7d8794" font-family="monospace" font-size="9.5" text-anchor="middle" x="231" y="180">不可变事实的序列</text>
+<line marker-end="url(#ah2)" stroke="#5eead4" stroke-width="1.6" x1="110" x2="163" y1="167" y2="167"></line>
+<text fill="#7d8794" font-family="monospace" font-size="10" x="112" y="160">只写</text>
+<rect fill="rgba(110,168,254,.07)" height="28" rx="5" stroke="#6ea8fe" width="128" x="380" y="118"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="10" text-anchor="middle" x="444" y="136">键值存储</text>
+<rect fill="rgba(110,168,254,.07)" height="28" rx="5" stroke="#6ea8fe" width="128" x="380" y="153"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="10" text-anchor="middle" x="444" y="171">全文搜索索引</text>
+<rect fill="rgba(110,168,254,.07)" height="28" rx="5" stroke="#6ea8fe" width="128" x="380" y="188"></rect>
+<text fill="#b6c2cf" font-family="monospace" font-size="10" text-anchor="middle" x="444" y="206">分析系统 / 缓存</text>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-width="1.4" x1="296" x2="376" y1="160" y2="132"></line>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-width="1.4" x1="296" x2="376" y1="167" y2="167"></line>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-width="1.4" x1="296" x2="376" y1="174" y2="202"></line>
+<text fill="#7d8794" font-family="monospace" font-size="9.5" x="300" y="230">全部是物化视图，可随时从日志重建</text>
+<line marker-end="url(#ah)" stroke="#6ea8fe" stroke-dasharray="4 3" stroke-width="1.4" x1="560" x2="620" y1="167" y2="167"></line>
+<text fill="#7d8794" font-family="monospace" font-size="10" x="624" y="163">读</text>
+<text fill="#7d8794" font-family="monospace" font-size="10" x="624" y="178">在这里</text>
+<line stroke="#6ea8fe" stroke-dasharray="3 3" x1="508" x2="558" y1="132" y2="160"></line>
+<line stroke="#6ea8fe" stroke-dasharray="3 3" x1="508" x2="558" y1="167" y2="167"></line>
+<line stroke="#6ea8fe" stroke-dasharray="3 3" x1="508" x2="558" y1="202" y2="174"></line>
+<text fill="#5f6b77" font-family="monospace" font-size="9.5" x="10" y="260">读写彻底分开：写只往日志追加，读只查视图。日志决定顺序，所有视图按同一顺序应用，因而彼此一致。</text>
+</svg>
+<figcaption>「把数据库翻过来」：原本藏在内部的复制流被提到最外层，成为唯一的写入口</figcaption>
+</figure>
+<p>好处随之而来。物化视图是预先算好的，所以<strong>不存在缓存未命中</strong>——视图里没有就是数据库里没有，冷启动问题随之消失；而「日志把并发的非确定性从写入流里挤了出去」，所有基于同一份日志的视图按同一顺序应用变更，因而彼此一致，一整类竞态条件就此消失。出错也能修：部署了写坏数据的代码，你能回看日志里到底发生了什么并撤销它——他给的类比是<strong>「这就是为什么会计不用橡皮擦」</strong>。</p>
+<p>他由此推出一句至今最该被记账的预言：如果视图是被流更新的，客户端读完就可以不断开连接、视图一变服务器就推给它，那么请求—响应这个模型就不够用了——「基本上我是说，<strong>将来 REST 会不顶用</strong>，因为它建立在请求—响应模型上。」这句话怎么记账，留到第六节。</p>
+<h3>四、敌人换了：不是闭源，是云</h3>
+<p>2021 年 4 月，自由软件基金会把 Richard Stallman 重新请回董事会。Kleppmann 说他对此感到震惊，加入了要求撤换的呼声——「然而这不是我今天真正想谈的。」他想谈的是：借这个由头重新审视 copyleft，而理由跟 Stallman 毫无关系。</p>
+<blockquote><span class="en">The GPL and other copyleft licenses are not bad; I just think they're pointless.</span><span class="zh">GPL 和其他 copyleft 许可证并不坏；我只是觉得它们没有意义了。</span><cite>It's time to say goodbye to the GPL, 2021</cite></blockquote>
+<p>论证的形状还是那个：<strong>这件工具是为另一个时代的敌人设计的。</strong>1980、90 年代自由软件运动的敌人是卖闭源软件的公司，GPL 要破坏的是那个商业模式。但 2020 年代夺走你计算自由的不是闭源软件，是<strong>云软件</strong>：Google Docs、Trello、Slack、Figma、Notion——跑在厂商服务器上、你的数据也全在那上面的东西。</p>
+<p>他列的问题很难反驳。公司倒闭或停掉产品，软件就不工作了，你被锁在自己创造的文档外面；Google 可能<strong>毫无预警、没有申诉渠道</strong>地封掉你的账号，于是你突然被永久锁在你创建过的每一份文档之外。而 1990 年代那个「改不了闭源软件」的问题在云上更严重：本地闭源软件至少还有人能逆向出文件格式，云软件连这条路都没有，因为数据压根不在你的硬盘上。</p>
+<p>然后是这篇里最漂亮的一个证据。互联网档案馆收藏了<strong>超过十万个历史软件</strong>，你今天还能在浏览器的模拟器里把它们跑起来——<strong>而档案馆从来没拿到过它们的源代码</strong>。为了保存这个目的，跑编译好的机器码就够了。</p>
+<p>关键的不是开源。关键的是<strong>你手里有一份拷贝</strong>。于是那个被视为不可动摇的等式——「软件自由 = 开源」——被拆开了，而他推出的结论在开源社群里相当刺耳：</p>
+<blockquote><span class="en">It is nice for local-first software to also be open source, but this is not necessary: 90% of its benefits apply equally to closed-source local-first software.</span><span class="zh">local-first 软件如果同时是开源的当然很好，但这不是必需的：<strong>它 90% 的好处，同样适用于闭源的 local-first 软件。</strong></span><cite>It's time to say goodbye to the GPL, 2021</cite></blockquote>
+<p>而专门为堵住云这个漏洞设计的 AGPL 呢？他说它在经验上失败了：云厂商干脆不用 AGPL 的代码，要么换个宽松许可的实现，要么自己重写，要么买一份不带 copyleft 条款的商业授权。「我不认为这个许可证让任何本来不会开源的代码变成了开源。」</p>
+<p>他的正面方案就是他后半生的工作：<strong>local-first software</strong>。2019 年他和 Ink &amp; Switch 的三位合作者在 Onward! 会议上发表了同名论文，副标题是「You Own Your Data, in spite of the Cloud」。定义很朴素：软件跑在你自己的机器上、数据存在你自己的硬盘上，<strong>同时</strong>保留云软件的便利——实时协作、多设备同步。论文给了七条理想（以下为原文小标题）：</p>
+<ol>
+<li><b>No Spinners: Your Work at Your Fingertips</b> — 不转圈，操作即时响应本地数据，不等网络往返。</li>
+<li><b>Your Work Is Not Trapped on One Device</b> — 你的工作不被困在一台设备上。</li>
+<li><b>The Network Is Optional</b> — 网络是可选的，离线是正常状态而非故障。</li>
+<li><b>Seamless Collaboration with Your Colleagues</b> — 与同事的协作无缝，不靠「谁先保存谁赢」。</li>
+<li><b>The Long Now</b> — 几十年后你仍然打得开它，哪怕做它的公司早已不在。</li>
+<li><b>Security and Privacy by Default</b> — 安全与隐私是默认，不是选项。</li>
+<li><b>You Retain Ultimate Ownership and Control</b> — 你保有最终的所有权与控制权。</li>
+</ol>
+<p>第七条里他们特意澄清了「所有权」——这个动作本身很有他的风格：</p>
+<blockquote><span class="en">To disambiguate “ownership” in this context: we don't mean it in the legal sense of intellectual property. […] Instead we mean ownership in the sense of user agency, autonomy, and control over data.</span><span class="zh">为了消除「所有权」在这里的歧义：我们指的不是知识产权那个法律意义上的所有权。……我们指的是<strong>用户的能动性、自主性，以及对数据的控制</strong>这个意义上的所有权。</span><cite>Local-First Software: You Own Your Data, in spite of the Cloud, 2019</cite></blockquote>
+<p>技术押注是 CRDT。而正是在这里，十九年的线合上了口：<strong>CRDT 恰恰是人脑推不清楚的那类东西</strong>——它必须在消息任意乱序、丢失、重复的前提下保证收敛，可能的交错多到模型检查器也穷举不完，而「我觉得这样应该没问题」在这里是最危险的一句话，他一辈子都在拆这句话。所以他去了 Isabelle/HOL：用证明助手把分布式算法形式化，对<strong>所有可能的执行序列</strong>做归纳，而不是对你想到的那些测试用例。他也如实写下形式化验证的真实处境：难的不是证明，是<strong>想出那个既为真、又强到能推出你要的性质的不变量</strong>，而这一步目前只能靠人。</p>
+<p>2025 年 12 月 8 日，他发出一个预测：大模型会把形式化验证送进主流。他的算账很诚实——2009 年那个被完整证明过的 seL4 微内核，8,700 行 C 代码花了 <strong>20 人年</strong>、20 万行 Isabelle 代码，也就是<strong>每一行实现对应 23 行证明和半个人日</strong>；而全世界会写这种证明的人他毛估「也许几百个」。用经济学的话说：对多数系统，bug 的期望成本低于消灭它们所需的证明成本。而他认为大模型正好适合干这活，理由非常「他」：</p>
+<blockquote><span class="en">It doesn't matter if they hallucinate nonsense, because the proof checker will reject any invalid proof and force the AI agent to retry. The proof checker is a small amount of code that is itself verified, making it virtually impossible to sneak an invalid proof past the checker.</span><span class="zh">它胡说八道也没关系，因为<strong>证明检查器会拒绝任何无效的证明</strong>，逼那个 AI 代理重来。检查器只是一小段代码，而且它本身是被验证过的，这让偷渡一个无效证明几乎不可能。</span><cite>Prediction: AI will make formal verification go mainstream, 2025</cite></blockquote>
+<p>把四条线摞起来看，是一条完整的升级路线，每一级都在补上一级的缺口：<strong>先要更准的词（2015），因为词错了人会在错误的地方放心；再要更好的架构（2015），因为有些错误不该靠人小心翼翼地避开；再要机器检查的证明（2017–2022），因为最难的那类算法连小心翼翼都不够；最后给出一个想要这一切的理由（2019–2021），因为技术上最正确的方案如果没人有动机部署，它就不存在。</strong>起点是一台德国售票机。</p>
+<h2>他的思维方法</h2>
+<p><strong>1. 先把自己搞得很复杂，再把别人讲得很简单。</strong>Hermitage 那个跨四个数据库的测试工程，不是研究项目，是他为了写好书里的<strong>一章</strong>而做的背景调查。他交代得很清楚：「我得先把它对我自己搞复杂，才能把它对读者变简单（但仍然准确）。」顺序不能反：<strong>先做到准确再追求简单；从简单出发去追求准确，只会得到听起来很好懂的假话</strong>——比如「三选二」。</p>
+<p><strong>2. 换一个表示法，问题往往就没了。</strong>这是他最早也最一贯的招数，早在碰数据库之前就用熟了。2011 年他想搞懂公司财报，会计书读到头晕，最后发现：</p>
+<blockquote><span class="en">Eventually I figured it out: basic accounting is just graph theory. The traditional ways of representing financial information hide that structure astonishingly well, but once I had figured out that it was just a graph, it suddenly all made sense.</span><span class="zh">最后我搞明白了：<strong>基础会计就是图论。</strong>传统那套表示金融信息的方式把这个结构藏得惊人地好，但一旦我意识到它就是一张图，一切忽然就通了。</span><cite>Accounting for Computer Scientists, 2011</cite></blockquote>
+<p>账户是节点，交易是边，余额是进出边的差。一年前他用画图解释可转债估值上限，开头一模一样。而 2010 年那篇《直觉没有传输编码》几乎是他后半生的说明书：直觉像脑子里一张巨大的位图，快、好用、<strong>但传不出去</strong>；要传给别人必须<strong>转成矢量图</strong>——挑对几个点和几条曲线。他给的理由极其务实：<strong>为了让团队能吵架</strong>。「直觉默认不附带理由：你『就是知道』答案是 X，但你不知道为什么。」——DDIA 本身就是一次大规模的矢量化。</p>
+<p><strong>3. 直觉说不清就算一遍，哪怕结论吓人。</strong>常识说三副本很安全：单盘故障 0.1%，三个一起挂是十亿分之一，比被小行星砸中还难。2017 年他把二项分布老实写下来，加上所有人都忽略的那个变量——<strong>集群里有多少个分片</strong>（Cassandra 默认每节点 256 个）：</p>
+<blockquote><span class="en">Yes, you read that correctly: the risk of losing all three copies of some data is twice as great as the risk of losing a single node! What is the point of all this replication again?</span><span class="zh">是的，你没看错：<strong>永久丢掉某份数据全部三个副本的风险，是丢掉单个节点的风险的两倍！</strong>那我们做这么多复制到底图什么？</span><cite>The probability of data loss in large clusters, 2017</cite></blockquote>
+<p>直觉之所以错，是因为它问的是「这三块特定的盘会不会一起坏」；而在 8,000 节点的集群里任何时刻都必然有几个节点是死的，真正的问题是<strong>有没有某个分片的三个副本恰好落在那几个死节点上</strong>。分片越多，中招机会越多。</p>
+<p><strong>4. 把稿子寄给你要批评的那个人，并明确标出自己不知道的地方。</strong>他几乎每篇技术文末都有致谢名单，而拆 Redlock 那篇的名单里有算法作者本人——<strong>最能找出你论证漏洞的人，正是被你论证针对的人。</strong>同一种品性也表现在反面：数据丢失那篇写完他自己问「这在实践中是个问题吗？」，回答是<strong>「我不知道。」</strong>会计那篇结尾是「如果你发现错误，请告诉我」；可转债那篇的免责声明更直白：「我既不是律师，这方面经验也不多，所以我的解释可能错得离谱，或者干脆就是错的。」</p>
+<p><strong>5. 把值不值得做算成一笔账，并把账本公开。</strong>2020 年那篇《写书值得吗？》，他把版税逐项列出，合计 <strong>108,079 册、$477,916</strong>；成本那侧也如实报：约 2.5 个全职年，其中一年完全没有收入。结论是这大致等同于同期在硅谷做工程师的总收入——「<strong>但我当时并不知道会这样！</strong>版税很容易低十倍。」然后他算了笔更有意思的账：假设十万读者里只有 10% 真用上了，每人少走一个月弯路，就是 833 个工程师年，杠杆超过 300 倍。</p>
+<blockquote><span class="en">How to be a 10x engineer: help ten other engineers be twice as good. Producing high-quality educational materials enables you to be a 300x engineer.</span><span class="zh">怎么当一个 10 倍工程师：<strong>帮十个工程师各变强两倍。</strong>而生产高质量的教育材料，能让你当一个 300 倍工程师。</span><cite>Writing a book: is it worth it?, 2020</cite></blockquote>
+<p>账本另一侧他同样没有美化：写书的难度对他而言「跟做一家创业公司并把它卖掉差不多，也就是说，经历了好几次存在主义危机」，而且——<strong>「写作的过程对我的心理健康不好。」</strong>这大概也解释了他博客的曲线：2008 年 31 篇，2023 年 0 篇。</p>
+<h2>他哪里可能是错的</h2>
+<p><strong>一、他最响亮的那个预言，十一年后没兑现。</strong>2015 年他说「将来 REST 会不顶用」。2026 年，REST 仍是这个星球上默认的 API 风格；「把数据库翻过来」在 Kafka 生态里成了真实但局部的架构，没有一个变成默认选项。<strong>而且他自己当年就标出了那个缺口</strong>：文末他说人们问得最多的是「那事务怎么办？」，回答是「这算是个开放的研究问题」。一个需要把事务列为开放问题的架构很难成为主流，这他当时就知道，却没有让它减弱结论的力度。</p>
+<p><strong>二、local-first 七年过去，云依然在赢。</strong>Google Docs、Notion、Figma 的统治没有松动。他的诊断是 CRDT 还不够成熟——这确实是原因之一。但有一层他讲得不多，我把它标明为我的判断而非他的：<strong>很多人留在云上不是因为合并算法，而是因为「不用管」</strong>——不用管备份，不用管换手机，不用管硬盘坏了。「你拥有你的数据」这个承诺隐含地把运维责任还给了用户，而这份责任恰恰是云替他们扛走、也因此赢得他们的东西。七条理想里没有一条是「你不必再关心你的数据活在哪里」。</p>
+<p><strong>三、GPL 那篇没有用上他自己的标准。</strong>这是全站最值得单独看的一处不一致。在技术问题上他从不接受「我觉得」：核对 CAP 他逐个系统去归类，谈数据丢失他把二项分布写出来，讲隔离级别他建了个跨四家数据库的测试套件。但论证 copyleft 对开源的成功不重要时，他给的是「哪怕在那些用 GPL 的项目里（比如 Linux），<strong>我也怀疑</strong> copyleft 这一面是否真的是成功的重要因素」。没有数据，没有反事实，没有对比案例；同篇里关于 AGPL 失败的判断也是同样形状。这未必意味着他错了——这些判断听起来相当合理——而是说：<strong>这一篇不该和他别的文章享受同一级别的信任</strong>，而它恰好是全站政治性最强的一篇。识别这种落差的本事，是他自己教给读者的。</p>
+<p><strong>四、2025 年那个预测既有利益相关，又把最难的一环一句话带过。</strong>他预测形式化验证即将主流化——而他本人正是用 Isabelle 证明分布式算法的人。更要紧的是他自己点出了真正的难处：验证自动化之后，挑战会转移到<strong>正确地写下规约</strong>，「你怎么知道被证明的那些性质，就是你真正在乎的那些性质？」这几乎就是形式化验证六十年来真正卡住的地方——不是证明太贵，是规约写不对。而他对此的处理是：AI 或许也能帮着翻译规约，「这里存在微妙之处在翻译中丢失的可能，但<strong>这看起来是个可控的风险</strong>。」用他自己对付 Redlock 的标准看，这一句有问题：当年 Redlock 的毛病正是<strong>把一个关键假设降格成背景噪声</strong>——「时钟大概是准的」。而「规约大概能翻译对」是同一种句式。</p>
+<p><strong>五、Redlock 那场争论的另一方，本页没有读到。</strong>Salvatore Sanfilippo（antirez）在原文发表次日发表了反驳，地址是 antirez.com/news/101（2016 年 2 月 9 日），Hacker News 上有对应讨论串。<strong>写作本页时该域名在我们的网络环境下打不开，因此这里只报这条书目事实，不复述我没有读到的论证。</strong>能确认的只有 Kleppmann 自己写在更新里的回应，而那段回应本身值得看：他没有摆胜者姿态，说对方提了很好的点、自己坚持结论，然后把判断权交给读者和参考文献，并顺带指出「我们俩的博客文章」都没经过同行评审。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html">Please stop calling databases CP or AP</a></span><span class="d">2015 年 5 月。逐词核对 CAP 定理的定义，再一个一个去归类真实数据库，结果一个都归不进去。他配套写了一篇经同行评审的论文《A Critique of the CAP Theorem》。</span></li>
+<li><span class="t"><a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">How to do distributed locking</a></span><span class="d">2016 年 2 月。拆解 Redis 的 Redlock：为效率加锁和为正确性加锁是两件事；GC 停顿和网络延迟会击穿任何基于时间的锁；fencing token 的来历。致谢名单里有算法作者本人。</span></li>
+<li><span class="t"><a href="https://martin.kleppmann.com/2015/03/04/turning-the-database-inside-out.html">Turning the database inside-out with Apache Samza</a></span><span class="d">2015 年 3 月，Strange Loop 演讲的文字稿。从复制、索引、缓存、物化视图四件事推出同一个结论：写只往不可变日志追加，所有数据库都是它的派生视图。</span></li>
+<li><span class="t"><a href="https://martin.kleppmann.com/2021/04/14/goodbye-gpl.html">It's time to say goodbye to the GPL</a></span><span class="d">2021 年 4 月。论证 copyleft 已失效，因为它瞄准的是 1990 年的敌人；真正夺走你数据的是云，而互联网档案馆在没有源代码的情况下保住了十万个程序。</span></li>
+<li><span class="t"><a href="https://martin.kleppmann.com/papers/local-first.pdf">Local-First Software: You Own Your Data, in spite of the Cloud</a></span><span class="d">2019 年 Onward! 论文（PDF，与 Ink &amp; Switch 三位合著）。七条理想的原始出处，以及为什么 CRDT 被选为技术押注。</span></li>
+<li><span class="t"><a href="https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html">Prediction: AI will make formal verification go mainstream</a></span><span class="d">2025 年 12 月，全站最新一篇。seL4 那笔账（8,700 行 C 代码换 20 人年证明），以及为什么证明脚本可能是大模型最合适的活。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-12" data-slug="martin-kleppmanns-blog">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-12</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
