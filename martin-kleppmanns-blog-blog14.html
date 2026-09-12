@@ -52,7 +52,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <div class="langbar"><a href="martin-kleppmanns-blog-blog14.en.html">English →</a></div>
 <header>
 <div class="kicker">博客精读 · 14 · martin.kleppmann.com</div>
-<h1>Martin Kleppmann<br/>骗你的不是代码，是描述系统的那些词</h1>
+<h1 data-tts="66d1a8d53ff98ba8">Martin Kleppmann<br/>骗你的不是代码，是描述系统的那些词</h1>
 <p class="sub">2007 年 7 月至今 · 126 篇 · 仍在更新但极慢（2008 年 31 篇，2023 年 0 篇，2025 年 1 篇，最新 2025 年 12 月 8 日；2026 年已排四场演讲）· 两次转折：2012 年前后从可用性／创业写作转向数据系统，2016 年前后从工业界转向学术与形式化验证 · 本页通读 16 篇，跨度 2008 年 6 月至 2025 年 12 月，选文以他自己首页的「Highlights」为准</p>
 </header>
 <div class="modebar">
@@ -66,15 +66,15 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>写这些的人后来写了 <em>Designing Data-Intensive Applications</em>（《数据密集型应用系统设计》）——一代工程师用来思考数据库的那本书。看上去像转行，但他一次都没换过题目。</p>
 <p>一台让你按错键的售票机，和一个把「repeatable read」（可重复读）在三个产品里指三件不同事情的数据库，是同一个 bug。这不是我的类比，是他 2014 年自己写下的，而他说的是 ACID 事务：</p>
 <blockquote><span class="en">The levels basically have no intuitive meaning, because they are an incredibly leaky abstraction — they are defined by implementation detail, not because someone thought they'd make a great API.</span><span class="zh">这些级别基本没有任何直觉含义，因为它们是一个漏得不能再漏的抽象——它们是由实现细节定义出来的，而不是因为有人觉得它们能构成一套好 API。</span><cite>Hermitage: Testing the “I” in ACID, 2014</cite></blockquote>
-<h3>他较劲的那件事</h3>
+<h3 data-tts="754bc2cf6d923788">他较劲的那件事</h3>
 <p>他为写书去查「隔离级别到底保证什么」，结果发现<strong>词本身是空的</strong>：PostgreSQL、MySQL、SQL Server 都有一个叫 repeatable read 的级别，三家含义各不相同；Oracle 那个写着 serializable 的级别根本不可串行化。更要命的是——差点让一家比特币交易所破产的那个并发漏洞，<strong>绝大多数号称 ACID 的数据库在默认配置下也防不住。</strong></p>
 <p>危险不在于你搞不清，而在于<strong>你以为自己是安全的</strong>。一个听起来像承诺、实际上只是在描述某人 1975 年那套实现的名字，会让你在错误的地方放心。此后十年他一次次回到同一个动作：不去解那道题，先把大家用来看这道题的眼镜摘下来检查镜片。</p>
-<h3>他最狠的那一下</h3>
+<h3 data-tts="1ed3cbd0816c6ce1">他最狠的那一下</h3>
 <p>2015 年，他回去读 CAP 定理的原始证明，发现里面的词全不是大家以为的意思：Consistency 特指线性一致性，跟 ACID 里那个 C 毫无关系；Availability 要求<strong>每一个</strong>没挂的节点都能应答；Partition tolerance 根本不是选项。而那个定理的系统模型是<strong>一个读写寄存器</strong>——跨对象的事务压根不在射程内，延迟更是一个字没提。</p>
 <p>然后他一个一个去归类真实系统，一个都归不进去。单主复制的关系数据库：写不了所以不 CAP-available，读从库又不线性一致，两边都不是。ZooKeeper——所有教科书里「CP 系统」的标准例子——默认读不线性一致，写要多数派所以不 CAP-available，而 3.4.0 加的只读模式反倒是 CAP-available 的。</p>
 <blockquote><span class="en">They are neither “CP” nor “AP”, they are just “P”, whatever that means. (Yes, the “two out of three” formulation does allow you to pick only one out of three, or even none out of three!)</span><span class="zh">它们既不是「CP」也不是「AP」，它们就是「P」，不管那是什么意思。（是的，「三选二」这个说法确实允许你三个里只拿到一个，甚至一个都拿不到！）</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
 <p>他要说的不止是「这标签不够准」，而是它会<strong>反转判断</strong>：ZooKeeper 那个「AP」只读模式仍然给你历史写入的全序，比 Cassandra 的「AP」强出好几个量级——「把它们扔进同一个桶里是荒谬的」。一比特装不下这些差别，而人们正在拿这一比特做架构决策。</p>
-<h3>然后他把这套做法推到了尽头</h3>
+<h3 data-tts="49484ca384aec7d4">然后他把这套做法推到了尽头</h3>
 <p>2016 年，他发现 Redis 官网推荐的分布式锁 Redlock 把「时钟大致准、进程不会长时间暂停」偷偷当成了公理——一次 GC 停顿就能让两个客户端同时以为自己持锁。修法是 fencing token：一个只增不减的数字，存储端必须拒绝编号倒退的写入。<strong>好的共识算法在时序崩坏时会变慢，但不会做出错误的决定；Redlock 会。</strong></p>
 <p>2015 年他盯着数据库的复制流看，发现那条 UPDATE 一进日志就变成了不可变的事实，而索引、缓存、物化视图其实是同一件事的三个名字——只不过索引是数据库的责任、缓存是你的责任，于是前者优雅后者灾难。提议：把那条一直被藏着的复制流<strong>翻到外面</strong>，让它成为唯一的写入口，所有数据库都只是它的物化视图。</p>
 <p>2021 年他说 GPL 已经没用了——不是因为它坏，是因为<strong>敌人换了</strong>。今天把你的数据拿走的不是闭源，是云：一次无预警的封号就够了。而互联网档案馆让十万个历史程序在浏览器里跑起来，<strong>从来没拿到过源代码</strong>——可见保住软件自由的不是开源，是「你手里有一份拷贝」。于是有了 local-first software：数据在你自己的硬盘上，同时保留实时协作。技术押注是 CRDT，而 CRDT 恰恰是人脑推不清楚的那类东西，所以他去证明助手里把它证了一遍。</p>
@@ -83,7 +83,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </div>
 <!-- ============ 完整版 ============ -->
 <div class="mode-deep" hidden="" id="mode-deep">
-<h2>一件怪事</h2>
+<h2 data-tts="c19f04f422872fe8">一件怪事</h2>
 <p>把 martin.kleppmann.com 的归档页从头拉到尾，126 篇，跨十九年。<strong>前 70 篇里——2007 到 2009 这三年——跟数据库沾边的只有一篇。</strong></p>
 <p>其余六十九篇写的是这些：《燃气灶的可用性》。《火车售票机——英国 vs 德国（上）》，五个月后的《德国的火车售票机（下）》，再五个月后的《德国售票机的最新进展》。《找到离我最近的厕所、咖喱，随便什么》。《Windows Vista 更新界面截图》。《「是／否／取消」让阿司匹林销量暴涨》。</p>
 <p>光 2008 年一年他发了 <strong>31 篇</strong>。而 2023 年一整年，<strong>一篇也没有</strong>。</p>
@@ -92,11 +92,11 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>一台让你按错键的德国售票机，和一个把「repeatable read」（可重复读）在三个产品里指三件不同事情的数据库，在他眼里是同一个 bug。这不是我的类比——2014 年他自己写下了这句话，而他说的对象是 ACID 事务的隔离级别：</p>
 <blockquote><span class="en">The levels basically have no intuitive meaning, because they are an incredibly leaky abstraction — they are defined by implementation detail, not because someone thought they'd make a great API. And that's also why they are so hard to understand.</span><span class="zh">这些级别基本没有任何直觉含义，因为它们是一个漏得不能再漏的抽象——它们是由实现细节定义出来的，而不是因为有人觉得它们能构成一套好 API。这也正是它们为什么这么难懂。</span><cite>Hermitage: Testing the “I” in ACID, 2014 年 11 月</cite></blockquote>
 <p>这是一句用户体验投诉。对象是 ACID。</p>
-<h2>这人是谁</h2>
+<h2 data-tts="e662a881599906c7">这人是谁</h2>
 <p>Martin Kleppmann，德国人，长年在剑桥。两家创业公司卖掉（Go Test It 2009 年卖给 Red Gate，Rapportive 2012 年卖给 LinkedIn），然后在 LinkedIn 做流处理框架 Apache Samza；2014 年他辞掉工作，<strong>整整一年没有收入</strong>，靠积蓄写那本书。现在是剑桥大学计算机系副教授，中间去慕尼黑工大做过两年（2022–2023）研究员又回来，方向是 local-first 协作软件与安全协议。DDIA 第二版 2026 年 3 月出版，与 Chris Riccomini 合著，670 页。</p>
 <p>一个有画面的细节：在他那张严肃的学术主页上，论文列表之间夹着一行——他写过一部音乐剧，《二月之塔》（Die Türme des Februar），2007 年首演，150 人的卡司。另一个：他把自己那本书的版税收入<strong>精确到美元</strong>公布在博客上，好让别人算得出这笔账划不划算。</p>
 <p>博客还活着，但慢得惊人：2007 年 20 篇，2008 年 31 篇，2009 年 19 篇；一路掉到 2018 年 1 篇、<strong>2023 年 0 篇</strong>、2025 年 1 篇（12 月 8 日）。不是停更——他 2026 年排了四场会议演讲，包括一场 SRDS 主旨报告。是一个高频博主变成了一个每年发一次的学者。</p>
-<h2>Glossary · 术语表</h2>
+<h2 data-tts="abf2ce7d727f2f2b">Glossary · 术语表</h2>
 <div class="glossary">
 <ul>
 <li><b>CAP 定理</b> — 2000 年提出的一条广为流传的说法，通常被转述为「一致性、可用性、分区容错三者只能取其二」。本页大半篇幅在讲这个转述为什么是坏的。</li>
@@ -106,7 +106,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><b>形式化验证 / 证明助手（proof assistant）</b> — 用数学方式写下「这段代码应当满足什么性质」，再由机器逐步检查证明是否成立。Isabelle、Rocq、Lean 是常见的几种。它检查的是<strong>所有可能情况</strong>，不是你想到的那些测试用例。</li>
 </ul>
 </div>
-<h2>他跟什么较劲</h2>
+<h2 data-tts="e6685ab800d3071a">他跟什么较劲</h2>
 <p>2014 年，他在写 DDIA 的事务那一章，想把隔离级别讲清楚到读者能判断自己的代码在哪个级别下安全。结果他卡住了，因为他发现<strong>这些词本身是空的</strong>。</p>
 <p>他没有绕过去，而是干了件很笨的事：写了个叫 <a href="https://martin.kleppmann.com/2014/11/25/hermitage-testing-the-i-in-acid.html">Hermitage</a> 的测试套件，把学术论文里定义的每一种并发异常翻译成具体 SQL，拿去跑 PostgreSQL、MySQL、Oracle、SQL Server 的每一个隔离级别，看谁真挡住了。</p>
 <p>结果：三家都有一个叫 repeatable read 的级别，<strong>含义各不相同</strong>；Oracle 那个写着 serializable 的级别根本不可串行化，实际是快照隔离；SQL Server 默认的锁模式跟 1975 年的 System R 惊人地像。</p>
@@ -114,8 +114,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">Yes, you read that right. Those databases — the ones that have probably processed the vast majority of commercial transactions over the last 20 years — do not by default guarantee that your transactions are protected from race conditions.</span><span class="zh">是的，你没看错。那些数据库——过去二十年里很可能处理了绝大多数商业交易的那些——在默认配置下并不保证你的事务免于竞态条件。</span><cite>Hermitage: Testing the “I” in ACID, 2014</cite></blockquote>
 <p>他还下了一道任何人都能当场验证的战书：<strong>在你公司里找一个人，让他不看文档、脱口说出「repeatable read」和「read committed」的区别，并举一个它们表现不同的例子。</strong>他赌你找不到——除非这人做过数据库内核。</p>
 <p>这就是他此后十年真正较劲的东西，它比「分布式系统很难」具体得多：<strong>让你相信假话的通常不是错误的代码，而是那些设计得很差、却被当成承诺来读的词。</strong>「repeatable read」听起来像保证，其实是在描述某人 1975 年那套实现的副作用；「ACID」听起来像安全证书，可那个 C 跟 CAP 里的 C 毫无关系；「这是个 CP 系统」听起来像架构判断，其实是把一堆压不扁的差别硬塞进了一比特。</p>
-<h2>他的想法，讲成「他怎么发现的」</h2>
-<h3>一、你的数据库既不是 CP 也不是 AP，它只是「P」</h3>
+<h2 data-tts="49eed549310e0d5d">他的想法，讲成「他怎么发现的」</h2>
+<h3 data-tts="2ae0db2a0c789179">一、你的数据库既不是 CP 也不是 AP，它只是「P」</h3>
 <p>2015 年春天。当时「我们是 CP 的」「他们是 AP 的」已经成了架构讨论的通用语——起因是一篇很受欢迎的入门文章建议新人用 CAP 定理去评判系统。Kleppmann 说其他每一条他都同意，唯独这条不行，然后他做了件几乎没人做的事：<strong>回去读那个定理的原始证明，逐个词核对。</strong></p>
 <p>核对结果是四颗雷。Consistency 特指<strong>线性一致性</strong>，「跟 ACID 里那个 C 毫无关系，尽管那个 C 也叫 consistency」。Availability 的定义是每一个未故障节点收到的每个请求都必须返回非错误响应——是<strong>每一个</strong>节点，而很多号称「高可用」（意思是停机少）的系统根本不满足它。Partition tolerance（他说这名字起得糟透了）只是说「你在一个可能延迟或丢消息的异步网络上通信」，互联网和所有数据中心都有这个性质，<strong>你在这件事上没有选择权</strong>。最致命的第四颗：这个定理描述的系统模型是<strong>一个单独的读写寄存器</strong>，仅此而已——跨对象的事务不在射程内，延迟一个字都没提，一个「CAP-可用」的系统允许慢到天荒地老仍算可用。</p>
 <blockquote><span class="en">Mathematics requires precision. The proof only holds if you use the words with the same meaning as they are used in the proof.</span><span class="zh">数学要求精确。只有当你使用的词与证明中使用的是同一个意思时，那个证明才成立。</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
@@ -124,7 +124,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">They are neither “CP” nor “AP”, they are just “P”, whatever that means. (Yes, the “two out of three” formulation does allow you to pick only one out of three, or even none out of three!)</span><span class="zh">它们既不是「CP」也不是「AP」，它们就是「P」，不管那是什么意思。（是的，「三选二」这个说法确实允许你三个里只拿到一个，甚至一个都拿不到！）</span><cite>Please stop calling databases CP or AP, 2015</cite></blockquote>
 <p>而他对 ZooKeeper 的不满是<strong>反方向</strong>的，这一点最能说明他在乎什么：因为默认不线性一致就说它「不一致」也严重歪曲了它——它提供原子广播加会话级因果一致性，比「读你自己的写」「单调读」「一致前缀读」三条加起来还强。他要的不是骂这些系统，是要说明<strong>一比特装不下这些差别，而人们正在拿这一比特做架构决策</strong>：ZooKeeper 那个「AP」只读模式仍然给你历史写入的全序，比 Riak、Cassandra 的「AP」强出好几个量级——「把它们扔进同一个桶里是荒谬的」。</p>
 <p>最后是他的姿态。他没说「所以我发明一个更好的分类法」，他说：如果 CAP 不适用，<strong>你就得自己把取舍想一遍</strong>；你完全可以用你自己的定义来推理，「而且欢迎你去证明你自己的定理。但请别管它叫 CAP 定理，因为那个名字已经有人用了。」然后甩出一串论文链接让你自己读，并自己写了一篇经同行评审的正式论文《A Critique of the CAP Theorem》。</p>
-<h3>二、Redlock：一个算法把「时钟大致准」偷偷当成了公理</h3>
+<h3 data-tts="fd968031cf1e2ea6">二、Redlock：一个算法把「时钟大致准」偷偷当成了公理</h3>
 <p>2016 年初，还是在给书做背景研究，他在 Redis 官网撞见一个叫 Redlock 的算法：在五个 Redis 实例上靠多数派投票实现容错的分布式锁，页面上写着欢迎懂分布式系统的人提意见。</p>
 <blockquote><span class="en">The algorithm instinctively set off some alarm bells in the back of my mind, so I spent a bit of time thinking about it and writing up these notes.</span><span class="zh">这个算法本能地让我后脑勺响起了警报，于是我花了点时间想了想，把这些笔记写了下来。</span><cite>How to do distributed locking, 2016</cite></blockquote>
 <p>他补了句现实压力：已经有超过十个独立实现了，而没人知道谁在靠它撑着什么。</p>
@@ -139,7 +139,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>Redlock 不是这样的：<strong>它的安全性本身建立在时序假设上</strong>——所有节点大约在正确时长后过期、网络延迟远小于过期时间、进程暂停远短于过期时间。在管理良好的数据中心里这些<strong>大部分时候</strong>成立，而这正是他要钉死的地方：「如果你的正确性依赖这把锁，『大部分时候』是不够的——你需要它<strong>永远</strong>正确。」判词是「neither fish nor fowl」（非鱼非禽）：对效率锁过于笨重昂贵，对正确性锁又不够安全。</p>
 <p>这篇还有个细节比论证更能说明这个人。文末致谢名单里，除了 Kyle Kingsbury、Camille Fournier、Flavio Junqueira，还有 <strong>Salvatore Sanfilippo</strong>——Redis 的作者，也就是他正在拆的这个算法的发明人。<strong>他把稿子寄给了被批评的人，发表前。</strong>次日对方发表反驳，他没删文也没长篇辩护，只加了一小段更新：</p>
 <blockquote><span class="en">He makes some good points, but I stand by my conclusions. […] but please form your own opinions – and please consult the references below, many of which have received rigorous academic peer review (unlike either of our blog posts).</span><span class="zh">他提了一些很好的点，但我坚持我的结论。……但<strong>请形成你自己的判断</strong>——也请去看下面的参考文献，其中很多经过了严格的学术同行评审（不像我们俩的博客文章）。</span><cite>How to do distributed locking, 2016 年 2 月 9 日更新</cite></blockquote>
-<h3>三、把数据库翻过来：日志才是真相，数据库只是它的缓存</h3>
+<h3 data-tts="a4516b92c53e8cc8">三、把数据库翻过来：日志才是真相，数据库只是它的缓存</h3>
 <p>这一条的发现过程，从盯着一件所有人每天都做、却从没细看的小事开始。</p>
 <p>你执行一条 <code>UPDATE</code>：把顾客 123 购物车里商品 999 的数量从 1 改成 3。数据库找到那一行，把 1 覆盖成 3。完事。但如果有从库，主库还得把这次修改传过去，其中一种做法是写下这条查询<strong>产生的效果</strong>——哪一行被改了，新值是什么。</p>
 <p>Kleppmann 在这里停住了，因为有件事悄悄发生了。你写下的是一条<strong>命令</strong>：「去把满足某条件的行改掉。」而复制流里流出来的是另一种东西——一个<strong>事件</strong>。</p>
@@ -198,7 +198,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </figure>
 <p>好处随之而来。物化视图是预先算好的，所以<strong>不存在缓存未命中</strong>——视图里没有就是数据库里没有，冷启动问题随之消失；而「日志把并发的非确定性从写入流里挤了出去」，所有基于同一份日志的视图按同一顺序应用变更，因而彼此一致，一整类竞态条件就此消失。出错也能修：部署了写坏数据的代码，你能回看日志里到底发生了什么并撤销它——他给的类比是<strong>「这就是为什么会计不用橡皮擦」</strong>。</p>
 <p>他由此推出一句至今最该被记账的预言：如果视图是被流更新的，客户端读完就可以不断开连接、视图一变服务器就推给它，那么请求—响应这个模型就不够用了——「基本上我是说，<strong>将来 REST 会不顶用</strong>，因为它建立在请求—响应模型上。」这句话怎么记账，留到第六节。</p>
-<h3>四、敌人换了：不是闭源，是云</h3>
+<h3 data-tts="117ef3945a032bd8">四、敌人换了：不是闭源，是云</h3>
 <p>2021 年 4 月，自由软件基金会把 Richard Stallman 重新请回董事会。Kleppmann 说他对此感到震惊，加入了要求撤换的呼声——「然而这不是我今天真正想谈的。」他想谈的是：借这个由头重新审视 copyleft，而理由跟 Stallman 毫无关系。</p>
 <blockquote><span class="en">The GPL and other copyleft licenses are not bad; I just think they're pointless.</span><span class="zh">GPL 和其他 copyleft 许可证并不坏；我只是觉得它们没有意义了。</span><cite>It's time to say goodbye to the GPL, 2021</cite></blockquote>
 <p>论证的形状还是那个：<strong>这件工具是为另一个时代的敌人设计的。</strong>1980、90 年代自由软件运动的敌人是卖闭源软件的公司，GPL 要破坏的是那个商业模式。但 2020 年代夺走你计算自由的不是闭源软件，是<strong>云软件</strong>：Google Docs、Trello、Slack、Figma、Notion——跑在厂商服务器上、你的数据也全在那上面的东西。</p>
@@ -223,7 +223,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>2025 年 12 月 8 日，他发出一个预测：大模型会把形式化验证送进主流。他的算账很诚实——2009 年那个被完整证明过的 seL4 微内核，8,700 行 C 代码花了 <strong>20 人年</strong>、20 万行 Isabelle 代码，也就是<strong>每一行实现对应 23 行证明和半个人日</strong>；而全世界会写这种证明的人他毛估「也许几百个」。用经济学的话说：对多数系统，bug 的期望成本低于消灭它们所需的证明成本。而他认为大模型正好适合干这活，理由非常「他」：</p>
 <blockquote><span class="en">It doesn't matter if they hallucinate nonsense, because the proof checker will reject any invalid proof and force the AI agent to retry. The proof checker is a small amount of code that is itself verified, making it virtually impossible to sneak an invalid proof past the checker.</span><span class="zh">它胡说八道也没关系，因为<strong>证明检查器会拒绝任何无效的证明</strong>，逼那个 AI 代理重来。检查器只是一小段代码，而且它本身是被验证过的，这让偷渡一个无效证明几乎不可能。</span><cite>Prediction: AI will make formal verification go mainstream, 2025</cite></blockquote>
 <p>把四条线摞起来看，是一条完整的升级路线，每一级都在补上一级的缺口：<strong>先要更准的词（2015），因为词错了人会在错误的地方放心；再要更好的架构（2015），因为有些错误不该靠人小心翼翼地避开；再要机器检查的证明（2017–2022），因为最难的那类算法连小心翼翼都不够；最后给出一个想要这一切的理由（2019–2021），因为技术上最正确的方案如果没人有动机部署，它就不存在。</strong>起点是一台德国售票机。</p>
-<h2>他的思维方法</h2>
+<h2 data-tts="4fa69ce8580d4015">他的思维方法</h2>
 <p><strong>1. 先把自己搞得很复杂，再把别人讲得很简单。</strong>Hermitage 那个跨四个数据库的测试工程，不是研究项目，是他为了写好书里的<strong>一章</strong>而做的背景调查。他交代得很清楚：「我得先把它对我自己搞复杂，才能把它对读者变简单（但仍然准确）。」顺序不能反：<strong>先做到准确再追求简单；从简单出发去追求准确，只会得到听起来很好懂的假话</strong>——比如「三选二」。</p>
 <p><strong>2. 换一个表示法，问题往往就没了。</strong>这是他最早也最一贯的招数，早在碰数据库之前就用熟了。2011 年他想搞懂公司财报，会计书读到头晕，最后发现：</p>
 <blockquote><span class="en">Eventually I figured it out: basic accounting is just graph theory. The traditional ways of representing financial information hide that structure astonishingly well, but once I had figured out that it was just a graph, it suddenly all made sense.</span><span class="zh">最后我搞明白了：<strong>基础会计就是图论。</strong>传统那套表示金融信息的方式把这个结构藏得惊人地好，但一旦我意识到它就是一张图，一切忽然就通了。</span><cite>Accounting for Computer Scientists, 2011</cite></blockquote>
@@ -235,13 +235,13 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>5. 把值不值得做算成一笔账，并把账本公开。</strong>2020 年那篇《写书值得吗？》，他把版税逐项列出，合计 <strong>108,079 册、$477,916</strong>；成本那侧也如实报：约 2.5 个全职年，其中一年完全没有收入。结论是这大致等同于同期在硅谷做工程师的总收入——「<strong>但我当时并不知道会这样！</strong>版税很容易低十倍。」然后他算了笔更有意思的账：假设十万读者里只有 10% 真用上了，每人少走一个月弯路，就是 833 个工程师年，杠杆超过 300 倍。</p>
 <blockquote><span class="en">How to be a 10x engineer: help ten other engineers be twice as good. Producing high-quality educational materials enables you to be a 300x engineer.</span><span class="zh">怎么当一个 10 倍工程师：<strong>帮十个工程师各变强两倍。</strong>而生产高质量的教育材料，能让你当一个 300 倍工程师。</span><cite>Writing a book: is it worth it?, 2020</cite></blockquote>
 <p>账本另一侧他同样没有美化：写书的难度对他而言「跟做一家创业公司并把它卖掉差不多，也就是说，经历了好几次存在主义危机」，而且——<strong>「写作的过程对我的心理健康不好。」</strong>这大概也解释了他博客的曲线：2008 年 31 篇，2023 年 0 篇。</p>
-<h2>他哪里可能是错的</h2>
+<h2 data-tts="9f4b1fe7c3e024cb">他哪里可能是错的</h2>
 <p><strong>一、他最响亮的那个预言，十一年后没兑现。</strong>2015 年他说「将来 REST 会不顶用」。2026 年，REST 仍是这个星球上默认的 API 风格；「把数据库翻过来」在 Kafka 生态里成了真实但局部的架构，没有一个变成默认选项。<strong>而且他自己当年就标出了那个缺口</strong>：文末他说人们问得最多的是「那事务怎么办？」，回答是「这算是个开放的研究问题」。一个需要把事务列为开放问题的架构很难成为主流，这他当时就知道，却没有让它减弱结论的力度。</p>
 <p><strong>二、local-first 七年过去，云依然在赢。</strong>Google Docs、Notion、Figma 的统治没有松动。他的诊断是 CRDT 还不够成熟——这确实是原因之一。但有一层他讲得不多，我把它标明为我的判断而非他的：<strong>很多人留在云上不是因为合并算法，而是因为「不用管」</strong>——不用管备份，不用管换手机，不用管硬盘坏了。「你拥有你的数据」这个承诺隐含地把运维责任还给了用户，而这份责任恰恰是云替他们扛走、也因此赢得他们的东西。七条理想里没有一条是「你不必再关心你的数据活在哪里」。</p>
 <p><strong>三、GPL 那篇没有用上他自己的标准。</strong>这是全站最值得单独看的一处不一致。在技术问题上他从不接受「我觉得」：核对 CAP 他逐个系统去归类，谈数据丢失他把二项分布写出来，讲隔离级别他建了个跨四家数据库的测试套件。但论证 copyleft 对开源的成功不重要时，他给的是「哪怕在那些用 GPL 的项目里（比如 Linux），<strong>我也怀疑</strong> copyleft 这一面是否真的是成功的重要因素」。没有数据，没有反事实，没有对比案例；同篇里关于 AGPL 失败的判断也是同样形状。这未必意味着他错了——这些判断听起来相当合理——而是说：<strong>这一篇不该和他别的文章享受同一级别的信任</strong>，而它恰好是全站政治性最强的一篇。识别这种落差的本事，是他自己教给读者的。</p>
 <p><strong>四、2025 年那个预测既有利益相关，又把最难的一环一句话带过。</strong>他预测形式化验证即将主流化——而他本人正是用 Isabelle 证明分布式算法的人。更要紧的是他自己点出了真正的难处：验证自动化之后，挑战会转移到<strong>正确地写下规约</strong>，「你怎么知道被证明的那些性质，就是你真正在乎的那些性质？」这几乎就是形式化验证六十年来真正卡住的地方——不是证明太贵，是规约写不对。而他对此的处理是：AI 或许也能帮着翻译规约，「这里存在微妙之处在翻译中丢失的可能，但<strong>这看起来是个可控的风险</strong>。」用他自己对付 Redlock 的标准看，这一句有问题：当年 Redlock 的毛病正是<strong>把一个关键假设降格成背景噪声</strong>——「时钟大概是准的」。而「规约大概能翻译对」是同一种句式。</p>
 <p><strong>五、Redlock 那场争论的另一方，本页没有读到。</strong>Salvatore Sanfilippo（antirez）在原文发表次日发表了反驳，地址是 antirez.com/news/101（2016 年 2 月 9 日），Hacker News 上有对应讨论串。<strong>写作本页时该域名在我们的网络环境下打不开，因此这里只报这条书目事实，不复述我没有读到的论证。</strong>能确认的只有 Kleppmann 自己写在更新里的回应，而那段回应本身值得看：他没有摆胜者姿态，说对方提了很好的点、自己坚持结论，然后把判断权交给读者和参考文献，并顺带指出「我们俩的博客文章」都没经过同行评审。</p>
-<h2>出处</h2>
+<h2 data-tts="e785ba76c2b3ef6b">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html">Please stop calling databases CP or AP</a></span><span class="d">2015 年 5 月。逐词核对 CAP 定理的定义，再一个一个去归类真实数据库，结果一个都归不进去。他配套写了一篇经同行评审的论文《A Critique of the CAP Theorem》。</span></li>
 <li><span class="t"><a href="https://martin.kleppmann.com/2016/02/08/how-to-do-distributed-locking.html">How to do distributed locking</a></span><span class="d">2016 年 2 月。拆解 Redis 的 Redlock：为效率加锁和为正确性加锁是两件事；GC 停顿和网络延迟会击穿任何基于时间的锁；fencing token 的来历。致谢名单里有算法作者本人。</span></li>
@@ -251,7 +251,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://martin.kleppmann.com/2025/12/08/ai-formal-verification.html">Prediction: AI will make formal verification go mainstream</a></span><span class="d">2025 年 12 月，全站最新一篇。seL4 那笔账（8,700 行 C 代码换 20 人年证明），以及为什么证明脚本可能是大模型最合适的活。</span></li>
 </ul>
 <section class="updates" data-last-reviewed="2026-09-12" data-slug="martin-kleppmanns-blog">
-<h2>更新记录</h2>
+<h2 data-tts="04a590354c373a4e">更新记录</h2>
 <!-- updates -->
 </section>
 </div>
