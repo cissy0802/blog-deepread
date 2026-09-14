@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nadia Asparouhova · nadia.xyz — 开源从来不是社区，是一个人在看台前当空管</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="nadia-xyz-blog16.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 16 · nadia.xyz</div>
+<h1>Nadia Asparouhova<br/>没人拥有的东西，是谁在扛</h1>
+<p class="sub">2014 年 3 月至 2024 年 6 月 · 75 篇 · 跨度 10 年 · 两次明显转折：2018 年前后从零散评论转入开源田野研究，2022 年前后从开源转向科技财富与思想的组织形态 · 博客自 2024 年 6 月停更，写作移到 Monomythical 通讯（最新一篇 2025 年 8 月）· 本页通读 16 篇，跨度 2014 年 4 月至 2025 年 3 月，其中 2 篇来自最早期，另参考一篇 2020 年长访谈</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2018 年 11 月，一个叫 Ayrton Sparling 的开发者发现，npm 上一个叫 event-stream 的小模块里藏着一段偷比特币钱包的代码。</p>
+<p>让所有人失去理智的不是有人下毒，是<strong>下毒的人是怎么拿到钥匙的</strong>。</p>
+<p>event-stream 的作者 Dominic Tarr 把提交权限交给了一个素不相识的人，理由是对方发邮件问他要。愤怒的用户说这等于开门让第一个敲门的陌生人进来，然后自己穿上外套出门上班了一整天。而 Tarr 的回应，用 Nadia Asparouhova 的话说，"maddeningly sincere"——真诚到令人抓狂：</p>
+<blockquote><span class="en">He emailed me and said he wanted to maintain the module, so I gave it to him.</span><span class="zh">他发邮件说他想维护这个模块，所以我就给他了。</span><cite>转引自 The rise of few-maintainer projects, Increment, 2019 年 5 月</cite></blockquote>
+<p>几乎所有人都把这件事读成一个人的失职。Nadia 把它读成一份<strong>关于世界已经悄悄换了模样、而没人通知我们的证据</strong>。</p>
+<p>她去数了数。2014 年一项研究发现，<strong>93% 的 npm 模块只有一个维护者</strong>。2015 年对 GitHub 热门项目的研究发现，近三分之二只有一到两个维护者，样本里超过 50 个贡献者的项目不到 3%。游戏引擎 Godot 在 2018 年被开了 <strong>9471 个 issue</strong>（每周约 182 个），而它自称只有<strong>两名核心开发者</strong>。</p>
+<p>我们脑子里那个开源——一群人围着一个共同目标、卷起袖子、民主议事——描述的是一小撮项目。Nadia 写道：</p>
+<blockquote><span class="en">Instead of a community of developers looking after the entire Rube Goldberg machine, we've now got individual developers in charge of a pulley here, a marble there.</span><span class="zh">不再是一个开发者社区照看整台鲁布·戈德堡机械，现在是一个个单干的开发者，各管一根滑轮、一颗弹珠。</span><cite>The rise of few-maintainer projects, 2019 年 5 月</cite></blockquote>
+<p>更要命的是 GitHub 把参与的门槛降到了零。于是贡献者人数暴涨，但每一个人参与得更浅：2016 年一项研究里，近一半贡献者<strong>只贡献过一次</strong>，合计占不到 2% 的提交量。维护者面对的不再是协作，是<strong>调度</strong>——</p>
+<blockquote><span class="en">open source often looks more like a few developers playing air traffic controller to thousands of users who are lightly involved.</span><span class="zh">开源现在更像是几个开发者，给成千上万轻度参与的用户当空中交通管制员。</span><cite>同上</cite></blockquote>
+<p>这句话改写了整个问题。如果维护者是空管，那开源的成本就不在"写代码"这一侧，而在<strong>注意力</strong>这一侧；而所有"我们需要更多贡献者"的解决方案，等于往塔台里再塞一千架飞机。所以她的处方是反的：不是招人，是<strong>设计摩擦</strong>——issue 模板、机器人、文档，把举证责任推回给提问的人。</p>
+<p>这也是为什么她说，那个念旧的社区叙事该退休了：</p>
+<blockquote><span class="en">While open source is still participatory, it doesn't look like Linux anymore. Perhaps it never did.</span><span class="zh">开源仍然是参与式的，但它不再长得像 Linux 了。也许它从来就不像。</span><cite>同上</cite></blockquote>
+<p>把这个判断写成一本书，就是 2020 年的《Working in Public》（《公开工作》）。书里她给开源项目分了类：<strong>federation</strong>（联邦，很多贡献者很多用户，Linux 那种）、<strong>club</strong>（俱乐部，人人卷袖子但规模有界）、<strong>stadium</strong>（看台，极少数人在场上、海量的人在看台上）、<strong>toy</strong>（玩具，自己写着玩）。她的观察是：看台型正在吃掉一切，而看台上的人一直被告知开源"应该是"参与式的，所以<strong>连自己说了算都不好意思</strong>。她说他们该大方一点。</p>
+<p>然后是这本书真正的赌注。她在 2025 年回头承认，她写它是因为：</p>
+<blockquote><span class="en">what was happening to open source developers – who, in the face of overwhelming demand for their attention, were withdrawing from public online spaces – was going to happen to all of us.</span><span class="zh">当年发生在开源开发者身上的事——面对压倒性的注意力索取，他们从公共网络空间里撤退——将要发生在我们所有人身上。</span><cite>Introducing: Antimemetics, 2025 年 3 月</cite></blockquote>
+<p>这句话是打开这个头脑的钥匙。她研究的从来不是开源，是<strong>一件没人拥有的东西，究竟是谁在扛，扛的人付了什么代价</strong>——她的第一份报告标题里就有那个词：<em>unseen labor</em>，看不见的劳动。后来同一个问题换了题材：慈善、科研经费、人才、注意力。</p>
+<p>而答案的第二层更奇怪。她越挖越倾向于认为，<strong>真正有能动性的不是人，是想法</strong>。2019 年她写下本站读到过的最狠的一句自我描述：</p>
+<blockquote><span class="en">I like thinking of people as vessels… You might think of this as "great prophet theory".</span><span class="zh">我喜欢把人想成容器……你可以把这叫作"伟大先知理论"。</span><cite>The tyranny of ideas, 2019 年 5 月</cite></blockquote>
+<p>相对于"伟人理论"（great man theory），她的版本是：人不是变革的主体，是某个抓住了他的想法-病毒的<strong>传声筒</strong>。"想法骑着我们上战场，像骑战马。"由此推出一个漂亮的推论：名声是想法留在宿主身上的东西——<strong>"Reputation is a list of your chronic afflictions"（名声是你的慢性病清单）</strong>。由此也推出她对"不要脸"这种策略的分析：当一个人被群体唾弃却越骂越红，是因为在边界模糊的网络社群里，制裁不再是制裁，而是<strong>朝夜空打出的一发信号弹</strong>。至于那人自己聪不聪明、是不是有意为之，她说根本不重要——"The shameless person is simply a host for a set of ideas"（不要脸的人只是一组想法的宿主）。</p>
+<p>把这条线拉到尽头，就是她 2025 年那本《Antimemetics》（《反模因》）：既然有些想法能自己传播，那一定有些想法<strong>结构上无法传播</strong>——禁忌、认知偏误、"我们都知道该做但总是忘了做"的事。她开玩笑说这本书其实该叫《Working in Private》（《私下工作》）。</p>
+<p>这个人的说服力有一个很具体的来源：<strong>她真的去数</strong>。写维护者的注意力成本时，她用 BigQuery 拉出一年内 issue 最多的 GitHub 项目，清掉镜像和垃圾仓库，手工过了前 100 个项目的支持体系，把数据集公开。顺手她还验了一下自己的假设：明星数（stars）能不能当支持负担的代理指标？皮尔逊相关系数 <strong>0.22</strong>。不能。她就把这条写进了文章，顺手废掉了整个圈子最常用的那个指标。</p>
+<p>她也会在自己最得意的框架后面加一个脚注。讲完人才分布的三种模型、把麦肯锡文化和硅谷文化的差异全解释了一遍之后，最后一个脚注整句话是：<strong>"I don't know if this is true or not. It's a hypothesis!"</strong>（我不知道这是不是真的。这是个假说！）</p>
+<p>至于她哪里可能是错的：2022 年 5 月，她在《Idea machines》里把 Sam Bankman-Fried 的入场写成给有效利他主义"注入了新的生命"。六个月后 FTX 塌了。那段话今天还原封不动挂在页面上——她没删。而这恰恰暴露了那个框架的盲点：在"思想机器"的零件清单里——意识形态、共同体、议程、出资人、操盘手——<strong>没有一个零件叫问责</strong>。资本只是燃料。她用"多元"回答了"集中"，但多元只决定谁的想法拿得到钱，不决定拿到钱的人对谁负责。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>一件怪事</h2>
+<p>2018 年 11 月，一个叫 Ayrton Sparling 的开发者在 npm 上一个叫 event-stream 的小模块里，发现了一段偷比特币钱包的恶意代码。</p>
+<p>让整个 JavaScript 世界失去理智的不是有人下毒。是<strong>下毒的人是怎么拿到钥匙的</strong>。</p>
+<p>event-stream 的作者 Dominic Tarr，把这个模块的提交权限交给了一个用户名叫 right9ctrl 的陌生人。理由是：对方发邮件问他要。拿到权限之后，right9ctrl 做了任何人都能预料的事——直奔贵重物品而去。一位叫 XhmikosR 的用户在 issue 里写："你把几百万人置于风险之中，免费做东西、但公开发布，就意味着你要为这个包负责。"</p>
+<p>Tarr 没有道歉。他给出的解释，用 Nadia Asparouhova 的形容是 "maddeningly sincere"——真诚到令人抓狂：</p>
+<blockquote><span class="en">He emailed me and said he wanted to maintain the module, so I gave it to him.</span><span class="zh">他发邮件说他想维护这个模块，所以我就给他了。</span><cite>转引自 The rise of few-maintainer projects, Increment, 2019 年 5 月</cite></blockquote>
+<p>更麻烦的是，Tarr 不但没觉得自己错了，还指出他<strong>遵循的正是当时的最佳实践</strong>：他引用了 2013 年一篇很流行的博文，那篇文章推荐的做法叫"pull request hack"——"只要有人给你发了 pull request，就给他提交权限"。</p>
+<p>这件事之所以值得当成一页纸的开头，不在于它是个安全事故。在于<strong>两个都很有经验的开发者，对"提交权限意味着什么"这件事的理解，差了一整个时代</strong>，而双方都真心觉得对方莫名其妙。</p>
+<p>几乎所有人都把它读成一个人的失职。Nadia 把它读成一份证据：世界已经悄悄换了模样，而没人通知我们。</p>
+<h2>这人是谁</h2>
+<p>Nadia Asparouhova，写作者与独立研究者。两本书署了两个名字——2020 年的《Working in Public》（《公开工作》，Stripe Press）署 Nadia Eghbal，2025 年的《Antimemetics》（《反模因》）署 Nadia Asparouhova，中间她改了姓。</p>
+<p>一个有画面感的细节：她那份被引用最多的开源研究，起点不是任何机构的立项，是<strong>一封冷邮件</strong>。她自己写："我用福特基金会（Ford Foundation）的一笔资助启动了最初的研究，事先没有任何人脉，也没有征集公告。我们是通过我冷邮件过的某个人找到彼此的。钱不多，但够用。"那笔钱撑了她一年，直到她去 GitHub 上班。此后她在 Protocol Labs 做过研究，在 Substack 做过早期员工，之后又回到独立状态，靠 Emergent Ventures 的资助做科技财富与意识形态的多年项目。她在自己主页上把这套活儿定义为：</p>
+<blockquote><span class="en">zero to one research: unanswered questions about the world – often hiding in plain sight – that lack a descriptive framework.</span><span class="zh">从零到一的研究：那些关于世界的、尚未被回答的问题——通常就大喇喇摆在眼前——而且还没有一个描述它们的框架。</span><cite>nadia.xyz 主页</cite></blockquote>
+<p>博客本身：2014 年 3 月开张，最后一篇停在 2024 年 6 月，共约 75 篇。<strong>不算彻底停笔，是搬了家</strong>——写作移到了她的通讯 Monomythical，但那边最新一篇也停在 2025 年 8 月。换句话说，读到本页时，这个头脑已经安静了约一年。她最后写的两篇博客是关于禅那（jhāna，一种靠纯粹专注进入的深度定境）的：一篇是她自己上两次静修、记录练习小时数、逐级写下进入方法的操作手册；另一篇在问，有禅修经验的人是不是更容易学会。同一套方法，换了个对象——这次的对象是她自己的意识。</p>
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>开源 / 开放源代码（open source）</b> — 源代码公开、任何人可自由使用和修改的软件。今天几乎所有软件产品都建立在成堆的开源组件之上。</li>
+<li><b>维护者（maintainer）</b> — 对一个开源项目负有长期责任的人：决定合并谁的代码、回答提问、修 bug、发版本。注意这个词<b>没有统一定义</b>，本页多处会提到这一点本身就是问题的一部分。</li>
+<li><b>npm / GitHub</b> — npm 是 JavaScript 生态的包管理器（相当于一个巨大的组件超市），GitHub 是全球最大的代码托管与协作平台。</li>
+<li><b>issue / pull request</b> — GitHub 上的两种互动：issue 是"我报个问题／提个需求"，pull request 是"我改好了，你要不要合并"。两者都要占用维护者的时间。</li>
+<li><b>公地 / 公共池塘资源（commons / common pool resource）</b> — 大家都能用、且会被用掉的资源，比如渔场、牧场、地下水。经典理论说它必然被过度消耗，即"公地悲剧"。</li>
+<li><b>语境坍塌（context collapse）</b> — 原本面向特定小圈子的表达，被丢进一个所有人都能看到、彼此毫无共同背景的空间。Nadia 把它当成公地失败的通用病因。</li>
+<li><b>有效利他主义（Effective Altruism, EA）</b> — 主张用高质量证据和审慎推理，把每一块钱、每一份精力投到能产生最大善的地方的一套慈善思想与社群。</li>
+<li><b>模因 / 反模因（meme / antimeme）</b> — 模因指能自我复制、在人群中传播的想法单元；反模因是它的反面：结构上抵抗被记住、被理解、被说出口的想法。</li>
+</ul>
+</div>
+<h2>她跟什么较劲</h2>
+<p>把她十年的题目摊开看，表面上跳得厉害：开源维护者、公地治理、投票制度、硅谷的新物质主义、慈善基金会、科研经费、人才分布、生育率、禅那。</p>
+<p>但底下是同一个问题，而且她是<strong>撞上</strong>它的，不是想出来的。</p>
+<p>2015 年前后，她注意到一件在当时几乎没人当回事的事：现代软件产业的地基，是由一批没有雇主、没有预算、没有名字的人在业余时间维护的。她把这份研究写成《Roads and Bridges: The Unseen Labor Behind Our Digital Infrastructure》（《道路与桥梁：数字基础设施背后看不见的劳动》），标题里那个词——<strong>unseen labor，看不见的劳动</strong>——就是她整个十年的题眼。</p>
+<p>问题的形状是这样的：<strong>有一类东西，所有人都在用，没有人拥有，也没有任何机制保证它继续存在。那么究竟是谁在扛着它？扛的人付出了什么，又拿到了什么？</strong></p>
+<p>一旦你带着这个问题看世界，它到处都是。</p>
+<p>2018 年她写开发者的收入困境，指出了一个刺眼的错位：<strong>写代码的技能有市场价，写出来的代码没有</strong>——"当一个开发者写自己选择写的代码时，他很快会发现，他的写码技能有市场价值，而他的产出（他写的代码）没有。"同年她把视线挪到 App Store 上的独立开发者，发现两群人在抱怨同一件事：用户量很大、收入很低、用户觉得理所当然、大家都指望平台改政策。她把他们合并成一个词——<strong>toolmakers，做工具的人</strong>：那些做出了让别人能做更多事的东西的人。</p>
+<p>再往后，同一个问题换了更大的题材。慈善：私人资本如何变成公共成果，中间那台机器长什么样。科研经费：谁在给早期的科学掏钱。人才：为什么软件业相信"全世界只有 100 个人能干这件事"，而别的行业不这么想。甚至她 2022 年那篇关于生育的文章，底层也是同一个问句的变形——<strong>下一代是一种公共品吗，谁愿意扛</strong>。</p>
+<p>这条线最后拐进了一个她自己都没预料到的地方。2025 年她回头总结时说，她写《Working in Public》，真正的赌注不在开源：</p>
+<blockquote><span class="en">I wrote that book partly because I felt that what was happening to open source developers – who, in the face of overwhelming demand for their attention, were withdrawing from public online spaces – was going to happen to all of us.</span><span class="zh">我写那本书，一部分原因是我觉得，当年发生在开源开发者身上的事——面对压倒性的注意力索取，他们从公共网络空间里撤退——将要发生在我们所有人身上。</span><cite>Introducing: Antimemetics, 2025 年 3 月</cite></blockquote>
+<p>换句话说：她最初盯着的那批人，是<strong>最早撞上"太多人要你注意力"这堵墙的人</strong>。他们的应对方式，就是所有人之后的应对方式。这个判断是她全部工作的承重墙，下面三个核心想法都从这里长出来。</p>
+<h2>他的想法，讲成"她怎么发现的"</h2>
+<h3>一、开源不是社区，是看台</h3>
+<p>回到 event-stream。Nadia 的第一反应不是评判 Tarr，是去查这个情况有多普遍。</p>
+<p>她数出来的东西，和"开源"这个词在大多数人脑子里唤起的画面完全对不上。2015 年一项针对 GitHub 各语言生态热门项目的研究：<strong>近三分之二只有一到两个维护者</strong>；样本里超过 50 个贡献者的项目<strong>只有三个，不到 3%</strong>。2014 年 Bocoup 的研究：<strong>93% 的 npm 模块只有一个维护者</strong>。而 npm 自己估算，一个现代 web 应用里 <strong>97% 的代码来自 npm</strong>。</p>
+<p>所以现代软件的地基，是由数以万计的单人项目拼起来的。她的比喻：</p>
+<blockquote><span class="en">Instead of a community of developers looking after the entire Rube Goldberg machine, we've now got individual developers in charge of a pulley here, a marble there.</span><span class="zh">不再是一个开发者社区照看整台鲁布·戈德堡机械，现在是一个个单干的开发者，各管一根滑轮、一颗弹珠。</span><cite>The rise of few-maintainer projects, 2019 年 5 月</cite></blockquote>
+<p>这里有个漂亮的方法学插曲。她问：如果情况真是这样，为什么我们的直觉相反？她的答案是——<strong>GitHub 的界面在骗我们</strong>。GitHub 把贡献者数显示成一个总数，而不显示频次分布。自动化工具 Fastlane 的页面上写着九百多位贡献者，但翻开贡献图，2018 年<strong>四个人贡献了超过 70% 的提交</strong>。</p>
+<p>那"很多贡献者"这个数字是假的吗？她的回答很克制：两个数字都真，合起来才是故事。贡献者确实变多了，<strong>但参与方式变了</strong>。GitHub 把版本控制、开发者身份和交互体验全部标准化之后，任何人跳进任何项目丢一个 pull request 的成本降到了近乎零。结果是 2016 年对 GitHub 热门项目的一项研究发现：<strong>近一半贡献者只贡献过一次</strong>，这些人合计占不到 2% 的提交量。</p>
+<p>于是她提出这一节真正的转向。有人会说：那是不是因为单人项目本来就没多少活？她去查了 GitHub 上 issue 负担最重的那批项目——这些可不是玩具。游戏引擎 Godot 在 2018 年被开了 <strong>9471 个 issue</strong>，每周约 182 个，而它<strong>只宣称有两名核心开发者</strong>。她加了一句刀子似的补白：这还是在任何人写下一行代码之前。</p>
+<p>而且这不是"一个人单干"的问题。Fastlane 在 Google 名下，React Native 由 Facebook 支持——<strong>照样只有几个人在维护</strong>。有公司背书并不改变形状。</p>
+<p>所以真正变了的是问题的性质。她写：</p>
+<blockquote><span class="en">open source often looks more like a few developers playing air traffic controller to thousands of users who are lightly involved. Rather than managing collaboration with developers across the globe, the new challenge facing these projects is coordination.</span><span class="zh">开源现在更像是几个开发者，给成千上万轻度参与的用户当空中交通管制员。这些项目面临的新挑战，不是管理全球开发者之间的<b>协作</b>，而是<b>调度</b>。</span><cite>同上</cite></blockquote>
+<p>协作与调度，一字之差，把所有方案推翻重来。如果瓶颈是协作，那"招募更多贡献者、分摊负担"就是对的。如果瓶颈是调度，那招人等于<strong>往塔台里再塞一千架飞机</strong>。</p>
+<p>她的处方因此是反直觉的：不是降低参与门槛，是<strong>有选择地重新加上摩擦</strong>。issue 要用必填项这类"温和的摩擦"（gentle friction）来提高质量、压低总量；机器人接管贴标签、走 checklist、回复新人这些重复劳动；文档让用户自助。核心的一句是：<strong>让改动跟项目其余部分兼容，是贡献者的责任，不是维护者的。</strong>她引的 Homebrew 维护者 Mike McQuaid 的分级法是整套思路的浓缩：第一次来的贡献者，给文档；第二次来的，给专门的代码评审；<strong>只有当他们第三次回来，才值得投入维护者认真的时间。</strong></p>
+<p>对比另一端就更清楚。Debian 是今天还活着的最老的开源项目之一，想拿到提交权限，你得读完一本手册、找一位导师、还要<strong>和一位能为你身份作保的维护者当面见一次</strong>。Nadia 没有说 Debian 错——那套流程建立在信任的需要之上，对代码库和社群都大、风险也大的项目是合理的。但对少数维护者的项目，这种程度的下行保护"开始显得不现实"。</p>
+<p>于是她给出那句让人不太舒服、但很难反驳的判断：</p>
+<blockquote><span class="en">While open source is still participatory, it doesn't look like Linux anymore. Perhaps it never did.</span><span class="zh">开源仍然是参与式的，但它不再长得像 Linux 了。也许它从来就不像。</span><cite>同上</cite></blockquote>
+<p>并且把 event-stream 的问题重新问了一遍：不该问"他怎么会这么干？"，该问<strong>"我们怎么为无需信任的互动做设计？"</strong>（"How do we design for trustless interactions?"）</p>
+<p>这个判断在 2020 年的《Working in Public》里长成了一套分类。她在一次访谈里讲得比书里更直白：早期开源那套"公社／基布兹式"的叙事被 Stallman、Eric Raymond 这些记得 90 年代的人占住了，而那种模式今天对应的只是"俱乐部"——人人卷袖子，贡献者不少；"联邦"是我们习惯想到的那种超大项目，比如 Linux；真正新的是"看台"。她对看台型项目的治理建议相当不客气：</p>
+<blockquote><span class="en">The contributors [in a stadium] are kind of just making the decisions and I think they should feel comfortable leaning into that. Even though right now I think a lot of them feel uncomfortable doing that because they keep being told that open source is supposed to this super participatory thing.</span><span class="zh">看台型项目里的贡献者其实就是在自己做决定，我认为他们应该坦然接受这一点。尽管现在很多人做起来并不自在，因为他们一直被告知开源"应该是"一件超级参与式的事。</span><cite>The Pull Request 访谈, 2020 年</cite></blockquote>
+<figure>
+<svg viewbox="0 0 620 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four project shapes plotted by contributor growth and user growth">
+<defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#6ea8fe" stop-opacity=".22"/><stop offset="1" stop-color="#5eead4" stop-opacity=".10"/></linearGradient></defs>
+<line stroke="#3a4550" stroke-width="1.5" x1="80" x2="580" y1="350" y2="350"/>
+<line stroke="#3a4550" stroke-width="1.5" x1="80" x2="80" y1="40" y2="350"/>
+<text fill="#7d8794" font-family="monospace" font-size="13" x="300" y="385">user growth  用户增长 →</text>
+<text fill="#7d8794" font-family="monospace" font-size="13" transform="rotate(-90 26 230)" x="26" y="230">contributor growth  贡献者增长 →</text>
+<rect fill="url(#g1)" height="128" rx="10" stroke="#5eead4" stroke-opacity=".45" width="222" x="98" y="52"/>
+<text fill="#5eead4" font-family="monospace" font-size="15" font-weight="700" x="118" y="82">club · 俱乐部</text>
+<text fill="#9aa6b2" font-size="12.5" x="118" y="106">贡献者多，用户有界</text>
+<text fill="#9aa6b2" font-size="12.5" x="118" y="126">人人卷袖子；规模不追求扩张</text>
+<text fill="#7d8794" font-size="12" x="118" y="150">例：兴趣社群、有效利他主义</text>
+<rect fill="url(#g1)" height="128" rx="10" stroke="#6ea8fe" stroke-opacity=".55" width="222" x="338" y="52"/>
+<text fill="#6ea8fe" font-family="monospace" font-size="15" font-weight="700" x="358" y="82">federation · 联邦</text>
+<text fill="#9aa6b2" font-size="12.5" x="358" y="106">贡献者多，用户也多</text>
+<text fill="#9aa6b2" font-size="12.5" x="358" y="126">分层治理、基金会、投票</text>
+<text fill="#7d8794" font-size="12" x="358" y="150">例：Linux、Debian</text>
+<rect fill="rgba(255,255,255,.03)" height="128" rx="10" stroke="#3a4550" width="222" x="98" y="200"/>
+<text fill="#93a1ae" font-family="monospace" font-size="15" font-weight="700" x="118" y="230">toy · 玩具</text>
+<text fill="#9aa6b2" font-size="12.5" x="118" y="254">贡献者少，用户也少</text>
+<text fill="#9aa6b2" font-size="12.5" x="118" y="274">自己写着玩，没有负担</text>
+<text fill="#7d8794" font-size="12" x="118" y="298">绝大多数仓库在这里</text>
+<rect fill="rgba(94,234,212,.10)" height="128" rx="10" stroke="#5eead4" stroke-width="2" width="222" x="338" y="200"/>
+<text fill="#5eead4" font-family="monospace" font-size="15" font-weight="700" x="358" y="230">stadium · 看台</text>
+<text fill="#9aa6b2" font-size="12.5" x="358" y="254">贡献者极少，用户海量</text>
+<text fill="#e2e8f0" font-size="12.5" font-weight="600" x="358" y="274">成本从「协作」转成「调度」</text>
+<text fill="#7d8794" font-size="12" x="358" y="298">例：event-stream、Godot</text>
+</svg>
+<figcaption>《Working in Public》的四种项目形态。据她在 The Pull Request 访谈中的口头描述重绘</figcaption>
+</figure>
+<h3>二、公地不必然是悲剧，但边界不能省</h3>
+<p>2018 年 5 月，她读完埃莉诺·奥斯特罗姆（Elinor Ostrom）的《Governing the Commons》（《公共事物的治理之道》），写了一篇短文，开头承认自己"最近到处安利它安利得太起劲，干脆写个摘要"。</p>
+<p>这篇文章值得注意的地方不是转述，是<strong>她转述之后拧出来的那一下</strong>。</p>
+<p>标准剧本是这样的：公地悲剧、囚徒困境、搭便车，三个模型的共同前提是"没有外部干预，个体就会自私行事"。于是解法只有两个方向——<strong>市场</strong>或<strong>国家</strong>。（她的例子：应对气候变化，我们试过碳排放交易，也试过《京都议定书》。）奥斯特罗姆的贡献是指出现实中有大量公地被成功管理了，而且既没靠市场也没靠国家；她给出的条件里包括：划定边界、把外人挡在外面；规则必须本地化；要有监督和执行。</p>
+<p>Nadia 没有停在条件清单上。她把所有条件压成一句话：</p>
+<blockquote><span class="en">Sustainably managing the commons requires a high degree of context among participants. Most failure outcomes can be traced back to context collapse.</span><span class="zh">可持续地管理公地，要求参与者之间有高度的共同语境。大多数失败结局都能追溯到语境坍塌。</span><cite>An alternate ending to the tragedy of the commons, 2018 年 5 月</cite></blockquote>
+<p>"语境坍塌"（context collapse）这个词原本是社交媒体研究里的：你对老朋友说的话被同事、老板、陌生人同时看到。她把它挪过来当成<strong>公地失败的通用病因</strong>，然后顺手把它推广出去——"无论你是一个开源项目，还是一个 Twitter 粉丝很多的人"。</p>
+<p>这一挪的价值，在她给出的那个判据里显出来了。她说，一旦从"语境多少"这个角度看，你立刻能分辨哪些方案更可能成功：</p>
+<blockquote><span class="en">Raising money to pay for a major contributor's work is a high-context, self-organized solution. Paying out bounties to strangers is a low-context solution.</span><span class="zh">筹钱去支付一位主要贡献者的工作，是一个高语境、自组织的方案。向陌生人发放悬赏，是一个低语境的方案。</span><cite>同上</cite></blockquote>
+<p>注意这跟第一节的处方并不冲突，而是它的另一半：对<strong>互动</strong>，你要降低语境依赖（设计成 trustless，无需信任）；对<strong>治理和钱</strong>，你不能降低语境依赖，否则必败。这两条一起，才是她完整的立场。</p>
+<p>同一把尺子，她在几个月前已经量过一个更大的东西：投票。</p>
+<p>2018 年 1 月那篇《The problem with voting》，起点是她读区块链治理的辩论时的一个观察——在那场号称新治理模式"寒武纪大爆发"的讨论里，<strong>每一个被提到的方案都建立在投票之上</strong>。她说：如果我们是在为社会协调想疯狂的新点子，投票看起来是个熟悉得可疑的答案。那就从一张白纸开始：<strong>一套完全不需要投票的治理体系，会长什么样？</strong></p>
+<p>她对投票的拆解里，最有力的一条正好接着"边界"这个主题。投票之所以被认为公平，是因为它大致映射了它试图代表的那个总体。但在一个去中心化的社群里，<strong>总体是未知的，而且可能永远不会现身</strong>——"一个开源项目不知道谁下载了它的代码，也没有办法联系他们。"在这个条件下，"代议制投票"这个概念本身就不成立。</p>
+<p>然后是她那句最锋利的历史注脚。她说投票并非全无用处，它在总体<strong>小、已知、相对同质</strong>的时候管用——</p>
+<blockquote><span class="en">…which, funnily enough, is how things looked when liberal democracy made its debut.</span><span class="zh">……而好笑的是，这正是自由民主制登场时的样子。</span><cite>The problem with voting, 2018 年 1 月</cite></blockquote>
+<p>紧跟着是数字：1800 年美国有 530 万人，去掉奴隶、女性和儿童，剩下约 100 万合格选民，全是自由的白人男性。那就是这场大实验启动时的条件。</p>
+<p>她提出的替代方向叫<strong>合作式治理</strong>（cooperative governance），模型来自合作型桌游（比如《瘟疫危机》）：默认结局是失败，所有人被迫合作以逃离共同的坏结局。她从中提炼出三个特征——默认失败、偏向行动、<strong>时限已知</strong>——并指出气候问题之所以动员不起来，正是卡在第三条：没人知道灾难哪天来，是十年问题还是一千年问题都说不清，人就不动。</p>
+<p>而合作制最漂亮的一下，是它<strong>把否决的价格反过来了</strong>：</p>
+<blockquote><span class="en">Cooperative mechanics flip this around, so it's cheap to do nothing and expensive to raise an objection. That means people reserve their objections for stuff they really care about.</span><span class="zh">合作式机制把这一点翻了过来：什么都不做是便宜的，提出反对是昂贵的。这意味着人们会把反对留给自己真正在乎的事。</span><cite>同上</cite></blockquote>
+<p>她指出开源世界已经在自发这么干了：第一代社群（Debian、Linux、Apache）开创了投票制，而 Node.js、Rust 这批新项目转向了"懒惰共识"（lazy consensus，默认同意，除非有人真的反对）和"共识寻求"——在这套规矩里，<strong>走到投票那一步本身就算失败结局</strong>。她补了一个让人记很久的推论：在共识寻求下，一个提案理论上可能以 10 比 2 胜出，但如果那 10 个人只是弱支持、而那 2 个人强烈反对，<strong>少数方仍然可能赢</strong>。</p>
+<p>这把尺子的极限，在 2020 年那次访谈里露了出来。有人问她 Facebook 算不算公地，她说不算了，"光是我们面对的这个体量就不可能……只要想想 Facebook 有 26 亿人……几十亿人之间要有那种程度的共同语境，是不可能的"。而她的解法不是给 Facebook 写一套更好的守则，是拆开看：它是一层<strong>基底</strong>，上面长着无数更小的共同体——私信像俱乐部，主页广播像看台，小组按大小可能是俱乐部也可能是联邦。所以"一套政策管所有人"在她眼里从一开始就是类型错误。</p>
+<p>最后是这篇短文里最值得记的一段，因为它谈的是<strong>一个正确的想法为什么会传不开</strong>——而这个问题后来吃掉了她整本新书。奥斯特罗姆拿了诺贝尔经济学奖，生前备受尊重，但她的理论从未真正进入主流，反倒是囚徒困境和公地悲剧这些更宿命的模型活得好好的。为什么？她的第一个猜测是：</p>
+<blockquote><span class="en">Nobody wants to be told the answer is complicated, whereas the other models are simple, even if they're pessimistic and reductive.</span><span class="zh">没人想被告知答案很复杂，而那些模型很简单——哪怕它们悲观又粗暴。</span><cite>An alternate ending to the tragedy of the commons, 2018 年 5 月</cite></blockquote>
+<p>第二个猜测是：也许只是奥斯特罗姆的时候还没到。</p>
+<h3>三、真正有能动性的不是人，是想法</h3>
+<p>2019 年 5 月，她写了一篇跟开源毫无关系的文章，而它其实是同一个问题掉了个个儿。</p>
+<p>开头是中国·米耶维（China Miéville）的小说《Embassytown》（《使馆城》）：一个外星种族迷上了某个人类说他们语言的能力，从新奇变成上瘾，生活崩解，像丧尸一样在街上游荡，撕开世界只为再要一点"神药"。她指出关键：他们的痴迷跟那个人本身毫无关系，只跟<strong>他能提供的那个东西</strong>有关。</p>
+<p>然后是她的命题：</p>
+<blockquote><span class="en">I like thinking of people as vessels, which provides a refreshing counterbalance to the well-trodden "great man theory". Rather than viewing people as agents of change, I think of them as intermediaries, voice boxes for some persistent idea-virus that's seized upon them and is speaking through their corporeal form. You might think of this as "great prophet theory".</span><span class="zh">我喜欢把人想成容器，这为那个老掉牙的"伟人理论"提供了一种令人耳目一新的制衡。与其把人看作变革的行动者，我把他们看作中介，看作某种持久的想法-病毒的传声筒——那病毒攫住了他们，正借他们的肉身说话。你可以把这叫作"伟大先知理论"。</span><cite>The tyranny of ideas, 2019 年 5 月</cite></blockquote>
+<p>接着是全篇最漂亮的一句：<strong>"Ideas ride us into battle like warhorses."</strong>（想法骑着我们上战场，像骑战马。）"我们可以见证、参与、甚至率领这些战役，但它们真正的意义躲开了我们。"</p>
+<p>这不是一个漂亮的说法，是一个有推论的模型，而推论一条比一条锋利。</p>
+<p>一个想法一旦流行到不需要宿主也能活，创作者仍然逃不掉，因为想法会以名声的形式与宿主结合，"像一种永远住在你体内的病毒"。于是：</p>
+<blockquote><span class="en">Reputation is the aggregation of ideas that have swarmed your body. Reputation is a list of your chronic afflictions.</span><span class="zh">名声是那些曾蜂拥过你身体的想法的总和。名声是你的慢性病清单。</span><cite>同上</cite></blockquote>
+<p>她举 Lil Wayne：他试图用摇滚专辑《Rebirth》重生，被只想要他的说唱的听众骂了个透——"他成了'那个想法'的'那个人'"。名声是一纸魔鬼契约：<strong>继续做同一个东西，你会被奖赏；但别离原来的概念太远。</strong>最冷的一条推论是：当一位卓越的艺术家早逝，"我们哀悼他们，是因为他们的产品变稀缺了，<strong>我们再也拿不到那一口了</strong>"。</p>
+<p>这个模型看起来像个玩票的文艺比喻。但半年前，她已经用它做出了一个关于现实世界的、可检验的预测。</p>
+<p>2019 年 1 月的《Shamelessness as a strategy》（《不要脸作为一种策略》）问的是：为什么有些人被群体唾弃却越骂越红？她的解释用的还是"边界"那把尺子——过去共同体的规模有界（一个村子，一个贵族阶层），进出不频繁，所以制裁有效，因为成员想被喜欢、被接纳。但网络社群的边界流动、甚至不存在。在开放边界下，制裁会反噬：</p>
+<blockquote><span class="en">What's meant to be punishment instead becomes a flare shot straight into the night sky.</span><span class="zh">本该是惩罚的东西，反倒变成了一发朝夜空直射的信号弹。</span><cite>Shamelessness as a strategy, 2019 年 1 月</cite></blockquote>
+<p>"建制派错误地假设了不要脸的人想要他们所在共同体的认可，而事实上，就像任何邪教或反主流文化一样，那个人的目标是吸引一批追随者，<strong>不管成员是谁</strong>。同侪的厌恶不再重要，因为那份厌恶恰好构成了一个全新共同体的基础。"</p>
+<p>最后她把这一篇扣回了"想法骑人"的模型。人们常见的反驳是质疑不要脸的人到底有多聪明、是不是真有谋略。她说这问题问错了：</p>
+<blockquote><span class="en">The concept of a "genius mastermind" is itself outdated, because it assumes that someone needs to be in control. The shameless person is simply a host for a set of ideas, which, like any virus, will continue to propagate as long as there are willing hosts to receive it.</span><span class="zh">"天才操盘手"这个概念本身就过时了，因为它假定必须有个人在掌控局面。不要脸的人只是一组想法的宿主；那些想法像任何病毒一样，只要还有愿意接收的宿主，就会继续传播下去。</span><cite>同上</cite></blockquote>
+<p>如果想法才是行动者，那下一个问题就是：<strong>一个想法要在世界上留下痕迹，需要一副什么样的身体？</strong></p>
+<p>这就是 2022 年《Idea machines》（《思想机器》）的题目。她的答案是一套零件清单：先要有一套<strong>意识形态</strong>，它充当模因引擎，驱动一个<strong>共同体</strong>形成；共同体自产想法，然后必须凝成一份<strong>议程</strong>——"共同体需要议程才能成为思想机器，否则他们只是一群志同道合的人，没有方向"；议程再被一个或几个<strong>大出资人</strong>资本化（"没有资金，思想机器就只是一台惰性系统，需要燃料才能转起来"）；最后由<strong>场景建设者</strong>和<strong>操盘手</strong>把想法推成结果。一句话定义是：</p>
+<blockquote><span class="en">An Idea Machine is a self-sustaining organism that contains all the parts needed to turn ideas into outcomes.</span><span class="zh">思想机器是一个自我维持的有机体，它包含把想法变成结果所需的全部零件。</span><cite>Idea machines, 2022 年 5 月</cite></blockquote>
+<p>她拿有效利他主义当标本，并明确写了"我不是 EA 的人"。她的问题不是"EA 好不好"，而是一个更有意思的问法：<strong>"为什么没有更多的有效利他主义？"</strong>把私人资本导向公共成果这件事上，思想的市场"荒芜得令人难堪"——"那就好比全世界只有一家创业公司、一个博主、一个新闻频道。"而她最见功力的判断藏在脚注里：人们常把 EA 对结果的执念算到科技文化头上，她说不对——<strong>"Effective altruism is often associated with tech, but it's genetically more similar to McKinsey."</strong>（有效利他主义常被联想到科技界，但它的基因更接近麦肯锡。）那份对可测量结果的痴迷，来自 1990 年代那一波源于管理咨询和投行的慈善浪潮。</p>
+<p>最后，这条线在 2025 年拐了个九十度的弯，而这个弯是三个想法里最值得记住的一步。</p>
+<p>如果有些想法能自己传播，那么必然存在一类想法<strong>在结构上抵抗传播</strong>——不是因为它们不重要，恰恰可能因为它们太重要。她从科幻作家 qntm 那里借来了词：<strong>反模因</strong>（antimeme）。它包括禁忌（所有人都知道、但不能说出口的事）、认知偏误（我们看不见自己身上的东西）、以及记忆失效（我们知道该做、却总是忘了排优先级的事）。她说动笔的直接动因，是观察到最有意思的想法正在往地下钻——钻进群聊和私信；而群聊几乎无人书写，原因是<strong>没法写</strong>："群聊是自我审查的：不像公共社交网络，我们只能知道自己亲历过的，或别人偶尔愿意分享给我们的那部分。"</p>
+<p>然后她做了一件很符合这本书的事：<strong>她几乎没跟任何人说自己在写它。</strong>"这让《Antimemetics》本身成了一场反模因实验。"她把它交给一个小众厂牌出版，理由是"反模因是脆弱的、杂乱的、难以直视的；落在一个想把它榨出爆款的出版商手里，会被迅速碾碎，<strong>像一朵花被鞋跟碾在地上</strong>"。</p>
+<p>而这整件事是有种子的。早在 <strong>2014 年</strong>，她写过一篇叫《How Privacy Makes Us Better People》（《隐私如何让我们成为更好的人》）的短文，论点是透明的价值必须以不摧毁隐私的价值为前提：隐私给创造力留出不怕出丑的空间，给道德实验留出试错的空间，给亲密留出公我与私我的落差。最后一句在十一年后读起来像预言：<strong>"没有隐私，我们会失去真实感，社会则有变成我们公共自我的回音室的风险。"</strong></p>
+<p>她自己给这本新书起过一个内部玩笑名，一句话说尽了这十年：</p>
+<blockquote><span class="en">While writing Antimemetics, I joked to myself that I would call it Working in Private.</span><span class="zh">写《Antimemetics》的时候，我私下开玩笑说要给它取名叫《Working in Private》（《私下工作》）。</span><cite>Introducing: Antimemetics, 2025 年 3 月</cite></blockquote>
+<h2>她的思维方法</h2>
+<p>读一个写了十年的人，最能带走的往往不是结论而是手法。她的手法有几条相当清晰，而且都能在文章里指出出处。</p>
+<p><strong>一、先去数，而且公开自己数错的地方。</strong>这是她和大多数"观点写作者"的分界线。写维护者的支持负担时，她用 BigQuery 拉出 2017 年 8 月至 2018 年 8 月 issue 开得最多的 GitHub 项目，清掉镜像、垃圾仓库和个人项目，凑出一份"前 100"，然后<strong>逐个手工分析它们的支持体系</strong>，并把数据集和注意事项一起公开。更见人品的是下面这条：她顺手检验了自己的方法选择——用 issue 量而不是明星数（stars）来衡量支持负担，对不对？</p>
+<blockquote><span class="en">I found no significant correlation between stars and issues opened in the past year, with a Pearson coefficient of 0.22.</span><span class="zh">我发现明星数与过去一年开启的 issue 数之间没有显著相关，皮尔逊系数为 0.22。</span><cite>Understanding user support systems in open source, 2018 年 9 月</cite></blockquote>
+<p>有些项目支持负担重但星少，有些星多但没什么负担。这条结论毫不显眼，却把整个圈子最常用的那个代理指标废掉了。</p>
+<p><strong>二、造分类法，而不是站队。</strong>面对一个争吵不休的问题，她的默认动作是先怀疑<strong>争吵的双方共用了一个错误的单一模型</strong>。"10x 工程师存不存在"吵了几十年，她的介入方式是指出大家默认人才服从同一种分布，然后拆成三种：<strong>正态分布</strong>（靠流程取胜，制造业、物流）、<strong>帕累托分布</strong>（靠"A 级选手"，咨询、投行）、<strong>双峰分布</strong>（靠"关键先生"linchpin——那种在某一件事上极强、别人干不了的专才，见于影视、时装和啃硬技术的软件公司）。</p>
+<p>这个拆分立刻产出解释力：A 级选手可量化、可排名，所以麦肯锡用智商测验和数学题招人；关键先生只能定性识别，所以软件工程师一直在骂面试题测不出真本事。她还把企业文化倒推回去解释：<strong>典型的软件公司文化（弹性工时、办公室里的游戏和零食、安静区）就是为了吸引和留住关键先生型开发者而设计的</strong>，而 OKR、KPI 这类绩效框架是为帕累托型公司设计的。</p>
+<p>值得注意的是她在这里的诚实。工程师描述那种"看得见别人看不见的可能性"的能力时，她说：</p>
+<blockquote><span class="en">I was struck by how every engineer I spoke to struggled to articulate this concept more precisely. The words "voodoo," "magic," and "alchemy" were all used.</span><span class="zh">让我震惊的是，我谈过的每一位工程师都难以把这个概念说得更精确。"巫毒""魔法""炼金术"这些词都被用上了。</span><cite>Explaining tech's notion of talent scarcity, 2023 年 4 月（脚注）</cite></blockquote>
+<p>她没有假装自己捅破了这层窗户纸，而是把"所有人都说不清"本身当成一个发现记下来。同一篇的最后一条脚注，整句就一行：<strong>"I don't know if this is true or not. It's a hypothesis!"</strong>（我不知道这是不是真的。这是个假说！）</p>
+<p><strong>三、认真对待被嘲笑的东西。</strong>这大概是她最可迁移的一条。Paris Hilton、"不要脸"的政治人物、"basic"（俗气、没深度）的生活方式、禅那——这些都是她所在的圈子会翻白眼的对象，而她的默认动作是走过去看看。《Shamelessness》的收尾几乎是一条工作守则：</p>
+<blockquote><span class="en">when I see my peers rolling their eyes at someone or deriding them for being "shameless", there's a good chance that, instead of writing them off, we should examine their actions a bit more closely.</span><span class="zh">当我看到同侪对某人翻白眼、或嘲讽他"不要脸"的时候，很有可能，我们不该把这个人一笔勾销，而该更仔细地检视他的行为。</span><cite>Shamelessness as a strategy, 2019 年 1 月</cite></blockquote>
+<p><strong>四、一本书就足以重建整个框架。</strong>奥斯特罗姆的一本书重写了她对开源可持续性的整套判断；qntm 的一本科幻小说给了她一个词，然后长成了一本书和桌面上那个 <code>antimemetics-notes.md</code>——那个文件她断断续续攒了三年，中间多次想写成博文而失败，理由很妙："一部分是因为我想写的那个世界还在变，一部分是因为——名副其实——反模因很难被直视太久。"</p>
+<p>2018 年那篇《The independent researcher》（《独立研究者》）里，她承认最初那次独立研究并不好过："我不知道自己是在做有用的事，还是<strong>只是个疯子</strong>。"几年之后她的结论是这个问题不重要：</p>
+<blockquote><span class="en">Life is short. Do whatever you can't stop thinking about. Documenting your findings in public (regardless of outcomes!) is a worthy contribution to society, full stop.</span><span class="zh">人生很短。去做那件你停不下来想的事。把你的发现公开记录下来（不管结果如何！）就是对社会的一份值得的贡献，句号。</span><cite>The independent researcher, 2018 年 6 月</cite></blockquote>
+<p>还有一句更短的，出自她讨论能不能对开源代码收一次性费用的时候，基本上是她全部工作的座右铭：<strong>"I like experiments more than I like definitions."</strong>（比起定义，我更喜欢实验。）</p>
+<h2>她哪里可能是错的</h2>
+<p><strong>第一条有确凿的日期可查。</strong>2022 年 5 月的《Idea machines》里，她把 Sam Bankman-Fried 的入场写成给有效利他主义这台机器"注入了新的生命"，并把 Future Fund 列为新兴思想机器的样本，标注为"EA（SBF 版本）"。六个月后，FTX 崩塌，SBF 后来因欺诈获罪。那几段今天仍然原封不动挂在页面上——<strong>她没有删，这一点值得肯定</strong>。</p>
+<p>但比预测失准更值得说的，是它暴露的结构问题——而且<strong>她自己在同一篇文章里给出了反驳自己的材料</strong>。她详细讲了 20 世纪的历史：基金会在世纪中叶达到权势顶峰，引来国会调查，调查报告的执笔律师 Rene Wormser 把基金会形容成一个威胁要主导"我们整个智识与文化生活"的<strong>卡特尔</strong>；直到 1969 年的税制改革法案才给它们套上笼头——公开申报、每年至少支出 5% 的捐赠基金、严格限制政治影响。她讲这段，是为了说明"监管没有杀死思想机器，只是让基金会不再是安放它们的最佳容器"。</p>
+<p>这个观察对，但下一步她没走：<strong>新一代思想机器规避掉的不只是表格，还有那套约束原本要解决的问题。</strong>它们更去中心、更贴近公共讨论、任何人都能加入——同时也没有强制披露、没有最低支出、没有政治影响的边界。而这正好对应她那张零件清单的缺口：意识形态、共同体、议程、出资人、场景建设者、操盘手，<strong>没有一个零件叫"问责"</strong>，资本在模型里只是燃料。她用"多元"回答"集中"，但多元只决定谁的想法拿得到钱，不决定拿到钱的人对谁负责。这里也该如实说明她的位置：她的研究先后由福特基金会、Protocol Labs、Emergent Ventures 资助，第一本书由 Stripe Press 出版。这不使她的论证失效——田野工作的质量摆在那里——但她描述这些机器时，是<strong>在房间里描述的</strong>。</p>
+<p><strong>第二条，关于《Cultivating agency》（《培育能动性》，2022 年 8 月）。</strong>她的论证是：气候、有效利他主义、AGI 风险这几个社会运动带有"反生育"的外溢效应，共同底色是<strong>缺乏对个人能动性的信念</strong>，对策是"教能动性"。她写得很有感染力——"世界不是发生在我们身上的，它是被我们塑造的"；她还提出 Z 世代面临的可能不是"数字鸿沟"而是"能动性鸿沟"。</p>
+<p>问题在同一篇文章里。她诚实地交代了自己转变的原因：<strong>"我的决定受到个人成长、找到对的伴侣、以及拥有财务安全的强烈影响。"</strong>也就是说，她自己的能动感是<strong>物质条件的结果</strong>；但对别人开出的药方是信念层面的。一个人觉得自己无力影响气候变化，可能不是因为没被教过能动性，而是因为他确实没有影响它的杠杆。把结构问题诊断成心态问题是这类论证的经典失足处，而那把尺子是她本人提供的。</p>
+<p><strong>第三条是我自己读下来的保留，性质说清楚：</strong>《Working in Public》的核心数据大量来自 GitHub / npm / JavaScript 生态，而那个生态以微模块著称，所以"93% 只有一个维护者"在<strong>按项目个数计</strong>时几乎必然成立。但按<strong>承重量</strong>计，今天仍然托着世界的那批东西——Linux 内核、Debian、PostgreSQL、Kubernetes——恰恰还是联邦型：有基金会、有众多维护者、有正式治理。她在访谈里承认联邦仍然存在，但"看台正在吃掉一切"这个总体印象，很可能<strong>被样本的构成方式放大了</strong>。这不推翻她的核心洞见（少数维护者项目的注意力成本被系统性忽略了），但会改变结论的适用范围。</p>
+<p><strong>最后，关于批评的现状，得如实交代：</strong>本页找到的、真正针对她论点的公开批评相当薄。有一条实名的、我读到原文的：2022 年 5 月，Ben Yeoh 在 EA 论坛发帖讨论《Idea machines》，帖下一位用户认为她"把有效利他主义误读成了一场根本上属于慈善的运动"——EA 关心的是最大化所行之善，慈善只是其中一部分，它从未声称要承担图书馆、儿童医院那一类"慈善的公民职能"。Yeoh 本人的评价是"我喜欢这篇文章，但它谈 EA 的部分没打中"。这是一条克制且合理的反驳，但也就到此为止了——<strong>除此之外，我没有读到分量更重的、针对她核心论点的批评文本，所以不复述任何我没读过的论证。</strong>更值得注意的是这件事本身：她被引用得极多、被反驳得极少。对一个专门研究"某些想法为什么传不开"的人来说，这个处境有点反讽。</p>
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://increment.com/open-source/the-rise-of-few-maintainer-projects/">The rise of few-maintainer projects</a></span><span class="d">Increment 杂志开源专号，2019 年 5 月。event-stream 事件、93% 单维护者、Godot 的 9471 个 issue、"空中交通管制员"这个比喻——她关于现代开源的判断最集中的一次公开陈述，也是《Working in Public》的浓缩版。</span></li>
+<li><span class="t"><a href="https://nadia.xyz/tragedy-of-the-commons">An alternate ending to the tragedy of the commons</a></span><span class="d">2018 年 5 月。读完奥斯特罗姆之后的一篇短文，"语境坍塌是公地失败的通用病因"、"高语境 vs 低语境方案"这把尺子从这里出来，末尾附带她对"为什么正确的理论传不开"的第一次追问。</span></li>
+<li><span class="t"><a href="https://nadia.xyz/ideas">The tyranny of ideas</a></span><span class="d">2019 年 5 月。"伟大先知理论"、想法骑着人上战场、名声是你的慢性病清单。全站最好看的一篇，也是通往《Antimemetics》的起点。</span></li>
+<li><span class="t"><a href="https://nadia.xyz/idea-machines">Idea machines</a></span><span class="d">2022 年 5 月。一个想法要留下痕迹需要什么样的身体：意识形态、共同体、议程、出资人、操盘手。也是本页第六节那几条保留的主要来源，包括那段关于 SBF 的、未被删除的文字。</span></li>
+<li><span class="t"><a href="https://nadia.xyz/top-talent">Explaining tech's notion of talent scarcity</a></span><span class="d">2023 年 4 月。人才的三种分布、A 级选手与"关键先生"的分野、企业文化如何反推自它想招的人。她"造分类法而不站队"这套手法最完整的一次演示，末尾附带那句"我不知道这是不是真的。这是个假说！"</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-09-14" data-slug="nadia-xyz">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-14</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
