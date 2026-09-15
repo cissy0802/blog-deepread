@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Murat Demirbas · Metadata — Ordinary Brains, So Build Instruments</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.8;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.3;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc;font-style:italic}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="metadata-blog17.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Read · 17 · muratbuffalo.blogspot.com</div>
+<h1>Murat Demirbas<br/>Brains Are Ordinary, So Build Instruments</h1>
+<p class="sub">2007 to present · 839 posts · 16-year span (steady weekly cadence since September 2010) · One clear pivot: left tenured academia around 2020 for industry (three years at AWS, now MongoDB Research) · Still active, most recent post 12 September 2026 · Entirely free, no paywall · This page draws on 19 posts read in full, spanning January 2011 to September 2026, four of them from the earliest period, with samples on both sides of the pivot</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Essentials</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ POP ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>To write this page I crawled the body text of all 839 posts on Murat Demirbas's blog and counted the internal links, wanting to know which posts are the load-bearing walls of a blog that has run for sixteen years.</p>
+<p>The top result is not Paxos. It is not any paper review. It is a short piece published on New Year's Day 2018, half of which is about where the question mark came from and whether apes can ask questions. <strong>Forty-six inbound links.</strong></p>
+<p>Second place goes to his own invention, hybrid logical clocks (41). Third is the follow-up to that same New Year's piece (33). Six of the top ten are about how to ask questions, how to read a paper, how to write, how to show your thinking. Only four are technical.</p>
+<p>A leading expert in distributed systems, and the foundation of his blog is <strong>a set of posts about how to think</strong>.</p>
+<p>This is not an accident. At the end of 2017, after a decade as a professor and seven years of blogging, he sat down and gave himself a fairly unsparing diagnosis: his questions had gone blunt, they "often come out as shallow/predictable." Then came the line that really stings:</p>
+<blockquote>But yeah, I cannot be sure whether I have gone compliant/docile recently, can I?<cite>Mad questions, 2 January 2018</cite></blockquote>
+<p>His New Year's resolution was not "ask more questions." He knew resolutions do not work. His move was to <strong>install a system</strong>: from then on, every blog post would end with a mandatory section called "MAD questions," plus a new blog tag to collect them.</p>
+<p>A year later he reviewed the experiment. Across 70 posts, that section averaged 25% of the length of the main body and was frequently longer than the post itself. More surprising: a lot of half-finished drafts only became publishable because the section forced him to keep thinking. And his explanation for why something so cheap worked so well is the best move in the whole story — it works because</p>
+<blockquote>our default mode is to not question things. We have been implicitly taught this at our family, school, and work.<cite>Master your questioning skills, 17 December 2018</cite></blockquote>
+<p>So "MAD" is not decoration, it is a <strong>permission slip</strong>: calling them mad questions granted him immunity from the usual assumptions. He also gives one unusually practical rule: do not be embarrassed by your first, stupid questions. "Bad questions lead to good questions." Exhaust them and the good ones surface. And how do you know a good one when it arrives? <strong>A good question is like a good joke</strong> — it has an unexpected element, it changes the perspective, and you feel it in your body.</p>
+<p>All of this can read like self-help until you see the hard premise it hangs on, which is the real key to the man. He nailed it down in 2012:</p>
+<blockquote>We all have humble brains; don't let anybody tell you differently. Falling short of superpowers (genius/giftedness), we invent processes/systems to succeed, and the good thing about these processes are they are replicable (unlike being genius/gifted).<cite>Tell me about your thought-process, not just your results, 11 January 2012</cite></blockquote>
+<p>Six years later he compressed the same axiom into five words, in an entirely different context: <strong>"Being smart does not scale."</strong> That was about why you cannot design a distributed protocol by reasoning it through in your head, and need exhaustive model checking instead.</p>
+<p>Once you hold that key, his apparently unrelated subjects line up. They are all versions of one move: <strong>how does an ordinary mind get reliable understanding of a system too big to hold in the head? The answer is never "be smarter." It is always "build an instrument."</strong></p>
+<p>His most famous instrument is the hybrid logical clock, from 2014. Time in distributed systems was a stalemate then. Lamport's 1978 logical clocks record causal order but are divorced from real time, so you cannot ask what the database looked like last Tuesday. NTP-synchronized physical clocks have real time but cannot be tightly synchronized across regions, and come with leap seconds and non-monotonic jumps. Google's 2012 Spanner threw money at it — GPS receivers and atomic clocks to push the uncertainty down to 6ms — at the cost of building an entire timing infrastructure, and of having <strong>to explicitly wait out that uncertainty interval on every commit</strong>.</p>
+<p>Three roads, each charging a toll. The question he and Sandeep Kulkarni asked ran sideways: <strong>why must we choose?</strong> Could one timestamp preserve causality, fit in constant space, <em>and</em> stay within a bound of the physical clock?</p>
+<p>The naive construction fails: copy Lamport and take the max, and the logical part runs ahead of physical time without bound. The HLC trick is a small counter <em>c</em> plus a guarantee that it <strong>keeps getting reset</strong> — either you receive a larger logical time, and <em>c</em> goes to zero, or the physical clock catches up and pushes the logical value along, and <em>c</em> goes to zero again. Both roads lead to a reset, so the gap stays trivially bounded. Then the engineering flourish: let the logical part track only the high 48 bits of the physical clock (still microsecond granularity) and give the remaining 16 bits to <em>c</em>. The line that actually sells the design sits in a parenthesis:</p>
+<blockquote>(In our experiments c mostly stayed in single digits.)<cite>Hybrid Logical Clocks, 27 July 2014</cite></blockquote>
+<p>Room for 65,536, single digits used. CockroachDB, MongoDB and YugabyteDB all run on it today.</p>
+<p>Ten years later he wrote a five-part survey whose conclusion is worth more than the algorithm, because it redefines what time is <em>for</em>: synchronized clocks are not about knowing what time it is, they are <strong>a shared reference frame</strong>.</p>
+<blockquote>When nodes operate independently, they essentially exist in their own temporal universes.<cite>Use of Time in Distributed Databases (part 5), 14 January 2025</cite></blockquote>
+<p>Align the frame and a great deal that used to require a round trip — consistent snapshots, conflict detection, leases — can be computed locally instead. But he holds one line, inherited from Barbara Liskov in 1991 and in his view unchanged since: <strong>use time for performance, not for correctness.</strong> When a clock misbehaves you should get slower, not wrong.</p>
+<p>His sharpest recent judgment is from May 2026. He has taught TLA+ for years, always saying abstraction is the most important and hardest step. But a dissonance kept nagging: <strong>aren't computer scientists supposed to be good at abstraction already?</strong> Abstract data types, APIs, layering — staples of every CS curriculum. So why does every formal methods person report a gaping skill gap?</p>
+<p>His answer: two opposite things hide under one word.</p>
+<blockquote>Modularity abstraction hides. Modeling abstraction reduces.<cite>The Two Abstractions of System Design: Hide or Reduce, 8 May 2026</cite></blockquote>
+<p>Modularity abstraction draws boundaries and encapsulates, cutting vertically to <strong>hide</strong> the layer below so the module is easy to use — which means hiding concurrency and pretending operations are atomic. Joel Spolsky's famous complaint that all abstractions leak is entirely about this kind.</p>
+<p>Modeling abstraction goes the other way. It cuts crosswise, reducing the system to the minimal behavioral skeleton for the <strong>one property</strong> you care about and discarding everything else. And — the counterintuitive part — it <strong>deliberately lets things leak</strong>: it exposes the fine-grained actions and every possible interleaving, then proves the invariants hold anyway. The payoff is not usability. It is harvesting the maximum safe concurrency the system has to offer.</p>
+<p>The examples he reaches for are a potted history of the field, each readable as "what got thrown away": Lamport clocks discard wall-clock time and keep happens-before; HLC keeps both real time and causality and discards the rest; TrueTime turns time into a bounded-uncertainty interval; linearizability discards replication, caching and retries; log-is-the-database discards materialized state as the source of truth; MapReduce discards orchestration, parallelism, scheduling and fault tolerance.</p>
+<p>If you want one sentence for the man, take the advice he gave distributed systems designers in 2023 — from someone who has spent half his career on consensus protocols:</p>
+<blockquote>Even as a distributed coordination researcher and Paxos expert, my advice is to reduce coordination.<cite>Hints for Distributed Systems Design, 2 October 2023</cite></blockquote>
+<p>And his most effective instrument, in the end, is the blog itself. He holds a weekly quota, not for output but for "noticing" — staying in a frame of mind where things register. The quota, he says, <strong>lowers his standards for writing, which paradoxically raises them</strong>. Rereading his own posts from years ago "refires the same neurons," letting him reload the understanding he once strained to build.</p>
+<p>The blog became his <strong>external memory</strong>. 839 posts, over five million views: one person's replicable, ungifted record of digging wells.</p>
+</div>
+
+<!-- ============ DEEP ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>One strange thing: the blog's foundation is a post about whether apes can ask questions</h2>
+<p>To write this page I did something laborious: I pulled the body text of all 839 posts on Murat Demirbas's blog and counted how they link to each other. The idea is simple — after sixteen years of writing, a few posts will be the ones the author keeps reaching back for. Those are the load-bearing walls.</p>
+<p>The top result is not Paxos, not Spanner, not any paper review. It is a short piece published on New Year's Day 2018, whose first half is about how his mother, on family trips, would point at the plants outside the window and ask him why the landscape changed here, and whose second half seriously considers whether apes can ask questions and where the question mark came from. <strong>Forty-six inbound links from later posts.</strong></p>
+<p>Second, with 41, is his own technical invention: hybrid logical clocks. Third, with 33, is the one-year review of that same questioning experiment. Going down the list, six of the top ten are about how to ask questions, how to read papers, how to write, how to show your thinking. Only four are technical.</p>
+<p>This is not a traffic ranking. He has one of those too, topped by "Learning about distributed systems: where to start?" and "What I'd do as a College Freshman in 2025." This is <strong>his own citation ranking</strong>: the bricks he reaches for when building something new.</p>
+<p>Someone who has spent twenty-five years in distributed systems and databases and invented an algorithm now in wide industrial use, and the foundation of his blog is <strong>a set of posts about how to think</strong>. That is not a digression. That is the trunk.</p>
+
+<h2>Who he is</h2>
+<p>Murat Demirbas is Turkish, took his PhD at Ohio State under Anish Arora, then did a postdoc at MIT with Nancy Lynch. From 2003 he taught computer science at the University at Buffalo (SUNY) for twenty-one years, winning an NSF CAREER Award in 2008. Around 2020 he left academia for industry: three years as a Principal Applied Scientist at AWS, and now Principal Research Scientist at MongoDB Research.</p>
+<p>The blog is called Metadata. It became a regular habit in September 2010 for a very concrete reason: he wanted to move from distributed systems theory and wireless sensor networks into cloud computing, so he sat in on a colleague's cloud computing seminar and decided to write a summary of every paper he read, to force himself to digest it. The first one was on MapReduce, which he says "seems to have opened the floodgates." Sixteen years later: 839 posts, over five million views.</p>
+<p>One detail is very him. The blog lives at muratbuffalo. In July 2026 he finally hauled a 12-by-6-foot U-Haul trailer across the country to the Bay Area, delayed a full day because his cat Pasha, sulking in the emptied house, ran off and did not come back until eleven at night. He wrote that Buffalo seemed to have "the escape velocity of a black hole," and that when he named the blog he had no idea the name would stick and "almost become a curse." <strong>The blog is still running</strong>; the most recent post is dated 12 September 2026.</p>
+
+<div class="glossary">
+<b>Glossary</b>
+<ul>
+<li><b>Distributed system</b>: a pile of independent machines passing messages to impersonate one machine. All the difficulty comes from messages being lost, delayed or reordered, machines failing, and nobody being able to see the whole thing at once.</li>
+<li><b>Consensus / Paxos</b>: a protocol that gets a group of possibly-failing machines to agree on what a value is. Paxos, proposed by Lamport in 1989, underpins nearly every cloud database.</li>
+<li><b>Logical vs physical clocks</b>: a logical clock records only "who happened before whom" and has no connection to real time; a physical clock is the machine's own clock, synchronized over NTP, which has real time but is not accurate.</li>
+<li><b>TLA+ / model checking</b>: TLA+ is Lamport's language for writing a system design as a mathematical model; the model checker (TLC) exhaustively enumerates every possible execution order to see whether any of them violates what you required.</li>
+<li><b>Invariant</b>: a property you want to hold at every instant the system runs, such as "no two different values are ever committed at the same slot."</li>
+<li><b>Metastability</b>: borrowed from physics. The system gets shoved, then stays stuck in a bad state even after the hand that shoved it is withdrawn.</li>
+</ul>
+</div>
+
+<h2>What he keeps wrestling with</h2>
+<p>The question he has not put down in sixteen years fits in one sentence: <strong>how does an ordinary mind get reliable understanding of a system too big to hold in the head?</strong></p>
+<p>Everything turns on "ordinary." That is not modesty, it is the <strong>axiom</strong> of his entire method, and he stated it without hedging:</p>
+<blockquote>We all have humble brains; don't let anybody tell you differently. Falling short of superpowers (genius/giftedness), we invent processes/systems to succeed, and the good thing about these processes are they are replicable (unlike being genius/gifted).<cite>Tell me about your thought-process, not just your results, 11 January 2012</cite></blockquote>
+<p>He did not arrive at this abstractly. A class made him angry.</p>
+<p>In that 2012 post he recalls his first networking course. The textbook opened by laying out the TCP and UDP packet formats field by field — lengths, flags, checksums — before introducing a single protocol idea or even the basic problem networking is trying to solve. The instructor followed it "blankly," reading from the publisher's slides, which, as he puts it, apparently did not target a human audience. He hated networking for years afterwards.</p>
+<p>Then, characteristically, he did not stop at the complaint but followed the chain of responsibility upward. Why is the instructor like that? Laziness; he follows the textbook. Why is the textbook like that? Also lazy; it follows the style of technical papers. Why are papers written that way? He traces it to the Bourbaki school in twentieth-century France — the project that rewrote mathematics as an axiomatic edifice and moved the emphasis from concrete examples to abstract generality. He quotes Freeman Dyson: in the Bourbaki scheme, what is not in the textbooks is not mathematics, and concrete examples, not appearing there, are not mathematics.</p>
+<p>His verdict is that rigor and generality are not the problem. The problem is that <strong>the paper deletes the thinking that produced the result</strong>. And he suspects a less flattering motive: deleting the process serves to "cover up the tracks of our 'lacking' thought-processes" and present a face of flawless conclusions. He says he has genuinely heard the logic in collaborations — it was hard for me to work out, so it should be hard for the reader.</p>
+<p>The section lands on Haruki Murakami. He paraphrases <em>What I Talk About When I Talk About Running</em>: gifted writers touch the ground anywhere and water pours out; other writers have to learn to dig wells. And the day the water dries up comes for everyone — the gifted writer is stranded, having never trained for it, while the well-digger keeps digging.</p>
+<blockquote>This is the reason we should teach our students/audience how to dig wells, and not to rely on occasional strike of insights for success.<cite>Ibid.</cite></blockquote>
+<p>Six years later he compressed the same axiom into five words for a completely different purpose — why you cannot design a distributed protocol by reasoning it through: <strong>"Being smart does not scale."</strong></p>
+<p>So everything he has done for sixteen years reads as one move: <strong>build instruments</strong>. Not think harder, not cultivate intuition, but construct concrete devices you can pick up every time, which do not depend on how you feel that day. Here are the four best ones.</p>
+
+<h2>His four instruments</h2>
+
+<h3>1. MAD questions: making curiosity into a system you can install</h3>
+<p>At the end of 2017 he ran a check on himself, and the result was not flattering.</p>
+<p>He already had a habit of stopping to interrogate himself. He works in pomodoros, and had customized his to spend the first and last four minutes forcing himself to "go meta": is this the right approach? What else could I try? Am I making good progress? Can this be made transformative?</p>
+<p>The trouble was that the habit had <strong>become a routine</strong>. The questions "often come out as shallow/predictable." Still useful as a sanity check, but no longer able to move him anywhere. And then the genuinely uncomfortable admission:</p>
+<blockquote>But yeah, I cannot be sure whether I have gone compliant/docile recently, can I? Maybe I am losing my edge, because I have been in the system long enough. Maybe I start seeing myself as experienced now, and it is affecting me.<cite>Mad questions, 2 January 2018</cite></blockquote>
+<p>That is a tenured professor stating in public that he might already have been domesticated.</p>
+<p>What matters is what he does next. His resolution was to ask "more/better/crazier questions" — and he immediately notes that a resolution alone is worthless, so <strong>he had to install it as a system</strong>. The system: every blog post from now on ends with a mandatory section called MAD questions, and a new tag collects them so they stay searchable and retrievable.</p>
+<p>Two things in this design are worth pausing on. First, it converts a matter of willpower into a matter of format — as long as you are still blogging, you have to write that section. Second, "MAD" is not a joke, it is a <strong>permission slip he issued to himself</strong>. He spelled this out a year later:</p>
+<blockquote>By calling these questions MAD questions, I gave myself the license/protection to go wild, uninhibited by traditional assumptions/constraints. This gave rise to reducing the bar, and approaching the topic with a beginner mind, as an outsider.<cite>Master your questioning skills, 17 December 2018</cite></blockquote>
+<p>Seventy posts later he reported the numbers. The MAD section averaged 25% of the main body and was <strong>often longer than the post itself</strong>, costing perhaps fifteen or twenty extra minutes each time. But the real return was elsewhere: many pieces rotting in his drafts file (he keeps a blog.org file full of half-ideas) only became publishable because that section forced him to think a little further; and leads dug up in the questions often got folded back into the body, improving the post.</p>
+<p>So why does something this cheap work? His explanation is the finest move in the whole business:</p>
+<blockquote>I think the reason for this is because our default mode is to not question things. We have been implicitly taught this at our family, school, and work. Asking too many questions, especially hard ones, is frowned upon in polite company.<cite>Ibid.</cite></blockquote>
+<p>In other words this is not a problem requiring a new skill. It is a problem requiring <strong>disinhibition</strong>. The capacity was always there; it was being held down. He adds a physiological layer too: the brain is programmed to save energy, prefers shallow tasks, and avoids the intense sessions creative work demands. Asking questions primes the pump and drags it back online.</p>
+<p>Two operational details are unusually usable. The first is <strong>do not be embarrassed by stupid questions</strong>: "Bad questions lead to good questions. So roll with them and exhaust them to get to the good questions." He stresses doing this in "a stress-free manner," like freewriting or brainstorming, trusting that going a little deeper will turn something up.</p>
+<p>The second is <strong>how you recognize a good one</strong>, and it is his best image:</p>
+<blockquote>A good question is like a good joke. It has an unexpected element and provides a perspective change. After I get through some questions and I eventually arrive to a good question, I have a visceral reaction similar to that of hearing a good joke.<cite>Ibid.</cite></blockquote>
+<p>That turns something vaporous into something decidable: <strong>you do not have to judge afterwards whether it was a good question, because you laugh on the spot.</strong></p>
+<p>And all of it points toward the (naturally MAD) question he raises at the end of that same post. Answers are teachable, so we teach answers — why do we not teach questioning? Kids in kindergarten are good at it; by middle school most have stopped. He knows of no course and no decent book that teaches it systematically; academia transmits it by apprenticeship, which amounts to "watch me ask questions and start imitating." Eight years on, his blog is the fullest answer he can give: a public, 839-post demonstration.</p>
+
+<h3>2. Hybrid logical clocks: why must we choose?</h3>
+<p>Before 2014, time in distributed systems was a stalemate everyone had accepted. Three roads, each with a toll.</p>
+<p>The first is Lamport's 1978 <strong>logical clocks</strong>: each node keeps a counter, attaches it to messages, and on receipt takes the max and adds one. It faithfully records who came before whom, at the price of being completely divorced from real time — you cannot ask what the database snapshot looked like at 3pm last Tuesday, because there is no 3pm in a logical clock. It also assumes all communication stays inside the system; open a back channel and causality leaks.</p>
+<p>The second is <strong>physical clocks</strong>: use the machine's own clock, synchronized over NTP. Now you have real time, but geo-distributed synchronization is never precise, leaving an irreducible uncertainty interval, plus leap seconds and non-monotonic jumps. When two events' intervals overlap you simply <strong>cannot order them</strong>, and you get inconsistent snapshots.</p>
+<p>The third is Google's 2012 <strong>TrueTime</strong> in Spanner, which is blunt: buy GPS receivers and atomic clocks, push the uncertainty ε down to 6ms, and honestly report time as an interval rather than a point. The costs come in two parts. You must build the timing infrastructure in every datacenter, which he notes "can be prohibitive." And when intervals overlap TrueTime still cannot order them, so it <strong>has to explicitly wait them out</strong> — every commit burns that ε. Six milliseconds is not large, but it is certainly not zero.</p>
+<p>So: causality without real time, or real time that costs money and still makes you wait.</p>
+<p>The question he and Sandeep Kulkarni at Michigan State asked went sideways. Not "which of the three is the best deal," but <strong>why must we choose?</strong> They wrote the requirement as three conditions that must hold simultaneously:</p>
+<ol>
+<li>if event e happened before event f, then e's timestamp is less than f's (causality preserved);</li>
+<li>the timestamp occupies O(1) integers of space (no growing with the number of nodes, as vector clocks do);</li>
+<li>the timestamp stays within a bound of that node's physical clock (always close to real time).</li>
+</ol>
+<p>Demanding all three at once looks greedy. This is exactly what he means by a good question: instead of picking among the options, it <strong>shifts perspective until the options themselves are void</strong>.</p>
+<p>The naive construction fails, and he shows the failure honestly in the post: copy Lamport but take the max of logical and physical values, and with three nodes looping messages among themselves the logical part <strong>runs ahead of the physical clock without bound</strong>, destroying condition three.</p>
+<p>HLC puts two numbers in the timestamp: <em>l</em>, tracking physical time, plus a small counter <em>c</em> for ordering within a single <em>l</em>. The real ingenuity is not adding <em>c</em> but <strong>guaranteeing it keeps getting reset</strong>: either you receive a larger <em>l</em> from someone else and <em>c</em> goes to zero, or <em>l</em> stays put while the physical clock catches up and pushes it, and <em>c</em> goes to zero again. Both paths lead to a reset, so <em>c</em> cannot climb and the gap between logical and physical time is trivially capped at ε. Under the weakest assumptions they prove <em>c</em> is less than N(ε+1).</p>
+<p>Then the engineering move, the most skillful part of the post. NTP's 64-bit timestamp gives 32 bits to seconds and 32 to fractional seconds. They let <em>l</em> track only the <strong>high 48 bits</strong> — still microsecond granularity — and hand the remaining 16 bits to <em>c</em>, which can therefore grow to 65,536. The whole timestamp is still 64 bits and drops straight into anything that held an NTP timestamp.</p>
+<p>And the line that actually convinces sits in a parenthesis:</p>
+<blockquote>(In our experiments c mostly stayed in single digits.)<cite>Hybrid Logical Clocks, 27 July 2014</cite></blockquote>
+<p>Room for 65,536, single digits used. A theoretical bound, and an absurdly comfortable measured margin. CockroachDB, MongoDB and YugabyteDB all use HLC today.</p>
+<p>The second half of the story arrives ten years later. From late 2024 into 2025 he wrote a five-part series surveying how distributed databases actually use time, and the conclusion is worth more than the algorithm, because it redefines what time is:</p>
+<blockquote>A key takeaway is that time serves as a shared reference frame that enables nodes to make consistent decisions without constant communication. ... When nodes operate independently, they essentially exist in their own temporal universes.<cite>Use of Time in Distributed Databases (part 5): Lessons learned, 14 January 2025</cite></blockquote>
+<p>He even sets it beside a fashionable topic: while the AI community grapples with alignment, distributed systems have long confronted their own fundamental alignment problem. Align the frame and a great deal that used to require round trips — consistent snapshots under multi-version concurrency control, conflict detection, leases, fencing (using time to build a one-way door that shuts out a stale former leader) — can be computed locally, with no messages at all.</p>
+<p>But he holds one line, which he considers unchanged for thirty-odd years:</p>
+<blockquote>Barbara Liskov's 1991 principle remains fundamental: leverage time for performance optimization, not correctness.<cite>Ibid.</cite></blockquote>
+<p>He checks it case by case. Spanner uses TrueTime for performance while correctness rests on locking and consensus; DynamoDB uses timestamps to streamline transactions without depending on perfect synchronization. So when clocks misbehave, these systems <strong>get slower rather than wrong</strong>. Which is exactly where his own instrument sits: HLC supplies the monotonicity insurance that keeps NTP's misbehavior from tearing causality.</p>
+
+<h3>3. Two abstractions: hide, or reduce</h3>
+<p>This is his sharpest recent judgment, and it starts from a dissonance that bothered him for years.</p>
+<p>He has taught TLA+ for over a decade, always saying <strong>abstraction is the most important step and the hardest to learn</strong>. But the claim has a problem. Aren't computer scientists supposed to be good at abstraction? Abstract data types, APIs, layered design, encapsulation — staples of every CS curriculum for decades. So why do he and every other formal methods person he knows report that students <strong>cannot abstract</strong>, and flag it as the make-or-break skill?</p>
+<p>In May 2026 he gave the answer: because two things with <strong>opposite goals</strong> hide under the same word.</p>
+<blockquote>Modularity abstraction hides. Modeling abstraction reduces.<cite>The Two Abstractions of System Design: Hide or Reduce, 8 May 2026</cite></blockquote>
+<p><strong>Modularity abstraction</strong> is the kind on the syllabus: draw boundaries, encapsulate, hide what is underneath. It cuts vertically, so whoever is above the interface need not know what happens below. Its goal is <strong>usability</strong>, and to be usable it works hard to hide concurrency and present operations as if they were atomic. He offers a persuasive piece of supporting evidence: Joel Spolsky's famous complaint that all abstractions leak names <strong>only this kind</strong> — TCP hiding IP, string libraries hiding character arrays, file systems hiding spinning disks, virtual memory hiding the MMU and paging, SQL hiding query plans, NFS hiding the network.</p>
+<p><strong>Modeling abstraction</strong> is the kind mathematicians and physicists use when building models to think with. It looks for the minimal, most elegant description that preserves the property you care about, and cuts away everything else. It does not slice vertically; it slices <strong>crosswise</strong>, along a behavioral plane, keeping only what is absolutely relevant to that property, and even then only the "what," never the "how." He points out that the resulting slice <strong>usually looks nothing like the system's actual organization</strong>.</p>
+<p>Then the counterintuitive line. If modularity abstraction's life's work is sealing leaks, what about the other kind?</p>
+<blockquote>In stark contrast, the modeling abstraction is about identifying what should leak and leveraging it! It exposes the fine-grained actions and orderings, and proves that invariants hold despite the interleavings.<cite>Ibid.</cite></blockquote>
+<p>Modularity abstraction hides concurrency; modeling abstraction <strong>spreads it all out</strong>. The first pays off in usability, the second, in his words, in harvesting the maximum safe concurrency from the system. You can only know which interleavings are safe to run loose after you have seen them all.</p>
+
+<figure>
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram contrasting the two kinds of abstraction">
+<rect fill="none" height="300" width="700" x="0" y="0"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" font-weight="700" x="20" y="24">MODULARITY · cut down, hide</text>
+<rect fill="rgba(110,168,254,.10)" height="40" rx="5" stroke="#6ea8fe" stroke-width="1.4" width="250" x="20" y="40"></rect>
+<text fill="#c8d2dc" font-family="-apple-system, sans-serif" font-size="12.5" x="34" y="65">client · sees only the interface</text>
+<line stroke="#5eead4" stroke-dasharray="7 4" stroke-width="2.4" x1="20" x2="270" y1="92" y2="92"></line>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="10.5" x="20" y="107">↑ interface = boundary; all below invisible</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="116"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="138">retries · timeouts · reordering</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="158"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="180">caches · paging · replication</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="200"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="222">disks · network · clocks</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="20" y="262">Payoff: usability. Cost: concurrency is</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="20" y="280">hidden — and it always leaks anyway.</text>
+<line stroke="rgba(110,168,254,.2)" stroke-width="1" x1="350" x2="350" y1="30" y2="285"></line>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" font-weight="700" x="390" y="24">MODELING · cut across, reduce</text>
+<rect fill="rgba(255,255,255,.028)" height="182" rx="6" stroke="#3a4450" stroke-width="1" width="250" x="390" y="40"></rect>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="62">retries   caches   paging   disks</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="82">timeouts   replication   clocks</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="200">reordering   sharding   codecs</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="220">scheduling   failover   logging</text>
+<rect fill="rgba(94,234,212,.14)" height="58" rx="5" stroke="#5eead4" stroke-width="1.8" width="250" x="390" y="105"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11" x="404" y="124">kept for ONE property only:</text>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="404" y="147">minimal behavioral skeleton</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="390" y="262">Payoff: expose every interleaving, prove</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="390" y="280">the invariant, harvest safe concurrency.</text>
+</svg>
+<figcaption>One word, two opposite moves: hide things beneath a boundary, or cut away the irrelevant and expose all the rest</figcaption>
+</figure>
+
+<p>The examples he reaches for are a potted history of distributed systems, and each can be read as <strong>what it threw away</strong>: Lamport clocks discard wall-clock time and keep happens-before; HLC keeps real time and causality and discards the rest; TrueTime turns time into a bounded-uncertainty interval; consensus keeps only "agree on a single decision"; linearizability and every other consistency model discard replication, caching and retries; log-is-the-database discards materialized state as the source of truth, keeping only an ordered append-only sequence; MapReduce and Spark discard orchestration, parallelism, scheduling and fault tolerance, keeping a DAG of deterministic transforms and letting the framework reconstitute the rest from that skeleton.</p>
+<p>He pre-empts one objection: some artifacts look like they belong to both categories (linearizability, consensus, log-is-the-database, MapReduce). That, he says, is not overlap but <strong>reuse</strong> — a well-designed artifact can serve simultaneously as a spec to refine against (modularity) and a skeleton to reason from (modeling). The two roles happen to land on one object; the roles remain distinct.</p>
+<p>Worth noting how long this idea incubated. In January 2011, four months into the blog, his third paper review was of Butler Lampson's 1983 <em>Hints for computer system design</em>. In it he stops to emphasize a definition he expects will surprise many readers: an interface is not a function signature, it is <strong>the set of assumptions each programmer must make about the other program in order to demonstrate the correctness of their own</strong>. Twelve years later, in 2023, he wrote his own <em>Hints for Distributed Systems Design</em>, opening with "with apologies to Butler Lampson." The first hint on the list is "Apply abstraction."</p>
+
+<h3>4. Metastability: every contract has an "if" buried in it</h3>
+<p>This is his most sustained technical direction of the last five years, and the most immediately practical of the four.</p>
+<p>Start with how strange the phenomenon is. A <strong>metastable failure</strong> is defined as:</p>
+<blockquote>Metastable failure is defined as permanent overload with low throughput even after the fault-trigger is removed.<cite>Metastable failures in the wild, 12 September 2023</cite></blockquote>
+<p>Note the "even after." Your system gets shoved — a traffic spike, a bad config, a wiped cache — and then the hand withdraws, and <strong>the system does not come back</strong>. It is still running flat out, CPU pinned, producing almost nothing useful. In his phrase, it is "grinding but not doing useful work."</p>
+<p>It is not a rare curiosity either. The OSDI'22 paper he discusses went through 600 public postmortem incident reports and identified 21 metastable outages across companies large and small. Around 35% were triggered by load spikes and 45% by buggy configuration or code deployments plus latent bugs; on the sustaining side, <strong>over half were retry-induced load amplification</strong>.</p>
+<p>The structure fits in a two-by-two: one axis for what <strong>triggered</strong> it (load increase or capacity drop), the other for what <strong>sustains</strong> it (load increase or capacity drop).</p>
+
+<figure>
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four categories of metastable failure">
+<rect fill="none" height="380" width="700" x="0" y="0"></rect>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" x="130" y="22">TRIGGER →   load increase</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" x="430" y="22">capacity drop</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" transform="rotate(-90 26 145)" x="26" y="145">SUSTAIN ↓  load incr.</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" transform="rotate(-90 26 310)" x="26" y="310">capacity drop</text>
+<rect fill="rgba(110,168,254,.09)" height="140" rx="7" stroke="#6ea8fe" stroke-width="1.3" width="270" x="60" y="35"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="76" y="60">Retry storm</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="84">A spike grows the queue, requests start</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="103">timing out; timeouts trigger retries, and</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="122">retries are fresh load. The spike is long</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="141">gone; the retries now feed themselves.</text>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="10.5" x="76" y="163">over half of real-world incidents</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="350" y="35"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="366" y="60">Leader hiccup, follower pull</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="84">A Raft primary glitches and falls behind;</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="103">followers keep retrying their pulls, which</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="122">raises the load, so it never catches up.</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="60" y="205"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="76" y="230">GC death spiral</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="254">Longer queues strain memory, garbage</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="273">collection kicks in and cuts throughput,</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="292">so queues grow. Reproduced at Twitter.</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="350" y="205"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="366" y="230">Cache collapse</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="254">The cache is wiped, hit rate falls from</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="273">99% to zero; the thundering herd times</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="292">out the backend, which cannot refill it.</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="60" y="345">What all four share: the sustaining force is generated by the system itself. Removing the trigger does nothing.</text>
+</svg>
+<figcaption>The four categories of metastable failure. Horizontal axis: what triggered it. Vertical axis: what sustains it</figcaption>
+</figure>
+
+<p>Two of the lessons he draws are very much his.</p>
+<p>The first is <strong>feel the pain</strong>:</p>
+<blockquote>Feel the pain! Don't mask the pain, feel the pain, and attribute the pain to the correct subsystem and shed load quickly so you do not trip over to the metastable state.<cite>Ibid.</cite></blockquote>
+<p>This inverts the instinct behind graceful degradation. What you want to do is absorb the jitter and mask the pain so the layers above never see it; what he says is that masking pain is exactly what walks you into metastability, because by the time it hurts enough to notice, your only remaining option is a big reset. He also passes along a specific monitoring suggestion from Rebecca Isaacs: watch not the queue length but the <strong>rate of queue-length increase</strong> — a signal almost nobody monitors.</p>
+<p>The second is shorter, and he labels it the meta lesson: <strong>"Don't DOS yourself!"</strong> Design so the system cannot launch a denial of service against itself. Concretely: beware any structure where one request begets more than one request, retries above all.</p>
+<p>From that he generalizes to a principle about <strong>the danger of over-optimizing</strong>: do not optimize one part so hard that other cases produce disproportionate work amplification. Caching is the canonical case. Optimize to a 99.75% hit rate and you have built the system on the premise of a high hit rate; the day that premise fails, the system <strong>simply lacks the capacity to do the work it was always nominally doing</strong>. He cites DynamoDB as the positive model: it "prioritizes predictability over absolute efficiency," and its redesigned cache <strong>issues an asynchronous backend refresh even on a hit</strong>, deliberately keeping backend traffic constant regardless of hit ratio. It costs more; it buys away the bimodal behavior.</p>
+<p>The best turn in this thread came in September 2026, days before I wrote this page. He remodeled metastability in TLA+, but this time as two separate components joined by a rely-guarantee contract: the retrier promises not to send retries as long as the queue stays under a threshold; the server promises to hold its stability basin as long as retries stay bounded.</p>
+<p>Then he moved the initial backlog from 5 to 18 and ran the model checker. It blew up — a retry storm, the server at 100% utilization completing exactly one useful request per round, generating three times more load from its own retries than from its actual customers.</p>
+<p>What matters is <strong>how</strong> it blew up:</p>
+<blockquote>In our runs, the storm sustained itself while every contract check kept passing: the system failed with no component at fault.<cite>Metastability as a failed conditional discharge of rely-guarantee composition, 3 September 2026</cite></blockquote>
+<p>Nobody breached their contract and the system still collapsed, because <strong>both promises carried an "if."</strong> With a small backlog the two conditions hold each other up in a circular induction with a base case. With a large one, both implications remain <strong>logically true</strong> — their premises simply never apply, so they guarantee nothing. The base case had been knocked out.</p>
+<p>That is why he insists on decomposing. A monolithic spec also shows the backlog growing, but only making the contracts explicit shows you <strong>which promise was too weak</strong>. And the fix is an edit to that promise: give the retrier a hard budget of B retries per round regardless of backlog, turning "at most B" from conditional into unconditional. He adds that a second, possibly better fix exists on the server side — serve fresh requests first instead of splitting capacity proportionally — which requires no client change at all, and where one server protects itself against any number of clients while the budget approach tightens as clients multiply.</p>
+<p>Notice the echo. In January 2011, reading Lampson, he paused to stress that an interface is the set of assumptions each side must make about the other to prove itself correct. Fifteen years later he used that same concept to explain one of the nastiest failure modes in the cloud. That is not coincidence. That is an instrument he spent fifteen years sharpening, finally landing where it belongs.</p>
+
+<h2>How he thinks</h2>
+<p><strong>Fight with the paper.</strong> His 2013 post <em>How I read a research paper</em> is his seventh most-linked, and the first answer sets the tone: "I fight with it." His stance: "I believe that the paper has to earn my trust, and I only accept the parts that I am obliged to accept." The process: print it, keep a highlighter and several coloured pens to hand, argue in the margins, mark anything opaque with WDYM (what do you mean), and hypothesize about what you do not understand, revising as you read on.</p>
+<p>Then the endearing confession:</p>
+<blockquote>I am a bit ashamed of this, but I often write provocative things on the margin, like "This claim is stupid", "This is just bullshit". It is silly, but I do this to keep myself engaged with the paper and be emotionally involved as well. This way, I never fall asleep reading a paper.<cite>How I read a research paper, 25 July 2013</cite></blockquote>
+<p>But the last step in the process is not winning. He says you must <strong>sleep on it and come back</strong>, because by then you have probably been too harsh and should put the paper back in context. He warns against confusing critical reading with being hypercritical and dismissing the paper's contributions. The line he quotes to explain this step is from <em>Ender's Game</em>: in the moment when I truly understand my enemy, well enough to defeat him, in that very moment I also love him.</p>
+<p><strong>He does not know what he thinks until he writes it.</strong> He says this repeatedly; it is the engine of the whole method. His weekly quota is not about output:</p>
+<blockquote>I set this goal not for the quantity of the output, but for keeping myself in the writing frame-of-mind. ... This also helps me lower my standards for writing, which paradoxically maintains and raises my standards.<cite>Why I blog, 8 March 2024</cite></blockquote>
+<p>Sometimes, to satisfy the quota, he tells himself the topic is not interesting but he will attempt something anyway — and is then startled to find a fount of interesting things once he starts. His advice to new writers is anti-perfectionist in the same way: "mess up and tidy up later," keeping drafting strictly separate from editing, with a running file for dumping half-ideas and half-written text.</p>
+<p><strong>The blog as external memory.</strong> This use surprised him. He reports referring back to his own posts <strong>remarkably often</strong>, because "Because I strained my brain while writing them in the first place, reading them later refires the same neurons" — letting him quickly reconstruct the state of understanding he once built. A second brain with random access.</p>
+<p><strong>Exhaustion instead of confidence.</strong> This is the hardest landing of the humble-brains axiom. He asks: once the design is in pseudocode, can I not just check each action against my invariant myself? His answer: fine for toy examples, hopeless for real ones. He gives an example from his own teaching — the invariant talks about being in the critical section, while the actions talk about forks, per edge, over a dynamic priority graph, so <strong>doing that mapping in your head is nearly impossible</strong>. Hand it to a model checker doing breadth-first exhaustive search. What you save is not time; it is the opportunity to fool yourself.</p>
+<p><strong>After being scooped, take the blame back.</strong> In 2011 he coined "reverse-scooping": you solve a problem and publish first, then months later a better-known institution publishes the same result at a more visible venue, takes all the credit, and your work might as well not exist. He says the first few times he was very angry. How he eventually handled it is the man in miniature:</p>
+<blockquote>I take getting reverse-scooped to mean that I should have polished and published that work at the best venue I possibly could. ... Reverse-scooping is ugly, and I am not trying to rationalize it. But I find this new way of thinking to be more constructive than getting angry and complaining.<cite>Reverse-scooping, 19 December 2011</cite></blockquote>
+<p>Note that he does not claim it is fair. He explicitly says it is not. He simply <strong>picked the attribution that lets him keep moving</strong> — which is how he treats everything else: do not try to repair the part you do not control, build an instrument for the part you do.</p>
+
+<h2>Where he might be wrong</h2>
+<p>First, to be clear: I could not find any substantial, signed public criticism of him. That says something in itself — the paper-review genre rarely makes enemies. So what follows is my own judgment after reading, plus the criticisms he has written about himself, which are often harsher than mine.</p>
+<p><strong>1. The filter he distrusts supplies nearly all of his input.</strong> His opinion of peer review is very low — through Ponder Stibbons he calls it "ritualized academic hazing," and in his own voice he says papers "are written to satisfy three reviewers," turning defensive in some passages and pompous in others. His blog exists precisely to <strong>strip that costume off</strong>. But the inescapable fact is that what he reads is overwhelmingly published work that has already passed the process he distrusts. Ideas that failed to clear that filter mostly never reach him.</p>
+<p><strong>2. The fight happens in the margins; what gets published is the reconciliation.</strong> This one follows directly from his own described method. The final step of his reading process is to sleep on it, empathize, and "come to respect the paper and appreciate it more." That is a virtue as reading, but the consequence is that <strong>the fight is private and the public post is the post-reconciliation draft</strong>. Across 839 posts, the proportion saying "this paper is wrong" is strikingly low. "This is just bullshit" never became a blog post. For a reader this means his blog is an excellent translation service but not a reliable filter: he helps you understand the paper, and rarely tells you whether to believe it.</p>
+<p><strong>3. The biggest misjudgment he has admitted.</strong> This one is his, and he put it more bluntly than I could. When machine learning took off in 2016 he studied some, ran a few surveys, and then <strong>gave up</strong>, reasoning that the field sits too close to the application for principled algorithmic work. Reviewing the decade at the end of 2019 he wrote: "It turns out that I was judgmental, as several nice algorithmic and distributed systems started coming out recently." Worth noting that the misjudgment landed on the most consequential field of the following decade, and that its cause was exactly <strong>the taste he is proudest of</strong>. Taste cuts both ways: it filters noise, and it filters out things that have not yet taken shape.</p>
+<p><strong>4. He diagnosed the scaling problem of formal methods fifteen years ago, and his current fix leans on a tool he distrusts elsewhere.</strong> At the end of that 2011 Lampson review he had already written the fundamental difficulty with stepwise refinement: "these approaches cannot scale without some compiler support." Fifteen years on, the difficulty largely remains. His 2026 answer is to have an LLM write the TLAPS proofs — in the metastability post he states plainly that he "got Claude Code write TLAPS proofs" to lift the results to all parameter values. That is not necessarily wrong, but it is delicate, given what he argued the same year.</p>
+<p><strong>5. The most interesting tension, and he knows about it.</strong> In August 2026 he published <em>The Safest Job from AI may be Writing</em>, arguing that writing is the work least threatened: it is a wicked problem with no definitive formulation, no stopping rule, no objectively correct solution, where the only measure of success is "resonance inside another human mind," and where models "have zero skin in the game." He is not gentle about it, reporting a "visceral ick reaction" to AI prose.</p>
+<p>But on the same blog, the widely shared satirical sketch from March 2025 — Ponder Stibbons announcing to the Dean that he is leaving the ivory tower — carries a byline he added himself: <strong>"(Written by a golem named ChatGPT with some prompting)."</strong> So his sharpest critique of AI writing and his most-circulated piece of AI-ghostwritten prose are seventeen months apart, by the same hand.</p>
+<p>In fairness, he leaves his own door open. Having finished the argument against AI writing, the very next thing he says to the reader is: <strong>"Tell me where my logic does not hold up."</strong> Where most people would end on a conclusion, he ends on an invitation — which is precisely the system he installed for himself in 2018, still running eight years later.</p>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2018/01/mad-questions.html">Mad questions</a></span><span class="d">2 January 2018. The most self-linked post on the blog (46 times). A tenured professor publicly wondering whether he has been domesticated, then installing an enforced system for questioning. The one-year review is <a href="https://muratbuffalo.blogspot.com/2018/12/master-your-questioning-skills.html">Master your questioning skills</a>, source of "a good question is like a good joke."</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2014/07/hybrid-logical-clocks.html">Hybrid Logical Clocks</a></span><span class="d">27 July 2014. His own invention, second in backlinks (41). The tolls charged by logical clocks, NTP and TrueTime, and why you need not pay any of them. The five-part survey ten years later is <a href="https://muratbuffalo.blogspot.com/2025/01/use-of-time-in-distributed-databases_14.html">Use of Time in Distributed Databases (part 5)</a>.</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2026/05/the-two-abstractions-of-system-design.html">The Two Abstractions of System Design: Hide or Reduce</a></span><span class="d">8 May 2026. His sharpest original claim: the abstraction on the syllabus and the abstraction modeling needs point in opposite directions. One hides, one reduces.</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2026/09/metastability-as-failed-conditional.html">Metastability as a failed conditional discharge of rely-guarantee composition</a></span><span class="d">3 September 2026. A retry storm modeled as two components under contract, concluding that every contract carries an "if" and a system can collapse with no component at fault. The introduction to the phenomenon is <a href="https://muratbuffalo.blogspot.com/2023/09/metastable-failures-in-wild.html">Metastable failures in the wild</a>.</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2012/01/tell-me-about-your-thought-process-not.html">Tell me about your thought-process, not just your results</a></span><span class="d">11 January 2012. The blog's axiom: "We all have humble brains." From one terrible networking class, through the Bourbaki school, to Murakami's metaphor about digging wells. How he reads is in <a href="https://muratbuffalo.blogspot.com/2013/07/how-i-read-research-paper.html">How I read a research paper</a>; why he writes is in <a href="https://muratbuffalo.blogspot.com/2024/03/why-i-blog.html">Why I blog</a>.</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-15" data-slug="metadata">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>Blog Deep Read · one page ≈ one mind, read through · content verified to 2026-09-15</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>

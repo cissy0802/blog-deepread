@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Murat Demirbas · Metadata — 脑子是普通的，所以要造器械</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="metadata-blog17.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 17 · muratbuffalo.blogspot.com</div>
+<h1>Murat Demirbas<br/>脑子是普通的，所以要造器械</h1>
+<p class="sub">2007 年至今 · 839 篇 · 跨度 16 年（2010 年 9 月起稳定周更）· 一次明显转折：2020 年前后从终身教授转入工业界（AWS 三年，现 MongoDB Research）· 仍在更新，最新一篇 2026 年 9 月 12 日 · 全站免费公开，无付费墙 · 本页通读 19 篇，跨度 2011 年 1 月至 2026 年 9 月，其中 4 篇来自最早期，转折两侧各有取样</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>为了写这一页，我爬了 Murat Demirbas 全部 839 篇博客的正文，统计站内互相链接——想看看这个写了十六年的博客，哪几篇是承重墙。</p>
+<p>排第一的不是 Paxos，不是任何一篇论文精读。是一篇 2018 年元旦写的、讨论问号这个符号从哪来、以及猩猩到底会不会提问的文章。<strong>46 次回链。</strong></p>
+<p>第二名才是他自己发明的混合逻辑时钟（41 次）。第三名是同一个话题的续篇（33 次）。前十名里有六篇讲的是怎么提问、怎么读论文、怎么写作、怎么讲自己的思考过程——只有四篇是技术。</p>
+<p>一个分布式系统领域的顶级专家，博客的地基居然是<strong>关于怎么想问题的</strong>。</p>
+<p>这不是意外。2017 年年底，当了十几年教授、写了七年博客的他坐下来，给自己下了一个很不留情的诊断：他觉得自己的问题变钝了，"often come out as shallow/predictable"。然后是那句最要命的自我怀疑：</p>
+<blockquote><span class="en">But yeah, I cannot be sure whether I have gone compliant/docile recently, can I?</span><span class="zh">但话说回来，我没法确定我最近是不是已经变得顺从、听话了，对吧？</span><cite>Mad questions，2018 年 1 月 2 日</cite></blockquote>
+<p>他的新年决心不是"多提问"。他知道决心没用。他的做法是<strong>装一个系统</strong>：从此每篇博客末尾强制加一节"MAD questions"（疯问题），并且新开一个标签专门收它们。</p>
+<p>一年后他复盘：70 篇下来，这一节平均占正文篇幅的 25%，经常比正文还长；更意外的是，很多本来烂在草稿箱里的半成品，正是因为要凑这一节才被写成了成品。而他给出的解释，是这整件事里最漂亮的一下——这个办法之所以几乎不费力气就有效，是因为</p>
+<blockquote><span class="en">our default mode is to not question things. We have been implicitly taught this at our family, school, and work.</span><span class="zh">我们的默认模式就是不提问。这是家庭、学校和工作场所暗中教给我们的。</span><cite>Master your questioning skills，2018 年 12 月 17 日</cite></blockquote>
+<p>所以"MAD"这个名字不是装饰，是<strong>许可证</strong>：叫它疯问题，他就获得了不受传统假设约束地发疯的豁免权。他还给了一条特别实用的操作建议：别嫌自己一开始的问题蠢。"Bad questions lead to good questions."（坏问题通向好问题。）把蠢问题耗光，好问题才出得来。怎么知道碰到好问题了？<strong>好问题像好笑话</strong>——有意外，有视角切换，而且你身体会有反应。</p>
+<p>这套东西看起来像自助读物，但它挂在一个非常硬的前提上，那个前提才是理解这个人的钥匙。他在 2012 年就把它写死了：</p>
+<blockquote><span class="en">We all have humble brains; don't let anybody tell you differently. Falling short of superpowers (genius/giftedness), we invent processes/systems to succeed, and the good thing about these processes are they are replicable (unlike being genius/gifted).</span><span class="zh">我们的脑子都是普通的，别让任何人告诉你不是这样。既然没有超能力（天才、天赋），我们就发明流程和系统来取胜，而这些流程的好处在于它们可复制——天才可不行。</span><cite>Tell me about your thought-process, not just your results，2012 年 1 月 11 日</cite></blockquote>
+<p>六年后他把同一句话说得更短、更狠，用在了完全不同的地方：<strong>"Being smart does not scale."</strong>（聪明这东西不可扩展。）那是在讲为什么设计分布式协议时不能靠"我想了想应该没问题"，得上穷举式的模型检验。</p>
+<p>一旦你握住这把钥匙，他那些看起来八竿子打不着的题目就连成了一条线。它们全都是同一个动作的不同版本：<strong>一个普通的脑子，怎么可靠地搞懂一个大到装不进脑子的东西？答案永远不是"更聪明"，而是"造一件器械"。</strong></p>
+<p>他自己最有名的那件器械，是 2014 年的混合逻辑时钟（Hybrid Logical Clocks，HLC）。当时时间这件事在分布式系统里是个死局：Lamport 1978 年的逻辑时钟能记录因果先后，但和真实世界的时间完全脱钩，你没法问"上周二的快照长什么样"；靠 NTP 同步的物理时钟有真实时间，但跨地域同步不准，还有闰秒和回拨这些脏活；Google 2012 年的 Spanner 干脆砸钱上 GPS 和原子钟，把误差压到 6 毫秒——代价是要建一整套硬件基础设施，而且<strong>每次提交事务还得白白等掉那个误差区间</strong>。</p>
+<p>三条路，每条都要你交学费。他和 Sandeep Kulkarni 的提问方式换了个方向：<strong>为什么一定要选？</strong> 能不能造一个时间戳，同时做到保因果、只占常数空间、而且永远贴着物理时钟不超过一个上界？</p>
+<p>朴素的做法（照抄 Lamport 但每次取最大值）会失控——逻辑部分会无限地跑到物理时钟前面去。HLC 的技巧是加一个小计数器 <em>c</em>，并且保证它会被<strong>反复清零</strong>：要么你收到一个更大的逻辑时间，<em>c</em> 归零；要么物理时钟追上来把它顶上去，<em>c</em> 还是归零。于是逻辑时间和物理时间的差距被平凡地卡住了。工程上他们再狠一手：逻辑部分只跟踪物理时钟的高 48 位（仍然有微秒精度），剩下 16 位全给 <em>c</em>。而括号里那句实测结果才是这个设计真正的说服力所在——</p>
+<blockquote><span class="en">(In our experiments c mostly stayed in single digits.)</span><span class="zh">（在我们的实验里，c 基本上停留在个位数。）</span><cite>Hybrid Logical Clocks，2014 年 7 月 27 日</cite></blockquote>
+<p>留了 65536 个坑，实际只用掉个位数。今天 CockroachDB、MongoDB、YugabyteDB 都在用它。</p>
+<p>十年后他写了五篇的总结系列，结论比 HLC 本身更值钱，因为它把"时间"重新定义了一遍：同步时钟的本质不是"知道几点了"，而是<strong>一个共享参照系</strong>。</p>
+<blockquote><span class="en">When nodes operate independently, they essentially exist in their own temporal universes.</span><span class="zh">当各个节点独立运行时，它们本质上活在各自的时间宇宙里。</span><cite>Use of Time in Distributed Databases (part 5)，2025 年 1 月 14 日</cite></blockquote>
+<p>参照系一对齐，很多原本要靠来回通信才能谈成的事——一致性快照、冲突检测、租约（lease）——就不用谈了，各节点自己算就行。但他同时守着一条从 Barbara Liskov 1991 年那里继承来的红线，而且他认为这条线至今没变：<strong>时间用来提性能，不用来保正确性。</strong>时钟坏了你该只是变慢，不该是算错。</p>
+<p>他最近、也最锋利的一个判断是 2026 年 5 月的。他教了很多年 TLA+（一种把系统设计写成数学模型再让机器穷举检查的工具），每次都说"抽象"是最重要也最难学的那一步。但有个认知失调一直折磨他：<strong>计算机系的人不是本来就该擅长抽象吗？</strong> 抽象数据类型、API、分层设计，是每一份 CS 课表上的主食。那为什么每一个搞形式化方法的人，都说学生不会抽象？</p>
+<p>他的答案是：同一个词底下藏着两种方向相反的东西。</p>
+<blockquote><span class="en">Modularity abstraction hides. Modeling abstraction reduces.</span><span class="zh">模块化抽象是把东西遮起来。建模抽象是把东西削下去。</span><cite>The Two Abstractions of System Design: Hide or Reduce，2026 年 5 月 8 日</cite></blockquote>
+<p>模块化抽象画边界、做封装，竖着切一刀，把下面那层<strong>遮住</strong>，目标是让人好用——它想把并发藏起来，假装每个操作都是原子的。Joel Spolsky 那句著名的"所有抽象都是漏的"，抱怨的全是这一种。</p>
+<p>建模抽象反过来。它横着切，为你关心的那<strong>一条性质</strong>把系统削到最小的行为骨架，扔掉一切不相干的东西。而且——这是最反直觉的一句——它<strong>故意让东西漏出来</strong>：把细粒度动作和所有可能的交错全部暴露，然后证明不变式在每一种交错下都成立。回报不是好用，是"榨出系统里最大限度的安全并发"。</p>
+<p>他随手给的例子串本身就是一份分布式系统简史，每一个都可以读成"扔掉了什么"：Lamport 逻辑时钟扔掉墙上时间、只留先后；HLC 留下真实时间和因果、扔掉其余；TrueTime 把时间变成一个有界的不确定区间；线性一致性扔掉复制、缓存和重试；"日志即数据库"扔掉物化状态这个真相来源；MapReduce 扔掉编排、并行、调度和容错，只留一串确定性变换。</p>
+<p>如果非要给这个人一句总结，那就是他 2023 年写给分布式系统设计者的那条建议——出自一个把半辈子花在共识协议上的人：</p>
+<blockquote><span class="en">Even as a distributed coordination researcher and Paxos expert, my advice is to reduce coordination.</span><span class="zh">尽管我是研究分布式协调的、是 Paxos 专家，我的建议依然是：少协调。</span><cite>Hints for Distributed Systems Design，2023 年 10 月 2 日</cite></blockquote>
+<p>而他造的那件最有效的器械，说到底就是这个博客本身。他给自己定了周更配额，理由不是产量，是"noticing"——保持在一种会注意到东西的状态里。他说这个配额<strong>降低了他的写作标准，而这恰恰反过来抬高了标准</strong>。他回头读自己七年前的旧文，说那能"refires the same neurons"，让他快速把当年那个理解状态重新装载回来。</p>
+<p>博客成了他的<strong>外部存储器</strong>。839 篇，五百多万次阅读，一个人的、可复制的、不靠天赋的挖井记录。</p>
+</div>
+
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>一件怪事：这个博客的地基，是一篇讲猩猩会不会提问的文章</h2>
+<p>为了写这一页，我做了一件笨事：把 Murat Demirbas 全部 839 篇博客的正文抓下来，统计它们互相之间的链接。想法很简单——一个人写了十六年，总有那么几篇是他自己反复回头去引的。那几篇就是承重墙。</p>
+<p>结果排第一的，不是 Paxos，不是 Spanner，不是任何一篇论文精读。是一篇 2018 年元旦发的短文，前半段在讲他妈妈如何在旅途中指着窗外的植物问他"为什么这里的地貌不一样"，后半段在认真讨论猩猩到底会不会提问、以及问号这个符号究竟从哪来。<strong>被后续文章回链 46 次。</strong></p>
+<p>第二名是他自己的技术发明，混合逻辑时钟，41 次。第三名 33 次，是同一个提问话题一年后的复盘。往下数，前十名里有六篇讲的是怎么提问、怎么读论文、怎么写作、怎么把思考过程讲出来——只有四篇是技术内容。</p>
+<p>这个排名不是流量榜。流量榜他有另一份，上面是"学分布式系统从哪开始"和"给 2025 年大一新生的建议"。这是<strong>他自己的引用榜</strong>：十六年里他每次写新东西时，会伸手去够的那几块砖。</p>
+<p>一个在分布式系统和数据库领域待了二十五年、发明过被工业界广泛采用的算法的人，博客的地基是<strong>关于怎么想问题的</strong>。这不是跑题，这是他整件事的主干。</p>
+
+<h2>这人是谁</h2>
+<p>Murat Demirbas（穆拉特·德米尔巴什），土耳其人，俄亥俄州立大学博士，导师 Anish Arora；之后在 MIT 跟 Nancy Lynch 做博士后。2003 年起在纽约州立大学布法罗分校（University at Buffalo）教计算机，一待二十一年，2008 年拿到 NSF CAREER 奖。2020 年前后他离开学界，先在 AWS 做了三年 Principal Applied Scientist，现在是 MongoDB Research 的首席研究科学家。</p>
+<p>博客叫 Metadata，2010 年 9 月开始稳定更新，起因很具体：他想从"分布式系统理论 + 无线传感网"转到云计算，就去旁听了系里同事的云计算讨论班，决定每读一篇论文就写一篇总结逼自己消化。第一篇写的是 MapReduce。他说那篇"seems to have opened the floodgates"（似乎打开了闸门）。十六年后，839 篇，五百多万次阅读。</p>
+<p>有个细节很他：博客域名是 muratbuffalo。2026 年 7 月他终于拖着一辆 6 英尺宽的 U-Haul 拖车横跨美国搬去湾区，路上还因为猫 Pasha 在搬空的房子里赌气离家出走、半夜十一点才回来而耽误了一整天。他在那篇里写，布法罗有着"黑洞级别的逃逸速度"，而当年给博客起这个名字时，他不知道这名字会跟一辈子，"几乎成了一句诅咒"。<strong>博客仍在更新</strong>，最近一篇是 2026 年 9 月 12 日。</p>
+
+<div class="glossary">
+<b>Glossary · 术语表</b>
+<ul>
+<li><b>分布式系统</b>：一堆独立的机器，靠互相发消息来装成一台机器的样子。麻烦全在于消息会丢、会延迟、会乱序，机器会挂，而且没人能同时看到全局。</li>
+<li><b>共识 / Paxos</b>：让一群可能故障的机器就"某件事到底定成什么"达成一致的协议。Paxos 是 Lamport 1989 年提出的经典方案，是几乎所有云数据库的地基。</li>
+<li><b>逻辑时钟 vs 物理时钟</b>：逻辑时钟只记录"谁在谁之前发生"，跟真实时间无关；物理时钟是机器上那块靠 NTP 对时的表，有真实时间但不准。</li>
+<li><b>TLA+ / 模型检验</b>：TLA+ 是 Lamport 设计的一种语言，把系统设计写成数学模型；模型检验器（TLC）会把所有可能的执行顺序穷举一遍，看有没有哪一条能违反你的要求。</li>
+<li><b>不变式（invariant）</b>：一条你希望在系统运行的每一刻都成立的性质，比如"同一个位置上不会有两个不同的值被提交"。</li>
+<li><b>亚稳态（metastability）</b>：借自物理学。系统被推了一下之后卡在一个坏状态里，就算推它的那只手撤走了也回不来。</li>
+</ul>
+</div>
+
+<h2>他跟什么较劲</h2>
+<p>他十六年没放下的那个问题，可以写成一句话：<strong>一个普通的脑子，怎么可靠地搞懂一个大到装不进脑子的系统？</strong></p>
+<p>关键在"普通"两个字。这不是谦辞，是他整套方法论的<strong>公理</strong>，而且他写得毫不含糊：</p>
+<blockquote><span class="en">We all have humble brains; don't let anybody tell you differently. Falling short of superpowers (genius/giftedness), we invent processes/systems to succeed, and the good thing about these processes are they are replicable (unlike being genius/gifted).</span><span class="zh">我们的脑子都是普通的，别让任何人告诉你不是这样。既然没有超能力（天才、天赋），我们就发明流程和系统来取胜，而这些流程的好处在于它们可复制——天才可不行。</span><cite>Tell me about your thought-process, not just your results，2012 年 1 月 11 日</cite></blockquote>
+<p>他不是抽象地得出这个结论的。他是被一门课气出来的。</p>
+<p>那篇 2012 年的文章里，他回忆自己读本科时的第一堂网络课：教材一上来就把 TCP 和 UDP 的包头字段一个个铺开讲，字段长度、标志位、校验和，在这之前没有讲过任何一个协议的思想，甚至没讲过网络到底要解决什么问题。而任课老师"blankly"地照着出版社配的 PPT 念——那套 PPT，用他的话说，显然不是给人类听众做的。他因此讨厌了网络这个领域很多年。</p>
+<p>然后他没有停在抱怨上，而是往上追责任链，这个追法本身就很有代表性。老师为什么这样？因为懒，照教材。教材作者为什么这样？也懒，照论文的体例。论文为什么这样写？他追到了二十世纪法国的 Bourbaki 学派——那场把数学重写成公理体系的运动，重心从具体例子挪到了抽象一般性。他引 Freeman Dyson 的话：在 Bourbaki 的世界里，教材里没有的就不是数学，而具体例子因为不出现在教材里，所以不算数学。</p>
+<p>他的判决是：严格和一般性本身没问题，问题在于<strong>论文把得出结果的那个思考过程全删了</strong>。而且他怀疑这里头有不那么光彩的动机——删掉过程，是为了"cover up the tracks of our 'lacking' thought-processes"，藏起我们其实很笨拙的思路，摆出一张只有完美结果的面孔。他说他真的在合作中听过这种逻辑：我当初想明白它很费劲，所以读者读起来也该费劲。</p>
+<p>这一节的落点是村上春树。他转述《当我谈跑步时我谈些什么》里的意思：有天赋的作家随便往地上戳一下水就涌出来；没天赋的作家（村上以自己为例）得学会挖井。而水枯的那一天迟早会来——到那时天赋型的人傻眼，因为他从没为这一天练过；挖井的人照挖不误。</p>
+<blockquote><span class="en">This is the reason we should teach our students/audience how to dig wells, and not to rely on occasional strike of insights for success.</span><span class="zh">这就是为什么我们该教学生和读者怎么挖井，而不是指望偶尔劈下来的灵感。</span><cite>同上</cite></blockquote>
+<p>六年后他把同一个公理压缩成了五个单词，用在了一个完全不同的场合——讲为什么设计分布式协议时不能靠人脑推演："<strong>Being smart does not scale.</strong>"（聪明这东西不可扩展。）</p>
+<p>所以他这十六年做的事，全部可以读成同一个动作：<strong>造器械</strong>。不是"更努力地想"，不是"培养直觉"，而是造出一件件具体的、每次都能拿起来用的、不依赖当天状态和灵感的装置。下面四个，是他造出来的最好的四件。</p>
+
+<h2>他的四件器械</h2>
+
+<h3>一、MAD questions：把"提问"做成一个可以安装的系统</h3>
+<p>2017 年年底，他坐下来给自己做了一次体检，结果不好看。</p>
+<p>他已经养成了定期停下来问自己问题的习惯——他用番茄钟工作，并且在每个番茄钟的头四分钟和尾四分钟强制"go meta"，抽身出来问：这个路子对吗？还能试什么？我进展够快吗？这事能做成真正有分量的吗？</p>
+<p>问题是，他发现这套东西已经<strong>变成了例行公事</strong>。问题"often come out as shallow/predictable"，肤浅、可预测。还有用——至少在做安全检查——但不再能把他推到别处去。然后是那句真正扎人的自我怀疑：</p>
+<blockquote><span class="en">But yeah, I cannot be sure whether I have gone compliant/docile recently, can I? Maybe I am losing my edge, because I have been in the system long enough. Maybe I start seeing myself as experienced now, and it is affecting me.</span><span class="zh">但话说回来，我没法确定我最近是不是已经变得顺从、听话了，对吧？也许我正在失去锋刃，因为我在这个体系里待得够久了。也许我开始把自己看成一个有经验的人了，而这正在影响我。</span><cite>Mad questions，2018 年 1 月 2 日</cite></blockquote>
+<p>这是一个终身教授在公开场合承认自己可能已经被驯化了。</p>
+<p>关键在他接下来的动作。他的新年决心是"问更多、更好、更疯的问题"——但他立刻说，光有决心没用，<strong>得把它装成一个系统</strong>。系统是这样的：从今往后每篇博客末尾强制加一节，叫 MAD questions；并且在博客上新开一个同名标签，让它们可被检索、可被回头找到。</p>
+<p>这个设计有两个地方值得停下来看。第一，它把一件靠意志力的事变成了一件靠格式的事——只要你还在写博客，你就必须写那一节。第二，"MAD"这个名字不是俏皮话，是<strong>发给自己的许可证</strong>。一年后他把这一点讲得很清楚：</p>
+<blockquote><span class="en">By calling these questions MAD questions, I gave myself the license/protection to go wild, uninhibited by traditional assumptions/constraints. This gave rise to reducing the bar, and approaching the topic with a beginner mind, as an outsider.</span><span class="zh">通过把这些问题叫作"疯问题"，我给了自己发疯的许可和保护，不再被传统的假设和约束绑住。这降低了门槛，让我能以初学者的心态、以一个外人的身份去接近这个题目。</span><cite>Master your questioning skills，2018 年 12 月 17 日</cite></blockquote>
+<p>一年七十篇之后他复盘，数据很实在：MAD 那一节平均占正文篇幅的 25%，<strong>很多时候比正文还长</strong>。每次写它大概多花十五到二十分钟。但真正的收益在别处——他说，很多本来烂在草稿箱（他有个 blog.org 文件专门堆半成品）里的东西，正是因为要凑这一节被强行多想了一会儿，才够格发出来；还有些 MAD 问题里刨出来的线索，最后被他搬回正文，把主文章改好了。</p>
+<p>那这么省力的东西为什么有效？他给的解释是这一整件事里最漂亮的一下：</p>
+<blockquote><span class="en">I think the reason for this is because our default mode is to not question things. We have been implicitly taught this at our family, school, and work. Asking too many questions, especially hard ones, is frowned upon in polite company.</span><span class="zh">我想原因在于，我们的默认模式就是不提问。这是家庭、学校和工作场所暗中教给我们的。问太多问题，尤其是难问题，在体面场合是不受欢迎的。</span><cite>同上</cite></blockquote>
+<p>也就是说，这不是一个需要新技能的问题，是一个需要<strong>解除抑制</strong>的问题。能力一直在，只是被摁住了。而他还补了一层生理学解释：人脑天然省电，偏好浅任务，会主动躲开创造性工作所需要的那种高强度思考；提问的作用是给泵灌水（prime the pump），把脑子强行拽进在线状态。</p>
+<p>他给了两条特别能上手的操作细节。</p>
+<p>第一条是<strong>别嫌自己的问题蠢</strong>："Bad questions lead to good questions. So roll with them and exhaust them to get to the good questions."（坏问题通向好问题。所以顺着它们往下走，把它们耗光，好问题才出得来。）他强调要以一种"stress-free manner"去做这件事——像自由写作和头脑风暴那样，相信再往前走一点东西就会来。</p>
+<p>第二条是<strong>怎么知道自己碰到好问题了</strong>。这是他最好的一个比喻：</p>
+<blockquote><span class="en">A good question is like a good joke. It has an unexpected element and provides a perspective change. After I get through some questions and I eventually arrive to a good question, I have a visceral reaction similar to that of hearing a good joke.</span><span class="zh">好问题像好笑话。它有出人意料的成分，它给你一次视角切换。当我趟过一堆问题、终于摸到一个好问题时，我身体的反应跟听到一个好笑话是一样的。</span><cite>同上</cite></blockquote>
+<p>这句话把一件很玄的事变成了可判定的：<strong>你不需要事后才知道那是不是好问题，你当场就会笑。</strong></p>
+<p>而这一节的所有内容，最后都指向他在同一篇末尾自己提出的那个（当然是 MAD 的）问题：既然答案是可教的所以我们教答案，那提问为什么不教？小孩在幼儿园时提问能力都很好，到了初中大部分就停了。他说他不知道有任何一门课、任何一本像样的书在系统地教这件事，学界传授它的方式是"看着我问，然后模仿"。八年过去，他的博客本身成了他能给出的最完整的回答——一个公开的、839 篇的示范现场。</p>
+
+<h3>二、混合逻辑时钟：为什么一定要选？</h3>
+<p>2014 年之前，"时间"在分布式系统里是一个所有人都认了的死局。三条路，每条都收学费。</p>
+<p>第一条是 Lamport 1978 年的<strong>逻辑时钟</strong>：每个节点维护一个计数器，发消息带上，收消息取最大值再加一。它能忠实记录"谁在谁之前发生"，代价是它和真实时间彻底脱钩——你没法问"上周二下午三点的数据库快照长什么样"，因为逻辑时钟里没有"下午三点"这回事。而且它假设所有通信都走系统内部，一旦有旁路（比如两个用户在微信上对了一下），因果关系就漏了。</p>
+<p>第二条是<strong>物理时钟</strong>：直接用机器上那块靠 NTP 对时的表。有真实时间了，但跨地域同步根本不准，永远存在一段不确定区间；而且还有闰秒、有非单调的时间跳变这些脏活。两个事件的不确定区间一重叠，你就<strong>没法排序</strong>，于是拿到不一致的快照。</p>
+<p>第三条是 Google 2012 年 Spanner 的 <strong>TrueTime</strong>，简单粗暴：砸钱上 GPS 接收机和原子钟，把误差 ε 压到 6 毫秒，并且诚实地把时间报成一个区间而不是一个点。但代价有两重：要在每个数据中心建一整套授时基础设施，成本"可能高到无法承受"；更要命的是，区间重叠时 TrueTime 同样没法排序，<strong>只能显式地干等</strong>——每个事务提交都要白白等掉那个 ε。6 毫秒不算大，但它也绝不是零。</p>
+<p>这就是当时的局面：要因果就没有真实时间，要真实时间就得花钱而且还得等。</p>
+<p>他和密歇根州立的 Sandeep Kulkarni 的提问方式，换了个方向。不是"这三条路哪条最划算"，而是——<strong>为什么一定要选？</strong> 他们把要求直接写成了三条必须同时成立的形式化条件：</p>
+<ol>
+<li>如果事件 e 在事件 f 之前发生，那么 e 的时间戳必须小于 f 的（保住因果）；</li>
+<li>时间戳只占常数个整数的空间（不许像向量时钟那样随节点数膨胀）；</li>
+<li>时间戳和该节点的物理时钟之差，有界（永远贴着真实时间）。</li>
+</ol>
+<p>这三条同时要，看起来很贪。而这正是他所谓"好问题"的样子：它不在给定的选项里挑，它<strong>换了个视角把选项本身作废了</strong>。</p>
+<p>朴素的实现会失败，而且他在文章里老老实实地把失败展示了一遍：如果照抄 Lamport 的做法、每次取逻辑值和物理值的最大值，那么三个节点之间只要不停地转圈发消息，逻辑部分就会<strong>无限地跑到物理时钟前面去</strong>，第三条彻底破产。</p>
+<p>HLC 的解法是在时间戳里放两个数：<em>l</em> 跟踪物理时间，另加一个小计数器 <em>c</em> 处理同一个 <em>l</em> 之内的先后。真正的机巧不在于加了 <em>c</em>，而在于<strong>保证 <em>c</em> 会被反复清零</strong>：要么你从别人那儿收到一个更大的 <em>l</em>，于是 <em>c</em> 归零重来；要么 <em>l</em> 原地不动、物理时钟自己追上来把它顶上去，<em>c</em> 还是归零。两条路都通向清零，所以 <em>c</em> 涨不起来，<em>l</em> 和物理时钟的差距也就被平凡地卡在了 ε 之内。他们证明了在最弱的假设下 <em>c</em> 小于 N(ε+1)。</p>
+<p>然后是工程上那一手，也是全篇最见功力的地方。NTP 的 64 位时间戳里，32 位给秒、32 位给小数秒。他们让 <em>l</em> 只跟踪其中<strong>高 48 位</strong>——精度仍然到微秒级——把省下来的 16 位全给 <em>c</em>，于是 <em>c</em> 有 65536 的空间可以涨。整个时间戳还是 64 位，可以直接塞进任何本来放 NTP 时间戳的地方。</p>
+<p>而那句真正让人服气的话，他写在括号里：</p>
+<blockquote><span class="en">(In our experiments c mostly stayed in single digits.)</span><span class="zh">（在我们的实验里，c 基本上停留在个位数。）</span><cite>Hybrid Logical Clocks，2014 年 7 月 27 日</cite></blockquote>
+<p>留了 65536 个坑，实际只用掉个位数。一个理论上的界，和一个实测上宽裕得离谱的余量。今天 CockroachDB、MongoDB、YugabyteDB 都在用 HLC。</p>
+<p>故事的第二半发生在十年后。2024 年底到 2025 年初，他写了一个五篇的系列，把整个"分布式数据库怎么用时间"的领域梳理了一遍，结论比 HLC 这个具体算法更值钱，因为它把"时间是什么"重新定义了：</p>
+<blockquote><span class="en">A key takeaway is that time serves as a shared reference frame that enables nodes to make consistent decisions without constant communication. ... When nodes operate independently, they essentially exist in their own temporal universes.</span><span class="zh">一个核心结论是：时间的作用是一个共享参照系，它让各节点不必持续通信也能做出一致的决定。……当各个节点独立运行时，它们本质上活在各自的时间宇宙里。</span><cite>Use of Time in Distributed Databases (part 5): Lessons learned，2025 年 1 月 14 日</cite></blockquote>
+<p>他甚至把它跟 AI 圈的话题并排放了一下：AI 界正在头疼 alignment（对齐），而分布式系统早就在处理自己的那个根本性的对齐问题了。参照系一对齐，很多本来必须靠来回通信谈成的事——多版本并发控制下的一致性快照、冲突检测、租约、"围栏"（fencing，用时间造一扇单向门，把过期的旧主挡在外面）——各节点自己算就行，一个消息都不用发。</p>
+<p>但他同时死死守着一条线，而且认为它三十多年没变：</p>
+<blockquote><span class="en">Barbara Liskov's 1991 principle remains fundamental: leverage time for performance optimization, not correctness.</span><span class="zh">Barbara Liskov 1991 年那条原则依然是根本：用时间来做性能优化，不要用它来保正确性。</span><cite>同上</cite></blockquote>
+<p>他挨个验过：Spanner 用 TrueTime 提性能，正确性还是靠加锁和共识；DynamoDB 用时间戳简化事务处理，但不指望时钟完美。所以时钟坏掉的时候，这些系统<strong>只是变慢，不会算错</strong>。这也正是他自己那件器械的真正定位——HLC 提供的是单调性这层保险，让 NTP 的抽风不至于把因果关系撕坏。</p>
+
+<h3>三、两种抽象：遮起来，还是削下去</h3>
+<p>这是他最近的、也是最锋利的一个判断，而它的起点是一个折磨了他很多年的认知失调。</p>
+<p>他教 TLA+ 教了十几年，每次都说：<strong>abstraction 是最重要的一步，也是最难学的一步。</strong>但这句话本身有毛病——计算机系的人不是本来就该擅长抽象吗？抽象数据类型、API、分层设计、封装，这些是每一份 CS 课表上的主食，教了几十年了。那为什么他，以及他认识的每一个搞形式化方法的人，都一致地说学生<strong>不会抽象</strong>，并且把它标为"成败攸关"的那一项技能？</p>
+<p>2026 年 5 月他给出了答案：因为同一个词底下，藏着两种<strong>目标截然相反</strong>的东西。</p>
+<blockquote><span class="en">Modularity abstraction hides. Modeling abstraction reduces.</span><span class="zh">模块化抽象是把东西遮起来。建模抽象是把东西削下去。</span><cite>The Two Abstractions of System Design: Hide or Reduce，2026 年 5 月 8 日</cite></blockquote>
+<p><strong>模块化抽象</strong>就是课表上教的那种：画边界、做封装、把下面那层藏好。它竖着切一刀，接口之上的人不必知道接口之下发生了什么。它的目标是<strong>让模块好用</strong>，而为了好用，它要努力把并发藏起来，假装每个操作都是原子的、不可分割的。他顺手指出了一个很有说服力的旁证：Joel Spolsky 那篇著名的"所有抽象都是漏的"，抱怨的对象<strong>全都是这一种</strong>——TCP 藏 IP、字符串库藏字符数组、文件系统藏磁盘、虚拟内存藏 MMU 和分页、SQL 藏查询计划、NFS 藏网络。</p>
+<p><strong>建模抽象</strong>是数学家和物理学家建模型时的那种抽象。它要找的是"能保住你关心的那条性质的、最小最优雅的描述"，其余一概削掉。它不竖着切，它<strong>横着切</strong>：沿着一个行为平面把系统片开，只留跟这条性质绝对相关的部分，而且只留"是什么"，不留"怎么做"。他特意点出：这一刀切出来的东西，<strong>通常长得跟系统的实际组织结构一点都不像</strong>。</p>
+<p>然后是最反直觉的那一句。既然模块化抽象的毕生事业是堵漏，那建模抽象呢？</p>
+<blockquote><span class="en">In stark contrast, the modeling abstraction is about identifying what should leak and leveraging it! It exposes the fine-grained actions and orderings, and proves that invariants hold despite the interleavings.</span><span class="zh">形成鲜明对照的是，建模抽象要做的是识别出什么<em>应该</em>漏出来，然后利用它！它把细粒度的动作和顺序全部暴露，再证明不变式在所有交错之下依然成立。</span><cite>同上</cite></blockquote>
+<p>模块化抽象藏并发，建模抽象<strong>把并发全摊开</strong>。前者的回报是好用，后者的回报他说得很直接：榨出这个系统里"最大限度的安全并发"。你只有先看见所有可能的交错，才能知道哪些交错其实是安全的、可以放开跑的。</p>
+
+<figure>
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="两种抽象的对比示意图">
+<rect fill="none" height="300" width="700" x="0" y="0"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" font-weight="700" x="20" y="24">模块化抽象 · 竖着切，遮住</text>
+<rect fill="rgba(110,168,254,.10)" height="40" rx="5" stroke="#6ea8fe" stroke-width="1.4" width="250" x="20" y="40"></rect>
+<text fill="#c8d2dc" font-family="-apple-system, sans-serif" font-size="12.5" x="34" y="65">应用层 · 只看得见接口</text>
+<line stroke="#5eead4" stroke-dasharray="7 4" stroke-width="2.4" x1="20" x2="270" y1="92" y2="92"></line>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="10.5" x="20" y="107">↑ 接口 = 边界，以下全部不可见</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="116"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="138">重传 · 超时 · 乱序</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="158"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="180">缓存 · 分页 · 复制</text>
+<rect fill="rgba(255,255,255,.028)" height="34" rx="5" stroke="#3a4450" stroke-width="1" width="250" x="20" y="200"></rect>
+<text fill="#6b7480" font-family="-apple-system, sans-serif" font-size="12" x="34" y="222">磁盘 · 网络 · 时钟</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="20" y="262">回报：好用。代价：并发被藏起来了，</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="20" y="280">而且抽象总是会漏。</text>
+<line stroke="rgba(110,168,254,.2)" stroke-width="1" x1="350" x2="350" y1="30" y2="285"></line>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="13" font-weight="700" x="390" y="24">建模抽象 · 横着切，削掉</text>
+<rect fill="rgba(255,255,255,.028)" height="182" rx="6" stroke="#3a4450" stroke-width="1" width="250" x="390" y="40"></rect>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="62">重传　缓存　分页　磁盘</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="82">超时　复制　网络　时钟</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="200">乱序　分片　压缩　编排</text>
+<text fill="#4a525c" font-family="-apple-system, sans-serif" font-size="11.5" x="404" y="220">调度　容错　编解码　日志</text>
+<rect fill="rgba(94,234,212,.14)" height="58" rx="5" stroke="#5eead4" stroke-width="1.8" width="250" x="390" y="105"></rect>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="11" x="404" y="124">只为「这一条性质」留下的</text>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="404" y="147">最小行为骨架</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="390" y="262">回报：把所有交错摊开，证明不变式，</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="390" y="280">榨出最大限度的安全并发。</text>
+</svg>
+<figcaption>同一个词，两个相反的动作：一个把东西藏到边界之下，一个把不相干的东西削掉、把相干的全暴露出来</figcaption>
+</figure>
+
+<p>他随手给的例子串，本身就是一份分布式系统简史，而且每一个都可以读成"<strong>它扔掉了什么</strong>"：Lamport 逻辑时钟扔掉墙上时间、只留先后关系；HLC 留下真实时间和因果两样、扔掉其余；TrueTime 把时间变成一个有界的不确定区间；共识协议只留"对一件事达成一个决定"；线性一致性（以及所有一致性模型）扔掉复制、缓存和重试；"日志即数据库"扔掉物化状态这个真相来源，只留一串有序的追加事件；MapReduce 和 Spark 扔掉编排、并行、调度和容错，只留一张确定性变换的有向无环图，剩下的让框架从这副骨架里重新长出来。</p>
+<p>他还预先堵了一个反驳：有些东西看起来同时属于两类（线性一致性、共识、日志即数据库、MapReduce）。他说那不是重叠，是<strong>复用</strong>——一个设计得足够好的东西，可以既当作实现要去逼近的规范（模块化的用法），又当作推理要从中出发的骨架（建模的用法）。两个角色碰巧落在了同一件东西上，但角色本身依然是两回事。</p>
+<p>值得一提的是这个想法在他身上埋了多久。2011 年 1 月，博客刚开四个月，他写的第三篇论文精读就是 Butler Lampson 1983 年的《Hints for computer system design》。在那篇里他专门停下来强调了一个"可能会让很多人意外"的定义：接口不是函数签名，接口是<strong>两个程序各自为了证明自己正确、而必须对对方做出的那一组假设</strong>。十二年后的 2023 年，他自己写了一篇《Hints for Distributed Systems Design》，开头一句是"with apologies to Butler Lampson"，而列出的第一条 hint 就是"Apply abstraction"。</p>
+
+<h3>四、亚稳态：每一份契约里都藏着一个"如果"</h3>
+<p>这是他最近五年最投入的技术方向，也是这四件器械里最实用的一件。</p>
+<p>先看这个现象有多怪。<strong>亚稳态失败</strong>（metastable failure）的定义是：</p>
+<blockquote><span class="en">Metastable failure is defined as permanent overload with low throughput even after the fault-trigger is removed.</span><span class="zh">亚稳态失败的定义是：即使触发故障的那个因素已经被移除，系统仍然处在永久性过载、吞吐低下的状态。</span><cite>Metastable failures in the wild，2023 年 9 月 12 日</cite></blockquote>
+<p>注意"even after"。你的系统被推了一下——一次流量尖峰、一次配置错误、一次缓存被清空——然后推它的那只手撤走了，<strong>系统却回不来了</strong>。它还在满负荷运转，CPU 打满，但几乎不产出有用的东西。用他的话说，它在"grinding but not doing useful work"，在做苦工而没有产出。</p>
+<p>更麻烦的是它不是罕见事故。他讲的那篇 OSDI'22 论文翻了 600 份公开的事故复盘报告，从中识别出 21 起亚稳态故障，横跨大小公司。其中约 35% 的触发因素是流量尖峰，45% 是配置或代码发布的 bug 加上潜伏缺陷；而在"维持"这一侧，<strong>超过一半是重试引起的负载放大</strong>。</p>
+<p>它的结构可以画成一张两轴四格的图：一个轴是什么<strong>触发</strong>了它（负载上升，还是容量下降），另一个轴是什么<strong>维持</strong>着它（负载上升，还是容量下降）。</p>
+
+<figure>
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="亚稳态失败的四种组合">
+<rect fill="none" height="380" width="700" x="0" y="0"></rect>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" x="150" y="22">触发 →　　负载上升</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" x="440" y="22">容量下降</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" transform="rotate(-90 26 130)" x="26" y="130">维持 ↓　负载上升</text>
+<text fill="#7d8794" font-family="SF Mono, Menlo, monospace" font-size="11.5" transform="rotate(-90 26 300)" x="26" y="300">容量下降</text>
+<rect fill="rgba(110,168,254,.09)" height="140" rx="7" stroke="#6ea8fe" stroke-width="1.3" width="270" x="60" y="35"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="76" y="60">重试风暴</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="84">流量尖峰把队列顶起来，请求开始</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="103">超时；超时触发重试，重试又是新的</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="122">负载。尖峰早就过去了，重试还在</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="141">自己喂自己。</text>
+<text fill="#5eead4" font-family="SF Mono, Menlo, monospace" font-size="10.5" x="76" y="163">超过一半的真实事故属于这一格</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="350" y="35"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="366" y="60">主节点打嗝，从节点猛拉</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="84">Raft 主节点短暂卡顿，处理变慢；</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="103">从节点不停重试拉取，反而把负载</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="122">推得更高，于是主节点永远追不上。</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="60" y="205"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="76" y="230">GC 死亡螺旋</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="254">队列变长导致内存吃紧，垃圾回收</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="273">开始疯跑；GC 又把处理能力砍掉，</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="76" y="292">队列于是更长。Twitter 实测复现。</text>
+<rect fill="rgba(255,255,255,.03)" height="140" rx="7" stroke="#3a4450" stroke-width="1.1" width="270" x="350" y="205"></rect>
+<text fill="#d5dce4" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" x="366" y="230">缓存雪崩</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="254">缓存被清空，命中率从 99% 掉到 0；</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="273">后端被惊群打垮、开始超时，于是连</text>
+<text fill="#9aa6b2" font-family="-apple-system, sans-serif" font-size="11.8" x="366" y="292">缓存都重建不起来。</text>
+<text fill="#7d8794" font-family="-apple-system, sans-serif" font-size="11.5" x="60" y="345">四格的共同点：维持它的那股力，是系统自己产生的。所以撤掉最初那个触发，没有用。</text>
+</svg>
+<figcaption>亚稳态失败的四种组合。横轴是什么触发了它，纵轴是什么在维持它</figcaption>
+</figure>
+
+<p>他从这篇论文里提炼的教训，有两条特别他。</p>
+<p>第一条是<strong>"感觉到疼"</strong>：</p>
+<blockquote><span class="en">Feel the pain! Don't mask the pain, feel the pain, and attribute the pain to the correct subsystem and shed load quickly so you do not trip over to the metastable state.</span><span class="zh">去感觉那个疼！别把疼盖住，要感觉到它，把它归因到正确的子系统上，然后赶快卸载，这样你才不会一脚踏进亚稳态。</span><cite>同上</cite></blockquote>
+<p>这是对"优雅降级"这类直觉的一次反转。你本能想做的是把抖动吸收掉、把疼痛屏蔽掉，让上层看不见；而他说屏蔽疼痛正是让你滑进亚稳态的原因，因为等你终于疼到察觉时，已经晚到只能做大重启了。他还引了一条很具体的监控建议（来自 Rebecca Isaacs）：该盯的不是队列长度，而是<strong>队列长度的增长速率</strong>——而这个指标很少有人在监控。</p>
+<p>第二条更短，他自己标成了"meta lesson"：<strong>"Don't DOS yourself!"</strong>（别对自己发动拒绝服务攻击。）别让你的系统能够自己给自己制造一场 DDoS。具体到操作上就是：警惕任何"一个请求引发多于一个请求"的不对称结构，尤其是无脑重试。</p>
+<p>顺着这条他还有一个更一般的原则，关于<strong>过度优化的危险</strong>：别把某一部分优化到让其他情况产生不成比例的放大工作。缓存就是标准案例——你把命中率优化到 99.75%，就等于把系统建在"命中率很高"这个前提上；那天前提没了，系统<strong>根本没有能力处理它本该处理的那些工作</strong>。他引 DynamoDB 的做法作为正面样板：DynamoDB 明确"prioritizes predictability over absolute efficiency"（把可预测性排在绝对效率之前），它的新版缓存<strong>命中时也照样发一个异步请求到后端</strong>——故意让后端的流量恒定，与命中率无关。多花钱，换掉双峰行为。</p>
+<p>而这条线最好看的一下发生在 2026 年 9 月，就在我写这一页的几天前。他把亚稳态用 TLA+ 重新建模了一遍，但这次是拆成两个组件分别建模，中间用"rely-guarantee"（依赖—保证）契约连起来：重试方承诺"只要队列不超过阈值，我就不发重试"；服务方承诺"只要重试是有界的，我就守得住稳定域"。</p>
+<p>然后他把初始积压从 5 调到 18，跑模型检验，系统炸了——重试风暴，服务器 100% 利用率而每轮只完成一个有用请求，自己产生的负载是真实客户负载的三倍。</p>
+<p>关键在于炸掉的<strong>方式</strong>：</p>
+<blockquote><span class="en">In our runs, the storm sustained itself while every contract check kept passing: the system failed with no component at fault.</span><span class="zh">在我们的运行里，风暴自我维持的整个过程中，每一项契约检查都一直通过：系统失败了，而没有任何一个组件违约。</span><cite>Metastability as a failed conditional discharge of rely-guarantee composition，2026 年 9 月 3 日</cite></blockquote>
+<p>没有人违约，系统还是垮了。原因是<strong>两份承诺都带"如果"</strong>。积压小的时候，两个"如果"互相撑着，形成一个有底的循环归纳；积压一大，两条蕴含式在逻辑上<strong>依然为真</strong>——只是前提永远不成立了，所以它们什么也保证不了。归纳的底座被抽掉了。</p>
+<p>这就是为什么他坚持要拆开建模。整体建模也能看见队列涨，但只有拆开、把契约显式写出来，你才能看见<strong>是哪一句承诺太弱</strong>。而修法正是改那句承诺：给重试方一个硬预算（每轮最多发 B 次，不管积压多大），让"最多 B 次"从"如果……就"变成无条件。他补充说还有一个可能更好的服务端修法——优先服务新请求而不是按队列比例分配——它甚至不需要客户端改任何东西，而且"一个服务端能防住任意多个客户端"，预算法却要随客户端数量收紧。</p>
+<p>请注意这里的回声。2011 年 1 月，他在读 Lampson 时特意停下来强调的那个定义——接口是双方为了证明自己正确而必须对对方做的一组假设——十五年后，他用这同一个概念，解释了云上最难缠的一类故障。这不是巧合，这是一件他打磨了十五年的器械终于用在了正地方。</p>
+
+<h2>他的思维方法</h2>
+<p><strong>跟论文打架。</strong>他 2013 年那篇《How I read a research paper》是他被回链第七多的文章，而第一句回答就定了调："I fight with it."（我跟它打架。）他的立场是："I believe that the paper has to earn my trust, and I only accept the parts that I am obliged to accept."（我认为论文必须赢得我的信任，我只接受那些我不得不接受的部分。）流程是：打印出来，拿荧光笔和几色笔，在页边吵架，看不懂的地方标上 WDYM（what do you mean，你什么意思），并且对看不懂的地方先编一个猜测、读下去再修正。</p>
+<p>然后是那个可爱的自曝：</p>
+<blockquote><span class="en">I am a bit ashamed of this, but I often write provocative things on the margin, like "This claim is stupid", "This is just bullshit". It is silly, but I do this to keep myself engaged with the paper and be emotionally involved as well. This way, I never fall asleep reading a paper.</span><span class="zh">说出来有点丢人，我经常在页边写些挑衅的话，比如"这个说法真蠢""这就是扯淡"。是挺幼稚的，但我这么做是为了让自己一直和论文纠缠着，也让自己有情绪参与进来。这样我读论文就永远不会睡着。</span><cite>How I read a research paper，2013 年 7 月 25 日</cite></blockquote>
+<p>但整个流程的最后一步不是打赢。他说要<strong>睡一觉再回来</strong>，因为到这时他很可能已经过度苛刻了，该"put it back in context"，把论文放回它的语境里去共情。他警告要分清批判性阅读和"hypercritical"（吹毛求疵到否定人家贡献）。而他引来解释这一步的，是《安德的游戏》里那句：在我真正理解我的敌人、理解到足以打败他的那一刻，我也就爱上了他。</p>
+<p><strong>不写出来就不知道自己在想什么。</strong>这句话他反复说，是他整套方法的引擎。他给自己定的周更配额不是为了产量：</p>
+<blockquote><span class="en">I set this goal not for the quantity of the output, but for keeping myself in the writing frame-of-mind. ... This also helps me lower my standards for writing, which paradoxically maintains and raises my standards.</span><span class="zh">我定这个目标不是为了产出的数量，而是为了让自己一直待在写作的心态里。……这也帮我降低了对写作的标准，而这反过来、很矛盾地，维持并抬高了我的标准。</span><cite>Why I blog，2024 年 3 月 8 日</cite></blockquote>
+<p>他说有时候为了凑周更，他会想"行吧，这题目没什么意思，但我姑且写点什么"——然后惊讶地发现一动笔就冒出一堆有意思的东西。他给新手的写作建议同样是反完美主义的："mess up and tidy up later"（先弄乱，回头再收拾），起草和编辑严格分开，随身带一个专门堆半成品和半截句子的文件。</p>
+<p><strong>把博客当外部存储器。</strong>这是他自己都没料到的用法。他说他<strong>回头查自己旧文的频率高得惊人</strong>，因为"Because I strained my brain while writing them in the first place, reading them later refires the same neurons"——当初写的时候绞过脑汁，后来再读就能重新点燃同一批神经元，快速把当年那个理解状态装载回来。一个提供随机访问的第二大脑。</p>
+<p><strong>穷举替代自信。</strong>这是"脑子是普通的"这条公理最硬的一次落地。他问：既然我已经把设计写成伪代码了，我自己挨个检查每个动作是否保持不变式，不就行了吗？他的回答是：对简单玩具可以，对真东西不行。他举了自己教过的那个例子——不变式谈的是"谁在临界区里"，而动作谈的是"一张动态优先级图上每条边的叉子归谁"，<strong>要在脑内完成这个映射几乎不可能</strong>。所以交给模型检验器去做宽度优先的穷举。省下来的不是时间，是自欺的机会。</p>
+<p><strong>被抢发之后，把责任揽回自己身上。</strong>2011 年他造了个词叫 reverse-scooping（反向抢发）：你先解决了一个问题也先发表了，几个月后一个更有名的机构做了同样的事、发在更显眼的场合，然后所有引用都归他们，你的工作像不存在一样。他说头几次他非常愤怒。而他最后的处理方式，是他这个人的一个缩影：</p>
+<blockquote><span class="en">I take getting reverse-scooped to mean that I should have polished and published that work at the best venue I possibly could. ... Reverse-scooping is ugly, and I am not trying to rationalize it. But I find this new way of thinking to be more constructive than getting angry and complaining.</span><span class="zh">我把被反向抢发理解为：我本该把那份工作打磨好、投到我力所能及的最好的场合去。……反向抢发是件丑陋的事，我不是在为它辩解。但我发现这种新的想法比生气和抱怨更有建设性。</span><cite>Reverse-scooping，2011 年 12 月 19 日</cite></blockquote>
+<p>注意他没有说这事是公平的。他明确说它不公平。他只是<strong>选了一个能让自己继续往前走的归因</strong>——这和他对待其他一切的方式是一样的：不去修理你控制不了的那部分，去造一件你控制得了的器械。</p>
+
+<h2>他哪里可能是错的</h2>
+<p>先说清楚一件事：我没有找到任何一篇实名的、有分量的、针对他的公开批评。这本身也说明了点什么——论文精读这个体裁很少树敌。所以下面这几条是我读完之后自己的判断，以及他自己写下来的那几条（后者往往比我的狠）。</p>
+<p><strong>一、他不信任的过滤器，正是他几乎全部的输入来源。</strong>他对同行评议的评价极低——他借 Ponder Stibbons 之口说它是"ritualized academic hazing"（仪式化的学术霸凌），也直白地说过论文"are written to satisfy three reviewers"（是写来满足三个审稿人的），有些地方过度防御，有些地方浮夸兜售。他的博客定位正是<strong>替读者把这层伪装剥掉</strong>。但绕不开的事实是：他日常读的东西，绝大部分仍然是已发表、已通过这套他不信任的流程筛过的论文。那些没能通过这个过滤器的想法，他基本上碰不到。</p>
+<p><strong>二、架吵在页边，发出来的是和解稿。</strong>这一条是从他自己描述的方法里直接推出来的。他说他读论文的最后一步是睡一觉、共情、"come to respect the paper and appreciate it more"。这在阅读上是美德，但结果是：<strong>打架发生在私下，公开的那一篇是和解之后的版本</strong>。839 篇里，"这篇论文是错的"的比例低得惊人。页边那句"This is just bullshit"从来没有变成一篇博客。对读者来说这意味着他的博客是一份很好的翻译，但不是一份可靠的筛子——他帮你读懂了这篇论文，很少告诉你这篇论文该不该信。</p>
+<p><strong>三、他自己承认过的那次最大误判。</strong>这条是他写的，而且他写得比我能写的更狠。2016 年机器学习起飞时，他学了一阵、做了些综述，然后<strong>放弃了</strong>，理由是这个领域贴应用贴得太近，很难做有原则的算法工作。2019 年底回顾这十年时他写道："It turns out that I was judgmental, as several nice algorithmic and distributed systems started coming out recently."（结果证明我当时太武断了，最近出现了好几项漂亮的算法和分布式系统工作。）值得注意的是，这次误判正好发生在后来十年最重要的那个领域上，而且误判的原因恰恰是<strong>他最引以为豪的那种品味判断</strong>。品味是把双刃剑：它帮你过滤噪音，也帮你过滤掉还没长出形状的东西。</p>
+<p><strong>四、形式化方法的规模化问题，他十五年前就诊断出来了，而现在的解法押在一个他别处不太信任的工具上。</strong>2011 年那篇 Lampson 精读的末尾，他已经写下了逐步精化方法的根本困难："these approaches cannot scale without some compiler support"（没有编译器支持，这些方法没法规模化）。十五年过去，这个困难基本还在。他 2026 年的解法是让 LLM 来写 TLAPS 证明——他在那篇亚稳态建模里明确写了，他"got Claude Code write TLAPS proofs"来把结论推广到所有参数值。这不必然是错的，但它有点微妙：同一年他刚论证过 LLM 写不出好东西。</p>
+<p><strong>五、那个最有意思的张力，他自己也知道。</strong>2026 年 8 月他写了《The Safest Job from AI may be Writing》，论证写作是最不会被 AI 取代的活：写作是"wicked problem"（没有确定表述、没有停止规则、没有客观正解），成功的唯一标准是"resonance inside another human mind"（在另一个人的脑子里产生共鸣），而模型"have zero skin in the game"（完全不用承担后果）。他措辞相当不客气，说他对 AI 生成的散文有"visceral ick reaction"（生理性的反感）。</p>
+<p>但同一个博客上，2025 年 3 月那篇传播极广的讽刺小品——Ponder Stibbons 向院长宣布他要离开象牙塔——最后一行是他自己加的落款：<strong>"(Written by a golem named ChatGPT with some prompting)"</strong>（由一个叫 ChatGPT 的泥人在一些提示下写成）。也就是说，他对 AI 写作最锋利的一次批评，和他博客上流传最广的一篇 AI 代笔，相隔十七个月，出自同一个人的手。</p>
+<p>公平地说，他给自己留的门是敞开的。那篇批评 AI 写作的文章里，他把话说完之后，紧接着的一句是给读者的：<strong>"Tell me where my logic does not hold up."</strong>（告诉我我的逻辑哪里站不住。）在一个绝大多数人用结论收尾的地方，他用一个邀请收尾——这恰恰是他 2018 年给自己装的那个系统，八年后还在运转。</p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2018/01/mad-questions.html">Mad questions</a></span><span class="d">2018 年 1 月 2 日。全站被他自己回链最多的一篇（46 次）。一个终身教授公开怀疑自己已经被驯化，然后决定给"提问"装一个强制执行的系统。同一话题的一年后复盘在 <a href="https://muratbuffalo.blogspot.com/2018/12/master-your-questioning-skills.html">Master your questioning skills</a>，"好问题像好笑话"那句出自那里。</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2014/07/hybrid-logical-clocks.html">Hybrid Logical Clocks</a></span><span class="d">2014 年 7 月 27 日。他自己的技术发明，回链数第二（41 次）。逻辑时钟、NTP、TrueTime 三条路各自的代价，以及为什么可以不选。十年后的五篇总结见 <a href="https://muratbuffalo.blogspot.com/2025/01/use-of-time-in-distributed-databases_14.html">Use of Time in Distributed Databases (part 5)</a>。</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2026/05/the-two-abstractions-of-system-design.html">The Two Abstractions of System Design: Hide or Reduce</a></span><span class="d">2026 年 5 月 8 日。他最锋利的一个原创判断：课表上教的抽象和建模需要的抽象，方向是相反的。一个遮，一个削。</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2026/09/metastability-as-failed-conditional.html">Metastability as a failed conditional discharge of rely-guarantee composition</a></span><span class="d">2026 年 9 月 3 日。把重试风暴拆成两个组件建模，结论是：每一份契约都带"如果"，而系统可以在没有任何组件违约的情况下垮掉。现象本身的入门篇是 <a href="https://muratbuffalo.blogspot.com/2023/09/metastable-failures-in-wild.html">Metastable failures in the wild</a>。</span></li>
+<li><span class="t"><a href="https://muratbuffalo.blogspot.com/2012/01/tell-me-about-your-thought-process-not.html">Tell me about your thought-process, not just your results</a></span><span class="d">2012 年 1 月 11 日。全站的公理："我们的脑子都是普通的。"从一堂糟糕的网络课出发，一路追到 Bourbaki 学派，落在村上春树挖井的比喻上。他读论文的方法在 <a href="https://muratbuffalo.blogspot.com/2013/07/how-i-read-research-paper.html">How I read a research paper</a>，写博客的理由在 <a href="https://muratbuffalo.blogspot.com/2024/03/why-i-blog.html">Why I blog</a>。</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-15" data-slug="metadata">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-15</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
