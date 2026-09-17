@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bret C. Devereaux · A Collection of Unmitigated Pedantry — 按人数算，你是往林子里跑的那个</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="a-collection-of-unmitigated-pedantry-blog19.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 19 · acoup.blog</div>
+<h1>Bret C. Devereaux<br/>按人数算，你是往林子里跑的那个</h1>
+<p class="sub">A Collection of Unmitigated Pedantry · 392 篇 · 2019 年 5 月 3 日开站，此后每周五一篇，几乎从未断过 · 最新一篇 2026 年 9 月 11 日，仍在更新 · 一篇动辄五千到一万二千字，一个系列常连载八到十二周 · 一次明显转折：2020 年夏天从"拆流行文化里的历史错误"转向"古代社会本身怎么运转"，2022 年起又加上现代战争与地缘政治 · 本页通读 13 篇，跨度 2019 年 5 月至 2026 年 7 月，其中 6 篇来自开站后最早的 20% 时间段，转折两侧均有取样 · 全站公开免费，无付费墙</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2019 年 5 月，一个刚拿到古代史博士学位没几年的人坐下来看《指环王：王者归来》，然后开始数兽人。</p>
+<p>特效团队接受采访时说过，米那斯魔窟开出来的那支大军，他们是按 <strong>20 万</strong> 做的。电影里那条路，兽人五个并排走。<strong>给每个兽人四英尺</strong>——这已经算挤了。20 万除以 5，是四万排；四万乘四英尺，<strong>这支队伍有三十英里长</strong>。</p>
+<p>三十英里意味着什么？意味着队尾还没拔营，队头已经走完了一整天。</p>
+<p>但真正好看的不是"电影算错了"。是他接着算的下一步：米那斯魔窟到米那斯提力斯约六十英里，一个步兵身上能背大约十天口粮，够走一百二十英里。所以<strong>在补给上，这一仗是成立的</strong>。而恰恰是这条算术顺手解释了戒灵王的打法——为什么他一到城下就猛攻，而不是老老实实围城：</p>
+<blockquote><span class="en">Because the pack animals which pull wagons full of food eat food themselves, there is literally no amount of wagons which would enable an army of this size to sustain itself indefinitely in a long siege.</span><span class="zh">因为拉着满车粮食的驮畜自己也要吃粮食，所以无论你带多少辆车，这个规模的军队都不可能在一场长围中无限期地撑下去。</span><cite>Collections: The Siege of Gondor, Part I，2019 年 5 月 10 日</cite></blockquote>
+<p>而他是这样把读者请进这一节的："<strong>他们说，外行谈战术，内行研究后勤。那么，拉把椅子坐到大人桌这边来，我们来研究一下后勤。</strong>"</p>
+<p>听起来像个高级杠精。七年、392 篇之后，这个博客变成了完全不同的东西。</p>
+<p>比如它会告诉你这个：<strong>1750 年以前，任何一个社会——富的穷的，城市的乡下的，"文明的"和"不文明的"——大约一半的孩子活不到成年。</strong>所以古代"出生时预期寿命二十五岁"这个数字会骗人：一个人只要活过五岁，预期寿命立刻跳到四十岁上下。死亡不是均匀地压在所有年龄上的，它几乎全压在最小的那几年里。</p>
+<p>Bret Devereaux 七年来反复回到的，其实是同一个判据：<strong>评价一个社会，不看它最风光的那 1% 是谁，看它的中位数居民过得怎么样。</strong>而按人头算，中位数居民是农民。</p>
+<p>这把尺子最著名的一次使用是斯巴达。他没有说"史料不可信"——他反过来，把崇拜者引用的那些史料<strong>全盘接受</strong>，然后开始清点人数：黑劳士（helot，斯巴达的国有奴隶）占了这个社会的 <strong>65% 到 85%</strong>。作为对照，奥古斯都时代的罗马意大利大约 25%，1860 年美国南方是 32.3%。他说他不知道还有哪个独立国家整体被奴役到这个程度。</p>
+<p>那军事呢？他把军事拆成三层——战术（怎么打）、战役（怎么把军队弄到战场）、战略（这仗值不值得打）——然后指出：修昔底德逐年记着，伯罗奔尼撒战争头几年斯巴达每年进攻阿提卡，每年因为<strong>粮食吃完了</strong>撤回去。431、430、428、427、426、425 年，连着六年。而他们离友邦科林斯的大港只有两天步程。</p>
+<blockquote><span class="en">A mediocre soldier on the field beats a super-soldier sitting at home, every time.</span><span class="zh">一个在战场上的平庸士兵，每一次都胜过一个待在家里的超级战士。</span><cite>This. Isn't. Sparta. Part VII: Spartan Ends，2019 年 9 月 27 日</cite></blockquote>
+<p>他的结论没有留任何余地：斯巴达是"一座国家规模的、极其高效的监狱"，"不是用来效仿的，是一则警世故事"。</p>
+<p>再往下，他去追那个更大的东西：网上流传的那句"艰难时代造就强者，强者造就好时代，好时代造就弱者，弱者造就艰难时代"——出处是一位小说家，不是历史学家。他管这套东西叫<strong>弗雷曼海市蜃楼</strong>（借《沙丘》里的沙漠战士命名），然后去查谁在赢。答案很扫兴：农业诞生在最富庶的地方，国家也诞生在最富庶的地方；被挤到沙漠和山地去的那些"硬汉"，是这个过程的<strong>输家</strong>，保护他们的是土地的贫瘠，不是他们的勇武。他写下那句一锤定音的话：<strong>在有别的选择时，没有人会选择住在资源贫瘠的地方。</strong></p>
+<p>2021 年他给这套东西起了名字——<strong>硬汉崇拜</strong>（the Cult of the Badass），核心信条是"制造暴力的能力是人类最高的美德"，然后把它逐条对上翁贝托·艾柯 1995 年那篇《原初法西斯主义》的十四条特征。他很小心地声明：他不认为他批评的那位小说家是法西斯分子。他说的是这套<strong>意识形态</strong>共享了法西斯的大部分 DNA。</p>
+<blockquote><span class="en">It is a modern lie, masquerading as timeless wisdom.</span><span class="zh">它是一个现代的谎言，装扮成永恒的智慧。</span><cite>The Universal Warrior, Part III: The Cult of the Badass，2021 年 2 月 19 日</cite></blockquote>
+<p>但他最好的一击其实不在这些论战里。是他让你去算一遍一个农民家庭的存粮。<strong>粮食一年收一次，而这家人天天要吃饭。</strong>粮食存过一年就开始加速霉变；换成钱，钱会被抢、被税，而且粮价恰恰在你最需要它的那一刻涨上去。所以农民把好年景存进<strong>关系</strong>里：宴请邻居、办婚礼、给出体面的嫁妆、还清人情。于是剩余被扩散掉了，城里最终只收得上来大约一成。</p>
+<p>这就是为什么前工业时代的军队必须一路抢——能运粮的东西自己也吃粮。他把村庄称为军队的"食物皮纳塔"：里面装满食物，取出来需要一点暴力。而他拒绝用"蹂躏了某某地区"这种没有血的句子把这件事盖过去，写完整整一篇征粮的实际操作——包括抢劫、纵火、拷问和强奸——然后收在这里：</p>
+<blockquote><span class="en">Every so often someone asks "If you were in [era in the past], what would you be?" and folks respond with kings and knights and clergy and artisans.  But you wouldn't, would you?  By the numbers, we wouldn't be the soldiers in gleaming armor, we'd all be the poor peasants desperately grabbing what few valuables they had and their families and sprinting in the woods as everything we had built over decades burned behind us.</span><span class="zh">时不时有人问："如果你活在过去的某个时代，你会是谁？"大家的回答是国王、骑士、教士、工匠。但你不会是，对吧？按人数算，我们不会是那些盔甲锃亮的士兵，我们全都会是那些穷农民——抓起手边仅有的几件值钱东西，带上家人，拼命往林子里跑，身后是我们用几十年建起来的一切，正在烧。</span><cite>Logistics, How Did They Do It, Part II: Foraging，2022 年 7 月 29 日</cite></blockquote>
+<p>同一篇里还有一句更短的：<strong>"如果这句话需要说出来的话：战争是可怕的，我们应该少打一点。"</strong></p>
+<p>一个从数电影兽人开始的博客，七年之后落在这里。这不是跑题，这是同一件事：<strong>把一个被讲得很爽的过去，翻回它真实的人数分布上去看。</strong></p>
+</div>
+
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>一件怪事</h2>
+<p>有一款经营古埃及的游戏叫《尼罗河之子》。Bret Devereaux 说，他玩的时候，游戏里的统治者一到二十岁上下，系统就提示他：你老了，该天天想着死亡了。</p>
+<p>他当时意识到，写这段文案的人被一个数字骗了。</p>
+<p>那个数字是"古代出生时预期寿命约二十五岁"。它是对的，但它骗人。用古代史学界常用的那张模型生命表来算：<strong>出生时女性 25.0 岁、男性 22.8 岁；活过第一年，立刻跳到 34.9 和 34.1；活到五岁，再跳到 40.1 和 39.0（还要加上已经活过的五年）。</strong>你活得越久，剩下的年头反而越多——这跟直觉正好相反。</p>
+<p>原因只有一个，而这个原因是整页里最该被记住的事实：<strong>所有活产婴儿里，到十岁时已经死了一半；只有约 45% 活到十八岁。</strong>这不是某个倒霉社会的特例。他写得很重：这对 1750 年以前的<strong>所有</strong>社会都成立——狩猎采集的、游牧的、务农的，城市的和乡下的，"西方的"和"非西方的"。最有钱的贵族也买不到例外：在 1700 年代以前，没有任何医学能改变这个模式。</p>
+<p>所以那个二十岁的统治者并不觉得死亡就在眼前，因为通常并不在。真正的事实要更难受：他身边一半的同龄人，早在他记事以前就已经没了。</p>
+<blockquote><span class="en">…it is one of the most striking ways in which "the past is a foreign country," although in this case the past is even more alien than any foreign country on earth.</span><span class="zh">……这是"过去是一个异国"这句话最触目的体现之一——不过在这件事上，过去比地球上任何一个异国都更陌生。</span><cite>Life, Work, Death and the Peasant, Part II，2025 年 7 月 18 日</cite></blockquote>
+
+<h2>这人是谁</h2>
+<p>Bret C. Devereaux，古代史博士（北卡罗来纳大学教堂山分校），古典文明硕士（佛罗里达州立），现在是北卡州立大学的<strong>教学型助理教授</strong>——一个不带终身教职轨道的教书岗位。他自己是这么说这件事的：</p>
+<blockquote><span class="en">While I do teach as the academic equivalent of a tenant farmer, tilling the Big Man's classes, this project is my little plot of freeheld land…</span><span class="zh">我教书的身份相当于学术界的佃农，替大人物种他的课；而这个项目是我自己那一小块自由持有的地……</span><cite>Life, Work, Death and the Peasant, Part II，2025 年 7 月 18 日</cite></blockquote>
+<p>他的研究方向是罗马经济与罗马军事的交叉地带。官方自我介绍里，他郑重其事地写上了自己通关过《黑暗之魂》和《艾尔登法环》，还有"喜欢好音乐、烂笑话，以及用第三人称写自己"。</p>
+<p>2019 年 5 月 3 日开站，<strong>一天连发三篇</strong>。此后每周五一篇，到 2026 年 9 月共 392 篇，仍在更新——上一篇是九天前。他全部读者靠口碑而来，收入靠 Patreon 众筹；博客里写过的话题该由读者投票决定的，就真的开投票。</p>
+
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>polis（城邦）</b> — 古希腊那种"一座城加它周边农田"就是一个独立国家的政治单位。雅典、斯巴达、科林斯都是城邦。</li>
+<li><b>spartiate（斯巴达公民）</b> — 斯巴达享有完整政治权利的那个阶层，人数极少，不事生产。</li>
+<li><b>helot（黑劳士）</b> — 被斯巴达集体奴役、替斯巴达公民种地的人群，人数远远多于主人。</li>
+<li><b>agoge</b> — 斯巴达公民男孩从七岁起接受的集体教养制度，以严酷著称。</li>
+<li><b>hoplite（重装步兵）</b> — 希腊城邦的标准兵种：自备盔甲盾牌的农民，密集列阵推挤作战。</li>
+<li><b>战术 / 战役 / 战略（tactics / operations / strategy）</b> — 军事分析的三层：到了战场怎么打 / 怎么把军队和补给弄到战场 / 这场仗为什么要打、要得到什么。</li>
+<li><b>Fremen（弗雷曼人）</b> — 小说《沙丘》里的沙漠部族，穷、苦、能打，最后横扫了富庶的星际文明。Devereaux 借它命名一整类流行史观。</li>
+<li><b>有机经济 / 矿物经济</b> — 前者的能量几乎全部来自食物转化的肌肉力（人和牲畜），上限很硬；后者靠烧煤等矿物燃料，把能量上限整个抬走。</li>
+</ul>
+</div>
+
+<h2>他跟什么较劲</h2>
+<p>他自己发明过一个词来指他的敌人：<strong>"男孩的历史"</strong>（a boy's view of military or social history），以及配套的"男孩的社会学"。他说得很直：这种东西"不适合严肃的成年人使用"。</p>
+<p>他是怎么撞上它的，有一个非常具体的时刻。他教本科生斯巴达，发现标准做法是把普鲁塔克的《吕库古传》发给学生——或者干脆口头复述一遍——却<strong>不给他们任何工具</strong>去质疑普鲁塔克说的话，更不给工具去把那些说法的<strong>必然推论</strong>推下去。于是学生离开课堂时带走一个朦胧的、乌托邦式的斯巴达印象。</p>
+<p>而那个印象会长脚。他写道：本科生里的那个斯巴达，会在这些学生成为中学老师之后变成他们教的斯巴达；再往下，就变成了《300》漫画和电影里的斯巴达。他跟同事开了好几年的玩笑，说他想开一门课，课名就叫"<strong>斯巴达很烂，而你喜欢斯巴达所以你也很烂</strong>"。2019 年 8 月，《新共和》上两篇为斯巴达对打的文章、以及随后他和其中一位作者在推特上的争论，把这门课变成了七篇连载。</p>
+<p>但斯巴达只是入口。他真正十年不放的那个根问题是：<strong>"过去"这两个字，被谁的经验代表？</strong></p>
+<p>农业社会里，农民占人口的 <strong>80% 到 90%</strong>。而会写字、写下来的东西还能传到今天的，是顶上那薄薄一层。于是"历史"默认成了精英的历史、战争的历史、能拍成电影的那部分历史——然后这套东西被拿去当现代人的行为指南："我们需要一个凯撒。""艰难时代造就强者。""斯巴达人才是真男人。"</p>
+<p>他的反命题有两半，而且两半必须同时成立才有力量。<strong>第一半是判据</strong>：一个社会好不好，要看它对<strong>典型成员</strong>的影响——不是看它的贵族过得多体面，也不是看它打赢过哪几场仗。<strong>第二半是诊断</strong>：那些关于"硬汉"和"黄金时代"的流行史观，功能从来不是描述过去，而是安慰现在。它们是<strong>现代人的情绪</strong>，穿上了一件古装。</p>
+<p>找不到这个根问题，就会把这个博客读成"一个专家在挑电影的错"。而挑错只是他的入口，不是他的活。</p>
+
+<h2>他的想法，讲成"他怎么发现的"</h2>
+
+<h3>一、把尺子换掉：不看最风光的那一小撮，看中位数那个人</h3>
+<p>2019 年 8 月到 9 月，他用七周写完斯巴达。这个系列后来成了全站阅读量第二的东西（三年时点上他自己查到的数字是四十一万五千次页面浏览）。</p>
+<p>它厉害的地方不在于结论，在于<strong>他一开始就放弃了最省力的那条路</strong>。学界当时有一派（他称之为"霍德金森阵营"）主张：古代史料把斯巴达写得太特殊了，很多描述是夸张。走这条路，他只要说"普鲁塔克在吹牛"就行了。但他判断这条路在说服上是死路——你等于一上来就要求对方把他读过的所有原始材料扔掉。</p>
+<blockquote><span class="en">You are asking him (it is usually a him) to begin the meal with the most difficult to swallow part of the argument.</span><span class="zh">你等于是要求他（通常是个"他"）一上桌就先吞下整套论证里最难下咽的那一口。</span><cite>This. Isn't. Sparta. Retrospective，2022 年 8 月 19 日</cite></blockquote>
+<p>所以他反过来做：<strong>崇拜者引用的史料，我全盘接受。然后我们一起把它的后果算完。</strong></p>
+<p>第一步是清点人数。近年学界一直在往下修黑劳士的数量，从二十万修到十六万二，再修到七万五到十一万八的低估。他说低估也就是低估：即便取最低的那一档，斯巴达社会里被奴役者的比例仍然是 <strong>65% 到 85%</strong>。对照组他也给了：公元前 225 年罗马意大利大约 18%，到奥古斯都时代升到 25% 左右——那还是两百年成功战争的"成果"；1860 年内战前夜的美国南方是 32.3%。</p>
+<p>于是那场关于"斯巴达公民阶层到底特不特殊"的学术争论，在他眼里变成了一个姿势问题：</p>
+<blockquote><span class="en">it is quibbling over pebbles while tripping over a boulder.  That boulder is the helots.  And it is a big boulder!</span><span class="zh">这是在为几块小石子争论不休，同时绊倒在一块巨石上。那块巨石就是黑劳士。而它是块很大的巨石！</span><cite>This. Isn't. Sparta. Retrospective，2022 年 8 月 19 日</cite></blockquote>
+<p>第二步才是军事——而这一步是本站最值得学的东西。他拒绝用战役胜负来评价军事效能，坚持把问题拆成三层：战术是"到了战场怎么打"，战役是"怎么把军队、装备和粮食弄到战场"，战略是"这仗值不值得打、要达到什么目的"。</p>
+<p>拆开以后，斯巴达的成绩单是这样的：<strong>战术层</strong>，比一般城邦略好，但也就是略好。<strong>战役层</strong>，灾难。修昔底德逐年记着他们进攻阿提卡：公元前 431 年围了个小镇、一无所获、撤了；430 年又来；428 年、427 年；426 年因为地震提前折返；425 年再来——<strong>每一次都是因为补给吃完了而回家</strong>。他们离友邦科林斯的大港只有两天步程。第一次进攻六年之后，他们仍然没有解决在自家后院长期作战的后勤问题。</p>
+<p><strong>战略层</strong>，他给了一个我读到过的最狠的比喻：斯巴达是那句谚语里"手上只有一把锤子"的人，而他被扔进了一个全是螺丝的世界。任何不能靠重装步兵正面推平的问题——海上的敌人、有城墙的据点、要维持的同盟、要筹的军费——他们要么束手无策，要么试图<strong>用重装步兵去强迫别人当朋友</strong>，效果可想而知。</p>
+<p>然后是结局。这一段他写得几乎像小说：斯巴达霸权崩塌之后，雅典仍是地中海的文化与商业中心，科林斯仍是要港，而斯巴达变成了<strong>一个主题公园</strong>——有钱的希腊人和罗马人来这里参观土著表演古怪的仪式，普鲁塔克和西塞罗都去过，当地市场专门做罗马游客的生意。</p>
+<blockquote><span class="en">Thus ended Sparta: not with a brave last stand.  Not with mighty deeds of valor.  Or any great cultural contribution at all.  A tourist trap for rich and bored Romans.</span><span class="zh">斯巴达就这样结束了：不是死于一次勇敢的最后抵抗，不是死于什么伟大的武勇事迹，也没有留下任何伟大的文化贡献。一个专坑有钱又无聊的罗马人的旅游陷阱。</span><cite>This. Isn't. Sparta. Part VII，2019 年 9 月 27 日</cite></blockquote>
+<p>他最不肯放过的是那个交易本身。很多人愿意原谅斯巴达的一切，条件是它确实造出了超级战士。他把这个条件拆了：没有。斯巴达士兵是平均水平。</p>
+<blockquote><span class="en">The horror of the Spartan system, the nastiness of the agoge, the oppression of the helots, the regimentation of daily life, it was all for nothing.</span><span class="zh">斯巴达制度的恐怖，agoge 的残忍，对黑劳士的压迫，日常生活的军事化编排——这一切都是白费的。</span><cite>This. Isn't. Sparta. Part VII，2019 年 9 月 27 日</cite></blockquote>
+<p>四年后，他终于把这把尺子背后的原理写成了一篇独立的短文。有人抗议说历史学家不该做价值判断、或者只该用"那个时代的标准"去评价。他的回应有两层。第一层：过去的历史学家也做判断，只是不说出来——十九世纪的德罗伊森和二十世纪的塔恩，两位生活在霸权帝国里的上层男性，都觉得亚历山大的霸权帝国棒极了，他们只是从不觉得需要声明自己的价值立场。第二层更锋利：</p>
+<blockquote><span class="en">what people mean when they complain that now historians are 'imposing' their values on history is really, 'in the past I agreed with the values historians imposed on history, but now I do not.'  This isn't a plea for objectivity, but for special consideration.</span><span class="zh">人们抱怨"现在的历史学家在把他们的价值观强加给历史"，真正的意思其实是："过去历史学家强加给历史的那套价值观我同意，现在这套我不同意。"这不是在请求客观，这是在请求特殊照顾。</span><cite>Fireside Friday, June 23, 2023 (On Historical Judgement)，2023 年 6 月 22 日</cite></blockquote>
+<p>那么用什么尺子？他给了两把，都很实用。一把是"<strong>这个人有没有做成他想做的事</strong>"——屋大维基本做成了（重建罗马国家并由自己独掌），苏拉基本失败了（他想让共和国恢复旧有的运作方式，且能持久）。另一把就是本节的主角：<strong>这个社会对典型成员的影响</strong>。因为按希腊精英的价值观，斯巴达至少名义上棒极了；而那些人的笔下从来看不见斯巴达大多数人的处境。</p>
+
+<h3>二、硬汉神话：它从头到尾都不是在讲蛮族</h3>
+<p>2020 年 1 月，他挑了一个更大的目标：网上到处流传的那句"艰难时代造就强者，强者造就好时代，好时代造就弱者，弱者造就艰难时代"。他顺手注了一句出处——这句话来自小说家 G. Michael Hopf，"颇为引人注目地，不是历史学家"。他还补了一句我很喜欢的旁白：<strong>"人们也不禁要问，在这一整套循环里，女人都在干什么。不过说实话，如果我是她们，我也会庆幸自己被排除在外。"</strong></p>
+<p>他的第一步动作是他最标志性的一招：<strong>把一团情绪翻译成能被证据打中的句子。</strong>他把这套"史观"拆成四条可检验的命题——不那么定居/文明的人更能吃苦；因此更能打；因此必然征服富裕邻居；因此历史是一个循环。拆成这样以后，它才第一次变成可以被打的东西。</p>
+<p>第二步是让步。他明确写道：这套史观默认"一个社会的首要价值就是它输出暴力的效率"——而他完全不同意；但为了这场辩论，他接受这个前提。</p>
+<blockquote><span class="en">Let us fight the Fremen on ground of their own choosing.  I am, for reasons that will soon become quite obvious, still fairly confident that our sophistication will prevail.</span><span class="zh">让我们在弗雷曼人自己选定的战场上和他们打。原因很快就会变得非常明显——我仍然相当有信心，我们这边的"精致复杂"会赢。</span><cite>The Fremen Mirage, Part I，2020 年 1 月 17 日</cite></blockquote>
+<p>第三步，他去数谁在赢，而且从最早的地方开始数——农业本身的扩散。如果这套史观成立，我们应该看到农人被更能打的狩猎采集者反复征服。实际看到的是反过来：农业首先出现在<strong>资源最丰富</strong>的地区，也就是原本人口密度就最高、社会最复杂的地方。而且不是"农业"在传播，是<strong>农人</strong>在传播——高密度人口带来的军事优势，把低密度人群一路挤走。守住了的那些狩猎采集者，也不是最苦地方的那些，而是最富庶海岸线上、密度足够高的那些。</p>
+<p>国家的诞生是同一个故事的续集：所谓"原生国家"全部出现在农业最密集、人口最稠密的富庶地带。而被挤进沙漠、山地、干旱带的游牧者，是这个过程的<strong>输家</strong>；保护他们的不是勇武，是那片地本身没法让农业国家跟过去。这里他下了一句几乎可以当公理用的话：</p>
+<blockquote><span class="en">no one chooses to live in a resource poor zone if other options are available.</span><span class="zh">在有别的选择时，没有人会选择住在资源贫瘠的地方。</span><cite>The Fremen Mirage, Part I，2020 年 1 月 17 日</cite></blockquote>
+<p>顺手他埋了一个漂亮的反例：尼安德特人比弗雷曼人更弗雷曼——比现代人更强壮、更耐苦——结果被更擅长结成大群体的现代人挤到了越来越贫瘠的边缘地带。硬，不是优势；人多且有组织，才是。</p>
+<p>第四步是这个系列最诚实的地方：<strong>他主动把对手最强的那个例子端上来。</strong>草原骑兵。他毫不含糊地承认："当年史料里那些夸张的说法，是真的。"一个骑射的草原战士，在他的时代大概是战场上单兵最危险的人。</p>
+<p>然后他把它拆开。蒙古人的力量来自一组非常具体的技能——骑马、骑射、以及把日常游牧的后勤直接当军事后勤用——而不是来自"苦"。证据是：比他们更苦的人存在。被草原社会挤出去的"森林猎人"过着更孤立、更艰难的生活，但森林养不了马群，于是他们<strong>更弱</strong>。至于规模，他也不含糊：成吉思汗能成事，很大程度上是因为他<strong>改造了草原文化本身</strong>——废掉传统等级、用十进制编制把氏族部落的界线整个抹掉，解决了非国家组织最致命的"扩不大"问题。换句话说，蒙古人是草原政体里的异类，不是它的典型。</p>
+<p>然后他数了中国。他列了一张从春秋战国到清朝的时间表，结论是：在这 2683 年里，草原力量<strong>完全</strong>控制中国大约 98 年；再加上约 540 年的部分控制（且往往只是北方的一部分），按部分控制折半算，占比约 13%；把清朝也慷慨地算进去，也只到 24%。剩下的七到八成时间里，最严重的威胁来自哪里？来自另一个和自己一模一样的对手——另一个富庶、复杂、高度分层的农业国家。罗马也一样：它最大的对手是萨珊波斯，不是边境上的"蛮族"。</p>
+<p>到了现代，他引 Max Boot 的统计：现代 443 场叛乱中，近三分之二<strong>毫无疑义地失败了</strong>，只有约四分之一可算成功。而那个"游击队更能吃苦、更肯牺牲、更有决心"的假设呢——既然大多数叛乱是被它们所对抗的国家熬死的，那就显然不成立。他补了一句方法论上的毒刺：这些性质<strong>你基本上从来看不到有人认真评估过</strong>，它们是被假定的。</p>
+<p>最后是溯源，也是整个系列的转折：这套东西从哪来？答案是，它来自"颓废"社会的<strong>自我批评</strong>——罗马人一边抱怨自己堕落了、不如祖先能打，一边正处在权力和效能的长期上升期。<strong>他们自己的未来否证了他们自己的理论。</strong>这些古代文本到了十九世纪被捡起来，成了民族主义（往往是种族主义）身份建构的原料，混进东方主义和所谓"科学"种族主义，然后固化进公共教育里。原始形态在二战的火里被烧掉了，但它作为"大家都知道的历史常识"活了下来。</p>
+<blockquote><span class="en">The Mirage is broken at the keel, at its foundation – the ship's super-structure may not be made more seaworthy by sawing it off the hull.</span><span class="zh">这座海市蜃楼是从龙骨上、从地基上断的——你没法靠把上层建筑从船体上锯下来，让它变得更适航。</span><cite>The Fremen Mirage, Part IV，2020 年 2 月 28 日</cite></blockquote>
+<p>一年后，他把这条线索推到了它的终点。2021 年初的《普世战士》系列里，他先用三周证明"战士体验和战士价值观是普世的"这个说法在历史上站不住（光是"勇敢"的定义，不同文化之间就不只是不同，有时是正好相反），然后才处理它背后的意识形态。他给它起名叫<strong>硬汉崇拜</strong>，并把它的核心信条写成两句：海因莱因命题——"暴力是一切权威的最终来源"；以及他称之为"普雷斯菲尔德推论"的那一句——<strong>因此，制造暴力的能力是人类最高的美德</strong>。</p>
+<p>反驳第一条时，他给了一个我很难忘的例子。1783 年，大陆军的军官们酝酿对国会动手，华盛顿手上并没有更大的暴力——真要动手他拦不住。他做的是当众掏出一副老花镜，说："先生们，请允许我戴上眼镜，因为我为国效力，不仅头发白了，眼睛也快瞎了。"事情就此终结。Devereaux 说，任何一个罗马人都会立刻认出这是什么：<strong>auctoritas</strong>，一种靠过往的自我牺牲挣来的、无法用暴力强制的权威。罗马人有一整套词来描述这种不靠暴力的权威（virtus、honor、dignitas、gravitas、auctoritas），而这套词是由一个军事贵族社会自己写下来的——如果有谁会把社会说成"一切都是暴力"，最该是他们。他们没有。</p>
+<p>反驳第二条时，他做了那件让这个系列被记住的事：把硬汉崇拜的特征逐条对上艾柯《原初法西斯主义》的十四条——传统崇拜、拒斥现代性、为行动而行动、生活即永恒战争、对弱者的蔑视、英雄之死的崇拜、超雄性气质、迎合受挫阶层。他很小心：<strong>他明确写道，他不认为他批评的那位小说家是法西斯分子</strong>，那位显然信奉民主，而且对斯巴达最丑陋的部分明显感到不适（所以才去粉饰）。他说的是这套<strong>意识形态</strong>共享了法西斯的大部分 DNA，而且缺掉的那几条在逻辑上几乎是前提的必然推论。他还顺手引了艾柯那句在他所有论证里回响的话："法西斯政府注定输掉战争，因为他们在体制上就没有能力客观评估敌人的力量。"——而这正是他在斯巴达身上看到的：那套意识形态让他们变成了糟糕的战略家。</p>
+<p>这一节的落点有两句。一句是："<strong>一个自由社会不需要战士。士兵里不需要，警察里不需要，平民里也不需要。</strong>有时一个自由的民族需要成为士兵，或者成为警察，但总是要再变回平民——或者在一天结束时，或者在战争结束时。"另一句是上面引过的那句：它是一个现代的谎言，装扮成永恒的智慧。</p>
+<p>2026 年 7 月，这条线索走到了它当下的形态。他写了一篇关于网上那群"雕像头像"古典爱好者的观察——他管他们叫 chuds。他注意到一件奇怪的事：这些人对古代<strong>什么都不深</strong>。正常的自学爱好者是"一片浅水塘，但有几个很深的坑"（可以跟你讲清葛底斯堡每个团每小时的位置，却说不清重建时期是什么）；而一个受训的历史学家的知识像一个从浅端平滑走向深端的游泳池。</p>
+<blockquote><span class="en">But the chuds…it's just a puddle.  Not especially wide or deep.</span><span class="zh">但这些人……就只是一个水洼。既不特别宽，也不特别深。</span><cite>Fireside Friday, July 10, 2026，2026 年 7 月 10 日</cite></blockquote>
+<p>他的解释是：他们是<strong>倒着走</strong>的——先有现代的意识形态，再回头去古代找锚。所以他们永远不往深处去，因为走近了，古代根本不合身。而他给出的不合身之处是一条可以被检验的正面主张：<strong>古典时代的明显趋势是，多样性是制胜策略——那些更成功、更彻底地吸收了文化与族裔不同群体的社会赢了，那些保持小而同质的社会输了。</strong>而且李维、波利比乌斯、甚至马其顿的腓力五世，当时就看出来了。</p>
+
+<h3>三、物质约束：粮食一年收一次，而这家人天天要吃饭</h3>
+<p>2020 年 7 月，他开了一个叫《面包，他们是怎么做的？》的系列。第一篇通篇没讲怎么种地。它讲的是农民。</p>
+<p>他从结构开始：在农业社会里，农民占人口 <strong>80% 到 90%</strong>。典型的家庭是<strong>大家庭种小块地</strong>——前汉的文书假定一户八口（两位老人、儿子、儿媳、四个孩子），罗马和托勒密埃及的普查数据里家庭形态五花八门，但典型规模也是八口左右；而地呢，罗马小农的标准估计是 5 到 8 犹格（约合 3 到 5 英亩），战国到汉的"百亩"约合 4.764 英亩——几乎一模一样。1460 年朗格多克一个村的调查里，189 户中有 118 户的地不到 12 英亩。</p>
+<p>然后他指出一个反直觉的事：<strong>这些家庭作为劳动单位是"配置错误"的</strong>。一户有两个成年男性的家庭，大致能耕作接近 20 英亩；而他们手上通常只有那个数字的四分之一。<strong>嘴太多，地太少。</strong>可农民并不追求经济效率——他们要结婚、生孩子、跟亲人住在一起。"农民毕竟是人，不是农业生产的工具。"</p>
+<p>接着是整个系列的轴：<strong>粮食一年收一次，而这家人天天要吃饭。</strong></p>
+<p>这一句话之后，所有看上去"愚蠢"的农民行为都变得合理了。他们不最大化产出，他们<strong>最小化风险</strong>——因为把产量提高 5% 没有意义，如果第三年一次尾部风险就让全家饿死。所以他们同时种小麦、大麦和豆子（小麦更值钱，大麦更抗旱；雨太少小麦完蛋而大麦活，雨太多大麦在高处也活），所以他们把地块故意<strong>分散</strong>到不同的微气候里——一点谷地、一点平地、一点山坡。每一条都降低效率，每一条都换来活命的概率。</p>
+<blockquote><span class="en">These are not irrational, unthinking people; they are poor, not stupid – those are not the same things.</span><span class="zh">这些不是非理性的、不动脑子的人；他们穷，不是蠢——这两件事不是一回事。</span><cite>Bread, How Did They Make It? Part I: Farmers!，2020 年 7 月 24 日</cite></blockquote>
+<p>那么好年景怎么存下来？他一条一条堵死。存粮食：储存一年以内损耗还能接受，再往后虫害和霉变会<strong>加速</strong>；而且要多存一年的量，意味着一次不小的资本投入（他自己算过，一个五口罗马家庭一年要 200 modii 粮食，合 1746 升，分装上架就是一个小地窖）。存钱：钱会被偷，会被军队顺走，会被课税；更要命的是，<strong>你最想防的那些灾难（歉收、战争）恰恰是食物供给收缩的时刻，而那正是粮价飞涨、钱变得没用的时刻。</strong></p>
+<p>所以他们把好年景存进了<strong>别的地方</strong>：</p>
+<blockquote><span class="en">Grain rots and money can be stolen, but your neighbor is far likelier to still be your neighbor in a year, especially because these relationships are (if maintained) almost always heritable and apply to entire households rather than individuals, making them able to endure deaths and the cycles of generations.</span><span class="zh">粮食会烂，钱会被偷，但一年以后，你的邻居极有可能还是你的邻居——尤其因为这些关系（只要一直维护）几乎总是可以继承的，而且附着于整个家户而不是个人，所以它们能熬过死亡和世代更替。</span><cite>Bread, How Did They Make It? Part I: Farmers!，2020 年 7 月 24 日</cite></blockquote>
+<p>于是村庄生活的形状出来了：丰收之年他们宴请邻居、掏钱办村里的节庆、尽力给女儿备体面的嫁妆、把最近欠下的人情还掉。这些不是"民俗"，这是<strong>保险</strong>——而且是比粮仓和钱袋更可靠的那种保险，因为这种关系可以继承、附着于整个家户而非个人，能熬过死亡和世代更替。</p>
+<p>但它有一个后果，而这个后果是整篇文章真正的落点：<strong>剩余被扩散掉了。</strong>农村里到处是食物，却几乎没有剩余——因为生产是按最小风险安排的，因为家庭会长到土地能养的上限，因为一有余量就被投进社会关系网。他给的经验数字是：最终能流到城里那些不种地的人手上的，大约只有一成。</p>
+<p>这条约束往上长，长成了他后来最有力的两组结论。</p>
+<p><strong>第一组：马车方程的暴政。</strong>能运粮的东西——人、骡、牛、拉车的马——自己也吃粮。所以前工业时代的军队不可能靠后方补给线吃饭，必须一路就地征集。于是他写了一篇一万两千字的《征粮》，把这件通常被史书用"蹂躏了某某地区"一笔带过的事，完整地拆开。</p>
+<p>拆开以后是这样的：村子不是随机撒在地上的，它们成簇，由小路连成一张网；一支带骑兵的军队能扫出大约二十英里宽的正面，一天走十英里，也就是约 200 平方英里；按前工业的人口密度（每平方英里 25 人上下）那里住着约 5000 人，刚收完的秋后他们手上有约 135 万人日的口粮。而他举例的那支两万人规模的军队（还要算 4000 名非战斗人员和 9800 头牲口）每天要吃掉约 6.1 万公斤——大约是当地存粮的 <strong>5%</strong>。他把村庄叫做军队的"<strong>食物皮纳塔</strong>"：里面装满食物，取出来需要一点暴力。</p>
+<p>这些数字直接解释了一个史学上的老现象：为什么地中海世界的野战军规模有一道<strong>这么顽固的天花板</strong>——两万是常态，四万算大，八万极其罕见，八万以上在几乎所有情况下都不可持续。</p>
+<p>然后是暴力本身。他不肯回避：征粮队通常占一支中世纪军队总兵力的三分之一，先是纵火的前哨骑兵冲进村子（因为消息跑不过马），再是后面的人来搬东西；被抓住的农民会被拷问以逼出藏起来的种粮，女人会被掳走。他引了一段十三世纪的《洛林之歌》原文来写这个场面，也引了第一次十字军的随军教士福尔彻描述"十字军没有强奸被俘的穆斯林女人，只是用长矛刺穿了她们的肚子"——然后指出，这被那位教士当成美德来写。</p>
+<blockquote><span class="en">If this needs saying: war is terrible, we should do less of it.</span><span class="zh">如果这句话需要说出来的话：战争是可怕的，我们应该少打一点。</span><cite>Logistics, How Did They Do It, Part II: Foraging，2022 年 7 月 29 日</cite></blockquote>
+<p>而那一篇的最后一段，就是本页开头引过的那句"按人数算，你不会是盔甲锃亮的士兵"。它不是一句煽情。它是把前面所有算术——80% 到 90% 的人口是农民、一成的剩余、5% 的日耗——翻译成第二人称之后的必然结果。</p>
+<p><strong>第二组：为什么罗马没有工业革命。</strong>2022 年 8 月，他的赞助人投票选出了这个题目。他的回答把"工业革命"从一个笼统的词拆成一条具体到令人发指的因果链，而且每一环都要同时满足三件事：原理、可用的设计、以及<strong>经济上划算的用例</strong>。</p>
+<p>链条是这样的：英国的森林在古代就基本被砍光（到 1000 年英格兰只剩约 15% 林地，后来降到 5%），于是十六世纪起烧煤取暖做饭；地表煤层挖完就要挖深井；深井低于地下水位就要抽水；抽水泵在<strong>燃料极其便宜的煤矿口</strong>才划算——纽科门 1712 年那台机器烂得可怕，效率低到只有在煤堆上才用得起。有了这个用例，蒸汽机才有人迭代，才等到 1776 年的瓦特机。而这时还需要另一头：一个"把旋转运动变成产能"的瓶颈行业——纺纱（占纺织总工时的 80% 以上），还需要 1765 年的珍妮机把纺纱从家庭作坊变成必须集中放置的机器。还需要英国恰好是全世界的纺织中心（苏格兰威尔士的羊毛，加上帝国从印度运来的棉花）。甚至还需要欧洲的国王们为了造更好的攻城炮，痴迷了三个世纪怎么铸造能承压的圆筒——因为那和蒸汽机的气缸是同一门手艺。</p>
+<p>罗马缺的不是聪明，是这条链上的<strong>每一环</strong>。他们用煤但很少；他们用水磨磨面但不用它纺纱；他们连纺车都没有（还在用手持纺锤）；他们的经线重锤织机比飞梭织机低一个数量级，所以就算给他们纺车，经济也吃不下那么多纱线。至于压力圆筒，他们根本没有任何理由去研究它。</p>
+<p>那罗马经济好在哪？他也不否认：帝国在地中海造出了一个语言、关税和货币的统一体，压住了海盗和土匪，让市场更可靠，于是农业专业化程度上升、创新得以扩散、资本得以积累。但他用了一个我觉得非常厉害的比喻来划界：</p>
+<blockquote><span class="en">much like how realizing design efficiencies in an (unmotorized) bicycle does not bring it any closer to being a motorcycle; you are still stuck with the limits of the energy that can be applied by two legs.</span><span class="zh">这就像给一辆（没有马达的）自行车做设计优化，并不会让它更接近一辆摩托车；你仍然被困在两条腿能输出的能量上限里。</span><cite>Why No Roman Industrial Revolution?，2022 年 8 月 26 日</cite></blockquote>
+<p>然后是那句最有政治含义的结论，它一句话把这三个想法串成了一条：</p>
+<blockquote><span class="en">Roman economic growth, because it was a product of institutions instead of technologies, was not durable in the face of those institutions collapsing.</span><span class="zh">罗马的经济增长，因为它是制度的产物而不是技术的产物，所以在那些制度崩塌时就撑不住了。</span><cite>Why No Roman Industrial Revolution?，2022 年 8 月 26 日</cite></blockquote>
+
+<h2>他的思维方法</h2>
+<p>读长期写作者，最能拿走的往往不是结论而是招式。他的招式有几个非常清楚。</p>
+<p><strong>先把对手的最强版本立起来，再在他自己选的战场上打。</strong>斯巴达系列里，他接受崇拜者的全部史料；弗雷曼系列里，他接受"社会价值 = 暴力输出效率"这个他根本不同意的前提；普世战士系列里，他先花三周确认那套史观在事实层面能不能成立，因为"<strong>真相在这类事情上是绝对的抗辩理由</strong>"——只有确认它不是真的之后，才有资格去谈它的意识形态问题。这是一种很贵的写法，但它让人无处可退。</p>
+<p><strong>分层。</strong>战术／战役／战略这三层是他用得最多的撬棍。它之所以有效，是因为大众叙事几乎只在第一层，而胜负在第二三层决定。</p>
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="Three layers of military analysis: tactics, operations, strategy">
+<rect x="0" y="0" width="700" height="300" fill="none"/>
+<rect x="40" y="30" width="620" height="62" rx="8" fill="rgba(110,168,254,0.10)" stroke="#6ea8fe" stroke-width="1.2"/>
+<text x="62" y="58" fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="15">STRATEGY · 战略</text>
+<text x="62" y="80" fill="#93a1ae" font-family="-apple-system,Noto Sans SC,sans-serif" font-size="14">这仗为什么打？要得到什么？手段和目的对得上吗？</text>
+<text x="600" y="68" fill="#ff8f8f" font-family="SF Mono,Menlo,monospace" font-size="14">斯巴达：败</text>
+<rect x="40" y="110" width="620" height="62" rx="8" fill="rgba(110,168,254,0.07)" stroke="#6ea8fe" stroke-width="1.2" stroke-opacity="0.7"/>
+<text x="62" y="138" fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="15">OPERATIONS · 战役</text>
+<text x="62" y="160" fill="#93a1ae" font-family="-apple-system,Noto Sans SC,sans-serif" font-size="14">怎么把军队、装备和粮食弄到战场并留在那里？</text>
+<text x="600" y="148" fill="#ff8f8f" font-family="SF Mono,Menlo,monospace" font-size="14">斯巴达：败</text>
+<rect x="40" y="190" width="620" height="62" rx="8" fill="rgba(94,234,212,0.06)" stroke="#5eead4" stroke-width="1.2" stroke-opacity="0.7"/>
+<text x="62" y="218" fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="15">TACTICS · 战术</text>
+<text x="62" y="240" fill="#93a1ae" font-family="-apple-system,Noto Sans SC,sans-serif" font-size="14">到了战场上怎么打？</text>
+<text x="588" y="228" fill="#9fdfc0" font-family="SF Mono,Menlo,monospace" font-size="14">斯巴达：略优</text>
+<text x="40" y="282" fill="#7d8794" font-family="-apple-system,Noto Sans SC,sans-serif" font-size="13">大众叙事几乎只发生在最下面这一层；而胜负在上面两层决定。</text>
+</svg>
+<figcaption>他最常用的撬棍：把"能不能打"拆成三层，再问在哪一层输的</figcaption>
+</figure>
+<p><strong>把情绪翻译成命题。</strong>"艰难时代造就强者"是一句感受；他把它拆成四条陈述句，然后才有东西可以被证据打中。同样的动作他用在"普世战士"（拆成七条）和"硬汉崇拜"（写成海因莱因命题 + 普雷斯菲尔德推论）上。</p>
+<p><strong>数它。</strong>四英尺一个兽人，两千辆大车，1746 升粮食，135 万人日，443 场叛乱，2683 年里的 98 年。他不是为了炫耀精确——这些数字全部带着很宽的误差——而是因为一旦你开始数，那些含糊的形容词就没地方躲了。</p>
+<p><strong>区分"已被证据裁决的分歧"和"专家之间仍然合理并存的分歧"。</strong>他从法律里借了一个词：<em>colorable</em>（一个法律上站得住的主张，哪怕说的人自己未必同意、未必认为它能赢）。他给自己定的规矩是：面向公众写作时，要留在 colorable 的范围内；如果那个范围很宽，就要说明它有多宽。而学者之间互相攻击"你已经过时了"，他的回应也很清醒——<strong>不要把"发表量"误认成"学界意见的重量"</strong>，因为新立场天然更多产（"很难靠论证'那边那位四十年前就把我的题目解决了，去读他吧'来找到工作"）。</p>
+<p><strong>把书目放在最前面。</strong>他的长文习惯在正文开始之前先写一段"参考文献说明"，而不是把它埋在文末。出处先行，是一种姿态。</p>
+<p><strong>敢说不知道。</strong>罗马经济从"低均衡"走到"高均衡"到底增长了多少？"有些估计给出 25% 左右，但这些非常带推测性；实际上我们真的不知道。"这句话出现在一篇通篇都在做因果推理的文章的中间。</p>
+<p><strong>反事实不是用来讲故事的，是用来展示偶然性的。</strong>假如是西班牙或葡萄牙而不是英国控制了印度，棉花会不会流向一个不烧煤的地方？他明说这类问题"根本无法回答"——他提出它，是为了让读者看见那张 GDP 曲线图底下藏着多少不必然。</p>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>最诚实的那条批评是他自己写的。</strong>2022 年那篇斯巴达回顾里，他承认自己在两派之间的选择<strong>部分是出于修辞考虑</strong>：卡特里奇阵营（把斯巴达看作极端异常且极端糟糕）在说服上远优于霍德金森阵营（认为斯巴达远没有史料说的那么特殊），因为它和崇拜者共享同一套证据基础。他为这个选择辩护得很充分，但它的含义没法回避：<strong>这是一种为了赢下辩论而组织的历史写作。</strong>他在同一篇里还承认，第一篇关于 agoge 的文字没写清楚（他并不认为 agoge 教授战斗技能，但正文没说明白，后来补了脚注），并且指出斯巴达"弃婴"传说<strong>很可能根本没发生过</strong>——我们本该有证据而我们没有。</p>
+<p>另一处他自己的复盘：2022 年 2 月他写了一篇解释俄乌战争的长文，五月复盘时明确写下"我显然低估了那个结果的概率"——他原本预计俄军会赢下开局的几场战役，会合围哈尔科夫，直到进入大城市巷战才停下来。实际是俄军的攻势在那之前就耗尽了。他把自己错在哪一条上写得很清楚。</p>
+<p><strong>外部的批评有两条我读到了原文。</strong>一条是 Elizabeth Van Nostrand 在 2020 年 11 月做的逐条事实核对。她核了斯巴达系列里的大量具体主张，结论是绝大多数站得住（七岁入群、刻意挨饿并鼓励偷窃、阿尔忒弥斯祭坛的鞭打、克里普提亚的杀戮、公民人数从八千掉到一千五、黑劳士是国有奴隶），但她指出了两类问题：一是"五个村庄"这样的细节与她查到的来源（四个村庄）不符；二是更重要的方法问题——</p>
+<blockquote><span class="en">Along the way he sometimes presents facts as more certain/less controversial among historians than they are. He's not <em>hiding</em> that he does this, but on first read through I did walk away with the impression that certain things were more settled than they are, and unprepared to argue for their truth.</span><span class="zh">一路上他有时会把一些事实呈现得比它们在历史学界的实际状况更确定、争议更小。他并没有<em>隐瞒</em>自己在这么做，但我第一遍读下来，确实带走了"某些事情已经有定论"的印象，而且没有做好为它们的真实性辩护的准备。</span><cite>Elizabeth Van Nostrand，Epistemic Spot Check: This Isn't Sparta，2020 年 11 月 25 日</cite></blockquote>
+<p>另一条更尖锐，来自 Topher Brennan 的一篇客座文章：Devereaux 在替中世纪欧洲辩护、说《冰与火之歌》把中世纪战争写得过于残酷时，用的是他在别处绝不会接受的论证方式——而他自己的后勤系列里，恰恰详细写了中世纪军队如何抢劫、纵火和强奸。</p>
+<blockquote><span class="en">I am quite certain Devereaux knows better. His arguments in defense of the honor of medieval Europe are the sort of thing he'd have no patience for if made in defense of Sparta, or ancient Rome for that matter.</span><span class="zh">我十分确信 Devereaux 心里清楚。他为中世纪欧洲的名誉所做的那些辩护，如果换成是替斯巴达、或者替古罗马辩护，他自己是一点耐心都不会有的。</span><cite>Topher Brennan，Guest Post: Medieval Warfare Was Bad, Actually</cite></blockquote>
+<p><strong>还有两条是结构性的，需要读者自己留神。</strong>第一，这个博客本质上是<strong>论战文体</strong>。他最好的几篇都是"某某神话是错的"，而<strong>拆神话比建正面图景容易</strong>；他真正的正面图景（农民生活、后勤、人口结构）几乎全部是对他人研究的综合——他在文中总是老老实实注明这一点（那些前置的书目段落就是为此存在的），但读者很容易把综合当成一手结论来引用。第二，他的题材在稳步外扩：核威慑、乌克兰、美国海军与全球贸易，都远出古地中海经济与军事的范围。他会标注不确定性，读者常常不会。</p>
+<p>最后一条是我读下来的观感，不是任何人提出的指控：2026 年那篇关于 chud 的文章里，他明确宣布<strong>不再试图说服对手</strong>——"人没法被说理说出一个他当初并不是靠说理进去的立场"，他的目标只是给旁观者"放一枚信号弹"，让人知道另一种更严谨的过去是存在的。作为策略这可能是对的。但它意味着这个博客越来越不是在辩论，而是在<strong>划界</strong>；而划界是一种很容易让作者停止被反驳的姿势。</p>
+<p>关于霍德金森一派对斯巴达的学术反驳，我只读到了 Devereaux 自己的转述与书目信息（Hodkinson《古典斯巴达的财产与财富》2000、《斯巴达社会》2004 中的论文等），没有读到原文，所以这里只报书目事实，不复述他们的论证。</p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://acoup.blog/2019/09/27/collections-this-isnt-sparta-part-vii-spartan-ends/">This. Isn't. Sparta. Part VII: Spartan Ends</a></span><span class="d">2019 年 9 月 27 日。七篇斯巴达系列的收尾，也是"看中位数居民"这把尺子第一次被用到底。战役与战略层的清算、主题公园式的结局、以及"一则警世故事"那句判决都在这里。</span></li>
+<li><span class="t"><a href="https://acoup.blog/2020/01/17/collections-the-fremen-mirage-part-i-war-at-the-dawn-of-civilization/">Collections: The Fremen Mirage, Part I: War at the Dawn of Civilization</a></span><span class="d">2020 年 1 月 17 日。把"艰难时代造就强者"拆成四条可检验命题，然后从农业和国家的起源开始数谁在赢。"没有人在有别的选择时会选择住在资源贫瘠的地方"出自此篇。</span></li>
+<li><span class="t"><a href="https://acoup.blog/2020/07/24/collections-bread-how-did-they-make-it-part-i-farmers/">Collections: Bread, How Did They Make It? Part I: Farmers!</a></span><span class="d">2020 年 7 月 24 日。全站被后续文章回引最多的一篇。八口人、五英亩地、一年一收、把好年景存进邻居关系里，以及"他们穷，不是蠢"。</span></li>
+<li><span class="t"><a href="https://acoup.blog/2021/02/19/collections-the-universal-warrior-part-iii-the-cult-of-the-badass/">Collections: The Universal Warrior, Part III: The Cult of the Badass</a></span><span class="d">2021 年 2 月 19 日。他给一整类流行史观起名并追到底的一篇：海因莱因命题、华盛顿的老花镜、以及逐条对照艾柯的《原初法西斯主义》。全篇没有配图，他说这内容不适合放历史猫片。</span></li>
+<li><span class="t"><a href="https://acoup.blog/2022/07/29/collections-logistics-how-did-they-do-it-part-ii-foraging/">Collections: Logistics, How Did They Do It, Part II: Foraging</a></span><span class="d">2022 年 7 月 29 日，一万两千字。马车方程如何把"就地征粮"变成前工业战争的必然，以及被史书用"蹂躏"一词盖掉的那些事。结尾那句"你不会是骑士"。</span></li>
+<li><span class="t"><a href="https://acoup.blog/2022/08/26/collections-why-no-roman-industrial-revolution/">Collections: Why No Roman Industrial Revolution?</a></span><span class="d">2022 年 8 月 26 日。由赞助人投票选出的题目。把工业革命拆成一条每一环都需要"划算的用例"的因果链，并给出那个自行车与摩托车的比喻。</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-17" data-slug="a-collection-of-unmitigated-pedantry">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-17</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
