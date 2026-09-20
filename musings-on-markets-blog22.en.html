@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aswath Damodaran · Musings on Markets — Price and value are two different games, and most arguments happen between them</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="musings-on-markets-blog22.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep-Read · 22 · aswathdamodaran.blogspot.com</div>
+<h1>Aswath Damodaran<br/>Price and value are two different games, and most arguments happen between them</h1>
+<p class="sub">Musings on Markets · 682 posts · opened 17 September 2008, two days after Lehman Brothers collapsed · roughly fifty posts a year from 2008 to 2016, settling at twenty-odd a year from 2017 · latest post 10 September 2026, still active · entirely free, no paywall · this page is based on 17 posts read in full, spanning September 2008 to August 2026, four of them inside the earliest 20% of the blog's lifespan · the blog has no author-curated "best of" page, so the reading list was built from in-site backlink centrality (ranked by how many distinct later years cite a post, with intra-series cross-links discarded), then topped up with outside attention and a period quota</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ SHORT ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>In the summer of 2015, a finance professor at NYU did a very dumb piece of arithmetic.</p>
+<p>He listed the public companies that lived off online advertising — Google, Facebook, Twitter, LinkedIn, Yelp — and then did something backwards to each one. Instead of estimating what the company was worth, he <strong>took its market value as given and solved for the number the market must be assuming</strong>: how much advertising revenue does this company have to collect every year, ten years out, for today's price to make sense? For Facebook the answer came out at <strong>$117.7 billion</strong>.</p>
+<p>Then he added the whole column up: <strong>$523 billion.</strong></p>
+<p>Then he went and found a second number — the largest the global online advertising market could plausibly be in ten years. His assumptions were generous: total advertising grows with the economy, and online climbs to half of all advertising. The answer was <strong>$466 billion.</strong></p>
+<p>Which is to say: the revenue quietly promised to these few listed companies already <strong>exceeded the entire market ten years out</strong>. That is before counting the private companies queuing up to list, and before counting everyone else who sells an ad on the side.</p>
+<p>There is no liar anywhere in this picture. Each company's price, taken on its own, is defensible. The absurdity lives only in the sum.</p>
+<p>The man doing the arithmetic is Aswath Damodaran, born in Chennai in 1957, teaching valuation at NYU's Stern School of Business since 1986. His blog is called Musings on Markets, subtitled "My not-so-profound thoughts about valuation, corporate finance and the news of the day!" It opened on 17 September 2008 — two days after Lehman Brothers went under. The first sentence of the first post is: "I must confess that I have mixed feelings about blogs."</p>
+<p>Eighteen years and 682 posts later, if you had to compress this mind into one line, it would be: <strong>"what is this thing worth" and "what will someone pay for it" are two different questions, and most arguments in markets are two groups answering different questions while each is convinced the other is talking nonsense.</strong></p>
+<p>He calls the two things <strong>the value game</strong> and <strong>the pricing game</strong>. Value is set by fundamentals: cash flows, growth, risk. Price is set by supply and demand: mood, momentum, what everyone else is doing. People who play the first are investors; people who play the second are traders.</p>
+<p>What matters is that he refuses to look down on the traders. He wrote a line few professors would write: a trader who makes a million dollars can buy exactly as much with it as an investor who makes the same million. What he actually objects to is <strong>blur</strong> — people who talk value while watching momentum, or the reverse.</p>
+<blockquote><span class="en">Stealing from the title of the bestseller from a few years ago, if traders are from Venus, investors are from Mars, and if one is talking about price and the other about value, they may both be right, even with vastly different numbers. Twitter can be a good trade and a bad investment at exactly the same time!</span><cite>Twitter IPO: Why a good trade be a bad investment (or vice versa)?, 10 October 2013</cite></blockquote>
+<p>Once you see the split, a lot of awkward things go smooth. A great company can be a bad investment, if the price is high enough. A terrible company can be a good investment, if the price is low enough. In 2017 he ran the excess returns of every listed company on earth: <strong>19,960 were destroying value, only 10,947 were creating it</strong> — roughly two in three of the world's public companies are, by his measure, bad businesses.</p>
+<p>But the best part of this mind is not that conclusion. It is <strong>watching him take a beating with it.</strong></p>
+<p>June 2014: venture investors price Uber at $17 billion. He works it out and gets <strong>$5.9 billion</strong>, and posts the spreadsheet so anyone can change his numbers. Silicon Valley erupts. Bill Gurley — Uber board member, Benchmark partner — writes a rebuttal titled "How to Miss By a Mile," and his central blow lands on the deepest assumption: by using the historical size of the taxi market as your base, you are quietly assuming the future looks like the past. A billion cars worldwide, $6,000 a year to own one: that's a $6 trillion market for not having to own a car.</p>
+<p>Most people would start arguing here. What Damodaran did was <strong>re-run the same machine using Gurley's story, get $54 billion, and thank him in public.</strong></p>
+<p>Value investors then attacked him from the other side: how can a number jump from $6 billion to $54 billion? His answer was that this is exactly what you should expect. Numbers don't fall from the sky; numbers are <strong>translated stories</strong>. Change the story and the number has to move. He later compressed this into the line he quotes back to himself more than any other:</p>
+<blockquote><span class="en">I have long believed that a company valuation without a story to bind it together is just numbers on a spreadsheet and a story that uses no numbers at all is a fairy tale.</span><cite>DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!, 2 May 2016</cite></blockquote>
+<p>This is not splitting the difference. It is a specific machine: break the story into a handful of falsifiable dials — how big is the market, what share can you take, what slice do you keep, how much capital does the growth eat — and then turn the dials and watch value move. In December 2014 he went further and shipped a build-your-own-Uber template: pick your own parameters, and the answers ranged from under $1 billion to nearly $100 billion.</p>
+<p>As for what to do when you genuinely cannot see, his answer runs against instinct: <strong>the more uncertain it is, the simpler the model gets.</strong> Not more decimals, not more line items — cut it down to three variables. He says there is a voice in his head shouting that he is going to be badly wrong, and he silences it like this:</p>
+<blockquote><span class="en">I don't have to be right, just less wrong than everyone else, and that when uncertainty is rampant, most investors give up.</span><cite>DCF Myth 3, 2 May 2016</cite></blockquote>
+<p>The same post ends: I am wrong a hefty percent of the time, but so what? It's only money. I'm just glad I'm not a brain surgeon.</p>
+</div>
+<!-- ============ FULL ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<div class="glossary">
+<p style="margin-top:0"><b>Glossary</b> (the handful of prior concepts this page leans on, one line each)</p>
+<ul>
+<li><b>Valuation / intrinsic value</b>: what a company is worth in itself — the cash it can generate in future, discounted back to today. Has nothing to do with its share price.</li>
+<li><b>Pricing</b>: what someone will pay for it right now. Set by supply, demand, mood and what other people are doing; it need not consult the number above, and often doesn't.</li>
+<li><b>Discounted cash flow (DCF)</b>: the standard machine for estimating intrinsic value. List the cash the business throws off each year, then discount and sum it — next year's dollar is worth less than today's.</li>
+<li><b>Cost of capital</b>: the discount rate in the line above. Loosely, the minimum annual return investors demand for leaving money in this business. Shakier business, higher number, lower value.</li>
+<li><b>Multiples</b>: the standard tool of pricing — price-to-earnings, price-to-sales. You take the multiples of a set of "comparable" companies and apply them to yours.</li>
+<li><b>Venture capital (VC)</b>: money invested in young private companies. When this page says "VCs valued Uber at $17 billion," that is the valuation implied by the terms of a funding round.</li>
+</ul>
+</div>
+
+<h2>A strange thing: add up everyone's books and you get more than the world</h2>
+<p>In August 2015 a professor posted a table on his blog. Every row was a listed company that made money from online advertising.</p>
+<p>To each row he did something backwards. The usual procedure is to estimate what a company will earn, discount it to today, compare that to the share price, and declare the stock cheap or dear. He <strong>ran the procedure in reverse</strong>: assume the market's price is correct, in which case the market must be holding a specific number about the future — how much advertising revenue this company has to collect every year a decade out for today's price to stand up. He solved for that number.</p>
+<p>Facebook's row came out at <strong>$117.7 billion</strong>. Which means anyone buying Facebook at the August 2015 price was, in effect, signing a contract: this company will take $117.7 billion a year out of advertisers' pockets by 2025.</p>
+<p>He added the column: <strong>$523 billion.</strong> Then he went looking for the ceiling — the largest the world's online advertising market could be in ten years. His assumptions were not conservative: global ad spending grows with the economy, and online rises to half of all advertising (it was a quarter in 2014). Under those generous terms, the 2025 online advertising market is about <strong>$466 billion.</strong></p>
+<p>523 is greater than 466. And the 523 side is missing a lot: the companies still private (Snapchat was queuing), the small players, firms like Apple that sell advertising on the side. The real gap is only wider.</p>
+<p>The strangeness here is not "there's a bubble." It is that <strong>taken apart, every company's price is defensible; put together, they describe a world that cannot exist.</strong> Nobody lied. Nobody miscalculated. Not one step requires anyone to be irrational. Rational individuals, summing to an impossible collective.</p>
+
+<h2>Who he is</h2>
+<p>Aswath Damodaran, born September 1957 in Chennai, India. An accounting degree from Madras University, then an MBA and a PhD in finance from UCLA, then NYU's Stern School of Business from 1986 to now, currently as Kerschner Family Chair in Finance Education. The press calls him "the Dean of Valuation."</p>
+<p>One detail says more about him than the title: <strong>he gives away the tools he makes his living with.</strong></p>
+<p>His personal page carries the cost of capital, risk premiums, tax rates, default spreads and country risk premiums for practically every industry on earth, refreshed each January, free to download by anyone — a dataset the industry has used as its benchmark for over twenty years. Every time he values a company, the Excel file is attached at the bottom of the post, usually labelled something like "My valuation of Uber (June 2014)." Disagree? Download it, change the numbers, see what you get. His books have free online editions. His entire course is on YouTube for nothing.</p>
+<p>The blog opened on 17 September 2008. That was not a random day: Lehman Brothers filed on 15 September and global markets were coming apart. The first post, "First thoughts," runs about three hundred words. It opens with a confession of mixed feelings about blogs — he wasn't sure he had enough interesting things to say on a continuing basis, and whatever he said would be online for better or worse. It ends: "I hope you will enjoy my ranting."</p>
+<p>Eighteen years on, the worry about running out of things to say reads as comedy. He is still writing; the most recent post is dated 10 September 2026. The cadence shifted once: forty to fifty posts a year from 2008 to 2016, then a steady twenty-odd from 2017 onward, with individual posts getting much longer — from a few hundred words of commentary to four or five thousand words carrying data tables and spreadsheets.</p>
+
+<h2>What he has been wrestling with: whether "what is it worth" has an answer at all</h2>
+<p>In 1986, newly arrived at Stern, he wanted to start a valuation class. A senior colleague advised him against it.</p>
+<blockquote><span class="en">I was told that there was really not enough theory in valuation to warrant a class and that I would end up teaching a glorified accounting class.</span><cite>Numbers and Narrative: Modeling, Story Telling and Investing, 24 June 2014</cite></blockquote>
+<p>He ignored the advice and has never regretted it, for a reason that is quietly combative: <strong>he likes teaching a subject with little theory in it</strong> — the questions are all practical, you have to draw on an odd mix of skills, and the market grades you in real time.</p>
+<p>That opening already contains his lifelong problem. The senior colleague's implication was that valuation is not a discipline because it has no unique answer. Damodaran's whole writing life can be read as a sustained reply — not a denial that there is no unique answer, but a denial that this makes it less of a discipline.</p>
+<p>The moment he actually collided with the problem is scattered through his earliest posts. On 22 September 2008, six days in, he wrote a short piece called "Are you a contrarian?" The previous Wednesday at 3:45pm the S&amp;P had fallen to 1150 and the Dow had dropped 800 points in three days. He offered readers a four-way test: was your first impulse denial, panic, cool assessment (buy now), or wait-and-see? Then he wrote something professors rarely write:</p>
+<blockquote><span class="en">At the risk of revealing more about my psyche than I should be, I did not pass the contrarian test. I chose to wait and see, which in the long terms turns out to be waiting and waiting for the right moment, which either never comes or comes too late.</span><cite>Are you a contrarian?, 22 September 2008</cite></blockquote>
+<p>That small self-exposure already contains the fault line. He owned the most complete valuation toolkit in the world, and in the hour it was most needed he didn't use it — because he is a person, and the screen was red. <strong>Between the number the tool produces and the action you can actually bring yourself to take, there is something in the way.</strong></p>
+<p>That something is what he has spent eighteen years excavating: price.</p>
+<p>Price is not value gone wrong. Price is a <strong>fully independent system with its own laws</strong> — set by supply and demand, by momentum, by what other people are doing. It does not have to consult value, and frequently doesn't. Which is why most public arguments about whether a stock is worth it never resolve: not because either side is stupid, but because <strong>both sides are correct inside their own system.</strong> One is answering "what is it worth," the other "what will someone pay next month." Both questions have answers, and the answers can differ by a factor of three.</p>
+
+<h2>His three answers, and how he ran into each of them</h2>
+
+<h3>1. Two games: Twitter can be a good trade and a bad investment at once</h3>
+<p>In October 2013 Twitter filed to go public. He valued it and got roughly <strong>$10 billion</strong>, and posted the work.</p>
+<p>Then the numbers started flying. He reports seeing estimates as high as $25 billion; the gambling markets had opened on the offering price, and the money was on the high side.</p>
+<p>The standard script offers two moves here. Hold your $10 billion and call everyone else a hype merchant, or concede you were conservative and revise up. He took neither. He wrote a post that looks like a digression, on the subject of <strong>why this argument cannot be conducted at all.</strong></p>
+<p>His diagnosis: the two sides are playing different games, and neither knows the other is playing something else.</p>
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="Structural contrast between the pricing game and the value game">
+<defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6ea8fe" stop-opacity=".22"/><stop offset="1" stop-color="#6ea8fe" stop-opacity=".06"/></linearGradient>
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".22"/><stop offset="1" stop-color="#5eead4" stop-opacity=".06"/></linearGradient></defs>
+<rect x="18" y="18" width="316" height="264" rx="12" fill="url(#gA)" stroke="#6ea8fe" stroke-opacity=".45"/>
+<rect x="366" y="18" width="316" height="264" rx="12" fill="url(#gB)" stroke="#5eead4" stroke-opacity=".45"/>
+<text x="176" y="52" text-anchor="middle" fill="#6ea8fe" font-size="17" font-weight="700" font-family="-apple-system,sans-serif">The pricing game</text>
+<text x="524" y="52" text-anchor="middle" fill="#5eead4" font-size="17" font-weight="700" font-family="-apple-system,sans-serif">The value game</text>
+<line x1="40" y1="76" x2="312" y2="76" stroke="#6ea8fe" stroke-opacity=".3"/>
+<line x1="388" y1="76" x2="660" y2="76" stroke="#5eead4" stroke-opacity=".3"/>
+<text x="40" y="108" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">Set by: supply and demand</text>
+<text x="40" y="140" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">Driven by: mood, momentum, others</text>
+<text x="40" y="172" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">You watch: charts, multiples</text>
+<text x="40" y="204" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">You win by: entering and leaving early</text>
+<text x="40" y="242" fill="#e2e8f0" font-size="14.5" font-weight="700" font-family="-apple-system,sans-serif">You are called: a trader</text>
+<text x="388" y="108" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">Set by: fundamentals</text>
+<text x="388" y="140" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">Driven by: cash flows, growth, risk</text>
+<text x="388" y="172" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">You watch: filings, business, narrative</text>
+<text x="388" y="204" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">You win by: price returning to value</text>
+<text x="388" y="242" fill="#e2e8f0" font-size="14.5" font-weight="700" font-family="-apple-system,sans-serif">You are called: an investor</text>
+<text x="350" y="272" text-anchor="middle" fill="#7d8794" font-size="12.5" font-family="-apple-system,sans-serif">Both sides can be right at once, with answers three times apart</text>
+</svg>
+<figcaption>The split Damodaran drew before Twitter's 2013 IPO, and has returned to for thirteen years since</figcaption>
+</figure>
+<p>The distinction itself is not new. What is new is what he does next. Most people who draw this line then take a swipe at the traders. He explicitly refuses:</p>
+<blockquote><span class="en">I am not passing judgment, when I make this statement, because unlike some value investors, I don't view traders as shallow or somehow less critical to the functioning of markets than investors. After all, a trader who makes a million dollar profit can buy just as much with that money as an investor who makes the same profit.</span><cite>Twitter IPO: Why a good trade be a bad investment (or vice versa)?, 10 October 2013</cite></blockquote>
+<p>What he is actually attacking is <strong>blur</strong>. In the same post he names the "I do both" crowd: traders who pay lip service to value while using it to back momentum plays, and investors who claim to respect markets right up until the market starts moving the wrong way. Playing on unfamiliar turf, he says, is dangerous — the trader who believes he understands value and the investor who believes he can get in and out at will each undercut the thing they were good at.</p>
+<blockquote><span class="en">Stealing from the title of the bestseller from a few years ago, if traders are from Venus, investors are from Mars, and if one is talking about price and the other about value, they may both be right, even with vastly different numbers. Twitter can be a good trade and a bad investment at exactly the same time!</span><cite>Ibid.</cite></blockquote>
+<p>The downstream product of this split is a 2017 post whose title is itself a tongue-twister: "Explaining a Paradox: Why Good (Bad) Companies can be Bad (Good) Investments." The logic walks itself. "Good company" is a judgment about the business (does its return on capital exceed its cost of capital?). "Good investment" is a judgment about price (are you paying less than it is worth?). Two orthogonal axes, so all four quadrants are occupied.</p>
+<p>What lifts the post above a logic exercise is the number he drops into it. In January 2017 he computed excess returns across every listed company globally: <strong>19,960 value destroyers against 10,947 value creators.</strong> In public markets, in other words, the bad company is not the exception. It is the majority, by close to two to one.</p>
+<p>His own operating rule follows: at the right price he will buy a company in a bad business run by indifferent managers; at the wrong price he will avoid even superstar companies. That is not a slogan. In 2012 he did it, in public, to an almost uncomfortable degree — which is the fifth section below.</p>
+
+<h3>2. Story and numbers: a VC told him he'd missed by a mile, so he re-ran the model on the VC's story</h3>
+<p>On 3 June 2014 the news reported that Wellington, Fidelity and others had put $1.2 billion into Uber at an implied pre-money value of $17 billion. Uber's revenues at the time were a few hundred million; operating income was essentially invisible.</p>
+<p>He decided to do the arithmetic, and opened with a confession: he had just downloaded the Uber app and had not used it. He spends his life either in the suburbs, where days pass without seeing a taxi, or in New York City, where the subway is faster, cheaper and often safer.</p>
+<p>Then he broke the $17 billion into three dials:</p>
+<ul>
+<li><strong>How big is the market.</strong> He went and looked: Tokyo is the world's most lucrative taxi market at $20–25 billion a year; the UK about $14 billion; the US about $11 billion with roughly $3 billion in New York. Adding an estimated $50 billion for the rest of the world gives a <strong>$100 billion</strong> global taxi and car service market, growing at 6% a year to $183 billion in a decade.</li>
+<li><strong>What share can Uber take.</strong> He used <strong>10%</strong>, and said plainly this already sat at the optimistic end: the market is splintered, regulated and local — and local is the crux, because a car service is physical and localized, so its network effects are far weaker than those of search or online merchandising.</li>
+<li><strong>What slice of each fare does it keep.</strong> He held the then-current <strong>20%</strong>, while noting competition was already pushing that toward 10–15%.</li>
+</ul>
+<p>Three dials, plus a 40% steady-state operating margin, a 12% cost of capital and a 10% chance of failure, gave him <strong>$5.895 billion.</strong></p>
+<p>Here is where he parts company with the ordinary bear. He did not stop at "therefore $17 billion is insane." He built a <strong>break-even table</strong>: where would the dials have to sit for $17 billion to hold? Answer — the market would have to be three times his estimate (around $300 billion), or the share would have to be more than double it (20% and up). And he found the slice dial was the lethal one: if Uber cannot hold 20% of gross receipts, then <strong>even a $300 billion market</strong> will not support $17 billion.</p>
+<p>He posted the spreadsheet, adding that it was a generic template and readers were welcome to try it on Airbnb or Dropbox.</p>
+<p>Silicon Valley was not gentle. A month later Bill Gurley, Uber board member and Benchmark partner, published a long rebuttal called "How to Miss By a Mile." Gurley's central blow was well aimed: he did not quibble about discount rates or margins, he went for the deepest dial.</p>
+<blockquote><span class="en">In choosing to use the historical size of the taxi and limousine market, Damodaran is making an implicit assumption that the future will look quite like the past.</span><cite>Bill Gurley, How to Miss By a Mile: An Alternative Look at Uber's Potential Market Size, 11 July 2014</cite></blockquote>
+<p>Gurley's alternative arithmetic: a billion cars in the world, about $6,000 a year to own one, so what Uber is really aiming at is a <strong>$6 trillion</strong> market in not having to own a car. Not taking the taxi industry's lunch — making people not buy cars.</p>
+<p>Most people would now begin a public brawl. What Damodaran did was <strong>feed Gurley's story into the same machine, get $54 billion, and thank him on the record.</strong></p>
+<blockquote><span class="en">While some in the VC community were quick to dismiss the valuation, I will remain grateful to Bill Gurley for a post where he took me to task for having too narrow a vision of Uber's business model... Since Bill, as an early investor in Uber with access to its internal workings, clearly knew far more about the company than I did, I revalued Uber using his narrative and arrived at $54 billion as the value that reflected the narrative.</span><cite>On the Uber Rollercoaster: Narrative Tweaks, Twists and Turns!, 12 October 2015</cite></blockquote>
+<p>At which point the value investors turned on him from the other side: how can a number leap from $6 billion to $54 billion and still count as valuation?</p>
+<p>His answer is one of the most important sentences on the blog: <strong>that is exactly what you should expect.</strong> Early in a company's life there is room for widely divergent narratives, and therefore room for widely divergent values. Disagreement about value is not a computational failure. It is a <strong>faithful translation</strong> of disagreement about the story.</p>
+<p>And he did not just assert it. In December 2014 he turned it into something you could play with: a build-your-own-Uber template. You choose the market (urban car service / all car service / logistics / mobility services), how much Uber expands that market (from nothing to double), the slice it keeps (20% down to 5%), the networking benefits (none / local / partial global / global), and the capital intensity of the model. The outputs ran <strong>from under $1 billion to nearly $100 billion.</strong></p>
+<p>Someone who converts his own conclusion into a set of sliders and hands it to the reader is conceding what most analysts will not: <strong>the number is not his authority; the number is a function of his assumptions.</strong></p>
+<p>He wrote the method up as five steps in that June 2014 post, but the steps were never the point. The constraints at either end are:</p>
+<blockquote><span class="en">If numbers without narrative is just modeling and narrative without numbers is story telling, the solution, as I see it, is both obvious and difficult to put into practice. In a good valuation, the numbers are bound together by a coherent narrative and story telling is kept grounded with numbers.</span><cite>Numbers and Narrative: Modeling, Story Telling and Investing, 24 June 2014</cite></blockquote>
+<p>His diagnosis of the pure-numbers camp is not that they compute wrongly, but that they are fed by three illusions: the <strong>illusion of precision</strong> (attach decimals to an uncertain outcome and feel the risk has dissipated), the <strong>illusion of objectivity</strong> (all valuations are biased, and the most effective way to shade the truth is a selective use of numbers), and the <strong>illusion of control</strong> (five hundred line items and a few Greek letters to intimidate the non-numbers people into silence).</p>
+<p>His diagnosis of the pure-story camp is no gentler: unconstrained creativity carries you out past reason and into fantasy — admirable in a painter, dangerous in an investor — and with story alone you have <strong>no yardstick at all</strong> for telling whether you have gone off track.</p>
+<p>He gave this section its own best ending. At the close of that 2015 Uber review he tells a domestic story. Late the previous summer his fifteen-year-old son had a friend over, and when it was time for the friend to go home he looked out at the driveway expecting the "Mom car," the standard transport of a fifteen-year-old in the suburbs. What pulled in was an unfamiliar sedan with a bearded man at the wheel. He was taken aback, then told: that's an Uber. It was two months after he had labelled Uber an urban car service company.</p>
+<blockquote><span class="en">My first reaction after I got over my surprise was that I needed to revalue Uber afresh. Of such small actions are obsessions born!</span><cite>On the Uber Rollercoaster, 12 October 2015</cite></blockquote>
+
+<h3>3. The big market delusion: overconfidence is not a bug, it is the entry requirement</h3>
+<p>Back to that table. Where did it come from?</p>
+<p>October 2013, in the CNBC green room, waiting to talk about Twitter. Also in the room was an analyst who was extremely bullish, and who asked him what he thought Twitter was worth. He said he hadn't valued it yet. The analyst told him to save himself the trouble: the stock was worth at least $60 a share.</p>
+<p>He asked why. Because Twitter would use its huge user base to make money in the "huge" online advertising market.</p>
+<p>How huge?</p>
+<p>The analyst didn't have a number, but he just knew it was <strong>really big</strong>.</p>
+<p>He says he is grateful to that analyst, because the exchange determined how he began his Twitter valuation — with an assessment of the size of the global online advertising market. And from then on he started seeing the same argument everywhere: <strong>the market is big, therefore this company is worth a lot.</strong> China (a billion people plus a rising middle class, so anything with a tangential connection deserves a premium), online advertising, the sharing economy, the cloud. He cites a fresh example: Morgan Stanley had just hiked its Tesla target on the strength of the "mobility services" market; it took him two readings to work out that this was a hybrid of car sharing and driverless cars — a huge market, and one that would have become enormous had you slapped ads on the cars and put them in China.</p>
+<p>His diagnosis is not "bubble." He is wary of the word and says he regrets it every time he uses it: <strong>calling a market a bubble says the people setting prices are irrational, crazy or stupid, which is the easy way out.</strong> The better assumption is always that they have their own reasons, and that you should understand those reasons even when you disagree.</p>
+<p>So he built a model with no fools in it.</p>
+<p>Step one: an entrepreneur sees a big market, builds a product, convinces VCs to fund it. Everyone here is behaving sensibly.</p>
+<p>Step two: six other entrepreneurs see the same big market at about the same time, build their own products, and each finds VCs. Everyone is still sensible.</p>
+<p>Step three — the one and only distortion — make them all <strong>overconfident</strong>: the founders about their products, the VCs about their ability to pick winners. He notes this is neither an original nor a radical assumption, since there is substantial evidence that both groups systematically attract overconfident people.</p>
+<p>Every founder-plus-VC cluster now overestimates its own probability of success. Three consequences: the sector is collectively overvalued; the overvaluation draws in still more entrants, crowding the market further; and eventually the sector's aggregate valuation falls and some entrants fold — but there will be a few winners, and their backers will be richly paid.</p>
+<p>Then comes his sharpest piece of labelling:</p>
+<blockquote><span class="en">The collective over valuation of the companies in the big market will bear resemblance to a bubble, and the correction will lead to the usual hand wringing about bubbles and market excesses, but the culprit is over confidence, a characteristic that is almost a prerequisite for successful entrepreneurship and venture capital investing. That is one reason that I feel no need to inveigh against bubbles in the social media space, since this is a feature of investing in young, start-up businesses in big markets, not a bug.</span><cite>Big Markets, Over Confidence and the Macro Delusion!, 28 August 2015</cite></blockquote>
+<p>And the line that explains everything else:</p>
+<blockquote><span class="en">After all, the nature of over confidence is that founders and investors are convinced that the over pricing is not at their firms, but in the rest of the market.</span><cite>Ibid.</cite></blockquote>
+<p>This is what the table at the top is for. He does not <strong>predict</strong> bubbles — prediction requires timing, and he says repeatedly that he has no gift for it. What he does is turn the bubble into <strong>a piece of arithmetic you can finish in an afternoon</strong>: translate each price back into the future revenue it implies, add them up, and set the total against the ceiling the world can supply. That step requires no forecast of anyone's behaviour and no judgment about who is smart. It requires addition. And addition produces a conclusion nobody can argue with: some of these promises will not be kept.</p>
+<p>The long post closes on something that does not sound like it is about money at all:</p>
+<blockquote><span class="en">No matter which group you belong to, it is time that we stop labeling each other... You and I should be able to disagree about the values of Uber, Snapchat and Twitter, without our motives being impugned, our intelligence questioned and our sanity put to the test.</span><cite>Ibid.</cite></blockquote>
+
+<h2>How he thinks</h2>
+<p>What you can carry away from someone who has written for eighteen years is usually the technique, not the conclusions. Everything below is induced from the posts above, not an impression of the man.</p>
+<p><strong>Leave your wrong statements where they are, and point at them.</strong> August 2012: Facebook breaks below $20, half its offer price. He writes the post-mortem, and a few sentences in comes this:</p>
+<blockquote><span class="en">Rather than cover up my paper trail, let me draw attention to it (warts and all).</span><cite>Facebook face plant: Time to friend the company?, 20 August 2012</cite></blockquote>
+<p>He then lists, in order, his four Facebook posts of that year with the call each one made: February, worth $28; the day before the IPO, revised to $27, predicting a small pop but overvalued for long-term investors; IPO day, opening at $42 and closing below the offer price, with a post blaming the company and its bankers and predicting momentum would reverse and carry the stock from overvalued to undervalued.</p>
+<p>Then he did something more concrete. At $19 he revalued and got $23.94, ran a Monte Carlo simulation (letting revenue growth, margin and cost of capital vary across ranges to get a distribution of value), and found an 80% chance the stock was undervalued at $19. He did not simply shout buy. He listed three reasons for hesitating — his value could be entirely wrong; the corporate governance was bad and was not going to change (this one nearly became a deal-breaker: the Russians, he wrote, have a better shot at getting rid of Putin than Facebook stockholders have of displacing Zuckerberg); and even if he was right, vindication might be slow. He then <strong>posted a limit buy order at $18</strong>, along with a shared Google spreadsheet inviting readers to enter their own value and their own buying threshold.</p>
+<p>The point is not whether he made money. The point is that <strong>an argument with no timestamp, no falsifiable number and no real bet behind it is free.</strong> He does not publish free arguments.</p>
+<p><strong>The more uncertain it is, the simpler the model gets.</strong> This runs against everyone's instinct. Facing something you cannot see, the reflex is to add detail — more line items, more decimals, as though precision could offset ignorance. He goes the other way:</p>
+<blockquote><span class="en">This may seem ironic but the more uncertainty there is, the simpler my valuation models become, with fewer inputs and less levers to move.</span><cite>DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!, 2 May 2016</cite></blockquote>
+<p>Valuing a start-up, he watches three variables: revenue growth, operating margin, and the reinvestment needed to sustain that growth.</p>
+<p><strong>Use the corporate life cycle as a universal coordinate system.</strong> He says he uses it in almost every part of finance: a company moves from start-up to growth to maturity to decline, and what counts as the right investing, financing and dividend decision changes at every stage — so "good management" means <strong>being honest about which stage you are in</strong> and deciding accordingly. The framework's most famous application is his verdict on technology companies: they <strong>age in dog years</strong>. They scale fast (low barriers, easy expansion, customers who switch without sentiment), they cannot hold on (the mature harvest window is short), they fall fast (the same three forces work in reverse), and there is nothing left at the end (unlike conventional businesses, they accumulate no physical assets worth liquidating). From which he draws a deflating note on the word everyone loves: disruption is easy, but making money on disruption is hard.</p>
+<p><strong>Refuse to let "margin of safety" become a shield.</strong> He names the value investor's favourite fortification, and is not diplomatic:</p>
+<blockquote><span class="en">Seth Klarman is one of my favorite investment thinkers but I am afraid that the margin of safety, at least as practiced by some in the investing community, has become an empty vessel, an excuse for inaction rather than a guide to action in risky times.</span><cite>DCF Myth 3, 2 May 2016</cite></blockquote>
+<p><strong>Set the target at "less wrong."</strong> Possibly the most portable line on the blog:</p>
+<blockquote><span class="en">As I start making my estimates in the face of uncertainty, I hear the voice in the back of my mind pipe up, saying "You are going to be so wrong!" and I silence it by reminding myself that I don't have to be right, just less wrong than everyone else, and that when uncertainty is rampant, most investors give up.</span><cite>Ibid.</cite></blockquote>
+<p>This only makes sense paired with his operating instruction, which is to <strong>go where it is darkest</strong>: value a company when it is at its most chaotic and least well documented. He is honest about the cost of that road, and names his own rout in the Brazilian miner Vale as the cautionary case.</p>
+<p><strong>And he lets himself be unglamorously self-deprecating.</strong> The same post ends:</p>
+<blockquote><span class="en">I am wrong a hefty percent of the time, but so what? It's only money! I am just glad that I am not a brain surgeon!</span><cite>Ibid.</cite></blockquote>
+
+<h2>Where he might be wrong</h2>
+<p><strong>The first charge is one he brings against himself, more harshly than outsiders did.</strong></p>
+<p>The full Uber ledger: June 2014, he says $5.9 billion, the VCs say $17 billion. October 2015 he revises to $23.4 billion, while the VCs are at $51 billion. In that post he wrote:</p>
+<blockquote><span class="en">I was wrong about Uber's value in June 2014, when my estimate of $6 billion was below the $17 billion assessment by venture capitalists then. Correcting for both my cramped vision and the changes that have occurred since June 2014, my estimated value today is $23.4 billion... This may very well be a reflection that my vision is still too cramped to capture Uber's possible businesses, but it is what it is.</span><cite>On the Uber Rollercoaster, 12 October 2015</cite></blockquote>
+<p>"Cramped vision" is worth stopping on. It points at the <strong>systematic tilt</strong> in his method: the machine requires every story to be translated into landable numbers — market size, share, slice. Most of the time that requirement is discipline, and it has filtered out an enormous quantity of hot air. But it has an inherent direction of gravity: <strong>anything that can be computed must be computed against the world that already exists.</strong> When a company's real effect is not on its share of a market but on the shape of the market itself — which is precisely what Gurley's "people stop buying cars" meant — the machine will reliably drag you downward.</p>
+<p>That criticism needs an honest sequel, though: the method <strong>carries its own correction mechanism, and the mechanism works.</strong> In April 2019, with Uber actually going public, he arrived at about $54 a share. Uber priced at $45 and closed its first day at $41.57. Over five years he moved from nearly three times too low to slightly above the offer price. So the accurate statement is not "he systematically underrates disruption" but "<strong>his opening estimate runs low, and his error-correction is quick</strong>."</p>
+<p><strong>The second is his most contested post, and the one most worth taking apart carefully.</strong></p>
+<p>"Sounding good or Doing good? A Skeptical Look at ESG" (2020) is the piece that drew the most fire. His analysis is genuinely strong, and its core is a logical trap rather than a fight about data:</p>
+<blockquote><span class="en">In steady state, it is internally inconsistent to argue that good companies will benefit from lower funding costs (lower costs of equity) and that investors can also earn higher returns at the same time.</span><cite>Sounding good or Doing good? A Skeptical Look at ESG, 21 September 2020</cite></blockquote>
+<p>That is hard to duck. The pitch to companies (be good and your capital gets cheaper) and the pitch to investors (buy the good ones and earn more) are mutually exclusive inside the same model — a lower cost of capital is, from the investor's side of the table, a lower expected return. He also separates three questions that ESG research routinely conflates: does ESG raise value, does it raise investor returns, does it benefit society? And his summary judgment is measured: <strong>ESG advocates are on much stronger ground telling companies not to be bad than telling companies to be good.</strong></p>
+<p>The trouble is the last section. He slides from "the evidence is ambiguous" to "I am therefore inclined to side with Friedman" — and that step goes further than his own evidence permits. By his own three-way split, the third question (does it benefit society) goes essentially unanswered: every empirical study he reviews concerns corporate profitability or investor returns, which are questions one and two. A body of evidence that <strong>only measured value and returns</strong> cannot support a conclusion about whether companies should carry social obligations, because social benefit falls outside both rulers. His own strictest methodological rule — don't take research that answered A and sell it as a conclusion about B — is broken once, by him, in that closing passage. That judgment is mine, not his.</p>
+<p><strong>The third is the tilt his position makes hard for him to see.</strong> His whole apparatus — the two games, story and numbers, the life cycle — presupposes <strong>a priceable world</strong>: that there are fundamentals, that there are cash flows, that there is a centre of gravity price eventually returns to. On listed companies this works superbly. It is close to mute about things whose value does not arrive as cash flow — public goods, externalities, science without a business model yet. He can fairly say that is not his subject, and that is a fair answer. It stops being a question about tools only when he moves from "my instrument cannot measure it" to "it is probably not that important."</p>
+<p><strong>Finally, the harshest thing written about him was written by him.</strong> Six days after opening the blog, he admitted that on the afternoon the market was collapsing he could not make himself buy, and chose wait-and-see — then added that you cannot force yourself into an investment style that does not fit your make-up as a human being. It reads as modesty. It is in fact a hard limit on his own project: an admission that <strong>the thing he has been writing for eighteen years cannot be guaranteed to work even for him.</strong></p>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2013/10/twitter-ipo-why-good-trade-be-bad.html">Twitter IPO: Why a good trade be a bad investment (or vice versa)?</a></span><span class="d">10 October 2013. The single most back-linked post on the blog. Where he separates the pricing game from the value game, and explicitly refuses to look down on traders.</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2014/06/numbers-and-narrative-modeling-story.html">Numbers and Narrative: Modeling, Story Telling and Investing</a></span><span class="d">24 June 2014. His most-quoted methodological essay: three illusions of the numbers camp, two risks of the story camp, and the five steps for wringing a narrative into value drivers.</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2014/06/a-disruptive-cab-ride-to-riches-uber.html">A Disruptive Cab Ride to Riches: The Uber Payoff</a></span><span class="d">9 June 2014. The $5.9 billion post, and the target of Bill Gurley's "How to Miss By a Mile." Read alongside <a href="https://aswathdamodaran.blogspot.com/2015/10/on-uber-rollercoaster-narrative-tweaks.html">On the Uber Rollercoaster</a> (October 2015), it is the most complete public error-correction record on the site.</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2015/08/big-markets-over-confidence-and-macro.html">Big Markets, Over Confidence and the Macro Delusion!</a></span><span class="d">28 August 2015. The source of the table at the top of this page. Replaces "bubble" with a mechanism that requires nobody to be irrational, and supplies an addition test you can run yourself.</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2016/05/dcf-myth-3-you-cannot-do-valuation-when.html">DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!</a></span><span class="d">2 May 2016. Five disabling human responses to uncertainty, and his own six counters. The highest density of good lines anywhere on the blog.</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-20" data-slug="musings-on-markets">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>Blog Deep-Read · one page ≈ one mind · content verified through 2026-09-20</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>

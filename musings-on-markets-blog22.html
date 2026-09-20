@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aswath Damodaran · Musings on Markets — 价格和价值是两个游戏，绝大多数争吵发生在两个游戏之间</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="musings-on-markets-blog22.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 22 · aswathdamodaran.blogspot.com</div>
+<h1>Aswath Damodaran<br/>价格和价值是两个游戏，绝大多数争吵发生在两个游戏之间</h1>
+<p class="sub">Musings on Markets · 682 篇 · 2008 年 9 月 17 日开站，恰好在雷曼兄弟倒闭后第二天 · 2008 至 2016 年每年约五十篇，2017 年后稳定在每年二十余篇 · 最新一篇 2026 年 9 月 10 日，仍在更新 · 全站免费，无付费墙 · 本页通读 17 篇，跨度 2008 年 9 月至 2026 年 8 月，其中 4 篇落在开站后最早的 20% 时间段内 · 本站没有作者自荐的精选页，选文主干由站内回引统计得出（剔除同一系列内部的互链后，按「被多少个不同年份的文章回头引用」排序），再以外部讨论度和时期配额补足</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2015 年夏天，一位纽约大学的金融教授做了一道很笨的算术题。</p>
+<p>他把当时靠网络广告吃饭的上市公司一家家列出来——Google、Facebook、Twitter、LinkedIn、Yelp——然后对每一家做了一件反向的事：不去估它值多少钱，而是<strong>把它的市值当成已知条件，倒推出「市场认为这家公司十年后每年要收多少广告费」</strong>。Facebook 那一栏算出来是 1177 亿美元。</p>
+<p>然后他把所有这些数字加起来：<strong>5230 亿美元。</strong></p>
+<p>接着他去查了另一个数：十年后全球网络广告市场最大能有多大。他给的假设已经很慷慨——广告总盘子照经济增长走，而且网络广告占到全部广告的一半。答案是 <strong>4660 亿美元。</strong></p>
+<p>也就是说，单单这几家上市公司被市场默默许诺的收入，加起来就已经<strong>超过了十年后整个市场的全部收入</strong>。还没算那些排队等着上市的、还没算别的行业顺手赚走的那部分。</p>
+<p>这里没有一个骗子。每家公司的定价，单独看都讲得通。荒唐的是加总。</p>
+<p>做这道算术题的人叫 Aswath Damodaran，1957 年生于印度金奈，1986 年起在纽约大学 Stern 商学院教估值。他的博客叫 Musings on Markets，副标题是「我关于估值、公司金融和时事的那些不怎么高深的想法」。开站日是 2008 年 9 月 17 日——雷曼兄弟倒闭后第二天。第一篇文章的第一句是：「我得承认我对博客这种东西感情复杂。」</p>
+<p>十八年、六百八十二篇之后，如果要把这个头脑拧成一句话，那句话是：<strong>「一个东西值多少钱」和「别人愿意出多少钱」是两个不同的问题，而市场上绝大多数争吵，是两拨人在回答不同的问题，却都以为对方在胡说八道。</strong></p>
+<p>他把这两件事分别叫做<strong>估值游戏</strong>和<strong>定价游戏</strong>。估值由基本面决定：现金流、增长、风险。定价由供需决定：情绪、动量、别人在干什么。玩前一个的叫投资者，玩后一个的叫交易者。</p>
+<p>关键在于，他不觉得交易者低人一等。他写过一句很少有教授肯写的话：一个赚了一百万美元的交易者，能买的东西和一个赚了同样数目的投资者一模一样。他真正反对的是<strong>含混</strong>——是那些嘴上说价值、心里看动量，或者反过来的人。</p>
+<blockquote><span class="en">Twitter can be a good trade and a bad investment at exactly the same time!</span><span class="zh">Twitter 可以在同一时刻既是一笔好交易，又是一笔坏投资。</span><cite>Twitter IPO: Why a good trade be a bad investment (or vice versa)?，2013 年 10 月 10 日</cite></blockquote>
+<p>这个分裂一旦看清，很多别扭的事情就顺了。好公司可以是坏投资——只要价格够高。烂公司可以是好投资——只要价格够低。他 2017 年查了全球三万多家上市公司，<strong>毁灭价值的有 19960 家，创造价值的只有 10947 家</strong>，然后说：给我一个够低的价格，我会买一家烂生意里由平庸管理层经营的公司；给我一个够高的价格，我连超级明星也躲开。</p>
+<p>但这个头脑最好看的部分不是这个结论，是他<strong>怎么用它挨打的</strong>。</p>
+<p>2014 年 6 月，风投给 Uber 估了 170 亿美元。他算出来是 <strong>59 亿</strong>，并且把电子表格挂在网上让人随便改。硅谷炸了。Uber 的董事、风投 Bill Gurley 写了一篇檄文，标题叫《怎样错出一英里》，核心一击是：你拿历史上出租车市场的大小当底数，等于默认<strong>未来长得和过去一样</strong>。全球十亿辆车，每辆车每年养车成本六千美元，那是个六万亿的市场。</p>
+<p>换一个人可能就开始反驳了。Damodaran 做的是：<strong>按 Gurley 的故事重算了一遍，得到 540 亿美元，然后公开说谢谢他。</strong></p>
+<p>价值投资者随即骂他：一个数字怎么能从 59 亿跳到 540 亿？他的回答是——这恰恰是你该预期的。数字不是从天上掉的，数字是<strong>故事翻译过来的</strong>。故事换了，数字当然跟着换。他后来把这条写成了全站最常被自己回头引用的一句：</p>
+<blockquote><span class="en">I have long believed that a company valuation without a story to bind it together is just numbers on a spreadsheet and a story that uses no numbers at all is a fairy tale.</span><span class="zh">我一直相信，没有故事把它绑在一起的估值，只是电子表格上的一堆数字；而完全不用数字的故事，是童话。</span><cite>DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!，2016 年 5 月 2 日</cite></blockquote>
+<p>这不是和稀泥。这是一台很具体的机器：把故事拆成几个能被证伪的旋钮——市场多大、你能拿多少份额、抽成几个点、要投多少钱才撑得住——然后转动旋钮，看价值怎么动。2014 年底他干脆做了个「自己动手估 Uber」的模板发出去，读者自选参数，得到的区间从不到 10 亿一直到接近 1000 亿。</p>
+<p>至于面对看不清的东西该怎么办，他给的答案和直觉相反：<strong>越不确定，模型越简单。</strong>不是加小数点，不是加行数，是砍到只剩三个变量。他说他脑子里也有个声音在喊「你肯定会错得一塌糊涂」，他让它闭嘴的方式是提醒自己：</p>
+<blockquote><span class="en">I don't have to be right, just less wrong than everyone else, and that when uncertainty is rampant, most investors give up.</span><span class="zh">我不需要对，我只需要比所有人错得少一点；而且当不确定性铺天盖地时，大多数投资者干脆放弃了。</span><cite>DCF Myth 3，2016 年 5 月 2 日</cite></blockquote>
+<p>同一篇的结尾，他写：我错的比例相当高，那又怎样？不过是钱而已。幸好我不是脑外科医生。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<div class="glossary">
+<p style="margin-top:0"><b>Glossary · 术语表</b>（本页会用到的几个前置概念，一句话一个）</p>
+<ul>
+<li><b>估值 / 内在价值（valuation / intrinsic value）</b>：算一家公司「本身值多少钱」——它未来能挣出多少现金，折算成今天。跟股价没关系。</li>
+<li><b>定价（pricing）</b>：看别人现在愿意出多少钱。由供需、情绪和其他人的动作决定，不需要参考上面那个数。</li>
+<li><b>贴现现金流 / DCF（discounted cash flow）</b>：估内在价值最常用的那台机器。把公司未来每年能挣的现金列出来，再按一个「折现率」打折加总——因为明年的一块钱不如今天的一块钱值钱。</li>
+<li><b>资本成本（cost of capital）</b>：上一条里那个折现率。粗略说就是「投资人愿意把钱放在这家公司里，所要求的最低年回报」。生意越不稳，这个数越高，算出的价值越低。</li>
+<li><b>倍数（multiples）</b>：定价的常用工具，比如市盈率（股价 ÷ 每股盈利）或市销率。做法是拿一堆「差不多的公司」的倍数来套在你要定价的公司上。</li>
+<li><b>风险投资 / VC（venture capital）</b>：专门投还没上市的年轻公司的钱。本页多次出现的「风投给 Uber 估了 170 亿」，指的是这类投资人在一轮融资里谈出来的隐含估值。</li>
+</ul>
+</div>
+
+
+<h2>一件怪事：把每个人的账加起来，超过了世界</h2>
+<p>2015 年 8 月，一位教授在自己的博客上贴了一张表，表里的每一行都是一家靠网络广告赚钱的上市公司。</p>
+<p>他对每一行做了一件和常规相反的事。常规做法是：估算这家公司未来能赚多少，折算成今天的价值，然后和股价比一比，判断贵了还是便宜了。他把这个流程<strong>倒过来跑</strong>：假定市场给的价格就是对的，那么市场心里一定藏着一个关于未来的数字——这家公司十年后每年得收多少广告费，今天这个价才撑得住。他把那个数字解出来。</p>
+<p>Facebook 那一行解出来是 <strong>1177 亿美元</strong>。也就是说，2015 年 8 月愿意按当时价格买 Facebook 的人，等于在心里签了一份合同：这家公司到 2025 年每年要从广告主口袋里拿走一千一百七十七亿。</p>
+<p>他把表上所有公司的这个数加了起来：<strong>5230 亿美元。</strong>然后他去找另一个数——十年后全世界的网络广告一共能有多大。他用的假设一点也不保守：全球广告总支出跟着经济增长走，而且网络广告要占到全部广告的一半（2014 年这个比例是四分之一）。在这样慷慨的假设下，2025 年全球网络广告市场大约 <strong>4660 亿美元。</strong></p>
+<p>5230 大于 4660。而 5230 那一边还漏算了很多：漏了没上市的（Snapchat 当时还在排队）、漏了小公司、漏了苹果这类顺手也卖广告的公司。真实的缺口只会更大。</p>
+<p>这张表的怪不在于「有泡沫」。怪在于：<strong>拆开看，每一家的定价都说得通；合起来看，它们描述的是一个不存在的世界。</strong>没有人撒谎，没有人算错，没有一个环节需要「非理性」才能成立。理性的个体，加总出不可能的集体。</p>
+<h2>这人是谁</h2>
+<p>Aswath Damodaran，1957 年 9 月生于印度金奈，本科在马德拉斯大学念会计，之后去 UCLA 拿了金融学的 MBA 和博士，1986 年进纽约大学 Stern 商学院，一直教到现在，头衔是 Kerschner 家族金融教育讲席教授。媒体给他的绰号是「估值院长」（the Dean of Valuation）。</p>
+<p>有一个细节比头衔更说明他是谁：<strong>他把自己吃饭的家伙全部免费送出去。</strong></p>
+<p>他的个人主页上挂着全世界几乎每个行业的资本成本、风险溢价、税率、违约利差、国家风险溢价，每年一月更新一遍，任何人都能直接下载——这套数据在业界被当成基准用了二十多年。他每给一家公司估一次值，就把那个 Excel 文件挂在文章末尾，标题往往是这样的：「我对 Uber 的估值（2014 年 6 月）」。不同意？下载下来改数字，自己看会算出什么。他的书有免费在线版，他的整门课有免费的 YouTube 版。</p>
+<p>博客开在 2008 年 9 月 17 日。那不是随便挑的一天：雷曼兄弟 9 月 15 日破产，全球市场正在垮。他的第一篇叫《First thoughts》，只有三百来字，第一句是「我得承认我对博客这种东西感情复杂」，理由是他不确定自己有没有足够多有意思的话可以持续地讲，而且说出去的话就收不回来了。结尾一句：「希望你喜欢我的碎碎念。」</p>
+<p>十八年后，那句「不确定有没有足够多话可讲」显得很好笑。他至今在写，2026 年 9 月 10 日刚发了一篇。节奏变过一次：2008 到 2016 年每年四五十篇，2017 年之后稳定在二十几篇，单篇变长了很多——从几百字的时评，变成动辄四五千词、带着数据表和电子表格的长文。</p>
+
+<h2>他跟什么较劲：一个东西值多少钱，到底有没有答案</h2>
+<p>1986 年，他刚进 Stern，想开一门估值课。一位资深教授劝他别开。</p>
+<blockquote><span class="en">I was told that there was really not enough theory in valuation to warrant a class and that I would end up teaching a glorified accounting class.</span><span class="zh">他们跟我说，估值里根本没有足够的理论撑得起一门课，我最后只会教出一门美化过的会计课。</span><cite>Numbers and Narrative: Modeling, Story Telling and Investing，2014 年 6 月 24 日</cite></blockquote>
+<p>他没听，开了。四十年后他说他从不后悔，理由之一很挑衅：<strong>他喜欢教一门没什么理论的科目</strong>——问题全是实践问题，你得调用一堆互不相干的技能，而且市场会当场给你打分。</p>
+<p>这个开场其实已经埋下了他一生的那个根问题。那位资深教授的暗示是：估值不是一门学问，因为它没有唯一解。而 Damodaran 的整个写作生涯，可以读成对这句话的一次持续回击——不是反驳「没有唯一解」，而是反驳「没有唯一解等于没有学问」。</p>
+<p>他撞上这个问题的具体时刻，散落在他早期的文章里。2008 年 9 月 22 日，开站第六天，他写了一篇叫《你是个逆向投资者吗？》的短文。上一个星期三下午三点四十五分，标普跌到 1150，道指三天掉了 800 点。他让读者做一道四选一的题：你当时的第一反应是「否认」「恐慌」「冷静评估、现在抄底」还是「再等等看」。然后他写了一句在教授笔下很少见的话：</p>
+<blockquote><span class="en">At the risk of revealing more about my psyche than I should be, I did not pass the contrarian test. I chose to wait and see, which in the long terms turns out to be waiting and waiting for the right moment, which either never comes or comes too late.</span><span class="zh">冒着暴露过多内心的风险：我没通过逆向投资者的测试。我选了「再等等看」——而这在长期里，结果就是一直等一直等，等那个要么永远不来、要么来得太晚的正确时机。</span><cite>Are you a contrarian?，2008 年 9 月 22 日</cite></blockquote>
+<p>这个小小的自曝里已经有了那条裂缝。他手上有全世界最完整的估值工具箱，而他在最需要用它的那一刻没用——因为他也是人，因为屏幕在闪红。<strong>工具算出来的那个数，和你真的敢按下去的那个动作，之间隔着一道东西。</strong></p>
+<p>那道东西就是他往后十八年一直在挖的：价格。</p>
+<p>价格不是价值算错了的结果。价格是一个<strong>完全独立的、有自己规律的系统</strong>——它由供需决定，由动量决定，由别人正在做什么决定。它不需要参考价值，也经常不参考。而绝大多数关于「这只股票到底值不值」的公开争吵之所以吵不出结果，不是因为哪一方蠢，而是因为<strong>争吵的双方在各自的系统里都是对的</strong>。一个在回答「它值多少」，另一个在回答「下个月有人愿意出多少」。这两个问题都有答案，而且答案可以差三倍。</p>
+<p>他给出的答案分三层，越往下越不像金融，越像认识论。下面三节分别是这三层。</p>
+<h2>他的三个答案，以及他是怎么撞上它们的</h2>
+
+<h3>一、两个游戏：Twitter 可以同时是好交易和坏投资</h3>
+<p>2013 年 10 月，Twitter 递交上市文件。他估了一次，得出约 <strong>100 亿美元</strong>，贴在博客上。</p>
+<p>然后新闻里的数字开始飞：他说自己见到高达 250 亿的估计；博彩市场已经开盘押发行定价，押的人都站在高的那一边。</p>
+<p>标准剧本到这里有两个走法。一是他坚持自己的 100 亿，说别人在炒作；二是他承认自己保守了，往上调。他两个都没走。他写了一篇看上去像是跑题的文章，主题是：<strong>为什么这场争论根本没办法进行下去。</strong></p>
+<p>他的诊断是：吵架的双方在玩两个不同的游戏，而且都不知道对方在玩别的。</p>
+<figure>
+<svg viewBox="0 0 700 300" role="img" aria-label="定价游戏与估值游戏的结构对照图">
+<defs><linearGradient id="gA" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6ea8fe" stop-opacity=".22"/><stop offset="1" stop-color="#6ea8fe" stop-opacity=".06"/></linearGradient>
+<linearGradient id="gB" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5eead4" stop-opacity=".22"/><stop offset="1" stop-color="#5eead4" stop-opacity=".06"/></linearGradient></defs>
+<rect x="18" y="18" width="316" height="264" rx="12" fill="url(#gA)" stroke="#6ea8fe" stroke-opacity=".45"/>
+<rect x="366" y="18" width="316" height="264" rx="12" fill="url(#gB)" stroke="#5eead4" stroke-opacity=".45"/>
+<text x="176" y="50" text-anchor="middle" fill="#6ea8fe" font-size="17" font-weight="700" font-family="-apple-system,sans-serif">定价游戏</text>
+<text x="524" y="50" text-anchor="middle" fill="#5eead4" font-size="17" font-weight="700" font-family="-apple-system,sans-serif">估值游戏</text>
+<text x="176" y="74" text-anchor="middle" fill="#7d8794" font-size="12" font-family="monospace">the pricing game</text>
+<text x="524" y="74" text-anchor="middle" fill="#7d8794" font-size="12" font-family="monospace">the value game</text>
+<line x1="40" y1="90" x2="312" y2="90" stroke="#6ea8fe" stroke-opacity=".3"/>
+<line x1="388" y1="90" x2="660" y2="90" stroke="#5eead4" stroke-opacity=".3"/>
+<text x="40" y="118" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">数字由谁决定：供给和需求</text>
+<text x="40" y="148" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">推动它的：情绪、动量、别人</text>
+<text x="40" y="178" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">要看的东西：价格图形、倍数</text>
+<text x="40" y="208" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">赢的条件：进得早，走得早</text>
+<text x="40" y="244" fill="#e2e8f0" font-size="14.5" font-weight="700" font-family="-apple-system,sans-serif">玩这个的人叫：交易者</text>
+<text x="388" y="118" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">数字由谁决定：基本面</text>
+<text x="388" y="148" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">推动它的：现金流、增长、风险</text>
+<text x="388" y="178" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">要看的东西：财报、业务、叙事</text>
+<text x="388" y="208" fill="#b6c2cf" font-size="14" font-family="-apple-system,sans-serif">赢的条件：价格终将回到价值</text>
+<text x="388" y="244" fill="#e2e8f0" font-size="14.5" font-weight="700" font-family="-apple-system,sans-serif">玩这个的人叫：投资者</text>
+<text x="350" y="272" text-anchor="middle" fill="#7d8794" font-size="12.5" font-family="-apple-system,sans-serif">两边可以同时给出正确答案，而两个答案相差三倍</text>
+</svg>
+<figcaption>Damodaran 在 2013 年 Twitter 上市前画出的分野，此后十三年反复出现在他的文章里</figcaption>
+</figure>
+<p>这个分法本身不新鲜，新鲜的是他接下来的态度。绝大多数写价值投资的人在划出这条线之后，会顺手把交易者贬一遍。他明确不这么干：</p>
+<blockquote><span class="en">I am not passing judgment, when I make this statement, because unlike some value investors, I don't view traders as shallow or somehow less critical to the functioning of markets than investors. After all, a trader who makes a million dollar profit can buy just as much with that money as an investor who makes the same profit.</span><span class="zh">说这话的时候我没有在下判断。和某些价值投资者不同，我不认为交易者浅薄，也不认为他们对市场运转的重要性低于投资者。说到底，一个赚了一百万美元的交易者，拿这笔钱能买的东西，和一个赚了同样数目的投资者一模一样。</span><cite>Twitter IPO: Why a good trade be a bad investment (or vice versa)?，2013 年 10 月 10 日</cite></blockquote>
+<p>他真正要打的不是交易者，是<strong>含混</strong>。他在同一篇里直接点名了那种「我两边都玩」的人：有些交易者嘴上供奉价值，只是拿它给动量交易做背书；有些投资者声称尊重市场，但只尊重到市场开始往错误方向走为止。他说在不熟的场地上打球是危险的——以为自己懂价值的交易者，和以为自己能随时进出的投资者，各自削弱的都是自己原本的优势。</p>
+<p>然后是那句被他后来引用了无数次的话：</p>
+<blockquote><span class="en">Stealing from the title of the bestseller from a few years ago, if traders are from Venus, investors are from Mars, and if one is talking about price and the other about value, they may both be right, even with vastly different numbers. Twitter can be a good trade and a bad investment at exactly the same time!</span><span class="zh">借用几年前那本畅销书的书名：如果交易者来自金星，那么投资者来自火星。当一个人谈的是价格、另一个人谈的是价值时，即使他们给出的数字相差悬殊，两人也可能都是对的。Twitter 可以在同一时刻既是一笔好交易，又是一笔坏投资。</span><cite>同上</cite></blockquote>
+<p>这条分野的下游产物，是他 2017 年写的一篇文章，标题本身就是个绕口令：《解释一个悖论：为什么好（坏）公司会是坏（好）投资》。逻辑其实一走就通——「好公司」是关于业务的判断（它的资本回报率超过它的资本成本吗），「好投资」是关于价格的判断（你付的钱低于它的价值吗）。这是两个正交的维度，所以四个象限都住着人。</p>
+<p>让这篇文章不只是逻辑练习的，是他顺手放进去的那个数。2017 年 1 月他把全球所有上市公司的超额回报算了一遍：<strong>毁灭价值的公司有 19960 家，创造价值的只有 10947 家。</strong>也就是说，在公开市场上，「坏公司」不是个别现象，是多数派——接近三分之二。</p>
+<p>而他给自己定的操作准则是：价格对了，他会买一家烂生意里由平庸管理层经营的公司；价格不对，他连超级明星公司也躲开。这不是漂亮话。2012 年他真的照着做过一次，而且公开到近乎难堪的程度，那件事放在后面第五节讲。</p>
+
+<h3>二、故事和数字：他被一个风投骂了，然后按对方的故事重算了一遍</h3>
+<p>2014 年 6 月 3 日，新闻说惠灵顿、富达这类大机构往 Uber 投了 12 亿美元，隐含估值 170 亿。当时 Uber 的年收入只有几亿美元，营业利润基本看不见。</p>
+<p>他决定算一算。他先坦白了一件事：他刚下载 Uber 的 app，还没用过——他平时要么在郊区（几天见不到一辆出租车），要么在纽约市里（地铁更快更便宜也常常更安全）。</p>
+<p>然后他把 170 亿这个数字拆成了三个旋钮：</p>
+<ul>
+<li><strong>市场有多大。</strong>他去查了具体数字：东京是全球最赚钱的出租车市场，一年 200 到 250 亿美元；英国 140 亿；美国 110 亿，其中纽约 30 亿。加上世界其他地方他估的 500 亿，总计 <strong>1000 亿美元</strong>的全球出租车与租车服务市场。按年增 6% 算，十年后是 1830 亿。</li>
+<li><strong>Uber 能拿多少份额。</strong>他给 <strong>10%</strong>，并说明这已经站在乐观一侧：这个市场高度分散、受监管、本地化——而本地化正是关键，因为叫车服务是「物理的、在地的」，它的网络效应远弱于搜索或电商那种全球性的网络效应。</li>
+<li><strong>它能从每笔车费里抽走几个点。</strong>他维持当时的 <strong>20%</strong>，尽管他自己指出，竞争已经在把这个数往 10% 到 15% 压。</li>
+</ul>
+<p>三个旋钮加上 40% 的成熟期营业利润率、12% 的资本成本、10% 的失败概率，他得到：<strong>58.95 亿美元。</strong></p>
+<p>这里才是他和普通唱空者分岔的地方。他没有停在「所以 170 亿是疯了」。他做了一张<strong>反算表</strong>：要让 170 亿成立，这三个旋钮得拧到哪里？答案是——市场得是他估的三倍（3000 亿），或者份额得翻一倍多（超过 20%）。而且他发现抽成那个旋钮杀伤力最大：如果 Uber 保不住 20% 的抽成，那么<strong>即使市场有 3000 亿</strong>，170 亿也撑不住。</p>
+<p>他把电子表格挂了出来，还附了一句：这是个通用模板，你想拿去估 Airbnb 或 Dropbox 也随便。</p>
+<p>硅谷的反应不客气。一个月后，Uber 的董事、Benchmark 的合伙人 Bill Gurley 写了一篇长文回击，标题叫《How to Miss By a Mile》（怎样错出一英里）。Gurley 的核心一击非常准，他没有纠缠折现率或者利润率，他攻的是那个最底层的旋钮：</p>
+<blockquote><span class="en">In choosing to use the historical size of the taxi and limousine market, Damodaran is making an implicit assumption that the future will look quite like the past.</span><span class="zh">选择用出租车与租车市场的历史规模作为基数，Damodaran 等于在暗中假设：未来看起来会和过去差不多。</span><cite>Bill Gurley, How to Miss By a Mile: An Alternative Look at Uber's Potential Market Size，2014 年 7 月 11 日</cite></blockquote>
+<p>Gurley 的替代算法是：全球有十亿辆车，每辆车一年的持有成本约六千美元，所以 Uber 真正瞄准的是一个<strong>六万亿美元</strong>的「不必自己买车」市场。不是抢出租车的饭碗，是让人不买车。</p>
+<p>换一个人，这里会进入一场公开互殴。Damodaran 做的是：<strong>把 Gurley 的故事当成输入，重新跑了一遍同一台机器，得到 540 亿美元，然后公开道谢。</strong></p>
+<blockquote><span class="en">While some in the VC community were quick to dismiss the valuation, I will remain grateful to Bill Gurley for a post where he took me to task for having too narrow a vision of Uber's business model... Since Bill, as an early investor in Uber with access to its internal workings, clearly knew far more about the company than I did, I revalued Uber using his narrative and arrived at $54 billion as the value that reflected the narrative.</span><span class="zh">风投圈里有些人只是一句话打发了我的估值，但我会一直感谢 Bill Gurley 写的那篇——他在文章里批评我对 Uber 商业模式的视野太窄……既然 Bill 作为早期投资人能接触到这家公司的内部运作，显然比我懂得多，我就用他的叙事重估了一次 Uber，得到 540 亿美元作为反映这个叙事的价值。</span><cite>On the Uber Rollercoaster: Narrative Tweaks, Twists and Turns!，2015 年 10 月 12 日</cite></blockquote>
+<p>这下换价值投资者骂他了：一个数字怎么能从 59 亿一跃到 540 亿？这还叫估值吗？</p>
+<p>他的回答是整个博客里最重要的一句话之一：<strong>这恰恰是你应该预期的。</strong>在一家公司生命的早期，容得下截然不同的叙事，因此也就容得下截然不同的价值。价值的分歧不是计算的失误，是叙事分歧的<strong>如实翻译</strong>。</p>
+<p>而且他不是嘴上说说。2014 年 12 月，他把这件事做成了一个可以玩的东西：一个「自己动手估 Uber」的模板。你自己选它在哪个市场（城市出租车 / 全部租车服务 / 物流 / 出行服务），自己选它会把这个市场撑大多少（从零到翻倍），自己选它的抽成（从 20% 一路降到 5%），自己选网络效应（无 / 本地 / 部分全球 / 全球），自己选商业模式的资本密度。结果的区间是：<strong>从不到 10 亿美元，到接近 1000 亿美元。</strong></p>
+<p>一个把自己的结论做成滑块交给读者的人，是在承认一件很多分析师不肯承认的事：<strong>那个数字不是他的权威，那个数字是他的假设的函数。</strong></p>
+<p>这套做法他在 2014 年 6 月那篇《数字与叙事》里写成了五步，但重点从来不在步骤，而在两头的约束：</p>
+<blockquote><span class="en">If numbers without narrative is just modeling and narrative without numbers is story telling, the solution, as I see it, is both obvious and difficult to put into practice. In a good valuation, the numbers are bound together by a coherent narrative and story telling is kept grounded with numbers.</span><span class="zh">如果说没有叙事的数字只是建模，没有数字的叙事只是讲故事，那么在我看来，解法既显而易见又难以实行：在一次好的估值里，数字被一个连贯的叙事绑在一起，而讲故事这件事被数字拽在地上。</span><cite>Numbers and Narrative: Modeling, Story Telling and Investing，2014 年 6 月 24 日</cite></blockquote>
+<p>他对「纯数字派」的诊断不是说他们算错了，而是说他们被三种幻觉喂饱了：<strong>精确的幻觉</strong>（给不确定的东西挂上小数点，然后觉得风险被量化掉了）、<strong>客观的幻觉</strong>（所有估值都是有偏的，而最有效的歪曲事实的方法恰恰是选择性地使用数字）、<strong>掌控的幻觉</strong>（用五百行明细和一堆希腊字母把不懂数字的人吓到闭嘴）。</p>
+<p>他对「纯故事派」的诊断同样不客气：不受约束的创造力会一路走到理性之外——那在画家或小说家身上是美德，在投资者身上是灾难；而且如果只有故事没有数字，你就<strong>没有任何刻度可以判断自己是不是走偏了</strong>。</p>
+<p>这一节该怎么收尾，他自己给了最好的写法。2015 年那篇 Uber 复盘的最后，他讲了一个家事。去年夏末，他十五岁的小儿子有朋友来家里玩，到了该回去的时候，他往车道上看，等着出现一辆「妈妈车」——那是郊区十五岁孩子的标准交通方式。结果开进来的是一辆陌生轿车，驾驶座上坐着一个留胡子的男人。他吓了一跳，然后被告知：那是 Uber。</p>
+<p>那时距离他把 Uber 定性为「城市叫车服务公司」只过了两个月。</p>
+<blockquote><span class="en">My first reaction after I got over my surprise was that I needed to revalue Uber afresh. Of such small actions are obsessions born!</span><span class="zh">我缓过神来之后的第一反应是：我得把 Uber 重估一遍。执念就是这样从一些小事里生出来的。</span><cite>On the Uber Rollercoaster，2015 年 10 月 12 日</cite></blockquote>
+
+<h3>三、大市场幻觉：过度自信不是 bug，是这门生意的前置条件</h3>
+<p>回到开头那张表。它是怎么来的？</p>
+<p>2013 年 10 月，他坐在 CNBC 的演播室里等着上节目聊 Twitter。同一间屋里还有一位对 Twitter 非常看多的分析师，问他觉得 Twitter 值多少。他说还没来得及估。对方说那你省点事吧，这股票至少值 60 美元一股。</p>
+<p>他问为什么。对方说：Twitter 会用它庞大的用户群，在「巨大的」在线广告市场里赚钱。</p>
+<p>他追问：多大？</p>
+<p>对方说：我没有具体数字，但我就是知道它<strong>真的很大</strong>。</p>
+<p>他说他很感谢这位分析师，因为那句话决定了他后来怎么开始估 Twitter——从全球在线广告市场到底有多大开始。而从那以后，他开始到处看见同一个论证：<strong>市场很大，所以这家公司值很多钱。</strong>中国（十亿人口加上中产崛起，任何沾边的公司都配得上溢价）、在线广告、共享经济、云计算。他还举了一个当时刚发生的例子：摩根士丹利大幅上调特斯拉目标价，理由完全建立在「出行服务市场」上；他读了两遍报告才搞明白，所谓出行服务市场是共享汽车市场和自动驾驶市场的混合体——一个巨大的市场，而且只要再往车身上贴广告、再把它开进中国，还能更巨大。</p>
+<p>他的诊断不是「泡沫」。他对「泡沫」这个词非常警惕，说自己每次用它都后悔：<strong>说一个市场是泡沫，等于说定价的人非理性、疯了甚至蠢，这是最省事的出路。</strong>更好的假设永远是：那些人有他们自己的理由，哪怕你不同意，你也该先去理解那个理由。</p>
+<p>于是他造了一个模型，里面没有一个傻子。</p>
+<p>第一步：一个创业者看见一个大市场，做出产品，说服风投投他。这一步里每个人都在做理性的事。</p>
+<p>第二步：另外六个创业者在大约同一时间看见了同一个大市场，各自做出产品，各自找到风投。这一步里每个人还是理性的。</p>
+<p>第三步——也是唯一的一步扭曲——给这些人加上<strong>过度自信</strong>：创业者相信自己的产品优于竞争对手，风投相信自己挑赢家的能力优于同行。他特地指出这个假设既不原创也不激进，因为已经有大量研究表明创业者和风投这两个群体都<strong>系统性地吸引过度自信的人</strong>。</p>
+<p>于是每一个「创业者 + 风投」的集群，都会高估自己成功的概率。结果有三：整个赛道被集体高估；高估又吸引更多新进入者，把赛道挤得更满；最终整个板块的估值会下跌，一部分公司死掉，但会有少数赢家，让押中的人赚得盆满钵满。</p>
+<p>然后是他最漂亮的一句定性：</p>
+<blockquote><span class="en">The collective over valuation of the companies in the big market will bear resemblance to a bubble, and the correction will lead to the usual hand wringing about bubbles and market excesses, but the culprit is over confidence, a characteristic that is almost a prerequisite for successful entrepreneurship and venture capital investing. That is one reason that I feel no need to inveigh against bubbles in the social media space, since this is a feature of investing in young, start-up businesses in big markets, not a bug.</span><span class="zh">大市场里这些公司的集体高估会长得很像泡沫，而修正到来时也会照例引发关于泡沫和市场过热的一片捶胸顿足。但真正的祸首是过度自信——而过度自信几乎是成功的创业和风险投资的前置条件。这也是我不觉得有必要去声讨社交媒体领域的泡沫的原因之一：对于投资大市场里的年轻初创企业来说，这是一个特性，不是一个 bug。</span><cite>Big Markets, Over Confidence and the Macro Delusion!，2015 年 8 月 28 日</cite></blockquote>
+<p>最后是那句解释一切的话：</p>
+<blockquote><span class="en">After all, the nature of over confidence is that founders and investors are convinced that the over pricing is not at their firms, but in the rest of the market.</span><span class="zh">说到底，过度自信的本质就是：创始人和投资人都确信，被高估的不是自己这家公司，而是市场上的其他所有人。</span><cite>同上</cite></blockquote>
+<p>这就是开头那张表的用途。他不去<strong>预测</strong>泡沫——预测泡沫需要判断时机，而他一再说自己没有这个本事。他做的是把泡沫变成一道<strong>可以当场做完的算术</strong>：把每个价格翻译回它所隐含的未来收入，加总，然后和这个世界能提供的上限放在一起看。这一步不需要预测任何人的行为，不需要判断谁蠢谁精，它只需要加法。而加法给出的结论是无法反驳的：这些承诺里，必然有一部分兑现不了。</p>
+<p>这篇长文的最后一段，他停下来说了一段不像在谈钱的话：</p>
+<blockquote><span class="en">No matter which group you belong to, it is time that we stop labeling each other... You and I should be able to disagree about the values of Uber, Snapchat and Twitter, without our motives being impugned, our intelligence questioned and our sanity put to the test.</span><span class="zh">不管你属于哪一边，我们该停止给对方贴标签了……你和我应该可以就 Uber、Snapchat 和 Twitter 的价值产生分歧，而不必被质疑动机、被怀疑智商、被拉去做精神状态鉴定。</span><cite>同上</cite></blockquote>
+
+<h2>他的思维方法</h2>
+<p>读一个写了十八年的人，最能带走的往往不是结论而是手法。下面几条全部是从上面那些文章里归纳的，不是对他的印象。</p>
+<p><strong>把自己说错的话留在原地，并且主动指给你看。</strong>2012 年 8 月，Facebook 跌破 20 美元，只剩发行价的一半。他写复盘，开头没走几句就是这样一句：</p>
+<blockquote><span class="en">Rather than cover up my paper trail, let me draw attention to it (warts and all).</span><span class="zh">与其掩盖我留下的纸面痕迹，不如我主动把它指出来（连疣带瘤，一个不落）。</span><cite>Facebook face plant: Time to friend the company?，2012 年 8 月 20 日</cite></blockquote>
+<p>接下来他按时间列了自己那一年关于 Facebook 的四篇文章，每篇写清当时的判断：2 月说值 28 美元；IPO 前一天把数字微调到 27，说会小幅高开但对长线投资者偏贵；上市当天开盘 42、收盘破发，他写文章说责任在公司和承销商，并且预言动量会反向、把股价从高估推到低估。</p>
+<p>然后他做了一件更实在的事：跌到 19 美元时，他重估得到 23.94 美元，做了一次蒙特卡洛模拟（让收入增长、利润率、资本成本在区间里随机取值，看价值的分布），得出在 19 美元有 80% 的概率被低估。他没有直接喊买，而是列了三条让自己犹豫的理由——我的估值可能整个是错的；公司治理糟糕而且不会改变（这一条他差点当成否决项，原话是：俄罗斯人赶走普京的希望，都比 Facebook 股东赶走扎克伯格的希望大）；就算我对，兑现也可能很久不来。最后他<strong>公开挂出一张 18 美元的限价买单</strong>，并附上一个共享的 Google 表格，请读者填上自己的估值和自己的买入阈值。</p>
+<p>这一整套动作的意义不在于他后来赚没赚到。在于：<strong>一个论点如果不带时间戳、不带可被证伪的数字、不带一笔真实的下注，它就是免费的。</strong>他不发表免费的论点。</p>
+<p><strong>越不确定，模型越简单。</strong>这条和所有人的直觉相反。面对看不清的东西，人的本能是加细节——多拆几行、多算几位小数，仿佛精度能抵消无知。他反着来：</p>
+<blockquote><span class="en">This may seem ironic but the more uncertainty there is, the simpler my valuation models become, with fewer inputs and less levers to move.</span><span class="zh">这听起来可能有点反讽，但不确定性越大，我的估值模型就变得越简单，输入更少，能拨动的杠杆也更少。</span><cite>DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!，2016 年 5 月 2 日</cite></blockquote>
+<p>估一家初创公司，他只盯三个变量：收入增长、营业利润率、以及撑住这个增长需要投进去多少钱。</p>
+<p><strong>用公司生命周期当万能坐标。</strong>他自己说在金融的几乎每个环节都要用它：一家公司从初创到成长到成熟到衰落，每个阶段该做的投资、该用的负债、该发的现金都不一样，所谓「好的管理」就是<strong>对自己身处哪一段保持诚实</strong>，并据此调整决策。这个框架最出名的一次应用是他对科技公司的判断——它们<strong>按狗的年龄变老</strong>：起得快（进入门槛低、扩张容易、用户说走就走），守不住（成熟期的收割窗口很短），跌得急（让它们长得快的那几件事反过来一样有效），而且死了什么都不剩（不像传统生意那样攒下可清算的实物资产）。他由此对「颠覆」这个热词给出了一句扫兴的注解：颠覆很容易，靠颠覆赚钱很难。</p>
+<p><strong>拒绝把「安全边际」当挡箭牌。</strong>他点名了价值投资圈最爱的那个防御工事，措辞相当不客气：</p>
+<blockquote><span class="en">Seth Klarman is one of my favorite investment thinkers but I am afraid that the margin of safety, at least as practiced by some in the investing community, has become an empty vessel, an excuse for inaction rather than a guide to action in risky times.</span><span class="zh">Seth Klarman 是我最喜欢的投资思想家之一，但恐怕「安全边际」这个东西，至少在投资圈某些人的实践里，已经变成了一个空壳——一个不行动的借口，而不是风险时期的行动指南。</span><cite>DCF Myth 3，2016 年 5 月 2 日</cite></blockquote>
+<p><strong>把自己的目标定成「错得少一点」。</strong>这可能是全站最可迁移的一句：</p>
+<blockquote><span class="en">As I start making my estimates in the face of uncertainty, I hear the voice in the back of my mind pipe up, saying "You are going to be so wrong!" and I silence it by reminding myself that I don't have to be right, just less wrong than everyone else, and that when uncertainty is rampant, most investors give up.</span><span class="zh">当我在不确定中开始估算时，脑子后面会有个声音响起来：「你肯定要错得一塌糊涂！」我让它闭嘴的方法是提醒自己：我不需要对，我只需要比所有人错得少一点；而且当不确定性铺天盖地时，大多数投资者干脆放弃了。</span><cite>同上</cite></blockquote>
+<p>这条搭配他的行动准则一起看才完整——那条准则叫「<strong>往最黑的地方走</strong>」（go where it is darkest）：在一家公司最混乱、消息最不全的时候去估它。他同时老老实实标注了这条路的代价，点名自己在巴西矿业公司 Vale 上的惨败当作警示。</p>
+<p><strong>最后，他允许自己不好笑地自嘲。</strong>同一篇的结尾：</p>
+<blockquote><span class="en">I am wrong a hefty percent of the time, but so what? It's only money! I am just glad that I am not a brain surgeon!</span><span class="zh">我错的比例相当高，那又怎样？不过是钱而已。幸好我不是脑外科医生。</span><cite>同上</cite></blockquote>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>第一条是他自己判的，而且判得比外人狠。</strong></p>
+<p>Uber 那件事的完整账本是这样的：2014 年 6 月，他说 59 亿，风投说 170 亿。2015 年 10 月他修到 234 亿，同期风投给的是 510 亿。他在那篇文章里写：</p>
+<blockquote><span class="en">I was wrong about Uber's value in June 2014, when my estimate of $6 billion was below the $17 billion assessment by venture capitalists then. Correcting for both my cramped vision and the changes that have occurred since June 2014, my estimated value today is $23.4 billion... This may very well be a reflection that my vision is still too cramped to capture Uber's possible businesses, but it is what it is.</span><span class="zh">2014 年 6 月我对 Uber 的估值是错的——我给的 60 亿低于风投当时给的 170 亿。把我逼仄的视野和 2014 年 6 月以来发生的变化都修正进去之后，我今天的估值是 234 亿美元……这很可能说明我的视野依然太窄，容纳不下 Uber 可能进入的那些生意，但它就是这样。</span><cite>On the Uber Rollercoaster，2015 年 10 月 12 日</cite></blockquote>
+<p>「逼仄的视野」（cramped vision）这个词值得停一下。它指向的是他这套方法的<strong>系统性偏斜</strong>：这台机器要求任何故事都必须被翻译成可以落地的数字——市场多大、份额多少、抽成几点。这个要求在绝大多数时候是纪律，它挡掉了无数空话。但它有一个内在的重力方向：<strong>凡是能被算出来的东西，都只能用已经存在的世界当参照物。</strong>当一家公司真正改变的不是自己的份额、而是市场本身的形状时（Gurley 的「让人不买车」正是这个意思），这台机器会稳定地把你往下拽。</p>
+<p>不过这个批评需要一个诚实的续集：这套方法<strong>自带修正机制，而且修正机制有效</strong>。2019 年 4 月 Uber 真要上市时，他算出的每股价值约 54 美元；Uber 最终的发行定价是 45 美元，上市首日收在 41.57 美元。五年下来，他从低了将近三倍，走到了略高于发行价的一边。所以准确的说法不是「他系统性低估颠覆」，而是「<strong>他的初值偏低，但他的纠错速度不慢</strong>」。</p>
+<p><strong>第二条是他最被反驳、也最该被仔细拆开的一篇。</strong></p>
+<p>2020 年那篇《Sounding good or Doing good? A Skeptical Look at ESG》是他在中文世界之外争议最大的文章。他的分析部分其实非常有力，核心是一个逻辑陷阱，而不是数据口水：</p>
+<blockquote><span class="en">In steady state, it is internally inconsistent to argue that good companies will benefit from lower funding costs (lower costs of equity) and that investors can also earn higher returns at the same time.</span><span class="zh">在稳态下，一边论证好公司会享受更低的融资成本（更低的股权成本），一边论证投资者同时还能赚到更高的回报——这在内部是自相矛盾的。</span><cite>Sounding good or Doing good? A Skeptical Look at ESG，2020 年 9 月 21 日</cite></blockquote>
+<p>问题出在最后一段。他从「证据是含混的」滑到了「我因此更倾向于站在 Friedman 那一边」——而这一步超出了他自己的证据允许的范围。按他自己划的三个问题，第三个（对社会有没有好处）他基本没有作答：他检视的全部实证都是关于公司利润和投资者回报的，也就是前两个问题。一套<strong>只测量了价值和回报</strong>的证据，没法用来结论说「公司不该承担社会责任」——因为社会收益本来就落在这两把尺子之外。他在方法上最严厉的那条要求（别拿回答了 A 的研究去推销 B 的结论），在这篇的结尾被他自己违反了一次。这是我的判断，不是他的。</p>
+<p><strong>第三条是立场带来的、他不太可能看见的那种偏斜。</strong>他的全部框架——两个游戏、故事与数字、生命周期——都预设了一个<strong>可以被定价的世界</strong>：存在一个「基本面」，存在现金流，存在一个价格终将靠近它的重心。这个预设在上市公司身上工作得极好。但它对那些价值不以现金流形式出现的东西基本失语——公共品、外部性、还没有商业模式的科学。他当然可以说那不是他的题目，而这也确实是个公平的回答。只是当他从「我的工具量不到它」走到「它大概没那么重要」时，那一步就不再是工具问题了。</p>
+<p><strong>最后，他自己写下过关于自己的最狠的那条。</strong>2008 年开站第六天，他承认自己在市场崩塌的那个下午没能按下抄底键，选了「再等等看」，然后补了一句：你没法强迫自己采用一种和你的人格不匹配的投资风格。这句话读起来像谦逊，其实是一条很硬的自我限定——它等于承认，<strong>他写了十八年的这套东西，并不能保证连他本人都用得上。</strong></p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2013/10/twitter-ipo-why-good-trade-be-bad.html">Twitter IPO: Why a good trade be a bad investment (or vice versa)?</a></span><span class="d">2013 年 10 月 10 日。全站被后续文章回引最多的一篇。他在这里把定价游戏和估值游戏彻底拆开，并明确拒绝贬低交易者。</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2014/06/numbers-and-narrative-modeling-story.html">Numbers and Narrative: Modeling, Story Telling and Investing</a></span><span class="d">2014 年 6 月 24 日。他最常被引用的方法论文章：纯数字派的三种幻觉、纯故事派的两种风险，以及把叙事拧成价值驱动因子的五步。</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2014/06/a-disruptive-cab-ride-to-riches-uber.html">A Disruptive Cab Ride to Riches: The Uber Payoff</a></span><span class="d">2014 年 6 月 9 日。他算出 59 亿的那一篇，也是 Bill Gurley 那篇《How to Miss By a Mile》的攻击对象。与 2015 年 10 月的《On the Uber Rollercoaster》合读，是全站最完整的一次公开纠错记录。</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2015/08/big-markets-over-confidence-and-macro.html">Big Markets, Over Confidence and the Macro Delusion!</a></span><span class="d">2015 年 8 月 28 日。本页开头那张表的出处。把「泡沫」替换成一个不需要假设任何人非理性的机制，并给出可以当场做完的加法检验。</span></li>
+<li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2016/05/dcf-myth-3-you-cannot-do-valuation-when.html">DCF Myth 3: You cannot do a valuation, when there is too much uncertainty!</a></span><span class="d">2016 年 5 月 2 日。人面对不确定性的五种失能反应，以及他自己的六条应对。全站金句密度最高的一篇。</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-09-20" data-slug="musings-on-markets">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+</div>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-20</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
