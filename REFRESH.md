@@ -24,19 +24,29 @@
 环境的 setup script 在容器启动时已探过网络，结论写在仓库根目录的 `.preflight`（gitignore 掉）。**开工前先 `cat .preflight`。**
 
 - `egress: OK` → 照常回访。
-- `egress: BLOCKED` → **立刻停**。这是环境网络策略，不是站点反爬，**别试换 UA、别试别的域名**（探针含中立对照站，它也失败了）。不改任何文件、不 commit，只发一条 PushNotification 说明环境的 Network access 需要改成 `Custom` 或 `Full`，然后结束。**本轮所有页面的 `data-last-reviewed` 保持不动**——没真去看过就不能声称"已核对到今天"，否则下个月会跳过这些页，等于永久漏掉这一轮的更新。
+- `egress: BLOCKED` → **立刻停**。这是环境网络策略，不是站点反爬，**别试换 UA、别试别的域名**（探针含中立对照站，它也失败了）。不改任何文件、不 commit，只发一条 PushNotification 说明环境的 Network access 需要改成 `Custom` 或 `Full`，然后结束。**本轮所有页面的 `data-last-reviewed` 和 `data-last-attempted` 都保持不动**——没真去看过就不能声称"已核对到今天"；`last_attempted` 也不能动，否则这批页会被排到队尾，等于因为一次环境故障就把它们推迟一整圈。
 
 `.preflight` 末尾的 `feedparser: OK` 表示可以用 feed 精确拿"某日之后的全部文章"，这是本 routine 最省事的路径；`unavailable` 时退回读归档页。
 
 ### 1. 盘点
-`ls *-blog*.html | grep -v '\.en\.html'` 得到所有已发布页。对每一页读出 `<section class="updates">` 上的 `data-slug` 和 `data-last-reviewed`。
+`ls *-blog*.html | grep -v '\.en\.html'` 得到所有已发布页。对每一页读出 `<section class="updates">` 上的 `data-slug`、`data-last-reviewed`、`data-last-attempted`。
 
-按 `data-last-reviewed` **从早到晚排序**——最久没回访的优先。
+按 `data-last-attempted` **从早到晚排序**——最久没去看过的优先。**该属性不存在的页排最前**（还没在新规则下轮到过）；同为缺失时按 `data-last-reviewed` 早的优先。
 
-### 2. 探查（对排序后的每一页，全部都探）
+**两个时间戳分工**（别混）：
+- `data-last-reviewed` = **最后一次真读到了内容**。只有探查成功才更新。它是对读者的声明，探不到就不许动。
+- `data-last-attempted` = **最后一次去探过**，无论成功还是 403。它只管轮转顺序。
+
+### 2. 探查（只探排序最前的 18 页）
+**本轮探查上限 18 页**，不是全量。清单会长到 53 页，全量探查是唯一随规模线性膨胀的开销，而博客的更新节奏撑得住两三个月一圈。剩下的页这轮不碰，下轮自然排到前面。
+
+对选中的每一页：
 - WebFetch 博客主页 / 归档页 / RSS，找出 `data-last-reviewed` 之后发表的文章。
 - 记下：有几篇新文、标题是什么、大致在讲什么。
-- **主页打不开**：再试一次（换 `/archive`、`/posts`、RSS）。仍失败 → 记为「疑似失效」，进第 4 步的报告，**本轮不改该页**。
+- **主页打不开**：再试一次（换 `/archive`、`/posts`、RSS）。仍失败 → 记为「疑似失效」，进第 4 步的报告，**不动该页的 `data-last-reviewed`**。
+- **无论成败，把该页的 `data-last-attempted` 改成今天**（属性不存在就加上）。这是轮转的唯一驱动：反复 403 的站（`science.org`、`ecosophia.net` 这类）因此会排到队尾等下一圈，而不是永远占着队头的名额。
+- **中英文页两边都写**：`data-last-attempted` 和 `data-last-reviewed` 在 `{slug}-blog{N}.html` 和 `.en.html` 上保持一致，没有特例。排序时读中文页那份。
+- ⚠️ **只改 `data-last-attempted` 的页不要动 index**：index 的 `data-updated` 只在真写了更新条目时才改。去看过但人家没新东西，不是「读后有更新」，动了 index 会让 `reads.js` 给读者亮一个假的 ↻。
 
 ### 3. 判断哪些值得写（这是本 routine 的核心判断）
 
@@ -54,7 +64,7 @@
 - 只是把老观点换个题材再说一遍
 - 你无法判断"这算不算推进"的——**存疑就不写**
 
-**每轮至多深写 8 页。** 若合格的多于 8 个，取「自我推翻 > 深化 > 新命题 > 重要争论」的优先级，超出的留到下轮（它们的 `last_reviewed` 不动，下轮自然排前面）。
+**每轮至多深写 8 页**（这是写作上限，与第 2 步的 18 页探查上限是两回事）。若合格的多于 8 个，取「自我推翻 > 深化 > 新命题 > 重要争论」的优先级，超出的留到下轮：**这几页的 `last_reviewed` 和 `last_attempted` 都不动**（第 2 步那条「探过就写 last_attempted」对它们不适用），这样它们下轮排在最前、优先被写掉。这是唯一允许探过还不写 `last_attempted` 的情况——它们手上有真东西没写，值得占住队头。
 
 ### 4. 写入
 
@@ -74,13 +84,13 @@
 
 **英文页同步**：同一条目译成地道英文插进 `.en.html` 的对应位置，日期与 `data-last-reviewed` 一致。**英文页不得出现汉字**（中文博客的原文引语除外，需挂转写 + 英译）。
 
-**没有合格更新的页面**：只把 `data-last-reviewed` 改成今天，不插条目。
+**探查成功但没有合格更新的页面**：把 `data-last-reviewed` 和 `data-last-attempted` 都改成今天，不插条目、不动 index。
 
 **停更确认**：这是唯一允许动正文的情况——把第 2 节「坐标」里的活跃状态改成「停更于 {年份}」，同时在更新记录里写一条说明。
 
 ### 5. index 与发布
 
-**改过的页面必须同步改 index 的日期**（这是本 routine 唯一要动 index 的地方，别漏）：在 `index.html` 和 `index.en.html` 里按 `href="{slug}-blog{N}.html"` 找到该条目，把 `data-updated` 属性和 `<span class="date">` 的文字**都**改成今天，与页内 `data-last-reviewed` 保持三处一致。
+**插了更新条目的页面必须同步改 index 的日期**（这是本 routine 唯一要动 index 的地方，别漏）。注意「改过的文件」不等于「插了条目的页面」：本轮探过的 18 页文件都会变（`data-last-attempted`），但**只有真插了更新条目的那几页才动 index**。在 `index.html` 和 `index.en.html` 里按 `href="{slug}-blog{N}.html"` 找到该条目，把 `data-updated` 属性和 `<span class="date">` 的文字**都**改成今天，与页内 `data-last-reviewed` 保持三处一致。
 
 这一步不是装饰，它驱动两件事：
 - index 页尾的排序脚本按 `data-updated` 倒序排，刚回访过的条目会自动浮到最前；
@@ -90,7 +100,8 @@
 
 - 不新增 index 条目（更新不产生新条目），只改日期。
 - 跑 `./publish.sh`。它会把「修改过的 `*-blog{N}.html`」识别为待发布文件，索引引用检查会通过（这些页早就在 index 里）。
-- 若本轮**一页都没改**（所有博客都没新东西）：**不要 commit**，发一条 PushNotification 说明「本月 N 个博客均无实质更新」，结束。
+- 若本轮**一条更新条目都没写**（探过的博客都没新东西）：**照样要跑 `./publish.sh`**——`data-last-attempted` 的推进就是这轮的成果，丢了它下轮会重探同一批、排在后面的页永远轮不到。这种情况给它一个说明性的 commit message：`MSG="Refresh: 探查 18 页，无实质更新" ./publish.sh`（不覆盖 `MSG` 的话它会自动生成「Add #N: …」，对回访轮是误导）。然后发一条 PushNotification 说明「本月探查 N 个博客，均无实质更新」，结束。
+- 别自己手敲 `git push origin main`：云端跑在 `claude/*` 分支上，得走 `publish.sh` 的 `HEAD:main` 才推得对。
 
 ### 6. 完成后
 
