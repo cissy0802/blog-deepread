@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ben Thompson · Stratechery — 谁直接拥有用户，谁就能把供应商变成可替换的零件</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="stratechery-blog25.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 25 · stratechery.com</div>
+<h1>Ben Thompson<br/>谁直接拥有用户，谁就能把供应商变成可替换的零件</h1>
+<p class="sub">Stratechery · 2013 年至今，站点地图上有 2946 条公开文章 URL，2013–2026 年逐年在 160–320 篇之间（另有两笔回溯重贴到 2009／2010 年）· <strong>仍在高频更新</strong>，最新一篇为 2026 年 9 月 22 日 · 每周一篇 Article 免费，每周三期 Daily Update 付费（作者 About 页自述），本页所读 13 篇全部是免费的那一档 · 一个明显转折在 2022 年底：题材重心整体转向 AI，作者自建的概念索引把 AI 排到了第一类 · 本页通读 13 篇，跨度 2013 年 9 月 22 日至 2026 年 9 月 21 日，其中最早期（2013–2015）4 篇，AI 转折两侧各 4 篇以上 · 选文以他本人维护的 <a href="https://stratechery.com/concepts/">Concepts 概念索引</a>为准——这是作者自己说「该读什么」</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2014 年 10 月，一个写科技评论的人想解释《纽约时报》为什么在走下坡。他掏出来的证据，是一家<strong>台湾光学零件厂的股价图</strong>。</p>
+<p>那家公司叫大立光（Largan Precision），当时市值 96 亿美元，只做一件事：手机镜头模组。而把整台 iPhone 组装起来的鸿海（Foxconn），市值只是它的<strong>五倍</strong>。一个只做镜头的小厂，跟组装全机的巨人，差距只有五倍。</p>
+<p>他要讲的是宏碁（Acer）创办人施振荣（Stan Shih）那条「微笑曲线（smiling curve）」：价值链两端翘起、中间塌陷。关键零件在左端，系统整合与品牌在右端；而中间那一段——负责把零件拼起来的——被竞争磨到个位数毛利。宏碁自己就站在最低点。</p>
+<p>然后他把这条曲线扣到出版业上。Google 和 Facebook 在右端，写字的人在左端，报社在中间。</p>
+<blockquote><span class="en">There simply isn't that much money in the middle.</span><span class="zh">中间就是没有那么多钱。</span><cite>Publishers and the Smiling Curve，2014-10-28</cite></blockquote>
+<p>同一周还发生了一件事：德国出版商联合起来告 Google，要求为搜索结果里的摘要付费。Google 的回应是<strong>把摘要撤掉</strong>。流量掉得太厉害，出版商几天之内回来求 Google 把摘要加回去，钱不要了。所有人的结论都是「Google 证明了自己对出版商有价值」。他的角度不一样：</p>
+<blockquote><span class="en">the publisher's demonstrated that they provide no value to their writers.</span><span class="zh">出版商证明的是，他们对自己的作者毫无价值。</span><cite>同上</cite></blockquote>
+<p>这个人叫 <strong>Ben Thompson</strong>，美国人，在台北写了十年博客，2025 年搬回美国。他 2013 年开始写 Stratechery（Strategy + Technology），2014 年靠它全职，此后十三年、近三千篇。</p>
+<p>2015 年 7 月，他回头看自己刚写的三篇文章——Airbnb、Netflix、以及「为什么网页加载这么慢」——忽然发现它们是同一件事。</p>
+<blockquote><span class="en">In retrospect, there is a clear thread. In fact, I believe this thread runs through nearly every post on Stratechery, not just the last three. I am calling that thread Aggregation Theory.</span><span class="zh">回头看，有一条清楚的线。事实上我相信这条线贯穿了 Stratechery 上几乎每一篇，而不只是最近这三篇。我把这条线叫作聚合理论。</span><cite>Aggregation Theory，2015-07-21</cite></blockquote>
+<p>这条线一句话能讲完，但这一句大概是过去十年科技评论里被引用最多的一句。</p>
+<p>前互联网时代，任何消费市场的价值链都是<strong>供应商 → 分发商 → 用户</strong>，而钱归分发商，因为分发是稀缺的。报纸垄断一座城市的送报路线，于是它向后整合去控制内容；电视网、出版社、出租车公司、连锁酒店，全是同一个形状：<strong>控制分发，然后往回抓住供应商。</strong>为什么往回抓？因为用户永远比供应商多得多，在交易有成本的世界里，抓住少的那一头省力得多。</p>
+<p>互联网把这件事翻了个面：数字分发免费了，分发商的旧优势归零；交易成本也归零了，于是一家公司第一次可以直接、规模化地拥有几亿个用户。</p>
+<blockquote><span class="en">This has fundamentally changed the plane of competition: no longer do distributors compete based upon exclusive supplier relationships, with consumers/users an afterthought. Instead, suppliers can be commoditized leaving consumers/users as a first order priority.</span><span class="zh">这从根本上改变了竞争的平面：分发商不再靠独家供应商关系竞争、把消费者当成事后才想起的东西。反过来，供应商可以被商品化，消费者／用户成了第一优先。</span><cite>同上</cite></blockquote>
+<p>于是<strong>用户体验成了唯一还稀缺的东西</strong>：谁给的体验最好，谁就拿到最多用户；用户最多，供应商就只能自己贴上来，并且是按聚合方的条件贴上来；供应商越多体验越好——一个吃掉整个市场的正循环。</p>
+<p>三年后他给这个东西加了一条判定线。这条线来自比尔·盖茨——2007 年 Facebook 刚办完第一届开发者大会，志得意满地自称「平台」，盖茨在一次融资会上泼了盆冷水（这段话由当年负责 Facebook Platform 的 Chamath Palihapitiya 转述）：</p>
+<blockquote><span class="en">A platform is when the economic value of everybody that uses it, exceeds the value of the company that creates it. Then it's a platform.</span><span class="zh">平台是这样一种东西：所有使用它的人创造的经济价值，超过创造它的那家公司本身的价值。那才叫平台。</span><cite>Bill Gates，转引自 The Bill Gates Line，2018-05-23</cite></blockquote>
+<p>Thompson 由此拧出全篇最锋利的一句区分：<strong>平台是促成第三方与用户的关系，聚合器是插进去并控制这段关系。</strong>Windows 和 AWS 是平台——微软当年还拿「我们只拿走生态里的一小部分」来吹牛。Google 和 Facebook 连线都够不着：它们是聚合器最纯粹的形态。</p>
+<p>这把刀最狠的一次落点是 Yelp。Yelp 告 Google，要求 Google 别用自家的点评填答案框、该用 Yelp 的。Thompson 说：<strong>你要的这件事只会让 Google 更强。</strong>因为 Yelp 真正的问题不是答案框里的数据来自谁，而是答案框本身——Google 越有用，Yelp 越没有生意，哪怕数据全都是 Yelp 的。他还是引了 Yelp CEO 那句认输的话：</p>
+<blockquote><span class="en">If I were starting out today, I would have no shot of building Yelp.</span><span class="zh">要是今天才起步，我根本没有机会做出 Yelp。</span><cite>Jeremy Stoppelman，转引自 The Bill Gates Line</cite></blockquote>
+<p>但如果只记住聚合理论，就只读懂了这个头脑的一半。他真正反复回来的那把刀，比它更早、也更通用，一共五个字：<strong>商业模式就是命运。</strong></p>
+<p>2013 年，一个刚从商学院出来的人写了篇文章，标题叫《Clayton Christensen 错在哪里》。Christensen 是颠覆理论之父、硅谷最爱的商学院教授，从 2006 到 2012 年三次预言苹果会输——iPod 会被模块化产品打垮，iPhone 不会成功，模块化最终总会战胜整合。Thompson 找到的破绽，在 Christensen 自己举的例子里：「你在飞机、软件、医疗器械上也能看到同样的事，一遍又一遍。」</p>
+<blockquote><span class="en">That is the problem: Consumers don't buy aircraft, software, or medical devices. Businesses do.</span><span class="zh">问题就在这儿：消费者不买飞机、软件和医疗器械。买这些的是企业。</span><cite>What Clayton Christensen Got Wrong，2013-09-22</cite></blockquote>
+<p>低端颠覆理论要成立，得先假设买家是理性的、所有重要属性都能被文档化和测量、模块化供应商能在所有属性上做到「够好」。这三条在企业采购里全都成立——CIO 买软件得写论证，对着功能清单比价格。在消费市场里则一条都不成立。而 Christensen 的研究样本，几乎全是企业买家。</p>
+<p>关键一击是他 2010 年在商学院写那篇论文时就埋下的：</p>
+<blockquote><span class="en">it is impossible for a user experience to be too good… has anyone turned to an "inferior" product because the better one was too enjoyable?</span><span class="zh">用户体验是不可能「太好」的……有谁因为某个产品好用过头了，转头去买了个更差的？</span><cite>转引自 What Clayton Christensen Got Wrong</cite></blockquote>
+<p>（脚注里他补了一句：「让我非常高兴的是，Christensen 说我干得不错。」）</p>
+<p>这套「先问谁在买单、他的账本长什么样」的直觉，在往后十年里一路长大。2018 年他拿 Bezos 的「顾客永远神圣地不满足」修正了自己五年前的版本——他原以为体验是条渐近线，其实<strong>期望值本身在上移</strong>，所以永远到不了头，这对做体验的公司反而是永续的生意。2016 年他盯上 Google 那个「手气不错」按钮：那个按钮保证了这次搜索<strong>一分钱都不赚</strong>，因为用户不需要在结果里挑，也就没有机会点广告。当时这只是个漂亮的观察。2023 年 ChatGPT 出来，它变成了一个生死问题——<strong>AI 是「手气不错」按钮的终极形态。广告放哪儿？</strong></p>
+<p>他在同一篇里给出了一个几乎没人愿意说的结论：柯达其实没做错。柯达自己发明了数码相机，也确实算准了它二十五年内威胁不到胶卷；这期间它照常赚钱、照常分红，最后 2012 年破产，而破产的原因是<strong>消费者拿到了更好的东西</strong>。</p>
+<blockquote><span class="en">The idea that this is a happy ending is, to be sure, a contrarian view: most view Kodak as a failure, because we expect companies to live forever.</span><span class="zh">说这是个圆满结局，当然是个逆流的看法：多数人把柯达看成失败，因为我们默认公司应该长生不老。</span><cite>AI and the Big Five，2023-01-09</cite></blockquote>
+<p>到了 2026 年 9 月，这把刀砍向了一个全新的对象：<strong>AI 安全的道德辞令。</strong>他的招式一模一样——不问「这个主张对不对」，问「说这话的人，账本长什么样」。他把 Anthropic 主张的「放慢前沿」拆成四笔悬空的账：能力悬空、产品悬空、定价悬空、资本悬空。每一笔，放慢都刚好解决。</p>
+<blockquote><span class="en">Anthropic is fine with Anthropic being in the lead; anyone else requires government intervention.</span><span class="zh">Anthropic 领先的时候，Anthropic 没有意见；换成别人领先，就需要政府出手了。</span><cite>Frontier Overhangs，2026-09-21</cite></blockquote>
+<p>读这个人最该学走的不是结论——结论完全可以不同意，也确实有人有力地不同意过。该学走的是<strong>那个提问顺序</strong>：别先问这家公司做得对不对、这句话说得善不善良，先问<strong>钱从哪儿进来</strong>。回答完这一问，谁会做什么、谁不会做什么、谁明明能做却一定不做，基本就都排好了。</p>
+<p>顺带一提，这个人拿这把刀切过自己：他的订阅费是收入的绝大部分，这是他自己安排的，理由是「我要让我的激励和读者的对齐」；而他同时承认，自己十几年来一直在分析和推崇广告商业模式——<strong>一个他本人从不采用的模式。</strong></p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<p style="margin-top:0"><b>Glossary · 术语表</b>（本页会用到的几个前置概念，一句话一个）</p>
+<ul>
+<li><b>价值链（value chain）</b>— 一件东西从原料到用户手上，中间经过的所有环节。本页反复出现的最简版本只有三段：<b>供应商 → 分发商 → 用户</b>。核心问题永远是：钱停在哪一段。</li>
+<li><b>整合 vs 模块化（integrated / modular）</b>— 整合是一家公司把相邻的几段捏在一起自己做（苹果自己做芯片、系统和手机）；模块化是各段分开、靠标准接口拼起来（Windows 电脑）。哪种赢，是本页两位主角争了二十年的题目。</li>
+<li><b>商品化（commoditize）</b>— 把某样东西变得处处一样、可随时替换，从而把它的价格和利润压到地板。本页里「供应商被商品化」是聚合器的核心动作。</li>
+<li><b>颠覆理论 / 低端颠覆（disruption / low-end disruption）</b>— Clayton Christensen 的理论。简版：在位者产品做得越来越好、越来越贵，终于「超出」了用户真正需要的水平，于是更便宜、更粗糙但「够用」的模块化产品从下面把市场端走。</li>
+<li><b>边际成本（marginal cost）</b>— 多服务一个用户要额外花的钱。软件和网络服务接近于零，这是本页很多结论的物理基础。</li>
+<li><b>微笑曲线（smiling curve）</b>— 宏碁（Acer）创办人施振荣（Stan Shih）的观察：价值链画成图，两端高、中间低，像个笑脸。</li>
+<li><b>护城河（moat）</b>— 让竞争者就算做出一样好的产品也进不来的结构性壁垒。</li>
+<li><b>特许经营权（franchise，巴菲特义）</b>— 巴菲特 1991 年的定义：一个被需要、被认为没有近似替代品、且不受价格管制的产品或服务。它能容忍烂管理。反面是「生意（business）」，只有成本最低或供给紧张时才赚大钱。本页第四节的报业部分全靠这个区分。</li>
+</ul>
+</div>
+<h2>一、一件怪事：为了解释《纽约时报》，他掏出一张台湾零件厂的股价图</h2>
+<p>2014 年 10 月 28 日，一篇讲出版业的文章开头，出现的却是一家名字对英语读者完全陌生的台湾公司：<strong>大立光（Largan Precision，台股 3008）</strong>。</p>
+<p>当时 iPhone 6 刚发布，发布会上讲得最久的不是别的，是相机。而全世界能做出那种镜头的公司只有几家，大立光是其中一家，iPhone 已经用了它好几代。文章里贴了一张大立光的历史股价图，然后给出两个数字：大立光市值 96 亿美元；而把整台 iPhone 组装起来的鸿海（Foxconn），市值只是它的<strong>五倍</strong>。</p>
+<p>这是个很奇怪的比例。鸿海雇着几十万人、负责整机；大立光只做一颗镜头。</p>
+<p>作者的解释是施振荣（Stan Shih）的「微笑曲线（smiling curve）」：价值链画成图，两端翘起、中间塌陷。左端是关键零件（英特尔、微软、大立光），右端是系统整合与客户关系（IBM、埃森哲），中间是把零件拼起来的那一段。而宏碁（Acer）自己，正是那条曲线最低点的典型——它和另外七家 Windows 整机厂互相竞争到个位数毛利。</p>
+<blockquote><span class="en">There simply isn't any money in the undifferentiated middle.</span><span class="zh">没有差异化的中间地带，就是不赚钱。</span><cite>Publishers and the Smiling Curve，2014-10-28</cite></blockquote>
+<p>然后他把这条曲线整个扣到出版业上：右端是 Google、Facebook、Twitter；左端是作者本人；<strong>而报社在中间。</strong>他顺手给出了当时的市值：Google 3697 亿，Facebook 2090 亿，而全美最德高望重的《纽约时报》——20.3 亿。</p>
+<p>他还给出了一个当周刚发生的、干净得近乎残忍的自然实验。德国出版商联合起来告 Google，要求为搜索结果里的文章摘要付费。Google 的回应不是付钱，是<strong>把摘要撤掉</strong>。流量掉得太狠，出版商几天之内回来求 Google 把摘要加回去，钱不要了。</p>
+<p>所有人的解读都是「Google 证明了自己对出版商有价值」。他的解读是另一个方向的：</p>
+<blockquote><span class="en">The general takeaway is that Google proved it was adding value to the publishers, but I have a different angle: the publisher's demonstrated that they provide no value to their writers.</span><span class="zh">一般的结论是：Google 证明了它给出版商创造价值。但我的角度不一样——出版商证明的是，他们对自己的作者毫无价值。</span><cite>同上</cite></blockquote>
+<p>一篇关于报业的文章，证据是台湾的镜头厂，结论是「报社和宏碁是同一种东西」。这就是本页这个头脑的工作方式：<strong>先找出这件事的骨架长什么形状，然后去任何一个行业里找同一副骨架。</strong></p>
+<h2>二、这人是谁</h2>
+<p><strong>Ben Thompson</strong>，美国人，威斯康星大学本科，Kellogg 商学院 MBA（战略与营销），外加 McCormick 工学院的 MEM（设计与创新，偏以人为中心的设计）。工作过三家公司：苹果（实习）、微软、Automattic——做的分别是 Apple University、Windows 和 WordPress.com 的战略、开发者关系与营销。</p>
+<p>2013 年他开始写 Stratechery（Strategy ＋ Technology），2014 年起成为全职工作。他在台湾住了很多年，<strong>大部分文章是在台北写的</strong>，一个人、一个网站、一份订阅制，2025 年才搬回美国。</p>
+<p>有一个细节能一下子说明这份工作变成了什么：他的 About 页上明码标着演讲报价，「视客户、活动与题目而定，<strong>从 40 万到 100 万美元不等</strong>」，紧接着一句「我目前不做任何咨询」。同一页上还写着：订阅者来自 85 个以上的国家。</p>
+<p>更值得记住的是紧随其后的伦理声明。他不持有任何自己写到的公司的个股；参加公司活动自付差旅；2016 年起不接受自己报道的公司的演讲与咨询邀约（此前的三次，他逐一列了名字）。然后是这一句：</p>
+<blockquote><span class="en">Subscriptions are the vast majority of my income; this is purposeful on my part as I want my incentives to be aligned with my readers'.</span><span class="zh">订阅费是我收入的绝大部分；这是我刻意安排的，因为我要让我的激励和读者的激励对齐。</span><cite>About / Ethics Statement</cite></blockquote>
+<p>请把这一句记住到第六节。这个人一辈子在做的事，就是拿「你的钱从哪儿来」去解释「你会做什么」——他把这套方法用在苹果、Google、报社和 AI 实验室身上，也把它写进了自己的站点声明里。</p>
+<p>网站仍在高频更新：站点地图上有 2946 条公开文章 URL，2013 年至 2026 年逐年在 160 到 320 篇之间，本页写作时最新一篇是 2026 年 9 月 22 日。不过要说清楚一件事：这近三千篇里，只有每周一篇的 Article 是免费的，每周三期的 Daily Update 归订阅者。<strong>本页读的 13 篇全部来自免费那一档</strong>，它们也正是他自己在 Concepts 索引里列为概念承重墙的那些。</p>
+<h2>三、他跟什么较劲：钱为什么停在这一段，不停在那一段</h2>
+<p>把十三年的文章摊开看，他反复回来的不是「哪家公司会赢」，而是一个更下层、更枯燥、也更有解释力的问题：</p>
+<p><strong>在一条价值链上，利润为什么停在某一段，而不停在别的段？什么东西会让它挪窝？</strong></p>
+<p>这个问题他不是在图书馆里撞上的，是在商学院的课堂上。他自己写过，他在一门企业创新课里读 Christensen 读得心悦诚服——那是一口新鲜空气，因为此前的管理学理论「解释了整个美国企业界，唯独解释不了其中最成功的那家公司」。</p>
+<p>那家公司是苹果。而苹果恰恰是 Christensen 的心病：2006 年他预言 iPod 撑不住，2007 年预言 iPhone 不会成功，2012 年又说「模块化架构终将战胜整合架构，这件事一遍遍地发生」。</p>
+<p>一个刚毕业的人面对这种局面，通常有两个选项：相信理论，或者相信眼睛。Thompson 选了第三个，而这个选择基本决定了他后来十三年的方法——<strong>他没有去找反例，他去找这个理论的样本来自哪里。</strong></p>
+<p>这就是第四节第一个想法的起点。而这个根问题的另一半——「什么东西会让利润挪窝」——则在 2015 年长成了他最广为人知的那个东西。两半合起来，就是整站的骨架：<strong>先定位钱停在哪一段，再找出是什么结构把它钉在那儿，然后问这个结构会不会被某项技术一次性拆掉。</strong></p>
+<h2>四、他的想法，讲成他怎么发现的</h2>
+<h3>1. 价值链被翻了个面：Aggregation Theory</h3>
+<p>2015 年 7 月，他做了一件写作者很少做的事：回头读自己最近三篇，然后发现它们其实是一篇。</p>
+<p>那三篇分别写 Airbnb（共享经济把「信任」商品化了，于是可以靠聚合资源和掌握客户关系赚钱）、Netflix（把这件事塞进 Christensen 的「诱人利润守恒定律」：利润归价值链上做整合的那一方，当有人把在位者模块化、再去整合另一段时，利润就搬家）、以及一篇讲程序化广告让网页变得奇慢无比的文章——那篇的结论里他顺手记了一笔：广告网络把出版商商品化的方式，也符合同一个框架。</p>
+<blockquote><span class="en">In retrospect, there is a clear thread. In fact, I believe this thread runs through nearly every post on Stratechery, not just the last three. I am calling that thread Aggregation Theory.</span><span class="zh">回头看，有一条清楚的线。事实上我相信这条线贯穿了 Stratechery 上几乎每一篇，而不只是最近这三篇。我把这条线叫作聚合理论。</span><cite>Aggregation Theory，2015-07-21</cite></blockquote>
+<p>先看旧世界。任何消费市场的价值链都能切成三段：<strong>供应商、分发商、用户</strong>。想赚超额利润，要么在某一段做成横向垄断，要么把相邻两段整合起来做出纵向优势。而在前互联网时代，后者几乎总是取决于一件事：<strong>控制分发。</strong></p>
+<p>印刷报纸是把内容送到一个地理区域里读者手上的主要手段，所以报纸<strong>向后</strong>整合进了内容生产，靠卖广告赚超额利润。同一个形状在别处一模一样地重复：图书出版商（分发能力 ＋ 控制作者）、电视（播出资源 ＋ 采购内容）、出租车（调度能力 ＋ 牌照和车）、酒店（品牌信任 ＋ 空房）。</p>
+<p>注意这些行业的分发商<strong>无一例外是往回整合的</strong>。原因他给得很干脆：用户／消费者永远比供应商多得多，所以在一个交易有成本的世界里，<strong>拥有供应商关系的杠杆大得多。</strong></p>
+<p>互联网干了两件事，把这个动力学整个掀翻：</p>
+<blockquote><span class="en">First, the Internet has made distribution (of digital goods) free, neutralizing the advantage that pre-Internet distributors leveraged to integrate with suppliers. Secondly, the Internet has made transaction costs zero, making it viable for a distributor to integrate forward with end users/consumers at scale.</span><span class="zh">第一，互联网让（数字商品的）分发变成免费，抹掉了前互联网分发商用来整合供应商的那个优势。第二，互联网让交易成本归零，使得一个分发商第一次有可能<strong>向前</strong>、并且是规模化地整合到最终用户／消费者。</span><cite>同上</cite></blockquote>
+<figure>
+<svg viewbox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="价值链翻面示意图">
+<text x="0" y="16" fill="#5eead4" font-family="monospace" font-size="13">前互联网：分发稀缺</text>
+<rect x="8" y="34" width="180" height="44" rx="8" fill="rgba(110,168,254,.10)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text x="98" y="61" fill="#d5dce4" font-size="15" text-anchor="middle">供应商</text>
+<rect x="255" y="34" width="180" height="44" rx="8" fill="rgba(110,168,254,.10)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text x="345" y="61" fill="#d5dce4" font-size="15" text-anchor="middle">分发商</text>
+<rect x="502" y="34" width="180" height="44" rx="8" fill="none" stroke="#47525e" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="592" y="61" fill="#7d8794" font-size="15" text-anchor="middle">用户</text>
+<path d="M250 56 L193 56" stroke="#6ea8fe" stroke-width="2.6" marker-end="url(#ah1)"/>
+<path d="M8 92 L8 104 L435 104 L435 92" fill="none" stroke="#5eead4" stroke-width="1.3"/>
+<text x="221" y="124" fill="#5eead4" font-size="13" text-anchor="middle">向后整合 · 抓住少的那一头</text>
+<text x="592" y="104" fill="#7d8794" font-size="12.5" text-anchor="middle">事后才想起的东西</text>
+<line x1="0" y1="152" x2="700" y2="152" stroke="rgba(110,168,254,.18)" stroke-width="1"/>
+<text x="0" y="184" fill="#5eead4" font-family="monospace" font-size="13">互联网之后：分发免费、交易成本归零 → 用户稀缺</text>
+<rect x="8" y="202" width="180" height="44" rx="8" fill="none" stroke="#47525e" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="98" y="229" fill="#7d8794" font-size="15" text-anchor="middle">供应商</text>
+<rect x="255" y="202" width="180" height="44" rx="8" fill="rgba(94,234,212,.12)" stroke="#5eead4" stroke-width="1.6"/>
+<text x="345" y="229" fill="#d5dce4" font-size="15" text-anchor="middle">聚合器</text>
+<rect x="502" y="202" width="180" height="44" rx="8" fill="rgba(94,234,212,.12)" stroke="#5eead4" stroke-width="1.6"/>
+<text x="592" y="229" fill="#d5dce4" font-size="15" text-anchor="middle">用户</text>
+<path d="M440 224 L497 224" stroke="#5eead4" stroke-width="2.6" marker-end="url(#ah2)"/>
+<path d="M255 260 L255 272 L682 272 L682 260" fill="none" stroke="#5eead4" stroke-width="1.3"/>
+<text x="468" y="292" fill="#5eead4" font-size="13" text-anchor="middle">向前整合 · 直接拥有用户关系</text>
+<text x="98" y="272" fill="#7d8794" font-size="12.5" text-anchor="middle">被商品化的零件</text>
+<defs>
+<marker id="ah1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#6ea8fe"/></marker>
+<marker id="ah2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#5eead4"/></marker>
+</defs>
+</svg>
+<figcaption>同一条价值链，整合方向掉了个头——这就是聚合理论的全部内容</figcaption>
+</figure>
+<p>竞争的平面因此整个换了：分发商不再靠独家供应商关系竞争，<strong>供应商反过来成了可以被商品化的东西，而用户变成第一优先。</strong>推下去只有一个结论：最重要的胜负手是用户体验。体验最好的那家拿到最多用户，用户最多就吸引最多供应商——而且是按它的条件贴上来的供应商——供应商越多体验越好。一个赢者通吃的正循环。</p>
+<p>他在原文里一口气给了七组对照，每组两行，格式一样得像在做体操：Google 把出版物模块化成了单篇文章和网页；Facebook 把广告模块化了，让广告主直接找到人而不必通过内容做代理；Amazon 把图书分发模块化；Netflix 把「播出时段」模块化成了任何时间任何顺序；Uber 把车队管理模块化成了独立司机；Airbnb 把空置房产模块化——靠的是<strong>给信任建了一套评价系统</strong>。</p>
+<p>最后两个他特意点出来：房间和车子并没有被数字化，但它们被颠覆了。原因是每个行业都藏着一个<strong>关键差异化要素</strong>，只要那个要素能被数字化，竞争就会瞬间移到用户体验上——而那正是新进入者最擅长、在位者最迟钝的地方。他当时的预言是：几乎每一个行业最终都会迟钝地发现，自己身上有这么一个可被数字化和商品化的关键功能。</p>
+<p><strong>两年后他回来给自己的理论做了一次版本升级。</strong>2017 年那篇《Defining Aggregators》开头就有一句很少见的自白：</p>
+<blockquote><span class="en">(Note: this is not a typical Stratechery article; there is no over-arching narrative or reference to current news. Rather, the primary goal is to provide a future point of reference)</span><span class="zh">（注：这不是一篇典型的 Stratechery 文章；它没有贯穿的叙事，也不挂任何当下新闻。它的主要目的是为将来提供一个引用点。）</span><cite>Defining Aggregators，2017-09-26</cite></blockquote>
+<p>他给聚合器定了三个必要条件，缺一条就不是：<strong>与用户有直接关系</strong>（付费的、账号的，或只是习惯性使用）；<strong>服务边际用户的成本为零</strong>（没有商品成本、没有分发成本、没有交易成本）；<strong>需求驱动的多边网络，且获客成本递减</strong>。第三条是最漂亮的一条：普通公司的获客成本是<strong>递增</strong>的，因为最早那批用户天然最契合，越往外扩契合度越低、剩余价值越薄，直到为负；而聚合器反过来——供应商越堆越多，边际用户是被供给量本身吸引进来的。</p>
+<p>他还按「跟供应商的关系」分了三级：Netflix 是一级，它得花钱把内容买进来，所以最慢、短期也最脆弱；Uber 是二级，它不拥有车，但把司机弄上平台要花时间和钱（背景审查、车辆核验），这限制了供给增速，进而限制了需求增速；Google 是三级的原型——供应商（网站）不但默认可被抓取，还倒过来<strong>主动把自己弄得更好搜</strong>，以至于养出了一整个叫 SEO 的行业。社交网络也是三级：最初的供给由用户自己提供，后来注意力越堆越多，专业创作者就免费把内容送进来了。</p>
+<p>三级之上还有一个「超级聚合器」：在用户、供应商、广告主三边上全部零边际成本的，全世界只有两家——Facebook 和 Google。</p>
+<p>2018 年他加上了最后一块，也是全套框架里最好用的一件工具。当时他在琢磨「平台」和「聚合器」到底差在哪儿，想起了盖茨那句话（见精华版）。<strong>盖茨给出的判定线是一个可验证的量：生态里所有人创造的经济价值，是不是超过创造它的那家公司本身。</strong>按这条线，Windows 是货真价实的平台——微软当年还拿「我们只拿走生态价值的一小部分」来吹牛；AWS 和 Azure 是它的直系继承者。而苹果的 App Store 长得很像平台，却明显在线以下：苹果拿走了生态里绝大部分价值，所以 App Store 上长不出多少强壮持久的生意，这不是意外，是结构的自然结果。</p>
+<p>Google 和 Facebook 呢？他说它们<strong>连这张图都上不去</strong>。</p>
+<blockquote><span class="en">platforms are powerful because they facilitate a relationship between 3rd-party suppliers and end users; aggregators, on the other hand, intermediate and control it.</span><span class="zh">平台之所以强大，是因为它促成第三方供应商和最终用户之间的关系；而聚合器是插进这段关系里，并且控制它。</span><cite>The Bill Gates Line，2018-05-23</cite></blockquote>
+<p>这套框架最锋利的一次落点是 Yelp。当时 Yelp 在欧盟对 Google 提起新的反垄断申诉，诉求是：Google 的答案框只用自家的评分和点评，这不公平，应该也用 Yelp 的。Thompson 的回答是——<strong>你要的这件事只会让 Google 更强。</strong></p>
+<p>他的推理分三层。第一，答案框最早确实是抓 Yelp 这类网站的内容的，而 Google 2013 年在包括 Yelp 在内的投诉压力下停止了这个做法。第二，在这之后的两年里，因为坐在搜索结果最上面，<strong>Google 自家的评分和点评已经长起来了</strong>——用户生成内容是成本最低的供给，把这块供给输给 Google，对 Yelp 来说比丢掉多少广告收入都严重。第三，也是最关键的：Yelp 真正的敌人不是「答案框里的数据来自谁」，而是答案框本身。他画了两张搜索结果的对照图问读者：哪一种对 Yelp 的生意更好？答案显然是<strong>没有答案框、必须点进 Yelp 的那种</strong>——哪怕答案框里的内容百分之百来自 Yelp。</p>
+<p><strong>「Google 越有用，Yelp 的生意越不可行」</strong>，这就是在一条被聚合器统治的价值链上所应期待的全部：聚合器彻底把供应商中介化，并把他们压成商品。所以他给出的战略建议反过来是：最好的路子是完全绕开 Google 和 Facebook——看看亚马逊，它上个月干脆不买 Google 购物广告了，因为一半的人买东西根本就是从亚马逊开始搜的。</p>
+<h3>2. 商业模式就是命运</h3>
+<p>这个想法比聚合理论早两年，也更通用。它的诞生现场是一场以卵击石的争论。</p>
+<p>2013 年 9 月，苹果刚发布 iPhone 5C——一个换了外壳但没有换价位的机型，就摆在往年被停产的旧旗舰那个位置上，比新旗舰便宜 100 美元。分析师们一片哗然：苹果怎么能不出一款真正的低价 iPhone？这不是等着被颠覆吗？</p>
+<p>而所有这些哗然背后站着同一个人。Clayton Christensen 是颠覆理论之父，硅谷最爱的商学院教授。他 2006 年在《Businessweek》上预言 iPod 撑不住；2007 年又说 iPhone 相对诺基亚是<strong>延续性创新</strong>而非颠覆性创新，按理论预测，苹果不会成功；2012 年他在一档播客里重申：「从专有架构转向开放模块化架构，这件事一遍又一遍地发生……所以我担心模块化会在苹果身上起作用。」</p>
+<p>Thompson 写了篇文章，标题直接叫《What Clayton Christensen Got Wrong》。他的开局姿态值得注意：他先明确区分了 Christensen 的<strong>两个</strong>理论，并且声明自己完全相信第一个（新市场颠覆，来自《创新者的窘境》和那篇硬盘产业的经典论文），他要拆的只有第二个——低端颠覆。</p>
+<p>然后他没有举反例。他去问了一个更下层的问题：<strong>这个理论的样本来自哪里？</strong></p>
+<p>破绽就在 Christensen 自己 2006 年那段话里：「你在飞机、软件、医疗器械上也能看到同样的事，一遍又一遍。」</p>
+<blockquote><span class="en">That is the problem: Consumers don't buy aircraft, software, or medical devices. Businesses do.</span><span class="zh">问题就在这儿：消费者不买飞机、软件和医疗器械。买这些的是企业。</span><cite>What Clayton Christensen Got Wrong，2013-09-22</cite></blockquote>
+<p>低端颠覆要成立，得同时满足三个前提：买家是理性的；所有重要属性都能被文档化和测量；模块化供应商能在所有重要属性上做到「够好」。</p>
+<p>他逐条拆。<strong>第一条</strong>，企业买家确实极其理性——一位 CIO 要采购软件，得写出论证，而论证通常就是对着功能清单比价格，谁得分高谁赢。消费者不是这样，他说他宁愿换个说法：消费者其实完全理性，只是「理性」这个词的定义需要大幅扩张到那些不容易被量化的东西上。<strong>第二条</strong>，消费者最看重的属性（在产品大体对路的前提下）是好不好用，而好不好用<strong>只能被体验，不能被列进规格表</strong>——iPhone 的触摸屏手感更好但分辨率更低，相机像素更大但数量更少，续航更好但核心更少、主频更低。<strong>第三条</strong>，模块化产品因为要优先保证标准化和互联互通，在那些与「使用体验」直接相关的属性上必然打折。</p>
+<p>而最关键的一击，是他三年前在商学院写的一篇论文里就埋好的：</p>
+<blockquote><span class="en">it is impossible for a user experience to be too good. Competitors can only hope to match or surpass the original product when it comes to the user experience; the original product will never overshoot (has anyone turned to an "inferior" product because the better one was too enjoyable?).</span><span class="zh">用户体验是不可能「太好」的。在体验这件事上，竞争者只能指望追平或超过原产品；原产品永远不会「超出」用户需要（有谁因为某个产品好用过头了，转头去买了个更差的？）。</span><cite>Apple and the Innovator's Dilemma（2010），转引自上文</cite></blockquote>
+<p>「超出／overshoot」这个词是从颠覆理论里直接借来的。他用它，是为了指出低端颠覆有一个盲区：<strong>整个理论建立在「产品可以好过头」这个前提上，而有一个维度永远好不过头。</strong>苹果十五年来——他写的是「至少十五年」——就正正站在这个盲区上。</p>
+<p>脚注里他加了一句很可爱的话：「让我非常高兴的是，Christensen 说我干得不错。」</p>
+<p><strong>五年后他自己把这个想法推翻重建了一次。</strong>2018 年 5 月，他在讨论苹果和亚马逊谁先摸到一万亿市值时，引了贝佐斯的年度股东信：</p>
+<blockquote><span class="en">One thing I love about customers is that they are divinely discontent. Their expectations are never static — they go up. It's human nature. We didn't ascend from our hunter-gatherer days by being satisfied… yesterday's 'wow' quickly becomes today's 'ordinary'.</span><span class="zh">我爱顾客的一点，是他们神圣地不满足。他们的期待从不静止——只会往上走。这是人性。我们不是靠满足于现状才走出狩猎采集时代的……昨天的「哇」很快就变成今天的「一般」。</span><cite>Jeff Bezos 2017 年股东信，转引自 Divine Discontent，2018-05-02</cite></blockquote>
+<p>他当场承认自己五年前想窄了：</p>
+<blockquote><span class="en">When I wrote that piece five years ago, I was thinking of the opportunity provided by a focus on the user experience as if it were an asymptote: one could get ever closer to the ultimate user experience, but never achieve it.</span><span class="zh">五年前我写那篇的时候，是把「专注用户体验」提供的机会当成一条渐近线来想的：你可以越来越靠近那个终极体验，但永远到不了。</span><cite>Divine Discontent，2018-05-02</cite></blockquote>
+<p>实际情况比渐近线更有利：<strong>期望值这条线本身在往上移。</strong>今天的惊艳是明天的起步价。于是结论反转成了一句近乎悖论的话——<strong>如果一家公司把自己定义成「给消费者最好的体验」，那它永远达不成目标；而这恰恰是一门永续的生意。</strong>他说这让亚马逊变成了一台「永动机」。</p>
+<p>与此同时，同一套「先看账本」的直觉正在另一条线上发酵。2016 年 Google I/O 上 Pichai 宣布世界正在从「移动优先」转向「AI 优先」，推出了 Google Assistant。Thompson 当时写下的那段话，后来被他自己反复回引了至少三次：</p>
+<blockquote><span class="en">the "I'm Feeling Lucky" button guaranteed that the search in question would not make Google any money. After all, if a user doesn't have to choose from search results, said user also doesn't have the opportunity to click an ad… Google Assistant has the exact same problem: where do the ads go?</span><span class="zh">「手气不错」按钮保证了这一次搜索不会给 Google 赚到一分钱。毕竟，如果用户不必在搜索结果里挑，他也就没有机会点广告……Google Assistant 有一模一样的问题：<strong>广告放哪儿？</strong></span><cite>Google and the Limits of Strategy（2016），转引自 AI and the Big Five</cite></blockquote>
+<p>2016 年这只是个漂亮的观察。<strong>2023 年 1 月它变成了一个生死问题。</strong></p>
+<p>ChatGPT 出来之后，他写了《AI and the Big Five》，一家一家地问：AI 对你是延续性创新还是颠覆性创新？判据不是技术，是<strong>商业模式对不对得上</strong>。微软最顺——它卖订阅，往订阅里加功能天经地义；它还独家承包了 OpenAI 的云。Bing 呢？他的比喻是「Bing 就像 iPhone 前夜的 Mac」：确实贡献一点收入，但相对老大是个零头，拿它去赌一次巨大的份额跃迁，这笔账太划算了。</p>
+<p>Google 则相反：它发明了 Transformer，据传手里的对话产品远胜 ChatGPT，可市面上<strong>一个产品都没有</strong>。为什么？因为搜索这门生意从第一天起就把「最终裁判」交给了人类——Google 给链接，用户点哪条算哪条，广告也按点击计费。而 AI 是「手气不错」的终极形态：它直接给答案。</p>
+<p>讲到这里他做了一件很少有人愿意做的事：<strong>替柯达翻案。</strong>1997 年《创新者的窘境》出版那年，柯达股价见顶 94.25 美元，而且它技术上并不落后——数码相机就是它发明的。它的问题是商业模式：胶卷利润丰厚，数码相机根本不用胶卷。所以柯达管理层非常有动力说服自己：数码只属于业余爱好者，而且要等它便宜得多才行，那得很久很久。</p>
+<p>然后是关键的一句：<strong>柯达管理层其实是对的。</strong>从数码相机被发明到它的销量超过胶片相机，花了二十五年多；进入专业领域还要更久。这二十五年里柯达赚了很多钱，分了几十亿美元红利。2012 年它破产了，而破产的原因是消费者拿到了更好的东西。</p>
+<blockquote><span class="en">The idea that this is a happy ending is, to be sure, a contrarian view: most view Kodak as a failure, because we expect companies to live forever.</span><span class="zh">说这是个圆满结局，当然是个逆流的看法：多数人把柯达看成失败，因为我们默认公司应该长生不老。</span><cite>AI and the Big Five，2023-01-09</cite></blockquote>
+<p>这不是替谁说好话，是把「公司应当永生」这个隐藏前提拆出来晾了一下。他自己下的注也说得清清楚楚，包括自己以前输过的那一次：</p>
+<blockquote><span class="en">I'm not calling the top for Google; I did that previously and was hilariously wrong. Being wrong, though, is more often than not a matter of timing.</span><span class="zh">我不是在喊 Google 见顶；我以前喊过，错得很滑稽。不过话说回来，错，多半只是时机问题。</span><cite>同上</cite></blockquote>
+<p><strong>两年后，他又给这个框架打了一个补丁——这次是对它本身的限制。</strong>2025 年，他要解释一件框架解释不了的事：既然 AI 对 Google 是颠覆性的，那为什么 Google 投得比谁都早、比谁都狠？</p>
+<p>他的答案回到了那个按钮。「手气不错」在 2010 年就已经没法点了（即时搜索让你来不及点），却还挂在首页上好多年。他说那不是懒得删，那是<strong>一句宗旨</strong>：AI 就是「手气不错」的终极形态，佩奇和布林当初创办这家公司要的就是这个。</p>
+<blockquote><span class="en">business models matter, but they aren't dispositive.</span><span class="zh">商业模式很重要，但它不是决定性的。</span><cite>Tech Philosophy and AI Opportunity，2025-07-08</cite></blockquote>
+<p>一个把「商业模式就是命运」当作招牌的人，公开写下「但它不是决定性的」——这是本页认为最值得学走的一个动作。他给出的另一个轴叫<strong>技术哲学</strong>：这是他 2018 年那篇《Tech's Two Philosophies》的框架。一派认为<strong>计算机应该替你做事</strong>（Google、Facebook），另一派认为<strong>计算机应该让你把自己的事做得更好</strong>（微软、苹果），后者的先知是乔布斯，他的比喻是自行车——人类跑步的能耗效率在动物界只排中游，但骑上自行车就一举甩开秃鹫，冲到榜首之外。把「机会大小」和「哲学立场」摆成两个轴，苹果为什么在 AI 上抠门、Meta 为什么疯狂挖人、Google 为什么明知有害也要往前冲，就都落到了图上各自的位置。</p>
+<h3>3. 把「谁在说」和「他的账本」放进论证里</h3>
+<p>第三件事不是一个结论，是一个动作，而且是他这些年越用越重的那个动作：<strong>遇到一个规范性主张——什么才是好新闻、谁欠谁的钱、我们该不该放慢——先不争论对错，先把说话人的损益表打开看看。</strong></p>
+<p>他第一个下刀的对象是自己这一行。</p>
+<p>2015 年 2 月，Andrew Sullivan 宣布关掉自己的博客，一时间「博客已死」成了显学。Vox 主编 Ezra Klein 写了篇文章，说「我们越来越擅长服务巨大的受众，越来越不擅长服务忠诚的受众」，并断言 Sullivan 证明了博客「抗拒规模化」。</p>
+<p>Thompson 四天后才回应——他特意点破了这件事本身：按 Sullivan 对博客的定义（「每天、每小时、永远在截稿压力下」），他花一个周末陪家人、把这场争论在脑子里翻过来倒过去再动笔，就叫「做错了」。</p>
+<p>他的反驳是一个区分：<strong>Klein 把 scale（规模）和 reach（触达）搞混了。</strong></p>
+<blockquote><span class="en">it cost him the same amount of both time and money to serve 1,000 subscribers as it would have to serve 100,000, or 1 million, and he didn't need to change a thing about himself or his content to do it. No, it's not scale that is the problem, but rather reach.</span><span class="zh">他服务 1000 个订阅者和服务 10 万、100 万个订阅者，花的时间和钱是一样的，而且他不必改变自己和自己的内容分毫。所以不，问题不是规模，是触达。</span><cite>Blogging's Bright Future，2015-02-02</cite></blockquote>
+<p>而触达受限是订阅制的自觉代价：</p>
+<blockquote><span class="en">Stratechery, though, serves a niche, and niches are best served by making more from customers who really care than from milking pennies from everyone.</span><span class="zh">但 Stratechery 服务的是一个小众，而服务小众的最好方式，是从真正在乎的人那里多赚一点，而不是从所有人身上榨出几分钱。</span><cite>同上</cite></blockquote>
+<p>然后是那把贯穿全文的钥匙，他说这是自己写报纸时就得出的结论：<strong>「你的商业模式就是你的命运。」</strong>广告模式要的是海量库存、海量读者、海量数据，而这三个词与「由一个人定义的东西」天然相斥。Vox 为了触达，向读者索取的只有「忍受那些你不关心的贴文」，所以网站体验越来越烦人，一点都不奇怪；而他向读者索取金钱，于是被<strong>强力激励</strong>去交付价值——不浪费读者时间，质量高于数量，宁可等四天写点想清楚的，也不抢第一。</p>
+<p>六年后他把同一把刀砍得更深。2021 年，a16z 宣布要自建媒体，记者们哗然，《华盛顿邮报》的专栏作者说这会带来更多的阿谀奉承而非独立观点。Thompson 同意利益冲突是真的，但他指出这段批评里藏着一个更大的毛病，而且这毛病是记者自己的。他引了《The Verge》主编 Nilay Patel 的一段自述——「我跟 The Verge 的收入几乎毫无关系……我完全与销售隔绝」——然后落下这一刀：</p>
+<blockquote><span class="en">After all, journalists don't know how their businesses work, and they are proud of it!</span><span class="zh">毕竟，记者不懂自己的生意是怎么运转的，而且他们以此为荣！</span><cite>Publishing is Back to the Future，2021-01-27</cite></blockquote>
+<p>他不认为这是道德缺陷，他认为这是<strong>一种被结构供养出来的奢侈品</strong>，而且这份供养早就断了。证据是巴菲特 1991 年的股东信：媒体资产曾经具备「特许经营权」的三个特征（被需要、被认为没有近似替代品、不受价格管制），而特许经营权<strong>能容忍烂管理</strong>；但到 1991 年，选择已经变多，媒体正在从「特许经营权」退化成「生意」。注意年份——<strong>万维网还不存在。</strong></p>
+<p>于是澳大利亚那部要求 Google 和 Facebook 为新闻付费的法案，在他眼里就是一则建立在神话上的立法：</p>
+<blockquote><span class="en">This is what happens when you don't understand how your own business works: you create a myth wherein Google and Facebook decimated the news business, when in reality they came along years after the business — already not a franchise — had been decimated by the Internet.</span><span class="zh">这就是不懂自己生意怎么运转的后果：你会编出一个神话，说 Google 和 Facebook 摧毁了新闻业；而现实是，它们出现的时候，这门生意——早就不再是特许经营权了——已经被互联网摧毁了好些年。</span><cite>同上</cite></blockquote>
+<p>他还补了一句更不留情面的：记者们只是没意识到，读者付的钱是买纸、油墨和送报车的，不是买他们的报道；而广告主买的是那些读者。</p>
+<p><strong>2026 年 9 月，同一个动作落到了一个完全不同的题材上：AI 安全。</strong></p>
+<p>当时的争论是 Anthropic 及其 CEO Dario Amodei 主张「我们必须放慢前沿（We Must Pace the Frontier）」。Thompson 先亮明立场，说自己拒绝那套给所有未来可能存在的生命赋予同等道德权重的哲学前提——他说这把天平往「安全至上主义」扭曲到荒谬的程度，也说这套话语「借用了宗教的心理结构，异议不被容许，质疑前提就是异端」，并且自认是异端。</p>
+<p>但他真正的招式不在这段表态里，在下一句：</p>
+<blockquote><span class="en">"Pacing the Frontier" is framed as — and I believe motivated by — a concern about safety, but it also happens to address several distinct problems faced by the frontier labs.</span><span class="zh">「放慢前沿」被包装成——我也相信其动机确实是——对安全的关切；但它<strong>恰好</strong>同时解决了前沿实验室面对的好几个互不相干的难题。</span><cite>Frontier Overhangs，2026-09-21</cite></blockquote>
+<p>注意「我也相信其动机确实是」这半句：他不指控对方虚伪。他要说的是更麻烦的一件事——<strong>当一个道德主张恰好与说话人的每一项商业利益同向时，这个巧合本身就是需要被摆上桌面的证据。</strong></p>
+<p>然后他把这个「恰好」拆成四笔悬空的账，一笔一笔算：<strong>能力悬空</strong>（模型好到可以做出有护城河的产品了，而 harness 和模型已被证明可以分开——微软的 Copilot 现在能换模型，所以「纯能力不再直接等于护城河」）；<strong>产品悬空</strong>（前沿实验室必须趁能力还领先时把用户触点建起来，但 Meta 用一个并非最强的模型做出了最好用的个人助理产品，这是个看空信号）；<strong>定价悬空</strong>（现在的高价是算力短缺撑出来的价格保护伞，放慢训练就能把算力挪去推理、把市场全吃下来）；<strong>资本悬空</strong>（融资结构已经深入债市甚至保险浮存和养老金，AI 最好在来不及之前兑现）。</p>
+<p>最后是安全那一笔，而他在这里给出了一个反直觉的结论：<strong>就今天真实存在的风险而言，放慢前沿反而更危险。</strong>他的论证很干脆——攻击方的自动化期望值永远为正（漏洞利用失败等于原地不动，成功就是拿下系统），防守方的自动化期望值却是负的（成功只是维持现状，失败就是把系统搞挂或引入新漏洞）。所以攻击方会全自动，防守方会坚持让人待在回路里，而人跟不上全自动的攻击。要真正有效地防守，就得有好到能被完全信任、能自主行动而不把基础设施搞崩的模型——<strong>我们还没到那一步。</strong>他也顺手澄清了一件常被混为一谈的事：被指使去干坏事的模型是「对齐的」，这和「模型该不该自己分辨善恶」是完全不同的两个问题。</p>
+<p>整篇文章的最后一句，是这个方法的纯粹形态：</p>
+<blockquote><span class="en">Anthropic is fine with Anthropic being in the lead; anyone else requires government intervention.</span><span class="zh">Anthropic 领先的时候，Anthropic 没有意见；换成别人领先，就需要政府出手了。</span><cite>同上</cite></blockquote>
+<h2>五、他的思维方法</h2>
+<p>读一个写了十三年、近三千篇的人，最可迁移的往往不是结论。以下六条全部从上面那些文章里归纳出来，不是泛泛的印象。</p>
+<p><strong>一、要拆一个理论，先找它的样本，不要先找反例。</strong>这是他最有辨识度的一招。举一个 Christensen 解释不了的例子，只会得到「例外总是有的」。他做的是去问「这个理论是从谁的购买行为里总结出来的」，然后发现答案是硬盘、个人电脑、抵押贷款、微处理器、软件——<strong>全是企业采购</strong>。一旦这一点成立，三个前提在消费市场同时失效，整座建筑就自己塌了，一个反例都不必举。</p>
+<p><strong>二、把「钱从哪儿来」当作第一个问题，不是最后一个。</strong>他判断一家公司会不会做某件事，不看它的技术能力，也不看高管在台上说什么，先看这件事跟它的收入结构是顺的还是逆的。Google 发明了 Transformer 却不敢发产品，柯达发明了数码相机却说服自己那是业余玩具，微软敢拿 Bing 去赌——三件看起来风马牛不相及的事，在这个问题下是同一件事。</p>
+<p><strong>三、用具体到刺眼的对象做撬棍。</strong>他解释出版业用一家台湾镜头厂，解释科技竞争格局用 1895 到 1980 年美国汽车厂的成立数量（1900 年代新成立 233 家，1980 年代 0 家），解释 AI 融资风险用 1870 年 Jay Cooke 跟北太平洋铁路那笔倒霉的协议。<strong>抽象的结构一定要挂在一个能被记住的实物上</strong>——你可能忘了「价值向两端流动」，但你不会忘记大立光和鸿海只差五倍。</p>
+<p><strong>四、把自己的概念当软件来维护。</strong>他在网站上专门建了一个 Concepts 索引，把十几年的文章挂到「聚合理论」「颠覆理论」「激励」这些概念下面。聚合理论本身有清楚的版本号：2015 年 v1，2017 年他专门写一篇非典型文章补定义和分类（并且明说「这篇没有叙事、不挂新闻，目的是给将来提供一个引用点」），2018 年补上盖茨线。<strong>他不重复自己，他升级自己。</strong></p>
+<p><strong>五、认错带日期，而且把错误归类。</strong>「我以前喊过 Google 见顶，错得很滑稽」——注意他没停在道歉上，而是接了一句诊断：「错，多半只是时机问题。」2018 年那次更彻底：他把自己五年前的模型（渐近线）整个换掉，换成一个结论完全不同的模型（期望值本身在上移）。<strong>对一个靠框架吃饭的人来说，公开给自己的框架打补丁是最贵的动作，他做得相当频繁。</strong></p>
+<p><strong>六、引原文，长段引，不转述。</strong>这是他文章里最容易被忽略、但影响最大的一个习惯。Christensen 的书、贝佐斯的股东信、巴菲特 1991 年的信、澳大利亚法案的解释备忘录、Nadella 在开发者大会上引的哲学家、乔布斯 1980 年那段还没打磨出「心灵的自行车」这个说法的原始录像——他一律整段抄进来再拆。代价是文章很长，好处是<strong>读者手里始终握着原始证据，可以随时判定他拆得对不对。</strong></p>
+<h2>六、他哪里可能是错的</h2>
+<p><strong>第一，聚合理论可能只是旧酒换了新瓶，而这个新瓶本身有害。</strong></p>
+<p>这是投资人 Lyall Taylor 在 2019 年提出的批评，也是本页读到的最有分量的一份：</p>
+<blockquote><span class="en">The problem I have with the theory is that it implies there is something fundamentally new or unique about the economics of the brave-new-world of tech, when in reality, the old economic rules still work just fine. This, in turn, creates the raw material to rationalize bubble thinking/valuations, instead of more level-headed analysis.</span><span class="zh">我对这个理论的意见是，它暗示科技这个美丽新世界的经济学有什么根本上新的、独特的东西；而实际上，老的经济学规律运转得好好的。这反过来提供了把泡沫思维和泡沫估值合理化的原材料，取代了更冷静的分析。</span><cite>Lyall Taylor，The problem with Ben Thompson's 'aggregation theory'，2019-05-20</cite></blockquote>
+<p>Taylor 的实质论点是：真正发生的事情不是「需求变得比供给重要」，而是<strong>需求侧比供给侧更集中</strong>了；这在历史上不新鲜——卡内基和洛克菲勒就是靠控制别人进入市场的基础设施发的财。他给了一个漂亮的反例：<strong>音乐流媒体</strong>。那里是供给比需求更集中（三大唱片公司对上 Spotify、Apple Music、YouTube、Amazon 等多家平台），结果就是流媒体不赚钱、唱片公司很赚钱。</p>
+<blockquote><span class="en">In Ben Thompson's parlance, it could be said that the reason is 'supply aggregation theory'. In conventional parlance, it is because the supply-side is the point in the supply chain with greater market power.</span><span class="zh">用 Ben Thompson 的说法，这大概可以叫「供给聚合理论」。用常规说法，这就是供给侧在这条链上市场势力更大而已。</span><cite>同上</cite></blockquote>
+<p>他还指出「聚合」这个词隐含了一种结构的永久性，而竞争经济里没有永久性：被压榨的那一端会想办法抱团，过度赚取的那一端迟早会被攻击。这一条在 Thompson 自己的文本里有回声——他 2017 年就把 Netflix 归为「一级聚合器」，明说这类公司「更脆弱，容易被口袋更深或商业模式不同的对手打」。所以两人的分歧或许更接近命名之争而非事实之争，但 Taylor 关于「话术会被拿去合理化估值」的警告，不是一个可以靠定义解决的问题。</p>
+<p><strong>第二，一条我没能读到的批评，只报书目事实。</strong>反垄断学者 Tim Wu 在 Medium 上写过两篇评论 Stratechery 的文章（superwuster，《Reviewing Ben Thompson's Stratechery》及其第二部分）。本页写作时这两篇被 Cloudflare 拦住、打不开，<strong>所以我没有读到原文，也不会复述它的论证。</strong>只记录它存在，有兴趣的读者请自行查证。</p>
+<p><strong>第三，他自己最大的一个预测，现在看很可能是错的，而且错得有意思。</strong></p>
+<p>2020 年 1 月，他写了《The End of the Beginning》，结论是一个当时自称「有点异端」的判断：</p>
+<blockquote><span class="en">there may not be a significant paradigm shift on the horizon, nor the associated generational change that goes with it… today's cloud and mobile companies — Amazon, Microsoft, Apple, and Google — may very well be the GM, Ford, and Chrysler of the 21st century.</span><span class="zh">地平线上可能<strong>没有</strong>下一个重大的范式转移，也没有随之而来的换代……今天这些云和移动时代的公司——亚马逊、微软、苹果、Google——很可能就是二十一世纪的通用、福特和克莱斯勒。</span><cite>The End of the Beginning，2020-01-07</cite></blockquote>
+<p>三年后，同一个人在《AI and the Big Five》开头写下：「在我看来这显然是技术的一个新纪元。」</p>
+<p>公平地说，这两句话不是直接的自相矛盾——他 2020 年那篇的主张有一半确实兑现了：AI 时代最大的赢家里有大量在位者（微软、Google、Meta、英伟达、台积电），而不是一批从零起步的挑战者，这正是他当时在说的事。但那篇文章里最强、最抓人的那个版本——<strong>范式转移本身已经结束了</strong>——没有站住。这一条值得单独记下来，因为它暴露了这个头脑的一个系统性倾向：<strong>他极擅长解释已经稳定下来的结构，而结构的稳定性正是他最容易高估的东西。</strong>Taylor 的批评和这次失手指向的是同一个方向。</p>
+<p><strong>第四，位置带来的系统性偏斜——他自己也承认了一半。</strong></p>
+<p>这个人靠订阅费生活，读者是这个行业里的高管、风投和从业者；他做 CEO 访谈，也靠这些访谈拿到别人拿不到的材料（本页读到的 2026 年那篇里，纳德拉就是在他的访谈里首次透露微软要把 harness 和模型解耦的）。他的伦理声明把能披露的都披露了，也把利益冲突降到了同行里极高的标准。但<strong>披露不等于消解</strong>：一个分析框架如果系统性地得出「聚合器的统治地位是技术结构的自然结果，传统反垄断救济基本无效」，那么它在这个行业里天然受欢迎，这件事不会因为作者不持股而改变。</p>
+<p>他的原话并不含糊。2017 年那篇给聚合器下定义的文章里，他给监管者写了三条限制：聚合器的用户关系是<strong>用户自己选的</strong>（因为服务更好），所以基于消费者福利的反垄断论证很难成立；数字市场的性质决定了<strong>聚合器可能是不可避免的</strong>，拆分或限制经营范围多半只会换一个聚合器上来；聚合器让供应商接触客户变得更简单更便宜，监管者应当小心保护这些新机会。这三条每一条都有道理，合起来却几乎构成一份「别动」的辩护。他当然不是在为谁站台——但一个从「结构决定论」出发的框架，最自然的政策结论就是「这是结构，别费劲了」，而这正是被分析对象最想听到的话。</p>
+<p><strong>最后，他自己写下过一条相当狠的自我批评，值得原样放在这里。</strong>2026 年那篇里，他在谈到自己对 AI 编程的判断时插了一段：</p>
+<blockquote><span class="en">I do, as a matter of my job, talk about things that I do not necessarily experience personally; the canonical example is my long-running analysis of and advocacy for advertising as a business model, despite the fact I run a subscription business.</span><span class="zh">出于职业，我确实会谈论一些我本人未必亲身经历过的事；最典型的例子就是我长期分析并推崇广告这个商业模式——尽管我自己经营的是订阅生意。</span><cite>Frontier Overhangs，2026-09-21</cite></blockquote>
+<p>一个把「你的商业模式就是你的命运」当招牌的人，在这里承认：他自己最出名的那套广告与聚合分析，写的是一门他从不做的生意。这不是自黑，是把自己的样本偏差摆上桌——<strong>这恰恰是第四节第三个想法要求于每一个说话人的那个动作。</strong></p>
+<h2>七、出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://stratechery.com/2015/aggregation-theory/">Aggregation Theory</a></span><span class="d">2015-07-21 · 聚合理论的原始表述：互联网让分发免费、交易成本归零，于是价值链的整合方向掉了个头，供应商被商品化，用户体验成了唯一稀缺品。后面所有东西的地基。</span></li>
+<li><span class="t"><a href="https://stratechery.com/2013/clayton-christensen-got-wrong/">What Clayton Christensen Got Wrong</a></span><span class="d">2013-09-22 · 站内最早的承重墙之一。拆低端颠覆理论的方式不是举反例，而是指出它的样本全是企业采购；「用户体验不可能太好」这条盲区就是在这里凿出来的。</span></li>
+<li><span class="t"><a href="https://stratechery.com/2018/the-bill-gates-line/">The Bill Gates Line</a></span><span class="d">2018-05-23 · 平台与聚合器的判定线（生态创造的价值是否超过创造它的公司），以及 Yelp 的案例：为什么「让 Google 用我的数据」这个诉求只会让 Google 更强。</span></li>
+<li><span class="t"><a href="https://stratechery.com/2023/ai-and-the-big-five/">AI and the Big Five</a></span><span class="d">2023-01-09 · 把「商业模式就是命运」一次性用在五家巨头身上；内含替柯达翻案的一段，以及他对 Google 搜索广告与 AI 之间那道死结的完整论证。</span></li>
+<li><span class="t"><a href="https://stratechery.com/2026/frontier-overhangs/">Frontier Overhangs</a></span><span class="d">2026-09-21 · 近期代表作。把 Anthropic 主张的「放慢前沿」拆成能力、产品、定价、资本四笔悬空的账，并论证就当下真实的安全风险而言，放慢反而扩大了危险窗口。</span></li>
+</ul>
+<p style="font-size:.9rem;color:#9aa6b2">本页另据以下篇目写成：<a href="https://stratechery.com/2014/publishers-smiling-curve/">Publishers and the Smiling Curve</a>（2014-10-28）、<a href="https://stratechery.com/2015/bloggings-bright-future/">Blogging's Bright Future</a>（2015-02-02）、<a href="https://stratechery.com/2017/defining-aggregators/">Defining Aggregators</a>（2017-09-26）、<a href="https://stratechery.com/2018/divine-discontent-disruptions-antidote/">Divine Discontent: Disruption's Antidote</a>（2018-05-02）、<a href="https://stratechery.com/2018/techs-two-philosophies/">Tech's Two Philosophies</a>（2018-05-09）、<a href="https://stratechery.com/2020/the-end-of-the-beginning/">The End of the Beginning</a>（2020-01-07）、<a href="https://stratechery.com/2021/publishing-is-back-to-the-future/">Publishing is Back to the Future</a>（2021-01-27）、<a href="https://stratechery.com/2025/tech-philosophy-and-ai-opportunity/">Tech Philosophy and AI Opportunity</a>（2025-07-08）、<a href="https://stratechery.com/about/">About / Ethics Statement</a>。作者自建的概念索引见 <a href="https://stratechery.com/concepts/">stratechery.com/concepts</a>。第六节引用的批评出自 <a href="https://lt3000.blogspot.com/2019/05/the-problem-with-ben-thompsons.html">Lyall Taylor, The problem with Ben Thompson's 'aggregation theory'</a>（2019-05-20）。</p>
+</div>
+<section class="updates" data-last-reviewed="2026-09-23" data-slug="stratechery">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-23</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
