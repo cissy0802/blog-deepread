@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dan Wang · danwang.co — 技术不写在图纸上，它长在人手上；而一个国家可以把手外包掉，然后忘记自己曾经会做什么</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="dan-wang-blog31.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 31 · danwang.co</div>
+<h1>Dan Wang<br/>技术不写在图纸上，它长在人手上——而一个国家可以把手外包掉，然后忘记自己曾经会做什么</h1>
+<p class="sub">Dan Wang（本页按他自己的署名用英文名；他的博客与著作均署 Dan Wang）· <strong>2014 年 9 月开写，到本页核对日为止十二年</strong>，站点 sitemap 共 <strong>39 篇</strong>——按博客标准这是极低的产量，平均一年三篇 · 产出曲线断得很干脆：2014–2019 年约三十篇（多为读书笔记与短论），<strong>2020 年 1 月之后六年只有九篇</strong>，其中六篇是他一年一封的「年信」（annual letter），一封动辄八千到一万五千英文词 · <strong>全站免费无付费墙</strong>，无评论区 · 明显转折有两个：<strong>2017 年他从旧金山搬去中国</strong>（先香港，后北京、上海、云南），博客从美国视角的书评变成一年一封的现场报告；<strong>2023 年他离开中国回美国</strong>，进耶鲁法学院蔡中曾中国中心写书，2025 年转去斯坦福胡佛研究所 · <strong>仍在更新</strong>：2023 年他写过「我的 2022 年信大概是最后一篇」，之后停了一年写书，2026 年 1 月 1 日又发了 2025 年信并宣布重启 · 本页通读 <strong>20 篇正文</strong>，跨度 2014 年 9 月 10 日至 2026 年 1 月 1 日：最早期（2014–2017 年初，该站前 20% 时间跨度内）<strong>5 篇</strong>，2017 年赴华与 2023 年归美两个转折的两侧均有覆盖 · 选文以<strong>他 About 页上「A few other favorites on this site」那一栏的五篇为主序</strong>（作者本人说「该读什么」优先于传播量），其中一篇他自评「我最有创造力的作品」；辅以八封年信全读与站外讨论度 · <strong>需要说明</strong>：本页没有读过他 2025 年出版的书 <em>Breakneck</em> 本身，只读了他在博客上的书讯页与两篇公开书评，涉及该书处已逐一标明</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2009 年，美国政府发现自己忘了怎么做氢弹。</p>
+<p>不是设计图丢了。设计图在。丢的是一种叫 Fogbank 的材料——氢弹里一个关键部件。会做它的那批人退休了，而怎么做从来没有被完整写下来过。政府花了几百万美元，重新把这门手艺学了一遍。</p>
+<p>Dan Wang 读到这条新闻的时候正在研究半导体。他把它写进了一篇文章，这篇文章后来成了他最被引用的东西。他的问题是：<strong>如果一个能造氢弹的国家能忘记怎么造氢弹，那我们所说的「拥有技术」到底是拥有什么？</strong></p>
+<p>他的答案是：技术有三种形态。一是<strong>嵌进工具里的</strong>（锅、炉子、光刻机）。二是<strong>写成指令的</strong>（菜谱、图纸、专利）。三是他管它叫<strong>流程知识（process knowledge）</strong>的东西——那种写不下来的手感。</p>
+<blockquote><span class="en">You can give someone a well-equipped kitchen and an extraordinarily detailed recipe, but unless he already has some cooking experience, we shouldn't expect him to prepare a great dish.</span><span class="zh">你可以给一个人一间设备齐全的厨房和一份极其详尽的菜谱，但如果他没下过厨，我们不该指望他能做出一道好菜。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+<p>厨房比喻好记，但真正狠的是它的推论。第三种形态<strong>只存在于正在干这件事的人身上</strong>。所以它不像资本那样折旧，它是要么在、要么没了。</p>
+<blockquote><span class="en">When firms and factories go away, the accumulated process knowledge disappears too.</span><span class="zh">公司和工厂一走，积累下来的流程知识也跟着消失。</span><cite>同上</cite></blockquote>
+<p>他拿这把尺子去量美国，量出一件让他念了十年的事：<strong>美国几乎不做高端工业机器人。</strong>工厂自动化系统、机床、机械臂，最好的供应商在日本、德国、瑞士。他的解释只有一句话，一个问句：</p>
+<blockquote><span class="en">How do engineers work on the design of automation systems if they don't have exposure to industrial processes?</span><span class="zh">如果工程师根本接触不到工业流程，他们怎么去设计自动化系统？</span><cite>同上</cite></blockquote>
+<p>把工厂搬走，不只是搬走了工作岗位，是切断了「造东西」反馈给「设计东西」的那条回路。三十年后你发现你连造机器的机器都不会造了——而这件事在账面上看不出来，因为产出没掉。</p>
+<p>这是他的第一个命题。<strong>第二个更奇怪：他认为想象力是经济增长的输入，不是输出。</strong></p>
+<p>这事的起点是 2015 年，他读了一本《大众机械》（Popular Mechanics）1903 年以来技术预言的合集。个人直升机、从石油里提炼黄油、把锯木屑做成饼干面团、把草打成粉撒在面包上补充维生素。他的统计结论很干净：<strong>1950 年以前的预言大多实现了，之后的大多没有，唯一的例外是通信。</strong>然后他问了一句：</p>
+<blockquote><span class="en">"High-tech" now refers almost exclusively to communications technologies… Isn't that linguistic evolution a concession that the other fields have stagnated?</span><span class="zh">「高科技」现在几乎专指通信技术……这个词义的演变，难道不是在承认其他领域都停滞了吗？</span><cite>Technological predictions of the twentieth century，2015-09-08</cite></blockquote>
+<p>两年后他把这个观察翻成了一个对经济学的指控。经济学把创新能力当成一个<strong>固定存量</strong>——只要政策对了它就会涌出来。他不信：</p>
+<blockquote><span class="en">Why do we treat innovative capacity as some kind of fixed stock, constant across time and between countries, ready to be activated as soon as policymakers have finally gotten around to legislating the right conditions in place?</span><span class="zh">为什么我们要把创新能力当成某种固定存量，跨时代跨国家都一样，只等政策制定者终于把对的条件立法定下来就能被激活？</span><cite>Definite optimism as human capital，2017-08-07</cite></blockquote>
+<p>他的替代方案是把<strong>「对未来有一个具体图景」本身算作人力资本</strong>，和教育水平并列。证据是两件冷门事：日本千禧一代在 2.8% 的失业率下不肯换工作，只要稳定；以及美国计算机专业毕业生人数被 2001 年那场短暂的互联网泡沫打下去之后，<strong>花了十五年才回到前高</strong>。</p>
+<blockquote><span class="en">The lesson of both Japanese millennials and CS grads is that recessions leave deep psychological scars that hurt risk appetites for a much longer time than the downturn itself.</span><span class="zh">日本千禧一代和计算机系毕业生共同的教训是：衰退留下的心理伤疤，损害风险偏好的时间远远长于衰退本身。</span><cite>同上</cite></blockquote>
+<p>所以他真心认为科幻电影拍得太丧是一个经济问题，并且真心提议重拍一批——《机械姬》里那个 AI 最大的愿望不是被人类接纳；《星球大战》里没有战争也没有绝地武士，讲的是星际贸易联盟治下的交易收益如何分配。他知道这听着好笑，他自己先笑了，但他不撤。</p>
+<p><strong>第三个命题是前两个的合流，也是他名声的来源。</strong>2017 年他做了一件大部分评论者不会做的事：<strong>他搬去了东西还在被造出来的那一边住。</strong>六年，香港、北京、上海、云南。2021 年他骑车从贵阳到重庆，五天翻山，然后写下：</p>
+<blockquote><span class="en">China's fourth-poorest province, I was delighted to find, has much better infrastructure than California or New York, both wealthier by orders of magnitude.</span><span class="zh">让我惊喜地发现，中国第四穷的省份，基础设施远好过加州和纽约——后两者富有的程度高出好几个数量级。</span><cite>Breakneck（书讯页），2025-07-25</cite></blockquote>
+<p>2023 年他回美国，进了耶鲁法学院。在那里他看见了镜像，于是有了那个把两边一起说完的句子：</p>
+<blockquote><span class="en">China is an engineering state, which brings a sledgehammer to problems both physical and social, in contrast with America's lawyerly society, which brings a gavel to block almost everything, good and bad.</span><span class="zh">中国是一个工程师国家，对物理问题和社会问题一律抄起大锤；美国则是一个律师社会，抄起法槌把几乎一切都挡下来——好的坏的一起挡。</span><cite>同上</cite></blockquote>
+<p>这不是「中国模式好」。他把最重的一章留给一孩政策，并说自己<strong>完全没准备好</strong>面对它的执行手段。工程师国家的毛病正在于它停不下来：</p>
+<blockquote><span class="en">Sooner or later, they treat the population as if it were another building material, to be moulded or torn apart as the circumstances demand.</span><span class="zh">迟早，他们会把人口当成又一种建筑材料，视情况需要而塑形或者拆开。</span><cite>同上</cite></blockquote>
+<p>值得注意的是，「律师」在他这里不是 2023 年才出场的反派。<strong>2018 年那篇讲流程知识的文章里，他举的「零和服务业」头号例子就是诉讼</strong>：原告律师的存在直接为被告律师创造了一个岗位。七年后他给这个国家起的名字是 <em>litigious vetocracy</em>——诉讼型否决政体。他的三个命题其实是一件事，从三个角度看：一个社会最终擅长什么，取决于它让哪种人上位、让哪双手有活干。</p>
+<p>他自己没有放过自己。关于第二个命题，他写下了别人能对他说的最狠的那句话：</p>
+<blockquote><span class="en">I concede the circularity to the argument, because optimism is probably endogenous to growth.</span><span class="zh">我承认这个论证是循环的，因为乐观大概是增长的内生变量。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<div class="glossary">
+<ul>
+<li><b>流程知识（process knowledge）</b> — 本页最核心的一个词，他自己的造词（他也接受「隐性知识 tacit knowledge」「know-how」的叫法）。指写不进指令的那部分技术能力：手感、经验、「在这一步该给多大电流」。它只存在于正在做这件事的人身上。</li>
+<li><b>确定的乐观（definite optimism）</b> — 借自 Peter Thiel 的四格分类。「确定」指对未来有一个<em>具体</em>图景（我们要造某样东西），「不确定」指只笼统相信会变好（把钱投进指数基金等着）。Dan Wang 要的是前者，而且他强调「确定」不等于「愉快」——关键是有没有图景，不是图景美不美。</li>
+<li><b>工程师国家（engineering state）</b> — 他给中国的定义：治国者以工程师为主，把国家当成一个待优化的系统，对物理问题和社会问题用同一套方法。</li>
+<li><b>律师社会（lawyerly society）</b> — 他给美国的定义：精英通道由法学院把守，程序高于结果，结果是什么都能被挡下来。</li>
+<li><b>否决政体（vetocracy）</b> — Francis Fukuyama 的词，指一个体制里能否决的人太多、能推动的人太少。他在此之上加了 litigious（诉讼型）。</li>
+<li><b>工程实践共同体（communities of engineering practice）</b> — 他从经济史学家 Brad DeLong 那里借来的词，指一个地方长期积累下来的工程人才网络。是「流程知识」的集体形态。</li>
+<li><b>比较优势（comparative advantage）</b> — 经济学基础定理：各国专做自己相对更擅长的，交换后大家都受益。它是「把工厂搬到海外是好事」的标准论证，也是他反复攻击的对象。</li>
+<li><b>出口纪律（export discipline）</b> — 产业政策术语：一家公司必须在国际市场上跟最强对手卖货，才会被迫真正变好；只吃国内市场会被养废。</li>
+<li><b>模仿欲望 / 模仿传染（mimetic desire / contagion）</b> — 法国思想家 René Girard 的理论：人的欲望是模仿他人而来的，因此人最恨的是和自己最像的人。Girard 的学生里最有名的是 Peter Thiel。</li>
+<li><b>决定性战略优势（DSA，decisive strategic advantage）</b> — Nick Bostrom 2014 年《超级智能》里的概念：一项足以达成「完全的世界支配」的技术。他 2025 年整篇文章都在反对用这个框架理解 AI 竞争。</li>
+<li><b>年信（annual letter）</b> — 他的招牌文体：一年写一封，长文，把这一年在中国看到的东西连分析带叙事写完。博客上公开的有八封（2017–2023 与 2025）。<strong>他的书是另外七封</strong>——他明说那七封是全新写的，六封关于中国，一封关于美国。</li>
+<li><b>Fogbank</b> — 美国氢弹中一个关键部件所用材料的代号。1980 年代停产，2000 年代需要复产时发现工艺已失传。</li>
+</ul>
+</div>
+
+<h2>一、一件怪事</h2>
+<p>2009 年，《琼斯母亲》（Mother Jones）杂志报道了一件事：美国政府忘了怎么做氢弹。</p>
+<p>准确地说，忘了怎么做氢弹里的一个关键部件。那个部件用一种代号 Fogbank 的材料，1980 年代停产。二十多年后需要复产，政府发现工艺没了——不是文件被销毁了，是<strong>怎么做这件事从来没有被完整地写下来过</strong>，它存在于一批具体的人手上，而这批人退休了。政府花了几百万美元，把这门手艺重新学了一遍。</p>
+<p>Dan Wang 把这条旧闻捡起来的时候正在研究半导体产业。他捡它是因为它是一个反例，一个足够荒唐的反例：<strong>一个能造氢弹的国家，能忘记怎么造氢弹。</strong></p>
+<p>他由此追问的是一个听起来很像废话的问题：当我们说一个国家「拥有某项技术」，到底是在说它拥有什么？图纸？工厂？还是别的什么东西？</p>
+<p>他给出的最极端的表述是这样的——一个思想实验，两千年的跨度往两边各拉一次：</p>
+<blockquote><span class="en">We would be capable of making few meaningful advancements if a civilization from 2,000 years in the future were able to dump blueprints on us, just as the Pharaohs and Caesars from 2,000 years in the past would have been able to do nothing with the blueprints of today.</span><span class="zh">如果一个两千年后的文明把它的图纸倾倒给我们，我们也做不出多少有意义的进展——正如两千年前的法老和凯撒拿到今天的图纸也什么都做不了。</span><cite>2019 letter，2020-01-01</cite></blockquote>
+<p>如果这句话是对的，那么全世界关于技术竞赛的公共讨论——专利数、论文数、研发支出、出口管制清单——统计的全都是那个<strong>不重要</strong>的东西。</p>
+
+<h2>二、这人是谁</h2>
+<p><strong>Dan Wang</strong>，父母都是云南人，七岁时随家人移民加拿大，在渥太华和多伦多长大，少年时参加过加拿大皇家陆军青年团。2014 年从罗切斯特大学毕业，他 About 页上写的专业是哲学（他也写过自己上了四年经济学课）。他提过那四年里他「太懵了」以至于没能问出口的几个问题——本页第四节第二个命题就是从那些没问出口的问题长出来的。</p>
+<p>他的履历里有一段不太像技术分析师的东西：费城艺术博物馆。此外是 Shopify、Flexport，然后是北京的研究机构 Gavekal Dragonomics（龙洲经讯）。<strong>2017 年他搬去中国住，一住六年</strong>，先香港，后北京、上海，2022 年上海封城前两天飞去云南，在大理住了几个月。2023 年回美国，在耶鲁法学院蔡中曾中国中心（Paul Tsai China Center）写完了他的第一本书 <em>Breakneck</em>；2025 年被历史学家 Stephen Kotkin 招去斯坦福胡佛研究所历史实验室，理由按他自己的说法是「为了离 AI 更近」。那本书 2025 年 8 月由 Norton（美）与 Penguin（英）出版，上过《纽约时报》畅销榜第三名。</p>
+<p>他这个站的副标题是 <strong>the secure transport of light</strong>（光的安全运输）。他在 About 页上解释过为什么这是他最喜欢的短语之一：它同时指光纤（让现代通信成为可能）和半导体（让现代电子成为可能）——我们该感谢贝尔，让我们能从大西洋一侧对另一侧说话，穿过海底那一卷卷阳光。然后他加了一句：这难道不是一个美妙的意象吗？<strong>一个人给自己的博客起这个名字，等于提前公布了他要写十二年的题目：那些让世界运转、而没有人看一眼的物件。</strong></p>
+<p><strong>他没有停更，但他停过一次。</strong>2023 年 7 月他在博客上写：「我的 2022 年信大概是最后一篇。现在我得给这个站另想个用处。」然后他去写书，2024 年整年没写年信。2026 年 1 月 1 日，2025 年信出现了，末尾解释：湾区太有意思了，所以决定重启。</p>
+
+<h2>三、他跟什么较劲</h2>
+<p>他十二年没放下的那个问题，可以用一句话问出来：<strong>为什么数字世界一路狂奔，而其他一切都停了？而这件事到底该怪谁？</strong></p>
+<p>他撞上这个问题的过程是可查的，因为他的博客从第一篇起就在做这件事。</p>
+<p><strong>2014 年 9 月，他这个站的第一批文章之一，干的活是替 Peter Thiel 做证据整理。</strong>标题就叫《Peter Thiel 为什么对技术创新感到悲观？》，通篇是他从 Thiel 的文章和演讲里搜集来的分类证据：能源、交通、医药、太空。他自己几乎不出声，只做资料员。其中他抄下来的一段是这样的（这是 Thiel 的话，不是他的）：</p>
+<blockquote><span class="en">It's being used to throw angry birds at pigs; it's being used to send pictures of your cat to people halfway around the world; it's being used to check in as the virtual mayor of a virtual nowhere while you're riding a subway from the nineteenth century.</span><span class="zh">它被用来把愤怒的小鸟扔向猪；被用来把你猫的照片发给地球另一边的人；被用来在你乘坐一列十九世纪的地铁时，签到成为一个虚拟的乌有之地的虚拟市长。</span><cite>Why is Peter Thiel pessimistic about technological innovation?（引 Thiel），2014-09-10</cite></blockquote>
+<p>这是一个二十二岁的人在整理别人的论点。有意思的是他接下来做了什么。<strong>他没有去替 Thiel 辩护，也没有去反驳他。他去找了一个能独立检验这件事的数据源。</strong></p>
+<p><strong>2015 年 9 月，他读了一本奇怪的小书</strong>：科幻作家 Greg Benford 编的《那个从未到来的美妙未来》，收录《大众机械》杂志 1903 至 1970 年间的技术预言，配着手绘未来主义插画。他最喜欢的一条是 1951 年的个人直升机：「这种简单、实用、万无一失的个人直升机跑车，大到能载两个人，小到能停在你家草坪上。它没有化油器会结冰，没有点火系统会散架或者失灵……」他说他爱的不是直升机，是<strong>那种承诺「一切会变容易」时的诚挚</strong>。</p>
+<p>然后他数了一遍。结论一句话：<strong>1950 年以前的预言大多实现了，之后的大多没有，唯一的例外是通信相关的一切。</strong>接着是那个把他此后十年都框住的问句：</p>
+<blockquote><span class="en">"High-tech" now refers almost exclusively to communications technologies, and the "tech industry" has become shorthand for software businesses centered around Silicon Valley. Isn't that linguistic evolution a concession that the other fields have stagnated?</span><span class="zh">「高科技」现在几乎专指通信技术，而「科技行业」已经成了以硅谷为中心的软件生意的简称。这个词义的演变，难道不是在承认其他领域都停滞了吗？</span><cite>Technological predictions of the twentieth century，2015-09-08</cite></blockquote>
+<p>这是他第一次自己拿到证据。同一篇里他还提了一个后来反复回来的追问：<strong>如果再有<em>一个</em>领域像通信那样超预期地成功，世界会是什么样？</strong>他的候选答案是能源——上世纪五十年代很多失败的预言，如果能源真的变得「便宜到不必计量」，其实都成立。</p>
+<p>到这里，问题已经清楚了，但他还差一样东西：<strong>一个能解释「为什么停了」的机制。</strong>而机制是他在半导体产业里找到的，也就是下一节第一个命题。</p>
+<p>需要说明一件事，因为它是理解这个人的关键：<strong>他不是在写「美国衰落论」。</strong>他明确说过他不认为制造业有特殊的道德价值，也承认制造业工作大多不愉快甚至危险。他要的是别的东西：</p>
+<blockquote><span class="en">I'm interested in industry because I see the maintenance of an industrial base as a precondition to building the science fiction technologies of the future.</span><span class="zh">我对工业感兴趣，是因为我把维持一个工业基础看作建造未来那些科幻技术的前提条件。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+<p>他想要的清单他也列了，毫不遮掩：便宜到不必计量的能源；火星以及更远处的殖民地；把沙漠重新变成森林；能打印基础材料的纳米技术。他给人类现在的位置打的分是：<strong>不到该到之处的 3%。</strong></p>
+
+<h2>四、他的想法，讲成「他怎么发现的」</h2>
+
+<h3>命题一：技术长在人手上，所以它可以被整个忘掉</h3>
+<p>2018 年前后，他在研究半导体。半导体是个方便的标本，因为在这个行业里，技术的三种形态肉眼可辨。台积电、英特尔、三星每家每年往前沿投进一百亿美元以上，投的是三样东西：<strong>工具、指令、流程知识。</strong></p>
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three forms of technology">
+<rect fill="none" height="300" width="640"></rect>
+<g font-family="SF Mono, Menlo, monospace" font-size="13">
+<rect fill="rgba(110,168,254,0.10)" height="58" rx="8" stroke="#6ea8fe" stroke-width="1.2" width="250" x="30" y="24"></rect>
+<text fill="#6ea8fe" font-size="14" font-weight="700" x="46" y="48">① 工具</text>
+<text fill="#93a1ae" x="46" y="70">锅、炉子、光刻机</text>
+<rect fill="rgba(110,168,254,0.10)" height="58" rx="8" stroke="#6ea8fe" stroke-width="1.2" width="250" x="30" y="100"></rect>
+<text fill="#6ea8fe" font-size="14" font-weight="700" x="46" y="124">② 指令</text>
+<text fill="#93a1ae" x="46" y="146">菜谱、图纸、专利</text>
+<rect fill="rgba(94,234,212,0.13)" height="74" rx="8" stroke="#5eead4" stroke-width="2" width="250" x="30" y="176"></rect>
+<text fill="#5eead4" font-size="14" font-weight="700" x="46" y="200">③ 流程知识</text>
+<text fill="#c8d2dc" x="46" y="222">下过厨的那双手</text>
+<text fill="#7d8794" font-size="11" x="46" y="240">写不下来 · 只存在于正在干活的人身上</text>
+<path d="M295 53 L360 53" stroke="#4a525c" stroke-width="1"></path>
+<path d="M295 129 L360 129" stroke="#4a525c" stroke-width="1"></path>
+<path d="M295 205 L360 205" stroke="#5eead4" stroke-width="1.4"></path>
+<text fill="#93a1ae" x="370" y="44">买得到</text>
+<text fill="#7d8794" font-size="11" x="370" y="62">有钱就有</text>
+<text fill="#93a1ae" x="370" y="120">抄得到</text>
+<text fill="#7d8794" font-size="11" x="370" y="138">但没经验读不懂</text>
+<text fill="#5eead4" font-weight="700" x="370" y="196">只能干出来</text>
+<text fill="#7d8794" font-size="11" x="370" y="214">工厂一走就没了</text>
+<text fill="#7d8794" font-size="11" x="370" y="232">不折旧，是要么在要么没</text>
+</g>
+</svg>
+<figcaption>技术的三种形态。公共讨论统计的是①和②，他认为决定一切的是③。</figcaption>
+</figure>
+<p>他说工具和知识产权是「容易观察的」。流程知识在半导体行业里具体是什么？他的举例一点也不玄：<strong>晶圆怎么存放、怎么进无尘室、蚀刻的不同阶段该用多大电流</strong>，以及数不清的其他东西。</p>
+<blockquote><span class="en">This kind of knowledge is won by experience. Anyone with detailed instructions but no experience actually fabricating chips is likely to make a mess.</span><span class="zh">这种知识是靠经验挣来的。一个手握详尽指令但从没真正造过芯片的人，多半会搞得一团糟。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+<p>然后是那个他自己也知道好用、后来被到处转引的厨房比喻。之所以好用，是因为它一句话解释了为什么「技术转移」这么难：图纸和设备都给你了，还是不行。</p>
+<p>到这里都还只是老话新说——隐性知识（tacit knowledge）这个概念在他之前就有。<strong>他真正的那一下，是翻转了工具和知识产权的地位。</strong></p>
+<blockquote><span class="en">Instead of seeing tools and IP as the ultimate ends of technological progress, I'd like to view them as milestones in the training of better scientists, engineers, and technicians.</span><span class="zh">与其把工具和知识产权看作技术进步的最终目的，我更愿意把它们看作「培养出更好的科学家、工程师和技师」这件事的里程碑。</span><cite>同上</cite></blockquote>
+<p>这是一个彻底的颠倒。通常我们说：培养人才，是为了做出东西。他说：<strong>做出东西，是人被训练到了某个程度的证明。</strong>发明是收据，不是货物。</p>
+<p>顺着这个颠倒往下走，一系列结论自己就出来了。</p>
+<p><strong>第一，「工厂搬走但高价值工作留下」是一笔看不见的亏损。</strong>因为搬走的不是低端环节，是学习回路的下半截。他的那句话是本命题里最冷的：公司和工厂一走，积累下来的流程知识也跟着消失。</p>
+<p><strong>第二，他找到了一个能检验这个说法的硬证据，而且这个证据是一件「缺席」。</strong>他没有去比较 GDP 或专利数——他去看美国<em>没有</em>什么。答案是：高端精密制造设备。工厂自动化系统、机床、机械臂、各类生产机械，最先进的供应商在日本、德国、瑞士。</p>
+<blockquote><span class="en">I don't see enough Americans being troubled by the idea that America isn't making advanced industrial robots. It might be fine to think that robots will be doing all the manufacturing work in the future; but someone has to build these robots, and own the IP of advanced robotmaking, and for the most part, that someone is not the US.</span><span class="zh">我没见到足够多的美国人为「美国不造先进工业机器人」这件事感到不安。认为未来所有制造工作都会由机器人来做，这或许没问题；但总得有人来造这些机器人、拥有先进机器人制造的知识产权——而这个人，大体上不是美国。</span><cite>同上</cite></blockquote>
+<p>而他给出的因果只有一个问句：如果工程师根本接触不到工业流程，他们怎么去设计自动化系统？这是他最典型的论证姿势：<strong>不堆数据，而是指出一个位置上应该有东西却空着，然后问它为什么空着。</strong></p>
+<p><strong>第三，他给出了一个正面的解决方案，而这个方案来自日本一座木头房子。</strong>伊势神宫每二十年拆掉重建一次，一千二百年来反复如此。他喜欢这件事不是因为它古雅，而是因为它是<strong>一套刻意设计的知识保存装置</strong>：</p>
+<blockquote><span class="en">These people understand that it's too difficult to write down every instruction necessary for building even a single wooden structure; imagine how much more difficult it is to create instructions for a machinery part, or a chip.</span><span class="zh">这些人明白，哪怕只是一座木结构建筑，要把建造它所需的每一条指令都写下来，都太难了；那么为一个机械零件、或者一块芯片写下指令，该有多难。</span><cite>同上</cite></blockquote>
+<p>老一代交给下一代的时候说的那句话，他也抄下来了：「下一次，我把这些事交给你们。」他说定期拆掉重建一座木庙听起来不像是在好好利用时间，但他不确定当地人的优先次序真的搞错了。</p>
+<p><strong>第四，这个命题给了他一个对经济学的持久不满，而这份不满措辞越来越不客气。</strong>2017 年他说他把「抵抗工业衰退」的想法讲给经济学家，得到的回应让他不满意：要么是同义反复（「按定义，外包改进了现状」），要么是算术（比较优势，李嘉图）。到 2021 年，同一件事的措辞变成了：</p>
+<blockquote><span class="en">That static model constructed by economists with the aim of seducing undergrads has leaked out of the lecture hall and morphed into a political justification for only watching as American communities of engineering practice dissolved.</span><span class="zh">那个由经济学家为了诱惑本科生而搭起来的静态模型，已经漏出了讲堂，变形成了一个政治借口——让人只是袖手旁观，看着美国的工程实践共同体一个个解体。</span><cite>2021 letter，2022-01-01</cite></blockquote>
+<p><strong>第五，也是他这个命题最不好受的推论：它同时是对中国的看涨理由。</strong>这一点他 2019 年就写明了，而且写得毫不含糊。如果知识随着生产走，那么全世界的东西在哪里造，边际上的学习就在哪里发生。</p>
+<blockquote><span class="en">Today, Chinese workers produce most of the world's goods, which means that they engage more than anyone else in the technological learning process.</span><span class="zh">今天中国工人生产了世界上大部分商品，这意味着他们比任何人都更多地参与了技术学习的过程。</span><cite>2019 letter，2020-01-01</cite></blockquote>
+<p>他拿 iPhone 做例子，而且明确地先承认了对手的说法：中国工人只做组装、零件多是外国的、利润全被苹果拿走——「这个说法是真的，但它漏掉了很多东西。」漏掉的三样：即使大部分工人学不到什么，<strong>几千个产线工程师成了世界上最懂电子组装的人</strong>；中国品牌接入同一条供应链后合计占了全球智能手机销量的四成；以及每台手机里中国贡献的增加值，十年里<strong>从 4% 涨到 25%</strong>。</p>
+<p>这个命题因此有一个让他自己也不舒服的对称性：<strong>同一条定律，解释了美国为什么造不出机器人，也解释了中国为什么终将造得出芯片。</strong>他没有因为后一半不好听就把它藏起来。这是本页最值得记住的一点。</p>
+
+<h3>命题二：想象力是增长的输入，不是结果</h3>
+<p>这是他自己最喜欢的一篇，也是他自己承认写得最糟的一篇。他的原话是：「我认为《确定的乐观作为人力资本》是我最有创造力的作品。不幸的是，它迂回而散漫。」——所以他隔一年又写了一篇（就是命题一那篇）来把前提摆直。</p>
+<p>它的起点是另一个人的一篇短文。经济史学者 Anton Howes 问：<strong>创新是人性的一部分吗？</strong>换句话说，人是不是天然带着一批创新能力，条件一对就会喷出来？Howes 从英国发明家的生平里得到的答案是：不是。</p>
+<p>Dan Wang 说，Howes 这个框架让他终于问出了四年经济学课上他「太懵了以至于没能问出口」的几个问题：关于未来的信念如何影响长期增长？乐观和悲观各起什么作用？想象力和干劲对增长有多重要？</p>
+<p>然后是那个最狠的问句——为什么我们要把创新能力当成某种固定存量，跨时代跨国家都一样，只等政策制定者终于把对的条件立法定下来就能被激活？</p>
+<p>他的正面主张是一个替换：<strong>把「对未来有一个具体图景」这件事本身，当作人力资本的一项，和教育水平并列。</strong></p>
+<blockquote><span class="en">In addition to education levels, human capital models should consider factors like optimism, imagination, and hope for the future.</span><span class="zh">除了教育水平，人力资本模型还应该考虑乐观、想象力、以及对未来的希望这类因素。</span><cite>Definite optimism as human capital，2017-08-07</cite></blockquote>
+<p>这里有一个关键的限定，漏掉它就会把他读成心灵鸡汤。他说的「正面图景」<strong>不要求那个未来是愉快的</strong>：</p>
+<blockquote><span class="en">When I say "positive" vision, I don't mean that people must see the future as a cheerful one. Instead, I'm saying that people ought to have a vision at all: A clear sense of how the technological future will be different from today.</span><span class="zh">当我说「正面的」图景时，我不是说人们必须把未来看成一个愉快的未来。我是说人们应该<em>有</em>一个图景：对技术的未来将如何不同于今天，有一个清晰的感觉。</span><cite>同上</cite></blockquote>
+<p>要有图景，先得有想象力。而他对怎么弄到想象力的说法非常不像经济学家：「我的意思是靠直接注射来促进想象力。」</p>
+<p><strong>他的证据是两件冷门的事，而两件都是关于伤疤的。</strong></p>
+<p>第一件在日本。彭博的一篇报道：日本失业率 2.8%，千禧一代本该有挑公司的资本，但他们几乎都不想换工作——他们要的不是高工资，是彻底的稳定。报道把这种风险厌恶归因于对上一场衰退残留的恐惧。他顺手抄下了同一家媒体另一条标题：「日本拥有全世界最阴郁的千禧一代。」他的对照组是中国：招聘方说中国的员工基础「无所畏惧」，因为两代中国人从没经历过衰退，换工作根本不觉得是在冒险。</p>
+<p>第二件在美国，而且这件更硬。他此前专门写过一篇文章问：<strong>计算机专业这么赚钱，为什么念的人这么少？</strong>很多人回应说他忽略了 2001 年互联网泡沫的后遗症。他接受这个解释，但指出这个解释比他原来的说法更悲观：</p>
+<blockquote><span class="en">It means that it took nearly 15 years for the number of graduates to recover to a previous high after a single, brief recession.</span><span class="zh">这意味着，在一场单一的、短暂的衰退之后，毕业生人数花了将近十五年才恢复到此前的高点。</span><cite>同上</cite></blockquote>
+<p>他接着算了一笔没法算的账：因为这个人才瓶颈，有多少创业公司没被创办？多少大公司人手不足？多少风投本可以给出资人赚到更高回报？然后是那句总结——衰退留下的心理伤疤，损害风险偏好的时间远远长于衰退本身。</p>
+<p><strong>这条推论有政策后果，而且他自己点了出来：它削弱了奥地利学派关于衰退的说法。</strong>如果衰退真的在人的心理上留下十五年的疤，那么把衰退看作「改善资本配置的健康调整」就不成立了，因为它造成了大量看不见的损害。他说如果我们把确定的乐观当作人力资本和生产率增长的一个函数项，我们就能在评估衰退的广泛影响时稍微严谨一点。</p>
+<p><strong>然后他做了一件让很多人把他当成怪人的事：他认真地把科幻电影当成宏观经济议题来处理。</strong>他的逻辑链很短：想象力是增长的输入；而想象未来最便宜的办法是先在书里或银幕上看到一个。而过去几十年的科幻电影主调是反乌托邦甚至虚无主义。所以：</p>
+<blockquote><span class="en">Today, the contrarian project is to present an earnest, joyful vision of the technological future. That kind of undertaking will invite mockery from commentators posting essays on Medium, but one can hope that younger, less jaded people will find attractive that daring imagination.</span><span class="zh">今天，真正逆势的项目是呈现一个诚挚、欢快的技术未来图景。这种事会招来 Medium 上写文章的评论者的嘲笑，但我们可以希望，那些更年轻、还没那么厌世的人会觉得这种大胆的想象很有吸引力。</span><cite>同上</cite></blockquote>
+<p>他提出的重拍清单是全站最有娱乐性的段落，而且它同时也是他的论证方法的展示——他不说「科幻太丧」，他给你一份具体的返工单：《极乐空间》，重点放在维持一个卫星栖息地平稳运转的后勤上。《机械姬》，里面那个人工智能最大的愿望不是被人类社会接纳。《她》，人工智能决定改善人类，而不是集体迁移到一个更高的精神平面去。《星球大战》，没有战争也没有绝地武士——因此也没有西斯——讲的是星际交换在贸易联盟监管下产生的收益。他还给自己的提案加了一句附注：「如果能顺手把银河贸易体制下的反补贴税和政府采购规则设计出来，加分。」</p>
+<p>紧接着他承认：「我坦白我不知道怎么把这些故事讲得好看。」——然后照样把清单留在那里。这种「我知道这听着荒唐，我不撤」的姿态，是他这个博客读起来有趣的一半原因。</p>
+<p><strong>而这个命题最可操作的一次落地，在他 2018 年的年信里，而且它是这个站上最容易被忽略的一个好主意。</strong>他从摩尔定律讲起，先把它去神化：摩尔定律不是宇宙结构里内置的自然法则，不会自动执行；它需要一场庞大的产业行动来推动。半导体行业早年定下了一个今天看来相当任意的改进基准，然后集体去兑现它。他引了一个他喜欢的说法：摩尔定律是「一座已经变成创新的混沌吸引子的钟」。</p>
+<p>于是他问了一个很怪的问题：<strong>指数级进步能不能靠「起个名字」复制出来？</strong></p>
+<blockquote><span class="en">Moore's Law turned from a neat backwards-looking observation into an obligation for the entire chips industry to keep improving… But maybe there's a handful more that are, and they await a nice label that will concentrate minds, mobilize capital, and attract talent to keep improving.</span><span class="zh">摩尔定律从一个漂亮的回顾性观察，变成了整个芯片行业必须持续改进的一项义务……但也许还有少数几个领域也能这样，它们只是在等一个好标签——一个能集中注意力、动员资本、吸引人才来持续改进的标签。</span><cite>2018 letter，2019-01-01</cite></blockquote>
+<p>他把这件事叫做「唾手可得的果子」。<strong>这是「确定的乐观」从态度变成工程的那一步</strong>：如果一个领域缺的只是一个让所有人对齐的公开承诺，那么造一个出来就是一项具体的、可以着手的工作，而不是一句劝人乐观的话。他同一篇里也点明了他最想让这件事发生在哪儿——能源，因为能源在整个经济的上游：想想如果能源成本以分而不是以美元计，AI 会有多大的腾挪空间。</p>
+<p><strong>这个命题的落点是一句很好背的话，而它其实是一份行动纲领：</strong></p>
+<blockquote><span class="en">Call me a romantic, but I'd like everyone to think more about industrial lubricants, gas turbines, thorium reactors, wire production, ball bearings, underwater cables, and all the things that power our material world.</span><span class="zh">说我浪漫也行，但我希望每个人都多想想工业润滑油、燃气轮机、钍反应堆、线材生产、滚珠轴承、海底电缆，以及所有那些为我们的物质世界供能的东西。</span><cite>同上</cite></blockquote>
+<p>这句话紧接着的下一句，是他给自己定的一条纪律——他严格遵守一条规则：绝不发帖或推文谈当下的政治；相反，他试着把更多注意力引向材料的世界。<strong>他把注意力当作一种会被耗尽的资源来管理，而管理的手段是禁令。</strong>这条禁令在他 2017 年写下它之后的九年里，基本被遵守了：这个站四十篇文章里没有一篇是关于当期政治新闻的。</p>
+
+<h3>命题三：工程师国家与律师社会——他为什么必须搬家才能想清楚</h3>
+<p>前两个命题在 2018 年就都成形了。它们合起来有一个明显的缺口：<strong>如果流程知识这么重要，为什么美国会让它流走？如果确定的乐观这么关键，为什么一个国家会集体失去它？</strong>这两个问题都不是技术问题，是政治问题。而他当时的处境答不了它们——他在美国，只能看到停滞的那一半。</p>
+<p>他的解决办法是搬家。而这件事他事先在文章里讲过，讲得像个建议：</p>
+<blockquote><span class="en">Another possibility is to leave the US, as I did. I understand that this is not an option for everyone, but for some young people at least, maybe this is a good time to spend time abroad. Get out when unproductive debate is the ambient national mood, and move to a more sane environment where you can really learn something instead.</span><span class="zh">另一个可能是离开美国，像我这样。我明白这不是每个人都有的选项，但至少对一些年轻人来说，现在也许是个出去待一阵的好时机。当无益的争论成了整个国家的环境情绪时，走开，搬到一个更清醒的环境里去，在那里你真能学到点东西。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+<p>他在中国住了六年，然后一年一封地写年信。这些年信不是游记，它们有一条很硬的分析主线，而且这条主线的判断随证据变过方向——这是这个人最值得信任的地方，所以值得按时间顺序看一遍。</p>
+<p><strong>2019 年的年信：他对中国技术的判断是「纸老虎」。</strong>这一点必须讲清楚，因为后来他被当成「看多中国」的人，而他起手是看空的。他那年的两句判断是：中国的技术根基脆弱，贸易战把这一点暴露了；但长期来看他看好。关于短期，他说得相当不留情面：</p>
+<blockquote><span class="en">In many ways, China's technology success is too much like a paper tiger, impressive in appearance but in reality not so powerful.</span><span class="zh">在很多方面，中国的技术成就太像一只纸老虎，外表可观，实际上并没那么有力。</span><cite>2019 letter，2020-01-01</cite></blockquote>
+<p>同一篇里他还顺手拆了一个当时人人都在用的框架。所有关于中国创新的讨论都在统计专利注册量、研发支出、期刊论文数——</p>
+<blockquote><span class="en">But these inputs are irrelevant if they don't deliver output, and it's not clear that they often do, neither in China nor anywhere else.</span><span class="zh">但如果这些投入交付不出产出，它们就无关紧要——而且不清楚它们是否经常交付得出，在中国如此，在其他任何地方也如此。</span><cite>同上</cite></blockquote>
+<p>而他对当时最热的那个行业的评价，放在 2019 年是相当逆势的：「我觉得很荒唐，全世界居然认定消费互联网是技术的最高形式。」他甚至说 Facebook 和腾讯对技术发展可能是净负面的，理由是它们把聪明孩子从材料科学和半导体制造里抽出来，送进了广告优化和游戏开发。</p>
+<p><strong>2019 年的年信里还有一句预测，而它被后面几年证实了：</strong></p>
+<blockquote><span class="en">The US responded to the rise of the USSR and Japan by focusing on innovation; it's early days, but so far the US is responding to the technological rise of China mostly by kneecapping its leading firms. So instead of realizing its own Sputnik moment, the US is triggering one in China.</span><span class="zh">美国当年应对苏联和日本的崛起，靠的是转向创新；现在还早，但到目前为止，美国应对中国技术崛起的方式主要是打断其领先企业的腿。于是美国没有迎来自己的斯普特尼克时刻，而是在中国触发了一个。</span><cite>同上</cite></blockquote>
+<p><strong>2022 年的年信：他学会了从反方向看国家。</strong>这一年上海封城，他在封城前两天飞去了云南，一待几个月。那封年信的第一句只有七个词：</p>
+<blockquote><span class="en">Mountains offer the best hiding places from the state.</span><span class="zh">群山提供了躲避国家的最佳藏身处。</span><cite>2022 letter，2023-03-04</cite></blockquote>
+<p>他那年读的最好的书是 James C. Scott 的《逃避统治的艺术》，讲东南亚高地上千百年来逃离国家的山民。而他在云南给这套理论找到了一个完美的当代小标本，值得完整讲一遍，因为它是全站最好的一个例子。</p>
+<p>大理某村。2015 年习近平视察，要求地方官员治理洱海。官员随即动手，措施之一是<strong>把从山上流下的水全部改道引入洱海</strong>。结果是原本喝山泉水、用山泉水做食物的村民，只能改喝处理过的自来水。</p>
+<blockquote><span class="en">It was not that they objected to cleaning up the lake. It was that a word from the top leader prompted local officials to deny them the best water in China, while making an at-best-minimal contribution to the cleanup.</span><span class="zh">他们反对的不是治理这个湖。他们反对的是：最高领导人一句话，就让地方官员剥夺了他们中国最好的水，而这对治湖的贡献顶多算微小。</span><cite>同上</cite></blockquote>
+<p>村民的对策是再往山上爬，铺一条新管子，把水引到村里的寺庙。而结局是这个故事的精华：</p>
+<blockquote><span class="en">Local officials came to the village temple not with hammers to smash these pipes, but with their own jugs for filling up.</span><span class="zh">地方官员来到村里的寺庙，手里拿的不是砸管子的锤子，而是自己的水壶，来打水。</span><cite>同上</cite></blockquote>
+<p>他说村民教他自带水壶去那里灌水。<strong>这个故事之所以重要，不是因为它可爱，而是因为它是他后来那个「工程师国家」判断的两面：自上而下的系统性改造能力极强，而它对局部现实的分辨率极低；同时，它的执行末端由人构成，而人会自己找缝隙。</strong></p>
+<p><strong>2023 年，他离开中国，进了耶鲁法学院。镜像就是在这里出现的。</strong>他自己说得很清楚：律师社会这个想法之所以变得显而易见，是因为他 2023 年回到了美国，而蔡中曾中国中心把他放进了耶鲁法学院内部。他看到的是：精英法学院无论过去还是现在，为有志者提供了进入美国政府高层最便捷的路径。</p>
+<p>于是有了那个把两边一起说完的句子——中国是一个工程师国家，对物理问题和社会问题一律抄起大锤；美国则是一个律师社会，抄起法槌把几乎一切都挡下来，好的坏的一起挡。以及那个诊断：美国精英中律师的主导地位，帮助把美国变成了一个「诉讼型否决政体」。</p>
+<p><strong>这里有一件只有按时间顺序通读才看得出来的事，而它是本页最想让你记住的一个发现。</strong></p>
+<p>「律师」在他这里不是 2023 年才出场的反派。<strong>2018 年那篇讲流程知识的文章里</strong>，他在论证「服务业靠不住」时，举的头号例子就是诉讼：</p>
+<blockquote><span class="en">Too many service jobs are meant to cancel out the efforts of other service jobs, for example in litigation, where a plaintiff's lawyer creates a job for the defendant's lawyer.</span><span class="zh">太多服务业岗位的作用是抵消另一些服务业岗位的努力，比如诉讼——原告律师的存在为被告律师创造了一个岗位。</span><cite>How technology grows，2018-07-24</cite></blockquote>
+<p>同一篇文章里，他还在一个括号里顺手把另一根线接上了：他说英国「优先重视辩论和思考」的政策失败了，然后补一句——「我还想说，这种文科对论辩的强调把大学变成了 Girardian 恐怖的孵化器。」</p>
+<p>也就是说：<strong>零和的服务业、模仿欲望催出的精英竞赛、以及律师主导的否决政体，是同一个东西在三个尺度上的形状。</strong>2017 年他写过一篇专门讲美国大学是「模仿传染的完美孵化器」的文章，结论是那里的人被训练成了「最大的心事是让同侪圈刮目相看」的人。2019 年他把这条线接到了香港的精英身上。2025 年他把它接到了整个美国体制上。他花了八年把一条线拉完，而这条线每一段都在博客上，可以逐段检验。</p>
+<p><strong>最后，这个命题最重要的一半是它的否定式：他不认为美国该学中国。</strong>他把书里最重的一章给了一孩政策，并且说自己完全没有准备好去研究其执行的残酷——那种残酷只有通过大规模绝育和强制堕胎才可能实现。他的结论：</p>
+<blockquote><span class="en">The problem is that China's leadership just can't stop at physical engineering. Sooner or later, they treat the population as if it were another building material, to be moulded or torn apart as the circumstances demand. That's why America shouldn't look to China as the model.</span><span class="zh">问题在于中国的领导层就是没法停在物理工程上。迟早，他们会把人口当成又一种建筑材料，视情况需要而塑形或者拆开。这就是为什么美国不该把中国当成模板。</span><cite>Breakneck（书讯页），2025-07-25</cite></blockquote>
+<p>他给共产党的定性也写在同一页，是一句典型的他式压缩：「我对共产党顺手的表述是，它是一个带大歌剧特色的列宁主义技术官僚制——务实，直到它崩塌成荒诞。」</p>
+<p>而他给美国开的药方是个反高潮，而且反得很刻意：<strong>美国不必变成中国。</strong>他说达到法国、日本或西班牙的建造成本水平就够了。他对美国的判断留在那句话上：太多地方的美国，感觉像一个曾经伟大的文明保存良好的废墟。</p>
+
+<h2>五、他的思维方法</h2>
+<p>他的结论会过时——他自己 2019 年的判断和 2025 年的判断就不一样。但他干活的方式不会。</p>
+<p><strong>一、把搬家当研究方法。</strong>这是他最不可复制也最该被记住的一条。他没有靠读更多的中国研究来理解中国，他去住了六年，把办公地点从旧金山换到香港、北京、上海。而他归美国之后，第二个洞察（律师社会）同样来自换位置——不是读法学文献，是被塞进一所法学院里坐着。他对这个方法的原理有过一句一般性的表述，写在他第一封年信里：</p>
+<blockquote><span class="en">One can learn more by traveling to new places, being social in different ways, reading new types of books, changing jobs or professions, moving to a new place, by doing better and by doing more.</span><span class="zh">一个人可以通过去新的地方、以不同的方式社交、读新类型的书、换工作或换行业、搬到一个新地方、做得更好以及做得更多，来学到更多。</span><cite>2017 letter，2018-01-01</cite></blockquote>
+<p>那封年信的主命题是一个很反常识的东西：<strong>学习速度应该随时间加速，而不是减速。</strong>他说把知识增长率类比成一个国家的 GDP 增长率是个分析错误。理由有两条，而两条都是抄产业组织的：知识有<strong>网络效应</strong>（多知道一个事实，会提高你已知事实的价值），以及<strong>规模报酬递增</strong>（知道得越多，学起来越快，因为你能跳过读过的部分）。</p>
+<p><strong>二、看输出，不看投入。</strong>这是他最好用的一把刀，因为它几乎能拆掉所有关于技术竞赛的公共讨论。专利数、研发支出、论文数、博士毕业人数，全是投入。他的立场是投入不交付产出就无关紧要。这把刀对他自己也一样锋利：他对中国长期看好的理由不是中国投了多少钱，是中国工人的手上正在过多少产品。</p>
+<p><strong>三、拿「缺席」当证据。</strong>这是他最有辨识度的招式。要论证美国工业衰退，他不数就业人数（虽然他也数），他去问：美国<em>没有</em>什么？答案是高端工业机器人。缺席比在场更难被公关掉，因为没人会为一个不存在的产业发新闻稿。</p>
+<p><strong>四、拒绝停在抽象层。</strong>他的文章里几乎每个判断后面都跟着一件具体的、你能看见的东西。工程实践共同体的保存 → 伊势神宫每二十年拆一次。国家能力的限度 → 大理村民往山上铺的那根水管，和拿着水壶来打水的地方官。中国消费降级 → 上海丽思卡尔顿酒店里，一桌姑娘对着蛋糕互相拍照拍了一个多小时。这三个例子你会记住，而「他善于用具体案例论证」这句话你不会。这就是他的写法本身在证明的那件事。</p>
+<p><strong>五、把注意力当会枯竭的资源来管，手段是立禁令。</strong>他绝不写当期政治，这条他自己写下来的规则，九年里执行得近乎完整。他 2016 年大选后第一件事是退订《纽约客》，并且说自己至今为「迅速采取了决断行动」感到自豪。这不是幽默，这是方法：他认定关于政治丑闻的注意力是被浪费掉的、而且会永久损伤脑子的东西——他的措辞是很多年轻聪明人的头脑会被这种痴迷「永久损容」。</p>
+<p><strong>六、把最枯燥的一手材料读到底。</strong>这是他最不浪漫、也最能说明他是个什么样的分析者的一条。2020 年他<strong>读完了《求是》那一年的每一期</strong>——党的理论旗舰刊物，一月两期。他给外人的描述是：《求是》读起来像《纽约客》和《联邦公报》的杂交产物。而他为什么读得下去，他自己给了理由：他当时的主要工作是研究美国的制裁体系（商务部的出口管理条例、财政部基于 IEEPA 的授权），而<strong>党的讲话和美国的法规是同一种文体</strong>——都由深奥的、正式的语言构成，引用更晦涩的文本，而那些文本本身又暗示着更遥远、更可怕的真相。他顺手下了一个结论：美国的制裁律师读《求是》大概会读得很开心。</p>
+<p>这一条和前面五条是一套：<strong>看输出不看投入、拿缺席当证据、去现场住着，加上把没人愿意读的官方文本一页页读完。</strong>这四样凑齐，才解释了为什么他的判断比大多数中国观察者耐放。</p>
+<p><strong>七、用低频对抗新闻周期。</strong>他一年写一封信，八千到一万五千词。这个形式本身就是一个论点：如果你只在年底写一次，你就不会去写那些只在某一周重要的东西。他对这个形式的自述是：年信的核心是反思这一年他所看到的，主要关于中国，其中他试图把大量分析洞察与某种叙事成分结合起来。</p>
+<p><strong>八、他把自己的判断降权，而且是明文降权。</strong>「工程师国家对照律师社会，不是一个能解释关于美国和中国的一切的宏大理论。」这句话是他自己在书讯页上写的。他给出的定位是：这本书根植于他 2017 至 2023 年在中国生活的亲身经验，他提供这个框架是为了理解晚近的过去并思考接下来可能发生什么。<strong>把一个框架标定为「够用的透镜」而不是「真理」，是本页所有方法里最难学的一条。</strong></p>
+<p><strong>九、他也在方法上留了一句关于新工具的诚实记录。</strong>他明说自己刻意不在这本书的任何部分使用 AI。而他对自己现在使用 AI 的理由给得很具体：他把 AI 当成「智识上四处游荡者的绝佳伴侣」，逛完艺术展可以拷问它刚看到的东西，听完弦乐四重奏可以就刚听到的东西好好聊一场。他甚至举了自己实际问过的一个问题：「为什么西班牙发展出了如此凶狠的宗教裁判所，而奥地利的天主教却感觉相对愉快？」——这个例子比任何关于 AI 的宏论都更能说明他觉得它有什么用。</p>
+
+<h2>六、他哪里可能是错的</h2>
+<p><strong>第一，他这个框架的两半不一样厚，而薄的那半是美国。</strong>这是公开书评里最集中的一条批评，两位署名评论者从不同角度说了同一件事。</p>
+<p>Dylan Gyauch-Lewis 在 <em>The Sling</em> 的书评里指出几条具体的问题：这个框架里「美国律师社会那一半被带进来的时候更站不住脚」；书里没有确立美国<em>什么时候</em>从工程师社会变成了律师社会，也没有给出判断「法条主义到什么程度才算过载」的标准；<strong>而按 Wang 自己使用的人均律师数这个指标，有好几个国家的人均律师比美国多，却没有面临同等的建造困难</strong>——这一条直接打在他的度量衡上。此外，他「几乎没有处理律师社会在保护公众免受强势利益集团或腐败政权侵害方面的必要性」。</p>
+<p>Charles Yang 在 <em>American Affairs</em> 的书评里则说：这本书「缺少关于工程师在政府中的影响的硬数据的严谨性」；<strong>美国历史上从来没有过政府中工程师占很高比例的时期</strong>——如果没有，那「美国从工程师社会堕落成律师社会」这个叙事本身就需要重写；而且他指出，Wang 描述的工程师国家的某些特征，<strong>在某种程度上是威权政体的一般特征</strong>，而不是「工程师治国」独有的。这条反驳的分量最重，因为它指向一个替代解释：一孩政策的残酷也许不是因为执行者是工程师，而是因为执行者不受制约。如果是这样，那「工程师 vs 律师」这条轴就选错了变量。</p>
+<p>（本页对这两篇书评的引述来自它们的公开原文；上面的中文是转述，不是逐字直译。<strong>而 <em>Breakneck</em> 这本书本身，本页没有读过</strong>——所以本页只报告书评中可核对的批评要点，不评判它们在书中是否成立。）</p>
+<p><strong>第二，他最诚实的那条批评是自己写下的，而且没人比他写得更狠。</strong>关于确定的乐观，整套论证有一个致命的循环：乐观促成增长，但乐观本身多半是增长的产物。这个问题他不是被人指出来才承认的，他自己在下一篇文章里主动交了出来——他承认这个论证是循环的，因为乐观大概是增长的内生变量。</p>
+<p>他的辩护也很坦白：他说与其挥手说增长归根结底靠运气（这是他引的 Bryan Caplan 的立场），他更愿意换一个方式挥手，说增长归根结底靠一个选择乐观的决定。<strong>「换一个方式挥手」是他自己的措辞。</strong>一个人这样描述自己的核心论证，你很难指责他隐瞒——但循环还是循环，这个命题至今没有一个能被证伪的形式。</p>
+<p><strong>第三，他的立场有一个结构性的偏斜，而且这个偏斜和他最大的优势是同一件事。</strong>「我在那里住了六年」是一个极强的权威来源，也是一个极难反驳的权威来源。当他和一个没去过的人有分歧时，他手上永远有这张牌。而亲历者有亲历者的系统性偏差：他见到的中国是北京、上海、深圳和大理的中国——他自己也在 2021 年的年信里承认，粤港澳大湾区对他「多少还是个谜」，因为他住的是衰落的那一半香港，而不是长起来的那一半深圳。</p>
+<p><strong>第四，一个他没追到底的推论。</strong>他关于服务业的判断有相当一部分依据是「零和」：律师、合规、广告、游说，互相抵消。但他自己的工作——技术分析、研究机构、写书、上播客——也在这个门类里。他从没为此辩护过，也没说过分析工作为什么不零和。这不是一个致命反驳（他的论点是<em>太多</em>服务业岗位零和，不是全部），但一个把「暴露于工业流程」看得那么重的人，值得多说一句他自己的岗位在他这套体系里的位置。</p>
+<p><strong>第五，他对自己所处圈子的批评比对自己的批评更锋利，而这一点值得记在他的功劳簿上。</strong>他 2025 年那封信里对硅谷的判词毫不留情：硅谷的运动更像羊群，「风向一变，人们就会归队」——他管这叫「硅谷的软列宁主义」。他把旧金山和北京并列为他住过的最封闭的两座城市，理由是：那是人们愿意每天冒着末日风险去换取乌托邦的地方。而对于他所在的这个行业最热的信念，他划得很干净：他不是 AI 怀疑论者，他只怀疑那个把唤醒超级智能当成最终目标的「决定性战略优势」。他说 AI 讨论落进乌托邦或末日太快，这是一场帕斯卡赌注——我们确信赌注的值是无限的，但不知道是哪个方向。然后是他对这一切的回答，一句可以拿去当口号的话：</p>
+<blockquote><span class="en">Call me a romantic, but I believe that there will be a future, and indeed a long future, beyond 2027. History will not end. We need to cultivate the skill of exact thinking in demented times.</span><span class="zh">说我浪漫也行，但我相信 2027 年之后会有一个未来，而且是一个漫长的未来。历史不会终结。我们需要培养一种本领：在疯癫的时代里精确地思考。</span><cite>2025 letter，2026-01-01</cite></blockquote>
+
+<h2>七、出处</h2>
+<ul class="reads">
+<li><a href="https://danwang.co/how-technology-grows/"><span class="t">How technology grows</span></a>（2018-07-24）<span class="d">流程知识的完整论证，也是全站被引用最多的一篇。技术的三种形态、厨房比喻、伊势神宫、美国为什么不造工业机器人、服务业为什么靠不住（诉讼作为零和的头号例子就在这里）、以及他自己承认论证循环的那一句。他自称写这篇是为了把上一篇的前提摆直。</span></li>
+<li><a href="https://danwang.co/definite-optimism-as-human-capital/"><span class="t">Definite optimism as human capital</span></a>（2017-08-07）<span class="d">他自评「我最有创造力的作品」，同时自评「迂回而散漫」。想象力作为人力资本的核心主张、日本千禧一代与美国计算机系毕业生那两条伤疤证据、科幻电影重拍清单、以及他给自己定的「绝不写当期政治」那条规矩。</span></li>
+<li><a href="https://danwang.co/2019-letter/"><span class="t">2019 letter</span></a>（2020-01-01）<span class="d">八封年信里分析密度最高的一封，也是理解他中国判断的基准点。「纸老虎」；投入不等于产出；消费互联网不是技术的最高形式；iPhone 供应链十年里中国增加值从 4% 到 25%；「美国在中国触发了一个斯普特尼克时刻」。后半段转向科幻与 Philip K. Dick，把香港精英读成 PKD 小说里的人物。</span></li>
+<li><a href="https://danwang.co/2022-letter/"><span class="t">2022 letter</span></a>（2023-03-04）<span class="d">上海封城那年他躲在云南写的一封，开篇第一句是「群山提供了躲避国家的最佳藏身处」。James C. Scott 式的国家视角、大理那根水管和拿水壶来打水的地方官、以及他后来在书里接上的个人来源：山地人对国家的怀疑。</span></li>
+<li><a href="https://danwang.co/breakneck/"><span class="t">Breakneck: China's Quest to Engineer the Future</span></a>（2025-07-25）<span class="d">书讯页，不是书。工程师国家与律师社会那个句子的原始出处、「带大歌剧特色的列宁主义技术官僚制」、一孩政策那一章、以及他自己给这个框架划的边界（「不是一个能解释一切的宏大理论」）。后半段是关于写书、读书和吃饭的反思，包括他判断一本书值不值得读的几条实用信号。</span></li>
+</ul>
+<p style="font-size:.86rem;color:#7d8794">本页其余引用依次出自：<a href="https://danwang.co/why-is-peter-thiel-pessimistic-about-technological-innovation/">Why is Peter Thiel pessimistic about technological innovation?</a>（2014-09-10，站上最早的文章之一）、<a href="https://danwang.co/technological-predictions-twentieth-century/">Technological predictions of the twentieth century</a>（2015-09-08）、<a href="https://danwang.co/the-life-of-philip-glass/">The life of Philip Glass</a>（2015-07-30）、<a href="https://danwang.co/melancholy-laszlo-foldenyi/">Laszlo Foldenyi's Melancholy</a>（2016-10-16）、<a href="https://danwang.co/shenzhen-smartphones/">How smartphones made Shenzhen China's innovation capital</a>（2016-11-06）、<a href="https://danwang.co/yunnan-unglobalized-part-of-the-world/">Yunnan: an unglobalized part of the world</a>（2017-04-17）、<a href="https://danwang.co/why-so-few-computer-science-majors/">Why are there so few computer science majors?</a>（2017-05-29）、<a href="https://danwang.co/college-girardian-terror/">College as an incubator of Girardian terror</a>（2017-06-25）、<a href="https://danwang.co/2017-letter/">2017 letter</a>（2018-01-01）、<a href="https://danwang.co/2018-letter/">2018 letter</a>（2019-01-01）、<a href="https://danwang.co/2020-letter/">2020 letter</a>（2021-01-01）、<a href="https://danwang.co/2021-letter/">2021 letter</a>（2022-01-01）、<a href="https://danwang.co/technological-momentum/">China notes, July '23: on technological momentum</a>（2023-07-18，他宣布年信到此为止的那篇）、<a href="https://danwang.co/2023-letter/">2023 letter</a>（2024-01-23）、<a href="https://danwang.co/2025-letter/">2025 letter</a>（2026-01-01，重启之作，主题是硅谷与 AI），以及他的 <a href="https://danwang.co/about/">About</a> 页（履历，以及他自己列的「A few other favorites on this site」五篇）。两篇书评：<a href="https://www.thesling.org/on-the-optimal-ratio-of-engineers-to-lawyers-a-review-of-dan-wangs-breakneck/">Dylan Gyauch-Lewis, The Sling</a>、<a href="https://americanaffairsjournal.org/2025/11/the-engineering-state/">Charles Yang, American Affairs</a>。博客首页：<a href="https://danwang.co/">danwang.co</a>。</p>
+</div>
+<section class="updates" data-last-reviewed="2026-09-29" data-slug="dan-wang">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-29</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
