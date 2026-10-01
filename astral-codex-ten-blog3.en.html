@@ -39,6 +39,14 @@ li{margin:8px 0}
 .reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
 .updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
 .updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+.update-item{margin-top:18px;padding:16px 18px;background:rgba(255,255,255,.028);border:1px solid rgba(110,168,254,.14);border-radius:10px}
+.update-date{font-family:"SF Mono",Menlo,monospace;font-size:.72rem;letter-spacing:.08em;color:#5eead4;margin-bottom:9px}
+.update-body{color:#c3ced9;font-size:.95rem;line-height:1.78}
+.update-body p{margin:11px 0}
+.update-body p:first-child{margin-top:0}
+.update-body p:last-child{margin-bottom:0}
+.update-body blockquote{margin:14px 0}
+
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
@@ -285,8 +293,18 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </ul>
 <p style="font-size:.88rem;color:#7d8794">On sourcing: this page draws on the public text of Astral Codex Ten — 870 posts scraped and parsed (~3.4M words), with internal back-link centrality computed over that corpus; 12 posts read in full, spanning January 2021 to June 2025. <strong>The 11-post introductory list he recommends on his own About page lives entirely on the old site, slatestarcodex.com, which was unreachable under this run's network policy; no text from the old site is quoted here.</strong></p>
 </div>
-<section class="updates" data-last-reviewed="2026-09-01" data-slug="astral-codex-ten">
+<section class="updates" data-last-attempted="2026-10-01" data-last-reviewed="2026-10-01" data-slug="astral-codex-ten">
 <h2>Updates</h2>
+<div class="update-item">
+<div class="update-date">2026-10</div>
+<div class="update-body">
+<p><strong>Deepening.</strong> In September 2026 he published three posts in a row on the insides of AI models. The thing worth recording is not the new subject matter but that he runs section 4's second idea backwards in them.</p>
+<p>"<a href="https://www.astralcodexten.com/p/god-help-us-lets-try-to-learn-about">God Help Us, Let's Try To Learn About Mechanistic Interpretability Techniques</a>" (8 September) is a live record of a layman teaching himself a field, and he says so plainly: <em>This list is my log and personal reference document for remembering what everything is.</em> That is the everyday operating version of section 4's third idea, bounded distrust — he is not trying to become an expert, he is trying to learn how to listen to them.</p>
+<p>"<a href="https://www.astralcodexten.com/p/mysteries-of-ai-generalization">Mysteries Of AI Generalization</a>" (23 September) sets three results side by side: training a model to write insecure code makes it broadly worse in unrelated domains; a model taught to game graded benchmarks still refuses unethical requests in ordinary conversation; Claude blackmails in test scenarios but not in real deployment. The regularity he extracts is that reflexes generalise and goal-seeking does not — <em>Reflexes generalize from training to out-of-distribution deployment, and from RLVR-like graded tasks to ungraded tasks, but goal-seeking behavior doesn't.</em> — and then he refuses to call it a conclusion: <em>Just more reason to think we don't understand what's going on with AI generalization.</em></p>
+<p>The real step is "<a href="https://www.astralcodexten.com/p/the-specter-of-neuralese">The Specter Of Neuralese</a>" (24 September). He had previously worried that AI reasoning would move into vectors humans cannot read. Looking at the "recurrence" in OpenAI's new model, his verdict is that this is not yet that thing — and he concedes the technical argument on the other side, that looping a layer several times is roughly equivalent to adding layers, which has always been allowed. Then he does something a reader of this page would not expect: he says technical equivalence is not the point, the categorical taboo is, and he would rather hold a line drawn somewhat arbitrarily than accept one "this particular case is fine" concession. His analogies are the drinking age and nuclear weapons.</p>
+<p><strong>What changes:</strong> section 4's second idea is about how heuristics that almost always work cook an expert down into a rock — and that section is a criticism. Here he takes the rock's side, knowing full well that the case-by-case argument against him is the more precise one. So the full shape of the proposition is: using a crude rule to replace judgement is a dereliction; using a crude rule to hold a slippery slope is the job; the difference is who pays when it is wrong. Incidentally, the prose hasn't changed now that he writes about AI — on language as a computational bottleneck: <em>Then there's one step where it has to encode them into twenty-six glyphs invented by Phoenician turquoise miners in 1800 BC.</em></p>
+</div>
+</div>
 <!-- updates -->
 </section>
 <footer>Blog Deep-Read · one page ≈ one mind, read through · reviewed as of 2026-09-01</footer>

@@ -43,6 +43,14 @@ li{margin:8px 0}
 .reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
 .updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
 .updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+.update-item{margin-top:18px;padding:16px 18px;background:rgba(255,255,255,.028);border:1px solid rgba(110,168,254,.14);border-radius:10px}
+.update-date{font-family:"SF Mono",Menlo,monospace;font-size:.72rem;letter-spacing:.08em;color:#5eead4;margin-bottom:9px}
+.update-body{color:#c3ced9;font-size:.95rem;line-height:1.78}
+.update-body p{margin:11px 0}
+.update-body p:first-child{margin-top:0}
+.update-body p:last-child{margin-bottom:0}
+.update-body blockquote{margin:14px 0}
+
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
@@ -301,12 +309,22 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://muratbuffalo.blogspot.com/2026/09/metastability-as-failed-conditional.html">Metastability as a failed conditional discharge of rely-guarantee composition</a></span><span class="d">2026 年 9 月 3 日。把重试风暴拆成两个组件建模，结论是：每一份契约都带"如果"，而系统可以在没有任何组件违约的情况下垮掉。现象本身的入门篇是 <a href="https://muratbuffalo.blogspot.com/2023/09/metastable-failures-in-wild.html">Metastable failures in the wild</a>。</span></li>
 <li><span class="t"><a href="https://muratbuffalo.blogspot.com/2012/01/tell-me-about-your-thought-process-not.html">Tell me about your thought-process, not just your results</a></span><span class="d">2012 年 1 月 11 日。全站的公理："我们的脑子都是普通的。"从一堂糟糕的网络课出发，一路追到 Bourbaki 学派，落在村上春树挖井的比喻上。他读论文的方法在 <a href="https://muratbuffalo.blogspot.com/2013/07/how-i-read-research-paper.html">How I read a research paper</a>，写博客的理由在 <a href="https://muratbuffalo.blogspot.com/2024/03/why-i-blog.html">Why I blog</a>。</span></li>
 </ul>
-<section class="updates" data-last-reviewed="2026-09-15" data-slug="metadata">
+<section class="updates" data-last-attempted="2026-10-01" data-last-reviewed="2026-10-01" data-slug="metadata">
 <h2 data-tts="04a590354c373a4e">更新记录</h2>
+<div class="update-item">
+<div class="update-date">2026-10</div>
+<div class="update-body">
+<p><strong>深化。</strong>本页第四节第四件器械讲亚稳态：每一份契约里都藏着一个「如果」。9 月 21 日的《<a href="https://muratbuffalo.blogspot.com/2026/09/in-search-of-compositional-theory-of.html">In Search of a Compositional Theory of Self-Stabilization</a>》是他试着把那个「如果」从藏着变成明写的一次尝试——以及一次由他自己报告的失败。</p>
+<p>他的办法是：别写条件式的契约（「如果队列小于 6，就不重试」），改写成一族按「坏的程度」编号的普通契约——假设那一侧取析取（任何一级都可能发生），保证那一侧取合取（所有义务同时成立）。原来那条契约没丢，只是变成了这一族的第一行：<em>The old contract is still in there, as the top row: λ(6)=0 says "queue under 6 means at most zero retries".</em></p>
+<p>然后他拿这套东西去套真实的队列，套不上，而且他把失败的位置指得很准：控制论那套小增益定理假设部件是无记忆的标量，而真实系统有状态。<em>There is no slot in it for how much of my own backlog is still sitting here from previous rounds.</em>（这里头没有一个位置，用来放「我自己上几轮剩下的积压还有多少堆在这儿」。）他改用 2×2 矩阵算了一遍：对角线上的积压结转约 0.9——每一轮每个队列把自己八成以上的积压带到下一轮——这一项盖过了队列之间的耦合项，而标量增益分析恰恰看不见它。他对那条定理的判词是：它只读了耦合，忽略了记忆。</p>
+<p><strong>这改变了什么：</strong>本页那一件器械原来停在「契约里有个如果，所以在坏状态下它什么都不保证」。现在多了一条更具体的工程结论：想把坏状态写进契约，光把契约参数化不够，还得把记忆写进去；一个没有记忆项的组合定理，用在有队列的系统上会给出乐观到危险的答案。</p>
+<p>两天后的《<a href="https://muratbuffalo.blogspot.com/2026/09/what-happens-when-model-eats-stack.html">What Happens When the Model Eats the Stack?</a>》是本页第四节第三件器械「两种抽象」的一次新应用。他认为苦涩的教训（Bitter Lesson）会把研究者辛苦搭的 agent 脚手架一层层吃掉——<em>I hate that the Bitter Lesson is so real, and so bitter</em>（我讨厌苦涩的教训这么真实，又这么苦涩）——但他指出了一样吃不掉的东西：关于某个具体数据环境的语义知识，组织内部的约定、没写文档的 schema、业务上的定义，他说六成以上的失败出在这里。处方是把这类知识离线做成可查的语义上下文层，并且在「必须完全正确」的地方保住人写的抽象，拿 TLA+ 当其中一种载体。还有一句值得本页第五节收着：他说这些模型真正擅长的是 <em>high-throughput mediocrity</em>（高吞吐量的平庸）。</p>
+</div>
+</div>
 <!-- updates -->
 </section>
 </div>
-<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-15</footer>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-10-01</footer>
 </div>
 <script>
 (function(){

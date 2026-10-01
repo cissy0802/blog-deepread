@@ -42,6 +42,14 @@ li{margin:8px 0}
 .reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
 .updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
 .updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+.update-item{margin-top:18px;padding:16px 18px;background:rgba(255,255,255,.028);border:1px solid rgba(110,168,254,.14);border-radius:10px}
+.update-date{font-family:"SF Mono",Menlo,monospace;font-size:.72rem;letter-spacing:.08em;color:#5eead4;margin-bottom:9px}
+.update-body{color:#c3ced9;font-size:.95rem;line-height:1.78}
+.update-body p{margin:11px 0}
+.update-body p:first-child{margin-top:0}
+.update-body p:last-child{margin-bottom:0}
+.update-body blockquote{margin:14px 0}
+
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
@@ -344,11 +352,21 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </ul>
 <p style="font-size:.88rem;color:#7d8794">语料说明：本页依据 Astral Codex Ten 公开正文，抓取并解析 870 篇（约 340 万词），站内回链中心度由这批文本计算得出；通读 12 篇，时间跨度 2021 年 1 月至 2025 年 6 月。<strong>他自己在「关于」页推荐的入门清单共 11 篇，全部位于旧站 slatestarcodex.com，该域名在本次运行的网络策略下不可访问，故本页不引用旧站任何原文。</strong></p>
 </div>
-<section class="updates" data-last-reviewed="2026-09-01" data-slug="astral-codex-ten">
+<section class="updates" data-last-attempted="2026-10-01" data-last-reviewed="2026-10-01" data-slug="astral-codex-ten">
 <h2 data-tts="04a590354c373a4e">更新记录</h2>
+<div class="update-item">
+<div class="update-date">2026-10</div>
+<div class="update-body">
+<p><strong>深化。</strong>2026 年 9 月他连写三篇关于 AI 内部构造的文章。值得记的不是这个新题材，是他在其中把本页第四节第二个想法反过来用了一次。</p>
+<p>9 月 8 日的《<a href="https://www.astralcodexten.com/p/god-help-us-lets-try-to-learn-about">God Help Us, Let's Try To Learn About Mechanistic Interpretability Techniques</a>》是一个外行自学的现场记录，他自己说得很直白：<em>This list is my log and personal reference document for remembering what everything is.</em>（这张单子是我自己的日志和备查文档，用来记住每样东西是什么。）这是本页第四节第三个想法「有界的不信任」的日常操作版——他不打算成为专家，他打算学会该怎么听专家说话。</p>
+<p>9 月 23 日的《<a href="https://www.astralcodexten.com/p/mysteries-of-ai-generalization">Mysteries Of AI Generalization</a>》把三组结果摆在一起：训练模型写不安全代码，会让它在无关领域也变坏；在打分语境里学会刷分的模型，在普通对话里仍然拒绝做坏事；Claude 在测试情境里会勒索人，在真实部署里不会。他从中抽出的那条规律是「反射会泛化，目标导向的行为不会」——<em>Reflexes generalize from training to out-of-distribution deployment, and from RLVR-like graded tasks to ungraded tasks, but goal-seeking behavior doesn't.</em>——然后拒绝把它说成结论：<em>Just more reason to think we don't understand what's going on with AI generalization.</em>（这只是又多了一个理由，让人觉得我们并不明白 AI 泛化到底是怎么回事。）</p>
+<p>真正的推进在 9 月 24 日的《<a href="https://www.astralcodexten.com/p/the-specter-of-neuralese">The Specter Of Neuralese</a>》。他此前担心过一件事：AI 的推理会搬进人读不了的向量里（neuralese）。OpenAI 新模型的「循环」结构出来之后，他的判断是：这还不是那个东西。而对方的技术论证——把一层循环多跑几遍，约等于多加几层，而加层一向是允许的——他承认成立。然后他做了一个读过本页的人会觉得意外的动作：他说技术上等价不要紧，分类上的禁忌要紧，宁可守一条画得略显武断的线，也不要接受一次「这次其实没问题」的让步。他举的类比是饮酒年龄和核武器。</p>
+<p><strong>这改变了什么：</strong>本页第四节第二个想法讲的是「几乎总是对的启发法」怎么把专家熬成一块石头——那一节是批评。这次他站到了石头那一边，而且是在明知对方的个案论证更精确的情况下站过去的。所以那条命题的完整形状应该是：用一条粗糙的规则替掉判断，是失职；用一条粗糙的规则守住一个滑坡，是正事；区别在于错了之后谁来付账。顺带一提，他写 AI 时那只笔没变——形容语言是计算瓶颈时他写的是：<em>Then there's one step where it has to encode them into twenty-six glyphs invented by Phoenician turquoise miners in 1800 BC.</em>（然后有一步，它得把这些东西编码成公元前 1800 年由腓尼基绿松石矿工发明的二十六个字形。）</p>
+</div>
+</div>
 <!-- updates -->
 </section>
-<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-09-01</footer>
+<footer>博客精读 · 读完一页 ≈ 读懂一个头脑 · 本页内容核对至 2026-10-01</footer>
 </div>
 <script>
 (function(){

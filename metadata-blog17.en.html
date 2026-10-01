@@ -39,6 +39,14 @@ li{margin:8px 0}
 .reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
 .updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
 .updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+.update-item{margin-top:18px;padding:16px 18px;background:rgba(255,255,255,.028);border:1px solid rgba(110,168,254,.14);border-radius:10px}
+.update-date{font-family:"SF Mono",Menlo,monospace;font-size:.72rem;letter-spacing:.08em;color:#5eead4;margin-bottom:9px}
+.update-body{color:#c3ced9;font-size:.95rem;line-height:1.78}
+.update-body p{margin:11px 0}
+.update-body p:first-child{margin-top:0}
+.update-body p:last-child{margin-bottom:0}
+.update-body blockquote{margin:14px 0}
+
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
@@ -315,8 +323,18 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://muratbuffalo.blogspot.com/2012/01/tell-me-about-your-thought-process-not.html">Tell me about your thought-process, not just your results</a></span><span class="d">11 January 2012. The blog's axiom: "We all have humble brains." From one terrible networking class, through the Bourbaki school, to Murakami's metaphor about digging wells. How he reads is in <a href="https://muratbuffalo.blogspot.com/2013/07/how-i-read-research-paper.html">How I read a research paper</a>; why he writes is in <a href="https://muratbuffalo.blogspot.com/2024/03/why-i-blog.html">Why I blog</a>.</span></li>
 </ul>
 
-<section class="updates" data-last-reviewed="2026-09-15" data-slug="metadata">
+<section class="updates" data-last-attempted="2026-10-01" data-last-reviewed="2026-10-01" data-slug="metadata">
 <h2>Updates</h2>
+<div class="update-item">
+<div class="update-date">2026-10</div>
+<div class="update-body">
+<p><strong>Deepening.</strong> Section 4's fourth instrument is metastability: every contract has an "if" hidden inside it. "<a href="https://muratbuffalo.blogspot.com/2026/09/in-search-of-compositional-theory-of.html">In Search of a Compositional Theory of Self-Stabilization</a>" (21 September) is his attempt to drag that "if" out into the open — and a failure he reports himself.</p>
+<p>His approach: stop writing conditional contracts ("if the queue is under 6, no retries") and write instead a parametric family of ordinary contracts indexed by how bad things are — assumptions disjoined (any level could occur), guarantees conjoined (all obligations hold at once). The old contract isn't lost, it becomes the family's first row: <em>The old contract is still in there, as the top row: λ(6)=0 says "queue under 6 means at most zero retries".</em></p>
+<p>Then he tries it on real queues, it doesn't fit, and he locates the failure precisely: the small gain theorem from control theory assumes memoryless scalar components, and real systems have state. <em>There is no slot in it for how much of my own backlog is still sitting here from previous rounds.</em> He redoes the analysis with a 2×2 matrix: the diagonal backlog carryover is around 0.9 — each queue drags more than 80% of itself into the next round — and that term dominates the cross-queue coupling, which is exactly what scalar gain analysis cannot see. His verdict on the theorem is that it reads only the coupling and ignores the memory.</p>
+<p><strong>What changes:</strong> that instrument used to stop at "there's an if in the contract, so in a bad state it guarantees nothing". There is now a sharper engineering conclusion: to write bad states into a contract, parameterising the contract is not enough — you have to write the memory in too, and a composition theorem with no memory term will give dangerously optimistic answers on any system with queues.</p>
+<p>Two days later, "<a href="https://muratbuffalo.blogspot.com/2026/09/what-happens-when-model-eats-stack.html">What Happens When the Model Eats the Stack?</a>" applies section 4's third instrument, the two kinds of abstraction, to something new. He expects the Bitter Lesson to eat the agent scaffolding researchers painstakingly build, layer by layer — <em>I hate that the Bitter Lesson is so real, and so bitter</em> — but he names one thing it cannot eat: semantic knowledge of a specific data environment, an organisation's conventions, undocumented schemas, business definitions. More than 60% of failures, he says, sit there. His prescription is to build that knowledge offline into a queryable semantic context layer, and to keep human-written abstractions wherever absolute correctness matters, with TLA+ as one carrier. One more line for section 5 to keep: what these models are really good at, he says, is <em>high-throughput mediocrity</em>.</p>
+</div>
+</div>
 <!-- updates -->
 </section>
 </div>
