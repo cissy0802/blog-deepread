@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gergely Orosz · The Pragmatic Engineer — Every salary survey told him he was at the ceiling. Then an offer doubled his pay.</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="the-pragmatic-engineer-blog33.html">中文 →</a></div>
+<header>
+<div class="kicker">BLOG DEEPREAD · 33 · blog.pragmaticengineer.com</div>
+<h1>Gergely Orosz<br/>Every salary survey said he had hit the ceiling. Then an offer doubled his pay.</h1>
+<p class="sub">Gergely Orosz (Hungarian, based in Amsterdam) · blog: <strong>The Pragmatic Engineer</strong> · <strong>started November 2015, roughly eleven years as of this review date</strong>; the site's sitemap lists <strong>239 posts</strong>, and it still publishes weekly — the most recent post landed four days before this review (2026-09-27) · The output curve has a visible gap: <strong>6 posts across 2015–2016, almost nothing in 2017–2018, then 11→15→20→34 per year from 2019, peaking at 63 in 2023</strong>, settling at twenty-odd per year since · <strong>Two turning points</strong>: in 2019 he shifted from "engineer writing technical notes" to "engineering manager writing about organisations and careers"; and <strong>around August 2021 the centre of gravity moved from the free blog to a paid newsletter</strong> (newsletter.pragmaticengineer.com), with the writing shifting from distilled experience toward industry reporting · <strong>On the paywall</strong>: his main output now lives behind that newsletter (he claims over a million readers, the largest technology publication on Substack, and states "I don't take sponsorships of any kind"); <strong>all 239 posts on blog.pragmaticengineer.com are free</strong>, and some newsletter pieces are later republished here for free. <strong>This page is built on that free corpus</strong>; nothing behind the paywall is counted · <strong>18 posts read in full</strong> for this page, spanning 8 November 2015 (the site's first post) to 8 July 2026: <strong>4 from the earliest period</strong> (2015-11 to 2016-03, inside the site's first 20% of elapsed time), with coverage on both sides of the 2021 turn · Selection was ordered by <strong>his own <a href="https://blog.pragmaticengineer.com/popular/">Popular Articles</a> page</strong> (what the author himself says is worth reading outranks what travelled furthest), then topped up with the primary source for each of his three main lines and with the past year's output</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Essentials</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<div class="mode-pop" id="mode-pop">
+
+<p>In July 2026, Gergely Orosz got a notice: Google had removed one of his articles from its search results over a copyright complaint.</p>
+
+<p>The article was his 2022 investigation into the collapse of Pollen, a British events-tech company. Pollen had announced $150M in fresh funding in April, then laid off a third of its staff three weeks later. After that: wages stopped, pension contributions went missing, US employees' health insurance was cut without anyone telling them. On 9 August, Atlassian got tired of the unpaid bills and suspended the company's JIRA. On 10 August, Pollen went bankrupt.</p>
+
+<p>The complaint accused him of plagiarism. The allegedly plagiarised work was a 1998 New York Post piece called <em>Band Leader Hits Winning Chord</em>. The two texts, in his words, <strong>"do not even share a single sentence"</strong>. The complainant was listed as "Ellie Piee," residing on Bouvet Island — a Norwegian dependency in the South Atlantic, often called the most remote island on Earth. <strong>Population: zero.</strong></p>
+
+<p>A person who does not exist, filing from an island where nobody lives, got Google to delist a report made entirely of verified facts. The author of that report is, nominally, a guy with a software engineering blog.</p>
+
+<p>Which is worth pausing on: <strong>why would anyone pay to erase a post from a tech blog?</strong></p>
+
+<h3>Because what he does is not what tech bloggers usually do</h3>
+
+<p>In 2016, Orosz was a principal engineer at Skyscanner in London, earning £93,000. Every salary survey told him he was well above the median — <strong>in the 90th percentile</strong>. Which is to say: at the ceiling.</p>
+
+<p>Then Uber Amsterdam made him an offer. Total compensation (salary + bonus + equity) of roughly €220,000–250,000. By year four, €283,000.</p>
+
+<blockquote><span class="en">It felt like I discovered a "secret, upper-tier" of the market that no one else knew about.</span><cite>TechPays has been acquired by Levels.fyi, 2026</cite></blockquote>
+
+<p>The worse half came next. He became a hiring manager at Uber and started recruiting, and kept running into the same candidate: strong, but unwilling to enter the process — because they believed they were already near the top of the market, and a move would get them 5–10% at best.</p>
+
+<blockquote><span class="en">I had no way of telling them "your data is wrong, this place pays a lot more!" and so several of them just never bothered to interview, assuming the most raise they would get would be 5-10%. When they could have potentially doubled their compensation…</span></blockquote>
+
+<p>There is a general shape here, and he has been circling it for a decade: <strong>almost every consequential decision a software engineer makes — which company, whether to take the offer, whether this team is normal — gets made without data.</strong> And the data is missing not because it is hard to gather, but because gathering it never pays off for any one individual, while companies are better off if nobody does.</p>
+
+<h3>So he went and gathered it</h3>
+
+<p>He collected close to 200 compensation data points from engineers in the Netherlands, and found not a normal curve with a long tail but <strong>three peaks that barely overlap</strong>.</p>
+
+<p>What sorts companies into the three is neither size nor industry, but something that sounds deeply boring: <strong>who the company benchmarks its pay against</strong>. Benchmark only against local peers and a senior role in the Netherlands pays €50,000–75,000. Benchmark against all local companies regardless of industry and it is €75,000–125,000. Benchmark against regional or global competitors (Uber, Booking.com, Stripe, Netflix) and it is <strong>€125,000–250,000+</strong>.</p>
+
+<blockquote><span class="en">There is no longer an "average" salary for software engineers in Europe / the Netherlands: just an average salary per one of the three, distinct categories.</span><cite>The Trimodal Nature of Software Engineering Salaries, 2021</cite></blockquote>
+
+<p>The crucial next sentence: data on that third tier <strong>barely exists on public salary sites</strong>. So the "average" those surveys report is not the market average at all — it is <strong>the average of the first two tiers, circulating as if it were the whole market</strong>. The "90th percentile" he saw in 2016 wasn't lying to him. It had honestly computed a number from a distribution that did not contain the tier he was about to join.</p>
+
+<h3>He ran the same move three times</h3>
+
+<p>After the article he did something most bloggers don't: <strong>he open-sourced the data and built TechPays</strong>, a salary-transparency site for Europe. In May 2026, TechPays was acquired by Levels.fyi.</p>
+
+<p>Then he applied the same method to two more invisible things. <strong>Internal organisational knowledge</strong>: at Uber he found a process built on writing design docs short and then mailing them to every engineer in the company. <strong>Engineering culture</strong>: he wrote <em>The Pragmatic Engineer Test</em>, twelve yes/no questions, with a blunt design rule — <strong>"based on things most job postings do not mention."</strong> It asks only about things a company has to confirm or deny, which is why you can walk through all twelve out loud once you have an offer in hand.</p>
+
+<p>But twelve questions can only measure what a company is willing to say. Which forced the third step, and the origin of the thing at the top of this page: <strong>he went and checked for himself.</strong> The Pollen piece required legal review and exposed him to real risk; afterwards he wrote that investigative work was not something he would venture into again. A year later he did it again — he noticed that the DevTernity conference had listed people who do not exist among its speakers for three years running, <strong>all of them women</strong>. The commit that added the first fake woman landed two hours after someone complained on Twitter that the lineup was all men. His footnote on the whole affair is the coldest line in it:</p>
+
+<blockquote><span class="en">All this took about 30 minutes of research to find out, including the pinging of contacts at Coinbase and Meta. Other people must have discovered what I did with such little effort, but it seems they said nothing.</span><cite>The DevTernity Tech Conference Listed Fake Speakers for Years, 2023</cite></blockquote>
+
+<p>It wasn't that nobody could find out. It was that nobody would say so.</p>
+
+<p>Which is why someone would pay to erase his work. For a decade he has done exactly one thing: <strong>taken what engineers cannot see — and are not meant to see — and turned it into something checkable.</strong> Pay became TechPays. Internal knowledge became a company-wide RFC. Culture became twelve yes/no questions. How a company actually died became a dated timeline. The fake complaint from Bouvet Island is the receipt: <strong>somebody at the other end is paying to keep that wall up, and the tooling is cheap enough that a person who doesn't exist can operate it.</strong></p>
+
+</div>
+
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>One strange thing: the 90th percentile, and then double</h2>
+
+<p>In 2016, Gergely Orosz was a principal engineer at Skyscanner in London, earning £93,000. He figured he was near the top, and this was not a feeling — it had data behind it: <strong>salary surveys kept telling him he was well above the median, in the 90th percentile</strong>. What more does a man making ninety-odd thousand pounds in London expect?</p>
+
+<p>Then Uber Amsterdam made him an offer. Total compensation of roughly €220,000–250,000, <strong>almost exactly double</strong>. By year four it was €283,000.</p>
+
+<p>Worth pausing here. The point is not "he changed jobs and got a raise" — that happens constantly. The strange part is this: <strong>the data telling him he was in the 90th percentile was not wildly wrong. It had simply been sampled from a world that did not include the place he was about to go.</strong> The percentile was real, as long as you accept whose percentile it was.</p>
+
+<p>He later described the moment:</p>
+
+<blockquote><span class="en">It felt like I discovered a "secret, upper-tier" of the market that no one else knew about.</span><cite>TechPays has been acquired by Levels.fyi, 2026-05-13</cite></blockquote>
+
+<p>If the story stopped there it would be one man getting lucky. What turned it into a decade-long project is that he then moved to the other side of the table.</p>
+
+<h2>Who he is</h2>
+
+<p>Gergely Orosz is Hungarian, based in Amsterdam. His career, in his own ordering: Skyscanner; Skype/Microsoft (he was on the team that shipped Skype on Xbox One, and also worked on Skype for Web); Uber, where he worked on the rewrite of the distributed payments system and open-sourced RIBs, Uber's mobile architecture framework. <strong>From 2016 to 2020 he was an engineering manager at Uber Amsterdam.</strong></p>
+
+<p>One detail is more vivid than the CV: he has written that across four years of managing at Uber, <strong>not one of his direct reports left the company</strong> — up to the summer 2020 layoffs, that is. He credits part of it to the compensation system and part to other things; and the way he writes that sentence is very him: give a checkable fact first, then admit the explanation is incomplete.</p>
+
+<p>He started the blog in November 2015. Around 2021 the centre of gravity moved to a paid newsletter; today he claims over a million readers, the largest technology publication on Substack, and states that he takes no sponsorships of any kind. <strong>The blog itself has not gone quiet</strong>: there was a new post four days before this page's review date.</p>
+
+<div class="glossary">
+<h3 style="margin-top:0">Glossary</h3>
+<ul>
+<li><b>total compensation</b>: the default unit when discussing pay at US and European tech companies — base salary + cash bonus + equity. Comparing base salaries alone badly understates the gaps, because the gaps live in the other two.</li>
+<li><b>equity / RSU / vesting</b>: stock granted to employees, typically "vesting" over four years. At a private company it is paper value until an IPO or acquisition converts it.</li>
+<li><b>hiring manager</b>: the person who would be your direct boss, and who decides whether an offer goes out and at what level. Not the same as HR or a recruiter.</li>
+<li><b>RFC (Request for Comments)</b>: originally how internet standards are published; borrowed by tech companies to mean "write a design doc before building, and circulate it for comment."</li>
+<li><b>oncall</b>: the rotation where engineers take turns being paged — including at 3am — to fix production incidents.</li>
+<li><b>DMCA takedown</b>: the US copyright complaint mechanism. Platforms may remove first and ask questions later, so the bar is low — and therefore easy to abuse.</li>
+</ul>
+</div>
+
+<h2>What he has been wrestling with</h2>
+
+<p>You only see his real subject once the offer story is finished.</p>
+
+<p>After the doubling, Orosz became an engineering manager at Uber and started hiring for his own team. And he kept meeting the same kind of candidate: strong, but unwilling to start the process. Their reasoning was that they had already asked around — they were near the top of the market, a move would get them 5–10%, and that wasn't worth several rounds of interviews.</p>
+
+<blockquote><span class="en">I had no way of telling them "your data is wrong, this place pays a lot more!" and so several of them just never bothered to interview, assuming the most raise they would get would be 5-10%. When they could have potentially doubled their compensation…</span></blockquote>
+
+<p>Note the first clause: <em>I had no way of telling them.</em> This is not a complaint about slow candidates. <strong>He is saying that he — the one person in the conversation who knew the truth — had nothing that could make anyone believe it.</strong> A hiring manager saying "we pay more" is just a hiring manager saying the thing hiring managers say. For that sentence to carry weight it has to come from somewhere other than him: a dataset, a site, a checkable record. None of which existed.</p>
+
+<p>That is his decade-long subject. In one sentence: <strong>software engineers are systematically blind about their own industry, and the blindness is not an accident — somebody is maintaining it.</strong></p>
+
+<p>What the blindness covers looks, on the surface, like four unrelated things: what I'm worth, what other companies are actually like on the inside, what "good" even looks like, and whether this company is about to die. But they share a shape: <strong>the information sits with a small number of people who have no incentive to hand it over.</strong> Nearly everything he has written since is an attempt to fill that hole, and the method is remarkably consistent: <strong>don't publish opinions, build instruments.</strong></p>
+
+<h2>His ideas, told as how he found them</h2>
+
+<h3>1. Three peaks: there is no "average salary," only who your employer benchmarks against</h3>
+
+<p>The first thing he noticed was not his own offer letter. It was two numbers that didn't line up.</p>
+
+<p>On one side, the public surveys. Honeypot's 2019 Amsterdam developer survey put the most experienced developers at <strong>an average of €55,000, with the high end above €70,000</strong>; talent.io's 2021 report put the most senior software engineers in Amsterdam at <strong>€60,000/year</strong>.</p>
+
+<p>On the other side, what he could see from inside. Average senior total compensation at Uber went <strong>from €110,000 in 2015 to €170,000–230,000 by 2020</strong>. And not only Uber — he was running EU salary research at the time, and watched Booking.com's senior packages go <strong>from around €100,000 in 2016 to over €150,000</strong>.</p>
+
+<p>In the article he reduces the gap to four words: <strong>"Where is the disconnect?"</strong></p>
+
+<p>There is a fork here, and it matters which branch he refused. The easy explanation is that Uber is an outlier — top companies pay more, surveys measure the whole, no contradiction, move along. Most people stop there. <strong>He didn't, because Booking.com's curve looked exactly like Uber's, and Booking.com is a Dutch company.</strong> Two points make a line, and an outlier stops being an outlier: it starts looking like a population the survey simply missed.</p>
+
+<p>So he counted. He gathered close to 200 compensation data points from engineers in the Netherlands and laid them out. What came back was not a normal curve with a long tail — the "most people in the middle, a few lucky ones on the right" shape that intuition defaults to. <strong>He got three peaks, and the peaks barely overlap.</strong></p>
+
+<figure>
+<svg viewbox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
+<rect fill="rgba(110,168,254,.07)" height="180" rx="4" width="215" x="148" y="52"></rect>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="11" x="156" y="68">What public salary sites sample</text>
+<text fill="#6ea8fe" font-family="SF Mono,Menlo,monospace" font-size="11" x="156" y="84">Glassdoor / Payscale / Honeypot …</text>
+<path d="M150,232 C180,232 186,92 212,92 C238,92 244,232 274,232 Z" fill="rgba(110,168,254,.16)" stroke="#6ea8fe" stroke-width="1.6"></path>
+<path d="M248,232 C276,232 282,124 306,124 C330,124 336,232 364,232 Z" fill="rgba(110,168,254,.13)" stroke="#6ea8fe" stroke-width="1.6"></path>
+<path d="M372,232 C416,232 426,150 474,150 C534,150 552,232 612,232 Z" fill="rgba(94,234,212,.15)" stroke="#5eead4" stroke-width="1.8"></path>
+<line stroke="rgba(110,168,254,.3)" x1="70" x2="700" y1="232" y2="232"></line>
+<g fill="#7d8794" font-family="SF Mono,Menlo,monospace" font-size="10.5" text-anchor="middle">
+<text x="183" y="248">€50K</text>
+<text x="239" y="248">€75K</text>
+<text x="352" y="248">€125K</text>
+<text x="634" y="248">€250K+</text>
+</g>
+<g font-family="SF Mono,Menlo,monospace" font-size="11.5" text-anchor="middle">
+<text fill="#6ea8fe" x="212" y="84">Tier 1</text>
+<text fill="#6ea8fe" x="306" y="116">Tier 2</text>
+<text fill="#5eead4" x="474" y="142">Tier 3</text>
+</g>
+<g fill="#93a1ae" font-family="SF Mono,Menlo,monospace" font-size="10" text-anchor="middle">
+<text x="212" y="268">local peers only</text>
+<text x="306" y="282">all local companies</text>
+<text x="474" y="268">regional / global</text>
+</g>
+<line stroke="#5eead4" stroke-dasharray="4 3" stroke-width="1.3" x1="364" x2="364" y1="40" y2="236"></line>
+<text fill="#5eead4" font-family="SF Mono,Menlo,monospace" font-size="11" x="374" y="46">public data stops here</text>
+<text fill="#7d8794" font-family="SF Mono,Menlo,monospace" font-size="10.5" x="70" y="304">x: annual total compensation, senior SWE, Netherlands. y: headcount (schematic, not measured)</text>
+</svg>
+<figcaption>The trimodal model. Which peak you land in is decided less by how good you are than by who your employer benchmarks against — and the right-hand peak is almost entirely missing from public salary data</figcaption>
+</figure>
+
+<p>The definition of the three tiers is the most counterintuitive and most usable part of the model. <strong>It sorts neither by company size nor by industry, but by something that sounds extremely boring: who the company benchmarks against when setting pay.</strong> Tier 1 benchmarks only against local peers — the IT department of a local supermarket, a local e-commerce site; his tell is that these places usually call engineering "IT" and treat it as a cost centre. Senior roles in the Netherlands: €50,000–75,000, essentially no equity, bonuses capped around 10%. Tier 2 benchmarks against all local companies regardless of industry (Adyen, Nike, Miro, MessageBird): €75,000–125,000, bonuses up to 20%. Tier 3 benchmarks regionally or globally — Uber, Booking.com, Databricks, Stripe, Netflix, plus proprietary trading firms like Optiver and Flow Traders: <strong>€125,000–250,000+, with equity for everyone including entry level</strong>, and cash bonuses reaching 40–50% of base for top performers.</p>
+
+<p>His numbers are always itemised, which matters again below: a typical senior Uber offer in 2020 was <strong>€115,000 salary + €20,000 target bonus + roughly €50,000/year of vesting equity ≈ €175,000</strong>.</p>
+
+<p>Then the summary line:</p>
+
+<blockquote><span class="en">There is no longer an "average" salary for software engineers in Europe / the Netherlands: just an average salary per one of the three, distinct categories.</span><cite>The Trimodal Nature of Software Engineering Salaries in the Netherlands and Europe, 2021-03-08</cite></blockquote>
+
+<p>And with that the opening puzzle resolves. Tier 3 compensation data is <strong>almost entirely absent</strong> from Glassdoor, Payscale, Honeypot, talent.io and Stack Overflow Jobs; what those sites capture is tiers 1 and 2. <strong>So the "average" in those reports really is an average — it is just the average of the first two tiers, circulating as though it described the whole market.</strong> The 90th percentile he saw in 2016 wasn't lying. It honestly computed a number from a distribution that didn't contain tier 3.</p>
+
+<p>And the error runs both ways. He drops in the sharpest inference in the piece, and it is aimed at employers:</p>
+
+<blockquote><span class="en">Most companies tend to assume they are a tier higher than they actually are - because they have little data points that prove otherwise.</span></blockquote>
+
+<p>The asymmetry is not "companies know and engineers don't." <strong>It is that both sides are reading the same mutilated dataset, and both conclude they are standing higher than they are.</strong> As for why the three tiers split apart in the first place, his explanation carries no moral charge: <strong>Silicon Valley companies opened European offices.</strong> Between 2016 and 2018 Uber re-benchmarked — no longer against the Netherlands, but directly against Facebook in London and Google in Zurich. The evidence is concrete: <strong>Uber's 2018 packages were nearly identical to Facebook London's</strong>, which was no accident, because the same candidates were holding offers from both.</p>
+
+<p>The article did not stop at being an article, and that is what separates it from a normal "insight piece." <strong>He open-sourced the data points he had collected and built TechPays</strong>, a European compensation site with anonymisation, freelancer coverage, and a breakdown of how each package is assembled. In 2024 and 2025 he extended the model to the US, UK and India using Levels.fyi data. <strong>In May 2026, TechPays was acquired by Levels.fyi.</strong></p>
+
+<p>One last thing has to be recorded, because it is what separates him from a straightforward high-pay evangelist: much of tier 3's total compensation is equity, and equity goes down as well as up. <strong>Many Uber engineers held RSUs priced at a $48 reference; Uber IPO'd at $45; by the time the lockup expired and they could sell, the stock was at $30, and it touched $21 in 2020.</strong> His line: "The highest compensation packages will also typically be the most volatile ones, value-wise."</p>
+
+<h3>2. Write it down: the only thing that scales in an organisation is sentences</h3>
+
+<p>He wrote three pieces on this line — one on process, one on architecture, one on writing — ranked 2nd, 3rd and 5th on his own Popular Articles page. Read together they are three faces of a single idea.</p>
+
+<p>It starts with two things that bothered him for years. At Microsoft and at Skyscanner he kept hitting the same pair of problems: <strong>first, no visibility into other teams building, or having already built, the same thing; second, tech and architecture debt piling up because different teams did things differently</strong>, in approach and in quality.</p>
+
+<p>That sounds like two problems. At Uber he found one process that solved both: plan before building; capture the plan in a <strong>short</strong> document; have a few relevant people approve it before work starts (he compares this to requiring a review before merging a pull request); and then — <strong>send the document to every engineer in the company and let anyone comment.</strong> That last step is where the eyebrows go up, and he says so himself: "Yes, this the step that probably sounds crazy." (His typo, not mine.)</p>
+
+<p>What is interesting is his defence of writing it down, because it avoids the usual "documentation is good for you" route entirely. <strong>His argument is about efficiency, and it runs backwards:</strong> if the team genuinely agrees, writing it down should be easy — a few hours, one person, everyone else nods. So if it is hard to write, that is the finding. And in practice, the moment someone starts writing, things surface:</p>
+
+<blockquote><span class="en">"This is not what I meant when we talked." or "What about this important edge case we forgot?" and "If we change this here, it could break this other part of the system" are things that often come up when writing the plan down. It's great to have these discussions before having the same realizations when the project is halfway done.</span><cite>Scaling Engineering Teams via RFCs: Writing Things Down, 2018-10-03</cite></blockquote>
+
+<p>In other words: <strong>the real output of a design doc is not the document, it is the disagreement the writing exposes.</strong> It is an integration test you run before writing any code.</p>
+
+<p>His defence of the company-wide broadcast is similarly indirect. He does not claim everyone will read them — he concedes the noise goes up, and offers an unromantic fix: email filters are easy to write. What he claims is something else: <strong>"The type of information pushed to people in an organization shapes the culture considerably."</strong> Then he offers himself as evidence — in his first months at Uber he obsessively read other teams' planning docs, and learned more about what other teams were doing than in years at a large company where that information was not visible.</p>
+
+<p>The second face is architecture. He opens by establishing standing: the Uber distributed payments rewrite (replacing two live payment systems used by dozens of teams, with no business impact permitted), Skype on Xbox One, open-sourcing RIBs. Hundreds of engineers, millions of daily users. Then he says something a lot of people find uncomfortable:</p>
+
+<blockquote><span class="en">…none of these designs used any of the standard software architecture planning tools. We did not use UML, nor the 4+1 model, nor ADR, nor C4, nor dependency diagrams. We created plenty of diagrams, but none of them followed any strict rules. Just plain old boxes and arrows…</span><cite>Software Architecture is Overrated, Clear and Simple Design is Underrated, 2019-09-17</cite></blockquote>
+
+<p>And: <strong>"there were no architects on the teams that owned the design."</strong> Experienced engineers drove the discussion, but no single person owned the architecture, and the most junior people on the team took part, challenged decisions and offered alternatives.</p>
+
+<p>The weight of the piece is not in the "we didn't use UML" fact, which is just an anecdote. The weight is in a historical argument that inverts the causality of the entire methodology industry in one sentence: <strong>"Architecture patterns are tools that came after the solution was solved, in hopes of making the lives of others easier."</strong> Engineers independently arrived at similar solutions; someone noticed the similarity; only then did it get a name and a literature. <strong>So starting from the pattern gets the causation backwards.</strong></p>
+
+<p>He also offers a test you can apply on the spot, cheaper than any methodology: <strong>you should be able to explain your system's architecture clearly on a whiteboard, starting high-level and going deeper as needed; if that is hard, or not clear enough, there is still work to do on the details.</strong></p>
+
+<p>The third face is writing itself, and it stitches the other two together. The argument is short: companies grow, and past a few dozen people face-to-face stops being enough, so <strong>"Writing becomes essential to make thoughts, tradeoffs and decisions durable."</strong> As for the threshold for moving up, he is blunter — "the ability to communicate and influence beyond your immediate team," he says, is the essential skill for engineers growing in seniority.</p>
+
+<p>Put the three faces together and he is saying one thing: <strong>the only thing in an organisation that crosses headcount, floors, time zones and years is a written sentence.</strong> So anything that makes sentences harder to write or harder to read — jargon, UML, formal methods, an architect approval chain — is spending in the wrong direction. <strong>"Keep the design simple" is therefore not an aesthetic preference in his hands but an inference with a mechanism: simple designs are better first because they are easier to write down clearly, and therefore easier for more people to poke holes in.</strong></p>
+
+<h3>3. You cannot see engineering culture from outside, so build instruments — all the way to doing journalism</h3>
+
+<p>This line starts from a problem that has already been solved. In 2000 Joel Spolsky wrote the famous Joel Test: twelve yes/no questions about a software team (do you use source control? can you make a build in one step?). <strong>Twenty years later essentially every company passes all twelve</strong> — it became a floor, and stopped discriminating.</p>
+
+<p>So Orosz wrote a 2021 version. And the real design rule of the new test is in its first sentence:</p>
+
+<blockquote><span class="en">12 questions to get a sense of what a tech company is like to work at, based on things most job postings do not mention.</span><cite>The Pragmatic Engineer Test: 12 Questions on Engineering Culture, 2021-10-11</cite></blockquote>
+
+<p>"Things most job postings do not mention" is a very good filter: it automatically excludes all marketing copy ("we have a great engineering culture") and leaves only facts a company has to confirm or deny. And each item is written so there is no wiggle room — on equity, discounted employee stock purchase plans explicitly don't count; on oncall, the question isn't "do you have oncall" but <strong>whether fixing an unhealthy oncall takes priority over any product work</strong>.</p>
+
+<p>Twelve yes/no questions is not laziness, it is design. <strong>Yes/no questions can be walked through out loud once you have an offer</strong> — which is exactly the "reverse interviewing" he advocates: in the back half of the process, you interview the company.</p>
+
+<p>Then comes the move in this section most worth stealing. He published results from 200 submissions: 31% passed all twelve, 68% scored at least 10. The numbers flatter his case. <strong>And he immediately turned the knife on himself:</strong></p>
+
+<blockquote><span class="en">I realize there is lots of selection bias at play here - teams who score higher on these questions are more likely to fill it out.</span></blockquote>
+
+<p>That sentence sits directly underneath his own best result.</p>
+
+<p>But the twelve questions have a boundary they cannot cross: <strong>they can only measure what a company is willing to say.</strong> A company that has stopped paying wages can still answer all twelve beautifully. So the line had to go one step further — stop asking, and start checking.</p>
+
+<p><strong>Pollen, 2022.</strong> A British events-tech company that had raised over $200M, announced another $150M in April 2022, laid off a third of its staff three weeks later, and assured everyone remaining that all was well. Then wages stopped, pension contributions went missing, and US employees' health insurance was cut without notice. <strong>On 9 August, Atlassian suspended the company's JIRA over unpaid bills. On 10 August, Pollen collapsed into administration.</strong> He spoke with 20 former employees, most of them in technology. And the question he set the piece is not "how did this company fail" but something useful to the reader: <strong>could these tech workers have realised sooner that they were on a sinking ship?</strong> The answer is buried in signals nobody could read at the time — unknown to most employees, <strong>all the external investors had quietly resigned from the board</strong>, and when a venture partner described himself as a current board member at a company-wide town hall, documents show he had resigned the previous day. Ten months later the BBC made a documentary out of it, <em>Crashed: $800M Festival Fail</em>.</p>
+
+<p>He is unambiguous about what it cost: the piece created potential legal jeopardy and had to be reviewed by lawyers before publication. His conclusion:</p>
+
+<blockquote><span class="en">I decided that while I greatly respect investigative reportage, it's not an area I would venture into, again. And I intended to keep this promise.</span><cite>The DevTernity Tech Conference Listed Fake Speakers for Years: I Accidentally Noticed, 2023</cite></blockquote>
+
+<p><em>I intended to keep this promise.</em> A year later he saw a friend announced as a speaker at the DevTernity conference. He clicked through to look at the lineup; most names were familiar, and one was not: <strong>Anna Boyko, core Ethereum contributor, at Coinbase.</strong></p>
+
+<p>His reason for suspicion is specific, and entirely an insider's instinct: <strong>there are not many core Ethereum contributors, and someone committed full-time to an open-source crypto platform joining Coinbase at the same time is odd.</strong> So he checked. Nothing on LinkedIn. Nothing on Google except the conference itself. Nobody similar among Ethereum's core contributors. He asked friends at Coinbase, who had never heard the name. He looked at the same organiser's other events and found two more people who do not exist; he looked at earlier DevTernity editions and found more. <strong>Four fake speakers across four conferences, all of them women.</strong></p>
+
+<p>The clinching evidence came from a hole the organisers left themselves: <strong>the conference website is open source, so every change is visible in the commit history.</strong> On 3 August 2021 at 5pm GMT, someone publicly criticised the all-male DevTernity 2021 lineup on Twitter. <strong>Two hours later, a commit added the first invented woman speaker.</strong></p>
+
+<p>Then the footnote. It is not about DevTernity, it is about the industry:</p>
+
+<blockquote><span class="en">All this took about 30 minutes of research to find out, including the pinging of contacts at Coinbase and Meta. Other people must have discovered what I did with such little effort, but it seems they said nothing.</span></blockquote>
+
+<p><strong>That is the argument of the whole line.</strong> The DevTernity evidence was entirely public: the website, the commit history, LinkedIn, Twitter. The barrier was thirty minutes. What is scarce is not capability but <strong>somebody willing to say it</strong> — because saying it costs you something and staying quiet costs you nothing.</p>
+
+<p>Which brings us to the notice at the top of this page. In July 2026 Google delisted the Pollen article over a copyright infringement claim — <strong>and he is the only possible copyright holder.</strong> He dug up the complaint: it asserted that his 2022 piece <em>Inside Pollen's Collapse</em> had copied a 1998 New York Post article titled <em>Band Leader Hits Winning Chord</em>. His verdict on the comparison is one line: <strong>"The two do not even share a single sentence!"</strong> The complainant was listed as "Ellie Piee," residing on Bouvet Island — a Norwegian dependency in the South Atlantic, one of the most remote places on Earth, <strong>with zero inhabitants</strong>.</p>
+
+<blockquote><span class="en">It seems that anyone can file a bogus copyright claim to get an article they don't like removed from Google's search index.</span><cite>Pollen tried to remove my article…, 2026-07-08</cite></blockquote>
+
+<p>On who was behind it he offers exactly one sentence, explicitly flagged as his own speculation, and otherwise leaves the checkable facts on the page. His sign-off is a dry reminder that Pollen's executives should look up the <strong>Streisand effect</strong>.</p>
+
+<p>A decade-long project closes here. He started from "engineers can't see what they're worth," moved to "engineers can't see what a company is like inside," and arrived at "somebody is paying to keep engineers from seeing" — and the tooling for that last step is almost comically cheap: a person who doesn't exist, an island where nobody lives, and a form.</p>
+
+<h2>How he thinks</h2>
+
+<p>Reading someone with a decade of output, the transferable part is usually the method rather than the conclusions. His method has a spine, and he may never have stated it outright: <strong>he keeps finding that a practice's real value is not the one it advertises, but a side effect.</strong></p>
+
+<p>Once you see the pattern it is everywhere. The output of a design doc is not the document but the disagreement. The value of broadcasting RFCs is not that everyone reads them (he concedes most don't) but that what an organisation pushes to people shapes its culture. The prettiest instance is in <em>Yes, you should estimate</em>, written against the #noestimates current. He begins by saying he is good at estimating and then delivering on those estimates — and then dismantles himself:</p>
+
+<blockquote><span class="en">Remember how I said how I'm pretty good at estimating, then delivering on them? I was not telling the truth about delivering. For every major project, we shipped something different on the launch date, than what we agreed to originally.</span><cite>Yes, you should estimate, 2019-10-15</cite></blockquote>
+
+<p>Skype on Xbox One shipped on launch day without group video calling — running alongside games, the platform didn't leave enough CPU to decode more than two streams reliably, so they cut it, and it "made little to no difference" to the launch. His conclusion: <strong>the real function of an estimate is not prediction, it is manufacturing time pressure, and time pressure forces tradeoff conversations.</strong> Without the estimate, nobody ever asks whether a feature this complex is carrying its business value. So an estimate's worth is largely independent of its accuracy — arguably, <strong>it pays off precisely when it turns out to be wrong.</strong></p>
+
+<p>Around that spine, a few habits worth copying.</p>
+
+<p><strong>Trust your own eyes first, then go find data — the order matters.</strong> He did not start from a suspicious report and go verify it; he started from a number on his own offer letter that didn't line up, and then went and collected 200 data points. Most people, when first-hand observation conflicts with authoritative aggregate data, assume they are the outlier. <strong>He assumed the aggregate had a sampling problem.</strong> The transferable rule: when direct observation fights a statistic, ask who the statistic was sampled from — often enough, "the average" is only "the average of the people we could reach."</p>
+
+<p><strong>Always state your position, and be specific enough to be contradicted.</strong> "I was a hiring manager at Uber." "I was making £93,000 as a principal at Skyscanner." This isn't just credentialing — <strong>it hands the reader a discount rate</strong>, so you know from which angle to mark his claims down. And he almost never writes "the pay is high"; he writes €175,000 = €115,000 + €20,000 + €50,000. He doesn't write "Pollen was a mess"; he writes that Atlassian suspended JIRA on 9 August and the company collapsed on 10 August. <strong>A vague claim cannot be refuted, which is also why it cannot really be believed.</strong> This runs both ways, too: someone who has spent years publishing his own salary and his own mistakes is someone other people are willing to tell things to — <strong>his source network was largely bought with self-disclosure.</strong></p>
+
+<p><strong>He doesn't close the argument.</strong> In 2025 the METR study found developers using AI tools were <strong>19% slower</strong> while believing they were 20% faster. The finding cut against the prevailing narrative; he published it anyway, <strong>and laid out everything that weakens it in the same breath</strong>: a sample of 16, of whom 44% had never used Cursor, and the single participant with 50+ hours of Cursor experience was <strong>38% faster</strong> — "a sample size of one is not very representative of a group of 16." <strong>He argues neither for AI nor against it; he hands over the shape of the evidence as it is.</strong></p>
+
+<p><strong>And he lets himself grieve, without offering a way out.</strong> January 2026:</p>
+
+<blockquote><span class="en">It feels like something valuable is being taken away, and suddenly. (…) I wonder if I'll still get the same sense of satisfaction from the fact that writing complicated code is hard?</span><cite>The grief when AI writes most of the code, 2026-01-07</cite></blockquote>
+
+<p>A man whose blog is called The Pragmatic Engineer offers no pragmatic advice in that passage at all. He says he will miss it, and leaves a question mark.</p>
+
+<h2>Where he might be wrong</h2>
+
+<p><strong>1. The bias he named himself, he named in the small case — and it is worse in the big one.</strong> He wrote the selection-bias caveat honestly under the twelve-question results. But the same problem exists in a far heavier form in the trimodal model, <strong>and there he didn't write it.</strong> The original 200 data points came from Dutch engineers willing to submit their pay to an English-writing hiring manager at Uber; TechPays data is self-submitted; and his million readers are self-selected in one direction — people who already care about compensation, read English, and work at or aspire to international companies. <strong>That sample is extremely accurate about tier 3, because tier 3 is where he stands; the tier 1 numbers read more like inference than measurement.</strong> And tier 1 is the most populous tier. The model's descriptive power at the top and at the bottom are not in the same league, and the article doesn't flag the difference.</p>
+
+<p><strong>2. It is a descriptive model being used as a prescription, and the prescription's shelf life is tied to one particular decade.</strong> "Move toward tier 3" was good advice during zero interest rates and years of rising equity. He wrote the counter-evidence himself in the same piece (Uber's $48 → $45 → $30 → $21), and in 2025 reported that software developer listings on Indeed were 35% below January 2020 and under a third of the mid-2022 peak — a steeper fall than sales, banking or marketing. <strong>He reported both sets of facts, but never went back and rebuilt the trimodal framing.</strong> It is still read in the register of "the top tier is always there, the only question is whether you can get in" — while his own 2025 data describes an opening that is narrowing.</p>
+
+<p><strong>3. "What Silicon Valley gets right" is the piece that reads worst today.</strong> In 2020 he wrote it well: autonomy, internal data transparency, engineers talking directly to the business, each illustrated with concrete dialogue. The problem is that he framed these as a kind of cognitive superiority (these companies "get it") <strong>without explaining why any of it would persist.</strong> And the densest subject on his blog in the years since has been layoffs, return-to-office mandates and hiring freezes at the very same companies. A colder and more durable explanation is that a good share of that "culture" was a product of a labour market tight enough that companies needed it to keep people. <strong>He reported what happened when the market loosened, but never went back to repair the causal claim in the 2020 piece.</strong></p>
+
+<p><strong>4. The investigative line has a structural ceiling, and he has already written it down himself.</strong> The Pollen piece exposed him to legal risk; he wrote that it was not an area he would venture into again, and then did. That honesty is rare — but it also exposes the selection rule: <strong>a bankrupt events company and a small conference organiser are opponents he can absorb.</strong> Whether a company that can field a legal team on demand, and that is also contributing to his subscription revenue, would be equally absorbable is a question his writing has not handled. He does state that he takes no sponsorships, which closes off the most obvious route for capture; <strong>but a subscription model transfers the incentive to readers, and his readers are heavily concentrated among senior engineers and engineering leaders.</strong> What leaks out of that group, and what leaks out of support staff, contractors and tier 1 engineers, will not arrive in the same volume or point at the same stories. There is a more fundamental tension underneath: <strong>his product is an antidote to information asymmetry, while his business requires the asymmetry to persist</strong> — the paywalled scoops sell precisely what other people cannot get. He does not pretend otherwise (the Pollen piece and the trimodal piece both ended up on the free side), but handling it gracefully does not make it go away.</p>
+
+<h2>Sources</h2>
+
+<ul class="reads">
+<li><span class="t"><a href="https://blog.pragmaticengineer.com/software-engineering-salaries-in-the-netherlands-and-europe/">The Trimodal Nature of Software Engineering Salaries in the Netherlands and Europe</a></span> (2021-03-08, updated 2025)<span class="d">The primary source for the trimodal model: the definition of the three tiers, the compensation ranges in each, how a senior Uber offer breaks down, and why tier 3 is invisible in public salary data. Links at the end to the 2024 and 2025 follow-ups extending the model to the US, UK and India.</span></li>
+<li><span class="t"><a href="https://blog.pragmaticengineer.com/software-architecture-is-overrated/">Software Architecture is Overrated, Clear and Simple Design is Underrated</a></span> (2019-09-17)<span class="d">One of his most-read posts. How the Uber payments rewrite and Skype on Xbox One were actually designed — no UML, no architects, just boxes and arrows — plus the argument that architecture patterns are tools named after the solution was found.</span></li>
+<li><span class="t"><a href="https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/">Scaling Engineering Teams via RFCs: Writing Things Down</a></span> (2018-10-03)<span class="d">The full version of the process that "sounds crazy": plan, write it up short, get a few approvals, then mail it to every engineer in the company. Includes the real field lists from Uber's backend and mobile RFC templates.</span></li>
+<li><span class="t"><a href="https://blog.pragmaticengineer.com/pragmatic-engineer-test/">The Pragmatic Engineer Test: 12 Questions on Engineering Culture</a></span> (2021-10-11)<span class="d">All twelve yes/no questions, the loophole each one closes, the distribution of 200 submissions, and the selection-bias caveat he put underneath his own results.</span></li>
+<li><span class="t"><a href="https://blog.pragmaticengineer.com/pollen/">Inside Pollen's Collapse: "$200M Raised" but Staff Unpaid</a></span> (2022-10)<span class="d">The long report built from 20 former employees: a dated timeline, the board that quietly resigned, the $3.2M charged early. The BBC made a documentary from it ten months later; in 2026 someone used a forged copyright claim to pull it out of Google's search results.</span></li>
+</ul>
+
+</div>
+
+<section class="updates" data-last-reviewed="2026-10-01" data-slug="the-pragmatic-engineer">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deepread · one page ≈ one mind · content verified as of 2026-10-01</footer>
+</div>
+<script>
+(function(){
+  var pop=document.getElementById('mode-pop'),deep=document.getElementById('mode-deep');
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep');
+  function set(m){
+    var isDeep=(m==='deep');
+    pop.hidden=isDeep; deep.hidden=!isDeep;
+    bp.classList.toggle('on',!isDeep); bd.classList.toggle('on',isDeep);
+    try{localStorage.setItem('ll-mode',m);}catch(e){}
+  }
+  bp.addEventListener('click',function(){set('pop');});
+  bd.addEventListener('click',function(){set('deep');});
+  var saved=null; try{saved=localStorage.getItem('ll-mode');}catch(e){}
+  set(saved==='deep'?'deep':'pop');
+})();
+</script>
+</body></html>
