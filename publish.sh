@@ -12,7 +12,8 @@
 #   - each new file is not a tiny error stub (>2KB)
 #   - index.html references the new Chinese file (index.en.html refs the .en one if present)
 #   - no DUPLICATE N (treats day1 / day01 / day9 / day09 as same N=9)
-#   - no hardcoded shared scripts (comments/search/index-button/i18n-tts)
+#   - no hardcoded shared scripts (comments/search/index-button/i18n-tts),
+#     checked only on files not yet in HEAD (see note at the check itself)
 #   - <div> balance + data-zh/data-en attribute integrity
 #   - pushes to main via HEAD:main (bypasses claude/* harness branches)
 #   - also pushes current branch to origin (keeps claude/* harness branches in sync with stop-hook)
@@ -77,11 +78,19 @@ for F in $NEW_FILES; do
     grep -q "$F" index.html || { echo "ERROR: index.html does not reference $F"; exit 1; }
   fi
 
-  # Forbidden hardcoded scripts (auto-injected by GitHub Action)
-  for s in comments.js search.js index-button.js i18n-tts.js; do
-    grep -q "$s" "$F" && { echo "ERROR: $F hardcodes $s (auto-injected, will duplicate)"; exit 1; }
-  done
-  grep -q "← Hub" "$F" && echo "WARN: $F hardcodes ← Hub button (will be deduped, consider removing)"
+  # Forbidden hardcoded scripts (auto-injected by GitHub Action).
+  # Only checked for files this run AUTHORED (not yet in HEAD). Pages already on
+  # main legitimately carry the inject-comments Action's tags, which that Action
+  # committed back itself; it is idempotent (adds a tag only where grep finds
+  # none), so those cannot duplicate. The monthly refresh routine (REFRESH.md)
+  # only ever touches already-published pages, and without this scoping every
+  # refresh run would fail here on every page it touched.
+  if ! git cat-file -e "HEAD:$F" 2>/dev/null; then
+    for s in comments.js search.js index-button.js i18n-tts.js; do
+      grep -q "$s" "$F" && { echo "ERROR: $F hardcodes $s (auto-injected, will duplicate)"; exit 1; }
+    done
+    grep -q "← Hub" "$F" && echo "WARN: $F hardcodes ← Hub button (will be deduped, consider removing)"
+  fi
 
   # <div> balance
   OPENS=$(grep -oE '<div[ >]' "$F" | wc -l | tr -d ' ')
