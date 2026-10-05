@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>John Baez · Azimuth — 不同学科在偷偷重写同一套方程，数学家的活是把它们认出来</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+.tbl{width:100%;overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid rgba(110,168,254,.14);padding:7px 10px;text-align:left}
+th{color:#5eead4;font-family:"SF Mono",Menlo,monospace;font-size:.8rem;font-weight:600}
+td.q{color:#7d8794}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="azimuth-blog37.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 37 · johncarlosbaez.wordpress.com</div>
+<h1>John Baez<br/>不同学科在偷偷重写同一套方程，数学家的活是把它们认出来</h1>
+<p class="sub">John Carlos Baez · 博客 <strong>Azimuth</strong>（「方位角」，也是他 2010 年发起的环境科学协作项目 Azimuth Project 的名字）· 美国数学物理学家，加州大学河滨分校（UC Riverside）数学教授 · <strong>仍在活跃更新</strong>：第一篇是 2010 年 7 月 10 日，最近一篇是 2026 年 9 月 20 日；站点 sitemap 列出约一千篇，侧栏分类里「数学」657 篇、「物理」273、「网络」192、「气候」162 · 选文依据：他没有「精选」页，2013 年那篇 <em>Azimuth Blog Overview</em> 只是一份系列文章的目录；本页<strong>抽了 247 篇正文统计站内回链</strong>（被跨年回引的主要是 <em>Quantropy</em> 和 <em>Classical Mechanics versus Thermodynamics</em>，后者从 2012 年一路被引到 2021 年），再参考评论数（<em>Quantropy</em> 124 条、<em>Why Google Gave Up</em> 104 条、<em>What To Do?</em> 76 条）· 本页通读 <strong>16 篇他本人的正文</strong>，跨度 2010-07 到 2026-09：<strong>最早期（前 20% 时间跨度，即 2010-07 至 2013-08）8 篇</strong>；博客有两处转折——约 2015–2017 年从「气候与能源」转向「应用范畴论」，约 2022 年起又大量回到纯数学、物理和音乐理论——<strong>两处转折两侧都有</strong></p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2012 年 1 月，一位五十岁的数学物理学家在自己的博客上写了这么一句：</p>
+<blockquote><span class="en">It came as a bit of a shock last week when I realized that some of the equations I’d learned in thermodynamics were just the same as equations I’d learned in classical mechanics—with only the names of the variables changed, to protect the innocent.</span><span class="zh">上周我突然意识到，我在热力学里学过的某些方程，和我在经典力学里学过的方程<strong>根本就是同一组</strong>——只是变量改了名字，好保护无辜者。这让我有点震惊。</span><cite>Classical Mechanics versus Thermodynamics (Part 1)，2012-01-19</cite></blockquote>
+<p>下一行只有一句：<strong>「为什么没人告诉我？」</strong></p>
+<p>他说的是物理系学生最爱的两条方程（哈密顿方程，两行就写完整个经典力学）和最恨的一堆方程（热力学里的麦克斯韦关系，一大串、记不住）。他证明前者是后者的一个特例，推导方法一模一样，只是把「位置」叫成「熵」、把「动量」叫成「温度」、把「时间」叫成「体积」。他说希望这能让你<strong>多喜欢一点麦克斯韦关系，而不是少喜欢一点哈密顿方程</strong>。九年后他还在想这件事，2021 年把它讲成了一场物理系学术报告。</p>
+<p>John Baez 写了三十多年这样的东西。1993 年他在 Usenet 上开了专栏《本周发现》（<em>This Week's Finds</em>），比「博客」这个词还早；2010 年他开了 Azimuth，《本周发现》也搬了进来。开博那晚他在洛杉矶机场候机室，凌晨一点四十的航班，写下了改行的理由：数学和物理的深层秘密<strong>可以等，别的事等不了</strong>——地球出了大麻烦。他想知道一个数学家能为此做什么。</p>
+<p>十六年后读下来，他给出的答案正是那句「为什么没人告诉我」。他的核心直觉是：<strong>大自然和人类各门学科一直在重复发明同一种结构，只是各自起了不同的名字</strong>。化学家画反应网络，电气工程师画电路图，生态学家画能量流图，流行病学家画「存量-流量」图，物理学家画费曼图——2011 年他把这些图摆在一起，说「很明显，不同学科的人在重新发明同一类图」。如果能用数学（他选的是范畴论，一门研究「东西怎么拼起来」的数学）把它们统一，就能像数学帮物理那样帮生物和生态。他给这门还不存在的学问起了名字：<strong>绿色数学</strong>。</p>
+<p>同一个直觉也让他在熵上走得很远。他坚持熵不是「无序」，而是<strong>你不知道、但原则上可以知道的信息量</strong>——室温常压下的氢气，每个分子大约藏着 23 比特你不知道的信息。顺着这条线，他把进化论里的复制子方程和统计学里的贝叶斯更新对上了：一个种群可以看成一个关于「怎么活下去」的假设，自然选择就是在按贝叶斯规则更新它。<strong>进化是一种学习。</strong></p>
+<p>这套打法有它的代价。2011 年 Eliezer Yudkowsky 在他的访谈里劝他：环保已经有几百万人在做，你的边际贡献最小。Baez 认真回了一长篇，最后一句是：「人当然很容易骗自己以为自己知道。」2015 年他自己也写，把工程里的图形式化，「不指望能立刻帮到这些领域的从业者」，最先受益的反而是数学家。而到 2026 年，他博客上最新的几篇在讲 E6 根多面体、八元数和标准模型——那些「可以等」的东西，又回来了。</p>
+<p>但如果你只从他这里拿走一件东西，就拿那个问题：<strong>我在这门学科里学过的这件事，是不是在另一门学科里换了个名字早就出现过？</strong>他用这个问题，从热力学走到力学、从化学走到流行病、从音律走到进化。他的博客是一场持续十六年的公开演示：大多数时候答案是「是」，而且通常没人告诉过你。</p>
+</div>
+
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>范畴论（category theory）</b> — 一门很抽象的数学，不关心东西「是什么」，只关心东西之间怎么连接、怎么拼接。Baez 用它来给「把小系统拼成大系统」这件事立规矩。</li>
+<li><b>组合性（compositionality）</b> — 大东西的行为能由小部件的行为加上拼接方式推出来。乐高是组合的；一锅汤不太是。</li>
+<li><b>Petri 网（Petri net）</b> — 一种画图语言：圆圈代表「东西」（分子、物种），方框代表「过程」（反应、捕食），箭头说明每个过程吃进什么、吐出什么。最早在计算机科学里用，后来被化学和生物借走。</li>
+<li><b>熵（entropy）</b> — 在 Baez 这里：你对一个系统<strong>不知道的那部分信息</strong>的量，按比特计。</li>
+<li><b>玻尔兹曼分布（Boltzmann distribution）</b> — 统计力学的基本公式：一个系统处在能量为 E 的状态的概率，随 E 增大而指数下降，下降得多快由温度决定。</li>
+<li><b>哈密顿方程 / 麦克斯韦关系（Hamilton's equations / Maxwell relations）</b> — 前者是经典力学的核心方程，描述位置和动量怎么随时间变；后者是热力学里一组联系温度、压强、体积、熵的偏导数等式。</li>
+<li><b>路径积分（path integral）</b> — 费曼对量子力学的表述：粒子不走一条路，而是「同时走所有路」，每条路贡献一个复数「振幅」。</li>
+<li><b>复制子方程（replicator equation）</b> — 进化博弈论的基本方程：某种类型在种群里的占比，按它的适应度比平均适应度高多少来增长。</li>
+<li><b>相对熵 / KL 散度（relative entropy / Kullback–Leibler divergence）</b> — 衡量一个概率分布相对另一个「多出多少信息」的量。</li>
+</ul>
+</div>
+
+<h2>一件怪事：两条最受爱戴的方程，是一堆最遭嫌弃的方程的特例</h2>
+<p>物理系学生对两组方程的感情很不对称。<strong>哈密顿方程</strong>只有两条，写出来简洁对称，整个经典力学都装在里面，人人喜欢。<strong>麦克斯韦关系</strong>是热力学里的一大串偏导数等式，每一条都挂着一个小下标告诉你「求导时哪个变量保持不变」，难记、难用，人人头疼。</p>
+<p>2012 年 1 月，John Baez 发现这两样东西是一回事。他在博客上写，自己「上周」才意识到热力学里的某些方程和经典力学里的方程完全相同，「只是变量改了名字，好保护无辜者」。然后是单独一行：</p>
+<blockquote><span class="en">Why didn’t anyone tell me?</span><span class="zh">为什么没人告诉我？</span><cite>Classical Mechanics versus Thermodynamics (Part 1)，2012-01-19</cite></blockquote>
+<p>他把对应关系一个个写出来：力学里的<strong>位置</strong>对应热力学的<strong>熵</strong>，<strong>动量</strong>对应<strong>温度</strong>，<strong>时间</strong>对应<strong>体积</strong>，<strong>能量</strong>对应<strong>压强</strong>。照这张表换完名字，哈密顿方程就变成了前两条麦克斯韦关系。唯一的别扭是，要让它们完全对上，哈密顿方程也得挂上那种「保持某某不变」的下标，于是写出来像「保持时间不变、对位置求偏导」这种怪东西。他坦白这一步卡了他一天：「我还是觉得它很怪。但我认为它是对的。」</p>
+<p>然后他用一模一样的推理把两边都推了一遍。麦克斯韦关系说穿了只是「混合偏导数可以交换次序」这一条微积分常识；哈密顿方程也是，只要拿对函数——力学这边那个函数叫「哈密顿主函数」，是粒子从起点走到某个终点所需的最小作用量。他的愿望是：</p>
+<blockquote><span class="en">I hope this will make you like the Maxwell relations more, instead of liking Hamilton’s equations less.</span><span class="zh">我希望这能让你<strong>多喜欢一点麦克斯韦关系，而不是少喜欢一点哈密顿方程</strong>。</span><cite>同上</cite></blockquote>
+<p>这不是一时兴起。九年后的 2021 年，他在不列颠哥伦比亚大学物理系做学术报告，讲的还是它，而且往深处挖了一层：两边真正相同的不是变量的配对，而是更抽象的几何结构，他引了数学家 Alan Weinstein 的一句「辛几何信条」作结——「一切都是拉格朗日子流形」（EVERYTHING IS A LAGRANGIAN SUBMANIFOLD）。作为副产品，他推出了两条「看起来很怪」的额外哈密顿方程，并说「我确信它们是对的」。</p>
+<p>这一小段故事几乎包含了 Baez 的一切：一个读过一辈子物理的人，突然发现两门课讲的是同一件事；他的第一反应不是写论文，而是写博客，问一句「为什么没人告诉我」；然后花十年把它想透。</p>
+
+<h2>这人是谁</h2>
+<p>1961 年生于旧金山，普林斯顿本科、MIT 博士，1989 年起在加州大学河滨分校教数学。他的叔叔 Albert Baez 是物理学家、X 射线显微镜的共同发明人，小时候就是这位叔叔让他迷上物理；民谣歌手 Joan Baez 是他堂姐。他前半生做的是量子引力和高阶范畴（n-categories），是互联网上最早的「数学博主」之一：1993 年在 Usenet 上开的《本周发现》写了三百多期，被认为早于「博客」这个概念本身。他还写过一份流传很广的「民科指数」（crackpot index），给那些自称推翻了现代物理的「革命性理论」打分。</p>
+<p>2010 年 7 月 10 日午夜，他坐在洛杉矶机场的候机室里，等凌晨 1:40 飞香港再转新加坡的航班——妻子、比较文学学者 Lisa Raphals 要去新加坡国立大学教两年书，他去量子技术中心。他在候机室开了这个博客，说自己想「换挡」：</p>
+<blockquote><span class="en">The deep secrets of math and physics are endlessly engrossing — but they can wait, and other things can’t.</span><span class="zh">数学和物理的深层秘密令人沉迷不已——<strong>但它们可以等，别的事等不了</strong>。</span><cite>Welcome to Azimuth，2010-07-10</cite></blockquote>
+<p>他紧接着自嘲，这个目标「听起来野心很大，近乎自负」。博客至今仍在更新，2026 年 9 月还有新文章。</p>
+
+<h2>他跟什么较劲</h2>
+<p>他的根问题在开博第一天就写明了：<strong>一个数学家，能为一个陷入危机的星球做什么？</strong>但这个问题真正咬住他，是在九个月后。</p>
+<p>2011 年他在博客上采访了 Eliezer Yudkowsky（理性主义社群和 AI 风险研究的代表人物）。Yudkowsky 的建议毫不客气：环保已经有几百万人在做，按「规模 × 边际影响 × 你的比较优势」来算，John Baez 投身环保不可能是最优选择——</p>
+<blockquote><span class="en">There’s just no way that the product of scope, marginal impact, and John Baez’s comparative advantage is going to end up being maximal at that point.</span><span class="zh">规模、边际影响和 John Baez 的比较优势这三者的乘积，<strong>不可能在那一点上取到最大值</strong>。</span><cite>Eliezer Yudkowsky，引于 What To Do? (Part 1)，2011-04-24</cite></blockquote>
+<p>Baez 没有绕开，而是写了一篇长文回答，标题就叫《该做什么？》。他先交代了自己为什么离开原来的领域，那段话很少有学者肯公开写：他做范畴化和高阶规范场论时，起初是「一场孤独但激动人心的探索」，后来会议越开越多、人越来越多，其中不少是他自己带出来、自己用科普「引上路」的年轻人。</p>
+<blockquote><span class="en">It’s as if I engineered my own obsolescence.</span><span class="zh">就好像<strong>我亲手设计了自己的过时</strong>。</span><cite>What To Do? (Part 1)，2011-04-24</cite></blockquote>
+<p>他说他学会了看光明面——这意味着他自由了。「帮一个雪球开始往山下滚很好玩……可去追一个已经在滚的雪球有什么意义？」这句话同时也是他对 Yudkowsky 的第一个回答：他当然不想做「几百万人已经在做」的事，而 Azimuth 的做法足够非常规，「也许会摔个狗啃泥，但至少在试新东西」。</p>
+<p>第二个回答是他为什么非做不可。他说自己几十年来一直在看「我们的文明正在进行的一场慢动作火车事故」——全球变暖、海洋酸化、栖息地丧失可能叠加成一次大灭绝。如果只是「照常的苦难」，他承认自己乐意袖手旁观，但他越研究越觉得不行，尤其是因为那么多人正在袖手旁观：</p>
+<blockquote><span class="en">So, just as I’d move to put out a fire if I saw smoke coming out of the kitchen and everyone else was too busy watching TV to notice, I feel I have to do something.</span><span class="zh">所以，就像我看到厨房冒烟、而其他人都忙着看电视没注意时，我会起身去灭火一样，<strong>我觉得我得做点什么</strong>。</span><cite>同上</cite></blockquote>
+<p>第三个回答，也是最重要的一个，藏在中间一句话里：他手上已经有项目在利用他的「比较优势」——<strong>做数学和讲清楚东西的能力</strong>。最显眼的是「网络理论」项目，「我想我们需要的那种数学的第一步，用来理解各种各样的复杂系统」。</p>
+<p>这就是整个博客的骨架。他没有改行去当气候科学家，也没有去造太阳能板；他要找的是<strong>数学家这门手艺能插进这个问题的那个接口</strong>。之后十六年他写的几乎每一个系列，都可以读成对这个问题的一次尝试。而他那篇文章的最后一句话，十六年后读来是全篇最诚实的地方：</p>
+<blockquote><span class="en">One can, of course, easily fool oneself into thinking one knows.</span><span class="zh">当然，<strong>人很容易骗自己以为自己知道</strong>。</span><cite>同上</cite></blockquote>
+
+<h2>他的想法，讲成「他怎么发现的」</h2>
+
+<h3>一、绿色数学：所有学科都在重复发明同一种图</h3>
+<p>2011 年 3 月，他开了「网络理论」系列的第一篇。开头很坦白：他花了几十年研究量子场论、量子引力、n-范畴，「我积累的知识看起来和我的新目标关系不大」；可他不想把脑子清空从头来，而且「我的本职工作还要求我证明定理」。于是他许了一个愿：</p>
+<blockquote><span class="en">I wish there were a branch of mathematics—in my dreams I call it green mathematics—that would interact with biology and ecology just as fruitfully as traditional mathematics interacts with physics.</span><span class="zh">我希望有这样一门数学——在梦里我管它叫<strong>绿色数学</strong>——它和生物学、生态学的互动，能像传统数学和物理学的互动一样丰饶。</span><cite>Network Theory (Part 1)，2011-03-04</cite></blockquote>
+<p>他马上给自己泼冷水：也许研究真正复杂的系统时，数学就失去了它在基本粒子那种简单东西上「不合理的有效性」，根本没有绿色数学；也许它得和传统数学根本不同，比如大量用计算机，「模拟可能比证明更重要。这我能接受」。他承认，「我花了很长时间探索传统数学的水晶之美，现在我有点想研究些更接地气的东西了。」</p>
+<p>然后他去做了一件很具体的事：<strong>把各个学科画的图摆在一起看</strong>。粒子物理有费曼图；电子学有电路图；工程有键合图（bond graph）；计算机科学有 Petri 网，也被化学拿去画反应；系统生物学有一整套图形标准 SBGN，下分三种语言；生态学家 Howard Odum 在 1950 年代研究热带森林时发明了「能量系统语言」，外号「能量语」（Energese）；再加上贝叶斯网络、神经网络。系统工程界在 2001 年还专门成立委员会搞了一套「系统建模语言」，里面有九种图。他看完的结论是：</p>
+<blockquote><span class="en">It’s clear that people from different subjects are reinventing the same kinds of diagrams.</span><span class="zh">很明显，<strong>不同学科的人在重新发明同一类图</strong>。</span><cite>Network Theory (Part 1)，2011-03-04</cite></blockquote>
+<p>别的学科已经在尝试统一这些图了（SBGN、系统建模语言都是），他说数学家应该加入，因为数学家擅长「飞到细节上面去看一般模式」，而且他们知道怎么把图当成「可以证明定理的严格结构」，不只是好用的草图——靠的是范畴论。这正是他前半生最熟的工具。<strong>他找到了接口：不用扔掉旧手艺，把它转个方向。</strong></p>
+<p>第一个落脚点是随机 Petri 网，也就是给每个反应标上速率的反应网络。他举的例子是兔子和狼：</p>
+<figure>
+<svg aria-label="兔子与狼的 Petri 网" role="img" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ar" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#6ea8fe"/></marker></defs>
+<circle cx="190" cy="125" fill="rgba(94,234,212,.12)" r="36" stroke="#5eead4" stroke-width="1.6"/>
+<text fill="#d5dce4" font-size="15" text-anchor="middle" x="190" y="130">兔子</text>
+<circle cx="450" cy="125" fill="rgba(94,234,212,.12)" r="36" stroke="#5eead4" stroke-width="1.6"/>
+<text fill="#d5dce4" font-size="15" text-anchor="middle" x="450" y="130">狼</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="22" y="110"/>
+<text fill="#d5dce4" font-size="13" text-anchor="middle" x="54" y="130">出生</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="288" y="110"/>
+<text fill="#d5dce4" font-size="13" text-anchor="middle" x="320" y="130">捕食</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="554" y="110"/>
+<text fill="#d5dce4" font-size="13" text-anchor="middle" x="586" y="130">死亡</text>
+<path d="M165,99 C130,60 80,70 62,106" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M62,144 C80,185 130,190 163,153" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#5eead4" font-size="13" x="104" y="196">×2</text>
+<path d="M226,125 L284,125" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M424,99 C400,60 345,62 326,106" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M330,144 C350,190 405,190 427,152" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#5eead4" font-size="13" x="372" y="200">×2</text>
+<path d="M486,125 L550,125" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#7d8794" font-size="12" text-anchor="middle" x="586" y="168">（什么也不出来）</text>
+</svg>
+<figcaption>兔子与狼的 Petri 网：圆圈是物种，方框是过程。出生：一只兔子进、两只兔子出；捕食：一兔一狼进、两狼出；死亡：一狼进、无出。据 Network Theory (Part 2) 重绘</figcaption>
+</figure>
+<p>三个过程：<strong>出生</strong>，一只兔子进去、两只出来——「这是现实的漫画：这些兔子无性繁殖，像变形虫一样一分为二」；<strong>捕食</strong>，一狼一兔进去、两狼出来；<strong>死亡</strong>，一狼进去、什么也不出来。就这么一张图，已经给出了经典的 Lotka–Volterra 捕食者-猎物模型的一个特例。</p>
+<p>他在这里看到的东西，又是「同一套方程换了名字」。量子场论里有「产生算符」和「湮灭算符」，描述粒子凭空出现和消失；而兔子出生、狼死掉，在数学上正好是同一类操作，只是数的是概率，不是振幅。2011 年底他在新加坡做的报告，摘要最后一句是：</p>
+<blockquote><span class="en">But what does it mean to treat wolves as fermions or bosons?</span><span class="zh">可是，<strong>把狼当成费米子或玻色子</strong>，究竟意味着什么？</span><cite>Probabilities versus Amplitudes，2011-12-05</cite></blockquote>
+<p>接下来几年，这条线变成了一个越来越大的计划，名字从「网络理论」变成了「组合性」：<strong>用范畴论讲清楚怎么把小网络拼成大网络</strong>。2015 年他和 Brendan Fong 写电路：只用电阻、电容、电感搭的电路，有一个「了不起的事实」——由电阻构成的电路总是自动调整到让耗散功率最小，他叫它「最小功率原理」，并指出它在电路里的角色正好对应经典力学里的最小作用量原理。由此可以做「黑箱化」：藏起电路内部，只记住从外面看到的行为，而这个行为能被一个数学对象完整刻画。同一篇里他列了一张表：力学的位置、速度、动量、力，对应电子学的电荷、电流、磁链、电压，对应液压的体积、流量、压力动量、压力，对应热学的熵、熵流、温度动量、温度，对应化学的摩尔数、摩尔流量、化学动量、化学势。<strong>又是同一组变量在不同学科里换衣服。</strong></p>
+<p>2018 年他和同伴创办了一本免费开放获取的期刊《组合性》（<em>Compositionality</em>），他在博客上介绍它是「关于用小部件搭建大东西」的。2023 年这条线落到了流行病学：他和做传染病建模的 Nate Osgood 一起开发基于范畴论的建模软件，先做了「存量-流量图」（stock and flow diagram），然后开始做「基于主体的模型」（agent-based model）。Osgood 把那个领域的现状比作「狂野西部」——工具一大堆，没有统摄性的学科。Baez 的打法和 2011 年完全一致：</p>
+<blockquote><span class="en">We want to make better software by first analyzing the whole problem with the help of math.</span><span class="zh">我们想先<strong>借助数学把整个问题分析清楚</strong>，再做出更好的软件。</span><cite>Agent-Based Models (Part 1)，2023-07-06</cite></blockquote>
+<p>他在那篇里高兴地发现，描述主体内部状态的两种常用方法——「存量-流量图」（适合连续量）和「状态图」（适合离散量）——很相似，「也许我们根本不该把它们当成两种不同的图，而是同一种更一般的图的两种用法！」十二年后，他还在做同一个动作：<strong>把两种看似不同的图，认成一种图</strong>。</p>
+
+<h3>二、量熵：给费曼的路径积分找一个「最大熵原理」</h3>
+<p>第二个想法是最纯粹的 Baez：一个类比，被硬推到底，看会不会断。</p>
+<p>物理学里有一个著名的类比。统计力学里，系统处在能量为 E 的状态的概率正比于 e<sup>−E/T</sup>（T 是温度）；量子力学里，粒子走一条作用量为 A 的路径的振幅正比于 e<sup>iA/ħ</sup>（ħ 是普朗克常数）。两个公式长得几乎一样，于是有一个说法：<strong>普朗克常数像一个虚数温度</strong>。2011 年圣诞节前，他在出发去老挝之前留下一份「节日小礼物」，把这个类比画成了一张对照表，然后指出表里有两个空格：</p>
+<div class="tbl"><table>
+<tr><th>静力学</th><th>动力学</th></tr>
+<tr><td>统计力学</td><td>量子力学</td></tr>
+<tr><td>概率</td><td>振幅</td></tr>
+<tr><td>玻尔兹曼分布</td><td>费曼路径求和</td></tr>
+<tr><td>能量</td><td>作用量</td></tr>
+<tr><td>温度</td><td>普朗克常数 × i</td></tr>
+<tr><td>熵</td><td class="q">？？？</td></tr>
+<tr><td>自由能</td><td class="q">？？？</td></tr>
+</table></div>
+<p>空格为什么重要？因为左边那一列的玻尔兹曼分布不是凭空来的：它是「在平均能量固定的条件下<strong>让熵最大</strong>」算出来的。他在文中说，这是一个计算，「你总有一天得自己做一遍，我不会剥夺你这份乐趣」。那么右边的费曼公式，是不是也是让某个东西「最大」算出来的？</p>
+<p>麻烦在于振幅是复数，复数没法比大小。他的撬棍是一个俏皮的观察：大自然在「求最小」时，其实常常并不真求最小——</p>
+<blockquote><span class="en">it often behaves like a bad freshman who applies the first derivative test and quits there: it just finds a stationary point, where the first derivative is zero.</span><span class="zh">它常常表现得像一个<strong>差劲的大一新生</strong>，用了一阶导数检验就收工：它只是找到一个驻点，一阶导数为零的地方。</span><cite>Quantropy (Part 1)，2011-12-22</cite></blockquote>
+<p>力学里不稳定平衡也是驻点，并不是最小值。而驻点对复数函数照样有意义。于是他「不想太多，顺着类比」定义了一个量——把熵公式里的概率换成振幅——给它起了个名字叫<strong>量熵（quantropy）</strong>，并自嘲「这是个傻气的词，唯一的优点是能很快让人明白意思」。然后用拉格朗日乘子法走一遍：要求振幅之和为 1、「期望作用量」固定，求量熵的驻点。算出来的结果，正好是费曼的路径求和公式，那个拉格朗日乘子正好是 1/(iħ)。他管它叫「经典度」：ħ 越小，系统越接近经典。表格的两个空格填上了：<strong>熵对应量熵，自由能对应「自由作用量」</strong>。</p>
+<p>值得注意的是他在过程中留下的所有路标。动笔前：「如果这个想法说得通，大概已经有人想到过了。如果你知道在哪儿，请告诉我。」半途中，他指出复对数有多个分支，这是「一个令人不安的问题，我们应该哪天回头再看」。「期望作用量」这个说法本身「有点怪」，因为这些数是振幅不是概率，「我们以后再担心这一切到底是什么意思」。这篇有 124 条评论，是本页抽样里评论最多的数学文章之一；后来他和 Blake Pollard 把它写成了论文。</p>
+<p>回头看，第一节那个「哈密顿方程是麦克斯韦关系」的发现，就是这张表推出来的。他在那篇的结尾说：一旦像量熵那篇那样把经典力学和热静力学形式上统一了，「我们就应该能把任何一个学科里的任何想法搬到另一个学科去。而这是真的。」<strong>一张对照表，填一个空格，就送来下一个空格。</strong></p>
+
+<h3>三、熵是你不知道的信息，进化是一种学习</h3>
+<p>第三个想法是前两个的交汇点：既然统计力学可以翻译到别处，那它的核心概念「熵」到别处会变成什么？</p>
+<p>他对熵的定义很干脆。2024 年他把自己在推特上开的一门「推文课」整理成一本小书《什么是熵？》，前言里写：</p>
+<blockquote><span class="en">I claim it’s the amount of information we don’t know about a situation, which in principle we could learn.</span><span class="zh">我认为，熵是我们对一个情境<strong>不知道、但原则上可以知道的信息量</strong>。</span><cite>What is Entropy?，2024-07-20</cite></blockquote>
+<p>为了不让讨论飘起来，他用一个具体谜题串起整本书：<strong>为什么室温常压下的氢气，熵对应于每个分子大约 23 比特的未知信息？</strong>从香农熵、最大熵原理、玻尔兹曼分布、配分函数一路讲到理想气体，最后回答这个数。他还在前言里划了几条界线：基本避开热力学第二定律，因为「它问题太多，好的解释需要另一本书」；避开熵在生物和黑洞里的角色，「物理科普作者最爱的那些熵的方面，这里都找不到」；以及——</p>
+<blockquote><span class="en">I also never say that entropy is ‘disorder’.</span><span class="zh">我也<strong>从来不说熵是「无序」</strong>。</span><cite>同上</cite></blockquote>
+<p>把熵当成信息，就能把它带进生物学。早在 2012 年，他就在为一个生物多样性数学会议准备报告。起点是一个已知的巧合：生态学家衡量生物多样性的一些指标，和香农衡量信息的公式在形式上完全相同。他顺着同事 Marc Harper 的工作往下走，Harper 证明了进化博弈论的复制子方程在形式上等同于贝叶斯推断。Baez 把它写成了一句话：</p>
+<blockquote><span class="en">Thus, in this simple model, a population of organisms can be thought of as a ‘hypothesis’ about how to survive, and natural selection acts to update this hypothesis according to Bayes’ rule.</span><span class="zh">因此，在这个简单模型里，<strong>一个生物种群可以被看作一个关于「怎样活下去」的假设</strong>，而自然选择按贝叶斯规则更新这个假设。</span><cite>Information Geometry (Part 9)，2012-06-01</cite></blockquote>
+<p>他讲复制子方程时顺手给了一个大白话版本：某种类型在种群里的占比要增长，它的适应度必须高于平均适应度。「如果你在争市场份额，要紧的不是你有多好，而是你比平均好多少。如果其他人都很烂，你就走运了。」他还特意说明这里的「复制子」不必是生物物种：可以是基因，也可以是连锁餐厅。</p>
+<p>他也同时提醒了这条类比的边界：同样的数学结构也出现在化学反应网络里，而那里熵的增加、或者更准确地说自由能的减少，「通常不被看作一种『学习』」。所以问题是：自然界的多样性变化，在多大程度上可以有用地看作学习？2017 年，在一个题为「生物复杂性能被量化吗？」的研讨会上，他给出了更完整的版本：如果生物学研究的是自我复制的东西，那么相关的信息概念是一个概率分布相对另一个的信息，也就是相对熵；用它可以「把进化看作一个学习过程」，并给费舍尔的自然选择基本定理一个干净的一般表述。</p>
+<p>这就是他的第三个原创点：<strong>热力学、信息论和进化论里那几个「随时间单调变化的量」，可能是同一个量</strong>。它不是他一个人的发现（Harper、Smerlak 等人的工作都在这里，他的博客还请 Smerlak 写了客座文章，论证热耗散和适应性进化是「同一枚马尔可夫硬币的两面」），但把它们放进同一张对照表、讲给不做这行的人听，是他的手艺。</p>
+
+<h2>他的思维方法</h2>
+<p><strong>把类比当成一张没填完的表。</strong>他的标准动作是：先把两门学科里已知对应的东西列成两列，然后盯着表里的空格。量熵那篇就是这么开始的，「顺着类比，不想太多」。这种做法的好处是，类比不再只是修辞，而变成一个<strong>可以检验的预测</strong>：空格里应该有个东西，它应该满足什么性质，算一算就知道。</p>
+<p><strong>默认自己不是第一个。</strong>「如果这个想法说得通，大概已经有人想到过了。如果你知道在哪儿，请告诉我。」「是不是有人已经指出过哈密顿方程是麦克斯韦关系的特例？」这不是客套，而是一种研究策略：把半成品摆出来，让读者帮忙查文献、找错误。他的报告幻灯片常常先贴上博客，「如果你发现错误，我很想在那之前听到」。2013 年有读者说系列文章太多看不过来，同伴整理了一份目录，他的回应是：「不用告诉我怎么改进：直接动手。」</p>
+<p><strong>用一个具体谜题拴住一整门学科。</strong>一本讲熵的书，围着「为什么是 23 比特」转；一套讲 Petri 网的理论，从兔子和狼开始。他宁可用一个漫画式的模型（会像变形虫一样分裂的兔子），也不要一个现实但没人看得懂的模型，「我在这里想解释的是一般思路，不是具体情况的现实模型」。</p>
+<p><strong>把自己卡住的地方写出来。</strong>「这看起来有点怪，它让我卡了一天。」「我还是觉得它很怪。但我认为它是对的。」大部分数学写作会把这些痕迹擦干净；他特意留着，因为读者卡住的往往正是同一个地方。</p>
+<p><strong>拒绝省事的说法。</strong>他不说熵是无序；他会停下来解释为什么热力学里有个负号，「你可以把它当成一个异想天开的玩笑」；他会在讲复制子方程时说，逐分量相乘向量是「你的老师们试图洗脑你永远不要做的事」。<strong>他的俏皮几乎都在为精确服务</strong>：玩笑出现在概念最容易被误解的地方。</p>
+<p><strong>人多的地方就走。</strong>他离开高阶规范场论是因为人太多了，那个雪球已经在滚。这条规则似乎一直在起作用：应用范畴论在 2018 年前后有了期刊和年会、成了一个热闹的领域，此后他的博客又越来越多地写他自己觉得好玩、别人很少写的东西：毕达哥拉斯音律里那个「几乎是十二角星」的五度圈，以及他特意安放在「音乐中的魔鬼」三全音位置上的那道合不拢的裂口；E6 根多面体；二项式系数里七个已知的「巧合」等式。2026 年 9 月那篇讲的是，他的合作者 Paul Schwahn 用李代数的表示论解释了 C(10,3) = C(16,2) = 120 这个巧合，他写道：</p>
+<blockquote><span class="en">it’s still nice to find a deeper layer of meaning underlying what might otherwise seem like a meaningless coincidence!</span><span class="zh">能在一件原本看似毫无意义的巧合下面<strong>找到更深一层的意义</strong>，还是很好！</span><cite>Binomial Coefficient Coincidences，2026-09-20</cite></blockquote>
+<p>这句话几乎可以当作整个博客的题词：从热力学到二项式系数，他一直在做同一件事，在「巧合」底下找结构。</p>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>第一，Yudkowsky 那道题，他可能没有答对。</strong>开博时他说「数学和物理可以等」。十六年后，他侧栏的分类里「数学」有 657 篇，「气候」162 篇；2026 年夏天的新文章是八元数与标准模型、E7 里的三代粒子、E6 根多面体、准晶。这些东西本身很好，但它们正是他当年说可以等的那一类。公平地说，他不是放弃了：2016 年 12 月他组织志愿者备份美国政府公开的气候数据库；2023–2024 年他写了十四篇文章开发流行病学建模软件；2026 年 4 月还写了一篇长文讲系统动力学和「杠杆点」，里面写道人类文明从远处看「主要由杀死植物、燃烧碳、用混凝土建造构筑物组成」。可「绿色数学」这门他梦到的学问至今没有成形，而他自己 2011 年那句「人很容易骗自己以为自己知道」，正是对这种局面最准的预言。</p>
+<p><strong>第二，形式化的图，可能帮不到画图的人。</strong>这一条他自己写在 2015 年那篇电路论文的介绍里：</p>
+<blockquote><span class="en">While diagrams of networks have been independently introduced in many disciplines, we do not expect formalizing these diagrams to immediately help the practitioners of these disciplines.</span><span class="zh">虽然网络图在许多学科里被各自独立地引入，但我们<strong>不指望把这些图形式化能立刻帮到这些学科的从业者</strong>。</span><cite>A Compositional Framework for Passive Linear Networks，2015-04-28</cite></blockquote>
+<p>他接着说，起初信息主要会反过来流：把这些学科的想法翻译成现代数学，给数学家提供「思考的食粮和有趣的新问题」，希望「长远来看」数学家能回报。这是诚实的，但也意味着「绿色数学」的头几年，主要受益者是数学。外部也有同样的批评：《组合性》期刊的共同创办人之一 Joshua Tan 在 2018 年写过一篇《范畴论的失败》（<em>The failures of category theory</em>），列了应用范畴论在科学中的若干短板，要点包括它的模型往往不做预测、而是「复原」已有的数学，很难直接和数据打交道，也缺少处理不确定性的演算。本页只读到了这篇的要点，没有细读它的完整论证。</p>
+<p><strong>第三，类比可能只是形式上的。</strong>量熵是一个漂亮的形式推导，但他自己标出了它的裂缝：复对数的分支问题「令人不安」；振幅不是概率，「期望作用量」是什么意思不清楚。哈密顿方程和麦克斯韦关系的对应，推出了一对「看起来很怪」的额外方程，他说「我确信它们是对的」，但「对」和「有物理意义」是两回事。一个把类比当成主要发现工具的人，系统性的风险是把「方程长得一样」当成「东西是一样的」。他 2026 年那篇系统动力学文章里，倒是对另一个领域说过一句同样适用于自己的话：这类模型「与其说是预测未来会发生什么的形式体系，不如说是找出什么可能发生、寻找杠杆点的方法」。</p>
+<p><strong>第四，他对「应用」的期待，是一个数学家的期待。</strong>2015 年他转贴 Google 两位工程师的反思：Google 2007 年雄心勃勃地启动「让可再生能源比煤便宜」的计划，2011 年关掉了，他一直不知道原因；两位工程师事后算出，即使最好的情况实现，也没法在本世纪让大气二氧化碳回到 350 ppm 以下。Baez 的评论只有一句：「这对我来说不意外。」他清楚问题的规模在工程和政治上。但他自己的贡献，按他的比较优势，被放在离这些杠杆最远的地方：数学的基础。这不是错，而是一个选择；只是读者应当知道，这个博客解决的是「数学家能做什么」，而不是「地球需要什么」。</p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/04/24/what-to-do/">What To Do? (Part 1)</a></span>（2011-04-24）<span class="d">回应 Yudkowsky 的「环保不是你的最优选择」：为什么离开高阶规范场论、厨房冒烟的比喻、比较优势、以及最后那句「人很容易骗自己」。</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/03/04/network-theory-part-1/">Network Theory (Part 1)</a></span>（2011-03-04）<span class="d">「绿色数学」的愿景，以及费曼图、电路图、键合图、Petri 网、SBGN、Odum 的能量语被并排摆在一起的那一刻。</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/12/22/quantropy/">Quantropy (Part 1)</a></span>（2011-12-22）<span class="d">统计力学与量子力学的对照表、「差劲的大一新生」、用量熵的驻点推出费曼路径求和。</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2012/01/19/classical-mechanics-versus-thermodynamics-part-1/">Classical Mechanics versus Thermodynamics (Part 1)</a></span>（2012-01-19）<span class="d">哈密顿方程是麦克斯韦关系的特例；2021 年的 <a href="https://johncarlosbaez.wordpress.com/2021/09/23/classical-mechanics-versus-thermodynamics-part-3/">Part 3</a> 用辛几何和拉格朗日子流形把它讲到底。</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2012/06/01/information-geometry-part-9/">Information Geometry (Part 9)</a></span>（2012-06-01）<span class="d">复制子方程与贝叶斯推断、种群作为「怎样活下去」的假设、熵作为生物多样性的度量。</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2024/07/20/what-is-entropy/">What is Entropy?</a></span>（2024-07-20）<span class="d">由推文课整理成的小书：熵作为未知信息、23 比特的氢气谜题、「从来不说熵是无序」。</span></li>
+</ul>
+
+<section class="updates" data-slug="azimuth" data-last-reviewed="2026-10-05">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 第 37 期 · 本页内容核对至 2026-10-05</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>John Baez · Azimuth — Different sciences keep rewriting the same equations; a mathematician's job is to recognize them</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+.meta-card{font-family:"SF Mono",Menlo,monospace;font-size:.85rem;line-height:1.9;color:#93a1ae;border:1px solid rgba(110,168,254,.22);border-radius:10px;padding:14px 20px;margin:20px 0;background:rgba(110,168,254,.04)}
+.meta-card b{color:#5eead4;font-weight:600}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+.tbl{width:100%;overflow-x:auto;margin:20px 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{border-bottom:1px solid rgba(110,168,254,.14);padding:7px 10px;text-align:left}
+th{color:#5eead4;font-family:"SF Mono",Menlo,monospace;font-size:.8rem;font-weight:600}
+td.q{color:#7d8794}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="azimuth-blog37.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep-Read · 37 · johncarlosbaez.wordpress.com</div>
+<h1>John Baez<br/>Different sciences keep rewriting the same equations; a mathematician's job is to recognize them</h1>
+<p class="sub">John Carlos Baez · blog <strong>Azimuth</strong> (named after the environmental-science collaboration, the Azimuth Project, that he launched in 2010) · American mathematical physicist, professor of mathematics at UC Riverside · <strong>still active</strong>: first post 10 July 2010, latest 20 September 2026; the site's sitemap lists roughly a thousand posts, and the sidebar categories count 657 in "mathematics", 273 "physics", 192 "networks", 162 "climate" · How the posts were chosen: there is no best-of page, and the 2013 <em>Azimuth Blog Overview</em> is only an index of series. For this page I <strong>sampled 247 posts and counted internal backlinks</strong> (the posts cited across years are mainly <em>Quantropy</em> and <em>Classical Mechanics versus Thermodynamics</em>, the latter cited from 2012 all the way to 2021), and also looked at comment counts (<em>Quantropy</em> 124, <em>Why Google Gave Up</em> 104, <em>What To Do?</em> 76) · This page is based on a full reading of <strong>16 of his own posts</strong>, spanning 2010-07 to 2026-09: <strong>8 from the earliest period</strong> (the first 20% of the timespan, 2010-07 to 2013-08). The blog turns twice: around 2015–2017 from climate and energy toward applied category theory, and from about 2022 increasingly back to pure mathematics, physics and music theory. <strong>Posts from both sides of both turns were read</strong></p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Short</button>
+<button id="btn-deep">Full</button>
+</div>
+
+<!-- ============ Short ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>In January 2012, a fifty-year-old mathematical physicist wrote this on his blog:</p>
+<blockquote><span class="en">It came as a bit of a shock last week when I realized that some of the equations I’d learned in thermodynamics were just the same as equations I’d learned in classical mechanics—with only the names of the variables changed, to protect the innocent.</span><cite>Classical Mechanics versus Thermodynamics (Part 1), 2012-01-19</cite></blockquote>
+<p>The next line was a single sentence: <strong>"Why didn’t anyone tell me?"</strong></p>
+<p>He meant the two equations physics students love most (Hamilton's equations, which fit all of classical mechanics into two lines) and the pile of equations they hate most (the Maxwell relations of thermodynamics, many of them and hard to remember). He showed that the first are a special case of the second, derived in exactly the same way: you just call "position" entropy, "momentum" temperature and "time" volume. He hoped this would make you <strong>like the Maxwell relations more, instead of liking Hamilton’s equations less</strong>. Nine years later he was still thinking about it, and in 2021 he gave a physics colloquium on it.</p>
+<p>John Baez has been writing things like this for more than thirty years. In 1993 he started a Usenet column, <em>This Week's Finds</em>, before the word "blog" existed; in 2010 he started Azimuth and moved the column into it. He launched the blog from an airport lounge in Los Angeles at midnight, waiting for a 1:40 am flight, and wrote down why he was changing course: the deep secrets of math and physics <strong>can wait, and other things can’t</strong>. The Earth was in serious trouble, and he wanted to know what a mathematician could do about it.</p>
+<p>Reading sixteen years of it, his answer turns out to be that same question, "why didn't anyone tell me?" His core intuition is that <strong>nature, and the human sciences that study it, keep reinventing the same structures under different names</strong>. Chemists draw reaction networks, electrical engineers draw circuits, ecologists draw energy-flow diagrams, epidemiologists draw stock-and-flow diagrams, physicists draw Feynman diagrams. In 2011 he laid them side by side and wrote that "people from different subjects are reinventing the same kinds of diagrams". If mathematics could unify them (his tool was category theory, the mathematics of how things fit together), it might help biology and ecology the way it has helped physics. He gave this not-yet-existing subject a name: <strong>green mathematics</strong>.</p>
+<p>The same intuition took him a long way with entropy. He insists that entropy is not "disorder" but <strong>the amount of information you don't know but in principle could learn</strong>: hydrogen gas at room temperature and pressure hides about 23 unknown bits per molecule. Following that thread, he lined up the replicator equation of evolutionary biology with Bayesian updating in statistics. A population can be seen as a hypothesis about how to survive, and natural selection updates it by Bayes' rule. <strong>Evolution is a form of learning.</strong></p>
+<p>This approach has a cost. In 2011 Eliezer Yudkowsky told him in an interview that millions of people already work on the environment, so his marginal contribution there would be smallest. Baez wrote a long, serious reply, whose last line was: "One can, of course, easily fool oneself into thinking one knows." In 2015 he wrote himself that formalizing engineering diagrams was not expected "to immediately help the practitioners"; mathematicians would benefit first. And by 2026 his newest posts are about the E6 root polytope, octonions and the Standard Model. The things that "can wait" have come back.</p>
+<p>But if you take one thing from him, take the question: <strong>has this thing I learned in one subject already shown up in another subject under a different name?</strong> With that question he went from thermodynamics to mechanics, from chemistry to epidemics, from musical tuning to evolution. His blog is a sixteen-year public demonstration that the answer is usually yes, and usually nobody told you.</p>
+</div>
+
+<!-- ============ Full ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary</h2>
+<div class="glossary">
+<ul>
+<li><b>Category theory</b> — a very abstract branch of mathematics that cares less about what things are and more about how they connect and compose. Baez uses it to set rules for building big systems out of small ones.</li>
+<li><b>Compositionality</b> — when a big thing's behavior can be worked out from its parts plus the way they are put together. Lego is compositional; soup mostly isn't.</li>
+<li><b>Petri net</b> — a diagram language: circles stand for "things" (molecules, species), boxes for "processes" (reactions, predation), and arrows say what each process consumes and produces. Born in computer science, borrowed by chemistry and biology.</li>
+<li><b>Entropy</b> — for Baez, the amount of <strong>information you don't know</strong> about a system, measured in bits.</li>
+<li><b>Boltzmann distribution</b> — the basic formula of statistical mechanics: the probability that a system is in a state of energy E falls off exponentially with E, at a rate set by the temperature.</li>
+<li><b>Hamilton's equations / Maxwell relations</b> — the first are the core equations of classical mechanics, describing how position and momentum change in time; the second are a family of identities between partial derivatives of temperature, pressure, volume and entropy in thermodynamics.</li>
+<li><b>Path integral</b> — Feynman's formulation of quantum mechanics: a particle doesn't take one path but "all paths at once", each contributing a complex number called an amplitude.</li>
+<li><b>Replicator equation</b> — the basic equation of evolutionary game theory: the share of a type in a population grows according to how much its fitness exceeds the average.</li>
+<li><b>Relative entropy / Kullback–Leibler divergence</b> — a measure of how much information one probability distribution carries relative to another.</li>
+</ul>
+</div>
+
+<h2>One strange fact: the two most beloved equations are a special case of the most hated ones</h2>
+<p>Physics students feel very differently about two sets of equations. <strong>Hamilton's equations</strong> are just two lines, neat and symmetric, with all of classical mechanics inside them. Everybody loves them. The <strong>Maxwell relations</strong> are a long list of partial-derivative identities in thermodynamics, each with a little subscript telling you which variable to hold fixed. They are hard to remember and hard to use, and everybody hates them.</p>
+<p>In January 2012 John Baez discovered that they are the same thing. He wrote that he had realized only "last week" that some equations from thermodynamics were exactly the equations of classical mechanics, "with only the names of the variables changed, to protect the innocent". Then, on a line of its own:</p>
+<blockquote><span class="en">Why didn’t anyone tell me?</span><cite>Classical Mechanics versus Thermodynamics (Part 1), 2012-01-19</cite></blockquote>
+<p>He wrote out the dictionary: <strong>position</strong> in mechanics corresponds to <strong>entropy</strong> in thermodynamics, <strong>momentum</strong> to <strong>temperature</strong>, <strong>time</strong> to <strong>volume</strong>, <strong>energy</strong> to <strong>pressure</strong>. Rename things according to this table and Hamilton's equations become the first two Maxwell relations. The one awkward point is that to make the match exact, Hamilton's equations also need those "hold this fixed" subscripts, which produces odd things like "the partial derivative with respect to position, holding time fixed". He admitted it set him back a day: "I still think it’s weird. But I think it’s correct."</p>
+<p>Then he derived both sides with exactly the same reasoning. The Maxwell relations, it turns out, are nothing but the calculus fact that mixed partial derivatives commute. So are Hamilton's equations, once you pick the right function. On the mechanics side that function is "Hamilton's principal function", the least action needed for a particle to get from its starting point to a given endpoint. His wish:</p>
+<blockquote><span class="en">I hope this will make you like the Maxwell relations more, instead of liking Hamilton’s equations less.</span><cite>Same post</cite></blockquote>
+<p>This was not a passing whim. Nine years later, in 2021, he gave the physics colloquium at the University of British Columbia on the same subject and dug a layer deeper. What really matches on the two sides is not the pairing of variables but a more abstract geometric structure, and he closed with Alan Weinstein's "symplectic creed": EVERYTHING IS A LAGRANGIAN SUBMANIFOLD. As a spinoff he derived two extra Hamilton's equations that "look weird", adding "I’m sure they’re correct".</p>
+<p>This little episode contains nearly all of Baez. A man who has read physics his whole life suddenly finds that two courses teach the same thing. His first move is not to write a paper but to write a blog post asking "why didn't anyone tell me?" Then he spends a decade thinking it through.</p>
+
+<h2>Who he is</h2>
+<p>Born in San Francisco in 1961; undergraduate at Princeton, PhD at MIT, teaching mathematics at UC Riverside since 1989. His uncle Albert Baez, a physicist and co-inventor of the X-ray microscope, got him interested in physics as a child; the folk singer Joan Baez is his cousin. The first half of his career was spent on quantum gravity and higher categories (n-categories), and he was one of the internet's earliest math bloggers: <em>This Week's Finds</em>, started on Usenet in 1993, ran for more than three hundred issues and is said to have anticipated the very idea of a blog. He also wrote the widely circulated "crackpot index", a scoring system for self-proclaimed revolutions in physics.</p>
+<p>At midnight on 10 July 2010 he was sitting in an airport lounge in Los Angeles, waiting for a 1:40 am flight to Hong Kong and on to Singapore. His wife, the comparative-literature scholar Lisa Raphals, was going to teach for two years at the National University of Singapore, and he was going to the Centre for Quantum Technologies. In that lounge he started this blog and said he wanted to "change gears":</p>
+<blockquote><span class="en">The deep secrets of math and physics are endlessly engrossing — but they can wait, and other things can’t.</span><cite>Welcome to Azimuth, 2010-07-10</cite></blockquote>
+<p>He immediately teased himself that this "sounds pretty ambitious, verging on pompous". The blog is still going, with new posts in September 2026.</p>
+
+<h2>What he has been fighting with</h2>
+<p>His root question was stated on day one: <strong>what can a mathematician do for a planet in crisis?</strong> But it really bit him nine months later.</p>
+<p>In 2011 he interviewed Eliezer Yudkowsky (a leading figure of the rationalist community and AI-risk research) on his blog. Yudkowsky's advice was blunt: millions of people already work on the environment, and by the measure of "scope × marginal impact × your comparative advantage", environmentalism could not be John Baez's best option:</p>
+<blockquote><span class="en">There’s just no way that the product of scope, marginal impact, and John Baez’s comparative advantage is going to end up being maximal at that point.</span><cite>Eliezer Yudkowsky, quoted in What To Do? (Part 1), 2011-04-24</cite></blockquote>
+<p>Baez didn't dodge it. He wrote a long answer called <em>What To Do?</em>. He began by explaining why he had left his old field, in a passage few academics would publish. Categorification and higher gauge theory had started as "a lonely but exciting quest". Then the conferences multiplied and the crowds grew, and many of the newcomers were young people he had trained himself, or had turned on to the subject with his own expository writing.</p>
+<blockquote><span class="en">It’s as if I engineered my own obsolescence.</span><cite>What To Do? (Part 1), 2011-04-24</cite></blockquote>
+<p>He said he had learned to see the bright side: it set him free. "Helping start a snowball roll downhill is fun… but what’s the point in chasing one that’s already rolling?" That was also his first answer to Yudkowsky. Of course he didn't want to do what "millions of people" were already doing, and Azimuth was unconventional enough that "while it may fall flat on its face, it’s at least trying something new".</p>
+<p>His second answer was why he had to do something at all. For decades, he said, he had been watching "the slow-motion train wreck that our civilization seems to be engaged in": global warming, ocean acidification and habitat loss might combine into a mass extinction. If it were just routine "misery as usual", he admitted he'd happily sit back. But the more he studied it, the less tenable that seemed, especially since so many people were doing exactly that:</p>
+<blockquote><span class="en">So, just as I’d move to put out a fire if I saw smoke coming out of the kitchen and everyone else was too busy watching TV to notice, I feel I have to do something.</span><cite>Same post</cite></blockquote>
+<p>The third answer, and the most important, sits in a single sentence in the middle. He already had projects that used his "comparative advantage": <strong>the ability to do math and explain stuff</strong>. The most visible was the network theory project, "a step towards the kind of math I think we need to understand a wide variety of complex systems".</p>
+<p>That is the skeleton of the whole blog. He did not retrain as a climate scientist or go off to build solar panels. He went looking for <strong>the place where a mathematician's craft could plug into the problem</strong>, and nearly every series he wrote over the next sixteen years can be read as one attempt at that. The last line of that post, read sixteen years later, is its most honest:</p>
+<blockquote><span class="en">One can, of course, easily fool oneself into thinking one knows.</span><cite>Same post</cite></blockquote>
+
+<h2>His ideas, told as the story of how he found them</h2>
+
+<h3>1. Green mathematics: every science keeps reinventing the same diagrams</h3>
+<p>In March 2011 he opened the "Network Theory" series. He began candidly: he had spent decades on quantum field theory, quantum gravity and n-categories, and "my accumulated knowledge doesn’t seem terribly relevant to my new goals". But he didn't want a complete "brain dump", and "my day job still requires that I prove theorems". So he made a wish:</p>
+<blockquote><span class="en">I wish there were a branch of mathematics—in my dreams I call it green mathematics—that would interact with biology and ecology just as fruitfully as traditional mathematics interacts with physics.</span><cite>Network Theory (Part 1), 2011-03-04</cite></blockquote>
+<p>He threw cold water on it right away. Maybe mathematics loses its "unreasonable effectiveness" when applied to truly complex systems, and there is no green mathematics at all. Maybe it would have to be fundamentally different from traditional mathematics, for instance relying heavily on computers: "Simulations might become more important than proofs. That’s okay with me." He admitted, "I’ve spent a long time exploring the crystalline beauty of traditional mathematics, but now I’m feeling an urge to study something slightly more earthy."</p>
+<p>Then he did something very concrete: <strong>he laid the diagrams of different fields side by side</strong>. Particle physics has Feynman diagrams; electronics has circuit diagrams; engineering has bond graphs; computer science has Petri nets, which chemistry borrowed for reactions; systems biology has a whole graphical standard, SBGN, made of three separate languages; the ecologist Howard Odum, studying tropical forests in the 1950s, invented an "Energy Systems Language", nicknamed "Energese". Then there are Bayesian networks and neural networks, and in 2001 the systems-engineering world set up a committee to build a "Systems Modeling Language" with nine types of diagram. His conclusion:</p>
+<blockquote><span class="en">It’s clear that people from different subjects are reinventing the same kinds of diagrams.</span><cite>Network Theory (Part 1), 2011-03-04</cite></blockquote>
+<p>Other fields were already trying to standardize these diagrams (SBGN and the systems modeling language are both attempts), and he argued that mathematicians should join in. Mathematicians are good at "soaring above the particulars and seeing general patterns", and they know how to treat diagrams as "rigorously defined structures that you can prove theorems about", not just handy sketches. The tool for that is category theory, the tool he knew best from the first half of his career. <strong>He had found his plug: don't throw away the old craft, point it somewhere new.</strong></p>
+<p>His first foothold was the stochastic Petri net: a reaction network with a rate attached to each reaction. His example was rabbits and wolves:</p>
+<figure>
+<svg aria-label="Petri net of rabbits and wolves" role="img" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ar" markerHeight="7" markerWidth="7" orient="auto" refX="6" refY="3.5"><path d="M0,0 L7,3.5 L0,7 z" fill="#6ea8fe"/></marker></defs>
+<circle cx="190" cy="125" fill="rgba(94,234,212,.12)" r="36" stroke="#5eead4" stroke-width="1.6"/>
+<text fill="#d5dce4" font-size="15" text-anchor="middle" x="190" y="130">rabbit</text>
+<circle cx="450" cy="125" fill="rgba(94,234,212,.12)" r="36" stroke="#5eead4" stroke-width="1.6"/>
+<text fill="#d5dce4" font-size="15" text-anchor="middle" x="450" y="130">wolf</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="22" y="110"/>
+<text fill="#d5dce4" font-size="13" text-anchor="middle" x="54" y="130">birth</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="288" y="110"/>
+<text fill="#d5dce4" font-size="12" text-anchor="middle" x="320" y="130">predation</text>
+<rect fill="rgba(110,168,254,.16)" height="30" rx="4" stroke="#6ea8fe" stroke-width="1.4" width="64" x="554" y="110"/>
+<text fill="#d5dce4" font-size="13" text-anchor="middle" x="586" y="130">death</text>
+<path d="M165,99 C130,60 80,70 62,106" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M62,144 C80,185 130,190 163,153" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#5eead4" font-size="13" x="104" y="196">×2</text>
+<path d="M226,125 L284,125" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M424,99 C400,60 345,62 326,106" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<path d="M330,144 C350,190 405,190 427,152" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#5eead4" font-size="13" x="372" y="200">×2</text>
+<path d="M486,125 L550,125" fill="none" marker-end="url(#ar)" stroke="#6ea8fe" stroke-width="1.4"/>
+<text fill="#7d8794" font-size="12" text-anchor="middle" x="586" y="168">(nothing out)</text>
+</svg>
+<figcaption>The rabbit-and-wolf Petri net: circles are species, boxes are processes. Birth: one rabbit in, two out. Predation: one rabbit and one wolf in, two wolves out. Death: one wolf in, nothing out. Redrawn from Network Theory (Part 2)</figcaption>
+</figure>
+<p>Three processes. <strong>Birth</strong>: one rabbit goes in and two come out ("a caricature of reality: these bunnies reproduce asexually, splitting in two like amoebas"). <strong>Predation</strong>: one wolf and one rabbit go in, two wolves come out. <strong>Death</strong>: one wolf goes in and nothing comes out. That one picture already gives a special case of the classic Lotka–Volterra predator–prey model.</p>
+<p>What he saw here was, once again, the same equations under different names. Quantum field theory has "creation" and "annihilation" operators, describing particles appearing and disappearing. A rabbit being born or a wolf dying is mathematically the same kind of operation, except that you count probabilities rather than amplitudes. The abstract of a talk he gave in Singapore at the end of 2011 ended:</p>
+<blockquote><span class="en">But what does it mean to treat wolves as fermions or bosons?</span><cite>Probabilities versus Amplitudes, 2011-12-05</cite></blockquote>
+<p>Over the next years this thread grew into a bigger program, and its name shifted from "network theory" to "compositionality": <strong>using category theory to say exactly how small networks combine into large ones</strong>. In 2015 he and Brendan Fong wrote about electrical circuits made only of resistors, capacitors and inductors. A "remarkable fact" about circuits of resistors is that they always settle into the state that minimizes the power dissipated. He called this the "principle of minimum power" and noted that it plays the role in circuits that the principle of least action plays in classical mechanics. That makes "black boxing" possible: hide the circuit's insides and keep only its behavior as seen from outside, which a single mathematical object captures completely. The same post has a table matching position, velocity, momentum and force in mechanics with charge, current, flux linkage and voltage in electronics; volume, flow, pressure momentum and pressure in hydraulics; entropy, entropy flow, temperature momentum and temperature in thermal physics; and moles, molar flow, chemical momentum and chemical potential in chemistry. <strong>The same set of variables again, dressed differently in each field.</strong></p>
+<p>In 2018 he and colleagues launched a free, open-access journal, <em>Compositionality</em>, which he described on the blog as being "about building big things from smaller parts". In 2023 the thread reached epidemiology. Working with the disease modeler Nate Osgood, he helped develop category-theory-based modeling software, first for stock-and-flow diagrams and then for agent-based models. Osgood likened that field's current state to the "wild West": plenty of tools, no overarching discipline. Baez's approach was exactly the one he had used in 2011:</p>
+<blockquote><span class="en">We want to make better software by first analyzing the whole problem with the help of math.</span><cite>Agent-Based Models (Part 1), 2023-07-06</cite></blockquote>
+<p>In that post he was pleased to find that the two usual ways of describing an agent's internal state, stock-and-flow diagrams (for continuous quantities) and state diagrams (for discrete ones), are very similar: "Maybe we shouldn’t even treat them as two distinct kinds of diagram, but rather as two ways of using some more general kind of diagram!" Twelve years on, he was making the same move: <strong>recognizing two apparently different diagrams as one</strong>.</p>
+
+<h3>2. Quantropy: a maximum-entropy principle for Feynman's path integral</h3>
+<p>The second idea is the purest Baez: take an analogy, push it as far as it will go, and see whether it breaks.</p>
+<p>Physics has a famous analogy. In statistical mechanics, the probability of a state with energy E is proportional to e<sup>−E/T</sup>, where T is temperature. In quantum mechanics, the amplitude for a path with action A is proportional to e<sup>iA/ħ</sup>, where ħ is Planck's constant. The formulas look almost identical, hence the saying that <strong>Planck's constant is like an imaginary temperature</strong>. Just before Christmas 2011, on his way to Laos, he left a "little present": the analogy drawn as a chart, with two blanks in it.</p>
+<div class="tbl"><table>
+<tr><th>Statics</th><th>Dynamics</th></tr>
+<tr><td>statistical mechanics</td><td>quantum mechanics</td></tr>
+<tr><td>probabilities</td><td>amplitudes</td></tr>
+<tr><td>Boltzmann distribution</td><td>Feynman sum over histories</td></tr>
+<tr><td>energy</td><td>action</td></tr>
+<tr><td>temperature</td><td>Planck’s constant times i</td></tr>
+<tr><td>entropy</td><td class="q">???</td></tr>
+<tr><td>free energy</td><td class="q">???</td></tr>
+</table></div>
+<p>Why do the blanks matter? Because the Boltzmann distribution on the left doesn't come from nowhere. It comes from <strong>maximizing entropy</strong> subject to a fixed expected energy. That, he wrote, is "just a calculation; you must do it for yourself someday, and I will not rob you of that joy." So does Feynman's formula on the right also come from maximizing something?</p>
+<p>The trouble is that amplitudes are complex numbers, and you can't maximize a complex function. His lever was a playful observation: when nature "minimizes" something, it often doesn't really minimize it.</p>
+<blockquote><span class="en">it often behaves like a bad freshman who applies the first derivative test and quits there: it just finds a stationary point, where the first derivative is zero.</span><cite>Quantropy (Part 1), 2011-12-22</cite></blockquote>
+<p>Unstable equilibria in mechanics are stationary points too, not minima, and stationary points still make sense for complex functions. So, "following the analogy without thinking too hard", he defined a quantity by putting amplitudes in place of probabilities in the formula for entropy, and named it <strong>quantropy</strong>, "a goofy word whose only virtue is that it quickly gets the idea across". Then he ran the Lagrange multiplier recipe: require the amplitudes to sum to 1, fix the "expected action", and look for stationary points of quantropy. Out came exactly Feynman's sum over histories, with the Lagrange multiplier equal to 1/(iħ). He called this multiplier the "classicality": the smaller ħ is, the more classical the system. The two blanks were filled: <strong>entropy corresponds to quantropy, free energy to "free action"</strong>.</p>
+<p>Notice the signposts he left along the way. Before starting: "if this idea makes sense, someone probably had it already. If you know where, please tell me." Partway through, he points out that the complex logarithm has many branches, "clearly it’s a disturbing issue which we should revisit someday". And "expected action" is itself "a bit odd", since these numbers are amplitudes, not probabilities: "We can worry later what all this stuff really means". The post drew 124 comments, among the most of any math post in my sample, and he later turned it into a paper with Blake Pollard.</p>
+<p>Looking back, the discovery in the opening section (Hamilton's equations are Maxwell relations) was pushed out of this same chart. He ended that post by saying that once classical mechanics and thermal statics are formally unified, as sketched in the quantropy article, "we should be able to take any idea from one subject and transpose it to the other. And it’s true." <strong>Fill one blank in the chart and it hands you the next one.</strong></p>
+
+<h3>3. Entropy is the information you don't know, and evolution is a form of learning</h3>
+<p>The third idea is where the first two meet. If statistical mechanics can be translated into other fields, what does its central concept, entropy, become there?</p>
+<p>His definition of entropy is blunt. In 2024 he turned a "tweet course" he had taught on Twitter into a little book, <em>What is Entropy?</em>, and wrote in the foreword:</p>
+<blockquote><span class="en">I claim it’s the amount of information we don’t know about a situation, which in principle we could learn.</span><cite>What is Entropy?, 2024-07-20</cite></blockquote>
+<p>To keep the discussion grounded, he hung the whole book on one concrete puzzle: <strong>why does hydrogen gas at room temperature and pressure have an entropy corresponding to about 23 unknown bits of information per molecule?</strong> Shannon entropy, the principle of maximum entropy, the Boltzmann distribution and the partition function all lead up to the ideal gas, and finally to that number. He also drew some lines in the foreword. He largely avoids the second law of thermodynamics, which is "so problematic that a good explanation would require another book". He avoids entropy in biology and black holes: "the aspects of entropy most beloved by physics popularizers will not be found here". And:</p>
+<blockquote><span class="en">I also never say that entropy is ‘disorder’.</span><cite>Same post</cite></blockquote>
+<p>Treating entropy as information lets it travel into biology. Back in 2012 he was preparing a talk for a conference on the mathematics of biodiversity. His starting point was a known coincidence: some of the measures ecologists use for biodiversity are formally identical to Shannon's measures of information. He followed the work of Marc Harper, who had shown that the replicator equation of evolutionary game theory is formally identical to Bayesian inference. Baez put it in one sentence:</p>
+<blockquote><span class="en">Thus, in this simple model, a population of organisms can be thought of as a ‘hypothesis’ about how to survive, and natural selection acts to update this hypothesis according to Bayes’ rule.</span><cite>Information Geometry (Part 9), 2012-06-01</cite></blockquote>
+<p>Explaining the replicator equation, he gave the plain-language version: for a type's share of the population to grow, its fitness must exceed the mean fitness. "If you’re trying to increase market share, what matters is not how good you are, but how much better than average you are. If everyone else is lousy, you’re in luck." He also stressed that the replicators needn't be biological species: they could be genes, or restaurant chains.</p>
+<p>He flagged the analogy's limits too. The same mathematical structures show up in chemical reaction networks, where the increase of entropy, or more precisely the decrease of free energy, "is not usually considered a form of ‘learning’". So the real question is how far natural changes in biodiversity can usefully be seen as learning. In 2017, at a workshop titled "Biological Complexity: Can It Be Quantified?", he gave a fuller version. If biology is the study of self-replicating entities, the relevant concept of information is the information of one probability distribution relative to another, the relative entropy. With it you can "see evolution as a learning process" and give a clean general formulation of Fisher's fundamental theorem of natural selection.</p>
+<p>This is his third original point: <strong>the quantities that change in one direction over time in thermodynamics, information theory and evolution may be one and the same quantity</strong>. He didn't find it alone. Harper's and Smerlak's work is all over this, and the blog hosted a guest post by Matteo Smerlak arguing that thermodynamic dissipation and adaptive evolution are "two faces of the same Markovian coin". But putting them into one chart and explaining it to people outside the field is his craft.</p>
+
+<h2>How he thinks</h2>
+<p><strong>Treat an analogy as an unfinished table.</strong> His standard move is to list what is already known to correspond in two fields as two columns, then stare at the blanks. Quantropy began exactly this way, "following the analogy without thinking too hard". The payoff is that the analogy stops being a figure of speech and becomes a <strong>testable prediction</strong>: something should sit in this blank, it should have these properties, and a calculation will tell you whether it does.</p>
+<p><strong>Assume you aren't the first.</strong> "If this idea makes sense, someone probably had it already. If you know where, please tell me." "Have you seen someone point out that Hamilton’s equations are a special case of the Maxwell relations?" This isn't politeness; it's a research strategy. Put the half-finished thing out in public and let readers find the literature and the errors. He often posts his talk slides before the talk: "If you catch mistakes, I’d love to hear about them before then!" In 2013, when readers said the many series were overwhelming, a collaborator built an index, and his comment was: "Needless to say, this could be improved in many ways. Don’t say how: just do it!"</p>
+<p><strong>Hang a whole subject on one concrete puzzle.</strong> A book on entropy revolves around "why 23 bits?" A theory of Petri nets starts with rabbits and wolves. He prefers a cartoon model (rabbits that split like amoebas) to a realistic model nobody can follow: "I’m trying to explain general ideas here, not realistic models of specific situations."</p>
+<p><strong>Write down where you got stuck.</strong> "This looks a bit weird, and it set me back a day." "I still think it’s weird. But I think it’s correct." Most mathematical writing scrubs these traces away. He keeps them, because readers usually get stuck in exactly the same place.</p>
+<p><strong>Refuse the easy phrasing.</strong> He won't say entropy is disorder. He stops to explain a minus sign in thermodynamics ("you can think of it as a whimsical joke"). Explaining the replicator equation, he multiplies vectors componentwise, "the way your teachers tried to brainwash you into never doing". <strong>His jokes almost always serve precision</strong>: they turn up exactly where a concept is easiest to misunderstand.</p>
+<p><strong>Leave when it gets crowded.</strong> He left higher gauge theory because it had filled up; that snowball was already rolling. The rule seems to have kept working. Around 2018 applied category theory got a journal and an annual conference and became a busy field, and from then on the blog increasingly turned to things he finds fun and few others write about. There is the Pythagorean circle of fifths that is "almost a 12-pointed star", with the glitch that won't close placed, by his choice, at the tritone, the "devil in music". There is the E6 root polytope, and the seven known "coincidences" among binomial coefficients. The September 2026 post reports that his collaborator Paul Schwahn had explained the coincidence C(10,3) = C(16,2) = 120 using the representation theory of a Lie algebra, and he wrote:</p>
+<blockquote><span class="en">it’s still nice to find a deeper layer of meaning underlying what might otherwise seem like a meaningless coincidence!</span><cite>Binomial Coefficient Coincidences, 2026-09-20</cite></blockquote>
+<p>That sentence could serve as the epigraph of the whole blog. From thermodynamics to binomial coefficients, he has kept doing one thing: looking for structure underneath "coincidence".</p>
+
+<h2>Where he might be wrong</h2>
+<p><strong>First, he may not have answered Yudkowsky's question correctly.</strong> When he started the blog he said math and physics could wait. Sixteen years later his sidebar lists 657 posts under "mathematics" and 162 under "climate". His new posts in summer 2026 are on octonions and the Standard Model, three generations in E7, the E6 root polytope and quasicrystals. These are fine things, but they are exactly the kind he once said could wait. To be fair, he didn't give up. In December 2016 he organized volunteers to back up US government climate databases that were open to the public. In 2023–2024 he wrote fourteen posts on building epidemiological modeling software. In April 2026 he wrote a long essay on system dynamics and "leverage points", observing that, viewed from afar, "current-day human civilization consists largely of killing plants, burning carbon, and building structures out of concrete". Still, the green mathematics he dreamed of hasn't taken shape, and his own 2011 line, "one can, of course, easily fool oneself into thinking one knows", is the most accurate forecast of where things stand.</p>
+<p><strong>Second, formalized diagrams may not help the people who draw them.</strong> He said so himself in the introduction to the 2015 circuits paper:</p>
+<blockquote><span class="en">While diagrams of networks have been independently introduced in many disciplines, we do not expect formalizing these diagrams to immediately help the practitioners of these disciplines.</span><cite>A Compositional Framework for Passive Linear Networks, 2015-04-28</cite></blockquote>
+<p>He went on to say that at first information would mainly flow the other way: translating these disciplines' ideas into modern mathematics gives mathematicians "food for thought and interesting new problems to solve", with the hope that "in the long run" they can return the favor. That is honest, but it means the early beneficiaries of green mathematics were mainly mathematicians. The same criticism has come from outside. Joshua Tan, one of the co-founders of the journal <em>Compositionality</em>, wrote a 2018 post titled <em>The failures of category theory</em>, listing shortcomings of applied category theory in science. Among them: its models often don't predict but instead "recover" existing mathematics, it struggles to work directly with data, and it lacks a calculus for handling uncertainty. I have read only these headline points, not the full argument.</p>
+<p><strong>Third, the analogies may be only formal.</strong> Quantropy is an elegant formal derivation, but he marked its cracks himself: the branch problem of the complex logarithm is "disturbing", and since amplitudes aren't probabilities, it's unclear what "expected action" means. The match between Hamilton's equations and the Maxwell relations produced a pair of extra equations that "look weird", which he is "sure" are correct. But "correct" and "physically meaningful" are different things. For someone whose main discovery tool is analogy, the systematic risk is taking "the equations look the same" for "the things are the same". In his 2026 system dynamics essay he says something about another field that applies to his own method: such modeling "is not so much a formalism for making long-range predictions about what will happen, as a way to find what can happen, and seek leverage points".</p>
+<p><strong>Fourth, his idea of "application" is a mathematician's idea.</strong> In 2015 he relayed a reflection by two Google engineers. In 2007 Google had boldly launched a program to make renewable energy cheaper than coal, and in 2011 it shut the program down, without his ever learning why. The engineers later calculated that even their best-case scenario would not bring atmospheric CO2 back below 350 ppm this century. Baez's comment was one line: "This is not surprising to me." He knows the scale of the problem is in engineering and politics. Yet his own contribution, following his comparative advantage, sits at the point farthest from those levers: the foundations of mathematics. That isn't a mistake, it's a choice. Readers should just know that this blog answers "what can a mathematician do?", not "what does the planet need?"</p>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/04/24/what-to-do/">What To Do? (Part 1)</a></span> (2011-04-24)<span class="d">His reply to Yudkowsky's argument that environmentalism was not his best option: why he left higher gauge theory, the smoke in the kitchen, comparative advantage, and the closing line about fooling oneself.</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/03/04/network-theory-part-1/">Network Theory (Part 1)</a></span> (2011-03-04)<span class="d">The vision of green mathematics, and Feynman diagrams, circuit diagrams, bond graphs, Petri nets, SBGN and Odum's Energese laid out side by side.</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/12/22/quantropy/">Quantropy (Part 1)</a></span> (2011-12-22)<span class="d">The statistical-mechanics/quantum-mechanics chart, the "bad freshman", and Feynman's sum over histories derived from stationary quantropy.</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2012/01/19/classical-mechanics-versus-thermodynamics-part-1/">Classical Mechanics versus Thermodynamics (Part 1)</a></span> (2012-01-19)<span class="d">Hamilton's equations as a special case of the Maxwell relations; <a href="https://johncarlosbaez.wordpress.com/2021/09/23/classical-mechanics-versus-thermodynamics-part-3/">Part 3</a> (2021) finishes the story with symplectic geometry and Lagrangian submanifolds.</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2012/06/01/information-geometry-part-9/">Information Geometry (Part 9)</a></span> (2012-06-01)<span class="d">The replicator equation and Bayesian inference, a population as a hypothesis about how to survive, entropy as a measure of biodiversity.</span></li>
+<li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2024/07/20/what-is-entropy/">What is Entropy?</a></span> (2024-07-20)<span class="d">The little book grown from a tweet course: entropy as unknown information, the 23-bit hydrogen puzzle, "I also never say that entropy is ‘disorder’".</span></li>
+</ul>
+
+<section class="updates" data-slug="azimuth" data-last-reviewed="2026-10-05">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep-Read · No. 37 · Content verified as of 2026-10-05</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
