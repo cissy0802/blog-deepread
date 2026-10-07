@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kris De Decker · Low←Tech Magazine — 效率越高用得越多；真要省能，得让灯偶尔熄灭</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="lowtech-magazine-blog39.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 39 · solar.lowtechmagazine.com</div>
+<h1>Kris De Decker<br/>效率越高，用得越多；真要省能，得让灯偶尔熄灭</h1>
+<p class="sub">Kris De Decker · 博客 <strong>Low←Tech Magazine</strong>（2007 年开张，原站托管在 TypePad；2018 年起主站改为自建的太阳能网站 solar.lowtechmagazine.com，阴天久了会下线）· 比利时人，此前在比利时媒体做了约十年科技记者，2007 年搬到西班牙后创办本站，现居巴塞罗那 · <strong>仍在活跃更新</strong>：最近一篇是 2026 年 9 月 24 日 · 语料：英文存档 183 条（2007-04 至 2026-09），其中他本人署名约 170 篇，单篇正文多在三千到五千英文词之间；2008 年最密（30 篇），2009 年 19 篇，此后每年 4 到 12 篇 · 两次转折：2018 年 9 月太阳能自建站上线，网站本身成了论证的一部分；2022 年起转向主题书系列和动手做的原型指南（自行车发电机、小型太阳能系统、电热桌、太阳能烤箱） · 选文依据：他没有「精选」页，最接近作者自荐的是按主题重编的书系；本页<strong>抓取全部 182 篇正文统计站内回链</strong>，剔除书讯类页面后，被回链最多的是 2020 年讲生物质能的那篇（28 次），其次是 2024 年的公共澡堂、2016 年的办公室、2020 年的旧笔记本 · 本页细读 <strong>16 篇</strong>（其中 4 篇读了主体部分），跨度 2007-12 到 2024-09：<strong>最早期（前 20% 时间跨度，即 2007-04 至 2011-03）4 篇</strong>；2018 年转折<strong>两侧都有</strong></p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2020 年 1 月，一个小网站公布了自己的年度体检报告。它跑在巴塞罗那附近一户人家的阳台上：一块 50 瓦的太阳能板，一块铅酸电池，一台功耗一两瓦的小电脑。阴天连上几天，电池耗尽，网站就下线。那一年它的在线率是 95.26%。</p>
+<p>报告里还有一个更怪的发现：服务器全年流量的一半多（11.16 TB 里的 6.63 TB），来自某个出了毛病的 RSS 阅读器，它每隔几分钟就来拉一次订阅源。修好之后，服务器功耗从 1.14 瓦降到 0.95 瓦。省下的 0.19 瓦看着可怜，可一天累积下来，够网站在阴天多撑两个半小时。</p>
+<p>然后作者算了碳账。把太阳能板、电池、控制器和服务器的制造能耗摊进每一年，这个网站一年排放约 9 公斤二氧化碳。如果他什么都不做，直接把服务器插进西班牙电网，同样一年只排 1.54 公斤。他把这一行原样印了出来：</p>
+<blockquote><span class="en">This seems to indicate that our solar powered server is a bad idea, because even the smallest solar panel with the smallest battery generates more carbon emissions than grid power.</span><span class="zh">这似乎说明，我们的太阳能服务器是个坏主意：哪怕用最小的板子配最小的电池，碳排放也比电网供电高。</span><cite>How Sustainable is a Solar Powered Website?，2020-01-28</cite></blockquote>
+<p>紧接着他指出，这是拿苹果比橘子。电网的「碳强度」是怎么算的？风机、光伏板、输电线的制造排放<strong>按零计</strong>。按同样的算法，他这台服务器也是零。</p>
+<p>这就是 Kris De Decker 十几年来一直在做的事：<strong>把账本里那些被悄悄设成零的栏目找出来，填上。</strong>他原是比利时的科技记者，2007 年搬到西班牙，开了一份叫 Low←Tech Magazine 的网刊，宗旨是「不默认每个问题都有一个高科技的解法」。</p>
+<p>他最早填的那一栏是「效率」。2008 年，马德里的圣诞彩灯比前一年多出一大截，记者去问商家协会，得到的回答是：LED 省电得多，所以我们可以挂更多的灯而不多耗电。De Decker 从这里看出了一条规律：<strong>效率省下的能源，会被新的用途吃掉。</strong>一栋大楼外墙贴满二十万颗 LED，替代的不是白炽灯，而是一面原本不亮的墙。后来他借英国社会学家 Elizabeth Shove 的分析，把这条规律推得更远。效率政策只能拿「同等的服务」来比：比烘干机和烘干机，不比烘干机和晾衣绳；比喷气客机和 1985 年的喷气客机，不比 1950 年代的螺旋桨飞机，而后者的油耗其实差不多。于是他得出全站最核心的一句：</p>
+<blockquote><span class="en">To focus on energy efficiency is to make present ways of life non-negotiable.</span><span class="zh">把注意力放在能效上，就是让现有的生活方式变得不可商量。</span><cite>Bedazzled by Energy Efficiency，2018-01-09</cite></blockquote>
+<p>他填的第二栏是「可靠」。今天的电网追求供给每时每刻满足需求，可风和太阳不听调度。要让它们 24 小时满足需求，就得多建几倍的发电机、输电线和储能，而建这些东西本身要消耗化石能源。他翻出前工业时代的答案：风车磨坊和帆船从不追求全年无休，有风就干，没风就歇。一位英国磨坊主被人指责星期天还在干活，回了一句：「如果主乐意在星期天给我送风，我就要用它。」</p>
+<p>由此他推出一个听上去很荒唐的结论：<strong>要提高能源安全，就要让基础设施变得不那么可靠。</strong>一个从不停电的社会，会把洗衣、冷藏、开门、导航全都交给电，也就忘了不用电时该怎么做这些事，所以停电一来它最脆弱。离网生活的人电少，反而不慌。</p>
+<p>他的阳台就是这个结论的实验室：网站会下线，他也公开说下线是设计的一部分，因为在线率一旦超过某个门槛，为它多造电池耗掉的化石能源，就会多过太阳能板替你省下的。</p>
+<p>你可以不同意他。他也承认，要人「够用就好」会引起争议，搞不好还会变成强制。但读完他，你很难再用原来的方式去读「节能 30%」这种句子。你会先问：跟什么比？哪一栏算了零？</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>隐含能（embodied energy）</b> — 一件东西从采矿、制造到运到你手上，一共消耗的能量。它不算你使用时插电耗掉的那部分。</li>
+<li><b>反弹效应／杰文斯悖论（rebound effect / Jevons paradox）</b> — 东西变得更省能之后，人们用得更多，于是省下的一部分甚至全部又被吃回去。1865 年经济学家 Jevons 在煤炭上最早描述过这种现象。</li>
+<li><b>间歇性（intermittency）</b> — 太阳能和风能随天气、昼夜和季节忽多忽少，不能像火电厂那样想开就开。</li>
+<li><b>充足性（sufficiency）</b> — 和「效率」相对的另一种节能思路：不问同样的事能不能少用点能，而问这件事要不要做、做多少才够。</li>
+<li><b>矮林作业（coppicing）</b> — 把树齐根砍掉，让树桩重新冒出一丛新枝，几年后再割。树不死，木头源源不断。</li>
+<li><b>辐射采暖与对流采暖（radiant / convective heating）</b> — 对流采暖是把整屋空气烧热，辐射采暖则像晒太阳，热量直接落到人和物体表面。</li>
+<li><b>失负荷概率定容法（loss-of-load probability sizing）</b> — 设计离网电力系统时，事先允许一年里有若干天供不上电，用这几天换取小得多的电池和板子。</li>
+</ul>
+</div>
+
+<h2>一件怪事：二十万颗 LED，替代的是一面黑墙</h2>
+<p>2008 年 10 月，Low←Tech Magazine 开张第二年，De Decker 写了一篇题目很轻浮的文章：《万岁拉斯维加斯》。当时舆论正在讨伐白炽灯，因为它九成的电都变成了热，大家都在等 LED 接班。他却在网上搜罗了一批新建筑：外墙贴满彩色 LED，有的多达二十万颗；北京有一块 2200 平方米的 LED 幕墙，用太阳能板供电，被宣传成「可持续技术的激进范例」。</p>
+<p>每个项目的宣传材料都在强调 LED 有多省电。他问了一个没人问的问题：<strong>省的是跟什么比？</strong></p>
+<blockquote><span class="en">The LED lights attached to facades (sometimes more than 200,000 of them) are not substituting incandescent light bulbs, they substitute a non-lit façade.</span><span class="zh">贴在建筑立面上的 LED（有时超过二十万颗），替代的不是白炽灯，而是一面原本不亮的墙。</span><cite>Viva Las Vegas: LEDs and the energy efficiency paradox，2008-10-14</cite></blockquote>
+<p>文章里最好的证据不是他自己找的，是西班牙《国家报》替他问来的。前一年冬天，马德里街头的圣诞彩灯比往年多出一大截，记者去问商家协会为什么，对方回答：「LED 耗电少得多，所以我们可以挂更多的灯，而不多耗电。」</p>
+<p>这句话说得理直气壮，而且在算术上没错。De Decker 后来十几年的写作，很大一部分都在追问这句话为什么没错，却又把事情搞砸了。</p>
+
+<h2>这人是谁</h2>
+<p>Kris De Decker 是比利时人，在比利时媒体做了大约十年科技记者，2007 年搬到西班牙，同年创办 Low←Tech Magazine。现在网站由一个小团队维护，设计、翻译、印书都有人分担，但 183 条存档里约 170 篇是他自己写的。他在一篇文章里交代过自己的工作装备：一台 2006 年产的二手 ThinkPad X60s，50 欧元从网上拍来，装着专给老电脑用的 Linux Lite。还有一个细节更像他：网站的服务器和他家客厅的灯原本各用一套太阳能。服务器配 50 瓦的板子时，客厅的灯只能用 10 瓦的板子，<strong>「常常坐在黑暗里」</strong>；两块板子一对调，屋里亮了，网站就更常下线。这个博客至今仍在更新，2022 年以后写得少，做得多，近几年的文章大多是自己动手造东西的图文指南。</p>
+
+<h2>他跟什么较劲</h2>
+<p>他的根问题，第一年就碰上了：<strong>为什么技术越来越省能，社会的总能耗却一直往上走？</strong></p>
+<p>第一条线索是 LED。第二条在 2009 年，他去查电子产品的「隐含能」，结果让他自己都吃了一惊。一块 2 克重的内存芯片，生产时要烧掉 1.6 公斤燃料。按他的估算，一台笔记本光是内存条的隐含能，就超过这台电脑三年寿命里插电用掉的全部电量。也就是说，电子产品最耗能的那一步发生在你买到它之前，而所有关于「电器能耗」的报告都只算插上电以后的部分。</p>
+<blockquote><span class="en">The embodied energy of the memory chip alone already exceeds the energy consumption of a laptop during its life expectancy of 3 years.</span><span class="zh">光是内存芯片的隐含能，就已经超过一台笔记本在三年使用寿命里消耗的全部能量。</span><cite>The Monster Footprint of Digital Technology，2009-06-16</cite></blockquote>
+<p>这两件事拼在一起，问题的形状就出来了。人们把能源问题当成<strong>供给问题</strong>：电从哪里来，能不能换成干净的，能不能更高效地送到用户手里。需求被当成一个给定的、只会增长的数，就像天气。De Decker 十几年来一直在反驳这一点：需求不是天气，<strong>它是被造出来的</strong>。每一项「更高效」的技术、每一张 24 小时不断电的网、每一种「正常」的生活标准，都在悄悄把需求往上推。而现有的计量方法，恰好把这个推动过程算成了零。</p>
+<p>他的办法是到过去找参照。不是因为过去更好，而是因为过去的人<strong>没得选</strong>：没有化石燃料，没有电网，没有电池。他们怎么取暖、怎么运货、怎么开工厂，都是被约束逼出来的设计。把这些设计翻出来，跟今天的做法对照，那个「为什么」就看得见了。</p>
+
+<h2>他的想法，讲成「他怎么发现的」</h2>
+
+<h3>一、效率不是节能，它是一份让现状不可商量的合同</h3>
+<p>2008 年的 LED 文章里，他的结论还算温和：效率本身不坏，只是不会自动带来节约，得配上碳税或更高的能源价格。他那时把问题归给反弹效应，也就是东西省电了，人就多用。</p>
+<p>到了 2018 年的《被能效晃瞎了眼》（Bedazzled by Energy Efficiency），他的立场根本地变了。他先摆出欧盟的成绩单：1998 到 2012 年，冰箱冷柜效率提高了 75%，洗衣机 63%，烘干机 72%，洗碗机 50%；可欧盟 28 国 2015 年的总能耗，只比 2000 年略低一点，这点下降还可以用 2007 年的经济危机解释，经济一恢复，能耗又上去了。</p>
+<p>然后他去看欧盟口中的「节能 20%」到底是什么意思，发现这个数字根本不是跟今天比，而是跟一个<strong>预测出来的未来</strong>比。欧盟说能效进步「大致相当于关掉 400 座电站」，实际上 2020 年一座电站也不会关。意思是：如果没有能效进步，本来还得再建 400 座。国际能源署更进一步，把这种「避免掉的能源」称为「第一燃料」，规模比石油、天然气、煤都大。De Decker 的评语很干：这是在计量一种不存在的燃料。而且预测的未来能耗越高，「避免掉」的就越多；如果哪天真的减少了需求，这个数反而会变成负的。</p>
+<p>真正让他改变立场的是英国社会学家 Elizabeth Shove 的一篇论文。Shove 指出，要计算「效率」，就必须先认定两样东西提供的是<strong>同一种服务</strong>，而一旦认定了服务，比较的起点也就定死了。De Decker 拿飞机做例子：1985 年，客机每运一位乘客飞 100 公里要烧 8 升油，今天只要 3.7 升，于是我们说飞机的效率翻了一倍。可是如果把起点挪到 1950 年呢？1960 年代喷气机取代螺旋桨飞机，速度快一倍，油耗也高一倍；喷气机花了五十年，才回到 1950 年代最后那批螺旋桨飞机的油耗水平。</p>
+<blockquote><span class="en">If viewed in a larger historical context, the concept of energy efficiency completely disintegrates.</span><span class="zh">放进更长的历史里看，「能效」这个概念就彻底散架了。</span><cite>Bedazzled by Energy Efficiency，2018-01-09</cite></blockquote>
+<p>该把螺旋桨飞机算进来吗？这取决于你把服务定义成「飞行」，还是「以每小时一千公里左右的速度飞行」。定义成后者，就等于默认了更耗能的那种服务。同样的道理，算智能手机的能效时没人把十年前的功能机算进去；欧盟算出新版烘干机能效标签到 2020 年能省 3.3 太瓦时，相当于马耳他一年的用电量，却从没算过晾衣绳能省多少。<strong>晾衣绳和自行车不在比较的范围里，因为它们提供的不是「同一种服务」。</strong>于是能效政策越成功，汽车和烘干机就越稳当地成为「正常」，替代品就越边缘。</p>
+<p>这就是他那句话的意思：把注意力放在能效上，就是让现有的生活方式变得不可商量。Shove 那句原话他也引了：能效政策的问题不在于它不起作用，<strong>恰恰在于它起作用</strong>，它把一种越来越耗能的生活方式维持住、甚至抬高，却从不动摇它。</p>
+<p>他还顺着这个逻辑想了一个故意惹人的反面实验：如果反过来，搞一套「能效降低政策」呢？把 1960 年代的发动机装进今天的 SUV，大多数人就开不起，只能换小车或少开；强制安装低效的锅炉，大房子就供不起暖，人们会只烧一间屋、多穿点衣服。他还找到了一项德国研究给这个想法撑腰：对比 3400 套住房的计算能效和实测能耗，最节能的房子实际多用了 30%，最不节能的房子实际用得比模型预测的少 60%。</p>
+<blockquote><span class="en">Making everything less energy efficient would reverse the growth in energy services and reduce energy demand.</span><span class="zh">让一切都变得不那么高效，反而会逆转能源服务的增长，降低能源需求。</span><cite>Bedazzled by Energy Efficiency，2018-01-09</cite></blockquote>
+<p>这不是他真正的提案，他真正主张的是「充足性」：少开灯、少出行、调低室温、住小一点的房子，或者用自行车换汽车、用晾衣绳换烘干机、用保暖内衣换中央暖气。效率可以留着，但只是手段，不再是目标：用高效锅炉只把一间屋子烧到 16 度，把高效发动机装进轻得多的车里。</p>
+<p>两年后，这个想法落到了他自己的书桌上。2020 年他写了一篇讲笔记本电脑的文章。他引用的研究拆解了 1999 到 2008 年间 11 台同尺寸的笔记本，发现电池、主板、硬盘、内存的重量和材料构成十年来几乎没变：制造工艺是变高效了，但省下来的全被更强的功能吃掉了。新电脑每单位算力是更省电，可算力也变多了。他写道：「杰文斯悖论在哪儿都没有在计算机领域这么明显。」他的应对是 50 欧元买一台 2006 年的 ThinkPad，并且坦白这只是「一个 hack，不是一种经济模式」。</p>
+
+<h3>二、账本里被设成零的那一栏</h3>
+<p>第二个想法是第一个的另一面：效率之所以显得有效，部分原因是有些东西从来没进过账本。</p>
+<p>2009 年的芯片账是第一次。他引用麻省理工学院研究者 Timothy Gutowski 的数据：注塑、铸造、机加工这些近百年来的老工艺，每公斤材料耗电 1 到 10 兆焦；半导体和纳米材料的制造工艺，每公斤要高出最多 6 个数量级。由此他推出一个反直觉的结论：<strong>回收救不了芯片。</strong>传统产品的能耗大头在原材料，用再生材料就能省；芯片的能耗几乎全在加工过程本身，材料换成再生的也省不了多少。</p>
+<blockquote><span class="en">Recycling is not a solution for energy consumption if all your energy use is concentrated in the process itself.</span><span class="zh">如果你所有的能耗都集中在加工过程本身，回收就解决不了能耗问题。</span><cite>The Monster Footprint of Digital Technology，2009-06-16</cite></blockquote>
+<p>2017 年，他把同一把尺子用在了整张电网上。人们常说欧洲的风能潜力是年用电量的十倍、美国的太阳能潜力是一百倍。他说这些数是年平均值，而电网要的是<strong>每时每刻</strong>都对得上。伦敦一块太阳能板，在 12 月一个重阴天的上午十点，发电量只有 6 月晴天正午的 65 分之一；风速减半，风机出力降到八分之一。要让这样的电源时刻满足需求，只有四个办法：留着化石燃料电厂当备用，按最坏情况超建发电能力，拉长输电线把各地拼起来，或者储能。他逐个算下去。按他引用的研究，一个纯风光、没有调峰电厂的欧洲电网需要 400 太瓦时的储能。欧洲所有乘用车都换成 30 千瓦时电池的电动车，加起来也只有 7.5 太瓦时，<strong>电池得大六十倍</strong>。</p>
+<p>结论是：只算单块光伏板或单台风机的能量回收期，会大大高估一张可再生电网的可持续性。为了时刻对得上而多建的那些东西，同样要用化石能源来造，而这一栏通常记作零。</p>
+<p>到了 2020 年，他把这把尺子对准了自己。那份网站体检报告的整个后半部分，都在算阳台上那套设备的隐含能：每瓦时铅酸电池容量 1.03 兆焦，每平方米光伏板 3514 兆焦，电池按 5 年寿命摊、板子按 25 年摊。他还把电池容量和在线率的关系画成了一张表。要保证四天阴天不下线，就得配一块汽车电瓶大小的 440 瓦时电池，隐含能比他实际用的配置高出七成多。他得出了一个对自己很不利的数字，然后指出这个数字揭示的是电网算法的漏洞，不是他的：</p>
+<blockquote><span class="en">When the carbon intensity of the power grid is measured, the embodied energy of the renewable power infrastructure is taken to be zero.</span><span class="zh">计算电网碳强度时，可再生电力基础设施的隐含能被设成了零。</span><cite>How Sustainable is a Solar Powered Website?，2020-01-28</cite></blockquote>
+<p>对烧煤的电网来说，忽略建厂的排放无伤大雅，因为燃料烧掉的远比建厂多。可再生能源正好反过来：运行几乎零排放，排放全在建造阶段。<strong>同一条计量惯例，换了能源结构，就从无害变成了系统性的偏差。</strong></p>
+
+<h3>三、让需求去追供给：按天气运转的经济，和「不那么可靠」的安全</h3>
+<p>如果供给追不上需求，就让需求去追供给。2017 年 9 月，他连发两篇，第二篇叫《如何让经济按天气运转》。他先去查前工业时代的人怎么对付风和水的忽有忽无。工业革命前夕，欧洲估计有 20 万座风车磨坊、50 万座水车，锯木、造纸、磨玻璃、榨油、做火药都靠它们。没有电池，也没有电网，他们主要靠一个现在几乎被忘掉的办法：<strong>有风就干，没风就歇。</strong></p>
+<p>他从一本 1957 年的风车史里抄出了磨坊主的作息：秋天起风时，从星期天午夜一直干到星期二晚上，星期三早上干到星期四夜里，星期五早上再干到星期六午夜，中间只能打个盹。好的磨坊主风一起就会在床上醒来，半夜起身开磨，因为「风是他的监工」。英国诺福克郡的 Wade 先生被人抗议星期天开工，他回了一句：</p>
+<blockquote><span class="en">If the Lord is good enough to send me wind on a Sunday, I’m going to use it</span><span class="zh">如果主乐意在星期天给我送风，我就要用它。</span><cite>De Decker 引自一本 1957 年的风车史，见 How to Run the Economy on the Weather，2017-09-21</cite></blockquote>
+<p>没风的时候呢？另一位磨坊主「会在晴朗的傍晚坐在风车尾翼的平台上拉小提琴」。帆船也一样：没风就上岸修船，出海则按季风和洋流排日程。</p>
+<p>然后他把这套办法搬到今天。锯、钻、磨、压这些加工，供电断断续续只影响速度，不影响质量；货运列车本来就在夜里跑，而夜里正是风大、用电少的时候。代价他也写得很清楚：</p>
+<blockquote><span class="en">If I want to buy new shoes, I might have to wait for the right season to get them manufactured and delivered.</span><span class="zh">如果我想买双新鞋，可能得等到合适的季节，它才会被生产出来、运到我手上。</span><cite>How to Run the Economy on the Weather，2017-09-21</cite></blockquote>
+<p>他还看出一个巧妙的倒转：与其储存能量、将来再造东西，不如有能量时就造东西，<strong>把产品本身当成储能</strong>，存进仓库，淡季再卖。</p>
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="两种对齐供需的办法">
+<rect x="0" y="0" width="720" height="300" fill="#0d1117"/>
+<text x="180" y="28" fill="#d5dce4" font-size="15" text-anchor="middle" font-weight="700">供给追需求（今天的电网）</text>
+<text x="540" y="28" fill="#d5dce4" font-size="15" text-anchor="middle" font-weight="700">需求追供给（磨坊与帆船）</text>
+<line x1="360" y1="14" x2="360" y2="290" stroke="rgba(110,168,254,.25)" stroke-dasharray="4 4"/>
+<path d="M20,190 C60,120 90,120 120,170 S180,240 220,140 S300,100 340,180" fill="none" stroke="#5eead4" stroke-width="2.5"/>
+<defs><clipPath id="below"><rect x="0" y="150" width="360" height="150"/></clipPath></defs>
+<path d="M20,190 C60,120 90,120 120,170 S180,240 220,140 S300,100 340,180 L340,150 L20,150 Z" fill="rgba(239,154,154,.35)" clip-path="url(#below)"/>
+<line x1="20" y1="150" x2="340" y2="150" stroke="#6ea8fe" stroke-width="2.5"/>
+<text x="28" y="242" fill="#6ea8fe" font-size="12">需求：一条平线，每时每刻都要满足</text>
+<text x="28" y="262" fill="#5eead4" font-size="12">风光出力：随天气起伏</text>
+<text x="28" y="282" fill="#ef9a9a" font-size="12">缺口：靠超建、远距输电、储能、火电备用补上</text>
+<path d="M380,190 C420,120 450,120 480,170 S540,240 580,140 S660,100 700,180" fill="none" stroke="#5eead4" stroke-width="2.5"/>
+<path d="M380,196 C420,126 450,126 480,176 S540,246 580,146 S660,106 700,186" fill="none" stroke="#6ea8fe" stroke-width="2.5" stroke-dasharray="6 4"/>
+<text x="388" y="252" fill="#6ea8fe" font-size="12">需求（虚线）：贴着出力走</text>
+<text x="388" y="272" fill="#93a1ae" font-size="12">有风开磨、无风拉琴；产品本身充当储能</text>
+</svg>
+<figcaption>左：今天的思路，供给必须时刻填满一条平直的需求线，红色缺口要靠额外的基础设施补。右：De Decker 从前工业时代翻出来的思路，需求跟着天气起伏，储能和备用只起辅助作用。</figcaption>
+</figure>
+<p>一年后，2018 年 12 月，他把这个想法推到了最刺耳的地方。他去查「能源安全」的定义，发现四十多种定义有一个共同前提：供给必须<strong>不间断地</strong>满足需求。按这个标准，德国电网 99.996% 的时间有电，算是极安全。</p>
+<p>但他注意到一个反例。设计离网太阳能系统的人通常不按「全年不断电」来设计，而是允许一年里有若干天供不上电。他引用的一个西班牙离网住宅的计算显示：把可靠性从 99.75% 降到 99.00%，成本降六成，一年停电从 22 小时增加到 87.6 小时。按官方定义这是失败，可加拿大的研究者走访了约一百户自愿离网的家庭，发现他们并不觉得不安全：阴天就少用电，晴天电池充满了才开洗衣机，用不着的电器干脆不买。</p>
+<p>反过来，一个从不停电的社会会怎样？他借社会学家 Olivier Coutard 和 Elizabeth Shove 的研究指出：恒定的电力让洗衣机、空调、冰箱、自动门、全天候移动网络都变成「正常」，而手洗衣服、不用电保存食物、不用空调乘凉、不带手机认路这些本事慢慢消失。<strong>可靠性越高，社会越依赖它，停电时也就越脆弱。</strong></p>
+<blockquote><span class="en">To improve energy security, we need to make infrastructures less reliable.</span><span class="zh">要提高能源安全，我们就得让基础设施变得不那么可靠。</span><cite>Keeping Some of the Lights On: Redefining Energy Security，2018-12-09</cite></blockquote>
+<p>他的替代定义是按「服务」而不是按「千瓦时」来算安全：人需要的不是电本身，而是保存食物、洗衣服、开关门、彼此联系、在黑暗中看见东西。冰箱可以做得更保温，好扛过断电；地窖、发酵、每天就近买新鲜菜，都是不靠冷链的办法。口号也该改，从「让灯一直亮着」改成「让一部分灯亮着」，或者「下一盏该关哪一盏？」</p>
+<p>九个月前，他已经把这个主张变成了一样东西：2018 年 9 月上线的太阳能网站。网站上线时他就写明，它<strong>会</strong>下线，而且这是故意的：</p>
+<blockquote><span class="en">Less than 100% reliability is essential for the sustainability of an off-the-grid solar system, because above a certain threshold the fossil fuel energy used for producing and replacing the batteries is higher than the fossil fuel energy saved by the solar panels.</span><span class="zh">不到 100% 的可靠性，是离网太阳能系统可持续的必要条件：过了某个门槛，生产和更换电池所耗的化石能源，就会多于太阳能板替你省下的化石能源。</span><cite>How to Build a Low-tech Website?，2018-09-24</cite></blockquote>
+<p>网站背景色就是一格电池电量，越往下说明天黑了或者天阴了；页尾还有当地天气预报，帮读者「计划」什么时候来读。一个讲「需求追供给」的网站，自己就让读者去追它的供给。</p>
+
+<h3>四、过去不是天堂，是一座被约束塑形的设计库</h3>
+<p>读到这里很容易给他贴上「复古主义者」的标签。他确实大量写古代技术，但读得越多越会发现，他对过去的使用方式很特别，而这种方式是他在纠正自己的过程中形成的。</p>
+<p>2011 年的《中世纪的烟囱》开头就拆了一个他自己也曾享受过的神话：中世纪和文艺复兴是可再生能源的天堂。荷兰的工业风车确实了不起，造纸、锯木、磨玻璃全靠风。可是<strong>风车只能给出动能，不能给出热能</strong>：你可以用风磨玻璃，但不能用风造玻璃。荷兰黄金时代的玻璃、砖瓦、制糖、酿酒、烤面包都要大量热能，而当地的森林早在 1600 年前就砍光了。答案是泥炭：一种形成得极慢的化石燃料，三米厚的泥炭层至少要三千年才能长回来。荷兰和乌得勒支两省被挖掉的泥炭地，有六万多公顷变成了水面，接近两省面积的一成，整座村庄被人工湖吞没。</p>
+<blockquote><span class="en">Our romantic image of the Middle Ages and Renaissance as a paradise of renewable technologies results largely because of our failure to distinguish between thermal and kinetic energy.</span><span class="zh">我们把中世纪和文艺复兴想象成可再生技术的天堂，很大程度上是因为分不清热能和动能。</span><cite>Medieval Smokestacks: Fossil Fuels in Pre-industrial Times，2011-09-29</cite></blockquote>
+<p>那他从过去拿什么？不是照搬某件古代器物，而是拿<strong>一个原理</strong>，再用今天的技术把它做得更好。2015 年讲取暖的那篇是最好的例子。他注意到现代暖气几乎都在烧空气，而人的冷暖感受很大程度上取决于辐射和传导：光脚站在冷地板上，屋里 21 度也觉得冷；春秋晒着太阳穿短袖，一米外阴影里就得穿外套。过去的人只有一个炉子，所以只暖人、不暖屋：带罩的高背椅挡住背后的冷风，脚炉里放着从壁炉铲来的炭，日本人有被炉，中国北方有炕。</p>
+<blockquote><span class="en">In an air-heated room, it doesn’t matter much where you are. In a room heated by a radiant heating source, location is everything.</span><span class="zh">在用热空气取暖的房间里，你待在哪儿都差不多；在用辐射热源取暖的房间里，位置决定一切。</span><cite>Restoring the Old Way of Warming: Heating People, not Places，2015-02-11</cite></blockquote>
+<p>但他紧接着写道，老的取暖<strong>理念</strong>更省能，老的取暖<strong>器具</strong>却不是：壁炉大部分热量都从烟囱跑了，有时甚至让屋子更冷。所以他要的是电热辐射板、电热桌、加热坐垫。2024 到 2025 年，他亲手做了电热桌和用小块太阳能板供电的脚炉，把这个原理做成了东西。</p>
+<p>2020 年讲生物质能的那篇，把这个方法讲得最透，也是全站被回链最多的文章。起因是读者的愤怒：他在前一篇里提到柴火，评论区涌进来一片「砍树怎么可能可持续？」他去查前工业时代的人怎么获取木头，发现直到 20 世纪初，欧洲至少一半的森林是矮林：树齐根砍掉，树桩冒出新枝，两到四年割一次，树不死，有的树桩活了一千多年。枝条一物多用：柳条编筐，栗木箍桶，榛条糊墙，树叶冬天喂羊，用坏的器物最后还能烧火。</p>
+<p>关键在于他追问了这套办法<strong>为什么</strong>会出现：</p>
+<blockquote><span class="en">It was the limitations of human and animal power that created and shaped coppice management all over the world</span><span class="zh">是人力和畜力的局限，在世界各地造就并塑造了矮林作业。</span><cite>How to Make Biomass Energy Sustainable Again，2020-09-20</cite></blockquote>
+<p>手工砍伐的费力程度随树干直径上升，所以割许多细枝比砍一棵大树划算；畜力车在烂路上拉柴，超过 15 到 30 公里，牲口吃掉的能量就比柴火本身还多，所以柴林必须就在村边。供给就在眼前，而且有限，村子就不得不让砍伐速度和再生速度持平，否则就没柴烧、没饲料、没材料，只能搬走。化石燃料带来的电锯、伐木机和远程运输，把这根绳子割断了：木头可以在地球这头种、那头烧，砍大树成了最赚钱的做法。</p>
+<blockquote><span class="en">Our forebears relied on coppice because they had no access to fossil fuels, and we don’t rely on coppice because we have</span><span class="zh">我们的祖先依赖矮林，是因为他们用不上化石燃料；我们不依赖矮林，是因为我们用得上。</span><cite>How to Make Biomass Energy Sustainable Again，2020-09-20</cite></blockquote>
+<p>他最后的落点不在木头上。今天全球约四成人口仍靠烧柴做饭取暖，一项 2017 年的研究估算，这部分用柴占全球木材采伐量的 55%，却只造成 2% 到 8% 的人为气候影响，因为大约三分之二是可持续采伐的：捡枯枝，种在林外，矮林和截头，舍不得砍多用途的树。</p>
+<blockquote><span class="en">If the whole of humanity would live as the 40% that still burns biomass regularly, climate change would not be an issue. What is really unsustainable is a high energy lifestyle.</span><span class="zh">如果全人类都像那四成仍在日常烧柴的人一样生活，气候变化就不成问题。真正不可持续的，是高能耗的生活方式。</span><cite>How to Make Biomass Energy Sustainable Again，2020-09-20</cite></blockquote>
+<p>这句话把四个想法收到了一处。效率、隐含能、可靠性、古代技术，他绕了一大圈，每次落点都是同一句：<strong>问题不在能源从哪里来，而在我们要多少。</strong>2024 年那篇公共澡堂的文章，是这个结论最「好卖」的版本。古罗马城里约每千人一座公共浴场，奥斯蒂亚的广场浴场一天的燃料，约等于 557 次现代淋浴，而它能同时容纳 500 人泡上几个小时。他的提议不是让大家洗冷水澡，而是把资源凑到一起，换一种<strong>「可持续的奢侈」</strong>，「这可能比冷水澡好卖」。</p>
+
+<h2>他的思维方法</h2>
+<p><strong>挪动基线。</strong>他最常用的一招，是把比较的起点往后拉：飞机从 1985 年拉到 1950 年，智能手机拉到功能机，烘干机拉到晾衣绳，电网拉到风车磨坊。只要基线一动，许多「进步」就原形毕露。这招看似简单，但他用得极有纪律，每次都会说清楚：拉到这里，你默认的是哪一种「服务」。</p>
+<p><strong>把设为零的那一栏补上，包括自己的。</strong>芯片的制造能耗，风光电网的超建，太阳能网站的电池，旧电脑的软件。他不只批评别人漏算，还把自己网站最难看的一行数据公开出来，连一次软件升级让在线率跌到 80%、换上 10 瓦板子后网站很快就下线这种事，也写进了报告。他的可信度很大程度上来自这些自曝其短的段落。</p>
+<p><strong>把历史当成一场换了约束条件的实验，而不是一座博物馆。</strong>他从不问「过去是不是更好」，只问「过去的人在什么约束下做出了这个设计」。约束一旦说清，就能判断这个设计今天还能不能用：矮林的约束是畜力，所以今天可以换成货运自行车和空中索道；炉边取暖的约束是火，所以今天换成电热板。前提是先把热能和动能这种根本差别分清，否则就会跟他自己 2011 年以前一样，把荷兰黄金时代误认作风能乌托邦。</p>
+<p><strong>拿自己当小白鼠。</strong>阳台上的服务器，50 欧元的旧电脑，把服务器的板子和客厅的灯对调，近几年的电热桌、太阳能烤箱、脚炉。他的论证常常以一张亲手做的东西的照片结束。这让他的文章不只是观点，还附有一份能照着做的说明书。</p>
+<p><strong>站在别人的研究上，而且明说。</strong>他不是学者，核心论证常建立在 Shove、Coutard、Gutowski 这些人的工作上，脚注一条不少。他的长处是把社会学、工程学和历史学里分散的研究连成一条线，再用一个具体的物件钉住：一面 LED 墙，一座磨坊，一台 ThinkPad。</p>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>第一，谁来适应？</strong>「需求追供给」听上去很顺，但适应的成本落在谁身上？风力工厂要求工人跟着风上夜班，他自己也承认这「被认为不健康」，接着用「无人工厂」把问题带过去了。讲「充足性」时他写道，要定下「多少算够」，就得做规范性判断，这「肯定会有争议，而且有变得威权的风险，至少在廉价化石燃料还存在的时候」。讲澡堂时他也看到，由政府控制水温和时长的淋浴澡堂，会变成一种「把节俭强加给全体人口的技术」。风险他都写出来了，却很少再往前一步，回答由谁、以什么程序来决定「够了」。他的实际行动多是个人示范，而他自己也说那只是 hack。</p>
+<p><strong>第二，数据的年份。</strong>他 2009 年的芯片账建立在一份 2002 年、针对一块 32MB 内存芯片的生命周期分析上；2020 年的笔记本账引用的是一台 2001 年机型的分析，他用一篇 2015 年的研究论证这类数字「不随时间变化」。2017 年的储能账用的是当时的电池能耗与寿命数据。这些数字今天都该重算，方向未必变，幅度可能变。2009 年那篇的评论区里，有读者指控他误读了他引用的 Smart 2020 报告，说那份报告的附录其实已经单独算了 ICT 设备制造的隐含碳，所以他把 1.4 吉吨放大到 7 吉吨的推论站不住。本页没有去核对那份报告的附录，只报告有这样一条指控；在本页读到的评论里，也没看到他对这一条的正面回应。</p>
+<p><strong>第三，他站在反弹效应争论的一端。</strong>他在《被能效晃瞎了眼》里诚实地摆出了另一方：有学者认为反弹只吃掉 5% 到 30% 的节约，加上宏观效应也不过 60%，「能效确实能省能」。他随即转向 Shove 的论证，说问题不在反弹大小，而在效率巩固了某种服务的定义。这一步很漂亮，却也让他的立场难以被数据证伪：反弹小，问题在服务定义；反弹大，效率无效。在「效率到底省没省能」这个经验问题上，学界并没有站到他那一边。</p>
+<p><strong>第四，没有找到有分量的实名批评。</strong>本页搜索了针对他和这份网刊的系统性批评，只搜到法语媒体讨论整个「低技术运动」可能被商业收编的文章（本页未细读，不复述其论证），没有找到一篇正面拆他核心论证的实名长文。这可能说明他的论证很硬，也可能只说明他的读者圈和他的批评者很少相遇。</p>
+<p>最狠的那条批评，其实是他自己写的：一个以低碳为目标的网站，按最直接的算法比插电还脏。他没有删掉这一行，而是用它来逼问电网的算法。这一行能被印出来，说明他至少在这件事上，愿意让数据先于立场。</p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://solar.lowtechmagazine.com/2018/01/bedazzled-by-energy-efficiency/">Bedazzled by Energy Efficiency</a></span>（2018-01-09）<span class="d">欧盟能效成绩单与总能耗的对不上，「避免的能源」如何被当成燃料，Shove 的「同等服务」论证，飞机的 1950 年基线，晾衣绳，以及「能效降低政策」和「充足性」。</span></li>
+<li><span class="t"><a href="https://solar.lowtechmagazine.com/2017/09/how-to-run-the-economy-on-the-weather/">How to Run the Economy on the Weather</a></span>（2017-09-21）<span class="d">前工业时代的风车磨坊与帆船如何应对间歇性，今天的工厂、帆船货运和风光列车如何照做，以及对消费者和工人的后果。</span></li>
+<li><span class="t"><a href="https://solar.lowtechmagazine.com/2018/12/keeping-some-of-the-lights-on-redefining-energy-security/">Keeping Some of the Lights On: Redefining Energy Security</a></span>（2018-12-09）<span class="d">能源安全定义里的「不间断」前提，离网家庭的降可靠性设计，以及为什么越可靠的电网造就越脆弱的社会。</span></li>
+<li><span class="t"><a href="https://solar.lowtechmagazine.com/2020/01/how-sustainable-is-a-solar-powered-website/">How Sustainable is a Solar Powered Website?</a></span>（2020-01-28）<span class="d">太阳能网站第一年的在线率、用电和系统效率，各种电池与光伏板组合的隐含能，以及与西班牙电网碳强度的对比。</span></li>
+<li><span class="t"><a href="https://solar.lowtechmagazine.com/2020/09/how-to-make-biomass-energy-sustainable-again/">How to Make Biomass Energy Sustainable Again</a></span>（2020-09-20）<span class="d">矮林、截头树和树篱如何在不杀树的情况下供应柴火、材料和饲料，人力畜力的限制如何塑造了这套做法，以及化石燃料如何拆掉了它。</span></li>
+</ul>
+<section class="updates" data-slug="lowtech-magazine" data-last-reviewed="2026-10-07">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 第 39 期 · 本页内容核对至 2026-10-07</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
