@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Patrick McKenzie · Bits about Money — 银行难用，往往是因为我们要它难用</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="bits-about-money-blog44.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 44 · bitsaboutmoney.com</div>
+<h1>Patrick McKenzie<br>银行难用，往往是因为我们要它难用</h1>
+<p class="sub">Patrick McKenzie（网名 patio11）· 通讯 <strong>Bits about Money</strong>（「关于钱的点滴」，简称 BAM）· 美国人，大学毕业就去了日本，在日本公司当了六年上班族，同时在晚上和周末经营自己的小软件公司；之后在 Stripe 全职六年，现为其顾问 · <strong>仍在更新，但慢了</strong>：本页写作当天（2026-10-12）最近一篇发于 2026-05-01 · 语料：站点地图共 <strong>63 篇</strong>（含 3 篇年度回顾、会员通知类短文），跨度 2021-10-22 到 2026-05-01，<strong>全部免费公开</strong>。2023 年 1 月是转折点：他离开 Stripe 的全职岗位，通讯改为读者付费支持（但不设付费墙）；此前每周一篇、每篇两三千词，此后一年不到十篇，单篇常有五千到八千词，最长的《Debanking (and Debunking?)》约两万四千词；2026 年开始写调查报道 · 选文依据：抓取全部 63 篇正文统计站内回链，被回引最多的是《KYC and AML: beyond the acronyms》（17 次）、《Community Banking and Fintech》（11 次）、《How credit cards make money》（10 次）、《The fraud supply chain》《The optimal amount of fraud is non-zero》和《Debanking (and Debunking?)》（各 7 次）；外加作者在 2024 年度回顾里自己点名的「去年最好的一篇」· 本页细读 <strong>10 篇正文</strong>加年度回顾：<strong>最早期（前 20% 时间跨度，即 2022 年 9 月以前）5 篇</strong>，2023 年 1 月的转折<strong>两侧都有</strong>，最晚一篇是 2025 年 12 月</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2022 年夏天，美国公共电台的《Planet Money》节目采访一位支付行业的人，问信用卡盗刷的事。他说了一句话，被剪掉了：</p>
+<blockquote><span class="en">the optimal amount of fraud is greater than zero.</span><span class="zh">欺诈的最优数量大于零。</span><cite>The optimal amount of fraud is non-zero，2022-09-02</cite></blockquote>
+<p>他不甘心，回家把这句话写成了一整篇文章。第二段只有两句：「这话听着反直觉，像是在故意耍聪明。<strong>你应该相信它。</strong>」</p>
+<p>这个人叫 Patrick McKenzie。他的通讯 Bits about Money 写了五年、六十来篇，题目看上去零零碎碎：信用卡怎么赚钱、礼品卡、支票、银行为什么在那条街上开分行、为什么你的账户会被莫名其妙关掉。读完你会发现，这些全是同一个问题：<strong>金融系统那些让你抓狂的地方，到底是谁的错？</strong></p>
+<p>大多数人的答案是：银行蠢，或者银行坏。McKenzie 的答案让人更不舒服：<strong>很多时候是故意的，而且是「我们」故意的。</strong></p>
+<p>先看欺诈。他问的第一个问题不是「怎么消灭它」，而是「最后谁买单」。在美国，你的卡被盗刷，法规把损失从你身上挪给发卡银行，银行按卡组织的规则自动向支付处理商追偿，处理商再向商户追偿。到商户那里，瀑布基本就停了：商户把欺诈损失当成房租、工资、广告费一样的日常开销吞下去。那么，一家公司的「欺诈总监」该给自己定多少欺诈目标？零？他反问：要是市场总监说今年营销预算是零，他会被当场开掉。每一道防欺诈的关卡，同时也挡住了诚实的顾客：多填一栏账单地址，转化率就掉一截。所以利润率九成的软件公司会放很多欺诈进来，卖游戏主机的就要逐单审核。欺诈不是敌人，是一根滑杆，社会通过一个个私人公司的成本核算，决定把它推到哪儿。</p>
+<blockquote><span class="en">A promise! Mere words! Billions upon billions of dollars have been spent on marketing to make you think that a payment is more than a promise. It’s a lie, and it’s a lie we all choose to believe in part because it’s a vastly more effective model to run the world under than the truth is.</span><span class="zh">一个承诺！空口白话！几千亿美元的营销花下去，就为了让你觉得一笔付款不只是一个承诺。这是个谎言，而我们都选择相信它，部分原因是：靠这个谎言运转世界，比靠真相有效得多。</span><cite>The optimal amount of fraud is non-zero，2022-09-02</cite></blockquote>
+<p>再看「了解你的客户」（KYC）。开户时那张问卷，问你职业、资金来源，看起来蠢透了：哪个毒贩会老实写「职业：毒贩」？McKenzie 的解释是，<strong>它本来就不是为了「了解客户」</strong>。它的用处在别处：对银行撒谎是重罪，而且会被一个最擅长记账、最容易被执法者找到的机构，一字不差地保存很多年。你若犯了罪，迟早要碰银行，碰银行就得撒谎。检察官哪怕证明不了你的主罪，也能拿「你对银行撒了谎」逼你认罪。就像当年抓不到 Al Capone 的谋杀，最后拿逃税把他送进了监狱。所以他说：</p>
+<blockquote><span class="en">The government wants you to do this. Their first choice would be you not committing crimes, but contingent on you choosing to break the law, they prefer you also lie to a bank.</span><span class="zh">政府希望你这么干。它的首选当然是你别犯罪；但既然你已经选择了违法，它更希望你顺便也对银行撒个谎。</span><cite>KYC and AML: beyond the acronyms，2023-01-23</cite></blockquote>
+<p>银行在这里不是在做生意，而是在当一支没人承认的警察。它不需要每次都抓对人，只要让整个系统<strong>在统计上</strong>对犯罪不友好。</p>
+<p>最后看最让人抓狂的那件事：银行突然关掉你的账户，一个字都不解释，打客服被转来转去，每个接电话的人都对你的事一无所知。McKenzie 说银行「缺乏物体恒存」：它们极擅长记一种真相，也就是账本，对其他所有真相都记得很差。客服分了好几层，第一层只能看不能改，交接时最多带一条推特那么长的备注。这套分层很便宜，正是它让一个送报的中学生也能开户。但它还藏着一条更硬的原因：银行如果对你提交过「可疑活动报告」（SAR），法律<strong>禁止</strong>它告诉你，甚至禁止它承认报告存在。哪怕是美国政府自己拿传票去问柜员，柜员也必须拒绝回答。为了不让一线员工说漏嘴，合规部门干脆把这些报告锁在一个谁都看不见的子系统里。于是银行刚决定关你的账户，转眼就连它自己也不知道为什么关了。</p>
+<p>他自己都不太好意思说出那句结论，但还是说了，并且单独成段：</p>
+<blockquote><span class="en">Sometimes banks suck because we want them to suck.</span><span class="zh">有时候银行烂，是因为我们要它烂。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
+<p>这就是 McKenzie 最核心的那一下。金融系统不是一个做得很差的产品，而是<strong>一台被社会征用的机器</strong>。它同时被要求赚钱、方便穷人开户、替国税局收税、替缉毒局盯钱、替子女抚养费追讨机构扣款、还要对谁都不歧视。这些目标彼此打架。你在柜台前碰到的每一处别扭，多半是某个目标打赢了另一个目标留下的伤疤。骂银行贪婪，很少能改变什么；他给想帮穷人的读者的建议很不浪漫：少骂几句资本家，多去读几份冷门监管机构的「公开征求意见稿」，规则是在那里写出来的。</p>
+<p>2021 年第一期里，他写「金融系统最好理解成一个公私合营体」。五年后，2026 年 5 月那篇调查报道的第一句是：</p>
+<blockquote><span class="en">The financial industry understands itself to be an arm of the government. We were inducted into this service other-than-willingly through the ordinary operation of law and regulation.</span><span class="zh">金融业把自己理解为政府的一条手臂。我们是被法律和监管的日常运转，不那么情愿地征召进这份差事的。</span><cite>Notes on a non-profit indicted for bank fraud，2026-05-01</cite></blockquote>
+<p>读懂这一句，你就读懂了他写的绝大部分东西。剩下的，是这条手臂具体在哪里用力、谁替它付账。</p>
+</div>
+
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" id="mode-deep" hidden>
+
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>发卡行（issuer）</b> — 卡面上印着名字的那家银行。一笔刷卡交易里有好几家银行，这家是「你的」那家。</li>
+<li><b>交换费（interchange）</b> — 商户每收一笔刷卡要付的手续费，大头归发卡行。美国信用卡的返现和航空里程，基本都是这笔钱倒贴给你的。</li>
+<li><b>拒付（chargeback）</b> — 持卡人投诉后，钱从商户那里被扣回。对商户来说，就是「卖了东西，钱又被收走了」。</li>
+<li><b>Regulation E（E 条例）</b> — 美国管电子转账的消费者保护规则：卡被盗刷，损失主要由金融机构承担，而不是你。</li>
+<li><b>KYC / AML</b> — 「了解你的客户」和「反洗钱」：法律要求金融机构核实客户身份、持续监控交易。</li>
+<li><b>SAR（可疑活动报告）</b> — 银行觉得某笔交易不对劲时，提交给美国金融犯罪执法局（FinCEN）的一份两三页的内部备忘。不是指控，但依法必须保密。</li>
+<li><b>ACH</b> — 美国银行间批量转账的老网络，名字就叫「自动清算所」，直到近年都是一天跑几批，钱要隔天才到。</li>
+<li><b>社区银行（community bank）</b> — 只做本地存贷款的小银行。美国有五千多家银行，英国和日本各约四百家，差距主要就在它们身上。</li>
+<li><b>核心系统商（core processor）</b> — 给小银行提供核心记账系统的外包软件公司，如 Fiserv、Jack Henry。小银行自己基本不写代码。</li>
+<li><b>MSB（货币服务业务）</b> — 汇款、兑支票、卖汇票这类生意。几乎所有银行的内部反洗钱政策都把它列为高风险。</li>
+</ul>
+</div>
+
+<h2>一件怪事：知道「可疑活动报告」是什么，本身就可疑</h2>
+<p>美国联邦法规第 12 编第 21.11 节有一句话。翻成白话是：银行和它的任何员工，都不得披露一份「可疑活动报告」，也不得披露任何能透露这份报告<strong>存在</strong>的信息。哪怕收到传票，也必须拒绝。</p>
+<p>McKenzie 把这条法规的含义一层层剥开。如果美国政府自己动用传票权去问一个柜员某份 SAR 的事，柜员依法应当一言不发。「这条规定，就是设计来对抗美利坚合众国自身利益的！」客户能拿到的，比美国政府还少。柜员自己也拿不到：为了不让任何一线员工天天违法，正常运转的银行早就把 SAR 关进了一个只有起草人能看见的独立子系统。</p>
+<p>然后这个子系统要和银行其他所有系统打交道，「这里自然就是发生极其痛苦的喜剧的地方」。比如一份 SAR 因为账户归属记错而填错了，要调查这个错误，就得告诉客户他被调查过，而这恰恰是不许说的。接下来是那句让人愣住的话：</p>
+<blockquote><span class="en">And because this is insufficiently Kafkaesque, at some financial institutions, you can get a SAR filed for knowing what a SAR is, because “advanced knowledge of anti-moneylaundering procedure” is a characteristic only of financial professionals and terrorists.</span><span class="zh">又因为这还不够卡夫卡，在某些金融机构，你会因为知道 SAR 是什么而被提交一份 SAR，理由是「对反洗钱流程的深入了解」，只有金融从业者和恐怖分子才具备这个特征。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
+<p>下一段只有一句：「你可能以为我在开玩笑。我一点都没在开玩笑。」</p>
+<p>这一幕几乎就是整个 Bits about Money 的缩影。一个看起来荒唐到像段子的现象，背后有一条白纸黑字的法规；法规背后有一个社会想要的东西；为了得到这个东西，系统做出了一个从外面看完全说不通、从里面看每一步都合理的安排。McKenzie 五年来干的事，就是把这种安排一个个拆开给你看。偶尔拆到底，他也承认：「大多数时候，世上的别扭都有逻辑上的解释……而有时候，这个世界就是彻底疯了。」</p>
+
+<h2>这人是谁</h2>
+<p>他高中时去一家办公用品公司面试录单员。面试官提到「直运」（dropship），怕他听不懂，正要解释，他说：我懂，就是顾客下单后您才去进货、让供应商直接发货，这种单不享受包邮，而且收货楼层必须有电梯，不然另收 75 美元。面试官问一个高中生怎么会知道这些。他说：在您家目录里，订货单后面的小字。「我把了解你们的生意当成了我的事。」他说这是他这辈子在面试里干过的最聪明的一件事。</p>
+<p>后来的履历几乎就是这句话的延伸。他大学一毕业就去了日本，在日本公司当了六年上班族，晚上和周末做一款给老师打印宾果卡的小软件，2010 年靠它辞职；之后做了预约提醒的 SaaS，两家公司都卖掉了；接着在支付公司 Stripe 全职六年，现在是顾问；疫情期间还参与搭建了他自称的「美国影子疫苗信息基础设施」。他念大学时当过一线客服，多年来业余替消费者给银行写了「几百封」投诉信，还被银行「关过两次户」。2023 年初他从 Stripe 全职岗位退下，同时把通讯改成读者付费支持，但坚持不设付费墙，一篇不锁；此后两年里，他把家从日本搬回了美国。</p>
+<p>几乎每篇文章开头都有一句免责声明：他曾在 Stripe 工作，现在是顾问，Stripe 不一定认同他在个人空间里说的话。这句话出现得太频繁，几乎成了他的签名。</p>
+
+<h2>他跟什么较劲</h2>
+<p>第一期通讯（2021 年 10 月）讲的是美国的社区银行，听起来是个冷题目。可他在里面抛出了一个后来五年都没放下的判断。</p>
+<p>技术圈的人老问：美国银行间转账（ACH）为什么慢了几十年？结论通常是「银行技术太烂」。McKenzie 的回答是：差一点，但不对（Close but no cigar）。大银行有一栋楼又一栋楼的程序员，为了把交易执行时间省下几微秒拼命，一天跑两次批处理难不倒它们。真正拖后腿的是五千家小银行：它们没有自己的程序员，靠几家核心系统商的高价外包软件活着，测试环境少得吓人，还同时对几十套互不兼容的监管制度负责。当年推「当日 ACH」，社区银行的游说团体就公开主张推迟，免得在竞争中吃亏。</p>
+<p>那政府为什么要护着这些小银行？因为它们在替政府干活：</p>
+<blockquote><span class="en">A bank branch is a retail point-of-presence for the SSA getting funds to a pensioner, for the IRS collecting payroll taxes, and for the DEA interdicting fentanyl, staffed and funded by the private sector.</span><span class="zh">一家银行分行，是社保局给退休者发钱、国税局收工资税、缉毒局拦截芬太尼的零售网点，人手和经费都由私营部门出。</span><cite>Community Banking and Fintech，2021-10-22</cite></blockquote>
+<p>这一节的小标题叫「金融系统是一条政策手臂」（The financial system is a policy arm）。这就是他的根问题：<strong>金融系统那些看上去愚蠢、残忍或低效的行为，有多少其实是社会塞给它的任务的副作用？</strong>主流叙事有两种：硅谷的说法是银行守旧无能，等着被颠覆；进步派的说法是银行贪婪，要靠监管管住。McKenzie 两边都不买。他的出发点是一个程序员的直觉：一个系统在几千家彼此激烈竞争、明知客户讨厌某件事的机构里，以几乎一模一样的方式出错，那就不是哪家机构的 bug，而是需求文档里写着的东西。</p>
+<p>他撞上这个问题的方式很具体。在 Stripe，他眼看着工程师去运营团队坐了一天，回来就连声道歉，说「我不敢相信我们对你们干了这种事」，马上去修那些已经存在了好几年的 bug。运营的人却说，他们在金融业的经验早就告诉他们，运营永远用不上不坏的软件，抱怨这个就像抱怨地心引力。在日本，他用一个美国退休账户，从日本 IP 登录了很多次，有一次接到电话，账户随即被限制、关闭。在美国，银行问他为什么每天进账两笔 ACH，他说是在网上卖软件，银行说听起来很正当，然后给了他 30 天把生意的资金流挪走。</p>
+<p>这些事当时让他很恼火，也想不通。后来他把整个职业生涯都花在了想通这些事上。五年下来，这个判断不但没变，反而越说越直白。到 2026 年，他干脆把它当作一篇调查报道的第一句：「金融业把自己理解为政府的一条手臂。」</p>
+
+<h2>他的想法，讲成「他怎么发现的」</h2>
+
+<h3>一、欺诈不是敌人，是一根滑杆</h3>
+<p>故事从被剪掉的那句「最优欺诈量大于零」开始。McKenzie 知道它听上去像在抖机灵，所以第一步就把问题缩到最小：只谈一种欺诈，坏人偷了你的卡号去网上买东西。这种事全世界一年大约损失一两百亿美元。然后他抛出一句更刺耳的话：这种欺诈之所以可能，是因为政府、金融业、支付业和商界最聪明的一批人坐在一起，<strong>决定让它可能</strong>。</p>
+<p>他的撬棍是一个问题：<strong>谁买单？</strong>顺着钱往下追，是一道瀑布：</p>
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="信用卡盗刷损失的责任瀑布">
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#5eead4"/></marker></defs>
+<g font-family="-apple-system,'Noto Sans SC',sans-serif" font-size="14">
+<rect x="20" y="20" width="150" height="54" rx="10" fill="rgba(110,168,254,.12)" stroke="#6ea8fe"/>
+<text x="95" y="44" text-anchor="middle" fill="#d5dce4" font-weight="700">持卡人</text>
+<text x="95" y="63" text-anchor="middle" fill="#93a1ae" font-size="12">卡号被盗，先吃第一刀</text>
+<rect x="200" y="80" width="150" height="54" rx="10" fill="rgba(110,168,254,.12)" stroke="#6ea8fe"/>
+<text x="275" y="104" text-anchor="middle" fill="#d5dce4" font-weight="700">发卡行</text>
+<text x="275" y="123" text-anchor="middle" fill="#93a1ae" font-size="12">E 条例把损失挪到这里</text>
+<rect x="380" y="140" width="150" height="54" rx="10" fill="rgba(110,168,254,.12)" stroke="#6ea8fe"/>
+<text x="455" y="164" text-anchor="middle" fill="#d5dce4" font-weight="700">支付处理商</text>
+<text x="455" y="183" text-anchor="middle" fill="#93a1ae" font-size="12">按卡组织规则自动追偿</text>
+<rect x="550" y="200" width="150" height="62" rx="10" fill="rgba(94,234,212,.14)" stroke="#5eead4" stroke-width="2"/>
+<text x="625" y="225" text-anchor="middle" fill="#e2e8f0" font-weight="700">商户</text>
+<text x="625" y="244" text-anchor="middle" fill="#93a1ae" font-size="12">绝大多数情况在此停下，</text>
+<text x="625" y="259" text-anchor="middle" fill="#93a1ae" font-size="12">当作日常开销吞掉</text>
+<path d="M170,60 C190,60 190,100 198,104" fill="none" stroke="#5eead4" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M350,120 C370,120 370,160 378,164" fill="none" stroke="#5eead4" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M530,180 C545,180 545,222 548,226" fill="none" stroke="#5eead4" stroke-width="2" marker-end="url(#ar)"/>
+<text x="20" y="150" fill="#7d8794" font-size="12">理论上持卡人自付 50 美元，</text>
+<text x="20" y="168" fill="#7d8794" font-size="12">行业几乎一律免掉</text>
+<text x="20" y="250" fill="#7d8794" font-size="12">全程几乎不经过法院或律师，</text>
+<text x="20" y="268" fill="#7d8794" font-size="12">只在边缘处才需要人工</text>
+</g>
+</svg>
+<figcaption>美国消费信用卡盗刷的损失瀑布，据《The optimal amount of fraud is non-zero》（2022）整理</figcaption>
+</figure>
+<p>瀑布停在商户那里，这一点决定了一切。既然欺诈损失是商户的一项成本，跟房租、工资、广告费一样，那「欺诈总监」就是一个预算岗位。他的目标定多少？</p>
+<blockquote><span class="en">Zero?! Do you think the Director of Marketing desires to spend zero on marketing!? That would be an objectively silly goal. They would clearly be fired and replaced with someone who understands marginal returns.</span><span class="zh">零？！你觉得市场总监想把营销开支压到零吗？！那客观上是个蠢目标。他显然会被开掉，换一个懂边际收益的人来。</span><cite>The optimal amount of fraud is non-zero，2022-09-02</cite></blockquote>
+<p>原因在于，每一种防欺诈手段都同时打在骗子和诚实顾客身上。他给了一个荒唐但准确的例子：要求面对面握手才成交，是非常有效的反欺诈措施，跨国诈骗团伙离你太远，握不到你的手。可同样的原因，绝大多数顾客也握不到。线上的版本温和些：结账时多要一个账单地址（用来做地址核验），转化率就掉；网站逼你注册账户，一大原因是让它能把防欺诈的注意力集中在高风险的新客身上；允许游客结账，等于用更多欺诈换更多销量。</p>
+<p>到这里，他把视角翻了一下，换成一个情绪色彩不同的词：<strong>信任</strong>。所有欺诈都是对信任的滥用；你永远不信任任何人，就能把欺诈降到零。可信任是一项极其有用的社会技术。他顺手写了一句只有他会写的话：人类文明有一个根本性漏洞，任何人都能在睡梦中被轻易杀死，社会花了巨大的力气，让这个漏洞几乎从不被利用。「据说上帝已经关掉了所有相关的漏洞报告，说这是特性，短期内不会修。」</p>
+<p>支付业的核心难题，就是让一家店在几秒钟之内，决定信任一个从没见过的人，凭的只是对方一个「将来会付钱」的承诺。所以才有那句「一个承诺！空口白话！」。下一步是利润率：高利润的生意（游戏、流媒体、软件，毛利常在九成以上）会一路放宽，宁可多吃欺诈也要多成交；卖苹果硬件和游戏主机这种低毛利、又好转卖的，就得逐单审核首单。两者之间是一整条光谱，<strong>这条光谱本身是件好事</strong>。他还指出一个常被忽略的事实：欺诈这几十年变多，一个原因是正当的商业本身爆炸式增长了。</p>
+<p>然后他把论证推到了让人不太舒服的地方：</p>
+<blockquote><span class="en">We should, as a society, accept non-zero amounts of benefits fraud. We should accept non-zero amounts of cheating on taxes.</span><span class="zh">作为一个社会，我们应当接受非零的福利欺诈。我们应当接受非零的逃税。</span><cite>The optimal amount of fraud is non-zero，2022-09-02</cite></blockquote>
+<p>他也承认，这种取舍几乎没法公开做：谁想当那个「支持福利欺诈的政客」，或者「觉得自己洗钱洗得不够多的银行 CEO」？</p>
+<p>这个想法有两块地基，都比它早。一块是 2021 年底的《The fraud supply chain》：欺诈不是一群冲动的散兵游勇，而是一个分工细密的<strong>产业</strong>，有人力资源部、行业论坛、认证、猎头。偷卡号的（carder）和把卡号变现的（casher）分开，正和正规金融一样，是为了把风险切片、分给愿意承担的人。他写这一段时用了一个反复出现的叠句，读来像段相声：清单由「专门的市场调研公司（但是邪恶的）」整理，用的是「数据科学家（但是邪恶的）」的成果；交易市场有「客服团队（但是邪恶的）」，维护「信誉系统（但是邪恶的）」，免得不知情的顾客（但是邪恶的）在诈骗时被诈骗犯诈骗。中间他扔下一句：</p>
+<blockquote><span class="en">Amateurs talk strategy or tactics. Professionals talk logistics.</span><span class="zh">外行谈战略战术，内行谈后勤。</span><cite>The fraud supply chain，2021-12-03</cite></blockquote>
+<p>他的妻子有一次看到广告，说可以把要注销的公司「回收」卖掉，能拿一千美元左右，劝他别浪费。他说：亲爱的，这是犯罪，买公司的人就是罪犯，警察来找被偷的钱时，文件上写的会是我的名字。</p>
+<p>另一块是 2022 年初的《Finality does not exist in payments》：支付没有真正的「最终性」，只有一个概率分布。连比特币也一样，2016 年被盗的一笔，2022 年被美国政府追回。他的总结是：「如果你和美国联邦政府在一笔交易是否最终这件事上意见不合，错的是你。」银行间电汇也能撤回，靠的是两家运营人员之间一通轻松的电话，外加一份「免责」文书。信用卡反而刻意把撤回做成卖点：</p>
+<blockquote><span class="en">They increase social trust between peers on the network by decreasing technical trust. This is akin to alchemy.</span><span class="zh">它们通过降低技术上的信任，提高了网络上陌生人之间的社会信任。这近乎炼金术。</span><cite>Finality does not exist in payments，2022-02-15</cite></blockquote>
+<p>三块拼起来，就是他关于欺诈的完整图景：欺诈是一个产业；防欺诈是一项预算；可撤销是一项产品特性；而这三件事加在一起，才让人们敢在网上给一个从没见过的人付钱。九十年代末，人们真心怀疑互联网上能不能交易，「黑客难道不会把暴露在网上的钱全拿走？」答案是不会。可要回答这个问题，前提是先得有钱暴露在网上。是信用卡的可撤销性让这件事成了真。</p>
+
+<h3>二、银行是一支没人承认的警察</h3>
+<p>2023 年 1 月的《KYC and AML: beyond the acronyms》是全站被回引最多的一篇（17 次）。它开头根本没谈银行，谈的是车祸。</p>
+<p>假设你是一个大国，路上死人太多，研究发现超速是元凶。你怎么管？全国统一限速、严格执法？可乡间公路主要跑货运，卡死速度伤商业，执法成本也远高于救下的命；大城市自己有警察局，你又指挥不动。你最后多半会选「随机管理」（stochastic management）：不去控制每条路、每只踩油门的脚，而是给各级道路管理者定下新的「物理定律」，让速度在统计上被压下来。他还给这部虚构法规起了个缩写名，Roads Obviously Aren't Done Speedily（首字母拼成 ROADS），挖苦金融监管法规最爱用缩写。真正的目标从来不是测速，是少死人。</p>
+<p>然后他翻牌：</p>
+<blockquote><span class="en">the goal is not to achieve banks having good knowledge of their customers or to prevent money laundering. It is to stochastically manage crime and terrorism at the margins by requiring an oft-unrecognized policy arm, the financial industry, to implement their own stochastic management of their books of business.</span><span class="zh">目标并不是让银行真正了解客户，也不是防止洗钱。目标是在边际上，对犯罪和恐怖主义进行随机管理：要求一条常被忽视的政策手臂，也就是金融业，对自己的客户群也实施随机管理。</span><cite>KYC and AML: beyond the acronyms，2023-01-23</cite></blockquote>
+<p>紧接着是更让人吃惊的推论：<strong>KYC 和反洗钱不必按它们自己的标准有效，也能达到目的。</strong>他把这一节命名为「没有有效性的效果」（Effects achieved without effectiveness）。</p>
+<p>怎么做到的？他拆出了好几个机制。第一，那份看似弱智的开户问卷，真能抓到一些人：合规部门会恼火地告诉你，他们读到过很多「交易目的：走私军火和卖淫」，有的是恶作剧，有的是罪犯真就这么蠢。第二，也是更重要的：它在犯罪的另一段生命周期上起作用。就是精华版里说的那个陷阱：犯罪迟早要碰银行，碰银行就得撒谎，而对银行撒谎会被精确地永久记录，是现成的重罪。他说你会在联邦起诉书里一遍遍看到同一个结构：两页讲犯罪本身，十页精确还原钱怎么走、在每一步撒了什么谎。他对这种做法也直说有保留：「坦白说，我对其中有时混进来的博弈手法有些担忧。」</p>
+<p>第三个机制，他写得最狠：<strong>法律几乎从不规定具体动作，只规定你要有书面流程并照做。</strong>很多人以为法律要求银行当面看你的身份证才能开户，错了。规定写的是要采集真实身份信息，具体怎么做由银行自己的「客户识别程序」写，监管者读过、不反对即可。所以信用卡几十年前就能在飞越太平洋的航班上填表、邮寄开户；而存款账户「必须去网点」，不是法规不许，是银行觉得不值得做，再顺手把锅甩给监管。疫情一来，大批银行突然「发现」了能在线开户的那组措辞，这在过去几十年里任何一天都合法。他写：多方利益相关的系统里，每一方都觉得好事全是自己的功劳，坏事自己只是旁观者。</p>
+<p>这套「社会把目标塞给银行」的逻辑，在他笔下有一个特别冷的例子。调查里没有银行账户的人，有一类男人反复说「银行会把我的钱拿走」。他说这些人基本说对了，因为子女抚养费的追缴优先于他们能不能开户：</p>
+<blockquote><span class="en">Almost nobody is comfortable saying that they intend this in as many words. But as a society, yes, we unquestionably intend this outcome.</span><span class="zh">几乎没有人愿意把「我们就是有意这么做」明明白白说出口。但作为一个社会，是的，我们毫无疑问有意要这个结果。</span><cite>KYC and AML: beyond the acronyms，2023-01-23</cite></blockquote>
+<p>最后一层是文化。合规是一场<strong>表演</strong>，基调是「讨好」，像一个侍臣面对一位不算不讲理、但以处决不够勤勉的侍臣而闻名的君主。你可以在心里觉得那张问卷是官样文章，但在受监管的机构里绝不能说出口。「我见过真心为金融系统稳健而自豪的人，见过真心为保护普通人的钱而自豪的人。<strong>我从没见过谁真心为 KYC 本身而自豪。</strong>但这话绝对不能说出口。」</p>
+<p>这一切最终合成一幅图：社会想要多家机构在社会的不同切面上，各自织一张<strong>有洞的网</strong>，网与网重叠，使大部分值得关注的活动至少撞上一张能用的网；但社会并不希望每张网都最大限度地运转。最优的欺诈量不是零，最优的 KYC 合规率也不是百分之百。监管的逻辑，在被监管者身上复制了一遍。</p>
+
+<h3>三、银行没有「物体恒存」</h3>
+<p>2023 年 11 月，《纽约时报》报道银行突然大批关闭客户账户。McKenzie 回应的那篇《Seeing like a Bank》，标题借自政治学家 James C. Scott 的名著《国家的视角》（Seeing like a State）：官僚系统只能看见它的表格看得见的东西。</p>
+<p>他注意到的怪事是：这些糟糕体验在几千家彼此恶性竞争、明知客户痛恨这些的银行里，以几乎相同的方式发生。账户被关、Zelle 被骗、借记卡补发、止赎，每次打电话，对面的人都像《土拨鼠之日》里的配角，对你之前说过的、他们之前承诺过的一无所知。他的诊断是：</p>
+<blockquote><span class="en">Banks are extremely good at tracking one kind of truth, ledgers. They are extremely bad at tracking certain other forms of truth, for structural reasons.</span><span class="zh">银行极其擅长追踪一种真相：账本。出于结构性原因，它们极其不擅长追踪其他某些真相。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
+<p>接着他像排查一个分布式系统那样排查银行。第一处：<strong>系统边界</strong>。银行的系统像沉积岩一样一层层堆起来，每次并购，两套系统要并行跑好几年。「每当责任在子系统之间转手，总有一定比例的案子会直接断掉。」安全漏洞也大多住在这些边界上。他自己就是样本：他是 First Republic 的客户，而 Chase 收购了 First Republic；Chase 能在 App 里显示「我们知道你在另一边也有账户」，这件事在十年前会让银行 CTO 大吃一惊。「Chase 多年来花了几百亿美元，才走到一个工程师能在 30 分钟里敲出这条横幅的地步。」可它仍然热情地通知他那笔 First Republic 从没发放过的房贷如何迁移，对真实存在的那笔信用额度却一无所知。</p>
+<p>第二处：<strong>客服分层</strong>。他自己念大学时当过一线客服。第一层客服存在的原因是：「中位数」的问题其实不是问题，来电者对账户、对金融、对生活中很多事都很不熟练。他在这里写下了全站最冒犯的一段：有些顾客不理解为什么账户里有 70 美元，刷了 45 和 32 之后会透支；学校用 12 年、10 万美元的预算都没教会的事，银行也教不会。这位顾客打电话比你频繁得多。所以你想「直接跟人说话」得跳很多圈，因为系统根据大量证据，假定<strong>你就是那个人</strong>，直到你证明自己不是。第一层只能看不能改，交接时最多带一条推特长度的上下文；第二层能批一点小额补偿；第三层才是有职业生涯、不按每小时结单数考核的专业人员。</p>
+<p>第三处：<strong>侧门是故意的</strong>。几乎每家银行都有一条绕过所有层级、直达决策者的通道，通常叫「升级处理」。记者打电话问一位快被错误止赎的寡妇，几分钟内就会转到那里；一封寄给零售银行副总裁或投资者关系部的纸质信，也常有同样效果（他当年把这当爱好写了几百封）。银行不恨你找到侧门，侧门本来就是设计好的，而进门的暗号往往是表现得像个职业中产。没有一家银行能说「我们按教育程度、阶层和施压能力提供分级服务」，但每家银行事实上都这么做。</p>
+<p>但他并没有因此谴责分层制度。恰恰相反：</p>
+<blockquote><span class="en">But if you want phone calls to the bank to be both answered at 2 AM and absolutely free, you want the tiering system. Society wants the tiering system. It is why a high school student with a paper route can open a checking account, get a debit card, and start buying things on Amazon.</span><span class="zh">但如果你想让打给银行的电话既能在凌晨两点有人接，又完全免费，你要的就是分层制度。社会要的就是分层制度。正因为它，一个送报的高中生才能开支票账户、拿到借记卡、开始在亚马逊上买东西。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
+<p>只有到了第四处，SAR 那条保密法规，他才写下那句单独成段的「有时候银行烂，是因为我们要它烂」。顺序很重要：他先排除了无能，再排除了恶意，最后剩下的是一个社会主动选择的盲点。「每一个包含这条法规的未来，都会有很多美国人的账户因为一个不能告诉他们的理由被关掉。其中很多人什么都没做错。」</p>
+<p>一年后，这套分析迎来了最大的一次实战。2024 年 12 月，风投家 Marc Andreessen 在自家播客和 Joe Rogan 的节目上说，「去银行化」（debanking）正被特定的政治行动者当作武器，在没有正当程序的情况下系统性地对付个人和整个行业，首当其冲的是加密行业。McKenzie 写了约两万四千词的《Debanking (and Debunking?)》，标题本身就是立场：既查证，也辟谣。他在开头就声明自己是出了名的加密怀疑者，「论证不是士兵；真相就是真相。真相有时站在加密支持者那边，在那些地方，我会大量引用来源。」</p>
+<p>他先拆掉了一个混淆：被关户和被拒绝开户是两回事，「就像离婚和约会被拒的区别」。绝大多数被关户的人是因为信用风险或运营成本，比如反复透支、看起来付不起手续费。然后是那个最典型的受害者：街角小杂货店（bodega）。它顺带卖汇票、做汇款，就成了「货币服务业务」，进了每家银行的高风险名单。他去翻了金融犯罪执法局（FinCEN）自己挑出来挂在网站上的执法案例，里面就有这样的杂货店，因为没有书面反洗钱政策被罚一万美元。银行读懂了这个信号，大多数干脆不做这类客户。关户信上只会写「商业决定」「决定是最终的」，在他看来那封信是一件「仪式用品」，懂行的人知道它不是用来照字面读的。</p>
+<p>然后他回答了那个最尖锐的道德问题：被银行拒绝，难道不该有「无罪推定」？</p>
+<blockquote><span class="en">We do not have this assumption embedded in our banking system.</span><span class="zh">我们的银行体系里没有这条假设。</span><cite>Debanking (and Debunking?)，2024-12-09</cite></blockquote>
+<p>放贷从来如此：根据可观察的因素建概率模型，社会明令禁止的因素除外，比如种族，以及会成为种族代理变量的邮编。「金融不是高中；92 分不再是 A-。」</p>
+<p>但他没有站到银行那边就收工。他接着把账算到了政府头上，而且不分党派。奥巴马时期的「扼喉行动」（Operation Choke Point）里，司法部用一个内部称为「自我影响」（self-affecting）的法律理论去逼银行，联邦存款保险公司把一份三十项的「高风险」行业清单发下去，从诈骗到色情，再到「一个我们不喜欢的东西的大杂烩」（他点名的有种族主义，以及……烟花？）；监管者还认定，给枪店开户会带来「声誉风险」。他引用了日语里的一个词，忖度（sontaku）：下属不等上级明说，就揣摩着去做上级想要的事。「如果你不是时时刻刻在忖度你的监管者，你就是一个非常非常糟糕的合规人员。」而由政府直接下令、按政治立场冻结个人账户的事，他说确实发生过，在加拿大：2022 年卡车司机抗议期间，政府动用《紧急状态法》冻结了两百多个账户，波及的不只是组织者。</p>
+<blockquote><span class="en">And so when people say that targeted debanking can be used, even in a democracy, for arbitrary and capricious punishment of disfavored individuals on the political speech, laundered through the banking system, with no substantial procedural recourse, I agree with those people that that is a risk. We just watched it happen.</span><span class="zh">所以当有人说，即使在民主国家，定向去银行化也能被用来任意惩罚因政治言论而失宠的个人，借银行体系之手洗白，而且没有实质性的程序救济，我同意他们：这是一个风险。我们刚刚眼睁睁看着它发生了。</span><cite>Debanking (and Debunking?)，2024-12-09</cite></blockquote>
+<p>至于那个更大的说法，「美国的日常做法就是按政治立场关保守派的户」，他说：不是。他的论证方式极其朴素：如果共和党人真的随时面临被关户的风险，他们会只用现金买球鞋，筹款晚宴旁会摆着麻袋，你也一定跟某位保守派朋友有过一次尴尬的对话。这不是你生活的世界，你只要相信自己的眼睛和常识就能排除它。据他在年度回顾里转述，这篇文章同时得到了一位加密风投家和一位前联邦银行监管官员的公开称赞。</p>
+
+<h3>四、一切都是信用，而且是一列运支票的火车</h3>
+<p>最后一个想法分量轻些，但它把前三个焊在了一起。2023 年 12 月的《The Long Shadow of Checks》从一个看似无关的问题开始：美国的银行账户为什么叫「支票账户」？</p>
+<p>他的回答是一部路径依赖史。支票让清算成了问题：两家银行每天各派一个信差，四家要十二个，几千家就……于是有了清算所。<strong>美国此后一切银行间转账方式，都是围着全国清算纸质支票的能力设计的</strong>，ACH 的名字就是「自动清算所」。今天的转账时间表，直接来自「用铁路网在纽约和旧金山之间运手写纸条、由整层楼的职员摇机械加法器计算」的年代。</p>
+<p>更深一层是：<strong>支票账户本质上是信用产品</strong>。你在杂货店开一张支票，店家必须在信息极不完整的情况下，决定要不要把鸡肉交给你。为什么要接受这种取决于未来的承诺？「因为系统性地承担一小点风险，创造了巨大的价值。杂货店喜欢多卖货。消费者喜欢吃鸡而不是挨饿。鸡没有投票权。」为了让这套东西成立，国家为支票提供了一个保证：在支票上跟杂货店起争执，你可以坐牢。罪名叫「uttering」（使用空头支票）。在实践中，透支对一部分人意味着 30 美元手续费，对另一部分人意味着入狱：</p>
+<blockquote><span class="en">If a grocery store loss prevention employee, a police officer, and a prosecutor each refuse to stop the process, NSF means you’re Now Somebody's Felon.</span><span class="zh">如果杂货店的防损员、警察和检察官都不肯叫停这个流程，NSF（存款不足）的意思就变成了：你现在是某人的重罪犯（Now Somebody's Felon）。</span><cite>The Long Shadow of Checks，2023-12-13</cite></blockquote>
+<p>由此他得出一个很少有人想到的结论：刷卡支付让经济更有效率，一个衡量办法是<strong>刷卡的人很少坐牢</strong>。信用卡的手续费里，一部分付了返现，一部分付了电脑，一部分付的是「不把穷人关进监狱」。又因为美国标准账户是支票账户，开户就是授信，于是有了专门把人拉黑、不让他再开支票账户的行业征信机构。他说，「有信用」听上去像一种道德评判，其实只是一种天气预报。很多一边要求「给没有银行账户的人开户」、一边痛骂银行「乱放贷」的倡导者，没意识到自己在要求两件互相矛盾的事。</p>
+<p>这条线一直延续到 2025 年底的《The gift card accountability sink》。美国退休者协会在广告里说「要你用礼品卡付钱的一律是骗局」。他说当然不是：礼品卡是一条支付轨道，有整门生意专门用它服务没有银行账户的人。可为什么借记卡被骗能拿回钱，礼品卡被骗就没人管？因为礼品卡被刻意排除在 E 条例和大部分反洗钱规则之外，「为了便利商业」；零售业协会在规则征求意见时也确实这样游说过。加上发卡的其实是你没听说过的「项目管理商」，卖卡的大零售商会诚实而无用地告诉你：卡不是我们发的。</p>
+<blockquote><span class="en">That decision has a cost. Grandma sometimes pays it.</span><span class="zh">这个决定是有代价的。有时候，替它买单的是奶奶。</span><cite>The gift card accountability sink，2025-12-19</cite></blockquote>
+<p>四个想法到这里合成一个：<strong>每一处摩擦都是一次取舍，每一次取舍都有人买单。</strong>McKenzie 的工作，就是把买单的人找出来，点名。</p>
+
+<h2>他的思维方法</h2>
+<p><strong>先问「谁买单」，再问别的。</strong>他几乎每篇文章的第一个动作，都是沿着钱流走一遍：信用卡的损失瀑布、交换费的分账、券商「零佣金」背后其实是客户现金存在堪萨斯某家小银行赚的利差（他说，大众以为券商靠卖订单流赚钱，这对除 Robinhood 以外的所有券商都是错的）。找到最后吞下成本的那个人，系统的形状就出来了。</p>
+<p><strong>「请银行解释一下这次关户？」</strong>他在《Debanking》里讲自己两次被关户，各配一个小标题叫「Banksplain that offboarding?」，然后用一个结构性原因把看似任性的决定解释干净。这是他的标准动作：先承认体验很糟、当时自己也想不通，再从内部把它复原成一连串「每一步都合理」的决定。他相信大多数别扭有一个结构性原因，但不排除这个世界偶尔就是疯了。</p>
+<p><strong>读原始文件，引原文。</strong>他会把联邦法规条文整段贴出来，引司法部职业责任办公室的报告第几页，引监察长报告的原话，去 FinCEN 的执法案例里数杂货店。他对扼喉行动的态度只有一句话：「我能读邮件。邮件上写着什么就是什么。」</p>
+<p><strong>用软件工程师的眼睛看机构。</strong>银行的问题被他翻译成系统问题：子系统边界、交接时丢失的状态、只读界面、工单系统维持的那条「不变量」、并购后并行运行的两套系统。他说没有任何系统能回答关于一个用户的所有有趣问题，「这在计算机科学里是形式上不可判定的」。工单系统在技术圈眼里简单到不值一提，在他眼里是近几十年最重要的技术进步之一。</p>
+<p><strong>把置信度标出来。</strong>谈扼喉行动时他写，枪店不怎么用 ACH 扣款（置信度 99%，基于行业常识），拒付率也不特别高（置信度 95%）。他给自己的判断标数字，也在文中区分「我读到的」「我听说的」和「我推测的」。</p>
+<p><strong>先自报立场，再说话。</strong>Stripe 顾问、加密怀疑者、「不是暗中的沃伦派」、曾经无偿替消费者对付讨债公司。他把这些都摆在台面上，然后给对手的立场写一个他们自己会认的版本：《Debanking》结尾那段「加密行业想要什么」，是用加密行业自己的口吻写的长清单。</p>
+<p><strong>把笑话当成论证的一部分。</strong>「但是邪恶的」叠句、「NSF 的意思是你现在是某人的重罪犯」、「鸡没有投票权」、上帝关掉了漏洞报告。这些笑话不是装饰，每一个都把一条机制压缩成读者忘不掉的形状。</p>
+<p><strong>给出的行动建议，总是指向规则写出来的地方。</strong>想帮弱势群体？去读冷门监管机构的公开征求意见稿。想让银行解决你的问题？先判断这个问题该归第二层客服，还是只有年薪六位数的专业人员才能解决，然后直接找对的人。</p>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>解释很容易滑成开脱。</strong>McKenzie 的招牌动作是把一件看似荒唐的事，复原成一连串合理的取舍。这个动作极有解释力，但它有一个系统性的倾向：几乎所有现状最后都显得是「社会选择的」。问题在于「社会」是谁。礼品卡被排除在消费者保护之外，是零售业协会游说的结果，他称之为「民主的正常、适当的工作」，语气里有一丝讽刺，但结论仍是「出于好的理由」。做出选择的人和替选择买单的人（杂货店老板、被骗的奶奶、没有驾照的移民）往往不是同一群人。「我们要它烂」里的这个「我们」，有时候应该拆开来点名。</p>
+<p><strong>「最优欺诈量」把曲线当成了给定的。</strong>那篇文章在 Hacker News 上有三百多分、两百多条评论。有评论者说他在做「一个天真的成本收益分析」，「忽略了相当一部分欺诈是落在个人身上的」；另一位说支付业的这种思路让他「愤怒」，因为卡片里本来就有防篡改芯片，偷卡号这件事在技术上可以被消灭；还有人问：如果换一套技术手段，能直接跳到一个欺诈更少、收入更高的位置呢？欧洲读者举了芯片加密码和手机确认的例子。这条批评是有分量的：他论证的是在<strong>给定的技术前沿</strong>上该停在哪，而美国支付业多年迟迟不推强认证，本身也可能是一个可以被批评的「选择」。公平地说，他在《Finality does not exist in payments》里也承认最终性的设计空间「还远没被探索完」，2025 年那篇礼品卡文章，几乎就是对「欺诈落在个人身上」这条批评的正面回应。</p>
+<p><strong>局内人的视角。</strong>他在 Stripe 工作多年，现在是顾问，常年和合规部门、银行运营、监管者打交道。这让他知道外人不知道的东西，也让他天然更能体谅机构的难处。他自己每篇都声明这一点，读者也应该记住这一点：他对「为什么银行这么做」的解释，几乎总比对「银行该不该这么做」的判断更详细。</p>
+<p><strong>美国中心。</strong>虽然他在日本生活了很多年，也写过日本的支付，但绝大多数分析的对象是美国的特殊制度：五千家银行、交换费上限的豁免、支票账户。很多结论（比如「最优欺诈量」的具体位置）换到欧洲的强认证体系里，可能要重算。</p>
+<p><strong>加密问题上的立场。</strong>他公开说自己是加密怀疑者。《Debanking》试图同时满足两边，据他自己转述也确实得到了两边的称赞。但本页没有读到加密支持者对这篇文章的系统反驳，所以无法判断他对 Silvergate、Signature 等银行倒闭的叙述是否有被有力挑战的地方。</p>
+<p>他对自己最狠的那句话，恰恰也写在讲 SAR 的那一段：</p>
+<blockquote><span class="en">Most of the times infelicities in the world have a logical explanation to them, a structural cause where each individual link in the chain sounded good at the time and the result just happens to be suboptimal. And sometimes the world is absolutely batshit insane.</span><span class="zh">大多数时候，世上的别扭都有逻辑上的解释，一个结构性的原因：链条上每一环当时听起来都不错，结果只是碰巧不够好。而有时候，这个世界就是彻底疯了。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
+<p>这是他整套方法的边界，由他自己画出来：结构性解释很强大，但不是万能的。</p>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/community-banking-and-fintech/">Community Banking and Fintech</a></span>（2021-10-22）<span class="d">创刊号。社区银行、ACH 为什么慢、Durbin 修正案的豁免如何养活了一代金融科技公司，以及「金融系统是一条政策手臂」。</span></li>
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/optimal-amount-of-fraud/">The optimal amount of fraud is non-zero</a></span>（2022-09-02）<span class="d">损失瀑布、欺诈总监的预算、握手反欺诈，以及福利欺诈和逃税的推论。</span></li>
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/kyc-and-aml-beyond-the-acronyms/">KYC and AML: beyond the acronyms</a></span>（2023-01-23）<span class="d">限速的寓言、随机管理、「没有有效性的效果」、对银行撒谎作为检察官的工具、讨好式合规。全站被回引最多。</span></li>
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/seeing-like-a-bank/">Seeing like a Bank</a></span>（2023-11-07）<span class="d">银行没有物体恒存：系统边界、客服分层、故意设计的侧门、SAR 保密，以及「我们要它烂」。</span></li>
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/the-long-shadow-of-checks/">The Long Shadow of Checks</a></span>（2023-12-13）<span class="d">清算所、支票账户作为信用产品、空头支票罪，以及刷卡为什么替社会省下了监狱。</span></li>
+<li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/debanking-and-debunking/">Debanking (and Debunking?)</a></span>（2024-12-09）<span class="d">约两万四千词。杂货店与汇票、关户信作为仪式用品、扼喉行动、加拿大卡车司机冻结令，以及什么不是真的。作者自评 2024 年最好的一篇。</span></li>
+</ul>
+
+<section class="updates" data-slug="bits-about-money" data-last-reviewed="2026-10-12">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 第 44 期 · 本页内容核对至 2026-10-12</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
