@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -276,6 +284,28 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>Fourth, a corollary he never chased down.</strong> A good part of his case against services rests on zero-sumness: lawyers, compliance, advertising, lobbying, cancelling each other out. But his own work — technology analysis, research institutes, book-writing, podcasts — sits in that category. He has never defended it, nor explained why analytical work escapes the charge. This isn't fatal (his claim is that <em>too many</em> service jobs are zero-sum, not all of them), but a man who weighs exposure to industrial processes this heavily owes a sentence about where his own job sits in his system.</p>
 <p><strong>Fifth, he is sharper on his own milieu than on himself, and that belongs on the credit side of the ledger.</strong> His 2025 verdict on Silicon Valley is unsparing: tech's movements are more herdlike, and when political winds shift, people fall in line — he calls this Silicon Valley's soft Leninism. He pairs San Francisco with Beijing as the two most insular cities he has lived in, on the grounds that they are places where people are willing to risk apocalypse every day in order to reach utopia. And on his industry's hottest conviction he draws a clean line: he is not a skeptic of AI, only a skeptic of the decisive strategic advantage, which treats awakening the superintelligence as the final goal. AI discussion collapses into the utopian or the apocalyptic too fast, he says — it's a Pascal's Wager, in which we're sure that the values are infinite, but we don't know in which direction. Then comes his answer to all of it, a line fit to be a slogan:</p>
 <blockquote><span class="en">Call me a romantic, but I believe that there will be a future, and indeed a long future, beyond 2027. History will not end. We need to cultivate the skill of exact thinking in demented times.</span><cite>2025 letter, 2026-01-01</cite></blockquote>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Western philosophy · Knowing how vs. knowing that (Gilbert Ryle)</b>: In <em>The Concept of Mind</em> (1949), Ryle argued that knowing how to do something cannot be reduced to knowing a set of propositions; the split between instructions and process knowledge is the same cut. The difference: Ryle was describing one mind, while process knowledge lives in a whole network of engineers and can leave with the factory.</li>
+<li><b>Eastern philosophy · Wheelwright Pian (<em>Zhuangzi</em>, "The Way of Heaven")</b>: The wheelwright tells Duke Huan that the feel in his hands can't be put into words, that he can't even teach it to his own son, so the books the duke reads are only the dregs of the ancients; that is "hand them the blueprints and they still can't build it." The difference: Pian concludes a craft dies with its maker, while Ise's rebuild-every-twenty-years shows it survives as long as people keep doing it.</li>
+<li><b>Cultural evolution · The Tasmanian effect (Joseph Henrich, 2004)</b>: Rising seas cut Tasmania off from the Australian mainland about 10,000 years ago, and the small isolated population later lost technologies such as bone tools. Henrich's model says complex skills are kept alive by copying the best practitioners, and when too few people learn, each generation's copying losses can't be made up. Fogbank is the industrial version of that curve. The difference: Tasmania's loss came from geography, which nobody chose; America's came from shutdowns and offshoring, each step signed off by someone.</li>
+<li><b>Psychology · Learned helplessness (Martin Seligman)</b>: In 1967 experiments, dogs that had received inescapable shocks later failed to escape even when they could; one brief recession holding down computer science graduates for fifteen years looks like the same scar. The difference: in 2016 Maier and Seligman revised the theory, arguing that passivity is the default and what has to be learned is control; on that reading, what's missing is not nerve but a visible way out.</li>
+<li><b>Distributed systems · Two-phase commit</b>: A distributed transaction commits only if every participant votes yes; a single no rolls it all back, and if the coordinator goes down, everyone can be left blocked, waiting. A "litigious vetocracy" makes the same trade of liveness for safety. The difference: rolling back a database costs almost nothing, while nobody keeps the books on the projects a society vetoes.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>After Fogbank production stopped in the 1980s, the US forgot how to make it and spent millions of dollars relearning the process two decades later.</li>
+<li>Technology comes as tools, instructions, and process knowledge, and only process knowledge can't be written down; it is built by doing the work.</li>
+<li>Dan Wang treats tools and patents as milestones in training engineers: inventions are the receipt, not the goods.</li>
+<li>Offshoring factories takes the learning loop with them, so one law explains both why America doesn't make advanced industrial robots and why China is catching up.</li>
+<li>Imagination is an input to growth: having a concrete picture of the future should count as human capital alongside education.</li>
+<li>Recessions scar longer than they last: after the 2001 dot-com bust, US computer science graduates took nearly fifteen years to regain their previous peak.</li>
+<li>China is an engineering state that takes a sledgehammer to physical and social problems; America is a lawyerly society that takes a gavel to almost everything.</li>
+<li>Dan Wang's method is to move to where things are made, judge outputs rather than inputs, treat absence as evidence, and read the official texts nobody else will.</li>
+<li>Reviewers note that several countries have more lawyers per capita than the US without its building troubles, so engineers versus lawyers may be the wrong variable.</li>
+<li>The case for definite optimism is circular, since optimism drives growth but is probably also its product, and Dan Wang conceded this himself.</li>
+</ol>
 
 <h2>7. Sources</h2>
 <ul class="reads">

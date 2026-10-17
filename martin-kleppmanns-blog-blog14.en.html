@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -241,6 +249,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>3. The GPL piece doesn't meet his own standard.</strong> This is the one inconsistency on the site worth singling out. On technical questions he never accepts "I reckon": to check CAP he classified system after system; on data loss he wrote out the binomial; on isolation levels he built a test suite spanning four databases. But arguing that copyleft wasn't important to open source's success, what he offers is: "even in the GPL-licensed projects (e.g. Linux) <strong>I am skeptical</strong> that the copyleft aspect was really an important factor in the project's success." No data, no counterfactual, no comparison case; the AGPL claim in the same piece has the same shape. This doesn't mean he's wrong — the judgements sound quite reasonable — but it means <strong>this piece shouldn't be trusted at the same level as the others</strong>, and it happens to be the most political thing on the site. The skill of spotting that gap is one he taught his readers himself.</p>
 <p><strong>4. The 2025 prediction is both self-interested and waves away the hardest part.</strong> He predicts formal verification is about to go mainstream — and he is himself the person proving distributed algorithms in Isabelle. More importantly, he identifies the real difficulty himself: once verification is automated, the challenge moves to <strong>correctly defining the specification</strong>, "how do you know that the properties that were proved are actually the properties that you cared about?" That is very nearly the thing formal verification has actually been stuck on for sixty years — not that proofs are expensive, but that specs are hard to get right. His treatment: AI could help translate specifications too, and "there is the potential for subtleties to be lost in translation, but <strong>this seems like a manageable risk</strong>." By the standard he applied to Redlock, that sentence is a problem. Redlock's flaw was exactly <strong>demoting a load-bearing assumption to background noise</strong> — "the clocks are probably fine". "The spec will probably translate correctly" is the same sentence.</p>
 <p><strong>5. The other side of the Redlock argument was not read for this page.</strong> Salvatore Sanfilippo (antirez) published a rebuttal the day after the original, at antirez.com/news/101 (9 February 2016), with a corresponding Hacker News thread. <strong>While this page was being written that domain was unreachable from our network environment, so this is reported as a bibliographic fact only; the arguments it makes are not summarised here, because they were not read.</strong> What can be confirmed is Kleppmann's own response in the update, and that response is worth seeing: no victory lap — he says the other side makes some good points, that he stands by his conclusions, and then hands judgement to the reader and the references, noting in passing that neither of their blog posts has been peer reviewed.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Eastern philosophy · Confucius on the rectification of names</b>: The Analects says that when names are not correct, speech does not accord with things, and affairs cannot be accomplished. Same structure as Kleppmann: get the word wrong and the decisions built on it go wrong. The difference: Confucius wants names restored to their proper place in a ritual order, while Kleppmann is happy for you to coin your own definitions, as long as you stop borrowing "CAP", a name already taken by a proof.</li>
+<li><b>Neuroscience · Memory reconsolidation (Karim Nader et al., 2000)</b>: A rat's fear memory, once recalled, becomes unstable again and has to be re-consolidated to survive, so every act of remembering can rewrite the original. The brain looks like the old overwrite-in-place database, not the inside-out log: it keeps no ledger of facts, only a current state that can be quietly edited.</li>
+<li><b>Investing · Ergodicity (Ole Peters)</b>: In Peters' coin game (heads +50%, tails -40%) the population average grows 5% a round, yet any one player who keeps going almost surely goes broke. "Fine on average" is not "always fine for you," just as "correct most of the time" can't carry a correctness lock. The difference: Raft can make safety fully independent of timing, while an investor can never decouple from the market and can only size the bet.</li>
+<li><b>Epistemology · Tacit knowledge (Michael Polanyi)</b>: In The Tacit Dimension (1966) Polanyi wrote that we can know more than we can tell, the same observation as "intuition has no transfer encoding." The difference is the conclusion: Polanyi held that some knowledge is inherently unsayable, while Kleppmann insists it is worth the effort to turn the bitmap into vectors so a team can argue about it.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Martin Kleppmann's first 70 blog posts were almost all about usability, from ticket machines to gas hobs, yet he went on to write DDIA.</li>
+<li>The Hermitage tests showed that "repeatable read" means something different in three databases, and Oracle's "serializable" is really snapshot isolation.</li>
+<li>What makes you believe false things is usually not buggy code but badly designed words read as promises.</li>
+<li>The CAP theorem only models a single read-write register; single-leader databases and ZooKeeper are neither CP nor AP.</li>
+<li>A lock for efficiency may occasionally fail, a lock for correctness must never fail, and a GC pause can carry a lock holder silently past its lease.</li>
+<li>Fencing tokens let storage reject stale writes by strictly increasing number, and Redlock has no way to generate them.</li>
+<li>Turning the database inside-out means writes only append to an immutable log, and indexes, caches and materialized views are derived from it.</li>
+<li>Kleppmann argues the cloud, not closed source, now takes away computing freedom, and 90% of local-first's benefits hold without open source.</li>
+<li>Make a problem complicated for yourself before making it simple for readers; a new representation often dissolves it, as with accounting as graph theory.</li>
+<li>The "REST won't cut it" prediction has not come true, and the GPL piece rests on "I am skeptical," below Kleppmann's own standard of evidence.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://martin.kleppmann.com/2015/05/11/please-stop-calling-databases-cp-or-ap.html">Please stop calling databases CP or AP</a></span><span class="d">May 2015. Checks the CAP theorem's definitions word by word, then tries to classify real databases and fails to place a single one. He also wrote a peer-reviewed companion paper, <em>A Critique of the CAP Theorem</em>.</span></li>

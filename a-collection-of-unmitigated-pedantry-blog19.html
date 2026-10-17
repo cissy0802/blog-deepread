@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -224,6 +232,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>还有两条是结构性的，需要读者自己留神。</strong>第一，这个博客本质上是<strong>论战文体</strong>。他最好的几篇都是"某某神话是错的"，而<strong>拆神话比建正面图景容易</strong>；他真正的正面图景（农民生活、后勤、人口结构）几乎全部是对他人研究的综合——他在文中总是老老实实注明这一点（那些前置的书目段落就是为此存在的），但读者很容易把综合当成一手结论来引用。第二，他的题材在稳步外扩：核威慑、乌克兰、美国海军与全球贸易，都远出古地中海经济与军事的范围。他会标注不确定性，读者常常不会。</p>
 <p>最后一条是我读下来的观感，不是任何人提出的指控：2026 年那篇关于 chud 的文章里，他明确宣布<strong>不再试图说服对手</strong>——"人没法被说理说出一个他当初并不是靠说理进去的立场"，他的目标只是给旁观者"放一枚信号弹"，让人知道另一种更严谨的过去是存在的。作为策略这可能是对的。但它意味着这个博客越来越不是在辩论，而是在<strong>划界</strong>；而划界是一种很容易让作者停止被反驳的姿势。</p>
 <p>关于霍德金森一派对斯巴达的学术反驳，我只读到了 Devereaux 自己的转述与书目信息（Hodkinson《古典斯巴达的财产与财富》2000、《斯巴达社会》2004 中的论文等），没有读到原文，所以这里只报书目事实，不复述他们的论证。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · 基率忽视（Kahneman 与 Tversky，1973）</b>：猜一个人是工程师还是律师，被试只看描述、不管样本比例；答「我会是骑士」也丢掉了农民占八九成这个基率。不像的是，那里误导人的是典型性，这里是代入的愿望。</li>
+<li><b>投资 · 遍历性问题（Ole Peters，2019）</b>：期望值为正的赌局，一个人反复玩下去，财富却可能几乎必然缩向零，因为人只活在自己的时间平均里。农民不求平均产量最高、只求躲开饿死全家的那一年，算的是同一道题。不像的是，Peters 讲乘性增长，农民还把风险摊进了邻里。</li>
+<li><b>演化生物学 · 吸血蝠反哺（Gerald Wilkinson，1984）</b>：吸血蝠两三晚吸不到血就会饿死，吃饱的会吐血喂没吃到的同伴，日后再得回报。不像的是，蝙蝠的账很快结清，农民的人情能继承、跨越世代。</li>
+<li><b>演化生物学 · 扩展适应（Gould 与 Vrba，1982）</b>：羽毛或许先为保温、后被借去飞行；为攻城炮练出的圆筒铸造手艺，后来成了蒸汽机气缸的底子。不像的是，生物只需一个性状碰巧合用，工业革命要整条链每环都划算。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>1750 年前所有社会约一半孩子活不到成年，所以古代人一旦活过五岁，还能再活约四十年。</li>
+<li>Bret Devereaux 评价社会的判据：不看最风光的那一小撮，看中位数居民过得怎么样。</li>
+<li>斯巴达系列全盘接受崇拜者引用的史料再清点人数，发现黑劳士占斯巴达社会的 65% 到 85%。</li>
+<li>军事拆成战术、战役、战略三层后，斯巴达只在战术层略优，年年因粮尽从阿提卡撤军。</li>
+<li>「艰难时代造就强者」站不住：农业和国家都诞生在最富庶的地方，被挤进沙漠山地的人是输家。</li>
+<li>硬汉崇拜视制造暴力的能力为最高美德，Devereaux 将它逐条对照艾柯的《原初法西斯主义》。</li>
+<li>粮食一年一收而人天天要吃，所以农民求风险最小而非产出最大，把好年景存进邻里关系。</li>
+<li>能运粮的人和牲口自己也吃粮，前工业军队只能就地征粮，村庄因此成了军队的「食物皮纳塔」。</li>
+<li>罗马没有工业革命，是因为煤、抽水、纺纱、圆筒铸造这条链上每一环都缺划算的用例。</li>
+<li>Elizabeth Van Nostrand 的核对指出，Devereaux 有时把学界仍有争议的事写得过于确定。</li>
+</ol>
 <h2 data-tts="8d7ada95aee04f9e">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://acoup.blog/2019/09/27/collections-this-isnt-sparta-part-vii-spartan-ends/">This. Isn't. Sparta. Part VII: Spartan Ends</a></span><span class="d">2019 年 9 月 27 日。七篇斯巴达系列的收尾，也是"看中位数居民"这把尺子第一次被用到底。战役与战略层的清算、主题公园式的结局、以及"一则警世故事"那句判决都在这里。</span></li>

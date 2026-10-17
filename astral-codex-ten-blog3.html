@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -332,6 +340,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>第三个是「有界的不信任」的结构性问题，而且他自己按到了痛处却没能解决。</strong>整套方法依赖一项无法明写规则的技能——知道信源在什么地方会扭曲真相、扭到多远。他说「我觉得我对这里的动力学有不错的感觉」，然后紧接着承认「我知道这是在玩火」。问题在于：<strong>「我练出了判断力」和「我的先验被困住了，所以我总能解释为什么专家在这一次是可信的」，从内部看是一模一样的。</strong>他自己写的困住的先验，恰恰预测了他不会有能力从内部分辨这两者。而在他真正被 Marinos 抓住的那次里，出问题的正是这一层：他相信了他信任的人（Meyerowitz-Katz）转述的一项指控，而那个人其实没提出那项指控。</p>
 <p>把这三条放在一起，还有一个共同的形状值得点出：<strong>他的方法在「审视别人」时最锋利，在「被别人审视」时最钝。</strong>29 篇研究他能一篇篇拆；21 篇针对他的反驳他读了一半。这不是道德指控——他毕竟发了那篇回应，也把错误登进了那份 61 条的清单——但这是这套方法的系统性偏斜方向，读他的时候值得随身带着。</p>
 <p><strong>最后是本页读不到的部分，如实说明。</strong>关于他有更尖锐的、来自外部的批评存在：Noah Smith 在自己的博客上写过一篇《对 Scott Alexander 关于犹太人成就论的回应》；RationalWiki 上有一个专门批评他的条目。本次运行的网络环境只放行了少数域名，这两处以及他自己的旧站 slatestarcodex.com 全部无法访问。<strong>因此我只报告这些批评存在这一书目事实，没有读到原文，也不会替它们复述任何论证。</strong>同样地，他在旧站上最著名的那些文章——《对摩洛克的沉思》《我能容忍除了外群体以外的一切》——本页只在他自己后来的回引中确认了它们的地位，没有引用其中一个字。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>佛学 · 唯识的种子与熏习</b>：「种子生现行，现行熏种子」：旧习气决定此刻所见，所见又加固习气，正是困住的先验那个闭环。两边都不承认有可直接纠错的原始经验；不像在唯识要转依，从根上翻转结构，Scott 只想给感官证据多加点权重，让循环慢慢松开。</li>
+<li><b>分布式系统 · 多版本编程的独立性假设（Knight 与 Leveson，1986）</b>：27 人独立实现同一规格，程序却常在同样输入上一起出错。共用一条启发法的专家也只算一份证据。不像的是，程序员撞上同一难点是偶然，石头教徒是制度一代代挑出来的。</li>
+<li><b>生物进化 · 不利条件原理（Amotz Zahavi，1975）</b>：动物信号可信，因为造假太贵；有偏见的媒体守线，也因为越线要付丑闻和关停的代价。不像的是，生物信号的成本长在信号自身，媒体的成本来自外部惩罚，只管得住编没编，管不住怎么剪。</li>
+<li><b>科学哲学 · Popper 与 Adler 的病例</b>：Adler 没见过那个孩子，就用自卑情结把 Popper 讲的病例解释通了；Popper 由此认定能解释一切的理论无法检验。「对方先验被困住」同样能吸收任何反例。不像的是，Scott 自己点破了这点，Adler 把屡试不爽当证据。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>捐肾前那次多期 CT 的致癌致死风险约 1/660，比捐肾手术本身的死亡风险高约十五倍。</li>
+<li>为抗议《纽约时报》要写出他的真名，Scott Alexander 在 2020 年删掉了 1,557 篇旧文。</li>
+<li>大脑把原始经验和先验搅在一起产出知觉，人只意识得到成品，误以为那就是原始感受。</li>
+<li>困住的先验：先验强到一定程度，每次与狗的安全接触都被体验成恐怖经历，恐惧反而更深。</li>
+<li>科学素养越高的人在争议议题上越党派化，说明先验被困住时，每多学一个事实都只会更错。</li>
+<li>几乎总是对的启发法能让专家退化成一块石头，把这些专家的一致意见当独立证据相乘会造出假共识。</li>
+<li>有界的不信任：有偏见的信源在玩有规则的游戏，摸清它不越哪些线，就能从中榨出真信息。</li>
+<li>逐篇拆开 29 篇伊维菌素研究后，效果集中在寄生虫多的地区，它救的更像是虫病而非新冠。</li>
+<li>面对 Marinos 的 21 篇反驳，Scott 公开认了几处错，也承认自己只读了一半左右。</li>
+<li>多版本编程实验里各自独立写的程序会一起出错，正如共用同一启发法的专家只算一份证据。</li>
+</ol>
 <h2 data-tts="051f235dfc699c14">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.astralcodexten.com/p/trapped-priors-as-a-basic-problem">Trapped Priors As A Basic Problem Of Rationality</a></span>（2021）<span class="d">困住的先验。从恐惧症的洪水疗法为什么失败，推到「更懂科学的人更党派化」。全站被后文回引最多的一篇。</span></li>

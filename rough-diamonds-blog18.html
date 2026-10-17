@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -286,6 +294,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>最后一条是我读下来的判断，她没这么说过。<strong>"牵引力不算证据"是一种溶剂，不是一把尺子。</strong>它能告诉你什么不算数，却不能告诉你什么算数。她的正面判据——芯片化、技术经济分析——只在存在<strong>干净数字</strong>的领域里运作：每升成本、每个碱基对成本、特征尺寸、产量配额。而她也写大量没有这种数字的题目：制度、监管、组织、教育、哲学、伦理。在那些地方，溶剂无人制衡。</p>
 <p>值得称道的是，她自己知道。在《我怎么写》里她说，她的非研究类文章"更多地滑进意见的领域，而我最后会对自己那个不太对劲的取景框感到厌恶"，尤其是在更偏大众、非 STEM、情绪上更敏感的题目上，"我担心我说的不是客观为真的东西，而只是在晾晒我的个人偏见"。她说这类文章<strong>更容易成为烂稿、烂在草稿箱里</strong>。她自己给自己的这个判断，比我能给的任何判断都更值得采信。</p>
 <p>（补一条书目事实：她 2023 年那篇《我为什么不是 AI 末日论者》在 LessWrong 上引发过一轮公开讨论，有署名者从"能动性"这一环提出反驳。<strong>我没有读那些论证的原文，所以不在这里复述它们。</strong>她本人一年后的自我修正，已经是我读到的最有分量的那份批评。）</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · 摩西错觉（Erickson 与 Mattson，1981）</b>：问「摩西把每种动物各带了几只上方舟」，多数人答「两只」，没发现带动物上方舟的是挪亚。浅层加工只核对大意对不对得上，不核对细节，这正是 Constantin 说的略读放过 GPT-2 荒谬的机制。不像的是，心理学把它当作待解释的认知现象，她把它变成一条读书规则：读不懂就默认清零，不默认自己漏了什么。</li>
+<li><b>软件容错 · N 版本编程实验（Knight 与 Leveson，1986）</b>：多支团队按同一规格各写一版程序，本以为多数投票能兜底，实验却发现各版常在同样的输入上一起出错。「多家五百强都在用」同理：信源相关，数量就不算数。不像的是，程序的相关失效测得出来，企业采纳的相关性藏在会议和白皮书里。</li>
+<li><b>生物进化 · 失控选择（R. A. Fisher）</b>：雌性偏好某种性状，偏好本身就让带这性状的雄性更吃香，性状于是越选越夸张，不必对生存有用。热词当协调机制是同一个回路：「够热」本身提高了别人也支持它的概率。不像的是，孔雀尾巴的代价每天由捕食者结算，蠢点子的账可能拖十几年、拖到 IPO 之后才结。</li>
+<li><b>心灵哲学 · 符号接地问题（Stevan Harnad，1990）</b>：符号若只靠别的符号定义，意义永远落不了地，必须连到对世界的感知。两列一模一样的数据是不是同一个传感器，同样没法从数据集里推出，答案在车间那台机器上。不像的是，Harnad 问的是心智如何有意义，Constantin 的缺口找个懂设备的人就能补上。</li>
+<li><b>投资 · 反身性（George Soros）</b>：索罗斯在《金融炼金术》（1987）里说，参与者的看法会反过来改变基本面。Constantin 算「AI 机器人太贵没人做」时漏掉的正是这一环：几亿美元融资本身就让训练成本付得起了。不像的是，索罗斯用它讲泡沫怎样自我强化再破裂，她用它承认自己的否定预测错了。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>牵引力不算证据：一个技术上毫无价值的点子，也能拿到几轮风投、多家五百强客户，甚至 IPO。</li>
+<li>五百强共用同几家咨询公司、去同一批会议，多家大客户的背书并不是彼此独立的验证。</li>
+<li>生物制造要背上养活生物体的全部开销，只在无法廉价化学合成的复杂分子上有价格优势。</li>
+<li>Ginkgo Bioworks 运营十五年、报告 219 个项目，最成功的产品是早就能廉价合成的桃子味香料。</li>
+<li>Sarah Constantin 的「芯片化」论点：21 世纪指数级改善的技术，都处在半导体制造的下游。</li>
+<li>AI 要改造经济得先过数据整合关，纸面记录、扫描件和锁在机床里的数据只能以人的速度挪动。</li>
+<li>Palantir 的特别之处不在软件，而在用至少三分之一的员工驻场部署、教人用，并谈判数据权限。</li>
+<li>「默认清零」规则：读不懂一段话就当自己没读过，而不是默认错在自己、相信作者。</li>
+<li>Constantin 2024 年撤回 AI 立场时承认漏掉了选择效应：钱够多时，「太贵」不是永久障碍。</li>
+<li>摩西错觉说明浅层阅读只核对大意、不核对细节，所以略读会放过明显的荒谬。</li>
+</ol>
 <h2 data-tts="9b55264697ca0a7c">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://sarahconstantin.substack.com/p/bad-ideas-can-get-surprisingly-far">Bad Ideas Can Get Surprisingly Far</a></span><span class="d">2022 年 11 月。用一个虚构的"用于某应用的某热词"产业，一步步推演出一个技术上毫无价值的点子如何拿到风投、五百强客户和 IPO。附她自己承认的两个错误启发法。</span></li>

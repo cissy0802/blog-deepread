@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -273,6 +281,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>The third is structural, in bounded distrust, and he presses on the bruise without solving it.</strong> The whole method depends on a skill whose rules cannot be written down — knowing where a source will bend the truth and how far. He says "I think I have a good sense of the dynamics here", and immediately grants that this is playing with fire. The trouble is that <strong>"I have developed judgement" and "my prior is trapped, so I can always explain why the experts are trustworthy this time" are indistinguishable from the inside.</strong> His own theory of trapped priors predicts he would not be able to tell them apart. And in the one case where Marinos really caught him, the failure was at exactly this layer: he believed an accusation relayed by someone he trusted (Meyerowitz-Katz), who had not actually made it.</p>
 <p>Put the three together and a shape emerges worth naming: <strong>his method is sharpest pointed outward and bluntest pointed inward.</strong> Twenty-nine studies, dismantled one at a time; twenty-one posts about him, half read. That is not a moral charge — he did publish the reply, and he did enter the error on a list that now runs to 61 items — but it is the direction in which this method systematically tilts, and worth carrying with you as you read him.</p>
 <p><strong>Finally, what this page could not read, stated plainly.</strong> Sharper external criticism exists: Noah Smith published a response to Scott's argument about Jewish achievement on his own blog, and RationalWiki hosts a dedicated critical entry on him. This run's network policy permitted only a small set of domains; both of those, and his own old site slatestarcodex.com, were unreachable. <strong>I therefore report only the bibliographic fact that these criticisms exist. I did not read them, and I will not paraphrase arguments on their behalf.</strong> By the same rule, his most famous old-site essays — <em>Meditations On Moloch</em>, <em>I Can Tolerate Anything Except The Outgroup</em> — appear here only as posts he himself keeps linking back to. Not one word of them is quoted.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Buddhism · Seeds and perfuming in Yogācāra</b>: Yogācāra teaches that seeds give rise to present experience, and present experience perfumes new seeds: old habit shapes what you see now, and what you see now deepens the habit. That is the trapped-prior loop. Both deny there is a raw, unprocessed experience you could simply check against; the difference is that Yogācāra aims at a revolution of the basis that overturns the whole structure, while Scott only wants a little more weight on sensory evidence so the loop slowly loosens.</li>
+<li><b>Distributed systems · The independence assumption in N-version programming (Knight and Leveson, 1986)</b>: 27 programmers independently implemented the same spec, yet their programs often failed together on the same inputs, so redundancy bought less reliability than assumed. Experts sharing one heuristic are the same: ten of them count as one piece of evidence. The difference: programmers stumble on the same hard spot by accident, while the rock cultists are selected by institutions, generation after generation.</li>
+<li><b>Evolutionary biology · The handicap principle (Amotz Zahavi, 1975)</b>: animal signals stay credible because faking them is too expensive; a biased outlet respects certain lines because crossing them costs scandal or shutdown. The difference: a biological signal carries its cost in itself, while a media outlet's cost is imposed from outside, so it polices whether things are invented, not how they are framed.</li>
+<li><b>Philosophy of science · Popper and Adler's case</b>: Popper recalled describing a case to Adler, who explained it effortlessly with his inferiority theory without having seen the child; Popper concluded that a theory able to explain everything cannot be tested. "Their prior is trapped" can likewise absorb any counterexample. The difference: Scott flagged this himself and asked for outside views, while Adler took every fit as confirmation.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>The multiphase CT scan before a kidney donation carries roughly a 1-in-660 fatal cancer risk, about fifteen times the risk of the surgery itself.</li>
+<li>Scott Alexander writes under a pen name, and in 2020 deleted 1,557 posts in protest when the New York Times planned to print his real name.</li>
+<li>The brain blends raw experience with priors to produce perception, and we only notice the finished product, which feels like raw sensation.</li>
+<li>A trapped prior is one strong enough that every safe encounter with a dog is experienced as terrifying, so the fear grows instead of fading.</li>
+<li>More scientifically literate people are more partisan on contested science, a sign that with a trapped prior each new fact makes you more wrong.</li>
+<li>Heuristics that almost always work can reduce experts to a rock, and multiplying their agreement as independent evidence manufactures false consensus.</li>
+<li>Bounded distrust: biased sources play a game with rules, and knowing which lines they will not cross lets you extract real information from them.</li>
+<li>Taken apart study by study, the 29 ivermectin trials showed benefits clustered in parasite-heavy regions, suggesting it treated worms rather than COVID.</li>
+<li>Answering Alexandros Marinos's 21-part rebuttal, Scott publicly conceded several errors and admitted he had read only about half of it.</li>
+<li>Independently written programs in N-version experiments fail together, just as experts sharing one heuristic count as a single piece of evidence.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.astralcodexten.com/p/trapped-priors-as-a-basic-problem">Trapped Priors As A Basic Problem Of Rationality</a></span> (2021)<span class="d">The trapped prior. From why flooding fails as a phobia treatment to why more scientifically literate people are more partisan. The most back-linked post on the site.</span></li>

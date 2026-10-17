@@ -43,6 +43,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -449,6 +457,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 
 <p>Last, the anonymity. His reasons are hard to argue with: pseudonymity means people can't retaliate — can't mail heroin to your house, can't call in a SWAT team — and the bigger benefit, he says, is that you get a hearing at all, instead of being written off immediately by your context. That's true, and especially true for someone without a degree. But the cost is equally real. A site whose creed is that everything is checkable — every external link archived, every statistic accompanied by code, every conclusion tagged with a confidence level — has exactly one uncheckable element, and it is the author. His credibility rests entirely on his own record; no institution vouches for him, and no institution corrects him when he's wrong. That is simultaneously the most impressive thing about the site and its only structural weakness, and they are the same thing.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Neuroscience · the free-energy principle (Karl Friston)</b>: Friston treats the brain as a prediction machine that builds its model of the world by driving down prediction error. That is the same argument as "the last bits are deepest": predict well enough and you are forced to understand. The difference is that a brain can also act on its inputs, bending the world toward its predictions (active inference); a 2020 language model could only read, never reach out and touch the world it was predicting.</li>
+<li><b>Buddhism · dependent origination (pratītyasamutpāda)</b>: "When this exists, that comes to be" &mdash; everything arises inside a web of mutual dependence, which is exactly the dense causal graph. But Buddhism uses the web to dissolve the idea of independent essences; Gwern uses it to argue that direct causal edges are rare and only intervention will find them.</li>
+<li><b>Psychology · illusory correlation (Chapman &amp; Chapman, 1967)</b>: clinicians "saw" associations in Draw-a-Person tests that weren't in the data, such as suspicious patients drawing odd eyes. Same family of folk-causality error, opposite direction: there the correlation itself is fake; Gwern's worry is correlations that are perfectly real and still not causal.</li>
+<li><b>Distributed systems · anti-entropy and read repair (Demers et al., 1987)</b>: replicas periodically compare notes and patch divergence, and stores like Cassandra fix stale copies as a side effect of reading them. "The best time to fix a dead link is when you're already editing the page" is read repair done by hand. Except those systems correct each other across many replicas; at the level of the author, gwern.net has exactly one node.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Gwern's decade-long dual n-back FAQ was undercut by his own meta-analysis: the gains came almost entirely from studies with do-nothing control groups.</li>
+<li>The trick of Long Content is to never start: keep a set of permanent drafts, tweak them in passing, and years later they are the most complete thing on the topic.</li>
+<li>Fighting forgetting is an engineering job: static HTML, automatic archiving of every outbound link, CC-0 licensing, and fixing dead links whenever a page is open for editing anyway.</li>
+<li>In the infrared-light self-experiment, a correlational effect size of 0.455 shrank to 0.07 under 167 days of coin-flip randomization, mostly because of reverse causation.</li>
+<li>Before running an experiment, compute its value of information (power × prior × payoff − cost); the fish-oil test came out negative, so it was never run.</li>
+<li>In a dense causal graph, information-carrying paths vastly outnumber direct causal edges, so non-causal correlation is the default and declining to randomize is what needs justifying.</li>
+<li>"The Scaling Hypothesis" read GPT-3 as the blessing of scale: bigger models keep getting better, and the last few bits of next-word prediction require real understanding.</li>
+<li>By Littlewood's law, at the scale of eight billion people miracles happen daily, so news anecdotes carry almost no information about what the world is like.</li>
+<li>Many of Gwern's small self-experiments fall short of the evidential standard he demands of everyone else, a tension he never resolves.</li>
+<li>Karl Friston's free-energy principle also has the brain understanding the world by minimizing prediction error, the same argument as "the last bits are deepest".</li>
+</ol>
 <h2>Sources</h2>
 
 <ul class="reads">

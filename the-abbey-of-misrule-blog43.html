@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -183,6 +191,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>Usher 还指出书中对中世纪基督教世界的迫害与暴力避而不谈，并批评「机器」这个包罗万象的情绪化词语：「夸大、过度陈述、开含糊的药方，对谁都没有好处。」他自己也住在佛蒙特的农场上，提醒读者：Kingsnorth 用镰刀割草、种柳树当柴火的田园生活，背景音其实离不开互联网。</p>
 <p><strong>他的词汇会被别人拿去用。</strong>「根」「连根拔起」「精英妖魔化根」，这些词在他那里是 Simone Weil 的语言，在欧洲另一些人那里是另一套东西。2024 年 2 月他公开发文，说一家自称「保守」的德国杂志转载了他的文章，事后才知道它与身份主义运动、德国选择党（AfD）和法国新右派有关联。他撤回授权、公开声明自己与这股政治毫无关系，并且写道：这种强硬右翼、族群中心、威权的政治，正是他所描述的断裂「不可避免的结果之一」。这件事不说明他的立场，却说明他的框架有一个结构性的漏洞：他把「左」和「右」都视为机器的齿轮，就很难在两者之间画出一条具体的线，结果只能事后澄清。</p>
 <p><strong>最狠的那条，他自己写了。</strong>「也许我写任何东西的真正原因是我渴望被尊重。」一个以「反对机器」为业、在机器上拥有近八万五千读者、作品被机器推上畅销榜的人，第一篇就承认了「就连我们这些浪漫的卢德分子也在互联网上哀叹」。他把这当作谦卑，但对读者而言，这也意味着他的处方很难被检验：如果连他本人都只能做到「熟蛮」，那么「生蛮」那条路究竟是一条路，还是一种修辞？</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>生物进化 · 红皇后假说（Leigh Van Valen，1973）</b>：物种在军备竞赛里拼命进化，只为留在原地；省时技术从不省时，是同一台跑步机。不像的是，物种没得选，Kingsnorth 却认为人可以不再相信那个故事。</li>
+<li><b>分布式系统 · 拜占庭容错（Castro 与 Liskov，1999）</b>：共享账本的「真实」来自足够多节点的认可，正像讲的人够多，故事就长出形体。不像的是，少数节点退出动摇不了共识；Kingsnorth 押注的却是一次一个人的转身。</li>
+<li><b>神经科学 · 「想要」与「喜欢」（Robinson 与 Berridge，1993）</b>：多巴胺驱动的是「想要」而不是「喜欢」，两者会脱钩，人可以越想要越不快乐。不像的是，这是可测的个人机制，不分善恶；Kingsnorth 说的是一种文明亲手打开了笼子。</li>
+<li><b>佛学 · 无我（anattā）</b>：佛教说「我」只是五蕴的临时聚合；Kingsnorth 晚近也把「Paul Kingsnorth」这个名字看成困住人的故事之笼，两者都要先看穿自我叙事。不像的是，东正教相信笼里有个真实的自己，要走向一位有位格的神；佛教说剥到底并没有那个真我。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Paul Kingsnorth 认为现代世界并没有祛魅，而是一种不承认自己是宗教的宗教。</li>
+<li>「机器」是金钱、国家权力和操控性技术缠成的整体，首先是一个讲得太久、忘了自己是故事的故事。</li>
+<li>机器善于吸收批评者：环保运动从讲简朴、贴近自然，变成了追逐数字和技术方案的运动。</li>
+<li>每种文化的中心都有一个王座，西方赶走基督之后，坐上去的是钱，以及跟它轮岗的科学。</li>
+<li>欲望是酸：前现代社会把商人压在底层、禁止放贷取息，都是为了把欲望关在笼子里。</li>
+<li>面对 AI，信不信超自然的解读，结论都一样糟，回应只能是划线、守线的技术苦修。</li>
+<li>Kingsnorth 反对「文明基督教」，认为基督之道与一切文明对立，处方是一次一人的「摩西选项」。</li>
+<li>The Abbey of Misrule 把 Mumford、Simone Weil 等二十世纪异见者缝成了一个连贯的反现代性故事。</li>
+<li>George Monbiot 的批评最重：没有化石能源，几十亿人会死，Kingsnorth 始终没有正面回答。</li>
+<li>按红皇后假说，物种拼命进化只为留在原地，和省时技术从不省时是同一台跑步机。</li>
+</ol>
 <h2 data-tts="29648599af02d540">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://paulkingsnorth.substack.com/p/the-dream-of-the-rood">The Dream of the Rood</a></span>（2021-05-12）<span class="d">库克船长与禁忌、Dawson 的「西方即基督教世界」，以及「每种文化中心都有一个王座」。站内被回引最多。</span></li>

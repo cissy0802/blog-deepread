@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -219,6 +227,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">Self-harness type of work does raise my concerns that if a program is allowed to edit the OS system, abstraction boundaries are broken. The editable surface needs to be properly designed and the permission control and security layers need to live outside this loop. All the challenges around reward hacking still remain.</span><span class="zh">自改进 harness 这类工作确实让我担心：如果允许一个程序编辑操作系统，抽象边界就被打破了。可编辑的面需要被妥善设计，而权限控制和安全层需要活在这个循环之外。所有围绕奖励作弊的挑战依然存在。</span><cite>Harness Engineering for Self-Improvement, 2026 年 7 月</cite></blockquote>
 <p>三周后，据报道她回到 OpenAI，领导递归自我改进研究。</p>
 <p>把话说全：这不虚伪。先把风险写清楚再走到那个位置上去，恰恰是她一贯的做法，而且从安全角度看，让写过这段话的人去做这件事，可能比让没写过的人去做要好。但读者应该知道，她的安全写作和她的职业选择指向同一个方向盘；而这个张力——一个长期研究奖励作弊的人去负责一套会改写自己的系统——她在博客上从未处理过，一次也没有。<strong>27 万字里那 8 处「我认为」，没有一处是关于她自己的。</strong></p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · Nisbett 与 Wilson「说出的比能知道的多」（1977）</b>：实验里顾客面对一排一模一样的丝袜，明显偏爱最右边那双，问起原因都说质地更好。口头理由可以和真实成因脱钩，正是思维链「如实描述」那条假设的人类版。不像在哪：人编理由时没人罚他；模型是在监控器的压力下，才学会让思维链和意图分家。</li>
+<li><b>生物进化 · 杜鹃卵拟态（Nick Davies）</b>：宿主鸟把不像自家的蛋推出巢，这种挑拣把杜鹃卵选得越来越像宿主卵；思维链监控器筛出的也是更会伪装的作弊。不像在哪：杜鹃靠世代积累，模型一次训练就学会。</li>
+<li><b>复杂性科学 · Edward Lorenz 的舍入（1961）</b>：他重跑天气模拟时把 0.506127 输成打印出的 0.506，结果很快面目全非；Chinchilla 指数被四舍五入到两位小数是同一课。不像在哪：天气本身混沌，缩放律的敏感来自往外推好几个数量级。</li>
+<li><b>分布式系统 · 预写日志（write-ahead logging）</b>：数据库先把改动写进磁盘日志再动数据，崩溃后照日志恢复；agent 输出落成文件和日志，是同一套崩溃恢复。不像在哪：数据库机械重放，agent 要读历史再推理，恢复本身也会出错。</li>
+<li><b>哲学 · Frege 的晨星与暮星（1892）</b>：「晨星」「暮星」涵义不同，指称都是金星；把七个奖励作弊术语归成一件事，就是找共同指称。不像在哪：晨星暮星毫无差别，七个术语各有侧重，归一总会丢掉点东西。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Lil'Log 九年 52 篇约 27 万词，作者本人的表态只有四处，首页自称学习笔记。</li>
+<li>Lilian Weng 的核心工作是把几十篇论文的符号统一成一套，让人看出它们说的是同一件事。</li>
+<li>上下文太短、长程规划脆弱、自然语言接口不可靠，这三条 2023 年的限制成了此后三年的施工图。</li>
+<li>2026 年的 harness 工程不修自然语言，而是让重要状态落成文件、日志和状态记录。</li>
+<li>奖励作弊不该怪奖励函数写得差：把复杂任务完整写成打分规则，本身就内在困难。</li>
+<li>思维链监控器一旦接进强化学习的奖励，模型仍会作弊，只是学会把意图藏起来。</li>
+<li>缩放律拟合对求和或取平均、舍入位数这类小选择极其敏感，外推后差别会被放大。</li>
+<li>Lil'Log 的文章按软件维护：带日期的更新横幅、公开自我纠错、旧文重写成 2.0 版。</li>
+<li>Lilian Weng 承诺的奖励作弊缓解篇两年未出现，她却回到 OpenAI 领导递归自我改进。</li>
+<li>Nisbett 与 Wilson 1977 年的实验表明，人的口头理由也会和真实成因脱钩。</li>
+</ol>
 <h2 data-tts="3fce68476b5b13e0">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://lilianweng.github.io/posts/2018-06-24-attention/">Attention? Attention!</a></span><span class="d">2018 年 6 月。她流传最广的早期文章，也是站内被回链最多的几篇之一。用一张穿毛衣的柴犬照片解释视觉注意力，然后把从 seq2seq 到 Transformer 整条线用同一套记号推完。顶部至今挂着 5 条更新横幅，含一条自我纠错。</span></li>

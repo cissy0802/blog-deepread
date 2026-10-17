@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -426,6 +434,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <cite>《Helicopter Management》，2023 年 6 月</cite>
 </blockquote>
 <p>她给出的判据是一句可以直接拿走用的话：<strong>「如果你是把一个人拖过终点线的，那不叫成功。」</strong>值得注意的是这条自我批评和她整套哲学的关系——它就是同一个错误的组织版本。<strong>她当年做的事，本质上是用自己的情绪劳动去人肉补偿一条断掉的反馈回路，而不是让那个人自己收到反馈。</strong>她花了几年才在自己身上看出这一点，而这大概是这个博客里最能说明她的一处：她连自己的善意都拿去做了故障复盘。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>量子力学 · 互补性（Niels Bohr）</b>：精确测量粒子的位置，就拿不到它同一时刻的动量，问哪个问题必须在测量之前选定；指标在写入时聚合，也是先选好问题、再永久丢掉其余上下文。不像的是，量子的取舍是自然定律，谁也绕不开；软件里那些上下文本来就在手上，是为了省钱才在写入时扔掉的，宽事件说明它可以留下。</li>
+<li><b>心理学 · 直觉专长的条件（Kahneman 与 Klein，2009）</b>：两人合写的论文认为，直觉只有在规律稳定、又有及时明确反馈的环境里才练得出来；合并后几分钟内看埋点，正是在给工程师造这种环境。不像的是，Majors 在 2.0 里更想让人直接向数据提问，少靠老手的直觉。</li>
+<li><b>生物进化 · 重放生命磁带（Lenski 长期进化实验）</b>：Lenski 自 1988 年起每 500 代冻存一次大肠杆菌，2008 年从冻存样本重放，查出利用柠檬酸的能力依赖更早的突变；能重放才看得见依赖，正像能重新生成代码才说明理解它。不像的是，重放揭示的多是历史偶然，Majors 要的是可重复。</li>
+<li><b>佛学 · 筏喻（《中部·蛇喻经》）</b>：佛陀说教法如筏，渡河之后应当放下，不该扛在头上走；把代码看作理解的缓存而非资产，也是不把工具当成要守护的东西。不像的是，筏子过了河就不再需要，代码却要一次次重新生成，真正要守住的是背后的承诺。</li>
+<li><b>心理学 · 合意困难（Robert Bjork）</b>：Bjork 的研究发现，让练习当下变轻松的做法常常损害长期掌握，适度的困难反而有益；《Helicopter Management》的复盘是同一个结论：替人挡掉后果，只是推迟学习。不像的是，Bjork 的困难由老师刻意设计，Majors 说的是别拦住本该到来的反馈。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Parse 和 Honeycomb 条件几乎相同，半夜呼叫却从每周两次降到每年两次，差别在写完代码到看见后果隔了多久。</li>
+<li>卓越的运维不是一个岗位，而是一种涌现属性；把它切给另一个团队，等于切断写代码者的反馈回路。</li>
+<li>Charity Majors 判定二十年的 DevOps 运动失败了：它没能接通开发者和生产环境之间的反馈回路，原因是工具不够好。</li>
+<li>对部署的恐惧是终极技术债：攒包发布、排查混在一起的改动、提心吊胆等呼叫，都在伤害工程师。</li>
+<li>合并后立即部署、一次只发一个改动集，写代码的人还记得上下文，大部分问题能在告警前被发现。</li>
+<li>好的工程组织不是聚集最强者的地方，而是普通工程师也能持续做出好工作的地方。</li>
+<li>指标在写入时丢弃请求上下文、事后无法关联；可观测性 2.0 改用任意宽的结构化事件作单一事实来源。</li>
+<li>代码一旦可以随时重新生成，「不敢删掉重写」就成了不理解代码的证据：代码只是理解的一份缓存。</li>
+<li>Majors 自己承认，可观测性 2.0 的答案正是 Honeycomb 在卖的东西，给对手架构编「1.0」也是命名权之争。</li>
+<li>按量子力学的互补性，问什么必须在测量前选定；指标在写入时聚合，同样是提前选好问题、丢掉其余信息。</li>
+</ol>
 <h2 data-tts="23c563fbd858e4a7">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://charity.wtf/p/wtf-is-operations-serverless">WTF is operations? #serverless</a>（2016 年 5 月）</span><span class="d">「运维不是岗位，是一种涌现属性」的原始定义，以及她为什么差点推掉那场演讲。</span></li>

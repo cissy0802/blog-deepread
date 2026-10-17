@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -339,6 +347,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 
 <p><strong>4. The investigative line has a structural ceiling, and he has already written it down himself.</strong> The Pollen piece exposed him to legal risk; he wrote that it was not an area he would venture into again, and then did. That honesty is rare — but it also exposes the selection rule: <strong>a bankrupt events company and a small conference organiser are opponents he can absorb.</strong> Whether a company that can field a legal team on demand, and that is also contributing to his subscription revenue, would be equally absorbable is a question his writing has not handled. He does state that he takes no sponsorships, which closes off the most obvious route for capture; <strong>but a subscription model transfers the incentive to readers, and his readers are heavily concentrated among senior engineers and engineering leaders.</strong> What leaks out of that group, and what leaks out of support staff, contractors and tier 1 engineers, will not arrive in the same volume or point at the same stories. There is a more fundamental tension underneath: <strong>his product is an antidote to information asymmetry, while his business requires the asymmetry to persist</strong> — the paywalled scoops sell precisely what other people cannot get. He does not pretend otherwise (the Pollen piece and the trimodal piece both ended up on the free side), but handling it gracefully does not make it go away.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Statistics · survivorship bias (Abraham Wald, 1943)</b>: Working in Columbia's Statistical Research Group, Wald argued that armor belonged where returning bombers showed no holes, because planes hit there never came back. Public salary surveys missing tier 3 is the same gap. The difference: Wald's missing planes were the losers; here the missing data belongs to the people earning the most and least motivated to fill in a survey.</li>
+<li><b>Psychology · the illusion of explanatory depth (Rozenblit and Keil, 2002)</b>: People rate their grasp of how a zipper or a flush toilet works highly, until asked to write out the mechanism step by step. Orosz's rule that a plan hard to write down means the team was never aligned, and his whiteboard test, run the same check. Unlike the study, which measured individual confidence, his target is a group's belief that everyone agrees.</li>
+<li><b>Evolutionary biology · exaptation (Gould and Vrba, 1982)</b>: A trait that evolved for one job gets co-opted for another; feathers may have kept dinosaurs warm long before they carried anything into the air. Orosz's claim that estimates matter for the trade-off conversations they force, not the predictions, is the same mismatch of function. But exaptation is a repurposing over history; an estimate does both jobs from day one.</li>
+<li><b>Social psychology · the bystander effect (Darley and Latané, 1968)</b>: As smoke filled a room, most subjects sitting alone reported it; seated beside two unconcerned confederates, only about one in ten did. Fake DevTernity speakers that took thirty minutes to expose, with nobody speaking up, look like the same diffusion. Except that the lab bystanders risked nothing, while speaking up in an industry carries legal and social cost.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Gergely Orosz was earning a "90th percentile" salary at Skyscanner when Uber Amsterdam offered him nearly double.</li>
+<li>Software engineers choose employers, accept offers and judge whether their team is normal almost entirely without data.</li>
+<li>Dutch engineering pay is not one bell curve but three barely overlapping peaks, set by whom a company benchmarks against.</li>
+<li>Public salary sites barely capture tier 3, so the survey "average" is really the average of tiers 1 and 2.</li>
+<li>Top-tier packages are mostly equity; Uber stock fell from a $48 RSU reference price to $30, so the biggest packages are the most volatile.</li>
+<li>The real output of writing a design doc is the disagreement it surfaces, an integration test run before any code exists.</li>
+<li>Architecture patterns are names given to solutions after the fact, so starting a design from patterns gets causality backwards.</li>
+<li>The Pragmatic Engineer Test asks 12 yes-or-no questions about things job postings never mention, to be asked after an offer.</li>
+<li>Orosz exposed years of fictional women speakers at DevTernity in about thirty minutes; what was scarce was someone willing to say it.</li>
+<li>The trimodal sample is sharpest in tier 3, where Orosz stands; tier 1, the largest group, is closer to inference than measurement.</li>
+</ol>
 <h2>Sources</h2>
 
 <ul class="reads">

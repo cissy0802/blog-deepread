@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -276,6 +284,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>Finally, he has written a fairly brutal piece of self-criticism, best reproduced as-is.</strong> In the 2026 article, discussing his own read on agentic coding, he inserts this:</p>
 <blockquote><span class="en">I do, as a matter of my job, talk about things that I do not necessarily experience personally; the canonical example is my long-running analysis of and advocacy for advertising as a business model, despite the fact I run a subscription business.</span><cite>Frontier Overhangs, 21 Sep 2026</cite></blockquote>
 <p>A man whose calling card is "your business model is your destiny", admitting that his most famous body of analysis concerns a business he has never run. That is not self-deprecation; it is putting his own sampling bias on the table — <strong>exactly the move the third idea above demands of everyone else who speaks.</strong></p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Psychology · the hedonic treadmill (Brickman and Campbell, 1971)</b>: people adapt to every improvement and drift back to baseline happiness, which is the same curve as "yesterday's wow becomes today's ordinary." The difference: psychologists treat it as a trap for well-being, while Thompson treats it as the engine of Amazon's perpetual business.</li>
+<li><b>Complexity science · preferential attachment (Barabási and Albert, 1999)</b>: new nodes prefer to link to the best-connected nodes, so a network grows a few giant hubs; the aggregator loop of more users, more suppliers, better experience is the same rich-get-richer dynamic. Unlike the model's hubs, which emerge passively, an aggregator has to win that first step by polishing the user experience.</li>
+<li><b>Cultural anthropology · WEIRD samples (Henrich, Heine and Norenzayan, 2010)</b>: much of psychology generalized to all humans from Western, educated, industrialized, rich, democratic subjects; Thompson took apart low-end disruption the same way, by asking whose behavior the sample came from. The difference: the WEIRD paper rested on cross-cultural data, while Thompson reasoned from the premises about buyers.</li>
+<li><b>Evolutionary biology · Robert Trivers on self-deception</b>: in his 1976 foreword to <i>The Selfish Gene</i>, Trivers proposed that self-deception was favored by selection because people who sincerely believe a story are better at selling it to others. So sincere motives and aligned interests are no contradiction, which is why Thompson can decline to call Anthropic hypocritical. The difference: his argument needs no psychology at all; it simply puts the convenient alignment on the table as evidence.</li>
+<li><b>Buddhism · impermanence (anicca)</b>: Buddhism traces suffering to treating what passes as if it were permanent; Thompson's defense of Kodak removes the same hidden premise that companies should live forever, so twenty-five good years followed by an exit is not failure. The difference: Buddhism asks you to let go of attachment, whereas Thompson only changes the scorecard, and shareholders still collect their dividends.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>On the smiling curve, the ends of a value chain capture profit and the undifferentiated middle does not, which is why Ben Thompson put newspapers and Acer in the same spot.</li>
+<li>Aggregation Theory: the internet made distribution free and transaction costs zero, flipping integration from controlling suppliers to owning the user relationship.</li>
+<li>The Bill Gates Line separates platforms from aggregators: platforms facilitate the supplier–user relationship, aggregators intermediate and control it.</li>
+<li>Low-end disruption was built on enterprise purchasing, and a user experience can never be too good, so Apple sat in the theory's blind spot for years.</li>
+<li>Customer expectations keep rising, so a company aiming for the best experience never arrives, and that is exactly what makes the business perpetual.</li>
+<li>AI that answers directly is the ultimate "I'm Feeling Lucky," which collides head-on with Google's pay-per-click search ad business.</li>
+<li>Kodak earned twenty-five more years from film before going bankrupt; Thompson argues that calling this failure assumes companies should live forever.</li>
+<li>Before judging a moral claim, open the speaker's ledger: that is how "pacing the frontier" breaks down into capability, product, pricing and capital overhangs.</li>
+<li>Lyall Taylor argues that Aggregation Theory renames the old rule that the side with more market power wins, and that it can rationalize bubble valuations.</li>
+<li>Robert Trivers's theory of self-deception shows that sincere motives can align with self-interest, so reading the ledger does not require accusing anyone of hypocrisy.</li>
+</ol>
 <h2>7. Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://stratechery.com/2015/aggregation-theory/">Aggregation Theory</a></span><span class="d">21 Jul 2015 · The original statement: the Internet made distribution free and transaction costs zero, so the direction of integration in a value chain reversed, suppliers got commoditised, and user experience became the only scarce good. The foundation everything else is built on.</span></li>

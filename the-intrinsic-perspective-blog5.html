@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -427,6 +435,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>「天才在减少」这个前提有一个方法论上的坑，而他只承认了一半。</strong>他承认「证明一样东西不存在出奇地难」。但还有一层他没怎么碰：我们能列出十九世纪的世界级天才名单，是因为那份名单已经被一百五十年的筛选和封圣过滤过了；同代人几乎从来认不出同代的天才。用「你能说出过去十年里去世的谁属于这个万神殿吗」来论证衰减，很难和「万神殿本来就需要几十年才能造出来」区分开。</p>
 <p><strong>最后一条，也是最重要的一条：他的立场是同向倾斜的。</strong>把他的科学主张排成一列——涌现优于还原；整合信息论值得辩护；科学在意识面前不完备；语言模型「更像工具」；文化正在流失意识——<strong>每一条都朝同一个方向倾斜：给内在视角保留一个不可还原的位置。</strong>这不证明其中任何一条是错的。但一个在书店里长大、写小说、并且明显希望「从里面看是什么感觉」这件事是根本重要的人，恰好在每一个独立问题上都落在同一侧，这本身是读者该拿在手里的一条信息。</p>
 <p>而对这种倾斜下过最狠判词的，还是他自己：<em>this text is corrupted</em>。他把这句话用在了他最得意的那篇文章上。<strong>值得提醒的是，他没有把它用在自己的科学论文上。</strong></p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>生物进化 · 有性生殖与「可混合性」（Livnat 等，2010）</b>：dropout 的原始论文（Srivastava、Hinton 等，2014）自己就说灵感来自有性生殖：每一代基因都被洗牌，被迫和随机的搭档合作，没法跟固定伙伴抱团。梦对神经元做的是同一件事。不像的是，有性生殖在种群里跨代起作用，梦在一个人身上逐夜起作用。</li>
+<li><b>佛学 · 白隐的公案「只手之声」</b>：禅宗用故意不合逻辑的问题，把修行者用惯了的概念框架摇松，几乎就是有意识地喂一份「域随机化」的输入。不像的是，Hoel 的梦是为了让大脑更好地泛化回现实；公案的目标却是看穿分类本身，不是把分类练得更好。</li>
+<li><b>生态学 · 爱尔兰大饥荒与单一品种马铃薯（1845–1849）</b>：爱尔兰穷人几乎只种一个高产的克隆品种「Lumper」，晚疫病一来，整片作物一起倒下。效率吃掉方差、碰到新处境就整体失灵，正是《我们过拟合的世纪》担心的结构。不像的是，马铃薯的同质是可测的基因事实，文化过拟合仍是一个类比。</li>
+<li><b>计算理论 · 冯·诺依曼「用不可靠元件合成可靠机体」（1956）</b>：冯·诺依曼证明，靠冗余和多数表决，一堆会出错的元件可以拼出出错率任意低的整体。这和因果涌现说的「宏观靠纠错比微观更确定」是同一个结构。不像的是，冯·诺依曼的冗余是工程师刻意设计的；Hoel 说的是任何系统都可以去量的一种性质。</li>
+<li><b>东方哲学 · 庄周梦蝶</b>：《齐物论》里庄子醒来，说不清是自己梦见了蝴蝶，还是蝴蝶梦见了自己。这和「僵笛卡尔」是同一个困境：从内部找不到一条证据，能把你和另一个版本的你分开。不像的是，庄子把这份分不清当作「物化」坦然接住，Hoel 则把它当成科学撞上的一堵墙。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>1980 年代的实验里，只被剥夺快速眼动期睡眠的老鼠会掉体重、发黄，几周内全部死亡。</li>
+<li>记忆巩固理论解释不了梦为什么稀疏、荒诞，且几乎从不原样重演白天的具体记忆。</li>
+<li>Erik Hoel 的过拟合大脑假说认为：梦像 dropout 和域随机化，防止大脑对重复的日常经验过拟合。</li>
+<li>如果梦是防过拟合的工具，小说和电影就是外包出去的梦，而套路化的娱乐会失去这项功能。</li>
+<li>把文化看成一个会过拟合的宏观大脑，超级英雄片、网红脸和趋同的车型都像生成对抗网络的模式崩溃。</li>
+<li>因果涌现用有效信息衡量因果力，某些系统在宏观尺度上的有效信息比微观尺度更高。</li>
+<li>Hoel 主张意识理论像科学语言里的一句哥德尔句：真，却无法从科学内部证明。</li>
+<li>僵尸论证若由僵尸来做会得出错误结论，所以有意识者也无法靠内省确认自己不是僵尸。</li>
+<li>Hoel 亲手写下因果涌现最强的反驳：整套论证依赖一个尚未被证明唯一正确的因果度量。</li>
+<li>Hoel 的各项科学主张都朝同一个方向倾斜：给内在视角保留一个不可还原的位置。</li>
+</ol>
 <h2 data-tts="e4d3fcec477164d0">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.theintrinsicperspective.com/p/exit-the-supersensorium">Exit the supersensorium</a>（2022）</span><span class="d">全站最完整的一篇：从老鼠死于不做梦讲到过拟合大脑假说，再讲到艺术为什么是可携带的梦、以及为什么存在一条客观的审美坐标轴。</span></li>

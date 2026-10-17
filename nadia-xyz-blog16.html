@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -250,6 +258,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>问题在同一篇文章里。她诚实地交代了自己转变的原因：<strong>"我的决定受到个人成长、找到对的伴侣、以及拥有财务安全的强烈影响。"</strong>也就是说，她自己的能动感是<strong>物质条件的结果</strong>；但对别人开出的药方是信念层面的。一个人觉得自己无力影响气候变化，可能不是因为没被教过能动性，而是因为他确实没有影响它的杠杆。把结构问题诊断成心态问题是这类论证的经典失足处，而那把尺子是她本人提供的。</p>
 <p><strong>第三条是我自己读下来的保留，性质说清楚：</strong>《Working in Public》的核心数据大量来自 GitHub / npm / JavaScript 生态，而那个生态以微模块著称，所以"93% 只有一个维护者"在<strong>按项目个数计</strong>时几乎必然成立。但按<strong>承重量</strong>计，今天仍然托着世界的那批东西——Linux 内核、Debian、PostgreSQL、Kubernetes——恰恰还是联邦型：有基金会、有众多维护者、有正式治理。她在访谈里承认联邦仍然存在，但"看台正在吃掉一切"这个总体印象，很可能<strong>被样本的构成方式放大了</strong>。这不推翻她的核心洞见（少数维护者项目的注意力成本被系统性忽略了），但会改变结论的适用范围。</p>
 <p><strong>最后，关于批评的现状，得如实交代：</strong>本页找到的、真正针对她论点的公开批评相当薄。有一条实名的、我读到原文的：2022 年 5 月，Ben Yeoh 在 EA 论坛发帖讨论《Idea machines》，帖下一位用户认为她"把有效利他主义误读成了一场根本上属于慈善的运动"——EA 关心的是最大化所行之善，慈善只是其中一部分，它从未声称要承担图书馆、儿童医院那一类"慈善的公民职能"。Yeoh 本人的评价是"我喜欢这篇文章，但它谈 EA 的部分没打中"。这是一条克制且合理的反驳，但也就到此为止了——<strong>除此之外，我没有读到分量更重的、针对她核心论点的批评文本，所以不复述任何我没读过的论证。</strong>更值得注意的是这件事本身：她被引用得极多、被反驳得极少。对一个专门研究"某些想法为什么传不开"的人来说，这个处境有点反讽。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · 拜占庭将军问题（Lamport、Shostak、Pease，1982）</b>：那篇论文假设部分节点会撒谎，靠冗余投票让系统照常运转，正是 Nadia 问的「怎么为无需信任的互动做设计」。不像的是，拜占庭容错要 3f+1 个节点才扛得住 f 个叛徒；单维护者模块只有一个节点，它一倒戈，整条依赖链跟着倒。</li>
+<li><b>心理学 · 过滤器模型（Donald Broadbent，1958）</b>：Broadbent 把注意力画成一条容量有限的通道，信息进门前先被早早筛掉；维护者当空管、用 issue 模板设「温和的摩擦」，是同一个瓶颈上的同一招。不像的是，大脑的过滤器自己扛下筛选的成本，Nadia 的摩擦是把这份成本推回给提问的人。</li>
+<li><b>生物进化 · 弓形虫操纵宿主（Berdoy 等，2000）</b>：感染弓形虫的大鼠不再躲避猫尿的气味，甚至被它吸引，宿主的行为替寄生虫完成了传播。「不要脸的人只是一组想法的宿主」是同一张图：问宿主聪不聪明，问错了对象。不像的是，弓形虫的终点固定是猫，想法没有终宿主，只要还有人接收就一直传下去。</li>
+<li><b>佛学 · 无我（anattā）</b>：佛教说五蕴之后找不到一个发号施令的「我」，Nadia 说「天才操盘手」的概念过时了，因为它假定总得有个人在掌控，两边拆掉的是同一个中央控制者。不像在于拆完之后：佛学把想法也看成缘起无常、同样无主，Nadia 却把能动性整个交给了想法，让想法骑着人上战场。前者是把主人取消，后者只是给主人换了座位。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>event-stream 的作者把提交权限交给发邮件索要的陌生人，模块随后被植入盗币代码。</li>
+<li>2014 年一项研究发现 93% 的 npm 模块只有一个维护者，现代软件地基是成堆单人项目拼起来的。</li>
+<li>GitHub 把参与成本降到近零，贡献者变多却更浅，维护者的难题从协作变成了调度。</li>
+<li>Nadia Asparouhova 给看台型项目的处方不是招人，而是用模板、机器人和文档加回温和的摩擦。</li>
+<li>《Working in Public》把开源项目分成联邦、俱乐部、看台、玩具四类，其中看台型正在吃掉一切。</li>
+<li>公地要可持续管理，参与者之间需要高度共同语境；多数公地失败都能追溯到语境坍塌。</li>
+<li>投票只在总体小、已知、同质时管用；合作式治理让什么都不做便宜、提出反对昂贵。</li>
+<li>「伟大先知理论」把人看作想法的容器：名声是慢性病清单，不要脸的人只是一组想法的宿主。</li>
+<li>Nadia 先去数再下判断：她测出 GitHub 明星数与 issue 数的皮尔逊相关只有 0.22。</li>
+<li>《Idea machines》的零件清单里没有问责，2022 年那段看好 SBF 入场的文字至今原样挂着。</li>
+</ol>
 <h2 data-tts="a160e85f63984f0a">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://increment.com/open-source/the-rise-of-few-maintainer-projects/">The rise of few-maintainer projects</a></span><span class="d">Increment 杂志开源专号，2019 年 5 月。event-stream 事件、93% 单维护者、Godot 的 9471 个 issue、"空中交通管制员"这个比喻——她关于现代开源的判断最集中的一次公开陈述，也是《Working in Public》的浓缩版。</span></li>

@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -326,6 +334,28 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>This criticism is more lethal than it sounds, because <strong>it lands on her most attractive claim</strong>. "Data isn't bossy; the choice is yours" holds only if you actually have choices. You have to be able to afford that day care, live in that district, take the leave, and have a partner who will sit down for a thirty-minute Hard Conversation Time. Her tools operate on a feasible set; when the feasible set has one element, optimisation is not a meaningful word. In "Why Schools Always Call Moms" she does propose an institutional fix — the school forms should have a line asking who to call first, and then schools should honour it — but that passage is the shortest in the piece, and the advice immediately after it returns to asking whether the pattern is a problem for <em>your</em> family. <strong>Handing a structural pattern back to the individual is her best move and also her most exposed one.</strong></p>
 
 <p><strong>Last, her own selection bias.</strong> The problem she is best at spotting now grows on her own distribution channel. ParentData has gone from one person's free newsletter to a company with a paywall — as of this page's review, an anonymous reader can read about 3% of her output in full. Which means the population that keeps reading her complete arguments is selected on ability to pay a subscription. <strong>That is precisely the kind of selection she has spent twenty years telling everyone else to watch for.</strong> This is not hypocrisy; it is the cost of scale. But since she taught her readers to ask what determines who ends up in a group, the question should be turned on her too.</p>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Philosophy · Hume's is–ought gap</b>: in <em>A Treatise of Human Nature</em> (1739) David Hume pointed out that no statement of what is gets you, by itself, to what ought to be done. Oster's third question sits exactly in that gap: the evidence and the size of the risk are "is"; what to choose is "ought." The difference: Hume was making a point about the logic of inference, while Oster is fighting over who owns the far side of the gap.</li>
+<li><b>Neuroscience · The somatic marker hypothesis (Antonio Damasio)</b>: Damasio found that patients with damage to the ventromedial prefrontal cortex could reason perfectly well yet kept making bad decisions, and concluded that a "gut feeling" is a bodily tag left by past gains and losses. Both refuse to treat instinct as an oracle; but for Damasio the signal carries experience that deliberate reasoning has not counted, whereas Oster puts it on the scale as a preference.</li>
+<li><b>Evolutionary biology · The embryo protection hypothesis (Margie Profet, 1992; Flaxman and Sherman, 2000)</b>: Profet proposed that pregnancy sickness evolved as a defense that steers women away from foods that could harm the embryo; Flaxman and Sherman's review found that women with nausea miscarry less, and that coffee and alcohol rank among the commonest aversions. Oster treats nausea as a statistical confounder; evolutionary biology treats it as the mechanism itself. If the hypothesis holds, not being able to face coffee is not noise in front of the causal story but the body working the same risk problem.</li>
+<li><b>Distributed systems · Heartbeats and failure detectors (Chandra and Toueg, 1996)</b>: a cluster learns whether a node is alive from small periodic heartbeat messages with nothing in them, rather than checking only once something breaks. The Oster household's weekly "Hard Conversation Time," usually with an empty agenda, is the same design. The difference: a missing heartbeat means failure, but an empty agenda at home cannot tell "nothing is wrong" from "someone is not saying it."</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>In 2008 Emily Oster published the paper that overturned her own famous claim that hepatitis B explains China's male-biased sex ratio at birth.</li>
+<li>Most pregnancy and parenting advice collapses three questions into one: what the evidence shows, how big the risk is, and what you should choose; the third does not belong to whoever wrote the list.</li>
+<li>"No amount has been proven safe" is a decision rule dressed up as a scientific finding: not proven safe is not the same as proven unsafe.</li>
+<li>The liver turns alcohol into acetaldehyde, and slow drinking gives it time to keep up, so harm from binge drinking does not by itself imply harm from light drinking.</li>
+<li>Pregnancy nausea signals a healthy pregnancy and also puts women off coffee, which can manufacture a link between caffeine and miscarriage out of nothing.</li>
+<li>With a disease in one in 10,000 people and a 2% false-positive rate, a positive test means only about a 0.5% chance of disease, because the base rate is so low.</li>
+<li>A "gut feeling" is usually a preference in costume; call it a preference and it can be weighed against cost and waitlists.</li>
+<li>The Oster household keeps a fixed thirty-minute weekly "Hard Conversation Time," often with nothing on the agenda, so disagreements do not explode when everyone is exhausted.</li>
+<li>Research gets translated into wrong actions like playing Mozart to the womb not out of ignorance but because parents crave concrete, doable instructions.</li>
+<li>Anna Louie Sussman's critique is that "the choice is yours" assumes you actually have a choice, and that individual optimisation hides the need for collective action.</li>
+</ol>
 
 <h2>7. Sources</h2>
 <ul class="reads">

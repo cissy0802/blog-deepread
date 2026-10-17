@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -164,6 +172,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>Third, his recent writing uses exactly the evidence standard he once took apart.</strong> He wrote this one down himself. In 2020, faced with a "huge if true" number like HHMI's 96%, his first move was to check the controls and the estimation method. In 2026 he recommends an attachment therapy because "in a small study, has the largest effect sizes I've ever come across," and tells patients not to wait for replicable evidence but to trust their experience. That may well be right for therapy, and his reason (whether a therapist and patient click can't be randomized) makes sense. But readers should see that this mind uses two different rulers in two domains, and he has not yet written about how they fit together.</p>
 <p><strong>Fourth, as his range widens, the errors are piling up.</strong> The mistakes ledger took six entries in September 2026 alone, all on his recent long posts on measuring aging, systems biology and Alzheimer's: shingles mixed up with chickenpox, a 1975 classic experiment described wrongly. He accepted and fixed every one, which is rare. But the bounty was paused the same month, so readers no longer get paid to find errors, and whether the ledger keeps being kept this way is up to him.</p>
 <p><strong>Fifth, a controversy I have not read.</strong> In 2017 he wrote a set of posts on why there are few women in computer science. On his Start Here page he summarizes them as concluding it "has more to do with preferences than with discrimination or stereotypes," and adds that "this one is bound to be controversial." I have not read those posts or the rebuttals to them, and only report that they exist.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Psychology · Superforecasters (Philip Tetlock)</b>: Tetlock's Good Judgment Project gave every forecast a Brier score and kept public books; the Nintil mistakes ledger likewise turns "I might be wrong" into an auditable record. Unlike Tetlock's scoring of probabilities given in advance, Ricón logs errors others catch afterwards, and pays for them himself.</li>
+<li><b>Evolution · Convergent evolution</b>: Octopuses and vertebrates evolved camera eyes independently because optics allows only a few designs; the restaurant argument makes the same "constraints dictate form" claim. But natural convergence is enforced by selection culling failures, which science lacks, so its sameness may only mean nobody has challenged it.</li>
+<li><b>Distributed systems · Hyrum's Law (Hyrum Wright)</b>: With enough users of an interface, every observable behavior gets depended on by somebody, documented or not; the impurity nobody knew about in Fogbank was such a hidden dependency. The difference: under Hyrum's Law the dependency hides with the users, while in Fogbank even the makers did not know it existed.</li>
+<li><b>Buddhism · Zen's "special transmission outside the scriptures"</b>: Zen holds that awakening passes mind to mind, through dialogue, shouts and koans between teacher and student rather than texts: the sutras are all there, yet reading them is not awakening, just as the Fogbank recipe existed and still could not be reproduced. The difference is attitude: Zen treats the unsayable as the point and refuses to write it down; Ricón treats it as an engineering problem to beat with expert recordings and case libraries.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Nintil pays readers a public bounty for finding errors and logs every payout in a mistakes ledger, modeled on Donald Knuth mailing checks to readers who catch mistakes.</li>
+<li>José Luis Ricón's basic move is to chase a widely cited, attractive conclusion back to its primary sources and see how much of it survives.</li>
+<li>After checking every reference in the iPhone chapter of The Entrepreneurial State, the verdict was to drop the Great State Theory along with the Great Man Theory of innovation.</li>
+<li>Soviet citizens ate about as many calories as Americans, but the total value of their food was only 49% of the American figure: more bread and potatoes, less meat and fruit.</li>
+<li>Technology curves show no common turning point around 1970, so instead of asking whether there is a Great Stagnation, look for bottlenecks one field at a time.</li>
+<li>The claim that HHMI funding yields 96% more breakthroughs comes from the more bias-prone estimate; difference-in-differences gives 43%, still tangled with selection effects.</li>
+<li>Scientific institutions may converge the way restaurants do worldwide because that is simply what they should look like, so metascience has less design space than people assume.</li>
+<li>Tacit knowledge can be attacked: solitary study best predicts chess strength, and a large collection of expert anecdotes is the very data needed to pass such knowledge on.</li>
+<li>Ricón demands rigorous controls when judging science funding but accepts small studies and personal experience for therapy, and has not yet reconciled the two standards.</li>
+<li>Seen through convergent evolution, the restaurant argument misses a link: natural selection culls failed designs, while scientific institutions have no such culling.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://nintil.com/mazzucato-and-the-iphone-ii-the-myth-of-the-entrepreneurial-state/">The Entrepreneurial State: The case of the iPhone (II)</a></span> (2015-08-21)<span class="d">A reference-by-reference check of the iPhone chapter in Mazzucato's book: hard drives, touchscreens, cellular networks, and the "Great State Theory".</span></li>

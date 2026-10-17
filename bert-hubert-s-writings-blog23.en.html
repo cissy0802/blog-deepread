@@ -43,6 +43,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -221,6 +229,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>An asymmetry of stance.</strong> The 2020 5G piece contains a fine piece of self-discipline: he quotes the Financial Times reporting a room of telecom operators asked whether the Chinese could eavesdrop through backdoors in Huawei equipment — every hand went up — and then, for balance, whether the US could access communications through key Cisco equipment: "All the hands went straight back up without hesitation." He wrote plainly then that many of the arguments about China work just as well on the US. By 2025–26 that symmetry has all but vanished from the text, with the fire aimed at the American side. Given what actually happened in those years — the legal machinery for EU–US transfers dismantled, Microsoft conceding it cannot shield European data from US snooping, the International Criminal Court affair — the shift has good reasons and isn't a double standard. But readers should notice for themselves: <strong>his analysis of the cost of dependence is extremely fine-grained; his analysis of the cost of building your own is noticeably coarser.</strong></p>
 <p><strong>On critics:</strong> in preparing this page I went looking for substantial, named criticism of him in the original. The most relevant item I could find is Computer Weekly's "Dutch cloud pioneers face the hard limits of digital sovereignty," which I could not open — <strong>so I will not repeat the argument of a piece I have not read.</strong> Recorded here as a bibliographic fact only: such challenges exist, and the headline points at feasibility rather than motive. Everything specific in this section comes from what he wrote himself.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Evolution · genome shrinkage in endosymbionts (Buchnera)</b>: Buchnera, the bacterium living inside aphids, has shared its host for over a hundred million years. Its genome has shrunk to about 640,000 base pairs; most genes for things the host can supply are gone, and it cannot live outside the aphid. That is Hubert's outsourcing story: skills you stop using wither. The difference: Buchnera and its aphid are locked into each other, while a telecom's outsourcing partner can simply stop maintaining the network and walk away.</li>
+<li><b>Neuroscience · London taxi drivers' hippocampi (Eleanor Maguire)</b>: In 2000 Maguire found that cabbies who had memorised London's streets had larger posterior hippocampi, and a 2011 follow-up showed the growth came from learning. Competence lives in the people who practise it. The difference: a hippocampus sits in one head, whereas an organisation's know-how is spread across a team, and outsourcing those four people removes it at a stroke.</li>
+<li><b>Complexity science · normal accidents (Charles Perrow, 1984)</b>: Starting from Three Mile Island, the sociologist Perrow argued that in systems both interactively complex and tightly coupled, accidents are normal, and fixing one part will not save you. The risk of fifty million lines of code likewise comes from sheer size. The difference: Perrow thought some complexity is unavoidable, while the fifty million lines behind a garage door are a choice.</li>
+<li><b>Eastern philosophy · unity of knowing and acting (Wang Yangming)</b>: Wang Yangming held that to know without acting is not yet to know; Hubert says writing shows you don't know what you're talking about, and doing shows you didn't know what you wrote either. Both treat action as the test of understanding. The difference: Wang's knowing is moral, Hubert's is whether you can fix the machine.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Rotterdam's Botlek lift bridge got stuck about 250 times, and it took three years to trace the cause to one bad network cable in its server.</li>
+<li>Read the human genome as source code: 97% is commented out, GT and AG act like /* and */, and a tumour is a runaway fork.</li>
+<li>The BioNTech vaccine swaps U for Ψ to slip past the body's immune defences against foreign RNA, and uses two prolines to brace the spike protein in its prefusion shape.</li>
+<li>Europe's 2020 Huawei 5G debate came late: operators had long outsourced operations and call records, so stopping maintenance alone could cripple the networks.</li>
+<li>Contracts and service-level agreements cannot replace in-house competence, and open source is only transparent to people able to read it.</li>
+<li>Software risk is defect density times the amount of exposed code, which is why opening a garage door can now take fifty million lines.</li>
+<li>Bert Hubert sorts innovation into three orders: rearranging existing tech, inventing something new, and inventing tools before you can invent the goal.</li>
+<li>Reading the primary document, shipping running code, and stating up front what your model is not are Hubert's most transferable habits.</li>
+<li>The lac operon, studied for sixty years and still not fully explained, warns that the life-as-readable-code metaphor understates biology's complexity.</li>
+<li>European clouds stall because of proprietary lock-in and the comfort that if everyone fails together no one gets blamed; appeals to courage alone won't fix that.</li>
+</ol>
 <h2>7. Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://berthub.eu/articles/posts/amazing-dna/">DNA seen through the eyes of a coder (or, If you are a hammer, everything looks like a nail)</a></span><span class="d">Begun 2001, revised through 2021. The human genome read as source: 97% commented out, GT and AG as <code>/*</code> and <code>*/</code>, tumours as fork bombs, histones H3 and H4 as holy code nobody dares touch, HOX genes as the Makefile.</span></li>

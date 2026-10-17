@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -247,6 +255,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>一张会被时间兑付的赌票。</strong>「目前不存在任何能够降低『靶点选错』或『毒性』这两类临床失败风险的 AI／机器学习系统」——这是个好赌票，因为它可证伪、而且他自己说「我非常愿意站在这句话后面」。但它也意味着：哪天这句话被推翻，他关于 AI 的整块论述都要重写。值得注意的是他给自己留的门缝，而且留得很坦率：「总有一天我们可能可以。但那一天不是今天。」</p>
 <p><strong>视野的边界。</strong>分子、公司、临床试验、实验室，是他的场地，他在这块地上无人能敌。而药物可及性、中低收入国家的定价、专利豁免、医疗体系怎么分配——这些不是他的重点，也不是他强的地方。他最好的那套手艺（去查、去数、去比量级）很少被用在这一侧，而这一侧恰恰是「九成失败率」这个论证的后果落地的地方。</p>
 <p><strong>最后一条，读者自己判断。</strong>2025 年起，他关于美国联邦科研经费的文章换了一种声调。2026 年 5 月那篇写到 NIH 限制与外国合作者共同署名时，他写下的是这样的句子：「我不信任我自己政府的动机，因为我自己的政府现在是一群卑劣的无能之辈、党棍和骗子。」——以及对那些认为「反正马上就要发明通用人工智能、它会把人类本来能发明的东西全部立刻发明出来」的人的一句嘲讽。有人会说，这跟他二十四年「先看数据再表态」的样子不一致。也可以说，这正是同一个人在一个不再有数据可争的局面里的反应。他自己给出的理由是这一条：每一个在工业界做科学和工程的人，都是从学术训练里出来的。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>生物进化 · 进化是修补匠（François Jacob，1977）</b>：Jacob 在《Science》上写道，进化不像工程师照图纸造东西，而像修补匠拿手边现成的零件拼凑。Lowe 说细胞「被不停歇的随机修补粘在一起」、没有规格书可打印，是同一个判断。不像的是，Jacob 用它解释生命为什么不优雅；Lowe 用它解释药为什么难做：修补出来的系统没有说明书。</li>
+<li><b>经济学 · 古德哈特定律（Charles Goodhart）</b>：一个指标一旦被当成目标，就不再是好指标。年底前必须推进一个候选药，于是「因为现在是十一月初」成了推荐理由，正是这条定律在药厂会议室里的样子。不像的是，Lowe 说的代理指标多半没人刻意去钻，它们本来就只量到终点的一部分。</li>
+<li><b>心理学 · 鸵鸟效应（Karlsson、Loewenstein 与 Seppi，2009）</b>：市场下跌时，投资者登录查看账户的次数明显变少，坏消息可能来的时候人宁可不看。Lowe 说把想法留在「尚未检验但有希望」那一栏更舒服，是同一种回避。不像的是，他写下这份诱惑之后还是做了实验，并把失败一篇篇公开。</li>
+<li><b>佛学 · 缘起与无自性</b>：「剂量决定毒性」意味着「有毒」不是物质自带的标签，而要看剂量、看身体，条件凑齐才显现，这和佛学说事物没有独立自性、依因缘而起是同一个结构。不像的是，Lowe 同时坚持化合物「就是它自己」，分子结构确定不移；佛学的「空」连这一层也不留。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Derek Lowe 在制药业做了二十六年研究，没有一个化合物上市，他把这当作写这个博客的资格。</li>
+<li>临床失败率六十年来在八到九成之间，近三十年稳定在约 91%，没有第二个大行业这样运转。</li>
+<li>芯片的技术规格可以打印出来，细胞的没有，所以半导体业「按期交付」的管理法救不了新药研发。</li>
+<li>Eroom 定律指每十亿美元研发投入换来的新药数量几十年来稳定下降，新药还得打赢便宜好用的老药。</li>
+<li>临床前阶段提速或降本 20% 只是舍入误差，降低临床失败率才是研发成本的大头。</li>
+<li>选对靶点和预测人体毒性没有可用的代理指标，因而没有训练数据，AI 目前在这里帮不上忙。</li>
+<li>在阿尔茨海默病图像造假丑闻里，Lowe 把造假本身、AB*56 是否存在、淀粉样蛋白假说的成败分开判断。</li>
+<li>剂量决定毒性：「有毒」不是物质自带的标签，而取决于剂量与机体，结构上近于佛学的缘起。</li>
+<li>点开对方自己引用的文献去核对、先问量级而不问有没有，是比辩论立场更省力的反驳方法。</li>
+<li>从 91% 的失败率推不出药价该由公司自定，Lowe 在药价管制问题上的证据明显比别处单薄。</li>
+</ol>
 <h2 data-tts="c1a9c1fece806370">七、出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.science.org/content/blog-post/clinical-failure-rates-over-decades-yikes">Clinical Failure Rates Over the Decades: Yikes</a></span><span class="d">2026-07-24 · 六十年的临床失败率汇总：90%、81%、80%、88%、91%、91%。他称之为「关于这个行业最重要的单个数字」的最新一次陈述，也是全站论点最密的一篇短文。</span></li>

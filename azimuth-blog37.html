@@ -51,6 +51,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -205,6 +213,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>他接着说，起初信息主要会反过来流：把这些学科的想法翻译成现代数学，给数学家提供「思考的食粮和有趣的新问题」，希望「长远来看」数学家能回报。这是诚实的，但也意味着「绿色数学」的头几年，主要受益者是数学。外部也有同样的批评：《组合性》期刊的共同创办人之一 Joshua Tan 在 2018 年写过一篇《范畴论的失败》（<em>The failures of category theory</em>），列了应用范畴论在科学中的若干短板，要点包括它的模型往往不做预测、而是「复原」已有的数学，很难直接和数据打交道，也缺少处理不确定性的演算。本页只读到了这篇的要点，没有细读它的完整论证。</p>
 <p><strong>第三，类比可能只是形式上的。</strong>量熵是一个漂亮的形式推导，但他自己标出了它的裂缝：复对数的分支问题「令人不安」；振幅不是概率，「期望作用量」是什么意思不清楚。哈密顿方程和麦克斯韦关系的对应，推出了一对「看起来很怪」的额外方程，他说「我确信它们是对的」，但「对」和「有物理意义」是两回事。一个把类比当成主要发现工具的人，系统性的风险是把「方程长得一样」当成「东西是一样的」。他 2026 年那篇系统动力学文章里，倒是对另一个领域说过一句同样适用于自己的话：这类模型「与其说是预测未来会发生什么的形式体系，不如说是找出什么可能发生、寻找杠杆点的方法」。</p>
 <p><strong>第四，他对「应用」的期待，是一个数学家的期待。</strong>2015 年他转贴 Google 两位工程师的反思：Google 2007 年雄心勃勃地启动「让可再生能源比煤便宜」的计划，2011 年关掉了，他一直不知道原因；两位工程师事后算出，即使最好的情况实现，也没法在本世纪让大气二氧化碳回到 350 ppm 以下。Baez 的评论只有一句：「这对我来说不意外。」他清楚问题的规模在工程和政治上。但他自己的贡献，按他的比较优势，被放在离这些杠杆最远的地方：数学的基础。这不是错，而是一个选择；只是读者应当知道，这个博客解决的是「数学家能做什么」，而不是「地球需要什么」。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>神经科学 · 自由能原理（Karl Friston）</b>：Friston 主张大脑靠最小化「变分自由能」近似贝叶斯推断，名字也借自统计力学；这和「种群是假设、自然选择按贝叶斯规则更新它」是同一副骨架。不像的是，Friston 讲一个大脑在毫秒间推断，Baez 讲一个种群隔代被筛；而且 Baez 自己划过界：同样的数学放进化学反应网络，没人叫它学习。</li>
+<li><b>心理学 · 结构映射理论（Dedre Gentner，1983）</b>：Gentner 认为好类比搬的是关系不是属性：原子像太阳系，像在「小的绕着大的转」；Baez 的对照表正是只搬关系的类比。不像的是，Gentner 描述人怎么想，Baez 要把空格算出来，算不通就作废。</li>
+<li><b>复杂性科学 · 近可分解系统（Herbert Simon，1962）</b>：Simon 用两个钟表匠的寓言说明，由稳定子组件拼成的系统才造得出、演化得出，正是「组合性」的直觉。不像的是，Simon 的子系统只是近似可分，Baez 的黑箱化要求外部行为被精确刻画。</li>
+<li><b>东方哲学 · 「名者，实之宾也」（《庄子·逍遥游》）</b>：许由说名字只是实在的客人；位置改叫熵、动量改叫温度，方程照样成立，Baez 也是在名下认出同一个实。不像的是，庄子借此看轻名分，Baez 却靠一张逐项改名的对照表，让想法在学科之间搬家。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>John Baez 2012 年发现，哈密顿方程只是热力学麦克斯韦关系换了变量名的特例。</li>
+<li>Baez 2010 年开 Azimuth 时决定换挡：数学和物理的深层秘密可以等，地球的危机等不了。</li>
+<li>对 Yudkowsky「环保不是你的最优选择」的回答：别追已在滚的雪球，去找数学能插进环境问题的接口。</li>
+<li>「绿色数学」起于一个观察：费曼图、电路图、Petri 网、能量语，各学科在重复发明同一类图。</li>
+<li>把兔子和狼画成 Petri 网后，出生和死亡在数学上对应量子场论里的产生算符和湮灭算符。</li>
+<li>量熵：把熵公式里的概率换成振幅再求驻点，算出来的正好是费曼的路径求和公式。</li>
+<li>熵不是「无序」，而是对一个情境不知道、但原则上可以知道的信息量。</li>
+<li>复制子方程与贝叶斯更新同构：种群是关于怎样活下去的假设，自然选择在按贝叶斯规则更新它。</li>
+<li>Baez 的标准动作是把两门学科已知的对应列成对照表，再盯着表里的空格把该填的东西算出来。</li>
+<li>把类比当主要发现工具，系统性的风险是把「方程长得一样」当成「东西是一样的」。</li>
+</ol>
 <h2 data-tts="fbb34b987f522e71">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/04/24/what-to-do/">What To Do? (Part 1)</a></span>（2011-04-24）<span class="d">回应 Yudkowsky 的「环保不是你的最优选择」：为什么离开高阶规范场论、厨房冒烟的比喻、比较优势、以及最后那句「人很容易骗自己」。</span></li>

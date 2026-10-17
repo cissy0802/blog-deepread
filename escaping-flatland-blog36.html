@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -220,6 +228,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>最狠的那条，是他自己写的。</strong>在 2024 年的年度总结里，他承认：</p>
 <blockquote><span class="en">This bias toward the local means my writing borders on self-help—and I've been confused by that since I don't like self-help.</span><span class="zh">这种偏向身边的取向，意味着我的写作<strong>跟自助类写作只隔一条线</strong>——这让我一直很困惑，因为我不喜欢自助。</span><cite>A summary of what I wrote in 2024，2024-12-12</cite></blockquote>
 <p>同一篇里他还说，前一年那些把关系写成「帮我们成长、发现自我」的文章，「感觉很工具化，不忠于我想说的」，于是转向把关系写成本身就有价值的东西。他把关系讲成「迭代速度」「bug 日志」的那一套，正是读者最可能起疑心的地方，而他先起了疑心。<strong>判断他的标准，也许就是他能不能继续这样做：在每一个漂亮的框架快要变成一套方法论时，先自己把它写硬、让它碎。</strong></p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>生物进化 · 生态位构建（Odling-Smee、Laland、Feldman）</b>：蚯蚓改造土壤、河狸筑坝，生物改了环境，环境又反过来改写作用在它身上的选择压力；「先塑造社交图，再被它塑造」是同一个回路。不像的是，生态位构建多半跨代、不自觉，Karlsson 要的是一个人在一生之内有意去改。</li>
+<li><b>复杂性科学 · 优先连接（Barabási 与 Albert，1999）</b>：新节点更爱连向已经连接多的节点，网络于是长出少数巨型枢纽，这正是「河流」模型里往上快、横着难的地形。不像的是，BA 模型里的枢纽靠先来后到被动变大，Karlsson 说大号大，部分是因为它们勤于转发。</li>
+<li><b>心理学 · 独处的能力（Donald Winnicott，1958）</b>：精神分析家 Winnicott 有篇论文就叫《独处的能力》，他认为这种能力悖论式地来自幼年「在另一个人在场时独处」：母亲就在身边，孩子却可以不理她、自顾自地玩。这恰好把天才童年的两条规律——身边有出色的大人、又有大把没人管的时间——合成了一个画面。不像的是，Winnicott 讲的是婴儿的情感安全，Grothendieck 的独处是成年后用来护住思想的。</li>
+<li><b>中国哲学 · 庖丁解牛（《庄子·养生主》）</b>：庖丁的刀「依乎天理」「因其固然」，顺着牛本身的纹理走，十九年后刀刃若新发于硎；这和「情境比你聪明，跟它合作」是同一种姿态。不像的是，庄子落在无为与养生，Karlsson 的展开仍有明确目标，只是不规定解法长什么样。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Henrik Karlsson 的根问题是：人没法不被身边的人塑造，那怎样才能长成自己，而不被压扁成周围期待的形状。</li>
+<li>毅力是节点的视角，能动性是图的视角：一个人就是自己的周遭，改变周遭就是改变自己。</li>
+<li>一篇博客是一条很长、很复杂的搜索查询，查找的对象是人：写得越精确越小众，越能召来同类。</li>
+<li>互联网的社会结构像一条河：信息从小号冲向大号很快，从大号漫回别的小号慢，横着翻山最难。</li>
+<li>Karlsson 读了 42 本天才传记，发现约 95% 的人既从小泡在出色的大人中间，又有大把无聊、没人管的时间。</li>
+<li>独处的用处是认识「不掺水的好奇心」的手感，好分辨兴奋来自想法本身，还是来自在群体里加分。</li>
+<li>「展开」把好设计定义为形式与情境相契合；好目标只规定要达到的效果，不规定解法长什么样。</li>
+<li>关系是共同演化的回路：Karlsson 和 Johanna 每周日在黑板上记「bug 日志」，早期的迭代速度可能比什么都重要。</li>
+<li>《天才的童年》的数字基本是估的，LessWrong 评论指出了选择效应和家庭财富这一混杂因素。</li>
+<li>Winnicott 认为「独处的能力」来自幼年在另一个人在场时独处，恰好合起了天才童年的两条规律。</li>
+</ol>
 <h2 data-tts="078edc54016c56e5">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.henrikkarlsson.xyz/p/search-query">A blog post is a very long and complex search query to find fascinating people and make them route interesting stuff to your inbox</a></span>（2022-10-05）<span class="d">「博客是搜索查询」和「互联网是一条河」两个模型的原文，Morton Feldman 与 Jackson Pollock、厨房里的眼泪、Licklider 的备忘录都在这里。</span></li>

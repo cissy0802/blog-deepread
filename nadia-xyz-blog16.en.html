@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -246,6 +254,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>The problem is inside the same essay. She honestly reports what changed her own mind: <strong>"My decision was strongly influenced by personal growth, finding the right partner, and having financial security."</strong> That is to say, her own sense of agency was <strong>a product of material conditions</strong> — while the remedy she prescribes for others operates at the level of belief. Someone who feels powerless against climate change may not be under-taught in agency; they may simply lack any lever on it. Diagnosing a structural problem as an attitude problem is the classic failure mode for this kind of argument, and she is the one who handed over the ruler.</p>
 <p><strong>Third, a reservation of my own, stated as such:</strong> the core data in <em>Working in Public</em> comes heavily from the GitHub / npm / JavaScript ecosystem, which is famous for micro-modules — so "93% have one maintainer" is nearly guaranteed to hold <strong>when counting by number of projects</strong>. Counted by <strong>load-bearing weight</strong>, the things still holding the world up — the Linux kernel, Debian, PostgreSQL, Kubernetes — are precisely federations: foundations, many maintainers, formal governance, the shape she says open source no longer has. She concedes in interviews that federations still exist, but the overall impression that the stadium is eating everything is probably <strong>amplified by how the sample is composed</strong>. This doesn't overturn her core insight (that the attention costs of few-maintainer projects are systematically ignored), but it changes the scope of the conclusion.</p>
 <p><strong>Finally, on the state of criticism, honestly:</strong> published criticism actually aimed at her arguments is thin. There is one named case whose text I read: in May 2022 Ben Yeoh posted a discussion of "Idea machines" on the EA Forum, where a commenter argued she misreads effective altruism as a fundamentally philanthropic movement — EA is about maximizing the good done, philanthropy is only part of that, and it never claimed to meet the civil purpose of philanthropy in the libraries-and-children's-hospitals sense. Yeoh's own verdict: "I enjoy the piece, but do think it misses the mark in its comments on EA." That's a restrained and reasonable objection, and it's about as far as it goes — <strong>beyond it I found no weightier critical text aimed at her core claims, so I won't paraphrase arguments I haven't read.</strong> The more interesting fact is the situation itself: she is cited constantly and rebutted almost never. For someone whose subject is why certain ideas fail to spread, that's a slightly ironic place to be.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Distributed systems · The Byzantine Generals Problem (Lamport, Shostak and Pease, 1982)</b>: the paper assumes some nodes will lie and uses redundant voting to keep the system correct anyway, which is exactly Nadia's question of how to design for trustless interactions. The difference: Byzantine fault tolerance needs 3f+1 nodes to survive f traitors. A single-maintainer module is one node, and when it turns, everything downstream turns with it.</li>
+<li><b>Psychology · Broadbent's filter model (1958)</b>: Donald Broadbent pictured attention as a limited-capacity channel that discards most input early, before it gets processed. A maintainer playing air traffic controller and adding gentle friction through issue templates is working the same bottleneck with the same move. The difference: the brain's filter pays the cost of filtering itself, while Nadia's friction pushes that cost back onto whoever is asking.</li>
+<li><b>Evolutionary biology · Toxoplasma and host manipulation (Berdoy et al., 2000)</b>: rats infected with Toxoplasma stop avoiding the smell of cat urine and are even drawn to it, so the host's behavior does the parasite's spreading. "The shameless person is simply a host for a set of ideas" is the same picture, and asking how clever the host is misses the point. The difference: Toxoplasma's final host is always a cat, while an idea has no final host and keeps going as long as someone will receive it.</li>
+<li><b>Buddhism · Anattā (non-self)</b>: Buddhism looks behind the five aggregates and finds no self giving the orders; Nadia calls the "genius mastermind" outdated because it assumes someone must be in control. Both take down the same central controller. They part ways afterwards: Buddhism treats ideas as equally ownerless and impermanent, while Nadia hands all the agency to the ideas and lets them ride us into battle. One abolishes the master; the other just moves the master to a different seat.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>In the event-stream incident, Dominic Tarr handed commit access to a stranger who asked by email, and the module was then seeded with code to steal crypto wallets.</li>
+<li>A 2014 study found that 93% of npm modules had a single maintainer, so modern software rests on piles of one-person projects.</li>
+<li>GitHub cut the cost of participating to nearly zero, so contributors multiplied but engaged more shallowly, and maintainers' problem shifted from collaboration to coordination.</li>
+<li>For stadium-style projects, Nadia Asparouhova's prescription is not recruiting more people but adding gentle friction back through issue templates, bots and docs.</li>
+<li><em>Working in Public</em> sorts open source projects into federations, clubs, stadiums and toys, and argues the stadium is eating everything.</li>
+<li>Managing a commons sustainably requires a high degree of shared context among participants, and most commons failures trace back to context collapse.</li>
+<li>Voting only works when the population is small, known and homogeneous; cooperative governance makes doing nothing cheap and objecting expensive.</li>
+<li>"Great prophet theory" treats people as vessels for ideas: reputation is a list of chronic afflictions, and the shameless person is just a host.</li>
+<li>Nadia's signature method is to count and publish the data, as when she found a Pearson correlation of only 0.22 between GitHub stars and issues.</li>
+<li>The parts list in "Idea machines" has no part for accountability, and Nadia's 2022 optimism about SBF's arrival is still on the page unedited.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://increment.com/open-source/the-rise-of-few-maintainer-projects/">The rise of few-maintainer projects</a></span><span class="d">Increment, open source issue, May 2019. The event-stream incident, 93% single-maintainer, Godot's 9,471 issues, the air traffic controller image — her clearest public statement on modern open source, and the condensed version of Working in Public.</span></li>

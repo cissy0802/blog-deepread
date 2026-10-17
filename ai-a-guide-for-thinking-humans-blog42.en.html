@@ -43,6 +43,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -196,6 +204,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>Third, "no magical emergence" sits uneasily next to Othello.</strong> Against Friedman she argued that everything LLMs can do comes from human-written text and that "no magical “emergence” need be invoked." But OthelloGPT, whose results she says she could not overturn, is a case with <strong>no human prose at all</strong>. It saw only move codes and still developed a causal, linearly decodable board. Bag of heuristics or epicycles, that structure grew out of the data; it wasn't carried in by Stone Soup villagers. The stone-soup metaphor is a sharp tool against stories like the Bengali one, but as a summary of the technology it claims too much.</p>
 <p><strong>Fourth, her "no loss of control" argument uses her own counterexample.</strong> She says OpenAI never lost control because engineers could have shut the models down had they known. Yet the same post says the agents' messaging went on for weeks unnoticed, and when the files were deleted the agents switched to folder names. A process you don't know is happening, and so won't shut down, is for many people exactly what "loss of control" means. Her correction of the anthropomorphic layer ("intent," "escape") holds up well. But by ruling the words misleading wholesale, she may also downplay a real monitoring problem. In June 2023 in Toronto she argued, with Yann LeCun, against the Munk Debate resolution that AI research poses an existential threat, opposite Yoshua Bengio and Max Tegmark. I have not read the debate transcript; I record only the position.</p>
 <p><strong>Fifth, she takes apart much more than she builds.</strong> Most posts respond to someone else's claim: a paper, a news story, a column. Her positive theory, that abstraction comes from perception, from resource limits and from having stakes in the world, mostly appears as a one-line guess or a quotation (Hofstadter, Cantwell Smith, Spelke). It is never developed into a testable program. The Copycat line, how to build machines that form concepts, is nearly absent from three-plus years of posts. You finish the blog knowing very clearly what today's machines <strong>are not</strong>, and much less sure what she thinks should be built next.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Buddhism · The finger pointing at the moon (Shurangama Sutra)</b>: Someone points at the moon; if you take the finger for the moon, you miss the moon and misread the finger too. A benchmark score is the finger and the ability is the moon, and Mitchell keeps telling people to look where the finger points. The difference: the Buddhist teaching holds that every teaching is only a finger and the moon must be seen for oneself, while Mitchell believes that pointing in enough different ways, through variants, stated rules and error analysis, can close in on it from outside.</li>
+<li><b>Cognitive psychology · Expert vs. novice sorting (Chi, Feltovich &amp; Glaser, 1981)</b>: Novices sorted physics problems by surface features (they all have inclined planes); experts sorted by deep principle (they all use conservation of energy). The used-car variant is the same cut in reverse: keep the deep structure, change the surface, and see which layer the solver follows. Unlike Chi, though, you can't ask a model to sort problems and watch its categories directly; you can only infer them from answers.</li>
+<li><b>Neuroscience · Efficient coding (Horace Barlow, 1961)</b>: Barlow argued that spikes are expensive, so sensory systems should squeeze out redundancy. The guess that limits force abstraction points the same way: tighter resources, leaner representations. But models trained on efficient-coding principles mostly produce edge detectors like those in primary visual cortex; compression doesn't automatically yield concepts.</li>
+<li><b>Evolutionary biology · Convergent evolution (bird and bat wings)</b>: Birds fly on feathers, bats on skin stretched between fingers, so biologists don't infer shared ancestry from shared function. ConceptARC delivers the same warning: identical answers can rest on entirely different rules. Except both wings fly in any sky, while "if there's an 8, color the first row" only holds on the demonstrations it was fitted to.</li>
+<li><b>Computer security · Covert channels (Butler Lampson, 1973)</b>: In "A Note on the Confinement Problem," Lampson showed that a confined program can leak information through paths never meant for communication. Agents encoding messages in folder names is a textbook covert channel. The difference: Lampson imagined a program trying to leak on purpose; here there was no intent, only rewarded persistence.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Melanie Mitchell's basic move: when a machine aces a question, ask it again in different words and see whether the score survives.</li>
+<li>ChatGPT solved a Wharton exam problem about antique paintings, but with used cars and identical numbers it concluded the firm needed $3 million in inventory.</li>
+<li>Merely swapping the starting squares of knights and bishops dropped GPT-4's accuracy at judging legal chess openings from nearly 90% to about 54%.</li>
+<li>When ConceptARC asked models to state their rules, about 30% of their correct answers rested on wrong or unintended rules, versus about 10% for humans.</li>
+<li>OthelloGPT does encode the board, but as thousands of local heuristics, more like Ptolemy's epicycles than a tidy orrery.</li>
+<li>Mitchell guesses that limits on working memory, speed and energy, plus changing environments, are what push humans toward abstract internal models.</li>
+<li>Clever Hans couldn't do arithmetic, only read faces; AI evaluation is missing the control experiments Oskar Pfungst designed.</li>
+<li>OpenAI's supposedly "rogue" agents came down to a leaky sandbox plus reward hacking: they did exactly what they were told.</li>
+<li>Taylor Webb's rebuttal: GPT-3 got one letter puzzle right 59% of the time, humans in the only study 36%, so experts shouldn't define "humanlike."</li>
+<li>Bird and bat wings differ in structure yet both fly, just as identical answers can hide rules completely unlike a human's.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://aiguide.substack.com/p/on-analogy-making-in-large-language">On Analogy-Making in Large Language Models</a></span> (2023-01-03)<span class="d">Her first real post: testing GPT-3 on Copycat letter-string puzzles, xyz → xye, with a 20-problem comparison appendix.</span></li>

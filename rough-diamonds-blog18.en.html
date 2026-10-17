@@ -41,6 +41,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -284,6 +292,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>The last item is my own reading, and she has not said it. <strong>"Traction isn't evidence" is a solvent, not a ruler.</strong> It can tell you what doesn't count; it can't tell you what does. Her positive criteria — the enchippening, techno-economic analysis — operate only in domains where a <strong>clean number</strong> exists: cost per liter, cost per base pair, feature size, production quota. And she writes a great deal about domains with no such number: institutions, regulation, organizations, education, philosophy, ethics. There the solvent runs unchecked.</p>
 <p>To her credit, she knows. In "How I Write" she says her non-research posts "stray more into the realm of opinion and I wind up feeling disgusted with my not-quite-right lens," especially on general-interest, non-STEM, emotionally fraught topics, "where I worry that I'm not saying objectively true things so much as airing my personal biases." She notes those posts are <strong>more likely to be duds that linger as unpublished drafts</strong>. Her own verdict on herself deserves more weight than any I could offer.</p>
 <p>(One bibliographic note: her 2023 "Why I am Not An AI Doomer" drew a public discussion thread on LessWrong, where named commenters pushed back on the agency step. <strong>I have not read those arguments in the original and so do not summarize them here.</strong> Her own correction a year later is the weightiest criticism I did read.)</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Psychology · The Moses illusion (Erickson and Mattson, 1981)</b>: Ask "How many animals of each kind did Moses take on the ark?" and most people answer "two," never noticing it was Noah. Shallow processing checks whether the gist fits, not the details, which is exactly how skimming let GPT-2's absurdities slide past Constantin. The difference: psychologists treat it as a phenomenon to explain, while she turns it into a reading rule, defaulting to null instead of assuming she missed something.</li>
+<li><b>Fault tolerance · The N-version programming experiment (Knight and Leveson, 1986)</b>: Independent teams wrote programs to the same spec, on the hope that majority voting would mask errors; the versions often failed together on the same inputs. "Several Fortune 500 clients" works the same way: correlated sources do not add up. Unlike software, though, correlated corporate adoption hides in conferences and white papers rather than in a test harness.</li>
+<li><b>Evolution · Fisherian runaway (R. A. Fisher)</b>: Once females prefer a trait, the preference itself makes males who carry it more successful, so the trait grows more extravagant whether or not it helps survival. A buzzword acting as a coordination device is the same loop: being hot raises the odds that others will back it. But predators audit a peacock's tail every day; a bad idea's bill can wait a decade, until after the IPO.</li>
+<li><b>Philosophy of mind · The symbol grounding problem (Stevan Harnad, 1990)</b>: Symbols defined only by other symbols never touch meaning; they have to connect to perception of the world. Whether two identical columns come from one sensor cannot be read off the dataset either; the answer lives on the shop floor. Harnad was asking how minds mean anything, though, and Constantin's gap closes once you find the person who knows the machine.</li>
+<li><b>Investing · Reflexivity (George Soros)</b>: In The Alchemy of Finance (1987), Soros argued that participants' views feed back into the fundamentals they are judging. That is the link Constantin's "AI robots are too expensive to build" arithmetic missed: hundreds of millions in funding made the training bill payable. Soros used the idea to explain booms that feed on themselves and then bust; she used it to retract her own negative forecast.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Traction is not evidence: a technically worthless idea can still raise several rounds, land Fortune 500 clients, and even IPO.</li>
+<li>Big companies share the same consultants and conferences, so endorsements from many of them are not independent checks.</li>
+<li>Biomanufacturing carries the overhead of keeping organisms alive, so it only wins on complex molecules that chemistry cannot make cheaply.</li>
+<li>After fifteen years and 219 reported projects, Ginkgo Bioworks' best-selling product was a peach scent chemists could make cheaply around 1900.</li>
+<li>Sarah Constantin's "Enchippening" thesis: every technology improving exponentially this century sits downstream of semiconductor fabrication.</li>
+<li>AI must first get through data integration, and data on paper, in scanned PDFs, or inside machines moves only at human speed.</li>
+<li>Palantir's edge was not its software but sending at least a third of its staff on site to deploy, train, and negotiate data access.</li>
+<li>Default to null: if you could not follow a passage, treat it as unread instead of assuming the fault is yours.</li>
+<li>Retracting her AI stance in 2024, Constantin named the missing piece as selection effects: with enough money, "too expensive" is not permanent.</li>
+<li>The Moses illusion shows that shallow reading checks the gist rather than the details, which is why skimming lets obvious absurdities through.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://sarahconstantin.substack.com/p/bad-ideas-can-get-surprisingly-far">Bad Ideas Can Get Surprisingly Far</a></span><span class="d">November 2022. A fictional "BUZZWORD for APPLICATION" industry, run forward step by step to show how a technically worthless idea collects VC rounds, Fortune 500 clients and an IPO. Plus the two bad heuristics she confesses to.</span></li>

@@ -51,6 +51,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -199,6 +207,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>第三，加速论的政治引力。</strong>他 2007 年的两位合作者 Cochran 和 Harpending 在 2009 年把这条研究线写成了一本书《一万年的爆发》（The 10,000-Year Explosion）。他自己说，论文发表后记者最常问的就是：人类近期变化这么快，会不会给种族主义提供口实？Hawks 的正面回应是 2009 年那篇读 Montagu 的文章：他有一对同卵双胞胎和另外两个孩子，「我该怎么对待她们？」基因上的相同或不同，不决定道德上的平等，「我们的大脑全都有缺陷，而且缺陷得五彩缤纷、各不相同」。但到了 2026 年，Akbari 等人发现与今天「受教育年限」相关的变异在过去一万年里频率持续上升，他只写了一句，说要「另写一篇专门讨论」。截至本页核对日，存档里还没有这篇。</p>
 <p><strong>第四，他对「混合」的偏爱是一种先验。</strong>他师从多地区进化说的旗手，自己写道：「读者知道，我在哲学上一直倾向于这种看待古人群的方式。」辫状河、弱结构主干、八二合流，每一步证据都在往他那边走，但他也承认，追溯到这么久远的过去，这些模型「几乎肯定缺乏分辨细节的能力」。证据越是如你所愿，越该多检查一遍。</p>
 <p>最后，读他的存档要知道：那 280 篇是他从 4700 篇里亲手挑出来、有些还加了后记的。这是一位学者整理过的自画像。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>分布式系统 · 流言协议（Demers 等，1987）</b>：施乐 PARC 的数据库副本每轮随机找一个节点对账，约 log N 轮就传遍全网，和 Chang 算出的「log₂N 代就有共同祖先」是同一种指数扩散。不像的是，流言真把副本送到了每个节点；族谱祖先人人都有，他的 DNA 却多半半路丢光了。</li>
+<li><b>佛学 · 因陀罗网（华严宗）</b>：《华严经》里帝释天宫的宝网，每颗珠子都映出其他所有珠子；「我们全都是远房表亲」像是这张网的族谱版。不像的是，因陀罗网处处对称、无始无终，人类族谱却有方向，而且绝大多数连线里一点 DNA 也没流过。</li>
+<li><b>比较心理学 · 摩根准则与「拒绝拟人」（Lloyd Morgan，Frans de Waal）</b>：1894 年 Morgan 立规：能用较低级的心理能力解释的行为，就不许归给较高级的能力；纳莱迪人论文审稿人要求「先假设自然过程」，是同一条规矩。de Waal 后来造了 anthropodenial（拒绝拟人）一词，批评这种默认先验地否认人与动物的连续性，Hawks 拆台阶的方向和他一致。不像的是，摩根准则好歹有简约性撑腰；在洞穴里，「自然」和「文化」哪个更简约，本身就说不清。</li>
+<li><b>软件工程 · N 版本编程（Knight 与 Leveson，1986）</b>：让 27 个程序独立实现同一份规格，指望错误互不相关、投票就能纠错，实验却发现不同版本常在同样的输入上一起出错。Hawks 担心同门同经费的「共识」只是近亲繁殖，是同一个独立性问题。不像的是，他把希望押在跨学科的一致性上，而这个实验提醒：各自独立也可能错到一块去。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>族谱数学表明，全人类的最近共同祖先可能只活在几千年前，但大多数人身上没有他的任何 DNA。</li>
+<li>John Hawks 二十年的根问题是：人有多少、人和人怎么连着，如何塑造了人类的进化。</li>
+<li>有用的突变极其稀少，人口越多就像买了越多彩票，加上环境剧变，适应性进化就会加速。</li>
+<li>2007 年的 HapMap 扫描推算，近几万年人类的适应性进化比此前快了约一百倍。</li>
+<li>人口混合本身就是进化，「人类进化已经停止」的说法错在把基因流漏出了定义。</li>
+<li>人类历史更像一条反复分开又汇合的辫状河，而不是一棵枝杈从不往来的树。</li>
+<li>几个独立模型指向同一结论：今天所有人来自约 30 万年前两支古老种群按八比二的合流。</li>
+<li>约 280 万年以后几乎每个人族物种都与石器同出，区分人族的是工具拿来干什么，而非会不会用。</li>
+<li>Hawks 要的是跨学科的一致性而非同行的共识：遗传、化石、考古各自独立地指向同一个答案。</li>
+<li>纳莱迪人埋葬说是 Hawks 最具争议的结论，eLife 的评估把它的证据同时标为令人信服和不完整。</li>
+</ol>
 <h2 data-tts="ffde4345298940d0">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.johnhawks.net/p/our-new-paper-on-why-human-evolution-accelerated">Our new paper on why human evolution accelerated</a></span>（2007-12-12）<span class="d">从 Darwin 的「数量」、Fisher 的大种群到 HapMap 扫描：22% 到 78% 的检测窗口、零假设如何被推翻、「一百倍」的算法，以及新石器人骨里为什么没有乳糖耐受基因。</span></li>

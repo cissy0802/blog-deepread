@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -221,6 +229,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="orig">我深深地知道接受错误想法的危害性，所以我也希望大家都具有批判的思维，不要盲目的接受我说的话。我不喜欢「大神」或者「牛人」这种称呼，我也反感那种自称膜拜我的人，因为正是这种人让权威主义现在横行于世。</span><span class="tr">I know deeply how harmful it is to accept wrong ideas, so I hope all of you think critically and do not blindly accept what I say. I dislike being called a "god" or a "guru," and I am repelled by people who declare they worship me — because it is exactly those people who let authoritarianism run rampant today.</span><cite>"My Story with Authority," 4 January 2014</cite></blockquote>
 <p>That is the only correct way to read this blog, and it is a prescription he wrote himself.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Buddhism · The finger pointing at the moon (Shurangama Sutra)</b>: The sutra warns that someone shown the moon by a pointing finger, who then takes the finger for the moon, loses not only the moon but the finger too. Later logicians treating the transcription of Frege's circuit diagrams as the sacred core is the same shape. The difference: Buddhism holds that no finger ever fully captures the moon, while Wang believes the substance is a tree you can write down exactly, visible through a better encoding.</li>
+<li><b>Psychology · Serial reproduction (Frederic Bartlett, 1932)</b>: Bartlett had people retell the Native American tale "The War of the Ghosts" down a chain; within a few links the unfamiliar details vanished and the story bent toward what the tellers already knew. It is a lab version of knowledge rotting in transmission. Unlike Wang's case, the drift ran toward the listeners' culture, not toward mistaking the encoding for the thing.</li>
+<li><b>Evolution · The recurrent laryngeal nerve</b>: In mammals the left branch of this nerve dives into the chest, loops under the aortic arch, and climbs back to the larynx, a detour inherited from the gill-arch layout of fish ancestors; in a giraffe it runs metres out of its way. It is evolution's software pearl. Unlike software, evolution can never start over, only patch; Wang's target is people who could rewrite but treasure the patch.</li>
+<li><b>Cognitive science · The split-attention effect (John Sweller)</b>: Cognitive load theory found that the same material is learned worse when people must shuttle between two places to piece it together; the extra load comes from the layout, not the content. Wang's "extra turn" is that load. The difference: Sweller measured it with controlled group experiments, Wang with one example and his own head.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Wang Yin's root question: when an idea reaches you through textbooks, jargon, prizes and lineages, what is left of it?</li>
+<li>Frege's 1879 Begriffsschrift contains no formulas, only circuit-like diagrams; the later logical symbols are just a transcription.</li>
+<li>A "software pearl" is a workaround forced by an early design mistake that hardens until people who never knew its origin treasure it.</li>
+<li>Pearls protect themselves: once a workaround becomes shared vocabulary, knowing it signals status and questioning it looks like ignorance.</li>
+<li>Code is a structure with topology, not a string; text is only an encoding, and parsing is merely "step zero of the long march."</li>
+<li>Wang Yin tests understanding by asking whether you can write its interpreter; at Google in 2011 he built an abstract-interpreter prototype over one weekend.</li>
+<li>Good code is code a human head can hold without jumping elsewhere; "clever" currying makes the reader take one more mental turn.</li>
+<li>Going back to sources, implementing, and counting are all one-person loops, and applied to myopia they collide with randomized controlled trials.</li>
+<li>Wang Yin deleted the two most-cited articles on his own site, leaving readers with reposted copies of unknown provenance.</li>
+<li>Bartlett's 1932 serial-reproduction experiments showed a story retold down a chain gets reshaped into what the tellers already know.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.yinwang.org/posts/authority">我和权威的故事 (Wǒ hé quánwēi de gùshi) — "My Story with Authority"</a></span><span class="d">4 January 2014, the longest post on the site. From Knuth's cheques to Frege's circuit diagrams to the letter from Cornell left in a pigeonhole. The origin point of his entire outlook is here.</span></li>

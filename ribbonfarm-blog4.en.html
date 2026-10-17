@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -277,6 +285,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>He adds that this is not an entirely flippant observation: the blog in its heyday was a product of open-source software, cheap hosting, and above all free distribution. He even names names, saying several of his big hits — including "Premium Mediocre" and 2013's "The Locust Economy" — had ZIRPy subtexts. <strong>A man who spent seventeen years arguing that people cannot see which simplification they inhabit finally turned the instrument on himself: what looks like timeless insight may be the product of one particular set of macroeconomic conditions.</strong> He does not expect to see such rates again in his lifetime, and therefore does not expect to see such a blogosphere again either.</p>
 <p>He is equally unsparing about his own prose. Explaining why he never felt at home on Substack, where the prevailing mode is an earnest "chamber music" style, he says: <strong>"I'm too much of a careless shitposter, and the chamber music style calls for a certain earnestness of approach."</strong> He also discloses something many readers do not know: after 2020 he <em>deliberately</em> stopped writing for virality, and went out of his way to write anti-viral posts. "The Internet of Beefs" was "not just my last viral post, it was my last viral-<em>intent</em> post."</p>
 <p>And one final practical limit: <strong>the blog is over.</strong> It stopped in November 2024 and became a static archive in April 2026. He writes elsewhere still, but the mind described on this page is one that has finished its shift.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Neuroscience · predictive processing (Andy Clark)</b>: The brain mostly perceives its own predictions and passes up only the mismatches; adults filing the parrot in half a second is prediction error swallowed fast. The difference: Rao's filing is also a social performance — your face must look like that of someone who has seen a parrot.</li>
+<li><b>Psychology · need for cognitive closure (Arie Kruglanski)</b>: Noise and time pressure push people to seize on a firm answer and freeze there — "legibility quells anxiety" inside one mind. The difference: Kruglanski measures individual judgement; Rao cares about that anxiety being poured, with state power, into forests and cities.</li>
+<li><b>Evolutionary biology · Toxoplasma and its rats (Berdoy et al., 2000)</b>: Infected rats lose their fear of cat urine and are even drawn to it, which carries the parasite back into a cat. As with "products consuming humans", the host looks fully functional while its behaviour is redirected. Unlike it, the parasite wants its host eaten; the consumer economy needs the host alive and paying for years, so the hollowing-out has to be gentle and slow.</li>
+<li><b>Evolutionary biology · the handicap principle (Amotz Zahavi, 1975)</b>: Signals are believable because they are costly; a peacock cannot fake its tail. Premium mediocre inverts this, hanging "premium" on cheap peripheral touches — and since buyer and seller both know, it is a shared performance, not an honest signal.</li>
+<li><b>Distributed systems · "A Note on Distributed Computing" (Jim Waldo et al., 1994)</b>: It attacked dressing remote calls up as local ones, the same move as a normalcy field dressing a flight up as a lounge. The difference: Waldo says latency and partial failure eventually leak through and break the system; Rao's field mostly holds, and the price is nausea.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Venkatesh Rao's root question: we must compress reality to act in it, so who does the compressing, and who pays for what gets dropped?</li>
+<li>Prussian scientific forestry planted one species in rows for legibility, and the second generation collapsed: imposed legibility makes rich realities brittle.</li>
+<li>Legibility is a failure mode of thought independent of era and ideology, driven as much by anxiety at apparent chaos as by a wish to control.</li>
+<li>The Gervais Principle treats organisations as intrinsically pathological, and "Loser" means trading freedom for a paycheck, not a character judgement.</li>
+<li>Over-performing Losers get promoted into the middle layer that absorbs blame, while strategic under-performers who see the game are groomed for the top.</li>
+<li>The manufactured normalcy field: technology spreads by refusing to change the experience, so airline passengers don't really fly.</li>
+<li>Rapid change produces not future shock but future nausea: you can still operate everything, yet can no longer feel where you are.</li>
+<li>The premium mediocre consumer knows her purchases are mediocre and performs belief for a luck-driven economy, like holding a naked call option.</li>
+<li>Scott Alexander found the Gervais types match few real people, and the core claim, testable with promotion data, has never been tested.</li>
+<li>Rao himself concluded that Ribbonfarm was sponsored by ZIRP: insights that felt timeless may belong to one macroeconomic moment.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://ribbonfarm.com/2010/07/26/a-big-little-idea-called-legibility/">A Big Little Idea Called Legibility</a></span> (2010)<span class="d">The most internally cited post on the site (50 backlinks). The Prussians remaking a forest so they could read it, and then the forest dying; plus the seven-step recipe for failure.</span></li>

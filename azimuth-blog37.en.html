@@ -50,6 +50,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -216,6 +224,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>Third, the analogies may be only formal.</strong> Quantropy is an elegant formal derivation, but he marked its cracks himself: the branch problem of the complex logarithm is "disturbing", and since amplitudes aren't probabilities, it's unclear what "expected action" means. The match between Hamilton's equations and the Maxwell relations produced a pair of extra equations that "look weird", which he is "sure" are correct. But "correct" and "physically meaningful" are different things. For someone whose main discovery tool is analogy, the systematic risk is taking "the equations look the same" for "the things are the same". In his 2026 system dynamics essay he says something about another field that applies to his own method: such modeling "is not so much a formalism for making long-range predictions about what will happen, as a way to find what can happen, and seek leverage points".</p>
 <p><strong>Fourth, his idea of "application" is a mathematician's idea.</strong> In 2015 he relayed a reflection by two Google engineers. In 2007 Google had boldly launched a program to make renewable energy cheaper than coal, and in 2011 it shut the program down, without his ever learning why. The engineers later calculated that even their best-case scenario would not bring atmospheric CO2 back below 350 ppm this century. Baez's comment was one line: "This is not surprising to me." He knows the scale of the problem is in engineering and politics. Yet his own contribution, following his comparative advantage, sits at the point farthest from those levers: the foundations of mathematics. That isn't a mistake, it's a choice. Readers should just know that this blog answers "what can a mathematician do?", not "what does the planet need?"</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Neuroscience · the free energy principle (Karl Friston)</b>: Friston argues that the brain approximates Bayesian inference by minimizing "variational free energy", a name borrowed straight from statistical mechanics. That is the same skeleton as "a population is a hypothesis, and natural selection updates it by Bayes' rule". The difference: Friston means one brain inferring in milliseconds, Baez a population sifted over generations, and Baez drew his own line: run the same mathematics in a chemical reaction network and nobody calls it learning.</li>
+<li><b>Psychology · structure-mapping theory (Dedre Gentner, 1983)</b>: Gentner holds that a good analogy carries over relations, not attributes. The atom resembles the solar system because small things orbit a big one, not because of color or heat. Baez's tables are analogies of pure relation. The difference: Gentner describes how people think, while Baez must compute what goes in the blank, and drops the analogy if the computation fails.</li>
+<li><b>Complexity science · nearly decomposable systems (Herbert Simon, 1962)</b>: Simon's parable of two watchmakers argues that only systems assembled from stable subassemblies can be built or evolved at all, the same instinct behind compositionality. The difference: Simon's subsystems are only approximately separable, while Baez's black-boxing demands that outside behavior be pinned down exactly by a mathematical object.</li>
+<li><b>Chinese philosophy · "names are guests of reality" (Zhuangzi, Free and Easy Wandering)</b>: the hermit Xu You calls a name a mere guest of the real thing. Rename position as entropy and momentum as temperature, and the equations still hold; Baez, too, recognizes one reality under many names. The difference: Zhuangzi uses the point to dismiss titles, while Baez depends on naming, since a line-by-line renaming table is what lets an idea move between fields.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>In 2012 John Baez realized that Hamilton's equations in classical mechanics are a special case of the Maxwell relations in thermodynamics, with the variables renamed.</li>
+<li>Starting Azimuth in 2010, Baez shifted gears: the deep secrets of math and physics could wait, the planet's trouble could not.</li>
+<li>The answer to Yudkowsky's "environmentalism isn't your best use" was: don't chase a snowball already rolling; find where a mathematician's craft plugs into the problem.</li>
+<li>Green mathematics began with one observation: Feynman diagrams, circuit diagrams, Petri nets and Energese show every field reinventing the same kinds of diagrams.</li>
+<li>Drawn as a Petri net, rabbits being born and wolves dying match the creation and annihilation operators of quantum field theory.</li>
+<li>Quantropy: swap probabilities for amplitudes in the entropy formula, find the stationary point, and out comes Feynman's sum over paths.</li>
+<li>Entropy is not disorder; it is the information about a situation we don't know but could in principle learn.</li>
+<li>The replicator equation mirrors Bayesian updating: a population is a hypothesis about how to survive, and natural selection updates it.</li>
+<li>Baez's standard move is to tabulate the known correspondences between two fields, then compute what belongs in the blanks.</li>
+<li>When analogy is the main tool of discovery, the systematic risk is mistaking "the equations look the same" for "the things are the same".</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://johncarlosbaez.wordpress.com/2011/04/24/what-to-do/">What To Do? (Part 1)</a></span> (2011-04-24)<span class="d">His reply to Yudkowsky's argument that environmentalism was not his best option: why he left higher gauge theory, the smoke in the kitchen, comparative advantage, and the closing line about fooling oneself.</span></li>

@@ -43,6 +43,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -409,6 +417,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>4. The coffee-cup paper's experimental section was overturned, and fairly brutally.</strong> Not merely "we didn't see it this time," but a proof that the model they'd chosen <em>cannot</em> produce large apparent complexity. The core conjecture may still be right, but the part of the paper that drew the most attention at the time — "we measured the bump" — did not hold in 2014. It's worth noting that he wrote this up more clearly than any critic did.</p>
 <p><strong>5. "The Kolmogorov option" has a self-serving structure.</strong> His 2017 proposal: facing an ideology you cannot shift single-handed, the move is to "build up fortresses of truth in places the ideological authorities don't particularly understand or care about, like pure math, or butterfly taxonomy, or irregular verbs" — avoid frontal assault, seek common ground, even a shared enemy, and wait. It's movingly described. Its problem is that <strong>it lets a well-placed person re-describe silence as dignified long-termism.</strong> He half-concedes it ("But, yes, there are places even I won't go, hills I won't die on") and inoculates against the charge with his own record of abuse: "how many times have you been denounced online, and from how many different corners of the ideological spectrum? How many people have demanded your firing? How many death threats have you received? […] Answer and we can talk about cowardice." That has real weight — but it answers the question of whether <em>Scott Aaronson</em> is brave. <strong>Whether a strategy can be abused and whether the person proposing it is brave are two different questions.</strong></p>
 <p><strong>6. The late-2014 controversy (bibliographic facts only).</strong> In the comment thread of a post about the MIT professor Walter Lewin, he wrote a long comment — known ever since by its number, <strong>comment #171</strong> — about the suffering of his adolescence around his fear of women, and the role he believed certain feminist discourse had played in it. The comment was widely circulated; Amanda Marcotte at <em>Salon</em> and Laurie Penny at the <em>New Statesman</em> each wrote long responses, and a weeks-long argument spread across a great many blogs. His blog still carries a category called <em>Obviously I'm Not Defending Aaronson</em>, with 59 posts, named after a phrasing that recurred throughout the affair. <strong>I have not read those critiques in the original, so I stop at the bibliographic record here and won't paraphrase arguments I haven't read.</strong> One checkable thing, though: the affair was nearly twelve years ago, and the category is still in use.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Philosophy and Buddhism · Parfit's teletransporter and no-self</b>: In <em>Reasons and Persons</em> (1984), Derek Parfit imagines a machine that rebuilds you on Mars and concludes that identity is not what matters, with an appendix setting this beside the Buddha's no-self. Aaronson runs the other way: if consciousness is bound to unclonable degrees of freedom, the machine can't be built. Parfit assumes copying and lets the self go; Aaronson asks first whether it's possible.</li>
+<li><b>Complexity science · the edge of chaos (Christopher Langton, 1990)</b>: Tuning a rule parameter in cellular automata, Langton found complex computation clustered in a thin band between frozen order and chaos, the same hump as the coffee cup. But his axis is the rule; the coffee cup's is time.</li>
+<li><b>Evolution · ring species (Ensatina salamanders)</b>: Around California's Central Valley, neighboring Ensatina populations interbreed, yet the two ends can't when they meet, like the frog parable's blurry waters. Unlike P versus NP, a ring species is a true gradient, with no fence anywhere.</li>
+<li><b>Neuroscience · Soon and colleagues' fMRI prediction (2008)</b>: Soon, Haynes and colleagues predicted a left-or-right choice from brain scans up to about ten seconds before subjects felt they'd made it, at roughly 60% accuracy: the lab's best shot at the sealed envelope. Aaronson's question is whether perfect prediction is possible even in principle.</li>
+<li><b>Psychology · Tetlock's superforecasters</b>: In intelligence-funded forecasting tournaments (2011–2015), Philip Tetlock found the best forecasters used fine-grained probabilities and kept public score; a stated "Faust parameter" of 0.02 is the same move. "Live possibility," by contrast, is deliberately not a probability, so there's nothing to grade.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>The masthead of Shtetl-Optimized has long carried a correction: quantum computers won't solve hard problems by trying every answer in parallel.</li>
+<li>Scott Aaronson argues that the gap between feasible and infeasible computation is a law-like constraint, not an engineering detail.</li>
+<li>Quantum algorithms work not by parallel search but by choreographing interference so that paths to wrong answers cancel.</li>
+<li>The Sure/Shor separator turns quantum skepticism into a math challenge: say where quantum mechanics stops working.</li>
+<li>P≠NP is unproved, but tens of thousands of problems have never crossed between P and NP-complete, like a hypothesis surviving severe tests.</li>
+<li>For Set Cover, approximation algorithms and hardness proofs both stop at exactly ln(n), as if an invisible electric fence stood there.</li>
+<li>Complextropy adds resource bounds to sophistication to explain why "interestingness" in a coffee cup rises and then falls.</li>
+<li>Brent Werness showed the coffee-automaton paper's complexity bump was an artifact, and the correction went at the top of the post.</li>
+<li>Brains can't be copied, rerun or moved to new hardware like programs, so Aaronson wonders if consciousness rests on unclonable degrees of freedom.</li>
+<li>The invisible-fence evidence has a weak spot: many failures might reflect one hidden bottleneck shared by current proof techniques.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://scottaaronson.blog/?p=124">Reasons to believe II: quantum edition</a> (September 2006)</span><span class="d">Thirteen arguments for the feasibility of quantum computing; the fourth introduces the Sure/Shor separator — the mathematical challenge he issued to the skeptics.</span></li>

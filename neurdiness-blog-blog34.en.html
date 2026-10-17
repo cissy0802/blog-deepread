@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -241,6 +249,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">Knowing this makes every bit of time I spend not working on climate a pure indulgence. […] I'm on borrowed time here. The fact that I get to spend any time speculating about the brain and mind is a gift.</span><cite>An Introduction to the Lindsay Lab, 2022-10-19</cite></blockquote>
 <p>I would not call this wrong. But note the structure: someone who spent a decade asking who set the standards we use to decide what matters, when ranking her own work, switched to the standard of which task makes her feel least guilty. In the 2025 piece she acknowledges the tail of this herself — even after changing direction, even after making campaign calls, "there was always the sense that I could have, and should have, done more." She writes that up as the cost of agency, which is right; it is also a ranking rule with no stopping point.</p>
 <p><strong>Sixth, a fact that has to be stated plainly: the blog has essentially stopped.</strong> After the cliff of May 2013 there was one post in four years; after saying in 2022 that she wanted to return to semi-regular blogging, three posts arrived in three years. Her good material now lives at The Transmitter, in papers, and in the book. Part of the reason this page can thread her thought into a single line is that <strong>she wrote so little on the blog</strong> — little enough that every post is a node and there is no noise. That is luck for the reader. It is not a recommendation for blogging.</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Buddhism · Nagasena's chariot (Milindapanha)</b>: King Milinda presses the monk on who "Nagasena" really is, and Nagasena asks what a chariot is. Not the pole, not the axle, not the wheels; take it apart and no chariot turns up, so "chariot" is just the name for the parts assembled. That is Lindsay's fear of explaining thought away: once something can be taken apart, we declare it gone. The direction is reversed, though. Buddhism treats the emptiness it finds as insight that loosens the grip of "self"; Lindsay refuses the step, and thought you can take apart is still thought.</li>
+<li><b>Philosophy · INUS conditions (J. L. Mackie, 1965)</b>: Mackie argued that what we call "the cause", a short circuit in a house fire, say, is only a non-redundant part of a whole set of conditions that is sufficient together, itself neither necessary nor sufficient. Same structure as Lindsay's "jointly sufficient". The difference: Mackie repairs the word "cause" to keep using it; Lindsay says stop arguing about sufficiency and study the conditions.</li>
+<li><b>Evolution · Convergence and the octopus eye</b>: Octopuses and vertebrates evolved camera eyes independently; one task pushed two lineages toward similar solutions, much as networks trained only to recognize objects end up matching monkey IT activity for free. Unlike: the octopus retina isn't inverted and has no blind spot. Convergence happens at the level of function; the parts can still differ.</li>
+<li><b>Software engineering · Mutation testing (DeMillo, Lipton and Sayward, 1978)</b>: Plant known small bugs in a program and see whether the test suite catches them. It tests the tests, the same move as Lindsay building a phenomenon into an artificial network and checking whether analysis tools recover it. Unlike: mutation testing leans on the assumption that small planted bugs stand in for real ones, and whether a planted network phenomenon resembles what the brain does is just as open.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>In 2012 Grace Lindsay counted neuroscience conference abstracts: 44 of 17,253 mentioned consciousness, while 285 were on schizophrenia.</li>
+<li>Whenever a machine nears the bar for intelligence, the bar moves up; Vaucanson's fake digesting duck is the image of that retreating target.</li>
+<li>Judged by the criteria vision scientists wrote down in 2007, CNNs did not move the target of vision science; they reached it.</li>
+<li>The better question about a model is what it cheats with: non-biological tricks like weight sharing and max pooling matter more than missing biological details.</li>
+<li>Every abstraction has a stated price: treat backpropagation as mere parameter fitting, and the learning curve can no longer be compared to how animals learn.</li>
+<li>Complex behavior needs a whole set of conditions to be jointly sufficient, so claims that one brain region is "necessary and sufficient" nearly always overreach.</li>
+<li>Neuroscience's analysis tools have never been calibrated, and artificial neural networks, fully observable inside, make an ideal test bench for them.</li>
+<li>Lindsay inoculates herself with history: wrong conclusions can look just as legitimate as right ones and win just as many smart supporters.</li>
+<li>Bowers and colleagues counter that predicting brain signals well is not the same as being brain-like, and deep nets explain almost no psychology experiments.</li>
+<li>Nagasena's chariot shares the shape of "explaining thought away": once something can be taken apart, it is easily declared not to exist.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><a href="https://gracewlindsay.com/2012/09/24/conscious-unawareness/"><span class="t">Conscious unawareness</span></a> (2012-09-24)<span class="d">The 17,253 against 44 against 285 post, the second on her blog. "Consciousness? That's a dirty word" is from here, as is the inversion: we need to study consciousness in order to find out what it is. She returned to the topic deliberately in 2018 (<a href="https://gracewlindsay.com/2018/02/03/consciousness-revisited/">Consciousness revisited</a>), which contains "to do rigorous science, sometimes you have to pick a few nits."</span></li>

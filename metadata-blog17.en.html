@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -306,6 +314,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>But on the same blog, the widely shared satirical sketch from March 2025 — Ponder Stibbons announcing to the Dean that he is leaving the ivory tower — carries a byline he added himself: <strong>"(Written by a golem named ChatGPT with some prompting)."</strong> So his sharpest critique of AI writing and his most-circulated piece of AI-ghostwritten prose are seventeen months apart, by the same hand.</p>
 <p>In fairness, he leaves his own door open. Having finished the argument against AI writing, the very next thing he says to the reader is: <strong>"Tell me where my logic does not hold up."</strong> Where most people would end on a conclusion, he ends on an invitation — which is precisely the system he installed for himself in 2018, still running eight years later.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Physics · simultaneity in special relativity</b>: Einstein showed in 1905 that whether one distant event happened before another depends on the reference frame; there is no universal "now", and Lamport has said his logical clocks came from that idea. Alike in trusting causality over absolute time; unlike in that HLC forces a total order for engineering convenience, while in relativity two spacelike-separated events simply have no fact of which came first.</li>
+<li><b>Psychology · Kahneman's lazy System 2</b>: In Thinking, Fast and Slow, the effortful System 2 obeys a "law of least effort" and stays offstage whenever it can, the same observation as brains preferring shallow work and dodging hard thinking. The difference: Kahneman is gloomy about debiasing by willpower, and MAD questions sidesteps willpower entirely by baking the questions into the format.</li>
+<li><b>Creativity research · Koestler's bisociation</b>: In The Act of Creation (1964), Arthur Koestler argued that jokes, scientific discovery and art share one structure, two unrelated frames of reference colliding. "A good question is like a good joke" is nearly a field manual for it. Where they part: Koestler describes the moment an answer lands, while Demirbas uses the same gut reaction to spot a question that has no answer yet.</li>
+<li><b>Ecology · Scheffer's regime shifts in lakes</b>: Marten Scheffer and colleagues described in Nature (2001) how a shallow lake flips suddenly from clear to turbid as nutrients rise, and how cutting nutrients back to the pre-flip level does not bring it back, because the turbid state sustains itself. That is hysteresis, and it is the same picture as a metastable failure: remove the trigger and the system stays stuck. Unlike a lake, which needs nutrients pushed far below the old level, a server can break its own feedback loop through load shedding and a hard retry budget.</li>
+<li><b>Eastern philosophy · Zhuangzi's Cook Ding</b>: The cook never hacks at bone; his blade follows the gaps between the joints, and after nineteen years it is as sharp as new. Modeling abstraction is also about finding the right cut, slicing along the plane that matters for the property and shaving off the rest. Unlike the cook, who follows the ox's own anatomy, Demirbas stresses that this cut usually looks nothing like the system's actual component layout.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>The post Murat Demirbas links back to most on his blog Metadata is not a technical one but "Mad questions", a 2018 piece about asking questions.</li>
+<li>The founding axiom is that everyone has a humble brain, so you win with replicable processes and tools rather than genius or flashes of insight.</li>
+<li>Adding a mandatory MAD questions section to the end of every post turned questioning from an act of willpower into a habit enforced by format.</li>
+<li>A good question is like a good joke: it carries surprise and a change of perspective, and you feel it physically when you hit one.</li>
+<li>Hybrid Logical Clocks keep causal order, constant size and closeness to physical time all at once, and are now used by CockroachDB, MongoDB and others.</li>
+<li>In distributed databases time is a shared reference frame, and by Barbara Liskov's rule it should buy performance, never correctness.</li>
+<li>Modularity abstraction hides details, while modeling abstraction strips away the irrelevant and deliberately exposes the concurrency that should leak.</li>
+<li>A metastable failure is overload that persists after the trigger is gone, usually sustained by load amplification from retries.</li>
+<li>Two conditional rely-guarantee contracts can both keep passing while the system collapses; the fix is an unconditional hard budget on retries.</li>
+<li>One of Demirbas's blind spots: the fights stay in the margins and the published post is the reconciled version, so the blog is a fine translator but not a reliable filter.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://muratbuffalo.blogspot.com/2018/01/mad-questions.html">Mad questions</a></span><span class="d">2 January 2018. The most self-linked post on the blog (46 times). A tenured professor publicly wondering whether he has been domesticated, then installing an enforced system for questioning. The one-year review is <a href="https://muratbuffalo.blogspot.com/2018/12/master-your-questioning-skills.html">Master your questioning skills</a>, source of "a good question is like a good joke."</span></li>

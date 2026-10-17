@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -238,6 +246,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>问题出在最后一段。他从「证据是含混的」滑到了「我因此更倾向于站在 Friedman 那一边」——而这一步超出了他自己的证据允许的范围。按他自己划的三个问题，第三个（对社会有没有好处）他基本没有作答：他检视的全部实证都是关于公司利润和投资者回报的，也就是前两个问题。一套<strong>只测量了价值和回报</strong>的证据，没法用来结论说「公司不该承担社会责任」——因为社会收益本来就落在这两把尺子之外。他在方法上最严厉的那条要求（别拿回答了 A 的研究去推销 B 的结论），在这篇的结尾被他自己违反了一次。这是我的判断，不是他的。</p>
 <p><strong>第三条是立场带来的、他不太可能看见的那种偏斜。</strong>他的全部框架——两个游戏、故事与数字、生命周期——都预设了一个<strong>可以被定价的世界</strong>：存在一个「基本面」，存在现金流，存在一个价格终将靠近它的重心。这个预设在上市公司身上工作得极好。但它对那些价值不以现金流形式出现的东西基本失语——公共品、外部性、还没有商业模式的科学。他当然可以说那不是他的题目，而这也确实是个公平的回答。只是当他从「我的工具量不到它」走到「它大概没那么重要」时，那一步就不再是工具问题了。</p>
 <p><strong>最后，他自己写下过关于自己的最狠的那条。</strong>2008 年开站第六天，他承认自己在市场崩塌的那个下午没能按下抄底键，选了「再等等看」，然后补了一句：你没法强迫自己采用一种和你的人格不匹配的投资风格。这句话读起来像谦逊，其实是一条很硬的自我限定——它等于承认，<strong>他写了十八年的这套东西，并不能保证连他本人都用得上。</strong></p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>量子力学 · 互补原理（Niels Bohr，1927）</b>：电子在一种实验里像波、在另一种实验里像粒子，两种描述都对，取决于你问什么；Twitter 同时是好交易和坏投资，也是问题不同、答案不同。不像的是，波和粒子永远不会合一，价格按 Damodaran 的假设终将向价值靠拢。</li>
+<li><b>西方哲学 · 康德「思维无内容是空的，直观无概念是盲的」</b>：《纯粹理性批判》（1781）说知识要靠概念和感性直观合作，缺一边就不成；「没有叙事的数字只是建模，没有数字的叙事只是讲故事」是同一个句式、同一种结构。不像的是，康德那里的综合在每一次认知里自动发生，估值里的综合得靠人刻意去做，做得好不好还由市场当场打分。</li>
+<li><b>演化生物学 · 过度自信的演化（Johnson 与 Fowler，2011）</b>：两人在《Nature》上用模型说明，只要争夺的资源相对冲突代价足够值钱，过度自信的个体就会被自然选择留下来，正好对上「过度自信是创业的前置条件」。不像的是，模型里自信者平均占便宜，大市场幻觉里人人自信，多数人却输了。</li>
+<li><b>心理学 · 「少即是多」的启发式（Gigerenzer 与 Goldstein，1996）</b>：只看一条最有效线索的「择优」规则，在他们的模拟里预测得不输、常常胜过用上全部信息的回归模型，和「越不确定，模型越简单」是同一条直觉。不像的是，启发式干脆扔掉信息，Damodaran 只是少用旋钮，仍要把故事翻译成数字。</li>
+<li><b>生物进化 · r/K 选择（MacArthur 与 Wilson，1967）</b>：r 策略的物种长得快、繁殖多、寿命短，K 策略的物种慢而持久；「按狗的年龄变老」的科技公司就是 r 型：起得快、成熟期短、跌得急。不像的是，物种的策略写在基因里，公司却可以选择换一种活法。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>2015 年网络广告类上市公司的股价，合计隐含 2025 年 5230 亿美元广告收入，超过全球网络广告市场约 4660 亿的慷慨估计。</li>
+<li>Aswath Damodaran 区分两个游戏：定价由供需和动量决定，估值由现金流、增长和风险决定，两边可以同时正确。</li>
+<li>Twitter 可以在同一时刻既是好交易又是坏投资，因为谈价格和谈价值的人回答的是两个问题。</li>
+<li>好公司和好投资是正交的两维：前者看资本回报是否超过资本成本，后者看价格是否低于价值。</li>
+<li>价值分歧是叙事分歧的翻译：Uber 按出租车市场估约 59 亿美元，按 Bill Gurley「让人不买车」的故事重估得 540 亿。</li>
+<li>好的估值让数字被连贯的叙事绑在一起，同时让讲故事被数字拽在地上。</li>
+<li>大市场幻觉不需要任何人非理性：每个创业者和风投都高估自己的胜率，加总起来就是整条赛道被高估。</li>
+<li>不确定性越大，估值模型应当越简单，估初创公司只盯收入增长、营业利润率和再投资三个变量。</li>
+<li>科技公司按狗的年龄变老：起得快、成熟期短、跌得急，所以颠覆容易，靠颠覆赚钱难。</li>
+<li>Damodaran 公开承认 2014 年低估了 Uber，这套方法在公司改变市场形状时，会稳定地把估值往下拽。</li>
+</ol>
 <h2 data-tts="a14e75b6e2ceb462">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://aswathdamodaran.blogspot.com/2013/10/twitter-ipo-why-good-trade-be-bad.html">Twitter IPO: Why a good trade be a bad investment (or vice versa)?</a></span><span class="d">2013 年 10 月 10 日。全站被后续文章回引最多的一篇。他在这里把定价游戏和估值游戏彻底拆开，并明确拒绝贬低交易者。</span></li>

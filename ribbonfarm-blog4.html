@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -367,6 +375,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>他补充说这不是一句纯粹的俏皮话：这个博客鼎盛期是开源软件、廉价托管，以及最重要的——不要钱的分发渠道的产物。他甚至点名说，他的几个大热门（包括《优质平庸》和 2013 年的《蝗虫经济》）都有 ZIRP 的潜台词。<strong>一个花了十七年论证「人看不见自己身处何种简化之中」的人，最后把这个工具对准了自己：那些看上去是永恒洞察的东西，可能只是一段特定宏观经济条件的产物。</strong>他不认为有生之年会再见到那种利率，也因此不认为会再见到这样的博客圈。</p>
 <p>他对自己文风的判词同样不留情面。谈到为什么在 Substack 上待得不自在时，他说那边流行的是一种「室内乐风格」的认真写作，而他不擅长：<strong>「我太像个漫不经心的垃圾发帖者了，而室内乐那种风格要求某种恳切。」</strong>他还交代了一件很多读者不知道的事：2020 年之后他<em>刻意</em>不再写会火的文章，甚至刻意写反流行的文章——《牛肉互联网》「不只是我最后一篇爆款，也是我最后一篇<em>以爆款为目的</em>的文章」。</p>
 <p>最后一条事实上的限制：<strong>这个博客结束了。</strong>2024 年 11 月停更，2026 年 4 月转为静态存档。他仍在别处写作，但本页所讲的这个头脑，是一个已经收工的头脑。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>神经科学 · 预测加工（Andy Clark）</b>：大脑主要在看自己的预测，只上传对不上的误差；成年人半秒内把鹦鹉归档，就是误差被迅速吞掉。不像的是，Rao 写的归档还是社交表演：脸得像见过鹦鹉的人。</li>
+<li><b>心理学 · 认知闭合需要（Arie Kruglanski）</b>：噪音和时间压力让人抓住一个确定答案就冻结，正是「可读性平息不安」的个人版。不像的是，Kruglanski 测个人判断，Rao 关心这种不安借权力浇进森林和城市。</li>
+<li><b>生物进化 · 弓形虫操纵宿主（Berdoy 等，2000）</b>：感染弓形虫的大鼠不再怕猫尿气味，反被吸引，寄生虫借此回到猫体内。这和「产品在消费人」一样，宿主看似功能完好，行为却被改了方向。不像的是，弓形虫要宿主被吃掉；消费品要宿主长期活着、继续付钱，所以掏空必须温和而持久。</li>
+<li><b>生物进化 · 累赘原理（Amotz Zahavi，1975）</b>：信号可信是因为贵，孔雀尾巴装不出来。优质平庸正相反，「优质」全挂在廉价的边缘处；而且买卖双方心照不宣，是合谋表演，不是诚实信号。</li>
+<li><b>分布式系统 · 《分布式计算笔记》（Jim Waldo 等，1994）</b>：它批评把远程调用伪装成本地调用，和常态场把飞行伪装成候机室是同一招。不像的是，Waldo 说延迟和局部故障迟早漏出来让系统崩；常态场大多撑得住，代价是作呕。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Venkatesh Rao 的根问题：人必须把现实压成看得懂的版本，关键是谁来压、谁为丢掉的部分付账。</li>
+<li>普鲁士科学林业为了可读只种一种树，第二代林子垮掉：强加的可读性让丰富的现实变脆。</li>
+<li>可读性是与时代和意识形态无关的思维失败模式，诱因常是混乱带来的不安，而不只是控制欲。</li>
+<li>格瓦斯法则说组织本身就是病态构造，「输家」指用自由换工资的经济处境，而不是人格评价。</li>
+<li>超额努力的输家被提拔进中层夹层，看穿游戏、出工不出力的人反而被往顶层培养。</li>
+<li>人造常态场：新技术靠伪装成旧体验扩散，坐飞机的人并不在飞；变化过快的症状是作呕。</li>
+<li>优质平庸的消费者明知买的是平庸货，仍为靠运气的经济表演相信，像持有一份裸看涨期权。</li>
+<li>Rao 的主要工具是造词，代价是一个好名字会让人以为事情已经解释完了。</li>
+<li>Scott Alexander 指出格瓦斯法则的类型对不上真人，其核心断言本可检验，却从没人验过。</li>
+<li>Rao 自认 Ribbonfarm 由零利率政策赞助：看似永恒的洞察，可能只是特定宏观条件的产物。</li>
+</ol>
 <h2 data-tts="cc329b531ad0bb88">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://ribbonfarm.com/2010/07/26/a-big-little-idea-called-legibility/">A Big Little Idea Called Legibility</a></span>（2010）<span class="d">全站被回引最多的一篇（50 次）。普鲁士人为了看懂森林而重造森林，然后森林死了；以及那个七步失败配方。</span></li>

@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -230,6 +238,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>有名有姓的批评者也有。</strong>Tyler Cowen 在 Marginal Revolution 的链接里点名批评了他 2013 年那篇《人类演化中的音乐》，用词是「关于音乐在人类演化中的不实主张」；Simler 自己转述了这条，并承认「说句公道话，那篇文章确实相当思辨」。更有分量的一条来自 Scott Alexander：2015 年 10 月 21 日，Slate Star Codex 发了一篇题为《Contra Simler on Prestige》的长文，专门回应他那篇社会地位；Simler 把这件事列为当年的高光，称它是「一篇彻底的回应／评论」。<strong>本页写作时该站在本环境的网络策略下不可访问，我没有读到原文，因此不复述它的论证——只报告这个书目事实，供你自己去查。</strong></p>
 <p><strong>还有一类风险，是他的框架被误读的方式。</strong>《人格：一场两人或更多人的游戏》（2014）说「人格」是一份社会契约：你越表现得像个人，就越会被当作人对待。2015 年他不得不补一条更新，因为太多读者把它读成了规范主张——他强调这篇完全是描述性的，「但这绝不意味着可以虐待他们或任意对待他们。他们仍然是人，值得被人道地对待——只不过替这一点辩护的是同理心，不是人格的逻辑」。这类「揭穿式」框架的危险正在于此：机制描述很容易被当成许可证。围栏他补上了，但是事后补的。</p>
 <p><strong>最后，停更这件事本身。</strong>2018 年书出版之后，Melting Asphalt 只更新过两次，两次都不是文章而是可玩的模拟器；2020 年 3 月之后再无更新。一个以「不写会过期的东西」为原则、以散文为唯一形式的写作者，在写完那本书之后，把最后的力气花在了滑块和网格上。这可能意味着他觉得散文对他要说的事情已经到头了——《Going Critical》里那些只有拖着滑块才懂得了的东西（比如「有些想法在城市里能扩散，在乡下数学上就是不可能扩散」）确实是散文说不清的。也可能只是因为写完一本书太累。他没解释过，我们不知道。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>佛学 · 见取（执取于见解）</b>：佛教「四取」里专有一项讲对观点的执取：一个见解被驳时你会痛，说明它已和「我」缠在一起。Simler 体检单上的骄傲、愤怒和改主意之痛是同一组症状。不像的是，佛学把病根放在我执，Simler 放在别人给的回扣。</li>
+<li><b>认知心理学 · 推理的论辩理论（Mercier 与 Sperber，2011）</b>：他们主张人类推理主要是为说服别人、检验别人的论证而演化的，不是为独自求真，所以确认偏差独处时是毛病，辩论里是分工。和关系户信念一样，把收件人换成了别人；不像的是，它讲整套推理能力，不分绩效与关系户两类。</li>
+<li><b>神经科学 · 眼泪里的化学信号（Gelstein 等，2011）</b>：魏茨曼研究所的实验让男性闻女性的情绪性眼泪，他们的性唤起和睾酮随之下降：眼泪确实在改变旁人。这和「哭是写给别人看的」同向；不像的是，那是闻不出气味的化学通道，Simler 靠的是看得见、留得住的痕迹。</li>
+<li><b>分布式系统 · 协同攻击问题（Halpern 与 Moses，1990）</b>：两支军队靠信使约定同时进攻，信使可能丢失，每次确认都还需要再确认；Halpern 和 Moses 证明，在不可靠信道上共同知识永远达不成。超级碗走的是另一条路：一亿人同时看见同一个画面，一次公开广播就近似造出了逐条私信堆不出的共同知识。不像的是，人类的「近似」靠默契，没有证明可言。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Kevin Simler 在 Melting Asphalt 写了八年，骨架只有一条：个体层面说不通的行为多半是社会技术，收件人是周围的人。</li>
+<li>文化烙印说：广告不改写你的偏好，而是改写周围人对产品含义的共同理解，所以床单和加油站几乎不打品牌广告。</li>
+<li>广告让人买东西不是绕过理性而是通过理性，屏蔽广告只会让人丢掉「什么东西说什么」的文化情报。</li>
+<li>关系户信念靠替主人赚社会回扣留下，标志是抽象、无法据以行动、爱拿出来讲、过度自信、不肯下注和强烈情绪。</li>
+<li>判断信念是不是关系户不看真假、看回报来源，所以理性训练是多边方案，得整群人一起提高认识论标准。</li>
+<li>地位分支配与声望两套相反的系统：支配的好处靠抢来，声望的好处由崇拜者主动送上门。</li>
+<li>阿拉伯鸫鹛抢着喂食、站岗、占最危险的栖位，说明声望衡量的是「作为队友值多少」，不是「我多厉害」。</li>
+<li>Simler 的招牌方法是用缺席的证据当撬棍：如果主流解释成立，世界上本该有什么，而它偏偏没有。</li>
+<li>哭是一次拿支配换盟友的交易：湿脸红眼能撑好几分钟，足够带去给冲突时不在场的第三方看。</li>
+<li>Simler 承认自己的论证多靠思想实验、少有数据，社会信号这把锤子也可能把世界剪成自己的形状。</li>
+</ol>
 <h2 data-tts="fd4acf371232e931">出处</h2>
 <ul class="reads">
 <li><span class="tag">2016</span><a class="t" href="https://meltingasphalt.com/crony-beliefs/">Crony Beliefs</a><span class="d">把信念分成靠业绩留下的和靠关系留下的，给出一份识别自己脑中关系户的体检单，并当面指控读者。传播最广的一篇。</span></li>

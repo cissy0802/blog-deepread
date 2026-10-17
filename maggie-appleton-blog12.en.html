@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -203,6 +211,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>The strong version of barefoot developers hasn't landed, and the analogy carries weight she doesn't check.</strong> Two years on, the visible phenomenon is "vibe coding," mostly among people who could already code; her own August 2025 note is titled "Vibe code is legacy code," relaying Steve Krouse's definition: "code that nobody understands." More importantly, the analogy itself: barefoot doctors worked because they were a program with selection, training and supervision. She explicitly notes the developer version "isn't going to be organized by a central government," and then doesn't ask what remains once you remove selection, training and supervision. In medicine, unsupervised practitioners is not a happy story.</p>
 <p><strong>Sample bias — diagnosed beautifully, never turned on herself.</strong> The best blow in the tools-for-thought essay is that the patriarchs' computer-centrism is the fingerprint of one small social network. Yet nearly every phenomenon she names — digital gardens, folk interfaces, barefoot developers — is generalised from a few hundred people in the same Twitter/Bluesky neighbourhood. She says so herself on stage: "I'm what we call 'very online'. I live on Twitter and write a lot online. I hang out with people who do the same." <strong>Naming a bias is not the same as correcting it.</strong> On others she uses etymology and demographic analysis; on herself she uses a disclaimer.</p>
 <p><strong>A necessary note about criticism.</strong> Her pages carry no comment threads, and discussion of her work happens mostly on Bluesky and Hacker News — both unreachable from the environment this page was written in (blocked at the network layer). So this page relays no critical argument it hasn't actually read. The most substantive external response I could read was Simon Willison's on the barefoot developers talk, and it is approving rather than critical — he calls it "a great talk."</p>
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Philosophy of mind · The extended mind (Andy Clark and David Chalmers, 1998)</b>: they imagined Otto, whose memory is failing, finding a museum by consulting the notebook he always carries, and argued that the notebook is part of his memory, so cognition reaches past the skull. Appleton also locates thinking outside the head, but the emphasis differs: they look at the object coupled to the brain, she looks at the cultural technique passed down underneath the object.</li>
+<li><b>Buddhism · The finger pointing at the moon (Shurangama Sutra)</b>: whoever takes the pointing finger for the moon loses the moon and misreads the finger too; taking an app for thinking is the same mistake. The difference: Chan teaching eventually asks you to let go of the finger, while Appleton grants the tool is genuinely useful and just shrinks it to 2%.</li>
+<li><b>Evolutionary biology · The handicap principle (Amotz Zahavi, 1975)</b>: a peacock's tail is believable because it is too costly to fake; the ways of proving you are human in the reverse Turing test are a hunt for expensive signals a model cannot produce. The difference: the tail's cost stays put, while Appleton herself gave the multimodal defense six to twelve months.</li>
+<li><b>Philosophy of mind · The problem of other minds</b>: we never verify directly that anyone else has a mind, we infer it from what they say and do; the reverse Turing test turns that old puzzle into everyone's daily routine online. The difference: philosophers ask whether the other party is conscious, Appleton asks whether there is a person on the other side you could have a relationship with.</li>
+<li><b>Distributed systems · Amdahl's law (Gene Amdahl, 1967)</b>: the speedup from parallelism is capped by the part of a program that must run serially. "One developer, two dozen agents" hits exactly this wall, and team alignment is the serial section. The difference: Amdahl's serial section can be shortened with a better algorithm, while the context alignment needs lives in people's heads.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>People systematically mistake the object for the practice: in drawing, materials are 2%, the visual medium 18%, and what you have to say 80%.</li>
+<li>A digital garden makes "unfinished" a publishable state, marking each note's maturity as a seedling, budding, or evergreen.</li>
+<li>In Maggie Appleton's garden ethos, showing imperfection is an obligation rather than a license: publishing only means "this is where I am now."</li>
+<li>The phrase "tools for thought" contains no "computer"; its computer focus is the fingerprint of a small social network of patriarchs, not a finding about thinking.</li>
+<li>Writing, maps, the zettelkasten and Aboriginal Australian songlines are all tools for thought, older than digital computers by centuries to tens of millennia.</li>
+<li>The reverse Turing test: once generative AI floods the web, it is humans who must prove they are not language models.</li>
+<li>Language models average the views of a narrow slice of recent, English-speaking people who write online, so mass production narrows culture into a monoculture.</li>
+<li>Barefoot developers are stuck at the command line wall, and what they lack is not model capability but the glue that turns Lego pieces into an app.</li>
+<li>Once implementation is cheap, the new bottleneck in software is agreeing on whether to build something, and most of that context lives in people's heads.</li>
+<li>Maggie Appleton claims her process is checkable rather than her conclusions correct, and the cost is that her most load-bearing arguments sit unfinished for years.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><a href="https://maggieappleton.com/tools-for-thought/"><span class="t">Tools for Thought as Cultural Practices, not Computational Objects</span></a><span class="d">July 2021. Dates the phrase, names the patriarchs, puts up a 60,000-year counter-list, and ends by renaming the field CMFWCKW. Also where the two xxxx's at the top of this page live.</span></li>

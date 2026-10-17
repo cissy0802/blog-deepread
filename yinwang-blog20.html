@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -210,6 +218,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>而<strong>最狠的那条批评是他自己写下的</strong>。《我和权威的故事》结尾，在把 Knuth、Unix、常青藤、图灵奖挨个轰下神坛之后，他加了一句：</p>
 <blockquote><span class="zh">我深深地知道接受错误想法的危害性，所以我也希望大家都具有批判的思维，不要盲目的接受我说的话。我不喜欢「大神」或者「牛人」这种称呼，我也反感那种自称膜拜我的人，因为正是这种人让权威主义现在横行于世。</span><cite>《我和权威的故事》，2014 年 1 月 4 日</cite></blockquote>
 <p>这是读这个博客唯一正确的用法，而且是他本人开的处方。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>佛学 · 指月之指（《楞严经》）</b>：《楞严经》说，把指月的手指当成月亮，不但失了月，连手指也失了；徒孙们把 Frege 电路图的转写符号当成祖传秘籍，正是这个结构。不像在哪：佛家认为没有哪根手指能完整指出月亮，王垠却相信本体是一棵写得出来的树，换个好编码就能直接看见。</li>
+<li><b>心理学 · 系列再现（Frederic Bartlett，1932）</b>：Bartlett 让人把北美原住民故事《幽灵之战》一人传一人地复述，几轮后陌生细节消失，故事变成传话人熟悉的样子。不像的是，这种变形朝听者的文化习惯走，王垠担心的变形朝「把编码当本体」走。</li>
+<li><b>生物进化 · 喉返神经</b>：哺乳动物的左喉返神经下到胸腔绕过主动脉弓再折回喉部，是鱼类祖先鳃弓布局留下的弯路，好比进化版「软件珍珠」。不像的是，进化不能推倒重来，软件能，王垠骂的正是能重写却把补丁当宝贝的人。</li>
+<li><b>认知科学 · 分散注意效应（John Sweller）</b>：认知负荷理论发现，同一内容若要人在两处来回对照才拼得起来，就学得更差，额外负荷来自呈现方式。这就是王垠数的「一道弯」。不像的是，Sweller 靠成组对照实验测量，王垠只凭一个例子和自己的脑子。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>王垠十几年追问的根问题是：一个想法经过教科书、术语、奖项和师承传到你手上，还剩下什么。</li>
+<li>Frege 的《Begriffsschrift》里没有公式，只有电路图般的图，后来的逻辑符号只是转写。</li>
+<li>「软件珍珠」是早期设计错误逼出的变通办法，凝固之后被不了解来源的人当成宝贝。</li>
+<li>珍珠会自我保护：变通办法一旦成了共同语言，掌握它就是身份，质疑它就显得没水平。</li>
+<li>代码的本质是有拓扑的结构而非字符串，文本只是编码，parser 只是「万里长征的第 0 步」。</li>
+<li>王垠用「能不能写出它的解释器」检验理解，曾在 Google 一个周末做出抽象解释器原型。</li>
+<li>好代码的判据是人的脑子能否不跳转就装下它；currying 的「聪明」写法让读者多转一道弯。</li>
+<li>回到源头、亲手实现、自己数一遍都是单人闭环，用到近视上就撞上了随机对照试验的反证。</li>
+<li>王垠删掉了自己站内被引用最多的两篇文章，读者只能去读来源不明的转载副本。</li>
+<li>Bartlett 的系列再现实验显示，故事一人传一人地复述，会变成传话人熟悉的样子。</li>
+</ol>
 <h2 data-tts="825816592b0bac38">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.yinwang.org/posts/authority">我和权威的故事</a></span><span class="d">2014 年 1 月 4 日，全站最长的一篇。从 Knuth 的支票写到 Frege 的电路图，再到康奈尔那封塞在信夹子里的纸信。他整个思想的原点都在这里。</span></li>

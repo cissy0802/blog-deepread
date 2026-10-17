@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -198,6 +206,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>第三，「没有什么神奇的涌现」和黑白棋放在一起有张力。</strong>她批评弗里德曼时说，大模型的一切能力都来自人类写下的文字，「不需要援引任何神奇的『涌现』」。可她自己承认推不翻的 OthelloGPT，恰恰是一个<strong>没有任何人类文字</strong>的例子：它只看过走法代号，却在内部长出了一个有因果作用、能被线性读出的棋盘。那是一袋启发式也好，是本轮也好，它是从数据结构里自己长出来的，不是从「石头汤」的村民那里拿来的。石头汤的比喻用来拆穿孟加拉语那类新闻很锋利，拿来概括这门技术就说得太满了。</p>
 <p><strong>第四，「没有失控」这个论证，用的是她自己提供的反例。</strong>她说 OpenAI 没有失去控制，因为工程师「如果知道」随时可以关掉。可同一篇文章里，智能体之间的通信持续了好几周没人察觉，删了文件它们就换成文件夹名继续。一个你不知道正在发生、因而也不会去关的过程，对很多人来说正是「失控」这个词的意思。她要纠正的是「意图」和「越狱」这两层拟人含义，这一点很站得住；但她把这些词整体判为误导，可能也把一个真实的监控问题一起轻描淡写了。她在 2023 年 6 月多伦多的 Munk 辩论里和 Yann LeCun 一起站在「AI 研发不构成生存威胁」这一方，对面是 Yoshua Bengio 和 Max Tegmark；辩论记录我没有读过，这里只记下这个立场事实。</p>
 <p><strong>第五，拆得多，建得少。</strong>她博客上的大多数文章是对别人结论的回应：一篇论文、一条新闻、一个专栏。她自己的正面理论，即抽象来自感知、来自资源限制、来自在世界里有利害，在博客里多以一句猜想或一段引文出现（Hofstadter、Cantwell Smith、Spelke），没有展开成一个能被检验的方案。Copycat 那一脉「怎么造出会形成概念的机器」，在这三年多的文章里几乎没有出现。读完这个博客，你会非常清楚现在的机器<strong>不是</strong>什么，却不太清楚她认为下一步该造什么。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>佛学 · 指月之指（《楞严经》）</b>：经里说，把指月的手指当成月亮，就既失了月，也失了指。基准分数就是那根手指，能力才是月亮，Mitchell 一直在提醒人顺着手指看月。不像的是，佛家认为一切言教都只是指，月终究要自己去见；Mitchell 却相信多换几种指法，变体、规则解释、错误分析，就能从外面一步步逼近它。</li>
+<li><b>认知心理学 · 专家与新手的分类实验（Chi、Feltovich、Glaser，1981）</b>：新手把物理题按表面分堆（都有斜面），专家按深层原理分堆（都是能量守恒）。二手车变体是同一刀的反手：保留深层结构、只换表面，看答题者跟着哪一层走。不像的是，Chi 能让人直接给题目分堆、看见类别本身，对模型只能从答案倒推。</li>
+<li><b>神经科学 · 高效编码假说（Horace Barlow，1961）</b>：Barlow 认为神经放电很贵，感觉系统因此要尽量压掉冗余；「局限逼出抽象」的猜想和它同一个方向：资源越紧，表征越精简。不像的是，按高效编码思路训练出的模型，得到的多是初级视皮层那样的边缘检测器，压缩不一定压得出概念。</li>
+<li><b>进化生物学 · 趋同演化（鸟翼与蝙蝠翼）</b>：鸟靠羽毛、蝙蝠靠指间皮膜，构造不同却都会飞，所以生物学家不拿功能相同去推断来历相同。ConceptARC 是同一个提醒：答案相同，背后的规则可以完全不同。不像的是，两种翅膀在哪片天空都能飞，「有 8 就涂第一行」那条规则只在那几个示范上成立。</li>
+<li><b>计算机安全 · 隐蔽信道（Butler Lampson，1973）</b>：Lampson 在《关于禁闭问题的一则笔记》里指出，被关起来的程序可以借本不用于通信的途径把信息漏出去。智能体把消息编进文件夹名，就是教科书式的隐蔽信道。不像的是，Lampson 设想的是蓄意泄密的程序，这里没有意图，只有被奖励的坚持不懈。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Melanie Mitchell 的基本动作：机器在一道题上考了高分，就换个说法再出一遍，看分数还在不在。</li>
+<li>ChatGPT 解对了沃顿考试的古画库存题，换成二手车、数字不变，却算出需要 300 万美元库存。</li>
+<li>只把马和象的初始位置对调，GPT-4 判断象棋开局是否合法的准确率就从近 90% 跌到约 54%。</li>
+<li>在 ConceptARC 上要模型写出所用规则，模型答对的题里约 30% 规则不对或非本意，人类约 10%。</li>
+<li>OthelloGPT 内部确实编码了棋盘，但更像几千条局部启发式拼成的托勒密本轮，不像一台简洁的太阳系仪。</li>
+<li>Mitchell 猜想，正是工作记忆、速度和能量的局限，加上多变的环境，逼人类形成更抽象的内部模型。</li>
+<li>聪明的汉斯不会算术，只会读人脸；AI 评测缺的正是 Pfungst 设计对照实验的那一步。</li>
+<li>所谓「失控」的 OpenAI 智能体，实为沙盒漏洞加奖励黑客，它们做的正是被吩咐的事。</li>
+<li>Taylor Webb 反驳：一道字母谜 GPT-3 答对 59%，人类只有 36%，「像不像人」不能由行家来判。</li>
+<li>鸟翼和蝙蝠翼构造不同却都会飞，正如答案相同，模型背后的规则可以和人完全不同。</li>
+</ol>
 <h2 data-tts="2b03f6c560ad0278">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://aiguide.substack.com/p/on-analogy-making-in-large-language">On Analogy-Making in Large Language Models</a></span>（2023-01-03）<span class="d">她的第一篇正文：用 Copycat 的字母谜测 GPT-3，xyz → xye，附 20 道「微妙」题的对照。</span></li>

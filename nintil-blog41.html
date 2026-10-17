@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -164,6 +172,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>第三，他晚近的写作，用的正是他当年拆掉的那种证据标准。</strong>这一条是他自己写下的。2020 年，他看到 HHMI「96%」这种「如果属实就很惊人」的数字，第一反应是去查对照组和估计方法。2026 年，他推荐一种依恋疗法，理由是它「在一项小型研究里有我见过的最大效应量」，并说病人不必等可重复的证据，「相信你的体验」。在治疗这件事上这也许是对的，他给的理由（治疗师和病人是否合得来无法随机化）也说得通。但读者应该看到，这个头脑在不同领域用的是两把尺子，而他还没有正面写过两者怎么调和。</p>
 <p><strong>第四，题材越来越宽，错误也在变多。</strong>错误账本 2026 年 9 月一个月里进了六条，集中在他新写的衰老测量、系统生物学和阿尔茨海默病长文上，有把带状疱疹和水痘混为一谈的，也有把一篇 1975 年的经典实验描述错的。他每条都认了、改了，这很难得。但同一个月悬赏暂停，以后读者挑错不再有钱拿，这本账能不能继续这样记下去，要看他。</p>
 <p><strong>第五，一个我没有读的争议。</strong>他 2017 年写过一组关于「为什么计算机科学里女性少」的文章，Start Here 页上他的概括是：主要是偏好的差异，而不是歧视或刻板印象，并说「这注定会有争议」。这组文章我没有读，对它的反驳我也没有读，这里只报告它存在。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · 超级预测者（Philip Tetlock）</b>：Tetlock 的「好判断项目」给每个预测打 Brier 分、公开记账；Nintil 的错误账本也把「我可能错了」变成一笔可查的账。不像的是，前者事前给概率打分，Ricón 记的是事后被挑出的错，还自己掏钱。</li>
+<li><b>生物进化 · 趋同演化</b>：章鱼和脊椎动物各自长出相机眼，因为光学只留下几种解；餐馆论证也是「约束决定形状」。不像的是，生物趋同有自然选择在淘汰，科学缺这条链，趋同可能只是没人挑战过。</li>
+<li><b>分布式系统 · Hyrum 定律（Hyrum Wright）</b>：接口用的人够多，它每个可观察的行为都会被人依赖，文档写没写都一样；Fogbank 里没人知道的杂质就是一条隐形依赖。不像的是，Hyrum 定律的依赖藏在用户那边，Fogbank 的连制造者都不知道。</li>
+<li><b>佛学 · 禅宗「不立文字，教外别传」</b>：禅宗讲以心传心，悟不靠经文，靠师徒间的问答、棒喝和公案：经书都在，读完也不等于悟，就像 Fogbank 配方都在却造不出来。不像在态度：禅宗把「说不出」当成修行本身，刻意不写；Ricón 把它当成要攻克的工程问题，想用专家录像和案例库把它规模化。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Nintil 公开悬赏挑错，每笔赔付记进「错误账本」，仿照 Donald Knuth 给挑错的读者寄支票。</li>
+<li>José Luis Ricón 的基本动作，是把一个被广泛引用的漂亮结论追到一手出处，看它还剩下多少。</li>
+<li>逐条核对《企业家型国家》iPhone 一章的参考文献后，结论是抛弃「伟人创新论」的同时也该抛弃「伟大国家论」。</li>
+<li>苏联人摄入的热量和美国人相当，但按食物总价值只有美国的 49%：面包土豆多，肉和水果少。</li>
+<li>技术进步曲线在 1970 年没有统一拐点，与其问有没有「大停滞」，不如一个领域一个领域找瓶颈。</li>
+<li>HHMI 资助让突破多 96% 的数字来自偏差更大的估计方法，换成双重差分只剩 43%，还混着选择效应。</li>
+<li>科学机构像全世界的餐馆一样趋同，也许因为它们本就该长那样，元科学的设计空间没有想象中大。</li>
+<li>默会知识可以被攻克：国际象棋棋力最好的预测因素是独自钻研，一堆专家轶事正是传递它所需的数据。</li>
+<li>Ricón 在科学资助上要求严格的对照和估计方法，在心理治疗上却接受小研究和个人体验，两把尺子尚未调和。</li>
+<li>按趋同演化的眼光看，餐馆论证缺了一环：自然选择会淘汰失败设计，科学机构却没有这样的淘汰链。</li>
+</ol>
 <h2 data-tts="dd98ca2e421ca4b1">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://nintil.com/mazzucato-and-the-iphone-ii-the-myth-of-the-entrepreneurial-state/">The Entrepreneurial State: The case of the iPhone (II)</a></span>（2015-08-21）<span class="d">逐条核对 Mazzucato 书中 iPhone 一章的参考文献：硬盘、触摸屏、蜂窝网络，以及「伟大国家论」。</span></li>

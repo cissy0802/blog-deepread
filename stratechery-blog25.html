@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -278,6 +286,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>最后，他自己写下过一条相当狠的自我批评，值得原样放在这里。</strong>2026 年那篇里，他在谈到自己对 AI 编程的判断时插了一段：</p>
 <blockquote><span class="en">I do, as a matter of my job, talk about things that I do not necessarily experience personally; the canonical example is my long-running analysis of and advocacy for advertising as a business model, despite the fact I run a subscription business.</span><span class="zh">出于职业，我确实会谈论一些我本人未必亲身经历过的事；最典型的例子就是我长期分析并推崇广告这个商业模式——尽管我自己经营的是订阅生意。</span><cite>Frontier Overhangs，2026-09-21</cite></blockquote>
 <p>一个把「你的商业模式就是你的命运」当招牌的人，在这里承认：他自己最出名的那套广告与聚合分析，写的是一门他从不做的生意。这不是自黑，是把自己的样本偏差摆上桌——<strong>这恰恰是第四节第三个想法要求于每一个说话人的那个动作。</strong></p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · 享乐跑步机（Brickman 与 Campbell，1971）</b>：人对生活的改善会迅速习惯，快乐又回落到原点；「昨天的哇变成今天的一般」是同一条曲线。不像的是，心理学把它看成幸福的陷阱，Thompson 却把它看成亚马逊永续生意的发动机。</li>
+<li><b>复杂性科学 · 优先连接（Barabási 与 Albert，1999）</b>：新节点更爱连向已经连接最多的节点，网络于是长出少数超级枢纽；聚合器「用户多→供应商多→体验更好」是同一种富者愈富。不像的是，模型里的枢纽是被动长成的，聚合器得靠打磨用户体验去抢那第一步。</li>
+<li><b>文化人类学 · WEIRD 样本（Henrich、Heine 与 Norenzayan，2010）</b>：大量心理学结论只来自西方、受教育、工业化、富裕、民主社会的被试，却被当成人类通则；Thompson 拆低端颠覆，也是先查样本来自谁。不像的是，WEIRD 论文有跨文化数据，Thompson 靠前提推理。</li>
+<li><b>进化生物学 · 自我欺骗理论（Robert Trivers）</b>：Trivers 1976 年为《自私的基因》作序时提出，自我欺骗被选择保留，是因为真心相信的人骗别人更不露破绽。所以真诚与利益同向并不矛盾，Thompson 不指控 Anthropic 虚伪也说得通。不像的是，他的论证用不着心理学，只把「恰好同向」当证据摆上桌。</li>
+<li><b>佛学 · 无常（anicca）</b>：佛教说苦来自把会消逝的东西当成恒常；Thompson 替柯达翻案，拆的也是「公司应当永生」这个隐藏前提，二十五年好生意之后谢幕不算失败。不像的是，佛学要人放下执着，Thompson 只是改了记分规则，股东照样要分红。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>按微笑曲线，价值链两端赚钱、中间不赚钱，Ben Thompson 由此把报社和宏碁放在同一个位置。</li>
+<li>聚合理论：互联网让分发免费、交易成本归零，整合方向从向后抓住供应商，变成向前直接拥有用户。</li>
+<li>平台和聚合器的分界是盖茨线：平台促成供应商与用户之间的关系，聚合器插进这段关系并控制它。</li>
+<li>低端颠覆理论的样本几乎全是企业采购，而用户体验不可能「好过头」，苹果因此长期站在这个理论的盲区上。</li>
+<li>顾客的期望会不断上移，以「最好体验」为目标的公司永远达不成目标，这反而是一门永续的生意。</li>
+<li>AI 直接给答案，是「手气不错」的终极形态，和 Google 按点击计费的搜索广告生意天然冲突。</li>
+<li>柯达靠胶卷多赚了二十五年才破产，Thompson 认为把它叫作失败，是默认了公司应当永生。</li>
+<li>面对道德主张先打开说话人的账本，「放慢前沿」就这样被拆成能力、产品、定价、资本四笔悬空的账。</li>
+<li>Lyall Taylor 批评聚合理论只是给「市场势力更大的一端赚钱」换了新名字，还会被拿去合理化泡沫估值。</li>
+<li>按 Robert Trivers 的自我欺骗理论，动机真诚与利益同向并不矛盾，所以看账本不必先指控对方虚伪。</li>
+</ol>
 <h2 data-tts="d34991a8bd675a33">七、出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://stratechery.com/2015/aggregation-theory/">Aggregation Theory</a></span><span class="d">2015-07-21 · 聚合理论的原始表述：互联网让分发免费、交易成本归零，于是价值链的整合方向掉了个头，供应商被商品化，用户体验成了唯一稀缺品。后面所有东西的地基。</span></li>

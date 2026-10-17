@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -246,6 +254,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>而关于他，最狠的一条批评是他自己写下的。他在那篇写给派对上的 Kyle 的文章里，主动把矛头转过来对着自己，而这段话也是全站最能说明他诚实程度的一段：</p>
 <blockquote><span class="en">I'll accept this description myself: it's not clear that my own work matters. […] But if you just don't care, I don't have anything objective that will convince you.</span><span class="zh">这个说法我自己也接受：我自己的工作重不重要，并不清楚。……但如果你就是不在乎，我没有任何客观的东西能说服你。</span><cite>Psychology might be a big stinkin' load of hogwash and that's just fine，2022 年 9 月 20 日</cite></blockquote>
 <p>他在同一段里承认，他相信有些问题比另一些问题更重要，而这种重要性超越人的意见——但他知道没有客观办法证明这一点，所以他直接说了：这是一种宗教信念，我承认。这句自白同时是他最大的弱点和他最可信的地方。他整套关于科学该怎么做的主张，最底下垫着的是一个不可证明的价值判断：<strong>有些问题就是比另一些重要。</strong>他没有假装那里有个论证。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>投资 · 风险投资的幂律（Peter Thiel《从 0 到 1》，2014）</b>：一支基金的回报往往由一两笔最好的投资撑起，其余几乎无关紧要，这正是强链接结构；所以风投不按「哪笔最不会亏」挑项目。不像的是，风投每一笔烂投资都实打实花了钱，最多亏掉本金；而 Mastroianni 说坏研究「几乎无所谓」，账要靠 Elton 来算。</li>
+<li><b>生物进化 · 先变异、后选择（达尔文）</b>：突变不经任何审查就发生，绝大多数无用或有害，筛选全发生在事后，靠的是能不能活下来，这是没有守门人的强链接机制。不像的是，进化里坏变异的代价由个体用性命付清，并不「不出声」；这一点更接近 Elton 说的病态科学会吃掉真实的资源。</li>
+<li><b>可靠性工程 · 串联与并联系统</b>：串联系统任一部件坏了整体就坏，可靠度由最弱的一环决定；并联系统只要有一条通路还在就能工作。弱链接与强链接正是这一对结构。不像的是，并联冗余用的是同一种部件的备份，而科学里的强链接是彼此不同的想法，而且事先没人知道哪一条会通。</li>
+<li><b>佛学 · 渴爱（taṇhā）与苦</b>：四圣谛的第二谛说，苦的来源是渴爱，对更多、更好的不断追求。Mastroianni 测出的「想象总往更好偏」，像是给渴爱做了一次 52 样东西、跨三个国家的问卷测量，也给快乐水车补了一个机制。不像的是，佛学把渴爱当作要止息的根，他只把它当作一个可以量出来的认知倾向，没有开药方，甚至没说它是坏事。</li>
+<li><b>神经科学 · 奖赏预测误差（Schultz、Dayan、Montague，1997）</b>：多巴胺神经元对「比预期好」的奖赏放电，一旦奖赏变成预期之内，反应就消失，这是「习惯好东西」的一个神经机制。不像的是，预测误差靠过去的经验抬高基线，而 Mastroianni 的机制靠的是想象尚未发生的更好版本。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>同行评议直到 1960 年代后才普及，而在三项故意塞进严重错误的研究里，审稿人只抓出了约三成。</li>
+<li>Adam Mastroianni 把一篇八个研究的正式论文直接发成博客，阅读量超过了他上一篇 PNAS 论文。</li>
+<li>弱链接问题的质量取决于最差的一环，强链接问题取决于最好的那些；科学是强链接问题，却一直被当成弱链接来管。</li>
+<li>弱链接式把关的代价不出声：被挡掉的极好研究听起来什么都没有，清掉糟糕的同时清掉极好的，只剩平庸。</li>
+<li>把心理学结论里的抽象名词换回具体的人，才看得出很多发现有多无聊；用力追问抽象概念，常会碰到同义反复。</li>
+<li>心理学擅长推翻直觉，但 DSM 的 298 种疾病里治好的有 0 种；Mastroianni 的结论是这门学科年轻，而不是笨。</li>
+<li>范式由单位和规则构成；控制论心理学把情绪定义为控制系统的误差信号，而范式的意义在于朝正确的方向错。</li>
+<li>人被问到一样东西可以有什么不同时，几乎总想到它可以更好，52 样东西无一例外，这为快乐水车提供了一个解释。</li>
+<li>道德衰退是错觉：440 万人几十年的调查答案没有变化，偏向性接触加偏向性记忆让今天永远比昨天难看。</li>
+<li>Dan Elton 的反驳是坏研究并非无声：冷核聚变吃掉了 3,200 篇论文，而开放评议的评论只有 5% 到 10% 真正有用。</li>
+</ol>
 <h2 data-tts="da86750f409c4f29">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.experimental-history.com/p/the-rise-and-fall-of-peer-review">The rise and fall of peer review</a></span><span class="d">2022 年 12 月 13 日。他最有名的一篇。把普遍同行评议当作一场六十年的失败实验来清算：一万五千年的年度人力、三项塞错误研究里 25%–30% 的抓出率、科学家自己的行为如何暴露他们并不相信这套制度。</span></li>

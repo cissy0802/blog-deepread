@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -228,6 +236,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">This bias toward the local means my writing borders on self-help—and I've been confused by that since I don't like self-help.</span><cite>A summary of what I wrote in 2024, 2024-12-12</cite></blockquote>
 <p>In the same piece he says his earlier essays framing relationships as a way to grow and discover yourself "felt instrumental in a way that didn't feel true to what I wanted to say," and that he had moved toward treating relationships as valuable in themselves. The "iteration speed" and "bug log" framing is exactly where a reader would grow suspicious, and he got suspicious first. <strong>Perhaps the test for him is whether he keeps doing that: whenever a beautiful frame is about to harden into a method, make it rigid himself, and let it break.</strong></p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Evolutionary biology · Niche construction (Odling-Smee, Laland, Feldman)</b>: Earthworms rework soil, beavers build dams, and the altered environment then reshapes the selection pressures acting on them. "First we shape our social graph; then it shapes us" is the same loop. The difference: niche construction mostly runs across generations and without intent, while Karlsson wants one person to do it deliberately within a single life.</li>
+<li><b>Complexity science · Preferential attachment (Barabási and Albert, 1999)</b>: New nodes prefer to link to already well-connected ones, so the network grows a few giant hubs, which is exactly the terrain of the river model: fast upstream, hard sideways. The difference: BA hubs grow passively by getting there first, whereas Karlsson says big accounts are big partly because they work at forwarding things.</li>
+<li><b>Psychology · The capacity to be alone (Donald Winnicott, 1958)</b>: The psychoanalyst wrote a paper with that very title, arguing that the capacity arises, paradoxically, from the infant's experience of being alone in the presence of someone else: the mother is right there, and the child is free to ignore her and play. That folds both regularities of exceptional childhoods, brilliant adults nearby and oceans of unsupervised time, into a single picture. The difference: Winnicott was describing an infant's emotional security; Grothendieck's solitude was an adult's way of shielding his thinking.</li>
+<li><b>Chinese philosophy · Cook Ding carving the ox (Zhuangzi)</b>: Cook Ding's knife follows the ox's natural lines and goes along with what is already there, so after nineteen years the blade is as sharp as new. That is the same stance as "the context is smarter than you; work with it." The difference: Zhuangzi lands on effortless non-action and nurturing life, while Karlsson's unfolding still has explicit goals; it just refuses to specify what the solution should look like.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Henrik Karlsson's root question: since we cannot help being shaped by the people around us, how does anyone grow into themselves instead of being flattened into what others expect?</li>
+<li>Grit is the node's-eye view and agency is the view from the graph: you are your milieu, so changing it changes you.</li>
+<li>A blog post is a very long and complex search query for people; the more precise and niche the writing, the better it finds your kind.</li>
+<li>The internet's social structure is a river: ideas rush up from small accounts to big ones fast, seep back down slowly, and rarely cross sideways.</li>
+<li>Reading 42 biographies of exceptional people, Karlsson found that about 95% grew up among brilliant adults and also had lots of bored, unsupervised time.</li>
+<li>Solitude teaches you what undiluted curiosity feels like, so you can tell real promise from the thrill of winning status in a group.</li>
+<li>Unfolding defines good design as fit between form and context; a good goal specifies what a solution must achieve, not what it looks like.</li>
+<li>Relationships are coevolutionary loops: Karlsson and Johanna kept a Sunday "bug log" on a blackboard, and early iteration speed may matter most.</li>
+<li>The numbers in "Childhoods of exceptional people" were largely guesses, and LessWrong commenters flagged selection effects and family wealth as confounders.</li>
+<li>Winnicott traced the capacity to be alone to being alone in someone else's presence, which neatly joins the two regularities of exceptional childhoods.</li>
+</ol>
 <h2>Sources</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.henrikkarlsson.xyz/p/search-query">A blog post is a very long and complex search query to find fascinating people and make them route interesting stuff to your inbox</a></span> (2022-10-05)<span class="d">The source of both the "search query" model and the "internet as a river" model, with Morton Feldman and Jackson Pollock, the tears in the kitchen, and Licklider's memo.</span></li>

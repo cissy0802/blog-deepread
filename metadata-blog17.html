@@ -46,6 +46,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -293,6 +301,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>五、那个最有意思的张力，他自己也知道。</strong>2026 年 8 月他写了《The Safest Job from AI may be Writing》，论证写作是最不会被 AI 取代的活：写作是"wicked problem"（没有确定表述、没有停止规则、没有客观正解），成功的唯一标准是"resonance inside another human mind"（在另一个人的脑子里产生共鸣），而模型"have zero skin in the game"（完全不用承担后果）。他措辞相当不客气，说他对 AI 生成的散文有"visceral ick reaction"（生理性的反感）。</p>
 <p>但同一个博客上，2025 年 3 月那篇传播极广的讽刺小品——Ponder Stibbons 向院长宣布他要离开象牙塔——最后一行是他自己加的落款：<strong>"(Written by a golem named ChatGPT with some prompting)"</strong>（由一个叫 ChatGPT 的泥人在一些提示下写成）。也就是说，他对 AI 写作最锋利的一次批评，和他博客上流传最广的一篇 AI 代笔，相隔十七个月，出自同一个人的手。</p>
 <p>公平地说，他给自己留的门是敞开的。那篇批评 AI 写作的文章里，他把话说完之后，紧接着的一句是给读者的：<strong>"Tell me where my logic does not hold up."</strong>（告诉我我的逻辑哪里站不住。）在一个绝大多数人用结论收尾的地方，他用一个邀请收尾——这恰恰是他 2018 年给自己装的那个系统，八年后还在运转。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>物理学 · 狭义相对论的同时性</b>：Einstein 1905 年指出，相隔遥远的两个事件谁先谁后取决于参照系，没有全宇宙共用的「现在」，Lamport 说逻辑时钟正是受此启发。像在都只认因果、不认绝对时间；不像在 HLC 为了工程方便硬排出全序，而相对论里类空间隔的两个事件根本没有先后。</li>
+<li><b>心理学 · Kahneman 的「懒惰的系统 2」</b>：Kahneman 在《思考，快与慢》里说，费力的系统 2 遵循「最省力法则」，能不出场就不出场，和人脑偏好浅任务、躲开高强度思考是同一个观察。不像的是，Kahneman 对靠自觉纠偏相当悲观，MAD questions 恰好绕开了自觉，把提问塞进了格式。</li>
+<li><b>创造力研究 · Koestler 的「双联」（bisociation）</b>：Arthur Koestler 在《The Act of Creation》（1964）里说，笑话、科学发现和艺术同一个结构：两个不相干的参照框架突然相撞；「好问题像好笑话」几乎是它的实操版。不像在 Koestler 写的是答案落地的一刻，Demirbas 拿同样的身体反应去认一个还没有答案的问题。</li>
+<li><b>生态学 · Scheffer 的湖泊稳态突变</b>：Marten Scheffer 等人 2001 年在 Nature 上描述，浅水湖营养盐升高后会突然由清变浊，把营养盐降回原水平也回不来，因为浊水态自我维持，即迟滞（hysteresis）。亚稳态失败是同一张图。不像的是，湖得把营养盐降到远低于原水平才翻得回去，服务器却能靠卸载和重试硬预算主动拆掉反馈环。</li>
+<li><b>东方哲学 · 庄子「庖丁解牛」</b>：庖丁不砍骨头，刀顺着筋骨间的缝隙走，十九年刀刃如新；建模抽象也是找对那一刀，沿着跟目标性质相关的平面切开，其余削掉。不像的是，庖丁循的是牛本来的结构，Demirbas 特意强调这一刀切出的形状通常和系统实际的组件划分毫不相像。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Murat Demirbas 的博客 Metadata 里自己回链最多的一篇，是 2018 年讲提问的《Mad questions》，不是技术文。</li>
+<li>Demirbas 方法论的根本公理是「脑子都是普通的」：靠可复制的流程和器械取胜，不指望天才和偶尔劈下来的灵感。</li>
+<li>每篇博客末尾强制加一节 MAD questions，把靠意志力的提问变成了靠格式的习惯。</li>
+<li>好问题像好笑话：有出人意料的成分、带来视角切换，碰上时身体的反应和听到好笑话一样。</li>
+<li>混合逻辑时钟（HLC）同时保住因果顺序、常数大小和贴近物理时间，如今被 CockroachDB、MongoDB 等采用。</li>
+<li>分布式数据库里时间是共享参照系；按 Barbara Liskov 的原则，时间只拿来优化性能，不拿来保证正确性。</li>
+<li>模块化抽象把细节遮起来，建模抽象把无关的削掉，并把该漏出来的并发全部暴露。</li>
+<li>亚稳态失败是触发因素撤走后系统仍卡在过载的状态，维持它的往往是重试造成的负载放大。</li>
+<li>两份带「如果」的依赖—保证契约可以全部通过检查而系统照样崩溃，修法是给重试一个无条件的硬预算。</li>
+<li>Demirbas 的盲点之一：争吵留在页边，发出来的是和解稿，所以博客是好翻译，却不是可靠的筛子。</li>
+</ol>
 <h2 data-tts="2a78893f35d43117">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://muratbuffalo.blogspot.com/2018/01/mad-questions.html">Mad questions</a></span><span class="d">2018 年 1 月 2 日。全站被他自己回链最多的一篇（46 次）。一个终身教授公开怀疑自己已经被驯化，然后决定给"提问"装一个强制执行的系统。同一话题的一年后复盘在 <a href="https://muratbuffalo.blogspot.com/2018/12/master-your-questioning-skills.html">Master your questioning skills</a>，"好问题像好笑话"那句出自那里。</span></li>
