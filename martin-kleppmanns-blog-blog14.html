@@ -249,14 +249,14 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p><strong>三、GPL 那篇没有用上他自己的标准。</strong>这是全站最值得单独看的一处不一致。在技术问题上他从不接受「我觉得」：核对 CAP 他逐个系统去归类，谈数据丢失他把二项分布写出来，讲隔离级别他建了个跨四家数据库的测试套件。但论证 copyleft 对开源的成功不重要时，他给的是「哪怕在那些用 GPL 的项目里（比如 Linux），<strong>我也怀疑</strong> copyleft 这一面是否真的是成功的重要因素」。没有数据，没有反事实，没有对比案例；同篇里关于 AGPL 失败的判断也是同样形状。这未必意味着他错了——这些判断听起来相当合理——而是说：<strong>这一篇不该和他别的文章享受同一级别的信任</strong>，而它恰好是全站政治性最强的一篇。识别这种落差的本事，是他自己教给读者的。</p>
 <p><strong>四、2025 年那个预测既有利益相关，又把最难的一环一句话带过。</strong>他预测形式化验证即将主流化——而他本人正是用 Isabelle 证明分布式算法的人。更要紧的是他自己点出了真正的难处：验证自动化之后，挑战会转移到<strong>正确地写下规约</strong>，「你怎么知道被证明的那些性质，就是你真正在乎的那些性质？」这几乎就是形式化验证六十年来真正卡住的地方——不是证明太贵，是规约写不对。而他对此的处理是：AI 或许也能帮着翻译规约，「这里存在微妙之处在翻译中丢失的可能，但<strong>这看起来是个可控的风险</strong>。」用他自己对付 Redlock 的标准看，这一句有问题：当年 Redlock 的毛病正是<strong>把一个关键假设降格成背景噪声</strong>——「时钟大概是准的」。而「规约大概能翻译对」是同一种句式。</p>
 <p><strong>五、Redlock 那场争论的另一方，本页没有读到。</strong>Salvatore Sanfilippo（antirez）在原文发表次日发表了反驳，地址是 antirez.com/news/101（2016 年 2 月 9 日），Hacker News 上有对应讨论串。<strong>写作本页时该域名在我们的网络环境下打不开，因此这里只报这条书目事实，不复述我没有读到的论证。</strong>能确认的只有 Kleppmann 自己写在更新里的回应，而那段回应本身值得看：他没有摆胜者姿态，说对方提了很好的点、自己坚持结论，然后把判断权交给读者和参考文献，并顺带指出「我们俩的博客文章」都没经过同行评审。</p>
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="cde43f9e94f2cd48">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>东方哲学 · 孔子「正名」</b>：《论语·子路》说「名不正，则言不顺；言不顺，则事不成」，和 Kleppmann 的判断同构：名字错了，后面的决策跟着错。不像的是，孔子要让名分回到礼制里的本位，Kleppmann 却允许你自造定义，只要别借用 CAP 这个已被一条证明占用的名字。</li>
 <li><b>神经科学 · 记忆再巩固（Karim Nader 等，2000）</b>：大鼠的恐惧记忆被唤起后会重新变得不稳定，须再次巩固才能留下，每次回忆都可能改写原件。人脑因此更像就地覆盖的传统数据库，而不是不可变日志：不留事实流水，只留能被悄悄改写的当前状态。</li>
 <li><b>投资 · 遍历性（Ole Peters）</b>：Peters 的抛硬币赌局里，群体平均每轮赚 5%，单个人一直玩下去却几乎必然输光；正如「大部分时候正确」撑不起正确性锁。不像的是，Raft 能让安全性完全不依赖时序，投资者却摆脱不了市场，只能控制下注大小。</li>
 <li><b>认识论 · 默会知识（Michael Polanyi）</b>：Polanyi 1966 年说「我们知道的多于我们能说出的」，和「直觉没有传输编码」是同一个观察。不像在结论：他认为有些知识注定说不出口，Kleppmann 却坚持值得把位图转成矢量图，好让团队能争论。</li>
 </ul></div>
-<h2>十条要点</h2>
+<h2 data-tts="adcf2d86ca1093a1">十条要点</h2>
 <ol class="takeaways">
 <li>Martin Kleppmann 的博客前 70 篇几乎全写售票机、燃气灶这类可用性话题，后来却写出了 DDIA。</li>
 <li>Hermitage 测试发现三家数据库的 repeatable read 各不相同，Oracle 的 serializable 实为快照隔离。</li>
@@ -301,9 +301,9 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
   set(saved==='deep'?'deep':'pop');
 })();
 </script>
-<script src="https://hub.cissychen.com/comments.js" defer></script>
-<script src="https://hub.cissychen.com/search.js" defer></script>
-<script src="https://hub.cissychen.com/index-button.js" defer></script>
-<script src="https://hub.cissychen.com/i18n-tts.js" defer></script>
-<script src="https://hub.cissychen.com/lightbox.js" defer></script>
+<script defer="" src="https://hub.cissychen.com/comments.js"></script>
+<script defer="" src="https://hub.cissychen.com/search.js"></script>
+<script defer="" src="https://hub.cissychen.com/index-button.js"></script>
+<script defer="" src="https://hub.cissychen.com/i18n-tts.js"></script>
+<script defer="" src="https://hub.cissychen.com/lightbox.js"></script>
 </body></html>
