@@ -42,6 +42,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -536,6 +544,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 
 <p>Her evidence for "it works": a 1,200-word post readers needed fifteen minutes to understand versus thirty seconds for the comic; a fifteen-minute drawing about <code>/proc</code> that got 180,000 impressions. <strong>But those metrics measure reach and perceived usefulness, not whether anyone later knew the thing.</strong> The hostile comment was asking about the latter, and nobody — including her — has data on it. Her own stated goal is to "explain complicated ideas in the simplest possible way (but not simpler!!!)". How the "but not simpler" clause gets adjudicated in practice, she has never said.</p>
 
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Psychology · The curse of knowledge (Elizabeth Newton)</b>: in 1990 Newton had people tap out well-known songs such as Happy Birthday with a finger; tappers expected listeners to name half of them, but listeners got 3 of 120, because the melody played only in the tapper's head. The widening gap Evans describes between herself and her readers is this same wall. The difference: a tapper cannot unhear the tune, while Evans crowdsources other people's confusion and borrows their ears.</li>
+<li><b>Psychology · The illusion of explanatory depth (Rozenblit and Keil)</b>: in a 2002 study, people rated their understanding of zippers and flush toilets highly, then lowered the ratings after being asked to write out step by step how they work. Evans breaking "I don't get Rust references" into concrete questions takes the same step. The difference: the subjects overrated themselves, while Evans's readers often underrate themselves.</li>
+<li><b>Neuroscience · Reward prediction error (Wolfram Schultz)</b>: Schultz and colleagues showed in 1997 that dopamine neurons fire when an outcome differs from what was expected, and learning starts from that difference. The moment DNS still failed after five minutes and her model broke is the moment Evans calls most valuable. The difference: the brain updates automatically, while she has to decide whether to dive in.</li>
+<li><b>Zen · Beginner's mind (Shunryu Suzuki)</b>: in Zen Mind, Beginner's Mind Suzuki wrote that the beginner's mind holds many possibilities and the expert's few. Facing a slow query twelve years on with the same "computers are fast!", Evans keeps that mind. The difference: Zen's beginner's mind seeks no result, while hers is a tool for fixing bugs.</li>
+</ul></div>
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Julia Evans earned degrees in math and computer science without learning what a system call is, and her answer was that not knowing things is fine.</li>
+<li>Her root question for fourteen years has been why the gap between using something and understanding it makes people feel ashamed.</li>
+<li>Evans took sixteen years to understand DNS through tiny deep dives: long stretches of doing nothing, then intense bursts forced by a real bug.</li>
+<li>Breaking a fog of "I don't get it" into a few answerable factual questions turns confusion into an engineering problem you can schedule.</li>
+<li>Knowing what you definitely know matters too: the TCP port field is 16 bits, so no port can be above 65535.</li>
+<li>Confusing technical explanations fall into thirteen nameable patterns, such as introducing several new concepts at once without explaining any.</li>
+<li>Julia Evans's zine arithmetic: 3,000 sales beat 5,000 clicks, because a price works as a filter for attention.</li>
+<li>Her method is to watch what a program actually does first, then write a very bad version of her own and understand it after it runs.</li>
+<li>Tiny deep dives work best on knowledge like DNS that stays put for decades and can be patched one fact at a time, and barely help with knowledge that only pays off whole.</li>
+<li>The widening gap between Evans and her readers is the curse of knowledge from Elizabeth Newton's song-tapping study.</li>
+</ol>
 <h2>Sources</h2>
 
 <ul class="reads">

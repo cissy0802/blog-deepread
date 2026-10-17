@@ -45,6 +45,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -400,6 +408,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <cite>《Why cute drawings?》，2016 年 11 月 14 日</cite>
 </blockquote>
 <p>「它有效」的证据她给了：一篇 1200 字的文章读者要 15 分钟读懂，一张配套漫画 30 秒；一张画 <code>/proc</code> 的图 15 分钟画完，18 万次展示。<strong>但这些指标测的是「接触」和「觉得有用」，不是「后来真的会了」。</strong>那条差评问的其实是后者，而这个问题至今没有人（包括她）有数据回答。她自己的目标陈述是「用最简单的方式解释复杂的想法（但不要更简单！！！）」——「但不要更简单」这个爱因斯坦式的但书，在实践中怎么判定，她从来没说过。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>心理学 · 知识的诅咒（Elizabeth Newton）</b>：Newton 1990 年让人用手指敲出《生日快乐》这类名曲，敲的人以为听的人能猜中一半，实际 120 首只猜中 3 首：旋律只在敲的人脑子里响。Evans 说她和读者之间的差距越拉越大，正是这道墙。不像的是，敲的人无法把旋律「忘掉」，Evans 的办法是去众包别人的困惑，借别人的耳朵听。</li>
+<li><b>心理学 · 解释深度错觉（Rozenblit 与 Keil）</b>：2002 年的实验里，人们先给自己对拉链、马桶的理解打高分，被要求一步步写出原理后，分数纷纷往下掉。Evans 把「我不懂 Rust 的引用」拆成几个具体问题，走的是同一步。不像的是，实验里的人高估了自己，Evans 的读者常常低估自己。</li>
+<li><b>神经科学 · 奖励预测误差（Wolfram Schultz）</b>：Schultz 等人 1997 年说明，多巴胺神经元对「结果和预期不符」放电，学习就从这道差值开始。等了 5 分钟 DNS 还不通，模型破掉的那一刻，正是 Evans 说最值钱的时刻。不像的是，大脑自动更新，她得自己决定要不要钻进去。</li>
+<li><b>禅宗 · 初心（铃木俊隆）</b>：铃木俊隆在《禅者的初心》里说，初学者心里可能性很多，老手心里很少。Evans 十二年后面对慢查询仍是那句「计算机是很快的」，守的是同一种心。不像的是，禅的初心不求结果，她的初心是拿来修 bug 的工具。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Julia Evans 有数学和计算机两个学位，毕业时不知道什么是系统调用，她的回应是：不知道一些东西没关系。</li>
+<li>她十四年的根问题是：为什么「会用」和「懂」之间的那道缝，会让人觉得羞耻。</li>
+<li>Evans 学懂 DNS 花了十六年，靠的是微型深潜：长时间什么都不做，被真实 bug 逼出来时再猛学一阵。</li>
+<li>把一团「我不懂」拆成几个能回答的事实问题，困惑就变成了可以排期的工程问题。</li>
+<li>知道自己确实知道什么同样重要：TCP 端口字段是 16 位，所以端口不可能超过 65535。</li>
+<li>难懂的技术解释有十三种可以叫出名字的错误模式，例如一口气引入多个新概念却不解释。</li>
+<li>Julia Evans 卖 zine 的账：3000 份销量好过 5000 次点击，定价是注意力的过滤器。</li>
+<li>她的手法是先监听程序实际在干什么，再写一个很烂的自己的版本，让它先跑起来再理解。</li>
+<li>微型深潜在 DNS 这种几十年不变、能靠单条事实修补的知识上最有效，对必须整体掌握的知识几乎无能为力。</li>
+<li>Evans 和读者的差距越拉越大，正是 Elizabeth Newton 敲歌实验里的知识的诅咒。</li>
+</ol>
 <h2 data-tts="8299119a6cffd621">出处</h2>
 <ul class="reads">
 <li><a href="https://jvns.ca/blog/2023/05/08/new-talk-learning-dns-in-10-years/"><span class="t">Learning DNS in 10 years（用十年学会 DNS）</span></a><span class="d">2022 年 RubyConf Mini 主题演讲的完整文字实录。整套方法在一个案例上跑完一遍：微型深潜、监听、注意到自己困惑、带着一个问题读 RFC、做实验、写一个很烂的自己的版本。开场就说「这场演讲跟 DNS 没什么关系」。</span></li>
