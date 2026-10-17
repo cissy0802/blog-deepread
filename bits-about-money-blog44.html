@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -216,6 +224,26 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>他对自己最狠的那句话，恰恰也写在讲 SAR 的那一段：</p>
 <blockquote><span class="en">Most of the times infelicities in the world have a logical explanation to them, a structural cause where each individual link in the chain sounded good at the time and the result just happens to be suboptimal. And sometimes the world is absolutely batshit insane.</span><span class="zh">大多数时候，世上的别扭都有逻辑上的解释，一个结构性的原因：链条上每一环当时听起来都不错，结果只是碰巧不够好。而有时候，这个世界就是彻底疯了。</span><cite>Seeing like a Bank，2023-11-07</cite></blockquote>
 <p>这是他整套方法的边界，由他自己画出来：结构性解释很强大，但不是万能的。</p>
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>进化医学 · 烟雾报警器原理（Randolph Nesse）</b>：Nesse 用信号检测论解释焦虑、发烧为什么常常虚惊一场：漏报远比误报贵时，最优防御就该频繁拉响。McKenzie 的欺诈滑杆是同一道算术，阈值由两种错误的代价之比决定。方向却相反：身体的误报便宜，宁可多响；高毛利商户的误报会赶走诚实顾客，比放进一笔欺诈更贵，所以宁可放过。</li>
+<li><b>安全科学 · 瑞士奶酪模型（James Reason）</b>：心理学家 Reason 把事故预防画成一叠奶酪片，每层防线都有洞，洞恰好对齐时事故才发生；McKenzie 说的「有洞的网」几乎是同一张图。不像的是，Reason 想把洞补小，McKenzie 描述的社会却不希望每张网都开足马力。</li>
+<li><b>神经科学 · 病人 H.M.（Henry Molaison）</b>：1953 年双侧内侧颞叶被切除后，他记不住新经历，镜像描图却越练越好；银行也是账本一笔不差，你上次电话里说过什么却次次清零。不像的是，H.M. 的失忆是手术的意外后果，银行围绕 SAR 的那部分失忆是法规刻意要求的。</li>
+<li><b>分布式系统 · Saga 与补偿事务（Garcia-Molina 与 Salem，1987）</b>：长事务拆成各自提交的小步骤，出错再用补偿操作撤回，而不是全程锁死；信用卡也是先放行、事后靠拒付撤回。不像的是，数据库的补偿自动执行，拒付要靠持卡人投诉，成本还多半落在商户身上。</li>
+</ul></div>
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Patrick McKenzie 的根问题是：金融系统看似愚蠢、残忍或低效的行为，有多少其实是社会塞给它的任务的副作用。</li>
+<li>欺诈的最优数量大于零：盗刷损失多半由商户吞下，而每道防欺诈关卡也会挡住诚实顾客。</li>
+<li>信用卡用可撤销的拒付降低技术信任、提高陌生人之间的社会信任，网上付款因此才得以成立。</li>
+<li>KYC 和反洗钱的目标是对犯罪做「随机管理」：对银行撒谎会被精确记录，成为检察官手里现成的重罪。</li>
+<li>系统边界、客服分层和 SAR 保密让银行记得住账本、记不住客户的其他真相，McKenzie 称之为缺乏物体恒存。</li>
+<li>《Debanking (and Debunking?)》的结论：按政治立场关保守派的户不是美国常态，但加拿大 2022 年确实冻结过与抗议相关的账户。</li>
+<li>支票账户本质上是信用产品；刷卡支付的一项好处，是付款的人很少再因空头支票坐牢。</li>
+<li>McKenzie 的招牌方法是先问「谁买单」，再从内部把看似荒唐的安排复原成一串每一步都合理的取舍。</li>
+<li>Hacker News 上的批评者认为，「最优欺诈量」把技术前沿当成给定，忽略了强认证可能同时减少欺诈、增加收入。</li>
+<li>按 Randolph Nesse 的烟雾报警器原理，防御阈值由误报与漏报的代价之比决定，欺诈滑杆是同一道算术题。</li>
+</ol>
 <h2 data-tts="9cbfe38571135784">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://www.bitsaboutmoney.com/archive/community-banking-and-fintech/">Community Banking and Fintech</a></span>（2021-10-22）<span class="d">创刊号。社区银行、ACH 为什么慢、Durbin 修正案的豁免如何养活了一代金融科技公司，以及「金融系统是一条政策手臂」。</span></li>

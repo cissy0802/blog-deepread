@@ -44,6 +44,14 @@ li{margin:8px 0}
 footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
 [hidden]{display:none!important}
 @media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
 </style>
 </head><body>
 <div class="wrap">
@@ -229,6 +237,28 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>The harshest thing he says about his own method sits in the SAR passage itself:</p>
 <blockquote><span class="en">Most of the times infelicities in the world have a logical explanation to them, a structural cause where each individual link in the chain sounded good at the time and the result just happens to be suboptimal. And sometimes the world is absolutely batshit insane.</span><cite>Seeing like a Bank, 2023-11-07</cite></blockquote>
 <p>That is the boundary of his method, drawn by himself: structural explanation is powerful, but it isn't everything.</p>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Evolutionary medicine · The smoke detector principle (Randolph Nesse)</b>: Nesse used signal detection theory to explain why anxiety and fever so often go off for nothing: when a miss costs far more than a false alarm, the optimal defense fires often. McKenzie's fraud slider is the same arithmetic, with the threshold set by the ratio of the two errors' costs. The direction is reversed: the body's false alarms are cheap, so it errs toward alarm; a high-margin merchant's false alarm turns away an honest customer, which costs more than one fraud, so it errs toward letting things pass.</li>
+<li><b>Safety science · The Swiss cheese model (James Reason)</b>: the psychologist James Reason drew accident prevention as a stack of cheese slices, each layer of defense full of holes, with accidents happening only when the holes line up; McKenzie's overlapping "porous filters" are almost the same picture. The difference: Reason wants the holes made smaller, while the society McKenzie describes does not want every filter at full strength.</li>
+<li><b>Neuroscience · Patient H.M. (Henry Molaison)</b>: after his medial temporal lobes were removed on both sides in 1953, he could not remember new experiences, yet kept improving at mirror tracing; a bank likewise keeps its ledger exact while wiping what you said on your last call. The difference: H.M.'s amnesia was an unintended result of surgery, while the part of a bank's amnesia surrounding SARs is required by regulation.</li>
+<li><b>Distributed systems · Sagas and compensating transactions (Garcia-Molina and Salem, 1987)</b>: a long transaction is split into small steps that each commit, with compensating actions to undo them if something fails, instead of holding locks throughout; cards likewise let a payment through and undo it later with a chargeback. The difference: a database runs compensations automatically, while a chargeback needs a cardholder's complaint, and its cost mostly lands on the merchant.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Patrick McKenzie's root question is how much of the financial system's stupid, cruel or inefficient-looking behavior is a side effect of jobs society assigned to it.</li>
+<li>The optimal amount of fraud is non-zero: card fraud losses mostly end up absorbed by merchants, and every anti-fraud check also stops honest customers.</li>
+<li>Credit cards use reversible chargebacks to lower technical trust and raise trust between strangers, which is what made paying online workable.</li>
+<li>KYC and AML aim at stochastic management of crime: lies told to a bank are recorded exactly and become a ready-made felony for prosecutors.</li>
+<li>System boundaries, support tiers and SAR secrecy let banks track ledgers well but lose other truths about customers, which McKenzie calls a lack of object permanence.</li>
+<li>The verdict of Debanking (and Debunking?): closing conservatives' accounts for their politics is not ordinary U.S. practice, though Canada did freeze protest-linked accounts in 2022.</li>
+<li>A checking account is really a credit product, and one benefit of card payments is that people paying by card rarely go to jail over bad checks.</li>
+<li>McKenzie's signature method is to ask who pays first, then rebuild an absurd-looking arrangement from inside as a chain of individually reasonable tradeoffs.</li>
+<li>Critics on Hacker News argued that "optimal fraud" takes the technical frontier as given and ignores that strong authentication might cut fraud and raise revenue at once.</li>
+<li>Under Randolph Nesse's smoke detector principle, a defense's threshold is set by the ratio of the costs of false alarms and misses, the same arithmetic as the fraud slider.</li>
+</ol>
 
 <h2>Sources</h2>
 <ul class="reads">
