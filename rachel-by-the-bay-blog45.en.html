@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rachel Kroll · Rachel by the bay — Don't count on people not to err: make the wrong way harder</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="rachel-by-the-bay-blog45.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Read · 45 · rachelbythebay.com</div>
+<h1>Rachel Kroll<br/>Don't count on people not to err: make the wrong way harder</h1>
+<p class="sub">Rachel Kroll · blog <strong>Rachel by the bay</strong> · writes about Unix systems, production outages, and the people inside big companies. By her own account in her posts: web hosting support at Rackspace in 2004–2006, then roughly four and a half years as an SRE at Google; in 2011 she thought she was "done with this whole industry"; from mid-2013 she worked at Facebook in a role that amounted to "go off and find stuff that's broken, and make things better", and resigned in early 2018 · <strong>Still writing</strong>: on the day this page was written (2026-10-22), the latest post we could read was from 2026-05-05 · Corpus: started in 2011; by February 2020 she counted "over 1200 posts". Two turning points: after starting the job in July 2013, output fell from one to three posts a day to one every few weeks; after resigning in 2018 it picked up again · Note: her server refused direct connections from our network, so this page is based on about 490 full-text posts cached by an RSS reader (2013–2026; the 2011–2012 originals are missing), of which we read 18 closely.</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Essentials</button>
+<button id="btn-deep">Full read</button>
+</div>
+<!-- ============ Essentials ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>On August 19, 2014, Rachel Kroll published a three-hundred-word post titled "fork() can fail: this is important." It read like a piece of systems-programming trivia. <code>fork()</code>, the call that makes a child process, can fail, and when it does it returns −1. If you don't check, and you save that −1 as the child's process ID, then later call <code>kill</code> on it, the Linux manual says the signal goes to "every process for which the calling process has permission to send signals." If you're root, that's the whole machine.</p>
+<blockquote><span class="en">Unix: just enough potholes and bear traps to keep an entire valley going.</span><cite>fork() can fail: this is important, 2014-08-19</cite></blockquote>
+<p>She didn't say why she wrote it that day. Eleven years later, in February 2025, she finally did. On August 1, Facebook had gone down; internally the outage was named "Call the Cops." Her assignment was one strange question: when the machines ran out of memory, why did sshd and nearly every other process die, leaving only init and a program called fbagent alive? She spent eighteen days on it. <strong>On the afternoon of August 19</strong> she found a log line fbagent had written at the exact moment everything died: "starting kill of child -1."</p>
+<p>The survivor was the killer. Its fork had failed, it didn't handle the −1, and later it went to kill that "wayward child." The absurd part: she couldn't find the bug in the source tree, because someone on another team had already fixed it. Production was running a release cut before the fix.</p>
+<p>That is the basic shape of Rachel by the bay: a corner that "never happens," a morning when it did, and someone who spends weeks digging to the bottom. She has been poking at machines since she wired a BBS in her family's attic in 1990, and later served as a "last line of defense" inside Google's and Facebook's production environments. For more than a decade she keeps returning to one question: <strong>why do systems built by smart people keep falling over in the same ways, and who takes the blame when they do?</strong></p>
+<p>Her first answer: don't count on people. In 2017 she described her job like this. When you find a class of failures, you don't tell everyone "don't do that." You change the system so that anyone trying it again will "encounter significant resistance from the system itself," and doing it right becomes the easier path. Because:</p>
+<blockquote><span class="en">People are essentially bags of mostly water, and those bags are bad at remembering arbitrary rules parceled out by ridiculous chunks of silicon.</span><cite>Where have I been these past few years?, 2017-01-07</cite></blockquote>
+<p>Besides, the people you teach today probably won't be on the team a year from now. She has seen plenty of engineers announce in comment threads that they would never write such bad code. She named them "THE ONE," and answered: you wouldn't, but the rest of us would, and systems have to be built for the rest of us.</p>
+<p>Her second answer is harder to hear. Push "five whys" past five, she found, and around the sixth or seventh why the problem leaves technology for what she calls "layer eight": management. A service kept breaking; she embedded with its team and found nobody stupid and nobody malicious, just one person carrying three or four people's load, so overloaded he had started shipping insanity. When review season came, the company wanted to give him a low rating. "This was never a tech problem."</p>
+<p>So her core move is this: <strong>"human error" in an outage report is almost never the end of the investigation. It is where the next question starts.</strong> Keep digging and you go from the machine's corners to the system's design, and finally to how the organization hands out load and blame. And someone given responsibility without the power to change anything, she says, has already become the scapegoat.</p>
+</div>
+<!-- ============ Full read ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary</h2>
+<div class="glossary">
+<ul>
+<li><b>Process ID (pid)</b> — the number the operating system gives each running program. Killing or signaling a process goes through it.</li>
+<li><b>fork()</b> — the Unix system call by which a program clones itself into a child. On success the parent gets the child's pid; on failure, −1.</li>
+<li><b>kill(−1)</b> — "signaling" −1 doesn't target one process; it targets every process you have permission to signal. Run as root, that is the whole machine.</li>
+<li><b>OOM (out of memory)</b> — the machine has used up its memory. Many operations that "never fail" start failing.</li>
+<li><b>SRE (site reliability engineer)</b> — a role invented at Google: keep production services up, and bring them back when they fall. Facebook's equivalent is called production engineering.</li>
+<li><b>On-call / SEV</b> — taking turns carrying a pager to handle incidents; a SEV is Facebook's name for a production incident, ranked by severity.</li>
+<li><b>Root cause analysis</b> — asking "but why?" after an incident until you reach the link most worth fixing. "Five whys" is the popular simplified version.</li>
+<li><b>Static analysis / lint</b> — tools that flag and block suspicious code before it runs, or before it is even checked in.</li>
+<li><b>Calibration</b> — the meeting where managers at a big company compare everyone's performance ratings and even them out.</li>
+</ul>
+</div>
+
+<h2>A strange thing: the only process left alive was the murderer</h2>
+<p>August 1, 2014 was a Friday. Kroll was waiting for her bus when Facebook went down. She got online from the sidewalk by tethering to her phone, then kept following along as the bus bounced up Highway 101 to Menlo Park. By her account the whole site was down for several hours (press reports at the time said about half an hour). As she recalls it, the Los Angeles County sheriff tweeted "something like 'we know it's down, it's not a law enforcement emergency, so stop calling us about it'." So internally the outage became "Call the Cops."</p>
+<p>The proximate cause was found quickly: that morning's push, which distributed new bytecode to the web servers, had run the machines out of memory. But a scarier question had no answer. Running out of memory should mean slowness, and a few processes shot by the kernel's OOM killer. On these machines sshd was dead, monitoring was dead, nearly everything was dead; through out-of-band access you could see only the console login that init respawns, and something called fbagent. Without knowing why, she wrote, everyone was living under a Sword of Damocles that could drop again at any moment.</p>
+<p>The question went to her. Everyone suspected the kernel, or the company's own job scheduler. She shrank her test machine's swap from several gigabytes to 64 MB, and wrote little "memeater" programs that allocated memory and dirtied the pages so the OS had to hand over real physical memory, then sat and waited. The box finally fell over. A few minutes later she saw the log line:</p>
+<blockquote><span class="en">A few minutes later, I found the smoking gun: fbagent had logged something about "starting kill of child -1" at exactly the time everything died.</span><cite>Answering reader feedback: war rooms vs. deep investigations, 2025-02-22</cite></blockquote>
+<p>She understood at once, because years of nerding out on Linux boxes had taught her what killing "pid −1" does. fbagent ran as root and managed a set of subprocesses; it called fork(), didn't handle the −1, and later went to kill that "wayward child." "It was the thing doing the murdering!" That also explained why only it survived: on Linux, a signal sent to −1 spares init and the sender itself.</p>
+<p>The story wasn't over. She opened fbagent's source, and the fork() return value was checked. So where was the −1 leaking through? Answer: she couldn't see the bug because it had already been fixed. An engineer on an unrelated project had tripped over it, tracked it down, and sent a patch to the owning team, who committed it. But the many, many machines in production were running a release cut well before that.</p>
+<p>She worked it out on the afternoon of August 19. The same day, the blog carried that three-hundred-word "fork() can fail." It mentioned no company and no outage. It just ended by asking: have you ever found a machine totally dead except for the console login and the process manager? Did you blame the kernel's OOM killer? "It might not be the guilty party here. Go see if you killed -1." At the time, readers took it as trivia.</p>
+
+<h2>Who she is</h2>
+<p>In February 1990 she opened a public BBS. While wiring it up in the attic, she clipped onto the first phone line to ring the second while still holding the second, and found out what 90 volts AC at 20 Hz feels like. That afternoon her first new user dialed in, typed "NEW," and was hung up on: she had set the board to "no new users" while it lived on the family voice line, and forgot to switch it back. The next caller came three days later.</p>
+<p>Later she did hosting support at Rackspace, then four and a half years as an SRE at Google, where she did nearly a hundred interviews. By 2011 she thought she was finished with the industry. That was also the year she started the blog, sometimes posting two or three times a day. In mid-2013 she went to Facebook, in a role she sums up as "okay, it's on you now, so go off and find stuff that's broken, and make things better," and the blog nearly went quiet. After she resigned in early 2018 the writing picked back up; by 2020 she had passed 1,200 posts. She calls Facebook the place with "the cat pictures" and calls the cloud "the clown."</p>
+
+<h2>What she wrestles with</h2>
+<p>In January 2017 she wrote a long post explaining where she'd been. One line in it could serve as a manual for everything she writes:</p>
+<blockquote><span class="en">It turns out that being cursed with the ability to break basically anything is kind of useful when you can turn around and find out just how it went wrong, and then make it not happen again.</span><cite>Where have I been these past few years?, 2017-01-07</cite></blockquote>
+<p>Break it, find out how, make it not happen again. The first two steps are technical. The third is where her real fight is. Why do systems keep failing the same way? And why does fixing usually cover this one failure rather than the whole class?</p>
+<p>She ran into the question first on the machine side. In March 2013, early in the blog, she tried to turn a time string back into a Unix timestamp. The input and the format string were unambiguous, yet OpenBSD, Slackware, and a Mac gave three different answers: off by an hour, off by seven hours, or simply −1. She laid out every struct field in a comparison table and concluded that once you start down this dusty desert road looking for something that works everywhere, "before long you're up to your armpits in rattlesnakes." Machines are full of corners that bite only in particular combinations.</p>
+<p>Then the human side. The same month she wrote about a production meeting at Google: colleagues were busily debating how to fix packet loss for "type 2 traffic" over the backbone, but their service didn't use type 2 traffic at all. She said "wait" twice; nothing. She gestured; nothing. Finally she raised her voice: "PUT DOWN THE CRACK PIPES!" That stopped a useless plan. Afterward her manager pulled her aside: "This is materially affecting your perf score." Her conclusion:</p>
+<blockquote><span class="en">So, basically, my options are: "be ignored and have bad things happen", or "get noticed and have bad things happen".</span><cite>"Put down the crack pipes" doesn't go so well, 2013-03-27</cite></blockquote>
+<p>These two threads, the machine's corners and people's situations, wind tighter and tighter over the next decade of posts. In 2013 she still wrote about them separately: one post on time functions, another on not being heard as a woman engineer. By 2023 she was saying they are the same problem.</p>
+
+<h2>Her ideas, told as how she found them</h2>
+<h3>1. The branch that "never happens" will eventually run in production</h3>
+<p>fork() returning −1 is the kind of case textbooks mention and almost nobody cares about. On a normal machine it really does almost never happen. Kroll's first insight came from scale: <strong>across a big enough fleet, "almost never" means "every day."</strong></p>
+<p>Her 2017 post lists a string of examples. Facebook's machines were big enough that process IDs had to go past the default ceiling of 32,768, and so she met tools that reserved five characters for a pid and garbled their output on a seven-digit one like 1048576; programs with assertions that a pid would always be under 32K or 64K, which blew up on a box that had been up a while; and people who allocated a static array sized to the maximum pid to get O(1) lookups, which by 2017, with the ceiling in the millions, was itself a serious chunk of memory. bash tracked background jobs in a linked list, so once the pid ceiling went up, long-running bash scripts got slower and slower. A newer lsof read every file descriptor of every thread, and on big machines would "basically never finish."</p>
+<p>Each one is a can't-happen assumption that scale cashed in. Her way of proving the lsof problem was very her: rather than recompile, she dumped the binary to hex with xxd, found the stored default option value in vi, dropped the bit in question, converted it back, and ran it. It finished fast, and that was the proof.</p>
+<p>Where does that kind of knowledge come from? In 2023 a reader asked how to become a systems engineer, and her answer took a detour. Colleagues treat fixing "the unfixable" as magic, she said, but:</p>
+<blockquote><span class="en">The question is: did you, really? It's all relative. If you've been poking and prodding at things and have remembered the results of these experiments from over the years, it's not really new to you.</span><cite>Feedback: I try to answer "how to become a systems engineer", 2023-05-30</cite></blockquote>
+<p>She gave two examples. One was fork and kill(−1): the line in the kill man page about "all processes except the kill process itself and init" had somehow stuck in her head. The other was malloc(1213486160). A program had asked for 1.2 billion bytes; she saw that in hex this is 0x48545450, four bytes all in the range of uppercase ASCII letters, spelling "HTTP." Someone had read a chunk of network data as a length field. She caught it because years of staring at hex dumps had taught her that ASCII letters bunch together (which, she notes, is entirely deliberate).</p>
+<p>So the first idea has two halves. One is about machines: in large systems, rare branches are certain branches. The other is about people: what looks like expert intuition is a library of weird events built up over years. A beginner doesn't have one yet, and that's nothing to be ashamed of. She closes: "if you think this is nuts and choose another path, I don't blame you. This *is* nuts."</p>
+
+<h3>2. Don't teach people, change the system, because none of us is THE ONE</h3>
+<p>Finding the bug is only the beginning. In her Facebook years, as she describes it, "fixing" came in three kinds: write a patch; convince someone their thing needs a patch; and, most often, the third:</p>
+<blockquote><span class="en">…change the system so that anyone trying to do something this way ever again will encounter significant resistance from the system itself, such that it's easier for them to just do it the safe/right way.</span><cite>Where have I been these past few years?, 2017-01-07</cite></blockquote>
+<p>Why not just teach? Two reasons. First, people are "bags of mostly water" and can't remember arbitrary rules handed down by machines. Second, even if you teach these particular people perfectly, they won't be the ones doing the work a year later; turnover and growth mean "your valiant attempts at teaching people will be reduced to whispers in the wind in a matter of months."</p>
+<p>She gave a concrete case. A lot of failures turned out to be segfaults, and grovelling through stack traces and core dumps showed the root was misuse of C++ std::vector: reading off the end with square brackets, or calling .front() and .back() on an empty container. Instead of emailing the whole company to be careful, she went to the static analysis people and showed them how messed up vector use gets in human hands, and which outages didn't have to happen. They built something that caught bad accesses before the code could be checked in, and "an entire class of problems disappears inside the company." Likewise, when another site broke because of strftime's %G (the year of the ISO week, which differs from the calendar year for a few days around New Year), her thought was "if it can bite them, it can bite us." She searched the company's code, fixed what she found, and added lint rules to make the mistake hard to make by accident. Along the way she reached a blunt verdict: strftime and friends "are evil, and probably should not exist"; most people just want a few well-named functions.</p>
+<p>The flip side of this idea became, in 2018, the post she herself links back to most. Whenever she told a failure story, a certain kind of commenter would reply: "People shouldn't write crap code." "You shouldn't hire bad programmers." "This is so easy to test for." "I've never seen this happen, I've never done it myself, and I'll never see this in any code I write for the rest of my life." She called this person "THE ONE," after the savior in The Matrix, and took the lines apart one by one:</p>
+<blockquote><span class="en">So yes, the uid thing ran in prod... somewhere. The string-map-int stuff ran in prod.... somewhere. […] malloc("HTTP") happened... somewhere. Because we are not you.</span><cite>Optimizing your talking points, 2018-04-28</cite></blockquote>
+<p>Her closing suggestion to THE ONE: skip the indirect messages and just say "I am THE ONE. You only need to know me. I am better than all of you," then bow out and let the rest of us get the job done "with our shitty sub-par abilities." Ever since, whenever such voices show up in a comment thread, she links back here.</p>
+<p>She holds herself to the same standard. In 2020 someone said she never writes about her own screwups, and the next day she listed a pile of them. The first SEV she ever opened on call at Facebook was one she had caused: she ran grep across the crash directories of a whole region's machines with a parallel ssh tool, not realizing that tens-of-gigabytes core dumps lived there too, and hammered the disks until uploads in that region crawled and monitoring complained. Her takeaway: every company eventually writes a "run things in ssh everywhere at once" tool, and "they should all be renamed 'instant SEV creator'." In 2021 she wrote "A terrible schema from a clueless programmer," detailing a 2002 table stuffed with strings that forced a full scan on every query, and revealed at the end: who was that programmer? "Well, that's easy. She just wrote this post for you."</p>
+<p>These are two sides of one idea. If even the person writing the instructional blog makes these mistakes, relying on people not to err is not a reliable engineering plan. The reliable plan is to have the system catch people, and make the wrong road harder to walk than the right one.</p>
+<p>In 2018 she added a method for finding work worth doing, as an extension of the same idea. Freshly resigned, she was asked what had bugged her about that company, and at first she couldn't name anything. Then it hit her: she had four and a half years of little scripts in her own bin directory that had papered over every annoyance, so she no longer felt them. Hence the advice:</p>
+<blockquote><span class="en">Look for the patches to the original system which were done by people who actually work in a given space.</span><cite>Look for the duct tape, 2018-03-23</cite></blockquote>
+<p>She calls it looking for the duct tape: find the one-off tools people have built, look in their personal bin directories, hear their stories, and look for patterns. Wherever users have taped over something is a rough edge of the system. Smooth it out upstream, they get to peel off the tape, and you have interested users from day one.</p>
+
+<h3>3. Layer eight: dig deep enough and the root cause is management</h3>
+<p>The third idea is the one she put into words last, and the least welcome. In February 2023 she recalled a post on the "five whys" that used a car that won't start: the battery is dead, because the alternator isn't charging it, because the belt broke, because it was past its life and not replaced, because maintenance wasn't done on schedule. Five levels, and stop. In big-company infrastructure, she said, if you actually intend to fix something, you have to keep going. And if you keep going long enough:</p>
+<blockquote><span class="en">It turns out that when you start doing this root-cause analysis and really keep after it, the "squishy human realm" is actually the no-longer-hypothetical "layer eight" from those T-shirts.</span><cite>More than five whys and "layer eight" problems, 2023-02-13</cite></blockquote>
+<p>Networking textbooks split communication into seven layers, and snarky T-shirts add a "layer eight" for things like "corporate politics" and "management." She says it's no joke. In the car example, the next why might be management forcing people to skip the maintenance schedule with "it'll work, trust me." In tech, it might be an empire-building manager hiring anyone with a pulse to have more direct reports; his own manager benefiting from it too; the whole company obsessed with hiring even though, by her Drake-equation analogy, there aren't that many qualified people in the world. The result is people working on systems they have no business touching. That is supposed to be caught by their manager; if it isn't, that's a failure. If the manager's manager can't tell, that's another.</p>
+<p>A month later she told a specific case. She was on a "last line of defense" team, and a critical service that ran on every machine in the fleet kept causing trouble that nobody could explain. She transferred into that organization and embedded with the team. All the founding members had moved on; one person had overlapped with them, and the whole team now rested on him, everyone else being very new. She got to know him and found he was neither batshit nor malicious, just under way too much load, "and was shipping insanity as a result." They called a timeout on shipping, intercepted some of the zanier ideas, got others to share the load, and she did "firewall" customer-service work so the team had room to breathe. The service got better and the team gelled. Then the biannual calibration sessions came, and they wanted to give him a sub-par rating. She said she'd be royally pissed off at anything below "meets expectations"; a former teammate, asked separately, said the same. With both saying it, the rating held. Her verdict, in full:</p>
+<blockquote><span class="en">This was never a tech problem. It was one guy with 3 or 4 people worth of load riding on his shoulders who was doing his very best but was still very much human and so was breaking down under the stress.</span><cite>Load 'em up and throw 'em under the bus, 2023-03-09</cite></blockquote>
+<p>This verdict ties the first two ideas together. In the fork story, the error traces to one unchecked return value, and then to a release process that didn't get the fix out in time. In the vector story, it traces to a design that relied on people remembering rules. Here it traces to who carries the work, how much, and who gets blamed afterward. She brought back a line she first wrote in February 2013, admitting that she still fell into the same trap in 2017 "within a particularly broken organization":</p>
+<blockquote><span class="en">…if you are given responsibility without the power to make any changes, then you have just become the scapegoat.</span><cite>More than five whys and "layer eight" problems, 2023-02-13</cite></blockquote>
+<p>Her warning to would-be troubleshooters: do this long enough and "expect to start discovering <strong>truly unsatisfying situations that cannot be resolved</strong>." Problems at the technical layers have patches. Problems at layer eight often leave you only the option of being somewhere else.</p>
+<p>In November 2024 this idea carried her to a reversal of her own past. At Rackspace in 2004–2006 she had built several tools showing who was actually working tickets and who was slacking. When a company selling an "employee metrics" product recently asked her to shill for it, she reflected and decided that what she had done was wrong:</p>
+<blockquote><span class="en">Those tools I wrote 20 years ago didn't really indicate who was slacking at working tickets or whatever. What they *actually indicated* was that the management at Rackspace, by and large, had no clue what was going on right under their noses.</span><cite>I've had a change of heart regarding employee metrics, 2024-11-03</cite></blockquote>
+<p>Knowing what your reports are doing and whether they're doing it well is a manager's job; if a manager can't, that's their manager's problem. Her new position is blunt: don't help them, don't write those tools, don't say anything substantive in a performance review. "Make them do their own damn jobs." Besides, pointing out that management can't see is the quickest way to make enemies.</p>
+
+<h2>How she thinks</h2>
+<p><strong>Treat "impossible" as a hypothesis to test.</strong> In the Facebook outage everyone had settled on the kernel's OOM killer or the company's scheduler. She didn't join the guessing; she shrank swap to 64 MB, wrote memory eaters, and forced the failure to happen again on her own box. With lsof, when there was no switch to flip, she edited a single bit in the binary. Her bar isn't plausibility. It's making the thing break again in front of her.</p>
+<p><strong>Deep digging needs a different room.</strong> She wrote a whole post against war rooms: engineers crammed in a poorly ventilated little conference room "thinking very hard and sweating a lot," the air getting worse, and no space on a 13-inch laptop for enough terminal windows. She went back to her own desk, her big monitor, her tuned environment. War rooms may suit coordinating a list of known tasks, she says, but heads-down investigation doesn't happen there.</p>
+<blockquote><span class="en">I can't imagine doing that kind of multi-window parallel investigation stuff on a teeny little laptop screen with people right next to me on either side, while the whole room flop-sweats about going out of business…</span><cite>Answering reader feedback: war rooms vs. deep investigations, 2025-02-22</cite></blockquote>
+<p><strong>Build a library of weird things, and keep revising it.</strong> The path she describes: whenever you see something, wonder why it is the way it is, whether a telephone, a scale, a crusty old road, or a forgotten grove of fruit trees; open it with a screwdriver, get out of the car and walk the road. Form hypotheses about how it came to be, write them down, refine or discard them as data arrives, and note why you discarded them. After a while you have working models. She adds that this goes for understanding people and groups too, though "most tend to not respond well to being opened with screwdrivers."</p>
+<p><strong>Distrust percentages.</strong> A short 2013 post goes after the line companies use when killing features: "only n% of our users were using it." One percent of 100 users is one person; one percent of 100 million is a million people, "basically the entire city of San Jose." "If they think that 10 people and 100000 people are the same just because they are both 1% of their respective groups, how can you be sure they are even human?" That sensitivity to scale is the same eye she later turns on fleets, where a rare failure, multiplied by enough machines, happens every day.</p>
+<p><strong>The stories are real, with the identifying marks filed off.</strong> Nearly every failure she tells has a real original. She has said she sometimes files off the identifying marks so as not to create a "giant flaming arrow" pointing at a company, but that it usually doesn't matter, because "these places eventually make the same mistakes anyway." It makes the blog read like an anonymous incident archive, which is exactly why she insists that each of these things happened in production, "somewhere."</p>
+
+<h2>Where she might be wrong</h2>
+<p><strong>She herself admits the old posts contain "real crap."</strong> The 2024 reversal opens: "I know that if you go back far enough in these posts of mine, you will find some real crap in there." She once enjoyed building tools to expose slacking coworkers and later decided that was wrong. The candor deserves respect, but it is also a reminder: many of her conclusions come from where she stood in an organization at the time, and when the position changes, so does the conclusion.</p>
+<p><strong>Her new position fights her own story.</strong> In 2024 she says not to say anything substantive in a performance review. Yet the overloaded engineer of 2023 kept his rating precisely because she and a former teammate said substantive things in calibration. Her anger is understandable, but a blanket rule of non-cooperation would also rule out her own best intervention. That is our reading, not something she has written.</p>
+<p><strong>Some technical verdicts came before the experience.</strong> In the Gunicorn post she admits that her beliefs ("I, for example, will not write a service in Python," no web requests where RPC belongs, no userspace green threads) "weren't rooted in experience with those specific technologies"; she had seen them from afar and decided they were no good. Then she really did land in a terrible system built from Python, Gunicorn, Gevent, and web requests, and wrote about it brilliantly: it forks before loading the app, so copy-on-write saves nothing; it scales out at 25–30% CPU; "In this world, the '90s apparently never ended." But one bad system proves that system bad, not that the stack is unusable in anyone's hands.</p>
+<p><strong>The form of the evidence is biased.</strong> Her arguments rest almost entirely on stories she lived through, mostly anonymized and unverifiable. In them she is usually the one who sees the problem, surrounded by colleagues who won't listen and managers who can't see. That doesn't make the stories false, but readers are getting one vantage point's archive, not a controlled comparison. Even details can drift: she says the 2014 outage lasted several hours, while press reports at the time said about half an hour.</p>
+<p><strong>"THE ONE" can deflect fair criticism.</strong> The label works well against the arrogance of the never-made-that-mistake crowd, but it can also be used to wave off good points. Her 2021 database post drew a large pile of criticism about SQL practice; her reply the next day opened by casting the comment section as THE ONE's favorite hour. We did not read that thread and can't say which criticisms hold up; nor did we find substantial named criticism of her work.</p>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Sociology · Normal accidents (Charles Perrow)</b>: In his 1984 book Normal Accidents, Perrow argued that systems with complex interactions and tight coupling will sooner or later produce failure combinations nobody foresaw, so accidents are "normal." fork returning −1, plus root privileges, plus an old release still in production, is exactly such a combination. The difference: Perrow is pessimistic about such systems, while Kroll still believes you can eliminate failures one class at a time.</li>
+<li><b>Safety science · The "new view" of human error (Sidney Dekker)</b>: Dekker holds that human error is a symptom of trouble in the system, not the conclusion of an investigation, which is nearly "because we are not you" in other words. The difference is that Dekker turned the idea into a "just culture" that organizations should adopt, while Kroll's later posts trust organizations to do so less and less.</li>
+<li><b>Cognitive psychology · Recognition-primed decisions (Gary Klein)</b>: Studying fireground commanders, Klein found that experts don't weigh options side by side; they match the situation to a large store of remembered cases and recognize what to do. Kroll spotting malloc("HTTP") at a glance is that process, and her library of weird things is Klein's store of experience. Unlike firefighters, who build their case library on the job, she built much of hers poking machines at home.</li>
+<li><b>Economics · Goodhart's law (Charles Goodhart)</b>: once a measure becomes a target, it stops being a good measure. That sounds like an explanation for her regret over the slacker-detection tools. But her reason is different: not that the numbers get gamed, but that they expose management's blindness, and saying so invites retaliation.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>The root cause of Facebook's 2014 "Call the Cops" outage was a root-run program that didn't handle fork() returning −1 and then called kill(−1), wiping out every process on the machine.</li>
+<li>The fork bug had already been fixed in the source tree, but production machines were running a release cut before the fix.</li>
+<li>Across a big enough fleet, branches that almost never run will run every day; pids past 32,768 broke a whole set of tools and assertions.</li>
+<li>Expert intuition is a library of weird events built by years of poking machines, such as recognizing malloc(1213486160) as malloc("HTTP").</li>
+<li>Rachel Kroll's core claim: instead of training people to remember rules, change the system so the wrong way meets resistance and the right way is easier.</li>
+<li>"THE ONE" is the commenter who claims never to write bad code; systems should be built for fallible ordinary engineers, "because we are not you."</li>
+<li>To find engineering work worth doing, look in colleagues' personal bin directories: wherever users applied "duct tape" is a rough edge of the system.</li>
+<li>Root cause analysis pursued far enough leaves technology for "layer eight": how management distributes load, responsibility, and blame.</li>
+<li>Someone given responsibility without power has already become the scapegoat; Rachel Kroll wrote this in 2013 and still fell into the trap in 2017.</li>
+<li>In 2024 Kroll renounced her early slacker-detection tools, but her new rule of saying nothing substantive in reviews contradicts her 2023 story of speaking up for an overloaded engineer.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://rachelbythebay.com/w/2014/08/19/fork/">fork() can fail: this is important</a></span> (2014-08-19)<span class="d">fork returns −1, and kill(−1) kills everything. Written the same day she cracked the Facebook outage's root cause.</span></li>
+<li><span class="t"><a href="https://rachelbythebay.com/w/2017/01/07/status/">Where have I been these past few years?</a></span> (2017-01-07)<span class="d">Her account of the job: change systems instead of teaching people, static checks for vector, lsof and bash at scale, pids past 32K, strftime.</span></li>
+<li><span class="t"><a href="https://rachelbythebay.com/w/2018/04/28/meta/">Optimizing your talking points</a></span> (2018-04-28)<span class="d">"THE ONE" and "because we are not you"; the post she links back to most.</span></li>
+<li><span class="t"><a href="https://rachelbythebay.com/w/2023/02/13/broken/">More than five whys and "layer eight" problems</a></span> (2023-02-13)<span class="d">Root cause analysis followed all the way into management; responsibility without power makes a scapegoat.</span></li>
+<li><span class="t"><a href="https://rachelbythebay.com/w/2025/02/22/war/">Answering reader feedback: war rooms vs. deep investigations</a></span> (2025-02-22)<span class="d">The full investigation of the "Call the Cops" outage: 64 MB of swap, fbagent, a fix that existed but hadn't shipped, and why deep work doesn't happen in war rooms.</span></li>
+</ul>
+
+<section class="updates" data-slug="rachel-by-the-bay" data-last-reviewed="2026-10-22">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep Read · Issue 45 · Content checked as of 2026-10-22</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
