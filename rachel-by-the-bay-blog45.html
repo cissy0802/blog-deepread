@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Rachel Kroll · Rachel by the bay — 别指望人不犯错，把系统改到让错路更难走</title>
 <style>
@@ -57,7 +58,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <div class="langbar"><a href="rachel-by-the-bay-blog45.en.html">English →</a></div>
 <header>
 <div class="kicker">博客精读 · 45 · rachelbythebay.com</div>
-<h1>Rachel Kroll<br/>别指望人不犯错，把系统改到让错路更难走</h1>
+<h1 data-tts="3d1e75440eec2abe">Rachel Kroll<br/>别指望人不犯错，把系统改到让错路更难走</h1>
 <p class="sub">Rachel Kroll · 博客 <strong>Rachel by the bay</strong>（「湾区的 Rachel」）· 写 Unix 系统、线上事故和大公司里的人。据她自己在文中所述：2004–2006 年在 Rackspace 做主机托管技术支持，之后在 Google 做 SRE 约四年半，2011 年一度以为自己「受够了这一行」，2013 年年中进 Facebook 做「找出坏掉的东西，然后修好」的工作，2018 年初辞职 · <strong>仍在写</strong>：本页写作当天（2026-10-22）我们能读到的最近一篇发于 2026-05-05 · 语料：2011 年开写，到 2020 年 2 月她自称「超过 1200 篇」。两个转折：2013 年 7 月入职后从一天一到三篇骤降为几周一篇；2018 年辞职后又重新高产 · 说明：她的服务器拒绝了我们这边的直接连接，本页基于 RSS 阅读器缓存的约 490 篇全文（2013–2026，缺 2011–2012 的原文），实读其中 18 篇。</p>
 </header>
 <div class="modebar">
@@ -79,7 +80,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 </div>
 <!-- ============ 完整版 ============ -->
 <div class="mode-deep" hidden="" id="mode-deep">
-<h2>Glossary · 术语表</h2>
+<h2 data-tts="a439591a36d40f21">Glossary · 术语表</h2>
 <div class="glossary">
 <ul>
 <li><b>进程号（pid）</b> — 操作系统给每个运行中的程序编的号。杀进程、发信号都靠它。</li>
@@ -93,8 +94,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><b>绩效校准（calibration）</b> — 大公司里经理们开会，把每个人的绩效评分互相比较、拉齐的环节。</li>
 </ul>
 </div>
-
-<h2>一件怪事：唯一活下来的进程，就是凶手</h2>
+<h2 data-tts="11bf85c21270c015">一件怪事：唯一活下来的进程，就是凶手</h2>
 <p>2014 年 8 月 1 日是个星期五。Kroll 在公交站等车时，Facebook 挂了。她用手机热点在人行道上连进去，又在一路颠簸的公交上沿 101 号公路往门洛帕克跟进。按她的说法，全站停了几个小时（当时的媒体报道写的是半小时左右）；按她的回忆，洛杉矶县警长发推，大意是「我们知道它挂了，这不是执法紧急情况，别再打电话来了」。于是公司内部就把这次事故叫做「Call the Cops」。</p>
 <p>大家很快弄清了直接原因：早上那次推送，把新的字节码分发到网页服务器上，把机器的内存撑爆了。但还有一个更吓人的问题没人能回答：内存耗尽，本该是卡、慢、个别进程被内核的 OOM killer 杀掉；可这些机器上 sshd 死了，监控死了，几乎所有东西都死了，带外登录进去，只看到 init 重新拉起来的控制台登录程序，和一个叫 fbagent 的东西。不弄清楚这个，她写道，大家就一直头顶着达摩克利斯之剑，随时可能再掉下来一次。</p>
 <p>这个任务分给了她。所有人都怀疑内核，或者公司自己写的任务调度器。她把测试机的交换空间从几个 GB 缩到 64 MB，写了几个专门「吃内存」的小程序，申请内存后挨个写脏页面，逼操作系统真把物理内存交出来，然后静静地等。机器终于崩了。几分钟后，她看到了那行日志：</p>
@@ -102,12 +102,10 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>她立刻明白了，因为多年在 Linux 上瞎折腾，她记得杀「−1 号进程」意味着什么。fbagent 以 root 身份运行，管着一堆子进程；它调用 fork()，没处理 −1 这个返回值，后来又去杀这个「走失的孩子」。「它就是那个干谋杀的！」这也解释了为什么偏偏只有它活着：Linux 对 −1 发信号，会放过 init 和发信号的进程自己。</p>
 <p>可故事还没完。她去翻 fbagent 的源码，fork() 的返回值明明检查了。那个 −1 是从哪儿漏下去的？答案是：她看不到 bug，因为 bug 已经被修好了。另一个项目的工程师早先踩到过它，自己查清楚，把补丁发给了负责的团队，对方也合并了。只是线上成千上万台机器跑的，是在那之前很久打出来的旧版本。</p>
 <p>她 8 月 19 日下午搞明白这件事。同一天，博客上出现了那篇三百字的《fork() can fail》，没提 Facebook，没提事故，只在结尾问了一句：你有没有见过一台机器上除了控制台登录程序和进程管理器之外全死光？你是不是怪了内核的 OOM killer？「它可能不是罪魁祸首。去看看你是不是 kill 了 −1。」读者当时只当它是一条冷知识。</p>
-
-<h2>这人是谁</h2>
+<h2 data-tts="291b112283b0aac0">这人是谁</h2>
 <p>她 1990 年 2 月开了一个公开的 BBS（电子公告板），在阁楼里接线时一手捏着第一条电话线去打第二条，结结实实挨了一下 90 伏、20 赫兹的振铃电压。当天下午第一个新用户拨进来，输入「NEW」，被直接挂断：她之前为了防生人，把系统设成了「不收新用户」，忘了改回来。下一个人三天后才来。</p>
 <p>后来她在 Rackspace 做主机托管支持，在 Google 做了四年半 SRE、面试过近百名候选人，到 2011 年，她一度以为自己和这个行业的缘分到头了。也是那一年她开始写博客，一度一天两三篇。2013 年年中她去了 Facebook，岗位描述大意是「现在归你了，自己去找坏掉的东西，把它修好」，博客随之几乎停摆。2018 年初辞职后，写作又恢复了密度，到 2020 年她已经写了一千二百多篇。她总把 Facebook 叫做「猫图片网站」，把云计算叫做「小丑」（clown，cloud 的谐音）。</p>
-
-<h2>她跟什么较劲</h2>
+<h2 data-tts="f788081f6cd018db">她跟什么较劲</h2>
 <p>2017 年 1 月，她用一篇长文解释自己这几年去哪了。里面有一句可以当作她全部写作的说明书：</p>
 <blockquote><span class="en">It turns out that being cursed with the ability to break basically anything is kind of useful when you can turn around and find out just how it went wrong, and then make it not happen again.</span><span class="zh">事实证明，被诅咒成一个几乎什么都能弄坏的人还挺有用的，只要你能转过身来查清它到底怎么坏的，然后让它不再发生。</span><cite>Where have I been these past few years?，2017-01-07</cite></blockquote>
 <p>「弄坏 → 查清 → 不再发生」这三步，前两步是技术活，第三步才是她真正较劲的地方。系统为什么总以同样的方式坏？坏了之后，为什么修好的总是这一次，而不是这一类？</p>
@@ -115,9 +113,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>然后是人那一侧。同一个月，她写了 Google 时期的一次生产例会：几个同事热烈讨论如何解决「二类流量」在骨干网上丢包的问题，可他们的服务根本不用二类流量。她说了两次「等一下」，没人理；比手势，没人理。最后她提高嗓门喊了一句「PUT DOWN THE CRACK PIPES!」（把烟枪放下！），总算拦下了一个毫无用处的方案。会后经理把她叫到一边：「这会实质性地影响你的绩效分。」她的结论是：</p>
 <blockquote><span class="en">So, basically, my options are: "be ignored and have bad things happen", or "get noticed and have bad things happen".</span><span class="zh">所以我的选项基本上就是：「被无视，然后坏事发生」，或者「被注意到，然后坏事发生」。</span><cite>"Put down the crack pipes" doesn't go so well，2013-03-27</cite></blockquote>
 <p>这两条线，机器的角落和人的处境，在她后面十几年的文章里越缠越紧。2013 年她还把它们分开写：一篇讲时间函数，一篇讲作为女工程师不被听见。到 2023 年，她已经开始说，这根本是同一个问题。</p>
-
-<h2>她的想法，讲成「她怎么发现的」</h2>
-<h3>一、「永远不会发生」的那条分支，迟早会在生产环境里跑到</h3>
+<h2 data-tts="ee96d4101a69a732">她的想法，讲成「她怎么发现的」</h2>
+<h3 data-tts="b2c20b9a0333e00c">一、「永远不会发生」的那条分支，迟早会在生产环境里跑到</h3>
 <p>fork() 返回 −1 是那种教科书上写着、但几乎没人在乎的情况。正常机器上它确实几乎不发生。Kroll 的第一个洞察来自规模：<strong>在足够大的机群上，「几乎不发生」就等于「每天都在发生」。</strong></p>
 <p>她在 2017 年那篇长文里举了一串例子。Facebook 的机器大到进程号要突破默认上限 32768，于是她撞见：一些工具只给进程号留了 5 位宽度的显示格式，遇到「1048576」这种七位数就排版错乱；有的程序干脆写了断言，认定进程号永远不超过 32K 或 64K，在开机久一点的机器上一跑就崩；还有人按最大进程号开了一个静态数组，以为能换来 O(1) 访问，结果在进程号上限涨到几百万的 2017 年，这个数组本身就吃掉了一大块内存。bash 管理后台任务用的是一个链表，进程号上限一调大，长期运行的 bash 脚本就越跑越慢。lsof 新版本会把每个线程的每个文件描述符都读一遍，在大机器上「基本永远跑不完」。</p>
 <p>每一个都是「这种情况不会出现」的假设，在规模面前被兑现。她证明 lsof 那个问题的办法也很像她：不想重新编译，就用 xxd 把二进制文件转成十六进制，在 vi 里找到存默认选项的那个值，把对应的那一位抹掉，再转回去运行。跑得飞快，证据就有了。</p>
@@ -125,8 +122,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <blockquote><span class="en">The question is: did you, really? It's all relative. If you've been poking and prodding at things and have remembered the results of these experiments from over the years, it's not really new to you.</span><span class="zh">问题是：你真的施了魔法吗？这都是相对的。如果你多年来一直在戳这戳那，还记住了这些实验的结果，那它对你来说其实并不新鲜。</span><cite>Feedback: I try to answer "how to become a systems engineer"，2023-05-30</cite></blockquote>
 <p>她举了两个例子。一个就是 fork 和 kill(−1)：kill 手册里那句「表示除 kill 进程本身和 init 之外的所有进程」，不知怎么就留在了她脑子里。另一个是 malloc(1213486160)：某个程序申请了十二亿字节内存，她一眼看出这个数换成十六进制是 0x48545450，四个字节都落在 ASCII 大写字母的区间里，拼起来是「HTTP」。有人把一段网络数据当成了长度字段。她能认出来，是因为多年翻十六进制转储，注意到 ASCII 字母总是扎堆出现（她说这是设计者有意为之）。</p>
 <p>所以第一个想法有两半。一半是关于机器的：大规模系统里，罕见分支是必然分支。另一半是关于人的：所谓专家直觉，就是一个人多年积攒下来的「怪事库」。新人没有，不丢人；她最后补了一句，「如果你觉得这很疯狂、选了别的路，我不怪你。这确实很疯狂。」</p>
-
-<h3>二、别教人，改系统：因为我们都不是「天选之人」</h3>
+<h3 data-tts="b3fa13120700ad31">二、别教人，改系统：因为我们都不是「天选之人」</h3>
 <p>找到 bug 只是开始。Kroll 在 Facebook 那几年做的事，用她自己的话说，「修好」有三种：自己写补丁；说服别人他的东西需要补丁；而最常见的是第三种：</p>
 <blockquote><span class="en">…change the system so that anyone trying to do something this way ever again will encounter significant resistance from the system itself, such that it's easier for them to just do it the safe/right way.</span><span class="zh">……改变系统，让以后任何想这样做的人，都会从系统本身那里遇到很大的阻力，以至于干脆用安全、正确的方式做反而更省事。</span><cite>Where have I been these past few years?，2017-01-07</cite></blockquote>
 <p>为什么不直接教？她给了两个理由。第一，人是「一袋袋以水为主的东西」，记不住机器分发下来的任意规则。第二，就算你教会了眼前这些人，一年后干这活的已经不是他们了；团队和公司的人员流动，会让「你英勇的教学努力在几个月内化作风中的低语」。</p>
@@ -139,8 +135,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>2018 年她又补了一个找活干的方法，算是这个想法的延伸。她刚辞职时，有人问她在那家公司最烦什么，她一时竟答不上来，后来才想起：她早就在自己的 bin 目录里攒了四年半的小脚本，把那些烦人的地方一个个糊上了，所以「不觉得」烦。于是有了这条建议：</p>
 <blockquote><span class="en">Look for the patches to the original system which were done by people who actually work in a given space.</span><span class="zh">去找那些真正在这个领域干活的人，给原系统打的补丁。</span><cite>Look for the duct tape，2018-03-23</cite></blockquote>
 <p>她管这叫「找胶带」：去看大家各自写了哪些一次性小工具，翻他们的个人 bin 目录，听他们讲故事，找出规律。用户拿胶带糊住的地方，就是系统的毛边；你从上游把它修平，大家扯掉胶带，你第一天就有了一批用户。</p>
-
-<h3>三、第八层：根因一路挖下去，会挖到管理</h3>
+<h3 data-tts="08bb744d01f28a10">三、第八层：根因一路挖下去，会挖到管理</h3>
 <p>第三个想法是她最晚说清楚、也最不讨喜的一个。2023 年 2 月，她看到一篇讲「五个为什么」的文章，例子是汽车打不着火：电瓶没电，因为发电机没充电，因为皮带断了，因为皮带超期没换，因为没按保养计划做。五层，到此为止。她说，在大公司的基础设施里，你要是真想修好什么，就得继续往下问。而问久了：</p>
 <blockquote><span class="en">It turns out that when you start doing this root-cause analysis and really keep after it, the "squishy human realm" is actually the no-longer-hypothetical "layer eight" from those T-shirts.</span><span class="zh">结果是，当你开始做这种根因分析、而且一直追下去，那片「软乎乎的人类领域」，正是那些 T 恤上写的、如今不再是玩笑的「第八层」。</span><cite>More than five whys and "layer eight" problems，2023-02-13</cite></blockquote>
 <p>网络教科书把通信分成七层，一些挖苦人的 T 恤会加一个「第八层」，指办公室政治、管理之类。她说这不是玩笑。在汽车的例子里，再往下问可能就是：管理层逼着大家跳过保养计划，说「没事，相信我」。在科技公司，往下问可能是：某个想扩张地盘的经理只要有人就招，好让自己手下人头多；他的上级也从中受益；整家公司都痴迷于招人，而按她用德雷克方程打的比方，全世界根本没有那么多合格的人。结果是有些人被放到了他们本不该碰的系统上。这本该由经理发现；经理没发现，是经理的失职；经理的经理看不出经理失职，又是一层失职。</p>
@@ -152,31 +147,27 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <p>2024 年 11 月，这个想法把她带到了一个自我推翻的位置。2004–2006 年在 Rackspace，她写过好几个工具，统计谁真的在处理工单、谁在摸鱼。最近有家做「员工指标」产品的公司来找她站台，她反省之后说，当年那么做是错的：</p>
 <blockquote><span class="en">Those tools I wrote 20 years ago didn't really indicate who was slacking at working tickets or whatever. What they *actually indicated* was that the management at Rackspace, by and large, had no clue what was going on right under their noses.</span><span class="zh">我二十年前写的那些工具，并没有真正指出谁在处理工单时偷懒。它们<em>实际</em>指出的是：Rackspace 的管理层大体上对眼皮底下发生的事一无所知。</span><cite>I've had a change of heart regarding employee metrics，2024-11-03</cite></blockquote>
 <p>了解下属在干什么、干得好不好，是经理的本职；经理做不到，是经理的上级该管的事。她的新立场很粗暴：别帮他们，别写这种工具，别在绩效评估里说任何实质性的话。「让他们自己干自己该干的活。」而且，指出管理层看不见，正是给自己树敌的最快方法。</p>
-
-<h2>她的思维方法</h2>
+<h2 data-tts="18d30c8f236647e1">她的思维方法</h2>
 <p><strong>把「不可能」当成待验证的假设。</strong>Facebook 那次事故里，所有人都认定是内核的 OOM killer，或者公司的调度器。她没有跟着猜，而是把交换空间缩到 64 MB、写内存吞噬程序，硬生生把现场复现出来。lsof 那次，没有现成开关，她就直接改二进制里的一个位。她的标准不是「听起来合理」，而是「我让它在我面前再坏一次」。</p>
 <p><strong>深挖要换地方。</strong>她专门写过一篇反对「作战室」的文章：一群人挤在通风不好的小会议室里「拼命想、拼命出汗」，屋里越来越难闻，她在 13 英寸笔记本上开不出足够的终端窗口。她选择回到自己的工位，接上大显示器，用自己调好的环境干活。她说，作战室也许适合协调一堆已知的事情，但「埋头深挖」的活在那里干不成。</p>
 <blockquote><span class="en">I can't imagine doing that kind of multi-window parallel investigation stuff on a teeny little laptop screen with people right next to me on either side, while the whole room flop-sweats about going out of business…</span><span class="zh">我无法想象在一块小小的笔记本屏幕上、左右两边都挤着人、整个屋子都在为公司会不会完蛋而冒冷汗的时候，去做那种多窗口并行的调查。</span><cite>Answering reader feedback: war rooms vs. deep investigations，2025-02-22</cite></blockquote>
 <p><strong>攒一个「怪事库」，并且定期翻。</strong>她描述的成长路径是：看到任何东西都先问它为什么是这个样子，电话、秤、废弃的老路、被遗忘的果园，能拿螺丝刀拆就拆，能下车走就走；对它怎么变成这样提出假设，记下来，随着新数据进来修正或丢弃，并记下丢弃的理由。几年后你就有了一些「能用的模型」。她特意补了一句：这对理解人和人群也一样适用，「只是大多数人不太喜欢被螺丝刀拆开」。</p>
 <p><strong>不信百分比。</strong>2013 年她写过一篇短文，说公司砍功能时常说「只有 1% 的用户在用」。100 个用户的 1% 是一个人，一亿用户的 1% 是一百万人，相当于整个圣何塞市。「如果他们觉得 10 个人和 10 万人一样，只因为两者都是各自群体的 1%，你怎么确定他们还是人类？」这种对规模的敏感，后来变成了她看机群的眼光：一个「千万分之一」的故障，在足够多的机器上每天都会发生。</p>
 <p><strong>故事都是真的，只是锉掉了标记。</strong>她讲的故障几乎都有原型。她说过，有时会把可识别的特征锉掉，免得变成指向某家公司的「巨大燃烧箭头」，但这通常无所谓，因为「这些地方最终好像都会犯同样的错」。这让她的博客读起来像一部匿名的事故档案，也正因为如此，她才坚持：这些事都在生产环境里发生过，「在某个地方」。</p>
-
-<h2>她哪里可能是错的</h2>
+<h2 data-tts="778baebc13cc8db6">她哪里可能是错的</h2>
 <p><strong>她自己就承认过，旧文里有「真正的垃圾」。</strong>2024 年那篇改变立场的文章第一句就是：「我知道，如果你翻得足够远，会在这些文章里找到一些真正的垃圾。」她当年热衷于写工具揪出摸鱼的同事，后来认定那是错的。这份坦白值得尊重，但它也提醒读者：她的很多结论来自她当时在组织里的位置，位置变了，结论也会变。</p>
 <p><strong>新立场和她自己的故事打架。</strong>她 2024 年说「别在绩效评估里说任何实质性的话」，可 2023 年那个被压垮的工程师，恰恰是靠她和另一位队友在校准会上说了实质性的话，才没被打低分。她的愤怒可以理解，但「彻底不配合」这个处方，会把她自己最好的那次干预也一起排除掉。这是我们读下来的判断，不是她写过的话。</p>
 <p><strong>有些技术判断先有立场后有经验。</strong>她在 Gunicorn 那篇里坦白：「我不用 Python 写服务」「不用网页请求代替 RPC」「不用用户态绿色线程」这几条信念，「并不是基于对这些具体技术的经验」，是远远看过就判定不行。后来她确实踩进了一个由 Python、Gunicorn、Gevent 和网页请求搭起来的烂系统，写得极其精彩：fork 之后才加载代码，所以写时复制省不了内存；只敢把 CPU 用到 25%–30% 就扩容；「在这个世界里，九十年代显然从未结束。」但一个烂系统证明的是那个系统烂，不等于证明这套技术栈在任何人手里都不可用。</p>
 <p><strong>证据的形式本身有偏。</strong>她的论证几乎全靠亲历的故事，而且多半匿名、无法核实。故事里她通常是看穿问题的那个人，周围是不听劝的同事、看不见的经理。这不说明故事是假的，但读者看到的是一个视角的档案，不是对照实验。连细节都可能有出入：她说 2014 年那次宕机持续了几个小时，当时的媒体报道写的是半小时左右。</p>
 <p><strong>「THE ONE」可以挡掉正当批评。</strong>这个标签用来回应「我从不犯这种错」的傲慢很好使，但它也可能被用来打发有道理的意见。2021 年那篇数据库文章引来大量关于 SQL 写法的批评，她第二天的回应开头就把评论区叫做 THE ONE 出没最多的时候。我们没有读那条评论串，无法判断其中哪些批评站得住；我们也没有找到对她有分量的实名批评。</p>
-
-<h2>越界 · 跨学科的联想</h2>
+<h2 data-tts="5524fc4ad3daec33">越界 · 跨学科的联想</h2>
 <div class="crossx"><ul>
 <li><b>社会学 · 常态事故（Charles Perrow）</b>：Perrow 在 1984 年的《Normal Accidents》里说，组件之间复杂互动、又紧密耦合的系统，迟早会出现没人预料到的故障组合，所以事故是「常态」。fork 返回 −1 加上 root 权限，再加上旧版本还在线上，正是这种组合。不像的是，Perrow 对这类系统偏悲观，Kroll 仍相信可以一类一类地把它们消掉。</li>
 <li><b>安全科学 · 「新视角」看人为失误（Sidney Dekker）</b>：Dekker 主张，人为失误是系统毛病的症状，不是事故调查的结论。这和「因为我们不是你」几乎同一句话。不同在于 Dekker 把这套想法做成了组织应当采纳的「公正文化」，Kroll 写到后来却越来越不信组织会这么做。</li>
 <li><b>认知心理学 · 识别启动决策（Gary Klein）</b>：Klein 研究消防指挥官，发现专家并不在多个方案间比较，而是把眼前情形和记忆中的大量案例对上号，直接认出该怎么办。Kroll 一眼认出 malloc("HTTP") 就是这个过程，她的「怪事库」就是 Klein 说的经验储备。不像的是，消防员的案例库在火场里攒，她的很多案例是自己在家里拿机器戳出来的。</li>
 <li><b>经济学 · 古德哈特定律（Charles Goodhart）</b>：一项指标一旦成为考核目标，就不再是好指标。听上去像在解释她为什么后悔写「摸鱼检测」工具。但她的理由不一样：她不是说数字会被操纵，而是说数字暴露的是管理层的失明，而说出这一点会给自己招来报复。</li>
 </ul></div>
-
-<h2>十条要点</h2>
+<h2 data-tts="8ee3df294a4269f1">十条要点</h2>
 <ol class="takeaways">
 <li>2014 年 Facebook「Call the Cops」宕机的根因，是一个 root 程序 fork() 失败后没处理 −1，随后执行 kill(−1) 杀光了整台机器的进程。</li>
 <li>那个 fork 的 bug 在代码库里早被别人修好，线上机器跑的却是修复之前打的旧版本。</li>
@@ -189,8 +180,7 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li>被给了责任却没被给权力的人，已经成了替罪羊；Rachel Kroll 2013 年写下这句，2017 年自己照样掉进坑里。</li>
 <li>Kroll 2024 年推翻自己早年写摸鱼检测工具的做法，可新处方「绩效评估里什么都别说」与她 2023 年替工程师说话的故事互相矛盾。</li>
 </ol>
-
-<h2>出处</h2>
+<h2 data-tts="00631b41e7b2497d">出处</h2>
 <ul class="reads">
 <li><span class="t"><a href="https://rachelbythebay.com/w/2014/08/19/fork/">fork() can fail: this is important</a></span>（2014-08-19）<span class="d">fork 返回 −1、kill(−1) 杀光所有进程。写于她查清 Facebook 宕机根因的同一天。</span></li>
 <li><span class="t"><a href="https://rachelbythebay.com/w/2017/01/07/status/">Where have I been these past few years?</a></span>（2017-01-07）<span class="d">入职后的工作自述：改系统而非教人、vector 静态检查、lsof 和 bash 的规模问题、超过 32K 的进程号、strftime。</span></li>
@@ -198,9 +188,8 @@ footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.1
 <li><span class="t"><a href="https://rachelbythebay.com/w/2023/02/13/broken/">More than five whys and "layer eight" problems</a></span>（2023-02-13）<span class="d">根因分析一路追到管理层；有责无权即替罪羊。</span></li>
 <li><span class="t"><a href="https://rachelbythebay.com/w/2025/02/22/war/">Answering reader feedback: war rooms vs. deep investigations</a></span>（2025-02-22）<span class="d">「Call the Cops」宕机的完整调查经过：64 MB 交换空间、fbagent、早已修好却没上线的补丁，以及为什么不在作战室里深挖。</span></li>
 </ul>
-
-<section class="updates" data-slug="rachel-by-the-bay" data-last-reviewed="2026-10-22">
-<h2>更新记录</h2>
+<section class="updates" data-last-reviewed="2026-10-22" data-slug="rachel-by-the-bay">
+<h2 data-tts="04a590354c373a4e">更新记录</h2>
 <!-- updates -->
 </section>
 <footer>博客精读 · 第 45 期 · 本页内容核对至 2026-10-22</footer>
