@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sabine Hossenfelder · Backreaction — 宇宙不在乎你觉得它美不美</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
+</style>
+
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="backreaction-blog46.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 46 · backreaction.blogspot.com</div>
+<h1>Sabine Hossenfelder<br/>宇宙不在乎你觉得它美不美</h1>
+<p class="sub">Sabine Hossenfelder · 博客 <strong>Backreaction</strong>（「反作用」，广义相对论里的术语：物质反过来改变它所在的时空）· 德国理论物理学家，研究量子引力唯象学（quantum gravity phenomenology），后来以 YouTube 频道出名 · <strong>仍在写</strong>：本页写作当天（2026-10-23）最近一篇发于 2026-10-21 · 语料：2006 年 2 月开写，到今天共 2949 篇（按站点 feed 计）。早年是她和丈夫、物理学家 Stefan Scherer 合写的，2007 年的 311 篇里有 174 篇署 Stefan 或两人合署 · 两个转折：约 2020 年起，大部分帖子变成她 YouTube 视频的文字稿；约 2023 年起，多数帖子只剩一段视频嵌入加一两句简介，文字稿挪到了付费的 Patreon，评论区永久关闭，发帖量反而在 2024 年冲到 300 篇 · 所以本页依据的是 2006–2022 年间她本人署名的 18 篇正文，2023 年以后只看了几篇简介帖。</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2018 年 11 月，Sabine Hossenfelder 给物理学算了一笔账。按美国和德国物理学会的会员数据，1900 年到 2000 年间，物理学家的人数涨了大约一百倍，而且是指数增长。假设今天的物理学家和一百年前的一样勤快，那么从今天起算 14 个月的总工时，就相当于从一百年前起算的 40 年。</p>
+<blockquote><span class="en">Going by working hours only, physicists today should be able to do in 14 months what a century earlier took 40 years.</span><span class="zh">只按工时算，今天的物理学家 14 个月就该干完一个世纪前要干 40 年的活。</span><cite>The present phase of stagnation in the foundations of physics is not normal，2018-11-19</cite></blockquote>
+<p>一个世纪前的 40 年里有狭义和广义相对论、量子力学和反物质。而过去 40 年，基础物理的理论没变过：标准模型在 1970 年代中期就完成了，此后的实验只是一个接一个地确认它。她自己也说这笔账不能当真。她算它，是为了堵住一句常听到的辩解：「几十年没进展很正常，原子从猜想到发现还花了两千年呢。」</p>
+<p>大多数人看到这种停滞，会说这是自然在为难我们：能量太高，实验太贵。Hossenfelder 的诊断不一样。她说，坏的不是宇宙，是物理学家<strong>选择理论的方法</strong>。几十年来，理论家用「美」「简洁」「自然」来挑哪个理论值得去测。最典型的是自然性（naturalness）：理论里的数不该出现不可思议的巧合。照这个标准，大型强子对撞机（LHC）在希格斯粒子之外，一定还能看到超对称粒子之类的新东西。2016 年，结果出来了：只有希格斯，别的什么都没有。</p>
+<blockquote><span class="en">Nature, it turns out, doesn’t like to be told what’s presumably natural.</span><span class="zh">事实证明，大自然不喜欢别人告诉它什么才算「自然」。</span><cite>The LHC “nightmare scenario” has come true，2016-08-06</cite></blockquote>
+<p>她对自然性的反驳只有一句，简单到近乎尴尬：<strong>没有概率分布，就谈不上「不太可能」。</strong>你在山路上看到一摞码得整整齐齐的石头，可以断定是有人摆的，因为你见过成千上万块被风雨乱放的石头，知道它们自己落成什么样。可我们只见过一个宇宙、一套自然常数，凭什么说这套常数「不太可能」？那个隐含的「均匀分布」，没有任何数据撑着。2009 年她就写过：我们觉得「正常」的数量级，是演化教给我们的，祖先打过的熊，个头相差不过几个数量级。她当年那篇的结尾就一句：「宇宙才不在乎你喜不喜欢它。」</p>
+<p>第二步是这篇文章真正的骨架：既然方法明摆着不灵，为什么没人改？她的答案在 2008 年就写好了，比那本让她出名的书《Lost in Math》（《迷失于数学》）早十年。做买卖，糖果好不好吃，市场几天就告诉你；可一个物理理论的价值，要等五到十年才成形、几十年才能验证，在那之前，只有同行能评判同行。</p>
+<blockquote><span class="en">Until an idea is developed sufficiently and can be experimentally tested, we have only ourselves to judge on each other.</span><span class="zh">在一个想法发展到可以用实验检验之前，我们只能互相评判。</span><cite>We have only ourselves to judge on each other，2008-07-13</cite></blockquote>
+<p>这就是死循环：钱往人多的地方去，人往钱多的地方去，兴趣跟着人和钱走。十年后她写得更狠：他们审彼此的论文，审彼此的经费申请，彼此说这是好科学，从里面看一切照常，只是什么都没产出来。</p>
+<p>那该怎么办？她翻物理史，找成功的理论预言有什么共同点：爱因斯坦、狄拉克、预言希格斯粒子的那些人，<strong>都是在修补现有理论内部的逻辑矛盾</strong>，不是在把理论变漂亮。所以她的处方是：别去解决「不够美」这种不存在的问题，去解决真的矛盾，比如引力还没量子化、量子测量问题。她自己押的是一条几乎没人走的路，超决定论（superdeterminism）。押这条路，靠的也是这个标准。</p>
+<p>这处方有一个她自己写下的反例。2022 年她宣布不再研究黑洞信息悖论。那是个货真价实的矛盾，但候选答案太多，又没有实验能分辨：「物理不是数学。」光有矛盾不够，还得测得出来。</p>
+<p>所以她最核心的那一下是这样的：<strong>一个领域没有数据的时候，「品味」就会悄悄冒充证据；而负责校正品味的，正是那些靠这份品味拿经费的人。</strong>她自己写过，粒子物理是「煤矿里的金丝雀」：实验越贵越少，别的学科迟早也会走到这一步。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary · 术语表</h2>
+<div class="glossary">
+<ul>
+<li><b>标准模型（Standard Model）</b> — 描述已知所有基本粒子和除引力外三种力的理论，1970 年代中期定型，此后所有实验都符合它。</li>
+<li><b>大型强子对撞机（LHC）</b> — 欧洲核子研究中心（CERN）周长 27 公里的粒子对撞机，2008 年启动，2012 年发现希格斯粒子。</li>
+<li><b>超越标准模型（BSM）/ 唯象学（phenomenology）</b> — 前者指标准模型之外的新物理；后者是理论物理中专门把理论翻译成「实验上该看到什么」的那一支。Hossenfelder 自称唯象学家。</li>
+<li><b>自然性（naturalness）/ 精细调节（fine-tuning）</b> — 一种判断标准：理论里的无量纲常数应该接近 1，不应靠两个大数恰好几乎抵消。不满足就叫「精细调节」，被视为理论不完整的信号。</li>
+<li><b>超对称（supersymmetry, SUSY）</b> — 给每种已知粒子配一个「超伴子」的理论，最大的卖点之一就是恢复自然性。LHC 至今没找到任何超伴子。</li>
+<li><b>多重宇宙（multiverse）</b> — 我们的宇宙只是无数宇宙之一、各宇宙常数不同的设想。</li>
+<li><b>量子测量问题</b> — 量子力学里，波函数平时平滑演化，一测量就突然「塌缩」到一个结果。这两条规则怎么拼到一起、塌缩到底是什么，没人说得清。</li>
+<li><b>贝尔定理（Bell's theorem）/ 统计独立性</b> — 贝尔证明：满足某些假设的「隐变量」理论，给出的关联有上限，而实验突破了这个上限。假设之一是统计独立性：实验者选择测什么，和被测粒子的状态无关。</li>
+<li><b>超决定论（superdeterminism）</b> — 放弃统计独立性的确定性理论：测量仪器的设置和被测系统并不独立，因此可以用局域的隐变量重现量子力学。</li>
+<li><b>黑洞信息悖论</b> — 霍金发现黑洞会辐射、最后蒸发，而辐射不带信息；可量子力学要求信息不能凭空消失。</li>
+</ul>
+</div>
+
+<h2>一件怪事：一篇 2008 年的预言，和一封拒信</h2>
+<p>2008 年 7 月，Hossenfelder 还在做博士后，那年秋天又要重新找工作。她和一个弦理论家聊天，问他们那行就业怎么样。对方说不好，大家没兴趣了，进展不够，他自己正改去看圈量子引力。她回头写了一篇长文，讨论学术界和市场有什么不同。文章中段，她顺手做了个预言。她说，一旦大家都看出现在的评价体系不行，就会有人急着找万灵药，比如改为奖励「独立」「另类」的研究者，或者奖励唯象学。可选择压力还在，人们只会去迎合新标准：</p>
+<blockquote><span class="en">In two decades from now, somebody will come and say: Hey, there is trouble in physics. They are working on all of these cheap little pheno-models, how is ever something supposed to come out of this?</span><span class="zh">二十年后，会有人站出来说：嘿，物理学出麻烦了。他们都在做这些廉价的小唯象模型，这样怎么可能出成果？</span><cite>We have only ourselves to judge on each other，2008-07-13</cite></blockquote>
+<p>她自己就是做唯象学的。十年后，站出来说「物理学出麻烦了」的人也是她。</p>
+<p>同一篇文章的末尾有个小小的「Meta」段落：她曾向基础问题研究所（FQXi）申请经费，专门研究文中这些问题，被拒了。拒信的理由她原样贴了出来：这个课题「与科学社会学的研究重叠，那是一个发展成熟的领域，而申请人似乎没有这方面的直接专业经验或训练」。她回答：「完全正确。我只是一个物理学家，花了太多时间琢磨学术体制有多烂，纳闷为什么体制里没人听社会学家的话。」</p>
+<p>这封拒信说她不够格研究科学家怎么评判彼此。十年后，她写了一本书，书的主题就是这个。</p>
+
+<h2>这人是谁</h2>
+<p>Hossenfelder 1976 年生于法兰克福，在法兰克福大学读到博士，论文写的是「大额外维模型里的微型黑洞产生」，正好是 LHC 当年最热门的那类预言。之后在亚利桑那、圣巴巴拉、加拿大圆周研究所做博士后，2009 年去斯德哥尔摩的北欧理论物理研究所（Nordita）当助理教授，2015 年回到法兰克福高等研究院（FIAS）。2006 年 2 月，她和丈夫 Stefan Scherer 一起开了这个博客。读者叫她「Bee」，两人合写的帖子署名「Stefan and Bee」；Stefan 常写物理学家生日纪念一类的帖子。</p>
+<p>后来的画面是这样的：2022 年她在视频开头说，自己「最后落到了地下室的绿幕前面」；同年她在另一篇里写，自己是「一个人打四份工，同时养两个孩子，一天只有 24 小时」，超决定论的研究没有任何经费。如今她的 YouTube 频道有一百七十多万订阅，博客成了频道的镜像。</p>
+
+<h2>她跟什么较劲</h2>
+<p>她十几年没放下的那个问题是：<strong>基础物理为什么四十年没有进展，而身在其中的人为什么不觉得这是个问题？</strong></p>
+<p>她撞上这个问题，比很多人以为的要早。2006 年 5 月，博客开张才三个月，她被困在机场，手边只有萨斯坎德那本讲弦理论「景观」和人择原理的《宇宙景观》。人择原理（anthropic principle）说：宇宙常数之所以是这样，是因为不这样就不会有我们来问。她写了一个寓言。想象你是一个酒鬼肝细胞里的原子，很聪明，已经搞懂了标准模型，现在发现「你的宇宙」，也就是这个肝，最近在变大。你和同事们提出各种理论：有一种神秘的「a 精华」，有其他规律各异的「元肝脏」，还有一种美丽的弦状缠绕结构，据说包含解释一切的信息，只是什么都预言不出来。这被称为「肝脏物理学的危机」。可这个原子要多聪明，才能想象出一个失业、失恋、瘸了腿、开始酗酒的人？</p>
+<blockquote><span class="en">Retreating to the anthropic principle means to me to give up the believe that there is something to understand.</span><span class="zh">退到人择原理上去，对我来说就是放弃「这里还有东西可以理解」的信念。</span><cite>The Principle of Finite Imagination，2006-05-15</cite></blockquote>
+<p>那时她还乐观。那篇的结尾说：「幸好，人天生永不满足。所以我毫不怀疑这场危机是暂时的。」</p>
+<p>十二年后，她不再用「危机」这个词了。原因不是事情变好了，而是这个词太客气：</p>
+<blockquote><span class="en">But I don’t think “crisis” describes the current situation well: Crisis is so optimistic.</span><span class="zh">但我觉得「危机」并不能描述现状：危机这个词太乐观了。</span><cite>The present phase of stagnation in the foundations of physics is not normal，2018-11-19</cite></blockquote>
+<p>她解释说：「危机」意味着有人意识到了错误、改变正在发生、大家在醒过来。可她看不到任何觉醒，社区的自我反思是「零，zilch，nada，nichts，null」。所以她改叫它「停滞」。</p>
+<p>从 2006 年的「危机是暂时的」，到 2018 年的「危机太乐观」，中间这十二年，就是她把问题从物理学挪到物理学家身上的过程。2006 年她以为难题在宇宙那边，只是暂时没想通；到 2018 年她确信，难题在评判理论的那群人这边。</p>
+
+<h2>她的想法，讲成「她怎么发现的」</h2>
+
+<h3>一、自然性不是科学论证：没有概率分布，就谈不上「不太可能」</h3>
+<p>物理学家常说某个理论「不自然」。2009 年 12 月，她专门写了一篇来说明她为什么一直躲着这类论证。她先拿这个词开了个玩笑：我们观察到的一切都在自然界里，说它「不自然」本来就是自相矛盾。物理学家真正的意思是，<strong>无量纲参数远大于或远小于 1</strong>。必须是无量纲的，因为有量纲的常数，换一套单位就能等于 1：</p>
+<blockquote><span class="en">The Earth weighs exactly one Earthmass. Clearly an indication for intelligent design.</span><span class="zh">地球的质量恰好是一个地球质量。这显然是智能设计的证据。</span><cite>What is Natural?，2009-12-17</cite></blockquote>
+<p>最有名的例子是宇宙学常数：拿普朗克质量的四次方除以实测的宇宙学常数，比值是 10 的 120 次方。物理学家觉得这个数「不自然」，然后去找理论解释它。她想追问的是：<strong>凭什么觉得它不自然？</strong>她的回答带着演化心理学的味道：</p>
+<p>「你祖先猎杀的熊，大小相差不超过几个数量级；你走进森林，不会遇到一棵 10 的 17 次方米高的树。」我们习惯了事物大致「平均」，大脑又天生爱找简单、统一的解释，管它叫「美」。可是一直问「为什么」，问到底，科学依据就在脚下塌掉了：因为很小的参数让你不舒服？因为参数多了你不满意？因为它不漂亮？她并不否认这类直觉有用，它们能指出现有理论的局限。但：</p>
+<blockquote><span class="en">Bottomline: The universe just doesn't care whether you like it.</span><span class="zh">结论：宇宙才不在乎你喜不喜欢它。</span><cite>What is Natural?，2009-12-17</cite></blockquote>
+<p>三周后，她把这个想法推进了一步，而且做了一件很能说明她为人的事。她在一本德国科普杂志上读到一项研究：神经心理学家 Peter Brugger 让相信超自然现象的人和怀疑论者在极短时间内从噪声里分辨单词和人脸。结果，相信者更容易把噪声看成信号（第一类错误），怀疑者更容易把信号当成噪声（第二类错误）；让一半人服用提高多巴胺水平的左旋多巴之后，怀疑者变得和相信者一样差。她想找原始论文，谷歌学术没有，作者主页也没有。她翻出几十篇转述，全都像是互相抄的，没有一篇给出期刊出处。最后她直接写信问 Brugger 本人。对方几乎立刻回了信：这项研究七年多来从未发表过。</p>
+<p>她把这个插曲当作开场白，真正想问的是：<strong>物理学家是不是也常常在噪声里看到人脸？</strong>她随手列了一串：希格斯真空期望值恰好是普朗克质量与宇宙学常数四次方根的几何平均；Koide 公式；宇宙微波背景里的「反常排列」；1.5 个标准差的「探测」。还有一位读者发现，在国际单位制下，引力常数乘以光速约等于 2/100。她的结论是：</p>
+<blockquote><span class="en">I am concluding it is more likely we're jumping on clues that are none.</span><span class="zh">我的结论是：我们更可能是扑向了那些根本不是线索的东西。</span><cite>Is Physics Cognitively Biased?，2010-01-06</cite></blockquote>
+<p>这时她的立场还是温和的。她说自然性是「有用的指引」，大数确实让人心痒，「我不是说你该无视直觉，我是说你该分清什么是直觉、什么是推导」。</p>
+<p>然后是 2016 年 8 月。LHC 的「双光子凸起」本来让整个领域兴奋了大半年，后来随更多数据消失了。粒子物理学家口中的「噩梦场景」成了现实：只有希格斯，别无其他。她写道，从 1995 年高中毕业、看着顶夸克被发现开始，她整个职业生涯里看到的只有失败：大统一模型提出又被否证；暗物质候选者一个个找不到，每次都「仪式性地调参数」；超对称粒子的「预言」质量从几 GeV 涨到几百 GeV，又涨到 LHC 能达到的几 TeV。</p>
+<blockquote><span class="en">What worries me much more is our failure to learn from failure.</span><span class="zh">更让我担心的，是我们没能从失败中学习。</span><cite>The LHC “nightmare scenario” has come true，2016-08-06</cite></blockquote>
+<p>2018 年 6 月，在《Lost in Math》出版前后，她把这个论证打磨到了最简洁的样子。她用了一个石头的例子：散步时看到一摞精巧平衡的石头，你断定是有人搭的，因为你见过大量被风化、侵蚀、沉积随意摆放的石头，有统计。一个有十颗行星、几乎同一条轨道的太阳系不太可能；十颗行星几乎在同一平面上则很平常，这一点我们也知道，因为观测过很多恒星系统，也能从已知物理推出分布。<strong>这些场合里，自然性是好论证。</strong>可在高能物理里，物理学家拿自然性去挑选理论，而理论参数的概率分布我们不可能有：我们只观察得到一套参数，就是描述我们这个宇宙的那一套。隐含的「在 1 附近大致均匀」的分布，是一个不科学的假设。</p>
+<blockquote><span class="en">That you can’t speak about probabilities without a probability distribution isn’t a particularly deep insight, but I’ve had a hard time getting particle physicists to acknowledge this.</span><span class="zh">没有概率分布就谈不上概率，这算不上多深刻的见解，可要让粒子物理学家承认这一点，我费了好大劲。</span><cite>How nature became unnatural，2018-06-28</cite></blockquote>
+<p>她说自己就这件事写了、讲了十多年，「没什么回响」。然后密歇根大学的粒子物理教授 James Wells 在 arXiv 上发了一篇论文，用几个简单的例子讲了同样的道理。她在博客里写：「和我不同，Wells 不是无名小卒。」接着是全站最冷的一句：</p>
+<blockquote><span class="en">So, now that a man has said it, I hope physicists will listen.</span><span class="zh">好了，既然现在是个男人说的，希望物理学家们会听。</span><cite>How nature became unnatural，2018-06-28</cite></blockquote>
+<p>这篇里还有一层更大的担忧。她举了别的例子，比如很多物理学家以为实验已经排除了量子力学的隐变量解释，其实只排除了某些局域隐变量模型。让她沮丧的不是有人犯错，而是<strong>错误一旦被足够多的人采用，就再也改不回来</strong>。人人都在说，个人跟着说就是安全的。这把她带向了第二个想法。</p>
+
+<h3>二、停滞是社会学问题：在实验到来之前，只能同行评判同行</h3>
+<p>2008 年那篇长文，是她最早、也最完整的一次社会学诊断。她从一个对比讲起：自由市场之所以有效，是因为买家能直接评判商品，糖果好不好吃，很快就知道，价格从供需中长出来。所以有人说科学是一个「思想的市场」。她说这个类比在三个地方失灵：</p>
+<p>第一，科学家追求的不是钱，主要是同行的注意力，只是如今经费和注意力绑在了一起。第二，市场的前提是商品有一个能简单识别的价值，而一个研究纲领的价值，在理论物理里要五到十年才能成形，几十年才能检验。第三，也是最要命的一点：在那之前，判断一个方向有没有前途，唯一的办法是同行评议，而这需要专业知识。<strong>于是科学家既是卖家，又是买家。</strong></p>
+<p>由此推出一个很脆弱的系统。她点了三种压力：经费压力，人往钱多的地方去，钱往人多的地方去，兴趣跟着两者走，「完美地适合吹出一个个空无一物的泡沫」；同行压力，细分领域容易低估自身的缺陷、忽略圈外人的批评；公众注意力，她引了一个调查：46% 的科学家认为和媒体打交道对职业有好处。竞争越激烈，筛选越快，留下来的就越是在现有规则下如鱼得水、因而没理由改规则的人。</p>
+<p>十年后的 2018 年，诊断没变，语气全变了。她先算了开头那笔「14 个月」的账，然后列出 LHC 应该发现、实际一个也没发现的东西：额外维、漂亮的对称群、名字花哨的新粒子。她估计这类错误预言数以万计，按论文数或者从业人数乘以平均产出都能估出来，而且这还是低估。</p>
+<blockquote><span class="en">They were all wrong. Even if the LHC finds something new in the data that is yet to come, we already know that the theorists’ guesses did not work out. Not. A. Single. One.</span><span class="zh">它们全错了。就算 LHC 在以后的数据里找到新东西，我们也已经知道理论家们的猜测没有成功。一个。都。没有。</span><cite>The present phase of stagnation in the foundations of physics is not normal，2018-11-19</cite></blockquote>
+<p>同年 3 月，她写了一篇解剖文，像在预报天气。她说，想知道粒子物理学家接下来会怎么做，看他们过去怎么做就行。第一步是撤回早先的话：她贴出 1998 年 Frank Paige 说的「在预期质量范围内发现胶微子和标量夸克……似乎很直接」，和 2007 年 Michael Dine 说的「LHC 要么做出惊人发现，要么彻底排除超对称」，然后指出，到 2012 年说法已经变成「自然的超对称很难在 LHC 上看到」。第二步是说现在这台对撞机刚好差一点没看到，下一台更大的一定行。第三步是为下一台对撞机编造理由，比如在弦理论「景观」上定义另一种自然性，算出来的结论恰好是：超对称就在 LHC 够不着、稍大一点的对撞机够得着的地方。她的评语是：「谁能想到呢。」</p>
+<blockquote><span class="en">The phrase “theory predicts” has become entirely meaningless.</span><span class="zh">「理论预言」这个短语已经彻底失去了意义。</span><cite>The Multiworse Is Coming，2018-03-13</cite></blockquote>
+<p>有意思的是，同一篇里她还说自己<strong>想要</strong>一台更大的对撞机。理由是对撞机本质上是一台显微镜，看得更近总能学到东西，不需要特别的理由：「如果我们在这里停下，粒子物理的历史就成了一个主角离开小镇，走过最后一块路牌，坐下死了。剧终。好一个主角。」她反对的只是为了骗纳税人掏钱而编造的理由。</p>
+<p>不到一年，她的立场变了。2019 年 2 月，她写文章说更大的对撞机「目前不是一项好投资」，拿它和引力波探测器 LIGO 比：LIGO 不到 10 亿美元，有明确的预言目标，测到之后还能拿来研究遥远的天体；而 CERN 计划中的未来环形对撞机（FCC）贵 20 倍，没有明确的发现目标，「对撞机告诉你的，是关于粒子碰撞的更多东西」。她还在《纽约时报》发了评论文章。</p>
+<p>接下来那周的反应，她写成了一篇文章：她被叫作「巨魔」「骗子」，被指控嫉妒、懒惰、自恋、民粹。在吉森大学做学术报告时，一个年轻人激动地说，「这里每个人都同意」那些失败的预言和炒作是个问题，可她怎么能公开说科学家不可信？</p>
+<blockquote><span class="en">You see, the issue they have isn’t that I say particle physics has a problem. Because that’s obvious to everyone who ever had anything to do with the field. The issue is that I publicly say it.</span><span class="zh">你看，他们介意的不是我说粒子物理有问题，这对任何跟这个领域打过交道的人都显而易见。他们介意的是我公开说出来。</span><cite>Particle physicists surprised to find I am not their cheer-leader，2019-02-02</cite></blockquote>
+<p>这一句把 2008 年的理论闭合了。在那个封闭的评价回路里，批评本身不稀缺，内部人都知道问题在哪。稀缺的是<strong>把批评带出回路</strong>，让回路之外的人，也就是出钱的人，也能看到。她从此改了策略，在这篇末尾写道：「我是个作家。文字就是我的武器。」</p>
+<p>2019 年 10 月，她把论证扩大到了物理之外。实验越来越贵，就越来越少；实验少了，意外发现就越来越不可能；没有意外发现，让实验变便宜的技术进步也就不会来。这是一个恶性循环，唯一的出路是认真挑选拿去检验的假设。可物理学家还在照 19 世纪「先看看再说」的思路办事，而且看不起科学哲学和科学社会学。</p>
+<blockquote><span class="en">The foundations of physics are the canary in the coal mine.</span><span class="zh">基础物理是煤矿里的金丝雀。</span><cite>The crisis in physics is not only about physics，2019-10-30</cite></blockquote>
+<p>她说，医学和生态学已经开始出现同样的苗头：小规模药物试验已经走到头，只能找出对大多数人都成立的明显关联；以后要靠大样本、长周期、极其昂贵的研究，而这样的研究做不了几个，必须慎重挑选。</p>
+
+<h3>三、该做什么：去解决矛盾，别去追求美，而且要能测</h3>
+<p>她最烦的一句批评是「你只会抱怨，拿不出更好的办法」。2018 年她的第一反应是：</p>
+<blockquote><span class="en">Consider I was criticizing not a group of physicists, but a group of architects. If I inform the public that those architects spent 40 years building houses that all fell to pieces, why is it my task to come up with a better way to build houses?</span><span class="zh">假设我批评的不是一群物理学家，而是一群建筑师。如果我告诉公众，这些建筑师花了 40 年盖的房子全都塌了，凭什么要由我来想出更好的盖房子的办法？</span><cite>The present phase of stagnation in the foundations of physics is not normal，2018-11-19</cite></blockquote>
+<p>但她紧接着说，这个指控也不对，她给过办法。办法来自物理史。2020 年，《Lost in Math》平装本出版时，她又讲了一遍推理过程：历史上的突破有两类。一类由实验意外发现驱动，可简单的实验早就做完了，「你不会在一台 27 公里的对撞机上随便鼓捣」，这条路越来越窄。另一类是理论预言后来被证实：爱因斯坦、狄拉克、预言希格斯粒子的那几个人。这些预言有什么共同点？</p>
+<blockquote><span class="en">They have in common that they were based on theoretical advances which resolved an inconsistency in the then existing theories.</span><span class="zh">它们的共同点是：都建立在解决了当时理论内部某个不一致的理论进展之上。</span><cite>Physicists still lost in math，2020-06-05</cite></blockquote>
+<p>这里的「不一致」，她指的是理论内部的逻辑冲突，不是「不够美」。真的冲突有这些：引力还没被量子化，量子测量问题，暗物质和暗能量的某些方面，量子场论的某些问题。所以处方是：<strong>别再让理论更漂亮，去解决它们真正的毛病。</strong></p>
+<p>她把这个处方用在了自己身上。2019 年 7 月那篇讲超决定论的文章，进了她自己评选的「十年最多阅读」榜。她的出发点是：量子测量问题是一个真正的不一致（她在这点上同意哲学家 Tim Maudlin），必须解决。现有的几条路：坍缩模型能解决，但很难和量子场论结合，「对我来说这是硬伤」；导航波理论也能解决，但它是非局域的。</p>
+<blockquote><span class="en">Pilot wave theories also solve it, but they are non-local, which makes my hair stand up for much the same reason.</span><span class="zh">导航波理论也能解决它，但它们是非局域的，出于差不多同样的理由，这让我汗毛直竖。</span><cite>The Forgotten Solution: Superdeterminism，2019-07-28</cite></blockquote>
+<p>剩下的就是超决定论。贝尔定理排除的是同时满足「统计局域性」和「统计独立性」的隐变量理论。量子力学放弃了前者；而放弃后者的确定性理论，就叫超决定论。这个名字名声很坏，常被斥为「阴谋论」，有哲学家说它等于放弃科学方法，因为听上去像是宇宙的初始条件被精确安排好，好让 Anton Zeilinger 的大脑恰好把旋钮往左拧，而不是往右。</p>
+<p>她的转身在于把隐变量放在哪里。<strong>最明显的一类隐变量，就是探测器自己的自由度。</strong>探测器不可能和自己统计独立，所以任何这类理论都必然违反统计独立性。不需要什么宇宙阴谋，只是仪器和被测系统并不独立。至于为什么大家都躲着这条路，她认为最大的阻力是人们想要相信自由意志。可超决定论并不阻止实验者拧旋钮，只是不存在一个旋钮位置能让关联消失。</p>
+<p>2022 年 2 月，她写了一篇长长的进展汇报，里面有她这套方法论最诚实的一句。她说，自己至今没写出一个令人满意的超决定论隐变量模型，并且在每次报告里都这么说，原因不是做不到：</p>
+<blockquote><span class="en">But I want to stress that the reason I (and quite possibly others too) didn’t write down a particular hidden variables model is not that it can’t be done, but that there are too many ways it could be done.</span><span class="zh">但我要强调：我（很可能还有别人）没写下一个具体的隐变量模型，原因不是做不到，而是能做的方式太多了。</span><cite>An update on the status of superdeterminism with some personal notes，2022-02-26</cite></blockquote>
+<p>这正是她批评粒子物理的那条逻辑：光靠数学建不了新理论，要数据。没数据就只能猜模型，而任何一个猜中的概率「基本为零」。所以她 2011 年提出的是一个尽量不依赖具体模型的检验：对互不对易的量做重复测量。那篇论文「没有激起任何水花」；她后来得知冯·诺伊曼早年提过类似的实验，至今也没人做。她现在主张的是：在小而冷的系统上，对简单的态快速重复测量，看结果是否偏离量子力学。</p>
+<p>这套标准的另一面是她放弃的东西。黑洞信息悖论也是一个真正的不一致：广义相对论说黑洞「没有毛」，只剩质量、角动量、电荷三个量；霍金说黑洞会辐射、最终蒸发，辐射又是热的、不带信息；而量子力学要求过程可逆、信息不丢。她研究过它，也和很多人一样试过解它。2022 年她解释了为什么停手：一组互相矛盾的假设，可以删掉不同的几条再补上新的，于是有许多数学上都正确的「解」。可只有一个描述自然，而要分辨它们，需要测霍金辐射，天文黑洞的温度比宇宙微波背景还低。</p>
+<blockquote><span class="en">Physics isn’t math. Mathematics is a great tool, but in the end you have to make an actual measurement to see what happens in reality.</span><span class="zh">物理不是数学。数学是很好的工具，但最终你得真的去测量，才知道现实里发生了什么。</span><cite>I stopped working on black hole information loss. Here’s why.，2022-04-23</cite></blockquote>
+<p>她说，问题不是解不了，而是只用数学解不了，实验「现在不可能，接下来一万年大概也不可能」。至于为什么每隔几个月就有新标题宣布「解决了」，她的回答一贯地带着社会学味道：同行永远不会同意谁解决了它，「因为如果他们同意了，就得停止写这方面的论文」。</p>
+<p>三个想法连起来是一条完整的链：没有数据时，美的品味冒充了证据（第一个想法）；冒充之所以没被揭穿，是因为评判它的人和靠它吃饭的人是同一群（第二个想法）；出路是只碰真正的矛盾，而且只碰能测的那种（第三个想法）。</p>
+
+<h2>她的思维方法</h2>
+<p><strong>追到源头，哪怕要给作者写信。</strong>Brugger 那项多巴胺研究，几十篇报道互相转引，她一路追到作者本人，发现七年没发表。这个习惯后来变成了她视频里的固定动作：标题说「物理学家证明了……」，她就去找那篇论文，看它实际证明了什么。</p>
+<p><strong>把修辞换成计数。</strong>「停滞不罕见」是一句修辞，她就去数物理学会的会员数，算出 14 个月。「理论家预言了很多东西」也是修辞，她就按论文数估计错误预言有几万个。她在那篇里写：「哦，是的，我爱数字。它们那么实在。」她自己也承认这些数不严谨，用意是把对方逼到要拿数字来反驳的位置。</p>
+<p><strong>把对方的原话存档。</strong>她批评粒子物理，很少只说「他们说过」，而是贴出 1998 年 Paige、2007 年 Dine、2007 年 Mangano 幻灯片上那句「新粒子必须出现……以避免精细调节」。几年后对方说「从没人说过会很容易」，档案就在那儿。</p>
+<p><strong>拿外行的类比当撬棍。</strong>酒鬼肝细胞里的原子，重一个地球质量的地球，祖先猎杀的熊，山路上的一摞石头，盖了 40 年塌了 40 年的建筑师。每个类比都只撬一个点：数量级直觉从哪来，概率要有分布，批评者有没有义务给出替代方案。</p>
+<p><strong>公开改主意。</strong>对撞机的立场在 2018 年和 2019 年之间翻了过来。2021 年她做了一期视频，开头就说：「我过去以为没有伪科学会更好，但现在我认为伪科学其实对我们有好处」，因为单盲试验是为了戳穿催眠术（Mesmerism）发明的，双盲随机试验是为了检验顺势疗法发明的。她不怎么为改主意道歉，只把新理由摆出来。</p>
+
+<h2>她哪里可能是错的</h2>
+<p><strong>她给出的处方，本身也是一种品味。</strong>「历史上成功的预言都在解决不一致」，是从物理史里挑例子归纳出来的，她自己也写过「我可能在这一点上走错了路」。更微妙的是，她选择超决定论的理由里，有一条是导航波理论的非局域性「让我汗毛直竖」。这和她批评的「小参数让人不舒服」在结构上相似：都是在没有数据时，靠一种对理论该长什么样的感觉来选方向。区别在于，她一直清楚地说这是她的押注，并且主张用实验来裁决。</p>
+<p><strong>「你不能信任这些人」打击面过大。</strong>她 2016 年写：「不能信任那些未来经费依赖于持续乐观的科学家的判断。」2019 年又写：「你不能信任这些人。」按同一个逻辑，一个收入依赖于观众订阅的批评者，判断也可能被激励扭曲。Marcelo Gleiser 等人在 Orbiter 杂志上指责她「失败主义」和「破坏」，说「我们的工作是让社会相信我们做的事是值得的，即使它没带来大标题」。这段话我们只是从她的文章里读到的。2022 年，Phil Bull 在《卫报》读者来信里回应她的专栏，按维基百科的转述，他的论点是没有找到东西的搜索也在检验假设、排除可能。来信原文我们没读到。</p>
+<p><strong>她自己 2008 年就写下了最狠的那条批评。</strong>那篇长文讲完学术体制，顺带看了一眼博客圈：博主们在争取访问量、评论和外链，「有用的策略是：快、短、挑衅。结果是否可取，留给你来判断。」她同一篇里还列了一条：「别奖励自我推销。」到了 2026 年 8、9 月，Backreaction 上的帖子标题是「量子计算的失败如今显而易见」「我被人出钱，让我告诉你 AI 会杀死我们」「降增长主义者很危险」。2025 年，麦吉尔大学科学与社会办公室的 Jonathan Jarry 和《华尔街日报》的 Dan Kagan-Kans 都写文章批评她把学术物理描绘成腐败的建制。按维基百科的概括，Jarry 认为把公费研究说成骗局会损害公众对科学的信任，还指出她的批评类视频比科普类视频播放量更高。这两篇原文我们都没读到，只报这个书目事实。</p>
+<p><strong>论证里有隐藏前提。</strong>2019 年《电子不会思考》一文说：如果电子有意识，就得有内部状态的变化，那会在粒子碰撞的产额里留下痕迹，而实验没看到，所以电子没有意识。这对「给粒子加额外状态」的那种泛心论成立。可不少泛心论者主张的是另一回事：意识是已知物理性质的内在本性，不是额外的量子数。她的论证没碰到这一版。同年谈自由意志，她写「相当大比例的人在认知上就无法质疑自由意志的存在」，等于提前把不同意她的人归为认知有障碍。这和她最反感的那种「自己人都同意，外人别吵」的姿态，只是方向相反。</p>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>科学哲学 · Lakatos 的「退化的研究纲领」</b>：Lakatos 说，一个纲领不断加辅助假设来躲避反驳，而不再预言新事实时，就在退化。超对称粒子质量一路上调，正是教科书式的例子。不同在于 Lakatos 认为当下很难判断该何时放弃，她说现在就该放弃。</li>
+<li><b>概率论 · Bertrand 悖论</b>：「在圆里随机画一条弦」，按不同方式定义「随机」，长弦的概率可以是 1/2、1/3 或 1/4。这就是她对自然性的指控：「均匀分布」本身取决于你怎么给参数化。不同在于 Bertrand 的问题可以靠补充物理设定来定，宇宙常数没有第二个样本可以参照。</li>
+<li><b>演化生物学 · Fisher 的失控性选择（Fisherian runaway）</b>：雌孔雀偏爱长尾，长尾雄性的后代又继承这种偏爱，尾巴就越选越长，和生存早已脱钩。把「雌性」换成「审稿人」，「长尾」换成「漂亮的对称群」，就是她描述的回路：评委和选手是同一个群体，被选中的品味自我强化。不像在哪：孔雀尾巴至少还是可靠的健康信号；她的意思恰恰是，理论之美已经不再对应任何东西。</li>
+<li><b>佛学 · 无我与「监视那个监视者」</b>：她劝没有自由意志的人「去理解你自己……你是在监视那个监视者」，很像佛教把「我」看作一连串因缘，再靠觉察看清它。不同在于佛学的因果把意图（思，cetanā）放在中心，她把一切归结为粒子服从的方程。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>按物理学家人数的指数增长折算，今天 14 个月的工时约等于一百年前的 40 年，而基础物理理论自 1970 年代中期起没变过。</li>
+<li>自然性论证的漏洞：没有概率分布就谈不上「不太可能」，而我们只观察得到一个宇宙的一套常数。</li>
+<li>我们觉得「正常」的数量级来自演化经验，祖先猎杀的熊大小只差几个数量级，宇宙未必照这个尺度安排。</li>
+<li>Sabine Hossenfelder 追查一项被广泛转引的多巴胺研究，写信问作者，发现它七年来从未发表。</li>
+<li>LHC 只找到希格斯粒子，数以万计的超越标准模型预言全部落空，理论家随后又把预言挪到下一台对撞机。</li>
+<li>在实验能检验之前，科学家既是卖家又是买家，只能同行评判同行，于是钱、人和兴趣互相追逐，形成泡沫。</li>
+<li>Hossenfelder 认为，物理学家内部早知道问题所在，他们真正介意的是有人把问题公开讲给出钱的公众听。</li>
+<li>历史上成功的理论预言都在解决现有理论的内部矛盾，所以该去处理引力量子化、测量问题这类真矛盾，而不是追求美。</li>
+<li>超决定论把隐变量放在探测器自身的自由度上，从而违反统计独立性，不需要宇宙阴谋就能局域地重现量子力学。</li>
+<li>她 2008 年就写过，博客圈奖励「快、短、挑衅」；她后来的视频标题风格，正是这条批评最好的检验对象。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><span class="t"><a href="https://backreaction.blogspot.com/2008/07/we-have-only-ourselves-to-judge-on-each.html">We have only ourselves to judge on each other</a></span>（2008-07-13）<span class="d">学术界和市场的三处不同、经费与同行压力的正反馈、「没有万灵药」，以及那封 FQXi 拒信。</span></li>
+<li><span class="t"><a href="https://backreaction.blogspot.com/2009/12/what-is-natural.html">What is Natural?</a></span>（2009-12-17）<span class="d">自然性指什么，为什么它最终基于演化给我们的数量级直觉。</span></li>
+<li><span class="t"><a href="https://backreaction.blogspot.com/2018/06/how-nature-became-unnatural.html">How nature became unnatural</a></span>（2018-06-28）<span class="d">石头堆的例子、没有分布就没有概率、James Wells 的论文，以及错误为何一旦普及就改不回来。</span></li>
+<li><span class="t"><a href="https://backreaction.blogspot.com/2018/11/the-present-phase-of-stagnation-in.html">The present phase of stagnation in the foundations of physics is not normal</a></span>（2018-11-19）<span class="d">「14 个月」的计算、「危机太乐观」、建筑师类比和她的处方。</span></li>
+<li><span class="t"><a href="https://backreaction.blogspot.com/2019/07/the-forgotten-solution-superdeterminism.html">The Forgotten Solution: Superdeterminism</a></span>（2019-07-28）<span class="d">贝尔定理的两个假设、为什么隐变量可能就是探测器的自由度、超决定论和自由意志无关。</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-10-23" data-slug="backreaction">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 第 46 期 · 本页内容核对至 2026-10-23</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
