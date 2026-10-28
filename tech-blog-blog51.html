@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicki Boykis · Tech Blog — 机器学习的活，八成五不在模型里</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:.86em;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
+</style>
+
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="tech-blog-blog51.en.html">English →</a></div>
+<header>
+<div class="kicker">博客精读 · 51 · vickiboykis.com</div>
+<h1>Vicki Boykis<br/>机器学习的活，八成五不在模型里</h1>
+<p class="sub">Vicki Boykis · <strong>Tech Blog</strong>（vickiboykis.com）· 机器学习工程师，做推荐系统、搜索和机器学习基础设施；从 Excel 和 SAS 起步的数据分析师，一路做到 Comcast、Automattic／Tumblr、Duo Security、Mozilla.ai，现为一家创业公司的创始机器学习工程师 · 语料：技术博客约 100 篇（2015-05 至今）＋随笔栏目约 50 篇（2014-12 至 2025-12），合计约 27 万英文词；2019 年中到 2021 年初几乎停更（她另有一份通讯 Normcore Tech），2021 年回来后文章从「数据科学入行指南」转向「机器学习工程到底是什么」 · <strong>仍在更新</strong>，最近一篇是 2026-10 · 本页基于实际读过的 24 篇，最早 2014-12，最晚 2026-09</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">精华版</button>
+<button id="btn-deep">完整版</button>
+</div>
+<!-- ============ 精华版 ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>2021 年秋天，Vicki Boykis 在博客上写了一则寓言。一位机器学习工程师合上笔记本电脑，穿上登山靴，走过玉米地、走过「决策树」组成的森林、走过远处闪光的「数据湖」，爬到山顶。山顶长凳上坐着一位 Staff 工程师，正在喝冷萃咖啡。她跪下来，献上自己的 YubiKey（一把硬件安全钥匙），问：我做机器学习工程很多年了，什么时候才能真正做到……机器学习工程？</p>
+<p>她讲自己这一年：老板让她做一个客户流失预测模型。可「谁流失了」这一列本身是乱的，退订和重新订阅记在两列里；数据每天从 Salesforce 批量导进 Hadoop，那天定时任务坏了；新的点击流数据走的是另一条管道，进了 AWS，满是不规范的 JSON；两边的数据要合在一起，安全团队指定了一条路线；Spark 跑在 Kubernetes 上，有几个容器卡死了；最后，能访问数据的那台机器上，Python 装不上 XGBoost……</p>
+<p>Staff 工程师抬手让她停下，一条条念出她刚才做过的事：序列化格式、JSON、定时任务和 bash、SQL 调优、容器编排、分布式系统、跨机器的网络问题，然后说：</p>
+<blockquote><span class="en">I have some (potentially bad) news for you, you’re doing machine learning engineering.</span><span class="zh">我有个（可能是坏的）消息要告诉你：你正在做的，就是机器学习工程。</span><cite>Reaching MLE (machine learning enlightenment)，2021-09</cite></blockquote>
+<p>「可我连模型都还没碰过。」</p>
+<p>这是 Boykis 十几年博客的核心笑话，也是她的核心论点。2019 年她发过一条推文，统计自己过去两年的项目：<strong>跟机器学习有关的部分占 15%，为了喂给机器学习而搬运、监控、清点数据的部分占 85%。</strong>同一年她给想入行的人写了一封信，第一条建议是：别去申请数据科学家的职位。一个初级岗位挤着一两百份简历，而大家想象中的「数据科学」，从来不是这份工作的主体。</p>
+<p>她的博客有一半在讲这 85%，另一半在问：这 85% 越堆越高以后，人还能不能看懂自己在做什么。2022 年她做一个读书推荐的业余项目，要把一份 10GB 的 JSON 读进谷歌云上的 Colab 笔记本，内存爆了。她去查原因，发现自己跟那块内存之间隔着笔记本服务器、IPython 内核、浏览器、BigQuery 的接口、BigQuery 本身、云的区域和项目权限，至少五六层，而且大部分层是别人的、闭源的、不让她看的。她写，作为一个只想做出东西的工程师，这让她「很痛苦」。</p>
+<p>她给出的解法很老派：<strong>绕远路，一直往下走到能看见的那一层。</strong>想弄懂本地大模型的 GGUF 文件格式，她从一个只有四行数据的线性回归讲起，一路讲到文件头的四个字节 0x47 0x47 0x55 0x46，也就是 ASCII 的「GGUF」。2023 年她在一场主题演讲里把这叫作「建立并守住你的上下文窗口」：读老书、读十年前被引用很多次的论文、读代码，知道今天的新词在历史上叫什么。ChatGPT 出来时整个行业都像失忆了，她回头翻出自己 2015 年用马尔可夫链生成假 Hacker News 标题的小脚本，大模型的神秘感就少了一截。</p>
+<p>到了 AI 写代码的年代，这个问题变得更尖。2025 年她写，生成式模型产出的代码「字面意义上就是平均水平」，是所有 Stack Overflow 答案的加权平均。她想看见的是「狮子的爪痕」：一段代码背后有一个真正在乎的人。2026 年她发现自己跟编程助手干完一次会话，代码有了，脑子里什么也没留下。她给自己加回摩擦：先自己写 20 分钟再叫助手、让助手审她写的代码、重新手写基础数据结构。结论是一句话：</p>
+<blockquote><span class="en">We should be more tired than the model.</span><span class="zh">我们应该比模型更累。</span><cite>We should be more tired than the model，2026-05</cite></blockquote>
+<p>读完她的博客，记住一件事就够了：<strong>一个领域讲给外人听的故事，和它真正的工作，中间隔着很多层。</strong>她做了十几年的事，就是把这些层一层层数出来，再把自己留在能看见底层的地方。</p>
+</div>
+<!-- ============ 完整版 ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary · 术语表</h2>
+<div class="glossary"><ul>
+<li><b>数据科学（data science）</b>：用统计和编程从数据里得出结论的工作。2012 年前后被媒体捧成「21 世纪最性感的职业」。</li>
+<li><b>机器学习工程师（machine learning engineer，MLE）</b>：负责把机器学习模型做成能长期在线跑的系统的人，一半是建模，一半是后端工程。</li>
+<li><b>生产环境（production，常简称 prod）／部署（deploy）</b>：真实用户在用的那套系统叫生产环境；把新代码放上去叫部署。</li>
+<li><b>云厂商（cloud vendor）</b>：AWS、谷歌云这类出租计算和存储的公司。你的程序跑在它们的机器上，很多细节你看不到。</li>
+<li><b>笔记本（notebook）</b>：Jupyter 这类在浏览器里一格一格运行代码的工具；Colab 是谷歌的闭源版本。</li>
+<li><b>推荐系统（recommender system，recsys）</b>：决定给你推什么帖子、书或视频的系统。</li>
+<li><b>嵌入（embedding）</b>：把一个词、一本书变成一串数字（向量），让意思相近的东西数字也相近。</li>
+<li><b>上下文窗口（context window）</b>：语言模型一次能「看见」的文字范围。Boykis 把它借来比喻一个人脑子里的背景知识。</li>
+</ul></div>
+
+<h2>一件怪事：在山顶上，她才知道自己早就在做这份工作</h2>
+<p>那则 2021 年的寓言里，最荒诞的不是山，是那份清单。她讲的流失模型，故事从头到尾只出现过一次「XGBoost」，就是最后那句「装不上」。前面的每一步都是别的东西：两列互相矛盾的字段要合并，一个定时任务坏了要修，一条迁移了一半的数据管道（老的在 Hadoop，新的在 AWS），一堆嵌套的 JSON，一个安全团队批准的中转路线，几个卡死的容器。她还没讲到最后一步：模型的结果要送进一个前端，给销售和市场部的人看，还有延迟的问题……</p>
+<p>Staff 工程师把她做过的事念了 11 条，最后加了一条总括：「为关键干系人设计一个可扩展、有弹性的系统，把机器学习的洞见送进一个易用的前端层。」然后他告诉她这就是机器学习工程，她还没碰到模型，这很正常。等她终于碰到模型，又会有一堆「非常无聊、跟模型无关」的新问题：线上线下的指标存在哪、一遍遍调超参数、清理一大堆笔记本、忘了关笔记本导致云账单爆掉。</p>
+<p>「那我该怎么办？」「什么也不用办。你跟它和解。这就是这份工作。」说完他的寻呼软件响了，他从背包里抽出 MacBook，一边往山下有 WiFi 的地方跑，一边回头喊：「生产环境见。」</p>
+<p>这篇文章是她站内被后来文章回链最多的两篇之一。它好笑，是因为每个做过这行的人都认得那份清单。</p>
+
+<h2>这人是谁</h2>
+<p>Vicki Boykis 的家人从苏联移民到美国，她的女儿在美国出生，第一语言学的是俄语。她没有工科背景，大学毕业后做数据分析师，用 Excel 和 SAS。2011 年她偶然发现 Hacker News，上面的标题她几乎全看不懂。2012 年她主动报名做团队里第一个用 Hadoop 的分析师，原因之一是她「太没耐心，等不及工程师把活干完」。之后她自学 Python，一路做到机器学习工程师，做过电视内容推荐、Tumblr 的社交推荐、安全公司的机器学习平台、Mozilla.ai 的大模型评估平台。</p>
+<p>2021 年她描述自己的工作状态：每天八小时，几乎不说话，一个人坐在半黑的地下室里，对着一块大显示器。她还办过一场只办了一次的会议 Normconf，写过一本讲嵌入的小书《What are embeddings》，做过一个按「氛围」推荐书的搜索引擎 Viberary。她的博客有一页 AI 政策，说站上所有内容「不管好的坏的」都是由「VickiNet」生成的。</p>
+
+<h2>他跟什么较劲：故事和工作之间的那几层</h2>
+<p>她最早撞上这个问题，是作为一个看着橱窗的外人。2019 年她回忆刚读 Hacker News 的那几年：读得越多，越恶心自己，也越恶心自己的公司。为什么我们还在用 Oracle？为什么我的电脑是破 Windows？为什么我们团队不叫「数据科学」团队，为什么我们不做「数据科学」？她后来才明白那是一种信息茧房：<strong>她把自己读到最多的东西，当成了整个世界的运转方式。</strong></p>
+<blockquote><span class="en">In today’s online economy where thousands of developers are online, the person whose voice is the loudest gets the most weight. The loudest people aren’t going to be those working with legacy systems.</span><span class="zh">在今天这个几千名开发者同时在线的网络经济里，嗓门最大的人分量最重。而嗓门最大的人，不会是那些维护老系统的人。</span><cite>IT runs on Java 8，2019-05</cite></blockquote>
+<p>她在那篇文章里引用 Scott Hanselman 的「暗物质开发者」：大多数程序员不写博客、不发推、不上大会，在某个市政府里维护 ASP.NET 1.1，在墨西哥的瓶装厂里写 VB6。她自己待过一家 2014 年才从 SVN 迁到 Git 的公司，待过 Java 8 还是「最新可用版本」的环境。大多数公司的业务规则，仍然是业务方定下来、写死在 case 语句和 Excel 里的。</p>
+<p>所以她的根问题有两面。一面是<strong>一个领域对外讲的故事，和它实际的工作，差得有多远</strong>：「数据科学」讲的是统计和深度学习，干的是搬数据；「AI」讲的是魔法，底下是缓存、文件格式和 YAML。另一面是<strong>当一个人被这些故事和层层抽象包围时，怎么还能看清自己在做什么</strong>。前一面让她写了十年「入行指南」，后一面让她在 2021 年以后越来越多地写「往下挖」。</p>
+<p>这个问题甚至比她的技术博客更早。她现存最早的一篇文章写于 2014 年 12 月，那时她怀孕快九个月。她把分娩比作「推上生产环境」：代码在开发、集成、测试阶段都可以随便坏，一旦上了生产就不能出错，因为「真实的人用它来做真实的事」。程序员因此很迷信，从来不在周五上线。2021 年，她专门写了一篇讲程序员的部署仪式。</p>
+
+<h2>他的想法，讲成「他怎么发现的」</h2>
+
+<h3>一、八成五的活不在模型里</h3>
+<p>2017 年 3 月，她做了一场演讲，题目是「你该用你的笔记本电脑替换 Hadoop 吗？」。那时她在三家公司做过三个 Hadoop 项目，看过不少不该上 Hadoop 的场景。她挑了自己最喜欢的音乐剧原著《悲惨世界》，65.5 万词、3.2MB，做分布式系统的入门练习：数词。一行 Unix 管道，几秒钟。复制 2000 份，约 6GB，用 Python 的多进程加 PyPy，最多 4 分钟。用本地 Spark 也行。结论是：<strong>大多数数据根本用不着分布式系统，而分布式系统带来的管理负担，在数据量不够大时全是成本。</strong></p>
+<p>这还是一个「工具选型」的发现。真正让她写下那篇被转发最多的入行文章的，是她在简历堆里数出来的东西。2019 年 2 月，她已经入行近十年，经常有人找她喝咖啡问怎么做数据科学。她做简历筛选、做面试官、带训练营出来的学员，攒下一个直觉：一个初级数据科学岗位的申请人，从每个岗位二十来人涨到了一百人以上。一个朋友为一个职位看了 500 份简历。她用公开数字粗算：Fast.ai 的深度学习课有十万人开始学，按慕课 7% 的完课率，一年就是七千人，还不算各种训练营、在线学位和转行的博士。</p>
+<p>然后是供给之外的另一半：大家以为数据科学是什么。她在推特上发了一个投票，问头衔是「数据科学家」的人大部分时间在干什么。她也翻出自己的那条推文：项目里 15% 是机器学习，85% 是搬运、监控、清点数据。她的判断是：</p>
+<blockquote><span class="en">The reality is that “data science” has never been as much about machine learning as it has about cleaning, shaping data, and moving it from place to place.</span><span class="zh">现实是，「数据科学」从来就没有那么多机器学习，它更多是清洗数据、整理数据的形状，把数据从一个地方搬到另一个地方。</span><cite>Data science is different now，2019-02</cite></blockquote>
+<p>于是她的建议反着来：<strong>别去申请数据科学岗位，走后门。</strong>先做初级开发、运维、数据分析师，学 SQL，把一门编程语言学透，学会在云上干活。这些技能在数据科学之外也值钱，万一找不到数据科学的工作，还能转去做开发。她说这些建议「真的很让人泄气」，但比让人挤进那五个岗位强。</p>
+<p>两年后她发现，这件事之所以要一遍遍讲，是因为它属于一种特别的知识。2021 年她借用了一个叫 David 的人的说法，「幽灵知识」（ghost knowledge）：只存在于圈内人之间、从来没被写下来的知识。「干净的数据比模型重要」就是这样一条。每个干了很多年的人都从痛苦中知道，但她第一次看到有人正式写下来，是谷歌 2021 年 1 月的一篇论文，摘要里说数据是 AI 里「最被低估、最不光鲜」的部分。<strong>在她看来，行业里最基本的事实，晚了很多年才进文献。</strong></p>
+<p>再往后，她把这个发现变成了一个机构。2022 年 8 月，她的推特时间线上全是等 NeurIPS 录用结果的焦虑。学术会议讲神经网络和公式，行业会议讲每秒几十亿行的实时流，没有一个会议讲她每天实际在做的事。她发了一条玩笑推文，说想要一场讲「无聊问题」的会议。回复几乎一致：「我知道你在开玩笑，但能不能真办一个？」四个月后，Normconf 在网上开了 15 个小时，免费，卖出 7000 多张票，给科学计算基金会 NumFocus 筹了 1.5 万美元。会议最受欢迎的周边是一块浴帘。它只办了一次。</p>
+
+<h3>二、云里的五六层</h3>
+<p>有意思的是，她并不是一开始就讨厌云。2019 年 2 月，就在写那篇入行文章的前三天，她写了一篇《拥抱你的锁定》（Commit to your lock-in），反驳当时流行的「用 AWS Lambda 会被厂商绑死」的担忧：</p>
+<blockquote><span class="en">On-prem is a lock-in. Cloud is a lock-in. Every single language you program in is a type of lock-in.</span><span class="zh">自建机房是锁定。云是锁定。你用的每一门编程语言都是一种锁定。</span><cite>Commit to your lock-in，2019-02</cite></blockquote>
+<p>她说，花几小时在 HN 上看利弊，不如先做出一个能跑的东西，「先上生产环境」。</p>
+<p>三年后她撞墙了。2022 年 12 月，她为 Viberary 准备数据：加州大学圣迭戈分校公开的 Goodreads 书籍数据集，230 万行，压缩后 2GB，解压后 10GB 的 JSON。她决定用谷歌云，把数据导进 BigQuery，从 BigQuery 一键打开 Colab 笔记本，读进 pandas。读 1000 行没问题，读全部，内存爆了，笔记本崩溃，然后弹出提示建议她升级 Colab Pro，可她已经在用 Pro 了。</p>
+<p>凭经验，100 万行读进 pandas 应该没事。她想弄清楚内存去了哪里，于是开始画数据经过的路径。如果是本地的纯 Python，图上只有程序和文件，看 I/O、CPU、内存三个数就够了，Brendan Gregg 的《性能之巅》里有一套现成的检查命令。换成本地的 pandas 加 Jupyter，就多了 IPython 内核、笔记本服务器和浏览器，它们之间靠消息互相传话。再换成 Colab 加 BigQuery，又多了 BigQuery 的客户端接口（数据先变成 Arrow 表再变成 DataFrame）、BigQuery 本身（底下还有谷歌的存储、查询引擎和调度系统）、区域和可用区、项目权限。而 Colab 是闭源的，免费版连终端都不给，她只能用感叹号语法在格子里执行 <code>grep MemTotal /proc/meminfo</code>，才知道机器有多少内存。</p>
+<figure>
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,'Noto Sans SC',sans-serif">
+<text x="170" y="28" fill="#5eead4" font-size="15" text-anchor="middle" font-weight="700">2017 · 《悲惨世界》数词</text>
+<text x="540" y="28" fill="#5eead4" font-size="15" text-anchor="middle" font-weight="700">2022 · Goodreads 10GB JSON</text>
+<rect x="70" y="270" width="200" height="40" rx="6" fill="rgba(110,168,254,.18)" stroke="#6ea8fe"/>
+<text x="170" y="295" fill="#d5dce4" font-size="13" text-anchor="middle">你的笔记本电脑</text>
+<rect x="70" y="222" width="200" height="40" rx="6" fill="rgba(94,234,212,.14)" stroke="#5eead4"/>
+<text x="170" y="247" fill="#d5dce4" font-size="13" text-anchor="middle">shell 管道 / Python 脚本</text>
+<text x="170" y="200" fill="#7d8794" font-size="12" text-anchor="middle">两层，全都看得见</text>
+<g font-size="12" fill="#d5dce4" text-anchor="middle">
+<rect x="400" y="310" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="330">区域 · 可用区 · 项目权限</text>
+<rect x="400" y="274" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="294">BigQuery（存储 · 查询引擎 · 调度）</text>
+<rect x="400" y="238" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="258">BigQuery 客户端：Arrow → DataFrame</text>
+<rect x="400" y="202" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="222">Colab（闭源，免费版无终端）</text>
+<rect x="400" y="166" width="280" height="30" rx="5" fill="rgba(94,234,212,.08)" stroke="#5eead4"/><text x="540" y="186">浏览器 ⇄ 笔记本服务器</text>
+<rect x="400" y="130" width="280" height="30" rx="5" fill="rgba(94,234,212,.08)" stroke="#5eead4"/><text x="540" y="150">IPython 内核</text>
+<rect x="400" y="94" width="280" height="30" rx="5" fill="rgba(94,234,212,.14)" stroke="#5eead4"/><text x="540" y="114">pandas · 你的代码</text>
+</g>
+<text x="540" y="74" fill="#7d8794" font-size="12" text-anchor="middle">虚线：别人的、看不进去的层</text>
+<line x1="300" y1="60" x2="300" y2="340" stroke="rgba(110,168,254,.2)"/>
+</svg>
+<figcaption>同一种活（把一大份文本读进来数一数），五年里，她和内存之间多出来的层。据 2017 年演讲与 2022 年《The cloudy layers of modern-day programming》整理</figcaption>
+</figure>
+<blockquote><span class="en">Whereas before we just had our small Python interpreter and our local shell, now we are at least 5-6 layers away from potentially finding the memory issue and figuring out what to do with it, in an API that blocks us from doing any real programming and has us looking between the components.</span><span class="zh">以前我们只有一个小小的 Python 解释器和本地的 shell；现在，我们离找到那个内存问题、想清楚怎么办，至少隔着五六层，困在一个不让人真正编程、只让人在组件之间来回张望的接口里。</span><cite>The cloudy layers of modern-day programming，2022-12</cite></blockquote>
+<p>云的答案是：换一台更大的机器。升级到 Colab Pro，内存翻倍到 26GB，问题照样没解决。她在文中引用 Sussman 解释 MIT 为什么把入门课从 Scheme 换成 Python：1980 年的程序员能把每个零件理解到底，现在的程序员得「对自己用的库做基础科学」，喂不同的输入，看它怎么反应。她还借了另一篇博客的叫法 VendorOps：你被雇来伺候厂商的东西。</p>
+<p>这篇文章没有让她回到汇编，她明说云给了她很多：没有云她试不了 Stable Diffusion，也起不了大 Spark 集群。<strong>她的回应是一种工作习惯：遇到一层看不懂的东西，就绕远路，一直走到能看见的那层。</strong></p>
+<p>2024 年 2 月，她在本地用 llama.cpp 跑模型，被一屏日志里的 GGUF 吸引。她没有直接去读格式规范，而是从头讲起：什么是模型？她编了一家给统计学家做榛子酱的小作坊，产品叫 Nulltella（Nutella 加上 null），晴天的小时数和一天做多少罐成正比，四行数据，一个线性回归。模型训练完是什么？是一个对象。对象怎么存进文件？讲 pickle，讲 safetensors，讲检查点文件，讲为本地推理设计的 GGML，讲 GGML 因为把超参数写死在文件里、一加字段就不向后兼容，才有了用键值表存元数据的 GGUF。走完这一圈，文件头那四个字节 <code>0x47 0x47 0x55 0x46</code> 才有了意义。文章标题就叫《GGUF，绕远路》。</p>
+<p>同年 5 月在 PyCon Italia，她讲的是同一个习惯的另一种用法：可复现的最小例子（reprex，来自 R 社区）。一个用 Ray 部署模型的服务起不来，报错堆栈指向 Python 的 importlib。团队钻进 Ray 的源码，找到调用 importlib 的那个方法，把它单独抄进笔记本里跑，不带任何依赖，复现了问题。她说这就是「贴近金属」（close to the metal），这就是注意力。到 2026 年，她最喜欢本地模型的一点也是这个：</p>
+<blockquote><span class="en">One of the very cool parts of local models is you can introspect almost everything</span><span class="zh">本地模型最酷的地方之一，是你几乎什么都能往里看。</span><cite>Running local models is good now，2026-06</cite></blockquote>
+
+<h3>三、上下文窗口：历史就是背景，背景就是力量</h3>
+<p>2022 年 11 月 ChatGPT 发布，她说整个行业「一夜之间翻了个面」。一个做了 15 年机器学习的朋友跟她说，不知道这对建模意味着什么。她形容那时的自己像苏珊娜·克拉克（Susanna Clarke）小说《皮拉内西》（Piranesi）里那个失忆的叙述者：住在一座无限大的房子里，大厅里有无数雕像，潮水在下层涌来涌去，他不记得自己是谁、怎么来的，只能任由房子摆布。救了他的，是他以前写下的日记。</p>
+<p>2023 年 9 月，她在 PyData Amsterdam 的主题演讲里把这个比喻展开成一个论证。她从一句老笑话开头：计算机科学只有两件难事，缓存失效和给东西命名。说这话的 Phil Karlton 是网景的架构师，她特意岔开讲了一段 90 年代的网景，因为：</p>
+<blockquote><span class="en">Because history is context and context is power.</span><span class="zh">因为历史就是背景，而背景就是力量。</span><cite>Build and keep your context window，2023-09</cite></blockquote>
+<p>然后她一步步给自己补「上下文」。缓存是什么？一张放在内存里的查找表，说白了就是一个字典。语言模型的上下文窗口，跟缓存是同一种结构：把需要的东西放在手边，免得每次都回大仓库里找。她往回翻：马尔可夫链只看上一个状态，预测下一个；n-gram 看前 n-1 个词；2013 年谷歌的 Word2Vec 把词变成向量，让模型学到词和词的关系；然后是编码器、解码器和注意力机制。她还翻出自己 2015 年写的一个小脚本：用马尔可夫链生成「看起来像」Hacker News 的假标题。结果很烂，她说「马尔可夫链是婴儿版的 GPT，而我那时也只是个婴儿版的机器学习工程师，我们俩正相配」。<strong>当你知道人类做「根据上文预测下文」已经做了很久，大模型就开始失去一些神秘感。</strong></p>
+<p>命名那一半，她举了一个具体的例子。假设你在写一个语义搜索库，需要一个类：读进一份事先算好的嵌入向量文件，写进 Redis，供 API 做最近邻查找。叫什么？EmbeddingsWriter？以后要写别的东西怎么办。DataWriter？太泛。VectorPutter？「下次一定。」答案在 1992 年的一篇论文里：最早的工业推荐系统之一 Tapestry，用来从新闻组里给人推荐邮件，它的架构里就有一个组件叫 Indexer，负责读进外部文档、拆成可查询的字段、加进文档库。<strong>你要写的那个类，三十年前就有名字了。</strong></p>
+<p>她借来的另一个故事来自程序员作家 Ellen Ullman。1998 年 Ullman 想把 Windows NT 换成 Linux，花了一整天卸载、降级、格式化硬盘，半夜终于得到一台光秃秃的机器，屏幕上跳出一行：「no ROM basic, system halted」。最早的 IBM 兼容机把 BASIC 语言烧在只读存储里，十几年后早就没有了，这条提示却一直没删。Ullman 说，那是「一道残留的痕迹」。</p>
+<p>所以她的处方是：先「变成一棵二叉树」，读得宽，再读得深。这个说法来自她丈夫 Dan。她曾经对着一堆刚买的书哀嚎「我得把这些全学完」，Dan 端着咖啡路过说：没那么糟，这些书内容不是互不相干的，你在 Python 里学会了面向对象，Java 那本书就能扔掉一半；学会了 Java，Scala 你就已经走了一大半，「除了那些怪怪的 monad 部分，别碰那些」。她举的例子是图：学会图，就懂了树是一种图；懂了树，就懂了 DAG；然后 Airflow 的任务图、Spark 的执行计划、PyTorch 的计算图，全是同一个东西。她还说要读十年前被引用很多次的论文，读被反复转发的老文章，读代码，去会场跟人当面聊，因为皮拉内西最后也是靠遇见别人才找回了参照系。</p>
+<p>2024 年她在佛罗伦萨的演讲把这个想法压成了一句开场白：跟大模型打了一年交道，她发现围着大模型搭的新工程系统，「很像旧的那些」，剥掉炒作，剩下的通常就是普通的工程和机器学习问题。</p>
+
+<h3>四、看见爪痕：好东西不规模化</h3>
+<p>这条线比她的机器学习生涯还早，起点是一次急诊。2015 年 9 月，29 岁的她在家里看着七个月大的女儿在地毯上玩，突然胸口发紧。她在急诊室里待了四个小时，没人告诉她下一步是什么，最后一位医生顺着她自己的猜测点头说「可能是拉伤了肌肉」，建议吃点布洛芬。她回家想起几天前收到的一封邮件，一家创业公司「为你精选一盒零食送到家」。她写下一连串问题：缩短候诊时间的创业公司在哪里？让孩子在急诊室里不那么害怕的创业公司在哪里？那篇文章叫《去做难的事吧》。</p>
+<p>2017 年 5 月，她去了一趟冰岛，写了一篇 4500 词的长文。冰岛人口 33 万，比密歇根大学橄榄球场的三倍多一点。总理办公室没有警卫，统计局能把全国失业人口放进一张表格里。她把这跟她见过的每一个好论坛联系起来：她的孕期论坛、只对大学同学开放时的 Facebook、早年的推特。人少的时候大家互相认识、互相信任；一旦好名声传开，大批新人涌入，社区的味道「立刻」就没了。她把这叫成一句话：</p>
+<blockquote><span class="en">Authenticity, like most good human endeavors, it turns out, does not scale.</span><span class="zh">真诚，跟大多数美好的人类事业一样，原来是不能规模化的。</span><cite>Good things don’t scale，2017-05</cite></blockquote>
+<p>她马上补了一句：由此得出「国家和社区都该保持小而同质」的结论，正是当时席卷欧美的民粹主义想要的，而那「绝对不是正确答案」。她自己的家就是异质性的产物。她给的方向很朴素：关心本地的事，多一些小社区，还有「很多很多版主」。</p>
+<p>2021 年，同一个直觉落到了软件团队上。她在《平庸的局部最小值》（The local minima of suckiness）开头写：她不太讲绝对的话，但有一件事她确定，<strong>没有人能靠自己成为好的软件工程师</strong>。她讲 Gerald Weinberg 1971 年书里的故事：一个叫 Bill 的程序员请同事 Marilyn 审他的代码，Marilyn 在 13 行里找出了 17 个 bug。Bill 没有恼羞成怒，而是到处跟人说这代码有多离谱，又有几个人加进来找出了更多 bug。她说好团队给犯错留空间，可是带新人、做内部培训这些事在财报上完全看不见。</p>
+<p>2025 年 10 月，AI 编程助手已经无处不在，她写了《我想看见那只爪子》。她讲第一份工作，交给资深分析师一份报告，对方问：「你复查过那段 SQL 吗？」她没有，对方一跑，结果不一样。后来她看一位架构师从一个无模式的存储往关系数据库里迁数据，连着好几天准备测试环境和备份，给每次运行打时间戳以便回滚，常常人不在座位上，因为他在跟数据库的主人开会，确保自己别把人家的服务打挂。迁完了他也没算完，又去核对下游报表的数字。她借伯努利收到牛顿匿名解答时的那句话说：「我从爪子认出了狮子。」她在 Redis、cURL、uv、SQLite、llama.cpp 里看见这种爪子。而生成式模型的问题在于：</p>
+<blockquote><span class="en">the models produce code that is, quite literally, mid, the compressed and weighted average of every excellent Stack Overflow answer</span><span class="zh">模型产出的代码，字面意义上就是平均水平，是每一个出色的 Stack Overflow 答案被压缩、加权后的平均值。</span><cite>I want to see the claw，2025-10</cite></blockquote>
+<p>她紧接着补上平均值的另一半：训练数据里也有「如果把自变量和因变量分别排序再做回归会怎样」这种问题。</p>
+<p>2026 年 5 月，问题落到了她自己身上。跟编程助手干完一个会话，她「得到了写过代码的一切外在迹象，却没有任何手写代码时脑子里会发生的过程」。她又搬出 2021 年那段关于短时记忆、工作记忆和长时记忆的说明，然后说代码生成的默认用法跟技能保持是对着干的：它的交互像老虎机，拉一下杆，出一个奖励。她给自己列了加摩擦的办法：先自己写初版再让助手审，审完一条条手改；让助手解释她不懂的代码，而不是替她写；先在问题上自己花 20 分钟；重读书和论文；重新实现基础数据结构。她承认这会抵消短期的提速，但「巩固的是我自己的基础，而不是基础模型的」。所以，我们应该比模型更累。</p>
+<p>三个月后她写了《坏代码是葛藤》（Bad code is kudzu）。葛藤当年从东亚引进美国防止水土流失，结果疯长，盖过人行道、房子和树。功能也一样：一旦加进去，别人就在上面写代码，两年后没人要它也删不掉。删代码不进晋升材料，「删代码是无声的」。她拿自己开刀：5 月她用机器学习给博客加了标签气泡，三个月后看访问统计，标签页没进前 30。她把它删了，三条提交记录贴在文末。在一个加东西越来越容易的时代，她的结论是：要删得更狠。</p>
+
+<h2>他的思维方法</h2>
+<p><strong>技术问题，用寓言讲。</strong>她的技术长文几乎都套着一个故事：登山求道的工程师，佛罗伦萨一家叫「Medici Corp」的公司派工程师去租 Airbnb 闭关做 AI，巴塞罗那海上圣母教堂的搬运工一趟趟背 40 公斤的石头（她说这就是梯度下降），中世纪修士对抗分心，两个皮拉内西。每篇文章顶上还挂一幅画：希什金的麦田、艾瓦佐夫斯基的帆船、康定斯基、莱姆皮卡。讲 YAML 和 importlib 的文章，读起来像一本插图故事书。</p>
+<p><strong>先数一数。</strong>她的论点通常从一个自己数出来的数开始：Wired 一篇文章用 curl 抓下来 1800 多行，真正的正文 21 行，不到 1000 词（2016 年，她为此写了一个解析脚本，花了半小时拿到五分钟能读完的要点）；《悲惨世界》的 65.5 万词；500 份简历；15% 对 85%；标签页没进前 30。数字不一定严格，她自己也常说「纯属轶事证据」，但它们都是她亲手数的。</p>
+<p><strong>做一个小东西来学。</strong>2015 年的马尔可夫链假标题，用 Java 写的静态网站生成器，BoringML 笔记站，Viberary，Nulltella 线性回归，以及从零实现梯度下降、one-hot 编码、minhash、tf-idf。她在 2022 年写，自己能坚持下来的项目都是小的、确定能做完的、带一点交互的。</p>
+<p><strong>她会反复用同一段话。</strong>关于短时、工作、长时记忆的那段说明（短时记忆像 RAM，长时记忆像数据库），2021、2022、2023、2026 年至少出现了四次，几乎一字不差。丈夫 Dan 那句「学会 Java，Scala 你就走完了一大半」也出现了两次，2022 年说的是 70%，2023 年变成了 60%。这不是偷懒，这是一个人的承重墙：<strong>她的几块地基是固定的，每次遇到新东西，就把它搬过去对一对。</strong></p>
+<p><strong>先起名，再讨论。</strong>她相信「开始谈论一件事、给它起个名字，就是某件事的开始」。「平庸的局部最小值」「氛围空间」（vibe space，她给推荐流那种只能靠行为间接影响结果的状态起的名字；她说大模型输入框正把所有搜索框都推向那里），以及借来的「幽灵知识」「VendorOps」，都是这个动作。</p>
+<p><strong>写给过去的自己。</strong>2022 年那篇讲怎么学机器学习的文章，她说请把它「主要当作给过去的我的建议」。她的入行文章都是从一个没有工科背景、在 Excel 里清洗脏数据的分析师的视角写的，这也是它们被那么多人转发的原因：她记得自己当年看不懂什么。</p>
+
+<h2>他哪里可能是错的</h2>
+<p><strong>第一，她对「贴近金属」的怀念，可能高估了手工的价值。</strong>那篇讲云的文章在 Hacker News 上有 280 分、165 条评论，最常见的反驳是：抽象就是用来复用的。一位评论者写道，就像一个木工作坊给了木匠一整套工业电动工具，她却坚持要用一把削木刀重新做出所有工具，「因为那才是木工的真精神」。另一位说，建筑师不会每盖一栋楼就重新发明一次工字梁。还有人说问题是她自找的：她明显很懂技术，数据又很小，为什么要绕 BigQuery 和 Colab，租一台 VPS 或者换个更省内存的工具就行了。<strong>而最好的反驳她自己写过</strong>：2019 年的《拥抱你的锁定》说「云是锁定，每一门语言都是锁定」，劝人别瘫在架构争论里，先上生产。两篇都对，只是适用于不同的人：一个要交付的团队，和一个想弄懂原理的人。她没有在文章里正面处理过这两篇之间的张力。</p>
+<p><strong>第二，她的证据多是轶事。</strong>2019 年那篇最有影响的入行文章，供需估算是把 LinkedIn 的岗位缺口、Fast.ai 的报名人数和一个假定的 7% 完课率叠在一起，申请人从 20 涨到 100 以上是她的「直觉」，那个投票她自己称为「极不科学」。她每次都老实标出来，这值得尊重；但读者应该把这些当成一位资深从业者的观察，而不是劳动力市场研究。</p>
+<p><strong>第三，「加摩擦」是一种个人的奢侈。</strong>那篇《我们应该比模型更累》在 HN 上也有 196 分，有人回应说这是一个向下的螺旋：工具会让产出压力变大，裁员会来，开发者只能更拼。她的处方针对的是一个能自己决定节奏的资深工程师，对一个被考核产出的初级工程师未必行得通。另一位评论者说，问题不在摩擦，在于我们需要更好的抽象。</p>
+<p><strong>第四，她对 AI 代码的判断在随时间移动。</strong>2025 年 10 月她说模型的代码「字面意义上就是平均水平」，只能给出「质量的幽灵」；2026 年 6 月她在本地跑开源模型做智能体编程，让它从空仓库搭一个双塔推荐模型，说结果「很基础，但已经超出了我去年认为可能的范围」，那篇文章在 HN 上拿到了 1596 分，是她全站最高。这两种看法可以并存，在乎质量和承认工具变强并不矛盾；但「爪痕」这条论证的根基，是人在推理、审美和架构上比模型强，而她自己的观察显示，这条线正在移动。</p>
+<p>说明：我检索了针对她的成文批评，没有找到署名的书评或长文反驳；上面引的是 Hacker News 讨论里的评论，以及她自己前后文章之间的张力。</p>
+
+<h2>越界 · 跨学科的联想</h2>
+<div class="crossx"><ul>
+<li><b>哲学 · 海德格尔的「上手」与「在手」</b>：《存在与时间》说，锤子用得顺手时你看不见它（上手，ready-to-hand），锤子坏了，它才作为一个「东西」跳到眼前（在手，present-at-hand）。Boykis 的云也是这样：平时五六层抽象是透明的，Colab 内存一爆，每一层才显形。不像的是，海德格尔的锤子坏了你能拿起来看；她那几层是闭源的，坏了也只看得见外壳。</li>
+<li><b>认识论 · 波兰尼的「默会知识」</b>：Michael Polanyi 说「我们知道的比我们能说出来的多」。「幽灵知识」像它，都是圈内人有、书上没有的；不像的是，默会知识原则上说不清，而「数据要干净」完全说得清，只是十年没人写下来。</li>
+<li><b>心理学 · Bjork 的「合意困难」</b>：Robert Bjork 提出 desirable difficulties：间隔、交错、自我测试这类让学习变慢的安排，反而让记忆更牢。「比模型更累」是同一个结构；不像的是，她在乎的不只是记住，还有对自己代码的掌控。</li>
+<li><b>佛学 · 庞蕴「运水及搬柴」</b>：唐代庞居士偈云「神通并妙用，运水及搬柴」，日常的粗活本身就是修行。Staff 工程师那句「旅程就是终点」与此相近；不同的是，他最后还许诺了一个奖励：一个跑起来的系统。</li>
+<li><b>生物进化 · 痕迹器官</b>：鲸的体内还留着退化的骨盆骨，是陆地祖先的遗迹。「no ROM basic」那行提示是代码里的痕迹器官。不像的是，进化删不掉它，程序员可以，Boykis 删标签气泡就是。</li>
+</ul></div>
+
+<h2>十条要点</h2>
+<ol class="takeaways">
+<li>Vicki Boykis 统计自己两年的项目：机器学习只占 15%，搬运、监控、清点数据占 85%。</li>
+<li>想进数据科学，别直接挤初级数据科学岗位，先从开发、运维或数据分析师的「后门」进去。</li>
+<li>「干净的数据比模型重要」是幽灵知识：圈内人都懂，Boykis 却直到 2021 年才在谷歌的一篇论文里第一次见它被正式写下。</li>
+<li>一份 10GB 的 JSON 读进 Colab 就爆内存，因为人和内存之间隔着五六层别人的闭源系统。</li>
+<li>看不懂一层抽象就绕远路：从四行数据的线性回归，一路讲到 GGUF 文件头的四个字节。</li>
+<li>历史就是背景，背景就是力量：知道马尔可夫链和 1992 年的 Tapestry，大模型和命名难题都少了神秘。</li>
+<li>学习像一棵二叉树，先读宽再读深；学会「图」，就懂了 Airflow、Spark、PyTorch 里的那些图。</li>
+<li>没有人能靠自己成为好的软件工程师，而带新人、给犯错留空间这些事在财报上看不见。</li>
+<li>AI 生成的代码是所有答案的加权平均；Vicki Boykis 给自己加回摩擦，因为「我们应该比模型更累」。</li>
+<li>这套思路的盲区是怀念手工、低估抽象、证据多为轶事；海德格尔说工具坏了才被看见，云也一样。</li>
+</ol>
+
+<h2>出处</h2>
+<ul class="reads">
+<li><a class="t" href="https://vickiboykis.com/2019/02/13/data-science-is-different-now/">Data science is different now</a>（2019-02）<span class="d">初级数据科学岗位的供需失衡，「数据科学从来主要是搬数据」，以及走后门入行的三项技能。</span></li>
+<li><a class="t" href="https://vickiboykis.com/2021/09/23/reaching-mle-machine-learning-enlightenment/">Reaching MLE (machine learning enlightenment)</a>（2021-09）<span class="d">登山求道的寓言：一份没有模型的清单，就是机器学习工程。</span></li>
+<li><a class="t" href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/">The cloudy layers of modern-day programming</a>（2022-12）<span class="d">Viberary 的 10GB JSON 在 Colab 里爆掉内存，和她一层层画出的数据路径。</span></li>
+<li><a class="t" href="https://vickiboykis.com/2023/09/13/build-and-keep-your-context-window/">Build and keep your context window</a>（2023-09）<span class="d">PyData Amsterdam 主题演讲：两个皮拉内西、缓存与命名、从马尔可夫链到注意力机制。</span></li>
+<li><a class="t" href="https://vickiboykis.com/2025/10/20/i-want-to-see-the-claw/">I want to see the claw</a>（2025-10）<span class="d">从复查 SQL 的资深分析师到「从爪子认出狮子」，以及生成式代码为什么是平均值。</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-10-28" data-slug="tech-blog">
+<h2>更新记录</h2>
+<!-- updates -->
+</section>
+<footer>博客精读 · 第 51 期 · 本页内容核对至 2026-10-28</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>

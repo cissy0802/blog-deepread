@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vicki Boykis · Tech Blog — 85% of machine learning is not the model</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:.86em;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
+</style>
+
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="tech-blog-blog51.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Read · 51 · vickiboykis.com</div>
+<h1>Vicki Boykis<br/>85% of machine learning is not the model</h1>
+<p class="sub">Vicki Boykis · <strong>Tech Blog</strong> (vickiboykis.com) · machine learning engineer working on recommendations, search and ML infrastructure; started as a data analyst in Excel and SAS, then worked at Comcast, Automattic/Tumblr, Duo Security and Mozilla.ai, now a founding ML engineer at a startup · Corpus: about 100 tech posts (May 2015 to now) plus about 50 pieces in a separate Essays section (Dec 2014 to Dec 2025), roughly 270,000 words; she almost stopped posting from mid-2019 to early 2021 (she also runs a newsletter, Normcore Tech), and after 2021 the posts shift from "how to get into data science" to "what machine learning engineering actually is" · <strong>Still active</strong>, latest post October 2026 · This page is based on 24 posts actually read, from December 2014 to September 2026</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Essentials</button>
+<button id="btn-deep">Full version</button>
+</div>
+<!-- ============ Essentials ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>In the fall of 2021, Vicki Boykis posted a parable. A machine learning engineer closes her laptop, puts on her hiking boots, and walks past cornfields, through a forest of decision trees, past a sparkling data lake in the distance, up a mountain. At the top, on a bench, sits a Staff Engineer drinking cold brew. She prostrates herself, offers him her YubiKey, and asks: I've been doing machine learning engineering for a very long time. When do I actually get to the... machine learning engineering?</p>
+<p>She tells him about her year. Her manager asked for a churn model. But the column saying who churned was itself a mess, because cancellations and restarts lived in two different columns. Billing data arrived daily from Salesforce into Hadoop, and that day the batch job failed. The newer clickstream data came down a different pipe into AWS, full of non-standard JSON. Joining the two required a route the security team would approve. Spark ran on Kubernetes, and some pods were hanging. And finally, on the machine that could reach the data, Python wouldn't install the dependencies for XGBoost...</p>
+<p>The Staff Engineer raises a palm, then reads back what she has just described: serialization formats, JSON, cron and bash, SQL tuning, container orchestration, distributed systems, networking across machines. Then:</p>
+<blockquote><span class="en">I have some (potentially bad) news for you, you’re doing machine learning engineering.</span><cite>Reaching MLE (machine learning enlightenment), 2021-09</cite></blockquote>
+<p>"But I haven't even touched a model yet."</p>
+<p>That is the central joke of her blog, and its central argument. In 2019 she tweeted a tally of her last two years of projects: <strong>15% involved ML; 85% involved moving, monitoring and counting data to feed ML.</strong> The same year she wrote an open letter to people trying to break into the field. Step one: don't shoot for a data science job. Junior roles drew a hundred or two hundred applicants each, and the "data science" everyone pictured had never been most of the work.</p>
+<p>Half of her blog is about that 85%. The other half asks whether, as the 85% piles higher, anyone can still see what they are doing. In 2022, for a book recommendation side project, she tried to read a 10GB JSON file into a Google Colab notebook and ran out of memory. Hunting for the cause, she found that between her and that memory sat a notebook server, an IPython kernel, a browser, the BigQuery client, BigQuery itself, and the cloud's regions and project permissions: at least five or six layers, most of them someone else's, closed, and not open for inspection. As an engineer who just wants to build things, she wrote, it made her miserable.</p>
+<p>Her fix is old-fashioned: <strong>take the long way around, all the way down to the layer you can see.</strong> To understand the GGUF file format for local LLMs, she starts from a linear regression with four rows of data and ends at the four bytes at the top of the file, 0x47 0x47 0x55 0x46, ASCII for "GGUF." In a 2023 keynote she called this building and keeping your context window: read old books, read decade-old papers with lots of citations, read code, know what today's buzzword was called the last time around. When ChatGPT landed and the whole industry seemed to lose its memory, she dug up a tiny script she had written in 2015 that used Markov chains to generate fake Hacker News headlines, and the large models lost a little of their mystique.</p>
+<p>In the age of AI-written code the question gets sharper. In 2025 she wrote that generated code is "quite literally, mid," the weighted average of every Stack Overflow answer. What she wants to see is the lion's claw: evidence that someone who cared was on the other side. In 2026 she noticed that after a session with a coding agent she had the code and none of the understanding. So she put friction back in: twenty minutes on a problem before calling the agent, having the agent review her code instead of writing it, reimplementing basic data structures by hand. Her conclusion fits in one line:</p>
+<blockquote><span class="en">We should be more tired than the model.</span><cite>We should be more tired than the model, 2026-05</cite></blockquote>
+<p>If you remember one thing from her blog: <strong>the story a field tells outsiders and the work it actually does are separated by many layers.</strong> For more than a decade she has been counting those layers one by one, and keeping herself somewhere she can still see the bottom.</p>
+</div>
+<!-- ============ Full version ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Data science</b>: using statistics and code to draw conclusions from data. Around 2012 the press crowned it "the sexiest job of the 21st century."</li>
+<li><b>Machine learning engineer (MLE)</b>: the person who turns a model into a system that keeps running; half modeling, half backend engineering.</li>
+<li><b>Production ("prod") / deploy</b>: production is the system real users touch; deploying is putting new code onto it.</li>
+<li><b>Cloud vendor</b>: companies like AWS and Google Cloud that rent out compute and storage. Your program runs on their machines, and many details are hidden from you.</li>
+<li><b>Notebook</b>: tools like Jupyter that run code cell by cell in a browser; Colab is Google's proprietary version.</li>
+<li><b>Recommender system (recsys)</b>: the system that decides which posts, books or videos to show you.</li>
+<li><b>Embedding</b>: a list of numbers (a vector) standing in for a word or a book, so that things with similar meanings get similar numbers.</li>
+<li><b>Context window</b>: how much text a language model can "see" at once. Boykis borrows it as a metaphor for a person's background knowledge.</li>
+</ul></div>
+
+<h2>A strange thing: at the summit, she learns she has been doing the job all along</h2>
+<p>In the 2021 parable, the most absurd thing isn't the mountain. It's the list. In her whole account of the churn model, XGBoost appears exactly once, at the very end, as the thing that won't install. Every step before it is something else: two contradictory columns to merge, a broken cron job to patch, a pipeline halfway through a migration (old data in Hadoop, new data in AWS), a pile of nested JSON, a security-approved staging route, a few hung containers. And she hasn't even gotten to the last part: surfacing the results in a front end for sales and marketing, and the latency...</p>
+<p>The Staff Engineer reads back eleven items, then adds a summary line: "Architecting a scalable, resilient system to deliver results to key stakeholders using machine learning insights surfaced into an accessible front-end layer." This is machine learning engineering, he tells her. Not touching the model yet is normal. When she finally gets there, a new set of "very boring, non model-specific problems" awaits: where to store online and offline metrics, tuning hyperparameters over and over, cleaning up lots and lots of notebooks, forgetting to shut notebooks down and running up the cloud bill.</p>
+<p>"So what do I do?" "Nothing. You make peace with it. This is the job." Then his PagerDuty goes off, he pulls a MacBook Pro out of his backpack, and as he runs down toward WiFi he calls back: "See you in prod."</p>
+<p>It is tied for the most-linked post on her own site, by her later posts. It's funny because everyone who has done the work recognizes the list.</p>
+
+<h2>Who she is</h2>
+<p>Vicki Boykis's family emigrated from the Soviet Union to the United States; her daughter, born American, learned Russian as her first language. She had no engineering background. After college she worked as a data analyst in Excel and SAS. In 2011 she stumbled onto Hacker News and understood almost none of the headlines. In 2012 she volunteered to be the first analyst on her team to work with Hadoop, partly because she was "too impatient to wait for engineering work to be completed." She taught herself Python and worked her way to machine learning engineer: TV content recommendations, social recommendations at Tumblr, an ML platform at a security company, an LLM evaluation platform at Mozilla.ai.</p>
+<p>In 2021 she described her working day: eight hours, mostly silent and alone, in front of a large monitor in her semi-dark basement. She also organized a conference that ran exactly once, Normconf; wrote a short book-length paper, "What are embeddings"; and built Viberary, a search engine that recommends books by vibe. Her blog has an AI policy page stating that all the content, "both good and terrible," is generated by "VickiNet."</p>
+
+<h2>What she wrestled with: the layers between the story and the work</h2>
+<p>She first ran into the problem as an outsider looking through a shop window. In 2019 she remembered her early years reading Hacker News: the more she read, the more disgusted she became with herself and with her company. Why were we still on Oracle? Why did I have a crummy Windows machine? Why wasn't our team called a "data science" team, and why weren't we doing "data science"? Only later did she see it as a filter bubble: <strong>she had taken the things she read about most for the way the whole world worked.</strong></p>
+<blockquote><span class="en">In today’s online economy where thousands of developers are online, the person whose voice is the loudest gets the most weight. The loudest people aren’t going to be those working with legacy systems.</span><cite>IT runs on Java 8, 2019-05</cite></blockquote>
+<p>In that post she cites Scott Hanselman's "dark matter developers": most programmers don't blog, don't tweet, don't go to conferences; they maintain ASP.NET 1.1 at a local municipality or VB6 at a bottling plant in Mexico. She had worked at a company that migrated from SVN to Git in 2014, and in environments where Java 8 was still the latest available version. Most business rules, she wrote, are still hardcoded case statements and Excel sheets.</p>
+<p>So her root problem has two sides. One is <strong>how far the story a field tells about itself is from the work it actually does</strong>: "data science" is told as statistics and deep learning and done as moving data around; "AI" is told as magic and built on caches, file formats and YAML. The other is <strong>how a person, surrounded by those stories and by layer upon layer of abstraction, can still see what they are doing.</strong> The first side produced a decade of career-advice posts. The second, after 2021, produced more and more posts about digging down.</p>
+<p>The problem predates her tech blog. Her earliest surviving essay is from December 2014, when she was almost nine months pregnant. She compared the birth to pushing to production: code can break freely in development, integration and QA, but once it's in prod it can't, because "real people use it to do real things." That's why developers are superstitious and never push to prod on Friday. In 2021 she wrote a whole post about the rituals of the deploy.</p>
+
+<h2>Her ideas, told as how she found them</h2>
+
+<h3>1. Eighty-five percent of the work is not the model</h3>
+<p>In March 2017 she gave a talk titled "Should you replace Hadoop with your laptop?" By then she had worked on three Hadoop projects at three companies and had seen plenty of cases that didn't need Hadoop. She took her favorite musical's source novel, Les Misérables, 655,000 words and 3.2MB, and ran the canonical distributed-systems exercise: count the words. One Unix pipeline, a few seconds. Copy it 2,000 times, about 6GB, and Python multiprocessing plus PyPy got through it in four minutes at most. Local Spark worked too. <strong>Most data doesn't need a distributed system, and until the data is big enough, the overhead of running one is pure cost.</strong></p>
+<p>That was still a finding about tool choice. What led to her most-shared career post was something she counted in a pile of resumes. By February 2019 she had been in the field for almost ten years and was constantly asked out for coffee by people wanting in. From screening resumes, interviewing and mentoring bootcamp graduates, she had developed an intuition: applicants per entry-level data science opening had grown from about 20 to 100 or more. A friend had gone through 500 resumes for a single role. She ran rough public numbers: more than 100,000 people had started Fast.ai's deep learning course; at a typical 7% MOOC completion rate that was 7,000 new candidates a year, before counting bootcamps, online degrees and PhDs leaving academia.</p>
+<p>Then the other half, beyond supply: what people thought the job was. She ran a Twitter poll asking people titled "data scientist" how they spent most of their time, and pointed to her own tweet: 15% ML, 85% moving, monitoring and counting data. Her verdict:</p>
+<blockquote><span class="en">The reality is that “data science” has never been as much about machine learning as it has about cleaning, shaping data, and moving it from place to place.</span><cite>Data science is different now, 2019-02</cite></blockquote>
+<p>So her advice ran backwards: <strong>don't apply for data science jobs; come in through the back door.</strong> Start as a junior developer, in DevOps, or as a data analyst. Learn SQL, learn one programming language extremely well, learn to work in the cloud. Those skills pay outside data science too, so if the data science job never comes, you can move into software development. She admitted the advice was "really discouraging," but it beat competing for the same five positions as everyone else.</p>
+<p>Two years later she saw why this had to be said over and over: it belonged to a particular kind of knowledge. In 2021 she borrowed a term from someone named David, "ghost knowledge": knowledge that exists within expert communities but is never written down. "Clean data matters more than the model" was exactly that. Everyone who had done the work long enough knew it from painful experience, but the first time she had personally seen it formally stated was a Google paper from January 2021, whose abstract called data the most undervalued, least glamorous part of AI. <strong>By her account, the field's most basic fact reached the literature years late.</strong></p>
+<p>Later she turned the finding into an institution. In August 2022 her Twitter feed was full of people anxiously waiting on NeurIPS acceptances. Academic conferences were about neural networks and equations; industry conferences were about billions of rows of real-time streaming. None showed what she did every day. She posted a joke tweet about a conference for boring problems. The replies were nearly uniform: "I know this is a joke, but can this please be a real conference?" Four months later Normconf ran online for 15 hours, free, with more than 7,000 tickets "sold" and $15,000 raised for NumFOCUS, the foundation behind much of scientific Python. Its most popular merchandise was a shower curtain. It was held exactly once.</p>
+
+<h3>2. Five or six layers of cloud</h3>
+<p>The twist is that she didn't start out hating the cloud. In February 2019, three days before the career post, she published "Commit to your lock-in," pushing back on the fashionable worry that AWS Lambda would chain you to Amazon:</p>
+<blockquote><span class="en">On-prem is a lock-in. Cloud is a lock-in. Every single language you program in is a type of lock-in.</span><cite>Commit to your lock-in, 2019-02</cite></blockquote>
+<p>Rather than spend hours reading pros and cons on HN, she wrote, get something working and "go to production first."</p>
+<p>Three years later she hit the wall. In December 2022 she was preparing data for Viberary: the UCSD Goodreads Book Graph dataset, 2.3 million rows, 2GB compressed and 10GB of uncompressed JSON. She chose Google Cloud: load the data into BigQuery, open it in a Colab notebook with one click, read it into pandas. A thousand rows was fine. All of it maxed out the RAM, the notebook crashed, and Colab offered to upgrade her to Colab Pro, which she was already running.</p>
+<p>Her gut said a million rows should fit in pandas. To find out where the memory went, she started drawing the path the data travels. For plain local Python the diagram has a program and a file, and three numbers tell you what you need: I/O, CPU, memory; Brendan Gregg's Systems Performance has a ready-made checklist of commands. Local pandas in Jupyter adds an IPython kernel, a notebook server and a browser, passing messages to one another. Colab plus BigQuery adds the BigQuery client (data becomes an Arrow table, then a DataFrame), BigQuery itself (with Google's storage, query engine and scheduler beneath it), regions and availability zones, and project permissions. And Colab is proprietary; the free tier doesn't even give you a terminal. She had to use the notebook's <code>!</code> shell syntax to run <code>grep MemTotal /proc/meminfo</code> just to learn how much memory the machine had.</p>
+<figure>
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,sans-serif">
+<text x="170" y="28" fill="#5eead4" font-size="15" text-anchor="middle" font-weight="700">2017 · Les Mis word count</text>
+<text x="540" y="28" fill="#5eead4" font-size="15" text-anchor="middle" font-weight="700">2022 · Goodreads 10GB JSON</text>
+<rect x="70" y="270" width="200" height="40" rx="6" fill="rgba(110,168,254,.18)" stroke="#6ea8fe"/>
+<text x="170" y="295" fill="#d5dce4" font-size="13" text-anchor="middle">your laptop</text>
+<rect x="70" y="222" width="200" height="40" rx="6" fill="rgba(94,234,212,.14)" stroke="#5eead4"/>
+<text x="170" y="247" fill="#d5dce4" font-size="13" text-anchor="middle">shell pipeline / Python script</text>
+<text x="170" y="200" fill="#7d8794" font-size="12" text-anchor="middle">two layers, all visible</text>
+<g font-size="12" fill="#d5dce4" text-anchor="middle">
+<rect x="400" y="310" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="330">region · zone · project permissions</text>
+<rect x="400" y="274" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="294">BigQuery (storage · engine · scheduler)</text>
+<rect x="400" y="238" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="258">BigQuery client: Arrow → DataFrame</text>
+<rect x="400" y="202" width="280" height="30" rx="5" fill="rgba(110,168,254,.08)" stroke="#4a525c" stroke-dasharray="4 3"/><text x="540" y="222">Colab (proprietary, no free terminal)</text>
+<rect x="400" y="166" width="280" height="30" rx="5" fill="rgba(94,234,212,.08)" stroke="#5eead4"/><text x="540" y="186">browser ⇄ notebook server</text>
+<rect x="400" y="130" width="280" height="30" rx="5" fill="rgba(94,234,212,.08)" stroke="#5eead4"/><text x="540" y="150">IPython kernel</text>
+<rect x="400" y="94" width="280" height="30" rx="5" fill="rgba(94,234,212,.14)" stroke="#5eead4"/><text x="540" y="114">pandas · your code</text>
+</g>
+<text x="540" y="74" fill="#7d8794" font-size="12" text-anchor="middle">dashed: someone else's layers, closed to you</text>
+<line x1="300" y1="60" x2="300" y2="340" stroke="rgba(110,168,254,.2)"/>
+</svg>
+<figcaption>The same kind of job (read a big text file, count things), five years apart, and the layers that grew between her and the memory. Drawn from the 2017 talk and "The cloudy layers of modern-day programming" (2022)</figcaption>
+</figure>
+<blockquote><span class="en">Whereas before we just had our small Python interpreter and our local shell, now we are at least 5-6 layers away from potentially finding the memory issue and figuring out what to do with it, in an API that blocks us from doing any real programming and has us looking between the components.</span><cite>The cloudy layers of modern-day programming, 2022-12</cite></blockquote>
+<p>The cloud's answer is a bigger instance. Upgrading to Colab Pro doubled the RAM to 26GB and still didn't fix it. She quotes Sussman on why MIT moved its intro course from Scheme to Python: in 1980 a programmer could understand every part all the way down; now you have to "do basic science on your libraries," trying inputs and watching how the code reacts. She borrows another blog's name for the condition, VendorOps: you are hired to tend the vendor's stuff.</p>
+<p>The post doesn't send her back to assembly. She says plainly that the cloud gave her a great deal: without it she couldn't have tried Stable Diffusion or spun up huge Spark clusters. <strong>Her response is a working habit: when a layer doesn't make sense, take the long way around until you reach one that does.</strong></p>
+<p>In February 2024, running a model locally with llama.cpp, she got curious about the GGUF format in its log. Instead of going straight to the spec, she starts from scratch. What is a model? She invents a small shop making hazelnut spread for statisticians, Nulltella (Nutella plus null), where jars per day rise with hours of sunshine: four rows of data, one linear regression. What is a trained model? An object. How does an object become a file? Pickle, then safetensors, then checkpoint files, then GGML, built for local inference, which wrote hyperparameters as a fixed list and broke backward compatibility whenever a model added one; hence GGUF, which stores metadata as key-value pairs. Only after that walk do the four bytes at the top of the file, <code>0x47 0x47 0x55 0x46</code>, mean anything. The post is called "GGUF, the long way around."</p>
+<p>That May at PyCon Italia she showed another use of the same habit: the reproducible example, or reprex, an idea from the R community. A model deployed with Ray won't launch, and the stack trace points at Python's importlib. The team goes into Ray's source, finds the method that calls importlib, copies it alone into a notebook with no other dependencies, and reproduces the failure. This, she says, is getting closer to the metal; this is attention. By 2026, what she liked most about local models was the same thing:</p>
+<blockquote><span class="en">One of the very cool parts of local models is you can introspect almost everything</span><cite>Running local models is good now, 2026-06</cite></blockquote>
+
+<h3>3. The context window: history is context, and context is power</h3>
+<p>When ChatGPT came out in November 2022, she said, the entire industry turned on its ear. A friend with fifteen years in machine learning told her he wasn't sure what it now meant for modeling. She described herself at the time as the amnesiac narrator of Susanna Clarke's novel Piranesi: living in an infinite house of halls and statues, tides surging through the lower levels, with no memory of who he is or how he got there, at the mercy of the house. What saves him is the diary he once kept.</p>
+<p>At PyData Amsterdam in September 2023 she turned the image into an argument. She opened with the old joke that there are only two hard things in computer science, cache invalidation and naming things, and took a detour into 1990s Netscape, where the joke's author Phil Karlton was an architect, because:</p>
+<blockquote><span class="en">Because history is context and context is power.</span><cite>Build and keep your context window, 2023-09</cite></blockquote>
+<p>Then she rebuilt the context step by step. What is a cache? An in-memory lookup table; in other words, a dictionary. A language model's context window has the same shape as a cache: keep what you need close at hand so you don't go back to the warehouse every time. She worked backwards: Markov chains predict the next state from the previous one; n-grams look at the previous n-1 words; Google's Word2Vec in 2013 turned words into vectors so models could learn relationships between them; then encoders, decoders and attention. She pulled out a script she wrote in 2015 that used a Markov chain to generate plausible-sounding Hacker News headlines. The results were bad, and she said Markov chains were a baby GPT, "but I was also only a baby machine learning engineer, so we were perfect for each other." <strong>Once you know how long people have been predicting the next word from the previous ones, large language models start to lose some of their mystique.</strong></p>
+<p>For the naming half she gave a concrete case. Say you're writing a semantic search library and need a class that reads a precomputed file of embeddings and writes them into Redis for nearest-neighbor lookups. What do you call it? EmbeddingsWriter? What if you write something else later. DataWriter? Too generic. VectorPutter? "Next time, absolutely." The answer is in a 1992 paper. Tapestry, one of the first industrial recommender systems, built to recommend newsgroup messages, has a component called the Indexer, which reads documents from external sources, parses them into queryable fields and adds them to the document store. <strong>The class you're writing has had a name for thirty years.</strong></p>
+<p>Another story she borrowed comes from the programmer and writer Ellen Ullman. In 1998 Ullman tried to replace Windows NT with Linux. After a full day of uninstalling, downgrading and reformatting, she had a bare machine in the middle of the night and a message on the screen: "no ROM basic, system halted." The first IBM-compatible PCs had BASIC built into ROM; sixteen years later the BASIC was long gone, but nobody had removed the message. Ullman called it "a vestigial trace."</p>
+<p>So her prescription: first, become a binary tree, reading broadly and then deeply. The idea comes from her husband, Dan. Standing in front of a stack of stress-bought books, she wailed that she had to learn all of it. Dan walked by sipping coffee and said it wasn't so bad: the books aren't distinct. Learn OOP in Python and you can throw away half the Java book; learn Java and you're most of the way to Scala, "except the weird monad-y parts, but don't touch those." Her example is the graph: learn graphs and you see that trees are graphs; learn trees and you see DAGs; then Airflow DAGs, Spark execution plans and PyTorch computational graphs are all the same thing. Read ten-year-old papers with lots of citations, read posts that have been shared over and over, read code, and talk to people in person, because Piranesi too found his bearings only when he met others.</p>
+<p>In Florence in 2024 she compressed the idea into an opening line: after a year of working with LLMs, the new engineering systems built around them turned out to be a lot like the old ones. Cut away the hype, and what's left is usually plain engineering and machine learning problems.</p>
+
+<h3>4. Seeing the claw: good things don't scale</h3>
+<p>This thread is older than her machine learning career, and it starts in an emergency room. In September 2015, at 29, she was watching her seven-month-old play on the rug when her chest tightened. She spent four hours in the ER without anyone telling her what came next; at the end a doctor nodded along to her own guess, "Could it be a pulled muscle?", and suggested ibuprofen. At home she remembered an email from a few days earlier about a startup that hand-picks a box of snacks and sends it to your home. She wrote a string of questions. Where is the startup that minimizes time in the waiting room? Where is the startup that makes ER waiting rooms less terrifying for small children? The post is called "Let's work on the hard stuff."</p>
+<p>In May 2017, after a trip to Iceland, she wrote a 4,500-word essay. Iceland's population is about 330,000, three times the University of Michigan's football stadium. The prime minister's office has no guards; Statistics Iceland can count the unemployed on a single spreadsheet. She connected it to every good online community she had belonged to: her pregnancy message board, Facebook when it was just for college classmates, early Twitter. Small, they were full of people who knew and trusted one another; once word got out that they were good, newcomers flooded in and the community feel left immediately. She put it in one sentence:</p>
+<blockquote><span class="en">Authenticity, like most good human endeavors, it turns out, does not scale.</span><cite>Good things don’t scale, 2017-05</cite></blockquote>
+<p>She immediately added that the knee-jerk conclusion, keep countries and communities small and homogeneous, was exactly what the populist wave in the US and Europe wanted, and "absolutely not the right answer." Her own family was a product of heterogeneity. Her direction was modest: care about local things, build more small communities, and have "lots and lots of moderators."</p>
+<p>In 2021 the same instinct landed on software teams. "The local minima of suckiness" opens: she doesn't usually deal in absolutes, but she knows one thing to be fundamentally true: <strong>no one becomes a good software engineer by themselves.</strong> She tells a story from Gerald Weinberg's 1971 book: a programmer named Bill asked his colleague Marilyn to review his code, and she found 17 bugs in 13 lines. Instead of fuming, Bill went around telling everyone how hilarious it was, and others joined in and found more. Good teams leave room for mistakes, she wrote; but mentoring and internal training are invisible in the bottom line.</p>
+<p>In October 2025, with AI coding assistants everywhere, she wrote "I want to see the claw." Her first job: she handed a report to a senior analyst, who asked, "Did you double-check that SQL to make sure it's correct?" She hadn't; the senior analyst ran it and got different results. Later she watched an architect move data from a schemaless store into a relational database: days of staging environments and backups, timestamped runs for rollback, his chair often empty because he was meeting with the team that owned the database to make sure he didn't knock their service over. When he finished, he wasn't done; he checked the numbers against downstream reporting. She borrowed Bernoulli's line on receiving Newton's anonymous solution, "I recognize the lion by its claw," and said she sees that claw in Redis, cURL, uv, SQLite and llama.cpp. The trouble with generative models:</p>
+<blockquote><span class="en">the models produce code that is, quite literally, mid, the compressed and weighted average of every excellent Stack Overflow answer</span><cite>I want to see the claw, 2025-10</cite></blockquote>
+<p>She adds the other half of that average right away: the training data also holds questions like "What happens if the explanatory and response variables are sorted independently before regression?"</p>
+<p>In May 2026 the problem reached her own desk. After an agentic coding session, she wrote, she got all the outward signs of having written code but none of the internal processes that happen when you write it by hand. She brought back her 2021 paragraph about short-term, working and long-term memory, and said code generation in its default mode is antithetical to skill retention: its UX resembles a slot machine. Pull the lever, get a reward. Her list of friction: write the first implementation herself and have the agent review it, then make the changes by hand; ask the agent about code she doesn't understand instead of having it write; spend twenty minutes on a problem before using the agent; go back to books and papers; reimplement fundamental data structures. It cancels the short-term speedup, she conceded, but it solidifies "my own foundation instead of the foundation models'." Hence: we should be more tired than the model.</p>
+<p>Three months later came "Bad code is kudzu." Kudzu was brought from East Asia to the eastern United States to fight soil erosion and then overran sidewalks, houses and trees. Features are the same: once added, people build on them, and two years later nobody wants the feature and nobody can remove it. Deleting code doesn't go on promo packets; "deleting code is silent." She cut her own: in May she had used machine learning to add hashtag bubbles to her blog; three months later her analytics showed the tag pages hadn't made the top 30. She removed them and posted the three commits at the bottom. In an era when adding things keeps getting easier, she concluded, delete harder.</p>
+
+<h2>How she thinks</h2>
+<p><strong>Technical problems told as fables.</strong> Almost every long technical post wraps a story: the engineer climbing the mountain; a Florentine firm called Medici Corp sending its engineers to an Airbnb to ship AI in a sprint; the porters of Barcelona carrying 40-kilogram stones down to Santa Maria del Mar (gradient descent, she says); medieval monks fighting distraction; the two Piranesis. Each post is topped with a painting: Shishkin's wheat field, Aivazovsky's ship, Kandinsky, Lempicka. Posts about YAML and importlib read like illustrated storybooks.</p>
+<p><strong>Count it first.</strong> Her arguments usually start from a number she counted herself: a Wired article that came back from curl as more than 1,800 lines, of which 21 were actual content, just under 1,000 words (in 2016 she wrote a scraper and spent half an hour getting a five-minute read); 655,000 words of Les Misérables; 500 resumes; 15 against 85; tag pages outside the top 30. The numbers aren't always rigorous, and she often says so ("purely anecdotal evidence"), but she counted every one of them herself.</p>
+<p><strong>Build something small to learn.</strong> The 2015 Markov headline generator, a static site generator in Java, the BoringML notes site, Viberary, the Nulltella regression, and from-scratch gradient descent, one-hot encoding, minhash and tf-idf. In 2022 she wrote that the projects she actually finished were small, practical, certain to be completed, and had an interactive component.</p>
+<p><strong>She reuses the same paragraph.</strong> The primer on short-term, working and long-term memory (short-term memory is like RAM, long-term like database storage) appears at least four times, in 2021, 2022, 2023 and 2026, almost word for word. Dan's line about Java getting you most of the way to Scala appears twice: 70% in 2022, 60% in 2023. That isn't laziness; it's load-bearing. <strong>Her foundations are fixed, and every new thing gets carried over to them and checked.</strong></p>
+<p><strong>Name it, then talk about it.</strong> She is "a firm believer that even starting to talk about things and giving them a name is the beginning of something." "The local minima of suckiness," "the vibe space" (her name for the recommendation-feed mode, where you can only steer results indirectly through behavior, and toward which she says LLM chat boxes are pushing every search bar), and the borrowed "ghost knowledge" and "VendorOps" are all that move.</p>
+<p><strong>Advice to her past self.</strong> Of her 2022 post on how she learns machine learning, she says to take it mostly as advice to her past self. Her career posts are written from the point of view of an analyst with no engineering background, cleaning dirty Excel files. That is why so many people share them: she remembers what she didn't understand.</p>
+
+<h2>Where she may be wrong</h2>
+<p><strong>First, her nostalgia for the metal may overrate handwork.</strong> The cloud post drew 280 points and 165 comments on Hacker News, and the most common rebuttal was that abstractions exist to be reused. One commenter compared it to a carpentry workshop handing a carpenter a full set of industrial power tools while she insists on recreating every tool with a whittling knife because it's in the "true spirit of carpentry." Another asked whether architects reinvent the I-beam for every building. Others said the problem was self-inflicted: she is plainly technical, the data was minuscule, so why route it through BigQuery and Colab at all instead of renting a VPS or using a leaner tool? <strong>And the best rebuttal is one she wrote herself.</strong> "Commit to your lock-in" (2019) said cloud is lock-in, every language is lock-in, stop stalling in architecture debates and go to production. Both posts are right, for different people: a team that has to ship, and a person who wants to understand. She never squarely addresses the tension between them.</p>
+<p><strong>Second, her evidence is mostly anecdotal.</strong> In her most influential career post, the supply estimate stacks LinkedIn's skills-gap number, Fast.ai's enrollment and an assumed 7% completion rate; the jump from 20 to 100-plus applicants is her "intuition"; the poll she herself calls "extremely non-scientific." She flags all of this honestly, which is to her credit, but readers should take these as a senior practitioner's observations, not labor-market research.</p>
+<p><strong>Third, "add friction back" is a personal luxury.</strong> "We should be more tired than the model" got 196 points on HN, and one reply called it a downward spiral: the tools will raise output pressure, layoffs will come, and developers will just have to work harder. Her prescription suits a senior engineer who sets her own pace; it may not survive a junior engineer measured on output. Another commenter argued that the answer isn't friction but a better abstraction.</p>
+<p><strong>Fourth, her verdict on AI code keeps moving.</strong> In October 2025 she called model code "quite literally, mid," able to offer only "a ghost of quality." In June 2026, running open models locally for agentic coding, she had one bootstrap a two-tower recommendation model from a blank repo and called the result "pretty basic but still beyond the scope of anything I would have thought possible last year." That post drew 1,596 points on HN, the most of anything on her site. The two views can coexist; caring about quality and admitting the tools got better don't contradict each other. But the claw argument rests on humans being better at reasoning, aesthetic judgment and architecture, and her own observations show that line moving.</p>
+<p>A note: I searched for published criticism of her work and found no signed reviews or long-form rebuttals. What's cited above is Hacker News discussion, plus the tension between her own posts.</p>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Philosophy · Heidegger's ready-to-hand and present-at-hand</b>: in Being and Time, a hammer in use disappears (ready-to-hand); a broken hammer suddenly shows up as a thing (present-at-hand). Boykis's cloud works the same way: five or six layers stay transparent until Colab runs out of memory, then each one shows itself. The difference: you can pick up Heidegger's broken hammer and look at it; her layers are closed, so when they break you see only the casing.</li>
+<li><b>Epistemology · Polanyi's tacit knowledge</b>: Michael Polanyi held that "we can know more than we can tell." Ghost knowledge resembles it: insiders have it, textbooks don't. Unlike tacit knowledge, though, "clean your data" is perfectly sayable; nobody had written it down.</li>
+<li><b>Psychology · Bjork's desirable difficulties</b>: Robert Bjork showed that spacing, interleaving and self-testing slow learning down and make it stick. "More tired than the model" has the same shape; but she cares about more than recall, also about owning her code.</li>
+<li><b>Buddhism · Layman Pang's water and firewood</b>: the Tang-dynasty lay Buddhist Pang Yun wrote that supernatural power and its marvelous function are carrying water and hauling firewood. The Staff Engineer's "the journey is the destination" is close; unlike Pang, he still promises a reward, a working system.</li>
+<li><b>Evolution · vestigial structures</b>: whales still carry reduced pelvic bones from land-dwelling ancestors. "No ROM basic" is a vestigial structure in code. The difference: evolution can't delete it, programmers can, as Boykis did with her tag bubbles.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Vicki Boykis tallied two years of projects: 15% machine learning, 85% moving, monitoring and counting data.</li>
+<li>To get into data science, skip the crowded entry-level data science jobs and come in through the back door of development, DevOps or analysis.</li>
+<li>"Clean data matters more than the model" is ghost knowledge; Boykis first saw it formally stated in a Google paper in 2021.</li>
+<li>A 10GB JSON file crashed a Colab notebook because five or six layers of someone else's closed systems sat between the code and the memory.</li>
+<li>When an abstraction makes no sense, take the long way around: from a four-row linear regression to the four bytes heading a GGUF file.</li>
+<li>History is context and context is power: knowing Markov chains and 1992's Tapestry takes the mystique out of LLMs and naming.</li>
+<li>Learn like a binary tree, broad then deep; understand graphs and you understand the graphs in Airflow, Spark and PyTorch.</li>
+<li>No one becomes a good software engineer alone, and mentoring and room for mistakes are invisible on the balance sheet.</li>
+<li>AI-generated code is the weighted average of every answer; Vicki Boykis adds friction back because "we should be more tired than the model."</li>
+<li>The blind spots: nostalgia for handwork, underrated abstraction, anecdotal evidence; as Heidegger saw, tools become visible only when they break.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><a class="t" href="https://vickiboykis.com/2019/02/13/data-science-is-different-now/">Data science is different now</a> (2019-02)<span class="d">The glut of junior data scientists, why data science was always mostly moving data, and three skills for coming in through the back door.</span></li>
+<li><a class="t" href="https://vickiboykis.com/2021/09/23/reaching-mle-machine-learning-enlightenment/">Reaching MLE (machine learning enlightenment)</a> (2021-09)<span class="d">The mountain parable: a list without a model in it is machine learning engineering.</span></li>
+<li><a class="t" href="https://vickiboykis.com/2022/12/05/the-cloudy-layers-of-modern-day-programming/">The cloudy layers of modern-day programming</a> (2022-12)<span class="d">Viberary's 10GB of JSON crashes Colab, and the data path she draws layer by layer.</span></li>
+<li><a class="t" href="https://vickiboykis.com/2023/09/13/build-and-keep-your-context-window/">Build and keep your context window</a> (2023-09)<span class="d">PyData Amsterdam keynote: two Piranesis, caching and naming, from Markov chains to attention.</span></li>
+<li><a class="t" href="https://vickiboykis.com/2025/10/20/i-want-to-see-the-claw/">I want to see the claw</a> (2025-10)<span class="d">From the senior analyst who asked about the SQL to "I recognize the lion by its claw," and why generated code is an average.</span></li>
+</ul>
+<section class="updates" data-last-reviewed="2026-10-28" data-slug="tech-blog">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep Read · Issue 51 · Content checked through 2026-10-28</footer>
+</div>
+</div>
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
