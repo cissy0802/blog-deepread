@@ -77,10 +77,17 @@ for F in $NEW_FILES; do
     grep -q "$F" index.html || { echo "ERROR: index.html does not reference $F"; exit 1; }
   fi
 
-  # Forbidden hardcoded scripts (auto-injected by GitHub Action)
-  for s in comments.js search.js index-button.js i18n-tts.js; do
-    grep -q "$s" "$F" && { echo "ERROR: $F hardcodes $s (auto-injected, will duplicate)"; exit 1; }
-  done
+  # Forbidden hardcoded scripts (auto-injected by GitHub Action).
+  # New files only: untracked = never committed. Already-published pages
+  # legitimately carry these tags — inject-comments commits them back to main
+  # itself, and it only adds a tag where grep finds none, so they cannot
+  # duplicate. Runs that modify published pages in place (REFRESH, fixes) must
+  # never trip this gate.
+  if ! git ls-files --error-unmatch "$F" >/dev/null 2>&1; then
+    for s in comments.js search.js index-button.js i18n-tts.js; do
+      grep -q "$s" "$F" && { echo "ERROR: $F hardcodes $s (auto-injected, will duplicate)"; exit 1; }
+    done
+  fi
   grep -q "← Hub" "$F" && echo "WARN: $F hardcodes ← Hub button (will be deduped, consider removing)"
 
   # 越界 + 十条要点 (2026-10-16). New files only: untracked = never committed.
