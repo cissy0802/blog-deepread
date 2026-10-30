@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yang Zhiping · Yang Zhiping's Weblog — Writing is paying for the reader's brain; a life is a stack of works</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,"SF Pro Display","Noto Sans SC",sans-serif;background:#0d1117;color:#b6c2cf;line-height:1.85;font-size:16.5px}
+.wrap{max-width:760px;margin:0 auto;padding:20px 20px 80px}
+.langbar{display:flex;justify-content:flex-end;padding-top:14px;font-family:"SF Mono",Menlo,monospace;font-size:.8rem}
+.langbar a{color:#6ea8fe;text-decoration:none;border:1px solid rgba(110,168,254,.28);padding:4px 12px;border-radius:20px}
+.langbar a:hover{border-color:#5eead4;color:#5eead4}
+header{padding:34px 0 8px;border-bottom:1px solid rgba(110,168,254,.16)}
+header .kicker{font-family:"SF Mono",Menlo,monospace;font-size:.76rem;color:#5eead4;letter-spacing:1.4px;text-transform:uppercase}
+header h1{font-size:1.95rem;line-height:1.35;font-weight:800;margin-top:10px;background:linear-gradient(135deg,#6ea8fe 0%,#5eead4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+header .sub{margin-top:10px;color:#7d8794;font-size:.92rem}
+.modebar{display:flex;gap:8px;margin:22px 0 8px;padding:5px;background:rgba(255,255,255,.03);border:1px solid rgba(110,168,254,.14);border-radius:24px;width:fit-content}
+.modebar button{background:none;border:none;color:#7d8794;font:inherit;font-size:.86rem;font-weight:600;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .15s}
+.modebar button.on{background:linear-gradient(135deg,rgba(110,168,254,.22),rgba(94,234,212,.18));color:#d5dce4;box-shadow:inset 0 0 0 1px rgba(94,234,212,.28)}
+h2{font-size:1.24rem;color:#d5dce4;margin:44px 0 14px;padding-left:13px;border-left:3px solid #6ea8fe;line-height:1.45}
+h3{font-size:1.04rem;color:#5eead4;margin:30px 0 10px}
+p{margin:15px 0}
+strong{color:#e2e8f0}
+a{color:#6ea8fe;text-decoration:none;border-bottom:1px solid rgba(110,168,254,.3)}
+a:hover{color:#5eead4;border-color:#5eead4}
+blockquote{margin:20px 0;padding:16px 20px;background:rgba(255,255,255,.035);border-left:3px solid #5eead4;border-radius:0 8px 8px 0;color:#c8d2dc}
+blockquote .en{display:block;font-style:italic;color:#93a1ae;font-size:.94rem;line-height:1.7}
+blockquote .zh{display:block;margin-top:9px}
+blockquote .orig{display:block;color:#93a1ae;font-size:.94rem;line-height:1.75}
+blockquote .tr{display:block;margin-top:9px}
+blockquote cite{display:block;margin-top:10px;font-style:normal;font-size:.8rem;color:#7d8794;font-family:"SF Mono",Menlo,monospace}
+.glossary{border:1px dashed rgba(94,234,212,.35);border-radius:12px;padding:16px 22px;margin:22px 0;background:rgba(94,234,212,.03)}
+.glossary ul{list-style:none;margin-left:0}
+.glossary li{margin:9px 0;font-size:.93rem}
+.glossary b{color:#5eead4}
+figure{margin:28px 0}
+code{font-family:"SF Mono",Menlo,monospace;font-size:.86em;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px}
+figcaption{font-size:.83rem;color:#7d8794;margin-top:10px;text-align:center;font-family:"SF Mono",Menlo,monospace}
+svg{width:100%;height:auto;display:block}
+ol,ul{margin:14px 0 14px 22px}
+li{margin:8px 0}
+.reads{margin-left:0}
+.reads li{margin:16px 0;list-style:none}
+.reads .t{font-weight:700;color:#d5dce4}
+.reads .d{font-size:.9rem;color:#9aa6b2;display:block;margin-top:3px}
+.updates{margin-top:52px;padding-top:22px;border-top:1px solid rgba(110,168,254,.16)}
+.updates h2{border:none;padding-left:0;font-size:1.05rem;color:#7d8794;margin-top:0}
+footer{margin-top:46px;padding-top:18px;border-top:1px solid rgba(110,168,254,.14);font-size:.82rem;color:#5f6b77;font-family:"SF Mono",Menlo,monospace}
+[hidden]{display:none!important}
+@media(max-width:640px){body{font-size:16px}header h1{font-size:1.5rem}}
+.crossx{border:1px solid rgba(94,234,212,.32);border-radius:12px;padding:6px 22px;margin:22px 0;background:rgba(94,234,212,.05)}
+.crossx ul{list-style:none;margin-left:0}
+.crossx li{margin:14px 0;font-size:.95rem}
+.crossx b{color:#5eead4}
+.takeaways{counter-reset:tk;list-style:none;margin:18px 0 0;padding:0;border:1px solid rgba(110,168,254,.3);border-radius:12px;background:rgba(110,168,254,.04)}
+.takeaways li{counter-increment:tk;position:relative;margin:0;padding:11px 18px 11px 52px;border-top:1px solid rgba(110,168,254,.12);font-size:.96rem;line-height:1.75}
+.takeaways li:first-child{border-top:none}
+.takeaways li::before{content:counter(tk,decimal-leading-zero);position:absolute;left:18px;top:12px;font-family:"SF Mono",Menlo,monospace;font-size:.78rem;color:#6ea8fe}
+
+</style>
+</head><body>
+<div class="wrap">
+<div class="langbar"><a href="yangzhiping-blog53.html">中文 →</a></div>
+<header>
+<div class="kicker">Blog Deep Read · 53 · yangzhiping.com</div>
+<h1>Yang Zhiping<br/>Writing is paying for the reader's brain; a life is a stack of works</h1>
+<p class="sub">Yang Zhiping · <strong>Yang Zhiping's Weblog</strong> (yangzhiping.com, mirrored on his WeChat account "Mind Toolbox") · psychology-trained cognitive science writer, publisher's curator, founder of the Anren Mind company · about 120 essays in the archive, 2011 to 2026, still active</p>
+</header>
+<div class="modebar">
+<button class="on" id="btn-pop">Essentials</button>
+<button id="btn-deep">Full read</button>
+</div>
+
+<!-- ============ ESSENTIALS ============ -->
+<div class="mode-pop" id="mode-pop">
+<p>Two lines of Tang poetry. Wang Changling: "We water our horses crossing the autumn river; the water is cold, the wind like a knife." Du Fu: "The state is broken, mountains and rivers remain; spring in the city, grass and trees grow deep." Which has more <em>wenqi</em> — the "breath" or momentum of a text?</p>
+<p>Chinese criticism had talked about <em>wenqi</em> for over a thousand years, and the answer had always been: you feel it, you can't say it. In February 2014 a man trained in psychology gave an answer you could count: Wang Changling. "Autumn river" runs straight into "the water is cold," so the two lines knot into one meaning and the reader gets through in a single breath. Du Fu's four phrases — state broken, mountains remain, city in spring, grass deep — each stand alone as a sentence. By his count, the first couplet is four semantic chunks and the second is eight. The first reads faster, so it has more <em>wenqi</em>. Du Fu's lines travelled further, sure; he coined a separate word for that, <em>wenyun</em>, a text's "fortune," and kept the two apart.</p>
+<blockquote><span class="orig">在夏丏尊之前，文气只可意会，不可测量。</span><span class="tr">Before Xia Mianzun, wenqi could only be sensed, never measured.</span><cite>"Notes on the Heart of Writing (2): What Is Wenqi?", 2014-02-25</cite></blockquote>
+<p>That is Yang Zhiping. Over fifteen years he has written about reading, writing, learning, careers, parenting and AI. The subjects change; the move doesn't: <strong>take a mystical word and swap it for something you can count.</strong> <em>Wenqi</em> becomes reading speed. "Reading well" becomes five grades of book. "Making something of yourself" becomes word-count tiers of finished works, and ten levels in three years.</p>
+<p>He grew up in a small town in southern Hunan. Right up to the university entrance exam, he was afraid he would end up "a small-town worker or farmer" like the adults around him. What saved him was his grandfather: a boatman in his youth who later went home to farm, and who somehow loved books. Yang studied psychology, founded a psychometrics company in 2003 and the Anren Mind company in 2010, later ran an adult learning community called Kaizhi, and curated dozens of cognitive science books into Chinese. The oldest essay left in his archive, from 2011, is titled "If You Don't Go to University, What Can You Learn?" Its headnote says it is written "mostly for kids in sixth-tier county towns." That headnote is, in effect, his whole blog's reader profile.</p>
+<p><strong>Move one: writing is an energy bill.</strong> He borrowed a model from George Gopen at Duke: the mental effort a reader can spend on a sentence is fixed, and it splits into "syntactic energy" plus "semantic energy." Every bit you make them spend untangling syntax is a bit they can't spend on your meaning. So "the poet passed disastrous years in the area of the occupation of the enemy" should become "the poet endured endless days in occupied territory." And "Dream of the Red Chamber is one of the classics of Chinese literature" should lose its "one of" — otherwise the reader can't help wondering what the other ones are.</p>
+<blockquote><span class="orig">写作的基本原理就是让读者少选择与辨别。</span><span class="tr">The basic principle of writing is to make the reader choose and discriminate less.</span><cite>"Notes on the Heart of Writing (5): Syntactic Energy", 2014-02-28</cite></blockquote>
+<p>At the bottom of that very post he added a note: when he posted it to WeChat, he had used "one of" himself.</p>
+<p><strong>Move two: books come in grades, and your time should too.</strong> Bad books, usable books, solid works, masterpieces, sacred works. Masterpieces and above you read "cold," again and again over ten years; everything below you read "hot," devour and drop. What to read cold? He named five "meta-disciplines" for the twenty-first century: network science, cognitive-neural-psychological science, programming, mathematics and poetry. How to read? Buy books by the box, because "the human brain is bad at thinking deeply about one problem, and good at spotting differences between things." Lay five cognitive linguistics textbooks side by side, and the topics they keep coming back to — categories and metaphor — are the field's skeleton.</p>
+<p><strong>Move three: job experience depreciates; works compound.</strong> His definition of a "work" is strict: something you hold the authorship or profit-sharing rights to. Ten years at a company starts depreciating the day you leave; the book you wrote, the organization you built, keep working for you. How do you build them? Pick a field, spend three years becoming a "70-point expert," cut those three years into ten levels and clear one every six months. Asked how to get a book published, he answered: "First, finish writing it."</p>
+<p>His own biggest work failed twice. At 4:59 one morning in 2013 he typed his ideal book-writing software into his phone's notes. In 2016 a team built a version that ended up as a typo checker. In 2020 a bigger team lost control of the project and everyone quit. For the next five years, every post on his WeChat account ended with "This essay was written with Xiejiang" — not an ad, but a scar he kept where he could see it. In September 2026 he took it on personally and shipped a new version built in Rust.</p>
+<p>Stack the three moves and you find, underneath, a line he wrote in 2013 while reading Daniel Willingham: "The brain was patched together; it was invented for survival, not for learning." That is the foundation of everything he writes. If this Stone Age brain doesn't like to think, don't try to force it with willpower. <strong>Give it sentences that are easy to read, a graded reading list, visible levels, and a work it has to deliver.</strong> Cultivate yourself, then help others — that is the motto on his site.</p>
+<p>His weakness lives in the same place. What can be counted, he counts precisely. What can't, he gives a number anyway: "80% of people protect themselves, 19% kick a friend while he's down, 1% help first" — and the source is his own life experience. The full read goes into it.</p>
+</div>
+
+<!-- ============ FULL READ ============ -->
+<div class="mode-deep" hidden="" id="mode-deep">
+
+<h2>Glossary</h2>
+<div class="glossary"><ul>
+<li><b>Cognitive science</b>: the interdisciplinary study of how minds work, putting psychology, neuroscience, linguistics, AI and philosophy at one table. Yang takes nearly all his tools from it.</li>
+<li><b>Working memory</b>: the brain's small "workbench," holding only a few items at a time. Reading, calculating and thinking all happen on it, so it bottlenecks many abilities.</li>
+<li><b>Chunk</b>: a unit the brain packs several pieces of information into. "Autumn river — cold water" is one chunk; "state broken" and "mountains remain" are two.</li>
+<li><b>Metacognition</b>: thinking about thinking — knowing how you're learning, what you haven't understood, which method to switch to.</li>
+<li><b>Desirable difficulties</b>: Robert Bjork's principle that learning which feels slightly effortful is remembered better later.</li>
+<li><b>Wenqi</b>: a classical Chinese critical term, literally "the breath of a text": its momentum or vigor, traditionally considered unmeasurable.</li>
+<li><b>WeChat official account / Zhishi Xingqiu</b>: a subscription publishing channel inside WeChat, and a Chinese paid-community platform. Many of Yang's short pieces appear there first; the blog collects only some.</li>
+</ul></div>
+
+<h2>A strange thing: a scar at the bottom of every post</h2>
+<p>For the past five years, if you followed Yang Zhiping's WeChat account, you saw the same line at the bottom of every post: "This essay was written with Xiejiang."</p>
+<p>Xiejiang ("the writing craftsman") is the Chinese writing software his company developed. Normally that line would be product placement. But in September 2026, in "My Ten Years with Xiejiang," he explained what it was really for:</p>
+<blockquote><span class="orig">但我有种狠劲，一般人如果碰到软件项目失败，就不好意思跟他人谈及此事。我不一样，我为了激励自己，连续 5 年，在公众号上，发任意一篇文章的时候，都注明此事。本文用写匠创作。就是提醒自己。</span><span class="tr">But I have a stubborn streak. Most people, when a software project fails, are too embarrassed to mention it. Not me. To spur myself on, for five straight years, every time I posted any essay on my WeChat account, I noted it: "This essay was written with Xiejiang." Just to remind myself.</span><cite>"My Ten Years with Xiejiang", 2026-09-20</cite></blockquote>
+<p>The project was dead at the time. The 2020 version had more than twenty microservices, most backed by their own small model, and then it "stalled before reaching the product standard I had in mind." Everyone on the team left. He didn't drop the name. He nailed it to the bottom of every essay, like height marks on a door frame, to be measured against five years later.</p>
+<p>This is Yang Zhiping in miniature. He believes <strong>people don't get better by wanting to; they have to build themselves something visible and make themselves reach for it.</strong> That idea comes back in five or six disguises: a grading table for books, an energy bill for a sentence, ten levels of a career, a book you must finish first.</p>
+
+<h2>Who he is</h2>
+<p>Yang Zhiping grew up in a small town in southern Hunan, raised by his grandparents. His grandfather had been a boatman who travelled widely in his youth, later went home to farm, and "unexpectedly loved reading"; Yang credits this with letting him "narrowly escape the fate of a small-town youth." As a psychology undergraduate he read Keith Stanovich's <em>How to Think Straight about Psychology</em> and says it "suddenly opened things up" for him; he published more than ten papers as an undergraduate. He founded a psychometrics company in 2003 and the Anren Mind company in 2010, home to the Kaizhi learning community and a children's brand. He has curated dozens of cognitive science titles for Chinese publishers and written prefaces for the Chinese editions of <em>Flow</em>, <em>Peak</em>, <em>What Intelligence Tests Miss</em> and <em>The Sense of Style</em>, among others.</p>
+<p>He owns tens of thousands of books. A 2016 post describes roping in classmates to catalogue 2,246 of them in six hours.</p>
+<p><strong>Coordinates</strong>: today's yangzhiping.com is a 2026 rebuild. Its archive lists about 120 essays, from November 2011 to September 2026; the blog is active. There is a clear turn in the middle: 2014–2018 is reading method, writing method and popular cognitive science; from 2020 it shifts to "life development" (his own name for a discipline), seasonal lists of maxims, and AI. Many older posts at /psy/ paths on the previous site are no longer listed, and only part of what he publishes on WeChat and his paid Zhishi Xingqiu community reaches the blog. This page is based on the publicly readable blog essays.</p>
+
+<h2>What he wrestles with: how a brain that doesn't like learning gets a small-town kid out</h2>
+<p>His 2011 essay "If You Don't Go to University, What Can You Learn?" opens by listing six predicaments: no social circle in a big city, no four-year buffer to grow skills, lost confidence in learning, no credential to open doors, relatives' opinions, no career direction. Then he turns them over into six "conventional thoughts," such as "bad exam scores = I can give up learning completely once I leave school," and asks: are these really true?</p>
+<p>A long list of open courses, reading lists and websites follows. The last section heading is the same phrase three times: "Build trust!"</p>
+<blockquote><span class="orig">一个公司可以招募低学历的人才，但是，前提是对方信任你！除了学历之外，快速建立信任的方式就是用作品证明自己。</span><span class="tr">A company can hire people without degrees — but only if they trust you! Apart from a degree, the fast way to build trust is to prove yourself with your work.</span><cite>"If You Don't Go to University, What Can You Learn?", 2011-11-18</cite></blockquote>
+<p>The headnote of that essay reads: "mostly for kids in sixth-tier county towns."</p>
+<p>That is the question he hasn't put down in fifteen years. Not the purely academic "what is the mind," but a more engineering-minded and more personal version: <strong>how does someone of ordinary background and middling talent, with nothing but an ordinary brain and no one to guide them, upgrade themselves to the point where they can hold a conversation with the best minds in the world?</strong></p>
+<p>At the end of his long 2015 essay on reading, he added a postscript that shows where the question came from:</p>
+<blockquote><span class="orig">在很长一段时间，甚至高考前夕，都在恐惧，自己是否会像长辈们一样，会按部就班地成为一名小镇工人或农民。</span><span class="tr">For a long time, even on the eve of the university entrance exam, I was afraid that, like my elders, I would step by step become a small-town worker or farmer.</span><cite>"Cold Reading, Hot Reading: Nine Questions on Reading", 2015-09-25</cite></blockquote>
+<p>The first lever he found was a note he wrote in 2013 while reading Daniel Willingham's <em>Why Don't Students Like School?</em> Willingham's first principle is "People are naturally curious, but they are not naturally good thinkers." Under it, Yang added a sentence of his own:</p>
+<blockquote><span class="orig">大脑是修修补补来的，是发明用来生存的，而非发明用于学习的。</span><span class="tr">The brain was patched together; it was invented for survival, not for learning.</span><cite>"Why Are We Afraid of Learning?", 2013-03-19</cite></blockquote>
+<p>That sentence changes the shape of the problem. If learning is natural, failing to learn means you didn't try hard enough. If the brain was never built for learning, failing to learn is a <strong>design problem</strong>: either the material wasn't written to suit the brain's temperament, or the learner didn't arrange things to suit it. Everything he wrote afterwards — on reading, writing, careers — works on the design from both ends: <strong>fix the material so it's easy to read; fix the person so they have something to push against.</strong></p>
+
+<h2>His ideas, told as how he found them</h2>
+
+<h3>1. You can count wenqi: writing is an energy bill for the reader's brain</h3>
+<p>In late February 2014 Yang ran a series over about two weeks called "Notes on the Heart of Writing." Each post ends with its writing time: "Started 14:00, 25 February 2014, finished 15:12."</p>
+<p>He went straight for the most mystical word in Chinese criticism: <em>wenqi</em>. Everyone agrees Han Yu and Wang Anshi have grand <em>wenqi</em>; what makes it good was always put down to "cultivating one's breath." He found an exit in <em>Talks on Writing</em> by Xia Mianzun and Ye Shengtao, which defines <em>wenqi</em> as the speed at which a reader can recite a text aloud. He pushed further: why does Wang Changling recite faster than Du Fu? Because "autumn river" flows into "the water is cold," so the two lines form one semantic unit, while Du Fu's "state broken" and "city in spring" each stand alone. Four chunks against eight. Add that Wang's rhymes fall more evenly, making the poem easier to memorize, and Wang wins on <em>wenqi</em>.</p>
+<p>Then he ran into counterexamples. Recitation speed fails as a yardstick for modern vernacular prose. Qian Zhongshu's "When you hear 'sour air,' you think at once of the old vinegar of Shanxi or Zhenjiang" and Natsume Soseki's "Be clever, and you make enemies. Have feelings, and you shed tears" are both fine prose, and nobody can say which runs faster. Besides, modern readers scan with their eyes rather than recite. The old ruler wasn't good enough; he needed a new one:</p>
+<blockquote><span class="orig">文章与大脑，就像布料与熨斗。</span><span class="tr">A text and a brain are like cloth and an iron.</span><cite>"Notes on the Heart of Writing (3): Cloth and Iron", 2014-02-26</cite></blockquote>
+<p>The new ruler is the "reading energy" model of George Gopen, of Duke's English department. The total mental energy a reader can spend on a sentence is fixed — call it Et — and it is syntactic energy plus semantic energy. Silky prose needs the iron on its lowest setting; coarse-cotton prose makes the reader turn it all the way up and spend everything on taking the sentence apart, leaving too little to understand what you meant.</p>
+<p>With this ruler he started putting school textbooks on trial. Zhu Ziqing's famous moonlit lotus pond sentence is so stuffed with the particle <em>de</em> (roughly "'s / of") that it makes up over a tenth of the characters, and "you can hardly read it in one breath." Ai Qing wrote "the poet passed disastrous years in the area of the occupation of the enemy"; Yang rewrote it as "the poet endured endless days in occupied territory." Then he brought in a second tool from the psych lab: reaction time. Simple reactions cost least, choice reactions more, discrimination reactions most. "The area of the occupation of the enemy" takes a word that needs only a simple reaction (occupied territory), breaks it into three words plus a grammar rule, and forces the reader to discriminate.</p>
+<blockquote><span class="orig">写作的基本原理就是让读者少选择与辨别。</span><span class="tr">The basic principle of writing is to make the reader choose and discriminate less.</span><cite>"Notes on the Heart of Writing (5): Syntactic Energy", 2014-02-28</cite></blockquote>
+<p>That is how "one of" got its sentence. "Dream of the Red Chamber is one of the classics of Chinese literature" makes the reader wonder who numbers two and three. Drop "one of" and the sentence states a fact; the reader has nothing to choose. In the same post he brings in Oliver Selfridge's "pandemonium" model: every entry in your mental dictionary is a little demon, and when a character lands on your retina the relevant demons leap up and compete; the winner becomes the meaning you read. In that contest concrete nouns beat abstract ones, and survival-related words beat the rest — which is why "beacon fires" arrives faster than "fighting." For Eileen Chang's scene of Zhenbao embracing Rose, with its "sour-cool rhinestones, silver-crisp silk flowers," he asks readers to count how many senses one paragraph uses.</p>
+<p>The best line in the post is the note at the very end:</p>
+<blockquote><span class="orig">搞笑的是文章中说要少用“之一”，发微信时自己也用。</span><span class="tr">The funny thing is, the post says to use "one of" less, and when I posted it to WeChat I used it myself.</span><cite>"Notes on the Heart of Writing (5): Syntactic Energy", 2014-02-28</cite></blockquote>
+<p>This idea later grew into what he calls "cognitive writing studies." In 2016 he split all texts into three kinds: informational, aesthetic and affective. In the 2026 version of Xiejiang it became two processes, "fast writing" and "slow revising": break three thousand words into ten cards and write them fast, then slowly revise them into a second draft. The question from twelve years earlier — where is the reader's mental energy going? — runs under all of it.</p>
+
+<h3>2. Books come in five grades, and the brain likes spotting differences</h3>
+<p>In September 2015 he wrote a long nine-question essay on reading. It opens with a mistake everyone makes: books are all printed on paper and cost and run about the same, so we give them about the same time.</p>
+<blockquote><span class="orig">你总是习惯赋予神作与垃圾读物一样的阅读时间。</span><span class="tr">You habitually give a sacred work the same reading time as trash.</span><cite>"Cold Reading, Hot Reading: Nine Questions on Reading", 2015-09-25</cite></blockquote>
+<p>His fix is to grade first: bad books, usable books, solid works, masterpieces, sacred works. Masterpieces and sacred works you read "cold" — borrowing Qian Zhongshu's image, like the English eating hot beef cold, chewing slowly, prepared to sit with it for ten years. Usable books and most solid works you read "hot," like the French eating hot beef: gulp it down and move on.</p>
+<p>What do you read cold? His answer is a list that later spread widely across the Chinese internet:</p>
+<blockquote><span class="orig">在二十一世纪，最重要的五大「元学科」分别是网络科学、认知&amp;神经&amp;心理科学、编程、数学与诗歌。</span><span class="tr">In the twenty-first century, the five most important "meta-disciplines" are network science, cognitive &amp; neural &amp; psychological science, programming, mathematics, and poetry.</span><cite>"Cold Reading, Hot Reading: Nine Questions on Reading", 2015-09-25</cite></blockquote>
+<p>There are three admission criteria. The discipline has a simple enough rule to describe the order and makeup of things; that simple rule can "hold the large within the small," accommodating endless variation; and it projects onto as many worlds as possible. Poetry sitting next to network science looks absurd at first, but under these criteria it fits: prosody is a tiny rule set that has produced infinite poems.</p>
+<p>Hot reading he handles by elimination, with five "don't buy" rules: no business and management books, no mind-body-spirit books, no books by domestic Chinese experts, no new professional books, and never just one book. The first four are wariness of pseudoscience and secondhand material: most business books suffer from hindsight bias, and spiritual books fit only a passing mood — "within a few years you'll have to throw them out." He admits these are biases:</p>
+<blockquote><span class="orig">我有我的偏见，现在坦白从宽。</span><span class="tr">I have my biases, and I'm confessing them now for leniency.</span><cite>"Cold Reading, Hot Reading: Nine Questions on Reading", 2015-09-25</cite></blockquote>
+<p>The most interesting rule is the fifth: never buy just one book. Behind it is a claim about the brain:</p>
+<blockquote><span class="orig">人脑不善于在一个问题上深入思考，更善于在不同事物之间找不同。</span><span class="tr">The human brain is bad at thinking deeply about one problem, and good at spotting differences between things.</span><cite>"Cold Reading, Hot Reading: Nine Questions on Reading", 2015-09-25</cite></blockquote>
+<p>Ask how your father differs from your mother and you'll rattle off ten things in an instant; ask for a description of your father alone and you stall. So to learn a new field, don't look for "the best introduction." Buy five to ten textbooks at once and compare. He tried it himself: several cognitive linguistics textbooks from different decades and countries kept circling back to categories and metaphor — that is the field's skeleton. "I never buy one book; I buy books by the box."</p>
+<p>The same essay brings two more tools from the lab. First, skimming is not speed reading. Speed reading hits the ceiling of working memory, and your prefrontal cortex won't get an upgrade from an app. Skimming instead exploits the brain's habit of filling in gaps: sample the key tenth first and let your mind work to fill in what you skipped, and you end up reading more deeply. He demonstrated it on Nabokov's <em>Lectures on Russian Literature</em>: Nabokov's only biography of a writer was of Gogol, so read the Gogol chapter first; within it, read backwards, take in the final verdict, then return to the start. Second, "desirable difficulties": the easier something goes into memory, the harder it comes out later. So he advises against taking notes while the teacher talks — write them that evening or the next day.</p>
+<p>Ten years later, in 2025, he added another layer. He split authors' "cognitive styles" into nine — thought experiment, symbolic thinking, experimental science, computational modelling, fieldwork, humorous narrative, storytelling, literary grace, visual beauty — and argued a single book rarely shows more than four. Hence a new rule for reading classics: meet the author with their strongest move.</p>
+<blockquote><span class="orig">聪明的阅读者会用道金斯最强的故事叙事能力与他交流，再用卡尼曼最强的实验科学能力与他辩论。</span><span class="tr">The smart reader engages Dawkins through his greatest strength, storytelling, and argues with Kahneman through his greatest strength, experimental science.</span><cite>"How to Read the Classics in the Twenty-First Century", 2025-04-22</cite></blockquote>
+<p>Don't fault Dawkins for running no experiments of his own, or Kahneman for not being philosophical enough. It is the martial-arts-novel rule of beating a swordsman with the sword, and it is the same move he made from "counting chunks" in 2014 to "counting cognitive styles" in 2025: first break the object into countable units, then decide where to strike.</p>
+
+<h3>3. Job experience depreciates; works compound</h3>
+<p>The 2011 line "prove yourself with your work" grew, eleven years later, into the hardest concept in his "life development studies." In 2022 he wrote "Keywords of Life Development (3): Works," and its first point fixes the definition:</p>
+<blockquote><span class="orig">作品是那些你拥有署名权或利益分配权的知识产权或者实体组织。无数人工作一辈子，只有工作经历，没有作品。</span><span class="tr">A work is intellectual property or an organization to which you hold authorship or profit-sharing rights. Countless people work their whole lives and have only job experience, no works.</span><cite>"Keywords of Life Development (3): Works", 2022-11-24</cite></blockquote>
+<p>The distinction cuts through point of view. Job experience is phrased "I held such-and-such a position at such-and-such a company" — you are passive, driven by the company and its tasks, and the day you leave, its value starts to depreciate. A work is phrased "in such-and-such a year, I created this" — you are active, and it keeps producing for you after you leave. He has seen too many people "act more like the boss than the boss, proud of their staff badge," who twenty years later have nothing but "self-consoling or peer-flattered so-called 'job experience.'"</p>
+<p>Then comes his signature move: he puts works into tiers. Thousand-character pieces, ten-thousand, forty-thousand, a hundred-thousand, three hundred thousand, a million. No number of thousand-character pieces adds up to the ability to write a hundred thousand. And then the exchange many readers remember:</p>
+<blockquote><span class="orig">阳老师，如何才能出版一本书呢？我的回答是：你要先写完。</span><span class="tr">"Teacher Yang, how do I get a book published?" My answer: first, finish writing it.</span><cite>"Keywords of Life Development (3): Works", 2022-11-24</cite></blockquote>
+<p>His analogy: perfectionists "keep saying they want a baby. Yet they never even get pregnant." Have the child first; children grow up on their own.</p>
+<p>How do you accumulate works? An earlier keywords post that year, "Clearing Levels," supplies the engineering plan. Most careers, he observes, let you become a "70-point expert" in three years — ahead of the crowd, near first-rate, but not the very top; the last twenty or thirty points take luck and twelve-plus years. Why does 70 matter? Because when you're young you don't know what suits you, and every three-year 70 is one more chance to test a "life identity." Concretely: from day one, benchmark yourself against the 90- and 100-point people in your field, design the three years as ten levels, and clear one every six months. Research can use paper rankings and citation counts as levels; history and philosophy would use monographs instead.</p>
+<blockquote><span class="orig">如果值钱的技能那么容易获得，那它就不值钱了。</span><span class="tr">If valuable skills were that easy to acquire, they wouldn't be valuable.</span><cite>"Keywords of Life Development (1): Clearing Levels", 2022-06-05</cite></blockquote>
+<p>He frames all this as a game you design, background music included. Crowded commutes and office gossip are "small things," and small things "are endless. The more attention you give them, the more they crowd out your mind." In his autumn 2023 maxims the same logic turns colder: if you get laid off and ask "why me?", you've already gone wrong — "As far as possible, set your own rules, and play games whose rules you control."</p>
+<p>Back to Xiejiang. A note at dawn in 2013; a first team in 2016 that produced a proofreader; a second team in 2020 that collapsed; five years of "This essay was written with Xiejiang"; and in 2026 he took it on personally and shipped it. It is almost a live demonstration of the "Works" essay: you hold the authorship, so the failure is yours too; a work must first be finished, so five years later you come back and finish it.</p>
+
+<h3>4. AI: the fourth blow to human pride, and a mirror</h3>
+<p>His view of AI follows his old question. In March 2016, during AlphaGo's match against Lee Sedol, "from noon on I was restless, finished lunch early, went online to watch the live stream," saw AlphaGo win, and wrote a short essay that day. Continuing the count of three blows — Copernicus, Darwin, Freud — he declared that "the fourth blow has now arrived." His way out came from the three-way split of his "cognitive writing studies": informational texts serve truth, aesthetic texts serve beauty, affective texts serve goodness.</p>
+<blockquote><span class="orig">真与美，人工智能将逐步取得更大突破。</span><span class="tr">In truth and beauty, AI will make ever greater breakthroughs.</span><cite>"The Fourth Blow to Human Pride", 2016-03-10</cite></blockquote>
+<p>What remains is goodness, or love: the thing that moves another person to act. So "all the skills that awaken human kindness and love will be valued more and more."</p>
+<p>Seven years later, when GPT-4 came out, his take became more specific and colder. People's biggest misconception, he said, was treating it as an encyclopedia: "In one line: GPT-4 is a reasoning engine! Not an encyclopedia!" And it would amplify the gaps users already had:</p>
+<blockquote><span class="orig">GPT-4 特别像一面镜子。它反映的是你过往的认知与积累。</span><span class="tr">GPT-4 is very much like a mirror. What it reflects is your past understanding and accumulation.</span><cite>"Ten Insights About GPT", 2023-04-01</cite></blockquote>
+<p>His advice was, as ever, engineering: use GPT-4 at least three hours a day, write down thirty to a hundred questions in advance, and point the questions "at a specific work." His forecasts were just as firm: the gap between elites and everyone else would go from "10 points versus 30" to "10 points versus 100 or even 1,000," and an 80/20 distribution might become 90/10. Structurally it is the "works" argument again: tools only amplify what you've already accumulated, so accumulate first.</p>
+
+<h2>How he thinks</h2>
+<p><strong>Find a ruler first.</strong> Faced with anything vague, his first reflex is to find a countable proxy: <em>wenqi</em> → recitation speed → chunk count → reaction time; reading well → five grades of book; making something of yourself → word-count tiers of works; career growth → three years, ten levels, six months each; a classic's style → four of nine cognitive styles (nine choose four is 126 combinations; he did that arithmetic too). The rulers aren't always precise, but they turn "you just feel it" into something you can argue about and practise.</p>
+<p><strong>Batch, don't drill.</strong> "The brain likes spotting differences" isn't just reading advice; it is his posture toward everything. Looking for a partner? Think about how to attract a whole batch of good single men. Starting a business? Think about creating a batch of good companies. Learning a field? Buy a box. His annual reading reviews log "a thousand-odd" and then "three thousand-odd" books bought in a year, and in 2022 he compiled "over 1,000 representative works by 420 sages." His confidence in knowledge is a statistical confidence.</p>
+<p><strong>Wrap the Western lab in Chinese classics.</strong> His favourite rhetorical move is to embed a cognitive science concept in a classical phrase: metacognition is Su Shi's "observe broadly, take sparingly" and Zhuangzi's "catch the fish, forget the trap"; cold and hot reading borrow Qian Zhongshu's beef; his life ideal is the <em>Analects</em>' "cultivate yourself to bring peace to others." This isn't just ornament. For his readers, the familiar shell lowers the semantic energy cost — an application of his own writing theory.</p>
+<p><strong>Show the workshop.</strong> Every "Heart of Writing" post logs start and end times; for <em>The Smart Reader</em> he reports two Git repositories, 121 and 288 commits, 4.96 GB; Xiejiang's failure sat at the bottom of five years of posts. He doesn't hide the building site much.</p>
+<p><strong>Confess the bias up front.</strong> "I have my biases, and I'm confessing them now" — he labels his don't-buy rules a "bias toward science," a "bias about institutions," a "bias toward originality." The upside is that readers know where he stands. The downside is that, once confessed, the biases rarely get re-examined.</p>
+
+<h2>Where he might be wrong</h2>
+<p><strong>He draws the boundary of originality wider than it is.</strong> Nearly all the cognitive science he writes about is imported: the reading energy model is Gopen's, the nine learning principles are Willingham's, desirable difficulties are Bjork's, the tripartite mind and "dysrationalia" are Stanovich's. What he does best is choose, translate and graft onto Chinese contexts — using Gopen's syntactic energy to grade Ai Qing and Zhu Ziqing is genuinely his. But he often positions his work as bigger than that. In 2025 he wrote:</p>
+<blockquote><span class="orig">我的《聪明的阅读者》实际上在人类文明历史上开创了一个新学科，即「阅读学」。</span><span class="tr">My <em>The Smart Reader</em> in fact founded a new discipline in the history of human civilization: "reading studies."</span><cite>"How to Read the Classics in the Twenty-First Century", 2025-04-22</cite></blockquote>
+<p>He adds that its scholarly value has been "overlooked by the public" because he wrote it too gracefully. Reading psychology and bibliography are old fields; organizing them into one system is real work. Founding a discipline "in the history of human civilization" is another claim entirely.</p>
+<p><strong>He writes the kind of book he warns against.</strong> In 2015 he wouldn't buy business books because "most business books suffer from hindsight bias and are full of filler." Yet since 2020 the blog's mainstay has been the seasonal "24 Insights on Life Development" — a maxim genre, with plenty of precise numbers and no source. In the 2021 set: when a friend is smeared, "80% of people will protect themselves, 19% will kick him while he's down. Only 1% will insist on helping the friend first"; "relationships between people usually don't last beyond 18 months." The reading essay has "about 10% of the nodes yield about 80% of the high-quality information." These figures come from his own experience but are written like experimental results. For someone who teaches people to spot pseudo-psychology, this is the first place to push.</p>
+<p><strong>The works argument speaks in a survivor's voice.</strong> "People don't remember who Hemingway was friends with... they remember <em>The Old Man and the Sea</em>" — but remembered works are already a filtered sample; most works with an author's name on them are forgotten. "Three years to 70 points" and "someone of middling ability, however badly things go, won't end up too badly off" hold for knowledge workers with choices; for people tied down by caregiving, residence permits or industry ceilings, the levels aren't all theirs to design. In 2011 he wrote "for kids in sixth-tier county towns"; by 2023 his case studies were titled "The Big Pitfalls on the Road from Middle Class to Elite." The reader's position has quietly moved up.</p>
+<p><strong>His forecasts are pitched too confidently.</strong> In 2016 he said AlphaGo proved that "humanity's algorithmic mind will be replaced by robots" and advised readers to "buy Google stock as fast as you can." In 2023 he said GPT-4 had scored five out of five on reasoning and bet that "within 18 months" a top university would publish papers and open models. His nose for direction isn't bad, but the tone sits awkwardly beside the care about uncertainty preached by Stanovich, the very author he imported.</p>
+<p>A note: we found no substantial, named critique of his ideas. All the points above come from his own essays read for this page.</p>
+
+<h2>Crossovers</h2>
+<div class="crossx"><ul>
+<li><b>Architecture &amp; urban theory · Christopher Alexander, "A City is Not a Tree"</b>: Yang says "truly elegant design... is a tree," because a tree has a single path and the lowest cognitive load. In 1965 the architect Alexander argued the opposite: designers favour trees because trees are easy to think, while living cities are overlapping "semilattices," and forcing them into trees kills them. Both agree the mind prefers trees; Alexander treats that preference as the thing to overcome, Yang as a constraint to obey. In writing software the disagreement is real: cross-references between cards are the street corners that refuse to stay on one branch.</li>
+<li><b>Investing · Naval Ravikant's "permissionless leverage"</b>: Naval's 2018 "How to Get Rich" thread says code and media are leverage that needs no one's permission and works while you sleep. Same structure as "job experience depreciates, works compound." The difference: Naval is talking about wealth and equity; Yang's works need your name on them first, money second.</li>
+<li><b>Evolutionary biology · Susan Blackmore's "temes"</b>: In 2016 Yang said AlphaGo marked the birth of a "third replicator" after genes and memes, the teme — a term from the psychologist Blackmore. Both treat technology as a replicator with "interests" of its own. But Blackmore's story is cold, her replicators indifferent to us; Yang's ends with "love above all."</li>
+<li><b>Buddhism · the three wisdoms of hearing, reflecting, practising</b>: Buddhism describes wisdom in three layers: hearing (receiving teaching, reading), reflection, and practice. Yang's path from cold reading through metacognition to "action is itself knowledge" runs much the same way. The difference: practice aims to loosen attachment to the self, while his endpoint is a work with your name on it.</li>
+</ul></div>
+
+<h2>Ten takeaways</h2>
+<ol class="takeaways">
+<li>Yang Zhiping's basic move is swapping mystical words like "wenqi," "reading well" and "success" for countables: recitation speed, grades of book, word counts of works.</li>
+<li>The brain was patched together for survival, not built for learning; failing to learn is first a design problem, not a willpower problem.</li>
+<li>Wenqi can be counted: Wang Changling's "autumn river / cold water" couplet is four semantic chunks, Du Fu's "state broken, mountains remain" couplet is eight, and the first reads faster.</li>
+<li>In Gopen's reading-energy model a reader's effort is fixed, so every unit spent on syntax is lost to meaning; padding like "one of" wastes it.</li>
+<li>Books fall into five grades — bad, usable, solid, masterpiece, sacred; masterpieces and above are read cold for a decade, the rest read hot and dropped.</li>
+<li>The five twenty-first-century "meta-disciplines" are network science, cognitive-neural-psychological science, programming, mathematics and poetry, each a simple rule set holding endless variety.</li>
+<li>Brains are better at spotting differences than drilling into one thing, so learn a new field by laying five to ten textbooks side by side and noting what recurs.</li>
+<li>Job experience depreciates once you leave; works you hold authorship or profit rights to compound. Most careers allow 70 points in three years: ten levels, one every six months.</li>
+<li>Yang Zhiping's blind spot is presenting imported cognitive science as founding work, and giving unsourced precise percentages in maxim lists — the flaw he condemns in business books.</li>
+<li>Yang calls the tree the elegant design; Christopher Alexander argued living cities are semilattices, not trees. Both see the mind's taste for trees; one obeys it, one fights it.</li>
+</ol>
+
+<h2>Sources</h2>
+<ul class="reads">
+<li><a class="t" href="https://yangzhiping.com/essays/20140226/">Notes on the Heart of Writing (3): Cloth and Iron</a> (2014-02, in Chinese)<span class="d">Gopen's reading-energy model: syntactic plus semantic energy, and what setting the reader's iron needs.</span></li>
+<li><a class="t" href="https://yangzhiping.com/essays/20150925/">Cold Reading, Hot Reading: Nine Questions on Reading</a> (2015-09, in Chinese)<span class="d">Five grades of book, five meta-disciplines, five don't-buy rules, sampling-based skimming, desirable difficulties, and the postscript about his grandfather.</span></li>
+<li><a class="t" href="https://yangzhiping.com/essays/20160310/">The Fourth Blow to Human Pride</a> (2016-03, in Chinese)<span class="d">Temes and "love above all," written the day AlphaGo won a game.</span></li>
+<li><a class="t" href="https://yangzhiping.com/essays/20221124/">Keywords of Life Development (3): Works</a> (2022-11, in Chinese)<span class="d">Works versus job experience, word-count tiers, "first, finish writing it."</span></li>
+<li><a class="t" href="https://yangzhiping.com/essays/20260920/">My Ten Years with Xiejiang</a> (2026-09, in Chinese)<span class="d">Two failures of a writing app, five years of sign-offs, and a third attempt led by himself.</span></li>
+</ul>
+
+<section class="updates" data-last-reviewed="2026-10-30" data-slug="yangzhiping">
+<h2>Updates</h2>
+<!-- updates -->
+</section>
+<footer>Blog Deep Read · Issue 53 · Content reviewed through 2026-10-30</footer>
+</div>
+</div>
+
+<script>
+(function(){
+  var bp=document.getElementById('btn-pop'),bd=document.getElementById('btn-deep'),
+      mp=document.getElementById('mode-pop'),md=document.getElementById('mode-deep');
+  function set(m,save){
+    var pop=(m!=='deep');
+    mp.hidden=!pop; md.hidden=pop;
+    bp.classList.toggle('on',pop); bd.classList.toggle('on',!pop);
+    if(save){try{localStorage.setItem('bdr-mode',pop?'pop':'deep')}catch(e){}}
+  }
+  bp.addEventListener('click',function(){set('pop',1)});
+  bd.addEventListener('click',function(){set('deep',1)});
+  var s='pop'; try{s=localStorage.getItem('bdr-mode')||'pop'}catch(e){}
+  set(s,0);
+})();
+</script>
+</body></html>
